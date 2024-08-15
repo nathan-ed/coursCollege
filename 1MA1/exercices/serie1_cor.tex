@@ -1,0 +1,160 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{../courslatex}
+\usepackage{exos}
+\usepackage{enumitem}
+\renewcommand{\typeDoc}{Corrigé série }
+
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=5pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+
+\renewcommand{\titreChapitre}{Ch1 : Des Nombres} 
+\renewcommand{\numeroSerie}{1}
+
+\begin{document}
+\vspace*{-2\baselineskip}
+\textLigne{Exercices}
+
+\begin{core}
+	On note un nombre à cinq chiffres  \[a+b\cdot 10+c\cdot 10^2+d\cdot 10^3+e\cdot 10^4 \quad\text{ où } a,b,c,d,e\in \N, e\neq 0\]
+	Si le nombre a quatre chiffres, alors on prend $e=0$ et $d\neq 0$.
+
+	\begin{tasks}
+	\task On a $a=4$ et $b=2$. Par ailleurs la somme $a+b+c+d+e$ doit être divisible par $3$ pour que le nombre soit un multiple de $3$. On a $2+4=6$ qui est déjà un multiple de $3$. Le nombre recherché est donc $99924$. 
+	\task Le nombre recherché est $11124$.
+	\task Le nombre recherché est $2046$.
+	\task Le nombre recherché est $9753$.
+	\end{tasks}
+\end{core}
+\begin{core}
+	\phantom{.}
+	\begin{tasks}(3)
+		\task[] Pour $n=0$ on obtient $41$.	
+		\task[] Pour $n=1$ on obtient $43$.	
+		\task[] Pour $n=2$ on obtient $47$.	
+		\task[] Pour $n=3$ on obtient $53$.	
+		\task[] Pour $n=4$ on obtient $61$.	
+		\task[] Pour $n=5$ on obtient $71$.	
+		\task[] Pour $n=6$ on obtient $83$.	
+	\end{tasks}
+\end{core}
+\begin{core}
+	On utilise surtout la décomposition de $10=2\cdot 5$ et donc que $10^n=2^n\cdot 5^n$.
+%corriger cet exercice
+	\begin{tasks}(3)
+\task $10=2\cdot 5$
+\task $10^2=2^2\cdot 5^2$
+\task $100000=2^5\cdot 5^5$
+\task $24 \cdot 1000=2^6\cdot 3\cdot 5^3$
+\task $38 \cdot 10^5=2^6\cdot 5^5\cdot 19$
+\task $25000=5^5\cdot 2^3$
+\task $28000= 2^5\cdot 5^3\cdot 7$
+\task $66000=2^4\cdot 3\cdot 5^3\cdot 11$
+\task $16000=2^7\cdot 5^3$
+\task $3600000=2^7\cdot 3^2\cdot 5^5$
+	\end{tasks}
+\end{core}
+\begin{core}
+	\phantom{.}
+\begin{tasks}(3)
+\task $2^3 \cdot 3 \cdot 5^2=600$
+\task $2^3 \cdot 7 \cdot 5^3=7000$
+\task $2^4 \cdot 5^2=400$
+\task $2^3 \cdot 5^4=5000$
+\task $2^5 \cdot 5^5 \cdot 7=700000$
+\task $2 \cdot 3 \cdot 5 \cdot 7=210$
+\task $2^4 \cdot 5^4 \cdot 11=110000$
+\task $2^6 \cdot 5^3=8000$
+\task $2^4 \cdot 5^6=250000$
+\task $2^3 \cdot 5^3 \cdot 7^2=49000$
+\task $2^4 \cdot 3 \cdot 5^2=1200$
+\task $2^6 \cdot 3 \cdot 5^8=75000000$
+\end{tasks}
+\end{core}
+\textLigne{Automatismes}
+\begin{cora}\phantom{ }
+
+\begin{tasks}(6)
+\task $63$
+\task $-100$
+\task $-18$
+\task $-14$
+\task $8$
+\task $-23$
+\end{tasks}
+
+\end{cora}
+
+\begin{cora}\phantom{ }
+
+\begin{tasks}(5)
+\task ${{25}}$
+\task ${{-14}}$
+\task ${{4}}$
+\task ${{58}}$
+\task ${{-36}}$
+\end{tasks}
+
+\end{cora}
+
+\begin{cora}\phantom{ }
+
+\begin{tasks}(5)
+\task $\dfrac{59}{8}$
+\task $\dfrac{5}{6}$ 
+\task $\dfrac{11}{24}$
+\task $\dfrac{11}{28}$ 
+\task $\dfrac{13}{50}$ 
+\end{tasks}
+
+\end{cora}
+
+\begin{cora}\phantom{ }
+
+\begin{tasks}(5)
+\task $\dfrac{35}{32}$
+\task $\dfrac{9}{8}$
+\task $\dfrac{8}{5}$
+\task $\dfrac{3}{14}$
+\task $\dfrac{5}{4}$
+\end{tasks}
+
+\end{cora}
+
+\begin{cora}\phantom{ }
+\begin{tasks}(4)
+\task $-\dfrac{17}{32}$
+
+\task $\dfrac{5}{2}$
+
+\task $\dfrac{17}{5}$
+
+\task $\dfrac{20}{3}$
+
+\task $\dfrac{14}{9}$
+
+\task $-\dfrac{13}{4}$ 
+
+\task $\dfrac{27}{7}$
+
+\task $\dfrac{10}{3}$ 
+
+\end{tasks}
+
+
+\end{cora}
+
+\begin{cora}\phantom{ }
+
+\begin{tasks}(5)
+\task ${{\dfrac{1}{12}}}$
+\task  ${{\dfrac{16}{25}}}$
+\task ${{\dfrac{7}{24}}}$
+\task ${{\dfrac{1}{15}}}$
+\task ${{\dfrac{25}{63}}}$
+\end{tasks}
+
+\end{cora}
+\end{document}
+

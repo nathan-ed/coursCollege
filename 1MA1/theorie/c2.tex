@@ -1,0 +1,275 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{../courslatex}
+\usepackage{theorie}
+
+\setcounter{chapter}{1}
+
+\renewcommand{\titreChapitre}{Ch. \thechapter\,: Ensembles et intervalles réels}
+\begin{document}
+\chapter{Ensembles et intervalles réels}
+\thispagestyle{fancy}
+\section{Notations ensemblistes}
+Un ensemble représente une collection d'objets qui sont appelés les éléments de l'ensemble. On note un ensemble avec des accolades. 
+Par exemple 
+\[\{1,2,3,4,5\} \text{ est l'ensemble qui contient les éléments } 1,2,3,4 \text{ et } 5\]
+
+\begin{notation}	
+Soient $A$ et $B$ deux ensembles.
+On note 
+\begin{itemize}
+\item[{\PencilRightDown}] l'ensemble vide, l'ensemble qui ne contient aucun élément, $\{\}=\emptyset$,\; 
+ \item[{\PencilRightDown}] $x\in A$ pour $x$ appartient à (est un élément de) $A$\,;
+ \item[{\PencilRightDown}] $x\not\in A$ pour $x$ n'appartient pas à (n'est pas un élément de) $A$\,;
+	\item[{\PencilRightDown}] $B\subset A$ pour dire que $B$ est inclus dans $A$, c'est-à-dire que tous les éléments de $B$ sont aussi des éléments de $A$. On dit que $B$ est un \emph{sous-ensemble} de $A$.
+	\item[{\PencilRightDown}] $B\not \subset A$ pour dire que $B$ n'est pas inclus dans $A$, c'est-à-dire qu'il existe au moins un élément de $B$ qui n'est pas un élément de $A$.  
+\end{itemize}
+\end{notation}
+
+Voici trois façons de décrire un ensemble.
+Par extension, par compréhension ou par une fonction. 
+
+\begin{description}[leftmargin=2cm]
+	\item[\emph{Par extension}] On donne tous les éléments de l'ensemble séparés par des points-virgules.
+		Les points de suspension sont autorisés lorsque la règle qui définit l'appartenance à l'ensemble est claire. 
+		Par exemple 
+		\[A=\{1;2;3;4\} \text{ ou } B=\{0;2;4;6;8;\ldots\}\text{ (pour les nombres pairs)}\]
+	\item[\emph{Par compréhension}] On donne une ou plusieurs conditions d'appartenance à l'ensemble après avoir précisé où sélectionner les éléments.
+		Par exemple
+		\[B=\{x\in \N \mid x \text{ est impair }\} \text{ ou } C=\{x\in \R_{+}\mid x\leq 3\} \]
+	\item[\emph{Par une fonction}] On fait appel à une fonction $f:D\rightarrow E$ et on définit l'ensemble $H=\{f(x) \mid x\in D\}$. 
+		Par exemple
+		\[I=\{2x\mid x\in \N\} \text{ ou encore } J=\{x^2\mid x\in \Q\}\]
+\end{description}
+
+Les ensembles peuvent paraître abstraits, mais nous avons un outil qui permet de représenter les relations entre deux ou plusieurs ensembles.
+
+\begin{defi}[Diagramme de Venn]
+\emph{Un diagramme de Venn} est une représentation d'un ou plusieurs ensembles par des lignes simples fermées dans lesquelles on représente les éléments en fonction de leurs appartenances. 
+Chaque élément ne peut occuper qu'une seule position, celle qui correspond à sa caractérisation la plus précise.
+\end{defi}
+
+Voici un exemple avec les ensembles de nombres vus au chapitre précédents.
+Chaque nombre se situe dans le plus petit ensemble auquel il appartient. 
+Nous verrons d'autres exemples dans les séries.
+\begin{center}
+	\def\natEl{(0,0) ellipse (2cm and 1cm)}
+	\def\intEl{(0.5,0) ellipse (3cm and 2cm)}
+	\def\ratEl{(1,0) ellipse (4cm and 3cm)}
+	\def\realEl{(1.5,0) ellipse (5cm and 4cm)}
+\begin{tikzpicture}
+        \node (A) at (1.5,0) {$\N$};
+        \node (B) at (3,0) {$\Z$};
+        \node (C) at (4.5,0) {$\Q$};
+        \node (D) at (6,0) {$\R$};
+        \node (A) at (0.3,0.2) {$0$};
+        \node (A) at (-0.5,-0.2) {$10$};
+	\node (A) at (-1.3,0.15) {$\dfrac{4}{2}$};
+	\node (A) at (1,-0.5) {$\sqrt{9}$};
+        \node (A) at (1.2,-1.3) {$-2$};
+	\node (A) at (1.1,1.5) {$\sqrt[3]{-1}$};
+        \node (A) at (3,1.9) {$-3,5$};
+        \node (A) at (2.3,-2.3) {$2,764$};
+	\node (A) at (3.9,1.1) {$\dfrac{1}{5}$};
+	\node (A) at (3.4,-1.5) {$9,\overline{51}$};
+	\node (A) at (5.2,1.5) {$\sqrt{2}$};
+        \node (A) at (5.5,-1) {$\pi$};	
+	\draw \natEl;
+	\draw \intEl;
+	\draw \ratEl;
+	\draw \realEl;
+\end{tikzpicture}
+\end{center}
+
+\section{Opérations sur les ensembles}
+On définit trois opérations sur les ensembles.
+Soient $A$ et $B$ deux ensembles.
+\begin{description}[leftmargin=2cm]
+	\item[\emph{L'union de $A$ et de $B$}] notée $A\cup B$ est l'ensemble formé en réunissant les éléments de $A$ et de $B$.
+		\[A\cup B=\{x \mid x\in A \text{ ou } x \in B\}\]
+\def\firstcircle{(0,0) circle (1cm)}
+\def\thirdcircle{(0:1cm) circle (1cm)}
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}
+	\fill[pattern=north west lines, pattern color=blue] \firstcircle;
+        \fill[pattern=north west lines, pattern color=blue] \thirdcircle;
+        %\fill[red] \firstcircle;
+        %\fill[blue] \thirdcircle;
+    \end{scope}
+        \draw \firstcircle node[left] {$A$};
+        \draw \thirdcircle node [right] {$B$};
+\end{tikzpicture}
+\end{center}
+	\item[\emph{L'intersection de $A$ et de $B$}] notée $A\cap B$ est l'ensemble formé de tous les éléments qui appartiennent à $A$ et à $B$.
+		\[A\cap B =\{x\mid x\in A \text{ et } x\in B\}\]
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[pattern=north west lines, pattern color=blue] \thirdcircle;
+        %\fill[red] \firstcircle;
+        %\fill[blue] \thirdcircle;
+    \end{scope}
+        \draw \firstcircle node[left] {$A$};
+        \draw \thirdcircle node [right] {$B$};
+\end{tikzpicture}
+\end{center}
+
+	\item[\emph{La différence de $A$ et de $B$}] notée $A\setminus B$ est l'ensemble formé de tous les éléments de $A$ qui n'appartiennent pas à $B$.
+		\[A\setminus B =\{x\mid x\in A \text{ et } x\not \in B\}\]
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[pattern=north west lines, pattern color=blue, even odd rule] \thirdcircle \firstcircle;
+        %\fill[red] \firstcircle;
+        %\fill[blue] \thirdcircle;
+    \end{scope}
+        \draw \firstcircle node[left] {$A$};
+        \draw \thirdcircle node [right] {$B$};
+\end{tikzpicture}
+\end{center}
+\end{description}
+
+Pour des ensembles de nombres, on introduit les notations suivantes\,:
+\begin{notation}
+	Soit $A$ un ensemble de nombres, on note\,
+	\begin{itemize}
+	\item[{\PencilRightDown}]	 $A^*=A\setminus \{0\}$ les éléments de $A$ différents de zéro.
+	\item[{\PencilRightDown}] $A_+=A_{\geq 0}=\{a\in A \mid a\geq 0\}$ les éléments de $A$ positifs ou nul\,;
+	\item[{\PencilRightDown}] $A_-=A_{\leq 0}=\{a\in A \mid a\leq 0\}$ les éléments de $A$ négatifs ou nul.
+	\end{itemize}
+\end{notation}
+
+\section{Intervalles réels}
+
+On définit pour des ensembles réels la notion suivante.
+\begin{defi}[Intervalles réels]
+	Soient $a,b\in \R$.
+	\begin{description}[leftmargin=2cm]
+		\item[\emph{Intervalle fermé}] L'intervalle $[a;b]$ s'appelle l'intervalle fermé entre $a$ et $b$. 
+			\[\interval{a}{b}=\{x\in \R \mid a\leq x \leq b\}\]
+
+	\item[\emph{Intervalle ouvert}] L'intervalle $]a;b[$ s'appelle l'intervalle ouvert entre $a$ et $b$. 
+			\[\interval[open]{a}{b}=\{x\in \R \mid a < x < b\}\]
+
+		\item[\emph{Intervalle semi-ouvert à gauche}] L'intervalle $]a;b]$ s'appelle l'intervalle semi-ouvert à gauche entre $a$ et $b$. 
+			\[\interval[open left]{a}{b}=\{x\in \R \mid a< x \leq b\}\]
+
+	\item[\emph{Intervalle semi-ouvert à droite}] L'intervalle $[a;b[$ s'appelle l'intervalle semi-ouvert à droite entre $a$ et $b$. 
+			\[\interval[open right]{a}{b}=\{x\in \R \mid a\leq x < b\}\]
+ \end{description}
+ Les nombres $a$ et $b$ s'appelle \emph{les bornes} de l'intervalle.
+\end{defi}
+Avec ces intervalles, nous introduisons le symbole infini noté $\infty$.
+Nous utiliserons ce symbole avec $-\infty$ et $+\infty$ comme indiqué sur la droite réelle ci-dessous. 
+
+On peut utiliser les symboles $-\infty$ et $+\infty$ comme des bornes d'intervalles. 
+L'infini n'est pas contenu dans l'intervalle et on utilise la notation semi-ouvert à la borne $-\infty$ ou $+\infty$. 
+\[\interval[open right]{a}{+\infty}=\{x\in \R \mid a\leq x\} \quad \text{ et } \quad \interval[open left]{-\infty}{a}=\{x\in \R\mid x\leq a\}\]
+Avec ces notations
+\[\R=\interval[open]{-\infty}{+\infty} \]
+On peut donner une représentation de chacun de ces intervalles sur la droite réelle de la manière suivante. 
+Par exemple, l'intervalle $\interval[open left]{-2}{3}$\,:
+\begin{center}
+	\begin{tikzpicture}
+    % Draw the real line
+    \draw[thick] (-5,0) -- (5,0); % Adjust the length as needed
+
+    % Add minus infinity symbol on the left
+    \node at (-5,0) [below] {$-\infty$};
+
+    % Add plus infinity symbol on the right
+    \node at (5,0) [below] {$+\infty$};
+
+    % Add arrowheads to indicate extension to infinity
+    \draw[thick,->] (-5,0) -- (-5.5,0);
+    \draw[thick,->] (5,0) -- (5.5,0);
+    \draw[very thick] (-2,0) -- (3,0);
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},->] (-2, 0) -- (3, 0);
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},->] (-2.01, 0) -- (-2, 0);
+    % Optionally, add some tick marks and labels for real numbers
+    \foreach \x in {-2,0,3} {
+        \draw (\x,0.1) -- (\x,-0.1); % Tick marks
+        \node at (\x, -0.5) {\x}; % Labels for the tick marks
+    }
+\end{tikzpicture}
+\end{center}
+
+Pour terminer ce chapitre, voici un exemple d'opération avec les intervalles réels. 
+Déterminons graphiquement l'intervalle $]-2;+\infty [ \cap [-3;1]$. 
+On commence par aligner les représentations graphiques des ensemble les unes sous les autres. 
+On utilise la définition de l'opération \enquote{intersection} pour déterminer le résultat. 
+\begin{center}
+	\begin{tikzpicture}
+    % Draw the real line
+    \draw[thick] (-5,0) -- (5,0); % Adjust the length as needed
+
+    % Add minus infinity symbol on the left
+    \node at (-5,0) [below] {$-\infty$};
+
+    % Add plus infinity symbol on the right
+    \node at (5,0) [below] {$+\infty$};
+
+    \node at (6,0) [right] {$\interval[open]{-2}{+\infty}$};
+    % Add arrowheads to indicate extension to infinity
+    \draw[thick,->] (-5,0) -- (-5.5,0);
+    \draw[thick,-] (5,0) -- (5.5,0);
+    \draw[>={Latex[width=3mm]},->, very thick] (-2,0) -- (5.5,0); 
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},->, thick] (-2.01, 0) -- (-2, 0);
+    % Optionally, add some tick marks and labels for real numbers
+    \foreach \x in {-2} {
+        \draw (\x,0.1) -- (\x,-0.1); % Tick marks
+        \node at (\x, -0.5) {\x}; % Labels for the tick marks
+    }
+  \begin{scope}[shift={(0,-1.5)}]
+    \draw[thick] (-5,0) -- (5,0); % Adjust the length as needed
+
+    % Add minus infinity symbol on the left
+    \node at (-5,0) [below] {$-\infty$};
+
+    % Add plus infinity symbol on the right
+    \node at (5,0) [below] {$+\infty$};
+
+    \node at (6,0) [right] {$\interval{-3}{1}$};
+
+    % Add arrowheads to indicate extension to infinity
+    \draw[thick,->] (-5,0) -- (-5.5,0);
+    \draw[thick,->] (5,0) -- (5.5,0);
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},<->, very thick] (-3, 0) -- (1, 0);
+    % Optionally, add some tick marks and labels for real numbers
+    \foreach \x in {-3,1} {
+        \draw (\x,0.1) -- (\x,-0.1); % Tick marks
+        \node at (\x, -0.5) {\x}; % Labels for the tick marks
+    }
+  \end{scope}
+  \begin{scope}[shift={(0,-3)}]
+    \draw[thick] (-5,0) -- (5,0); % Adjust the length as needed
+
+    % Add minus infinity symbol on the left
+    \node at (-5,0) [below] {$-\infty$};
+
+    % Add plus infinity symbol on the right
+    \node at (5,0) [below] {$+\infty$};
+
+    \node at (6,0) [right] {$\interval[open]{-2}{+\infty}\cap \interval{-3}{1}=\interval[open left]{-2}{1}$};
+    % Add arrowheads to indicate extension to infinity
+    \draw[thick,->] (-5,0) -- (-5.5,0);
+    \draw[thick,->] (5,0) -- (5.5,0);
+
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},->, thick] (-2.01, 0) -- (-2, 0);
+    \draw[>={Bracket[width=6mm,line width=1pt,length=1.5mm]},->, very thick] (-2, 0) -- (1, 0);
+    % Optionally, add some tick marks and labels for real numbers
+    \foreach \x in {-2,1} {
+        \draw (\x,0.1) -- (\x,-0.1); % Tick marks
+        \node at (\x, -0.5) {\x}; % Labels for the tick marks
+    }
+  \end{scope}
+  \draw[thick, dashed] (-2,0) -- (-2,-3);
+  \draw[thick, dashed] (1,-1.5) -- (1,-3);
+\end{tikzpicture}
+\end{center}
+\newpage
+\vspace{1cm}
+\textLigne{Notes personnelles ou complément}
+\end{document}

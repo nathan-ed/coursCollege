@@ -1,0 +1,241 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{../courslatex}
+\usepackage{theorie}
+
+\setcounter{chapter}{2}
+
+\renewcommand{\titreChapitre}{Ch. \thechapter\,: Calcul littéral}
+\begin{document}
+\chapter{Calcul littéral}
+\thispagestyle{fancy}
+\section{Opération sur les polynômes}
+\subsection{Rappels sur l'addition et la multiplication}
+Voici quelques rappels qui formalisent certaines de vos connaissances sur l'addition et la multiplication. 
+
+Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ensemble des nombres réels pour l'addition et l'ensemble des nombres réels différents de zéro une structure mathématique plus générale appelée \enquote{un groupe abélien}.
+
+\begin{description}[leftmargin= 2cm]
+	\item[Élément neutre] 
+		L'élément neutre est l'élément qui \enquote{ne fait rien} pour l'opération en question.
+
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Addition}
+
+		Pour l'addition, l'élément neutre est le $0$, car
+		\[0+a=a+0=a \quad \forall a\in \R\]
+		}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Multiplication}
+
+		Pour la multiplication, l'élément neutre est le $1$, car
+		\[1\cdot a=a\cdot 1=a \quad \forall a\in \R^*\]
+		}
+		\end{minipage}
+	\item[Opposé pour l'addition]
+		On appelle l'opposé de $a\in \R$ dans le cas de l'addition l'élément qui permet \enquote{d'atteindre} $0$. Ce nombre existe et on le note $(-a)$. On a  
+		\[a+(-a)=(-a)+a=0\]
+		Remarquons que l'opposé de l'opposé de $a$ est égal à $a$. 
+
+		De plus, l'opposé d'un nombre n'est pas toujour négatif. En effet, l'opposé de $-3$ est $3$.
+
+		Sur la calcultrice, la petite touche $-$ permet justement de noter \enquote{l'opposé} d'un nombre en opposition à la plus grande touche $-$ utilisée pour dénoter l'opération \enquote{moins}.
+	\item[Inverse pour la multiplication]
+		On appelle l'inverse de $a\in \R^*$ dans le cas de la multiplication l'élément qui permet \enquote{d'atteindre} $1$. Ce nombre existe et on le note $\dfrac{1}{a}$. On a 
+		\[a\cdot \dfrac{1}{a}=\dfrac{1}{a}\cdot a=1\]
+		Comme pour l'addition, l'inverse de l'inverse de $a$ est égal à $a$. On en considère que $\R^*$, car $0$ n'a pas d'inverse multiplicatif.
+	\item[Associativité]
+
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Addition}
+
+		L'associativité de l'addition nous dit que pour tout $a,b,c\in \R$, on a 
+		\[(a+b)+c=a+(b+c)\]
+				}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Multiplication}
+
+	L'associativité de la multiplication nous dit que pour tout $a,b,c\in \R^*$, on a 
+	\[(a\cdot b)\cdot c=a(b\cdot c)\]
+		}
+		\end{minipage}
+	\item[Commutativité]
+
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Addition}
+
+		La commutativité de l'addition nous dit que pour tout $a,b\in \R$, on a
+		\[a+b=b+a\]
+		}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		{\bfseries Multiplication}
+	
+		La commutativité de la multiplication nous dit que pour tout $a,b\in \R^*$, on a
+		\[a\cdot b=b\cdot a\]
+	}
+		\end{minipage}
+\end{description}
+\begin{rem}
+Calculons deux inverses.
+
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car
+\begin{align*}
+	\dfrac{5}{4}\cdot \dfrac{4}{5}&=1
+\end{align*}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+L'inverse de $-\dfrac{\sqrt{5}}{3}$ vaut $-\dfrac{3}{\sqrt{5}}$, car
+\[-\dfrac{\sqrt{5}}{3}\cdot (-\dfrac{3}{\sqrt{5}})=1.\]
+Toutefois, on n'accepte pas les racines au dénumérateur, donc $-\dfrac{3}{\sqrt{5}}=-\dfrac{3\sqrt{5}}{5}$.
+}
+\end{minipage}
+\end{rem}
+Une dernière propriété à garder en tête est la distributivité de la multiplication par rapport à l'addition. Elle est valable pour les nombres, mais également dans un contexte plus général du calcul littéral.
+
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{center}
+{\bfseries Distributivité simple}
+
+\end{center}
+\[a\cdot (b+c)=ab+ac\]
+}\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{center}
+{\bfseries Distributivité double}
+
+\end{center}
+\[(a+b)\cdot (c+d)= ac+ad+bc+bd\]
+}\end{minipage}
+
+\vspace{1em}
+Nous utiliserons très souvent la distributivité simple et double. Les identités de distributivité triple, quadruple, etc. sont également valables.
+\subsection{Conventions et définitions}
+On commence à présent le calcul littéral avec des rappels sur les conventions et des définitions vues au cycle.
+\begin{center}
+{\bfseries Conventions}
+\begin{enumerate}
+	\item[] On ne note pas le signe de multiplication entre 
+		\begin{itemize}
+			\item un nombre et une variable\,;
+			\item un nombre et une parenthèse\,;
+			\item deux variables\,;
+			\item une variable et une parenthèse\,;
+			\item deux parenthèses.
+		\end{itemize}
+	\item[] On note $x$ pour $1x$.
+	\item[] On note $0$ pour $0x$.
+\end{enumerate}
+	\end{center}
+\begin{defi}[Monôme]
+	Un \emph{monôme} est le produit d'un nombre réel, appelé  \emph{coefficient}, et d'une ou plusieurs variables élevées à certaines puissances entières positives, appelé \emph{partie littérale}. Le \emph{degré} d'un monôme est la somme des exposants de la partie littérale.
+\end{defi}
+Par exemple
+\begin{tasks}
+	\task $4xy^2$ est un monôme, son coefficient est $4$, sa partie littérale $xy^2$ et son degré est $1+2=3$\,; 
+	\task $3$ est un monôme, son coefficient est $3$, il n'a pas de partie littérale et son degré est $0$\,;
+	\task $x$ est un monôme, son coefficient est $1$, sa partie littérale est $x$ et son degré est $1$. 
+\end{tasks}
+\begin{defi}[Monômes semblables]
+	Deux monômes sont \emph{semblables} s'ils ont la même partie littérale.
+\end{defi}
+Par exemple
+\begin{tasks}(2)
+	\task $1$ et $4$ sont semblables\,;
+	\task $x$ et $3x^2$ ne sont pas semblables\,;
+	\task $2y$ et $3xy$ ne sont pas semblables\,;
+	\task $4x^2yz$ et $\pi x^2yz$ sont semblables.
+\end{tasks}
+\begin{defi}[Polynômes]
+	Un \emph{polynôme} est une somme de monômes  
+\end{defi}
+Remarquez qu'une soustraction peut être transformée en une somme, ainsi une soustraction de monômes est également un polynôme. Par exemple
+\begin{tasks}(2)
+	\task $2xy^3$ est un monôme, mais aussi un polynôme\,;
+	\task $x+y-xy^2$ est un polynôme.
+\end{tasks}
+\begin{defi}[Opposé]
+Soit $P$ un polynôme, \emph{l'opposé} de $P$ est le polynôme $R$ tel que $P+R=0$.	
+\end{defi}
+Par exemple
+\begin{tasks}(3)
+	\task l'opposé de $-2xyz$ est $2xyz$\,;
+	\task*(2) l'opposé de $3x^2-2xy+1$ est $-(3x^2-2xy+1)=-3x^2+2xy-1$.
+\end{tasks}
+On remarque que l'opposé d'un polynôme $P$ est le polynôme $-P$. 
+
+{\bfseries ATTENTION} Afin de déterminer l'expression du polynôme $-P$, on réduit l'expression $-(P)$ et on se rappelle que $-(P)=-1\cdot (P)$. {\bfseries Il faut appliquer la distributivité~!} 
+\subsection{Addition et soustraction}
+On définit d'abord l'addition et la soustraction de monômes, puis on passe aux opérations sur les polynômes.
+
+{\bfseries On peut additionner (soustraire) deux monômes seulement s'ils sont semblables.} Dans ce cas, on additionne (soustrait) les coefficients entre-eux {\bfseries sans changer} la partie littérale.
+
+Par exemple
+\begin{tasks}
+	\task $2x^3+4x$, les deux monômes ne sont pas semblables, on ne peut rien faire.
+	\task $4x^2y-5x^2y$ les deux monômes sont semblables, on a $4xy^2-5x^2y=(4-5)x^2y=-x^2y$. 
+	\task $8x-3x^2+2x-x^3+x^2$, on détermine les monômes semblables et on réduit. On a l'habitude d'utiliser des couleurs ou des codes (souligner une ou plusieurs fois, souligner en vaguelette, etc.) pour différencier les \enquote{différents} monômes semblables (voici un exemple avec {\bfseries tous} les détails)~: 
+\end{tasks}
+\begin{align*}
+	\uwave{8x}-\uline{3x²}+\uwave{2x}-\uuline{x^3}+\uline{x^2}&=8x+2x-3x^2+x^2-x^3=(8+2)x+(-3+1)x^2-x^3\\
+&=10x-2x^2-x^3
+\end{align*}
+Pour additioner deux polynômes, on additionne les monômes semblables qui les constituent, par exemple,
+\begin{align*}
+	(3xy-7x-3xy^2)+(9x+3xy+x^3)&=3xy-7x-3xy^2+9x+3xy+x^3\\
+				   &=2x+6xy+x^3-3xy^2
+\end{align*}
+\begin{rem}
+	Dans l'exemple ci-dessus, on ordonne le résultat selon l'ordre croissant du degré des monômes.
+\end{rem}
+Afin de soustraire un polynôme à un autre polynôme, on utilise la définition de l'opposé. {\bfseries Soustraire c'est additionner l'opposé}, dès lors
+\[A-B=A+\text{opposé}(B).\]
+Par exemple avec $A=3x-2xy+9xy^2z$ et $B=-4x+3y-7xy^2z$, 
+\begin{align*}
+	(3x-2xy+9xy^2z)-(-4x+3y-7xy^2z)&=3x-2xy+9xy^2z\uline{+}4x\uline{-}3y\uline{+}7xy^2z\\
+&=7x-3y-2xy+16xy^2z
+\end{align*}
+\subsection{Multiplication}
+On définit comme pour l'addition la multiplication sur les monômes. Afin de multiplier deux monômes, on multiplie les coefficients entre-eux et les parties littérales entre-elles. 
+Par exemple, 
+\begin{tasks}(2)
+	\task $3x^2\cdot 2y=3\cdot 2\cdot x^2\cdot y=6x^2y$
+	\task $5x(-4xy)=5\cdot (-4)\cdot x\cdot xy=-20x^2y$
+\end{tasks}
+
+Pour multipier deux polynômes (ou plus) polynômes, on applique la distributivité. Par exemple, 
+\begin{align*}
+(3x^2-4yz-z^2)(x-y)&=3x^2\cdot x+3x^2\cdot (-y)+(-4yz)\cdot x+(-4yz)\cdot (-y)+(-z^2)\cdot x+(-z^2)\cdot (-y)\\
+&=3x^3-3x^2y-4xyz+4y^2z-xz^2+yz^2
+\end{align*}
+{\bfseries Terminologie} 
+\begin{description}
+	\item[Expression réduite] Une expression est dite réduite si on ne peut plus effectuer d'addition, de soustraction ou de multiplication de monômes. Par exemple, $3x^2\cdot 2y+4$ et $3y^2+x-y^2$ ne sont pas réduites.
+	\item[Expression développée] Une expression est dite développée si tous les produites de monômes ont été effectués. Par exemple $x\cdot (1+y)$ et $1+3y²\cdot 4x$ ne sont pas développées.
+\end{description}
+
+\section{Identités remarquables}
+\section{Factorisation}
+\subsection{Mise en évidence}
+\subsection{Utilisation des identités remarquables}
+\subsection{Mise en groupements}
+\subsection{En pratique}
+\end{document}

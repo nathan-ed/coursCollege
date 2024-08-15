@@ -1,0 +1,43 @@
+\declaretheoremstyle[
+spaceabove=6pt,
+spacebelow=6pt
+headfont=\normalfont\bfseries,
+headpunct={} ,
+headformat={\NAME~\NUMBER\ifstrequal{\NOTE}{}{\relax}{\NOTE}.},
+bodyfont=\normalfont,
+]{exobreak}
+
+
+
+\declaretheorem[style=exobreak, name=Acti.,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{acti}
+
+\declaretheorem[style=exobreak, name=Exo.,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{exo}
+
+\declaretheorem[style=exobreak, name=Corr. exo.,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{core}
+
+\declaretheorem[style=exobreak, name=Corr. aut.,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{cora}
+
+\declaretheorem[style=exobreak, name=Aut.,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{auto}
+
+
+\newcommand{\numeroSerie}{X}
+\newcommand{\typeDoc}{Série }
+
+\rhead{\begin{small}
+\typeDoc \numeroSerie  \end{small}}  
+

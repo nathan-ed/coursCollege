@@ -1,0 +1,44 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.dvi
+*.nav
+*.snm
+*.vrb
+
+# LaTeX intermediate files
+*.ps
+*.idx
+*.ilg
+*.ind
+*.thm
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.loa
+*.lol
+
+# LaTeX auto-generated images
+*.pdf_tex
+
+# Vim temporary files
+*.swp
+*.swo
+*.swn
+*.un~
+*.bak

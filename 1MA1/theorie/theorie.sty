@@ -1,0 +1,74 @@
+
+
+\makeatletter
+% Redefine \@chapapp to use "Chapitre" instead of "Chapter"
+\renewcommand{\@chapapp}{Chapitre}
+\titleformat{\chapter}[frame]
+  {\normalfont}{\filright\enspace \@chapapp~\thechapter\enspace}
+  {12pt}{\LARGE\bfseries\filcenter}
+\titlespacing*{\chapter}
+  {0pt}{-20pt}{20pt}
+\makeatother
+
+\renewcommand*{\proofname}{Preuve}
+
+
+\newcommand{\textLigneSec}[2]{\myrulefill {\bfseries\vspace{1em} #1. #2} \myrulefill\par}
+\renewcommand*\thesection{\arabic{section}}
+
+% Use the \textLigne command for sections with numbering
+\titleformat{\section}
+  {\normalfont\Large} % Apply normal font, large size
+  {} % No additional formatting for the number
+  {0pt} % No additional horizontal space
+  {\textLigneSec{\thesection}} % Incorporate the section number within the \textLigne command
+
+% Adjust the spacing before and after the section title
+\titlespacing*{\section}
+  {0pt}{10pt}{-20pt}
+
+
+\declaretheoremstyle[
+spaceabove=6pt,
+spacebelow=6pt
+headfont=\normalfont\bfseries,
+headpunct={} ,
+headformat={\NAME\ifstrequal{\NOTE}{}{\relax}{\NOTE} --},
+bodyfont=\normalfont,
+]{exobreak}
+
+\declaretheorem[style=exobreak, name=Définition,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{defi}
+
+\declaretheorem[style=exobreak, name=Remarque,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{rem}
+
+\declaretheorem[style=exobreak, name=Propriétés,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{proprietes}
+
+
+\declaretheorem[style=exobreak, name=Propriété,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{propriete}
+
+\declaretheorem[style=exobreak, name=Notation,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{notation}
+
+\declaretheorem[style=exobreak, name=Résultat,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{resultat}
+
+\declaretheorem[style=exobreak, name=Technique,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{technique}
