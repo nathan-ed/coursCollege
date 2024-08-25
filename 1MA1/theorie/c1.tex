@@ -11,14 +11,17 @@
 \section{Les ensembles de nombres}
 Voici les ensembles de nombres avec lesquels nous travaillerons cette année. 
 \begin{itemize}
-	\item $\mathbb{N}$ appelé l'ensemble des entiers est donné par $\mathbb{N}=\{0,1,2,3,\ldots\}$.
-	\item $\mathbb{Z}$ appelé l'ensemble des entiers relatifs est donné par $\mathbb{Z}=\{\ldots -3,-2,-1,0,1,2,3,\ldots\}$.
-	\item $\mathbb{Q}$ appelé l'ensemble des nombres rationnels est donné par $\mathbb{Q}=\{\frac{p}{q} \mid p,q\in \mathbb{Z} \text{ et } q\neq 0 \}$. 
+	\item $\mathbb{N}$ appelé l'ensemble des \emph{entiers naturels} est donné par $\mathbb{N}=\{0,1,2,3,\ldots\}$.
+	\item $\mathbb{Z}$ appelé l'ensemble des \emph{entiers relatifs} est donné par $\mathbb{Z}=\{\ldots -3,-2,-1,0,1,2,3,\ldots\}$.
+	\item $\mathbb{Q}$ appelé l'ensemble des \emph{nombres rationnels} est donné par $\mathbb{Q}=\{\frac{p}{q} \mid p,q\in \mathbb{Z} \text{ et } q\neq 0 \}$. 
 	
-	La barre verticale\,$\mid$ se lit "tel que", ainsi $\mathbb{Q}$ est l'ensemble des fractions $\frac{p}{q}$ telles que $p,q \in \mathbb Z$ et $q\neq 0$.
+	La barre verticale\,$\mid$ se lit "tel que", ainsi $\mathbb{Q}$ est l'ensemble des fractions $\frac{p}{q}$ telles que $p,q \in \mathbb Z$ et $q\neq 0$. On a aussi la caractérisation suivante 
 
-	On a aussi la caractérisation suivante $\mathbb Q=\{x \mid x \text{ a un développement décimal fini ou infini périodique}\}.$
-	\item $\mathbb{R}$ appelé l'ensemble des nombres réels est donné par $\mathbb R=\{x \mid x \text{ a un développement décimal quelconque}\}$.
+	$\mathbb Q=\{x \mid x \text{ a un développement décimal fini ou infini périodique}\}.$
+\item $\mathbb{R}$ appelé l'ensemble des \emph{nombres réels} est donné par 
+
+	$\mathbb R=\{x \mid x \text{ a un développement décimal quelconque}\}$.
+
 	On peut également représenter $\mathbb{R}$ comme une droite 
 	\begin{center}
 	\begin{tikzpicture}
@@ -50,7 +53,7 @@ Un nombre \emph{irrationnel} est un nombre $x\in \R$ tel que $x\not \in \mathbb 
  Par exemple, $\sqrt{2}, \sqrt{5}$ ou encore $\pi$ sont des nombres irrationnels.
 
 \section{Rappels}
-Voici quelques rappels à garder en tête tout au long de l'année. 
+Voici quelques rappels. 
 
 \begin{defi}[multiple]
 	Un nombre $a\in \N$ est un \emph{multiple} de $b$ s'il existe $n\in \N$ tel que $a=b\cdot n$. 	
@@ -66,7 +69,7 @@ Un procédé qui peut paraître basique, mais qui s'avère fondamental en mahém
 \begin{resultat}[division euclidienne]
 	Soit $a, b\in \N$. Il existe $q,r\in \N$ vérifiant
 	\[a=b\cdot q + r \text{ avec } r<b.\]
-	$q$ s'appelle le quotient et $r$ le reste de la division de $a$ par $b$.
+	$q$ s'appelle le \emph{quotient} et $r$ le \emph{reste} de la division de $a$ par $b$.
 \end{resultat}
 Derrière ce résultat se cache la division avec des nombres naturels comme vous l'avez apprise à l'école primaire.
 
@@ -104,10 +107,10 @@ Les nombres premiers sont cruciaux en mathématiques, car ils constituent les br
     \llap{77~~~} 7  \\
     \llap{11~~~} 11  \\
     \llap{1~~~}    \\ 
-  \end{array}
+  \end{array} \quad \implies \quad 462=2\cdot 3\cdot 7\cdot 11.
 \]
 \end{technique}
-Voici un résultat fondamental dont la preuve apparaît dans les Élements d'Euclide (Livre 9, Proposition 20).
+Voici un résultat fondamental dont la preuve apparaît déjà dans les Élements d'Euclide (Livre 9, Proposition 20).
 \begin{resultat}(infinité de nombres premiers)
 	Il y a une infinité de nombres premiers.
 \end{resultat}
@@ -131,7 +134,7 @@ Par exemple, les nombres $3$ et $5$, $11$ et $13$ ou encore $41$ et $43$. La con
 \begin{quotation}
 	Il existe une infinité de nombres premiers jumeaux.
 \end{quotation}
-La liste des nombres premiers peut vous aider à déterminer d'autres nombres premiers jumeaux. 
+La liste des nombres premiers peut vous aider à déterminer d'autres exemples de nombres premiers jumeaux. 
 
 \section{Écriture décimale et fractionnaire}
 Un nombre rationnel peut s'écrire sous forme fractionnaire ou sous forme décimale avec développement fini ou infini périodique. 
@@ -199,6 +202,9 @@ x&=\dfrac{781111}{33300}
 \end{minipage}
 \end{technique}
 
+\begin{rem}
+	On écrit toujours le résultat sous forme d'une fraction irréductible ou d'un nombre entier.
+\end{rem}
 
 \section{Puissances}
 Voici quelques rappels sur les puissances. 
@@ -240,7 +246,7 @@ Rappelons que $a^0=1$ et $0^n=0$ pour tout $n\in \N$.
 \end{defi}
 Rappelons que $\sqrt{-1}$ n'est pas défini, $\sqrt{1}=1, \sqrt{0}=0$ et $\sqrt[3]{-1}=-1$
 \begin{proprietes}
-Le propriétés suivantes énoncées pour les racines carrées et cubiques. 
+Les propriétés suivantes permettent de calculer avec des racines carrées et cubiques.
 
 \begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
@@ -263,7 +269,7 @@ Le propriétés suivantes énoncées pour les racines carrées et cubiques.
 \begin{center}
 	\begin{enumerate}[label={\arabic*)}]
 		\item $\sqrt[3]{a}\cdot \sqrt[3]{b}=\sqrt[3]{a\cdot b}$ pour $a,b\in \R$
-		\item $\dfrac{\sqrt[3]{a}}{\sqrt[3]{b}}=\sqrt[3]{\dfrac{a}{b}}$ pour $a,b\in \R$, $b>0$
+		\item $\dfrac{\sqrt[3]{a}}{\sqrt[3]{b}}=\sqrt[3]{\dfrac{a}{b}}$ pour $a,b\in \R$, $b\neq 0$
 		\item $\sqrt[3]{a^n}=a^{\frac{n}{3}}$ pour $a\in \R$, $n\in \N$
 		\item $\sqrt[3]{a^3}=a$ pour $a\in \R$
 		\item $(\sqrt[3]{a})^3=a$ pour $a\in \R$. 
@@ -279,9 +285,9 @@ Le propriétés suivantes énoncées pour les racines carrées et cubiques.
 
 Voici deux exemples de calculs faisant intervenir ces propriétés.
 
-\[\dfrac{\sqrt{32}}{\sqrt{6}}\stackrel{\text{propriété } 2)}{=}\sqrt{\dfrac{32}{6}}=\sqrt{\dfrac{16}{3}}=\dfrac{\sqrt{16}}{\sqrt{3}}=\dfrac{4}{\sqrt{3}}\stackrel{\text{c.f. convention ci-dessous}}{=}\dfrac{4\sqrt{3}}{3}\]
+\[\dfrac{\sqrt{32}}{\sqrt{6}}\stackrel{\text{prop. } 2)}{=}\sqrt{\dfrac{32}{6}}=\sqrt{\dfrac{16}{3}}\stackrel{\text{prop. } 2)}{=}\dfrac{\sqrt{16}}{\sqrt{3}}=\dfrac{4}{\sqrt{3}}\stackrel{\text{c.f. convention}}{=}\dfrac{4\sqrt{3}}{3}\]
 
-\[\sqrt{3}(\sqrt{6}+\sqrt{5})=\sqrt{3}\cdot \sqrt{6}+\sqrt{3}\cdot \sqrt{5}=\sqrt{3\cdot 6}+\sqrt{3\cdot 5}=\sqrt{18}+\sqrt{15}\stackrel{\text{c.f. convention ci-dessous}}{=}3\sqrt{2}+\sqrt{15}\] 
+\[\sqrt{3}(\sqrt{6}+\sqrt{5})=\sqrt{3}\cdot \sqrt{6}+\sqrt{3}\cdot \sqrt{5}\stackrel{\text{prop. } 2)}{=}\sqrt{3\cdot 6}+\sqrt{3\cdot 5}=\sqrt{18}+\sqrt{15}\stackrel{\text{c.f. convention}}{=}3\sqrt{2}+\sqrt{15}\] 
 
 {\bfseries On suit deux conventions avec les racines\,:}
 

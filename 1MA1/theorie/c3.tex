@@ -15,8 +15,8 @@ Voici quelques rappels qui formalisent certaines de vos connaissances sur l'addi
 Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ensemble des nombres réels pour l'addition et l'ensemble des nombres réels différents de zéro une structure mathématique plus générale appelée \enquote{un groupe abélien}.
 
 \begin{description}[leftmargin= 2cm]
-	\item[Élément neutre] 
-		L'élément neutre est l'élément qui \enquote{ne fait rien} pour l'opération en question.
+	\item[] 
+		\emph{L'élément neutre} est l'élément qui \enquote{ne fait rien} pour l'opération en question.
 
 		\begin{minipage}[t]{0.4\textwidth}{
 		\vspace{0pt}
@@ -35,18 +35,18 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 		\[1\cdot a=a\cdot 1=a \quad \forall a\in \R^*\]
 		}
 		\end{minipage}
-	\item[Opposé pour l'addition]
-		On appelle l'opposé de $a\in \R$ dans le cas de l'addition l'élément qui permet \enquote{d'atteindre} $0$. Ce nombre existe et on le note $(-a)$. On a  
+	\item[]
+		On appelle \emph{l'opposé} de $a\in \R$ dans le cas de l'addition l'élément qui permet \enquote{d'atteindre} $0$. Ce nombre existe et on le note $(-a)$. On a  
 		\[a+(-a)=(-a)+a=0\]
 		Remarquons que l'opposé de l'opposé de $a$ est égal à $a$. 
 
 		De plus, l'opposé d'un nombre n'est pas toujour négatif. En effet, l'opposé de $-3$ est $3$.
 
-		Sur la calcultrice, la petite touche $-$ permet justement de noter \enquote{l'opposé} d'un nombre en opposition à la plus grande touche $-$ utilisée pour dénoter l'opération \enquote{moins}.
-	\item[Inverse pour la multiplication]
-		On appelle l'inverse de $a\in \R^*$ dans le cas de la multiplication l'élément qui permet \enquote{d'atteindre} $1$. Ce nombre existe et on le note $\dfrac{1}{a}$. On a 
+		Sur la calcultrice, la petite touche $(-)$ permet justement de noter \enquote{l'opposé} d'un nombre en opposition à la plus grande touche $-$ utilisée pour dénoter l'opération \enquote{moins}.
+	\item[]
+		On appelle \emph{l'inverse} de $a\in \R^*$ dans le cas de la multiplication l'élément qui permet \enquote{d'atteindre} $1$. Ce nombre existe et on le note $\dfrac{1}{a}$. On a 
 		\[a\cdot \dfrac{1}{a}=\dfrac{1}{a}\cdot a=1\]
-		Comme pour l'addition, l'inverse de l'inverse de $a$ est égal à $a$. On en considère que $\R^*$, car $0$ n'a pas d'inverse multiplicatif.
+		Comme pour l'addition, l'inverse de l'inverse de $a$ est égal à $a$. On ne considère que $\R^*$, car $0$ n'a pas d'inverse.
 	\item[Associativité]
 
 		\begin{minipage}[t]{0.4\textwidth}{
@@ -63,7 +63,7 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 		{\bfseries Multiplication}
 
 	L'associativité de la multiplication nous dit que pour tout $a,b,c\in \R^*$, on a 
-	\[(a\cdot b)\cdot c=a(b\cdot c)\]
+	\[(a\cdot b)\cdot c=a\cdot(b\cdot c)\]
 		}
 		\end{minipage}
 	\item[Commutativité]
@@ -98,15 +98,16 @@ L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car
 }
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.4\textwidth}{
+\begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
 L'inverse de $-\dfrac{\sqrt{5}}{3}$ vaut $-\dfrac{3}{\sqrt{5}}$, car
 \[-\dfrac{\sqrt{5}}{3}\cdot (-\dfrac{3}{\sqrt{5}})=1.\]
-Toutefois, on n'accepte pas les racines au dénumérateur, donc $-\dfrac{3}{\sqrt{5}}=-\dfrac{3\sqrt{5}}{5}$.
+Toutefois, on n'accepte pas les racines au dénominateur, donc $-\dfrac{3}{\sqrt{5}}=-\dfrac{3\sqrt{5}}{5}$.
 }
 \end{minipage}
 \end{rem}
-Une dernière propriété à garder en tête est la distributivité de la multiplication par rapport à l'addition. Elle est valable pour les nombres, mais également dans un contexte plus général du calcul littéral.
+Une dernière propriété à garder en tête est la distributivité de la multiplication par rapport à l'addition. 
+Elle est valable pour les nombres, mais également dans un contexte plus général du calcul littéral.
 
 \begin{minipage}[t]{0.4\textwidth}{
 \vspace{0pt}
@@ -127,7 +128,7 @@ Une dernière propriété à garder en tête est la distributivité de la multip
 }\end{minipage}
 
 \vspace{1em}
-Nous utiliserons très souvent la distributivité simple et double. Les identités de distributivité triple, quadruple, etc. sont également valables.
+Nous utiliserons très souvent la distributivité simple et double. 
 \subsection{Conventions et définitions}
 On commence à présent le calcul littéral avec des rappels sur les conventions et des définitions vues au cycle.
 \begin{center}
@@ -135,17 +136,17 @@ On commence à présent le calcul littéral avec des rappels sur les conventions
 \begin{enumerate}
 	\item[] On ne note pas le signe de multiplication entre 
 		\begin{itemize}
-			\item un nombre et une variable\,;
-			\item un nombre et une parenthèse\,;
-			\item deux variables\,;
-			\item une variable et une parenthèse\,;
-			\item deux parenthèses.
+			\item un nombre et une variable, p. ex. $3\cdot a =3a$\,;
+			\item un nombre et une parenthèse, p. ex. $3\cdot (x+y)=3(x+y)$\,;
+			\item deux variables, p. ex. $x\cdot y=xy$\,;
+			\item une variable et une parenthèse, p. ex. $x\cdot (1+y)=x(1+y)$\,;
+			\item deux parenthèses, p. ex. $(x+y)\cdot (y+1)=(x+y)(y+1)$.
 		\end{itemize}
 	\item[] On note $x$ pour $1x$.
 	\item[] On note $0$ pour $0x$.
 \end{enumerate}
 	\end{center}
-\begin{defi}[Monôme]
+\begin{defi}[monôme]
 	Un \emph{monôme} est le produit d'un nombre réel, appelé  \emph{coefficient}, et d'une ou plusieurs variables élevées à certaines puissances entières positives, appelé \emph{partie littérale}. Le \emph{degré} d'un monôme est la somme des exposants de la partie littérale.
 \end{defi}
 Par exemple
@@ -154,7 +155,7 @@ Par exemple
 	\task $3$ est un monôme, son coefficient est $3$, il n'a pas de partie littérale et son degré est $0$\,;
 	\task $x$ est un monôme, son coefficient est $1$, sa partie littérale est $x$ et son degré est $1$. 
 \end{tasks}
-\begin{defi}[Monômes semblables]
+\begin{defi}[monômes semblables]
 	Deux monômes sont \emph{semblables} s'ils ont la même partie littérale.
 \end{defi}
 Par exemple
@@ -164,25 +165,28 @@ Par exemple
 	\task $2y$ et $3xy$ ne sont pas semblables\,;
 	\task $4x^2yz$ et $\pi x^2yz$ sont semblables.
 \end{tasks}
-\begin{defi}[Polynômes]
-	Un \emph{polynôme} est une somme de monômes  
+\begin{defi}[polynômes]
+	Un \emph{polynôme} est une somme de monômes. 
 \end{defi}
 Remarquez qu'une soustraction peut être transformée en une somme, ainsi une soustraction de monômes est également un polynôme. Par exemple
-\begin{tasks}(2)
+\begin{tasks}
 	\task $2xy^3$ est un monôme, mais aussi un polynôme\,;
 	\task $x+y-xy^2$ est un polynôme.
 \end{tasks}
-\begin{defi}[Opposé]
+\begin{defi}[opposé]
 Soit $P$ un polynôme, \emph{l'opposé} de $P$ est le polynôme $R$ tel que $P+R=0$.	
 \end{defi}
 Par exemple
-\begin{tasks}(3)
+\begin{tasks}
 	\task l'opposé de $-2xyz$ est $2xyz$\,;
-	\task*(2) l'opposé de $3x^2-2xy+1$ est $-(3x^2-2xy+1)=-3x^2+2xy-1$.
+	\task l'opposé de $3x^2-2xy+1$ est $-(3x^2-2xy+1)=-3x^2+2xy-1$.
 \end{tasks}
 On remarque que l'opposé d'un polynôme $P$ est le polynôme $-P$. 
 
-{\bfseries ATTENTION} Afin de déterminer l'expression du polynôme $-P$, on réduit l'expression $-(P)$ et on se rappelle que $-(P)=-1\cdot (P)$. {\bfseries Il faut appliquer la distributivité~!} 
+\begin{rem}
+	Afin de déterminer l'expression du polynôme $-P$, on réduit l'expression $-(P)$ et on se rappelle que $-(P)=-1\cdot (P)$.
+	{\bfseries Il faut appliquer la distributivité~!} 
+\end{rem}
 \subsection{Addition et soustraction}
 On définit d'abord l'addition et la soustraction de monômes, puis on passe aux opérations sur les polynômes.
 
@@ -195,8 +199,8 @@ Par exemple
 	\task $8x-3x^2+2x-x^3+x^2$, on détermine les monômes semblables et on réduit. On a l'habitude d'utiliser des couleurs ou des codes (souligner une ou plusieurs fois, souligner en vaguelette, etc.) pour différencier les \enquote{différents} monômes semblables (voici un exemple avec {\bfseries tous} les détails)~: 
 \end{tasks}
 \begin{align*}
-	\uwave{8x}-\uline{3x²}+\uwave{2x}-\uuline{x^3}+\uline{x^2}&=8x+2x-3x^2+x^2-x^3=(8+2)x+(-3+1)x^2-x^3\\
-&=10x-2x^2-x^3
+	\uwave{8x}-\uline{3x^2}+\uwave{2x}-\uuline{x^3}+\uline{x^2}&\stackrel{\text{regrouper}}{=}8x+2x-3x^2+x^2-x^3=(8+2)x+(-3+1)x^2-x^3\\
+&\stackrel{\text{réduire}}{=}10x-2x^2-x^3
 \end{align*}
 Pour additioner deux polynômes, on additionne les monômes semblables qui les constituent, par exemple,
 \begin{align*}
@@ -204,7 +208,7 @@ Pour additioner deux polynômes, on additionne les monômes semblables qui les c
 				   &=2x+6xy+x^3-3xy^2
 \end{align*}
 \begin{rem}
-	Dans l'exemple ci-dessus, on ordonne le résultat selon l'ordre croissant du degré des monômes.
+	On ordonne le résultat selon l'ordre croissant du degré des monômes.
 \end{rem}
 Afin de soustraire un polynôme à un autre polynôme, on utilise la définition de l'opposé. {\bfseries Soustraire c'est additionner l'opposé}, dès lors
 \[A-B=A+\text{opposé}(B).\]
@@ -221,18 +225,36 @@ Par exemple,
 	\task $5x(-4xy)=5\cdot (-4)\cdot x\cdot xy=-20x^2y$
 \end{tasks}
 
-Pour multipier deux polynômes (ou plus) polynômes, on applique la distributivité. Par exemple, 
+Pour multipier deux (ou plus) polynômes, on applique la distributivité. Par exemple, 
 \begin{align*}
-(3x^2-4yz-z^2)(x-y)&=3x^2\cdot x+3x^2\cdot (-y)+(-4yz)\cdot x+(-4yz)\cdot (-y)+(-z^2)\cdot x+(-z^2)\cdot (-y)\\
-&=3x^3-3x^2y-4xyz+4y^2z-xz^2+yz^2
+(3x^2-4yz-z^2)(x-y)&\stackrel{\text{dist.}}{=}3x^2\cdot x+3x^2\cdot (-y)+(-4yz)\cdot x+(-4yz)\cdot (-y)+(-z^2)\cdot x+(-z^2)\cdot (-y)\\
+&\stackrel{\text{réduire}}{=}3x^3-3x^2y-4xyz+4y^2z-xz^2+yz^2
 \end{align*}
 {\bfseries Terminologie} 
 \begin{description}
-	\item[Expression réduite] Une expression est dite réduite si on ne peut plus effectuer d'addition, de soustraction ou de multiplication de monômes. Par exemple, $3x^2\cdot 2y+4$ et $3y^2+x-y^2$ ne sont pas réduites.
-	\item[Expression développée] Une expression est dite développée si tous les produites de monômes ont été effectués. Par exemple $x\cdot (1+y)$ et $1+3y²\cdot 4x$ ne sont pas développées.
+	\item[] Une expression est dite \emph{réduite} si on ne peut plus effectuer d'addition, de soustraction ou de multiplication de monômes. Par exemple, $3x^2\cdot 2y+4$ et $3y^2+x-y^2$ ne sont pas réduites.
+	
+	\item[Expression développée] Une expression est dite \emph{développée} si tous les produites de monômes ont été effectués. Par exemple $x\cdot (1+y)$ et $1+3y²\cdot 4x$ ne sont pas des expressions développées.
 \end{description}
 
 \section{Identités remarquables}
+Les identités remarquables sont des identités à connaître par coeur. {\bfseries Elles permettent de faciliter le développement et la factorisation d'expressions.}
+Les voici:
+
+\begin{center}
+{\bfseries Les quatre identités}
+\begin{enumerate}
+	\item $(a+b)^2=a^2+2ab+b^2$
+	\item $(a-b)^2=a^2-2ab+b^2$
+	\item $(a-b)(a+b)=(a+b)(a-b)=a^2-b^2$
+	\item $(x+a)(x+b)=x^2+(a+b)x+b^2$ appelée \emph{l'identité somme-produit}
+\end{enumerate}
+\end{center}
+Ces identités ne sont pas \enquote{inventées}.
+On peut les retrouver en développant les expressions, p. ex.
+\[
+	(a+b)^2=(a+b)(a+b)=a^2+ab+ba+b^2=a^2+2ab+b^2
+\]
 \section{Factorisation}
 \subsection{Mise en évidence}
 \subsection{Utilisation des identités remarquables}

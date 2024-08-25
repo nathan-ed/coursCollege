@@ -17,7 +17,7 @@ Par exemple
 Soient $A$ et $B$ deux ensembles.
 On note 
 \begin{itemize}
-\item[{\PencilRightDown}] l'ensemble vide, l'ensemble qui ne contient aucun élément, $\{\}=\emptyset$,\; 
+\item[{\PencilRightDown}] l'ensemble vide, l'ensemble qui ne contient aucun élément, $\{\}=\emptyset$\,; 
  \item[{\PencilRightDown}] $x\in A$ pour $x$ appartient à (est un élément de) $A$\,;
  \item[{\PencilRightDown}] $x\not\in A$ pour $x$ n'appartient pas à (n'est pas un élément de) $A$\,;
 	\item[{\PencilRightDown}] $B\subset A$ pour dire que $B$ est inclus dans $A$, c'est-à-dire que tous les éléments de $B$ sont aussi des éléments de $A$. On dit que $B$ est un \emph{sous-ensemble} de $A$.
@@ -35,7 +35,7 @@ Par extension, par compréhension ou par une fonction.
 		\[A=\{1;2;3;4\} \text{ ou } B=\{0;2;4;6;8;\ldots\}\text{ (pour les nombres pairs)}\]
 	\item[\emph{Par compréhension}] On donne une ou plusieurs conditions d'appartenance à l'ensemble après avoir précisé où sélectionner les éléments.
 		Par exemple
-		\[B=\{x\in \N \mid x \text{ est impair }\} \text{ ou } C=\{x\in \R_{+}\mid x\leq 3\} \]
+		\[B=\{x\in \N \mid x \text{ est impair }\} \text{ ou } C=\{x\in \R \mid x\leq 3\} \]
 	\item[\emph{Par une fonction}] On fait appel à une fonction $f:D\rightarrow E$ et on définit l'ensemble $H=\{f(x) \mid x\in D\}$. 
 		Par exemple
 		\[I=\{2x\mid x\in \N\} \text{ ou encore } J=\{x^2\mid x\in \Q\}\]
@@ -48,7 +48,7 @@ Les ensembles peuvent paraître abstraits, mais nous avons un outil qui permet d
 Chaque élément ne peut occuper qu'une seule position, celle qui correspond à sa caractérisation la plus précise.
 \end{defi}
 
-Voici un exemple avec les ensembles de nombres vus au chapitre précédents.
+Voici un exemple avec les ensembles de nombres vus au chapitre précédent.
 Chaque nombre se situe dans le plus petit ensemble auquel il appartient. 
 Nous verrons d'autres exemples dans les séries.
 \begin{center}
@@ -56,7 +56,7 @@ Nous verrons d'autres exemples dans les séries.
 	\def\intEl{(0.5,0) ellipse (3cm and 2cm)}
 	\def\ratEl{(1,0) ellipse (4cm and 3cm)}
 	\def\realEl{(1.5,0) ellipse (5cm and 4cm)}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.9]
         \node (A) at (1.5,0) {$\N$};
         \node (B) at (3,0) {$\Z$};
         \node (C) at (4.5,0) {$\Q$};
@@ -133,7 +133,7 @@ Soient $A$ et $B$ deux ensembles.
 
 Pour des ensembles de nombres, on introduit les notations suivantes\,:
 \begin{notation}
-	Soit $A$ un ensemble de nombres, on note\,
+	Soit $A$ un ensemble de nombres, on note\,:
 	\begin{itemize}
 	\item[{\PencilRightDown}]	 $A^*=A\setminus \{0\}$ les éléments de $A$ différents de zéro.
 	\item[{\PencilRightDown}] $A_+=A_{\geq 0}=\{a\in A \mid a\geq 0\}$ les éléments de $A$ positifs ou nul\,;
@@ -144,19 +144,19 @@ Pour des ensembles de nombres, on introduit les notations suivantes\,:
 \section{Intervalles réels}
 
 On définit pour des ensembles réels la notion suivante.
-\begin{defi}[Intervalles réels]
+\begin{defi}[intervalles réels]
 	Soient $a,b\in \R$.
 	\begin{description}[leftmargin=2cm]
-		\item[\emph{Intervalle fermé}] L'intervalle $[a;b]$ s'appelle l'intervalle fermé entre $a$ et $b$. 
+		\item[] L'intervalle $[a;b]$ s'appelle \emph{l'intervalle fermé entre $a$ et $b$}. 
 			\[\interval{a}{b}=\{x\in \R \mid a\leq x \leq b\}\]
 
-	\item[\emph{Intervalle ouvert}] L'intervalle $]a;b[$ s'appelle l'intervalle ouvert entre $a$ et $b$. 
+		\item[] L'intervalle $]a;b[$ s'appelle \emph{l'intervalle ouvert entre $a$ et $b$}. 
 			\[\interval[open]{a}{b}=\{x\in \R \mid a < x < b\}\]
 
-		\item[\emph{Intervalle semi-ouvert à gauche}] L'intervalle $]a;b]$ s'appelle l'intervalle semi-ouvert à gauche entre $a$ et $b$. 
+		\item[] L'intervalle $]a;b]$ s'appelle \emph{l'intervalle semi-ouvert à gauche entre $a$ et $b$}. 
 			\[\interval[open left]{a}{b}=\{x\in \R \mid a< x \leq b\}\]
 
-	\item[\emph{Intervalle semi-ouvert à droite}] L'intervalle $[a;b[$ s'appelle l'intervalle semi-ouvert à droite entre $a$ et $b$. 
+		\item[] L'intervalle $[a;b[$ s'appelle \emph{l'intervalle semi-ouvert à droite entre $a$ et $b$}. 
 			\[\interval[open right]{a}{b}=\{x\in \R \mid a\leq x < b\}\]
  \end{description}
  Les nombres $a$ et $b$ s'appelle \emph{les bornes} de l'intervalle.
@@ -165,7 +165,7 @@ Avec ces intervalles, nous introduisons le symbole infini noté $\infty$.
 Nous utiliserons ce symbole avec $-\infty$ et $+\infty$ comme indiqué sur la droite réelle ci-dessous. 
 
 On peut utiliser les symboles $-\infty$ et $+\infty$ comme des bornes d'intervalles. 
-L'infini n'est pas contenu dans l'intervalle et on utilise la notation semi-ouvert à la borne $-\infty$ ou $+\infty$. 
+L'infini n'est pas contenu dans l'intervalle, donc on utilise la notation semi-ouvert à la borne $-\infty$ ou $+\infty$. 
 \[\interval[open right]{a}{+\infty}=\{x\in \R \mid a\leq x\} \quad \text{ et } \quad \interval[open left]{-\infty}{a}=\{x\in \R\mid x\leq a\}\]
 Avec ces notations
 \[\R=\interval[open]{-\infty}{+\infty} \]

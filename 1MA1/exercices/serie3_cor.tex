@@ -20,7 +20,7 @@
 	\begin{tasks}(2)
 		\task $I\cap J=\interval[open right]{-3}{4}\cap \interval[open right]{-2}{0}=\interval[open right]{-2}{0}$ 
 		\task $I\cup K=\interval[open right]{-3}{4}\cup \interval[open left]{-5}{3}=\interval[open]{-5}{4}$
-		\task $I\cap K=\interval[open right]{-3}{4}\cap \interval[]{-3}{3}$
+		\task $I\cap K=\interval[open right]{-3}{4}\cap \interval[open left]{-5}{3} = \interval[]{-3}{3}$
 		\task $I\setminus K=\interval[open right]{-3}{4}\setminus \interval[open left]{-5}{3}=\interval[open]{3}{4}$
 		\task $K\setminus I=\interval[open left]{-5}{3}\setminus \interval[open right]{-3}{4}=\interval[open]{-5}{-3}$
 	\end{tasks}
@@ -74,8 +74,39 @@
 
 	\end{tasks}
 \end{core}
+\def\trianglecircle{(0,0) ellipse (3cm and 2cm)}
+\def\rectcircle{(-1,0) ellipse (1.5cm and 1.25cm)}
+\def\isocircle{(0:1.2cm) circle (1cm)}
+\def\equicircle{(0:1.5cm) circle (0.5cm)}
+
 \begin{core}
-La taille des diagrammes n'est pas représentative de la taille de l'ensemble.	
+	\phantom{}
+\begin{tasks}(2)
+	\task La taille des diagrammes n'est pas représentative de la \enquote{taille} des ensembles.	
+
+\begin{center}
+\begin{tikzpicture}
+        % Draw the shapes
+        \draw \trianglecircle node[above, yshift=2cm] {$T$};
+        \draw \rectcircle node[above, yshift=1.3cm,xshift=0.3cm] {$R$};
+        \draw \isocircle node[above, yshift=1cm] {$I$};
+        \draw \equicircle node[] {$E$};
+
+        % Find and mark the intersection between isocircle and rectcircle
+        %\path [name path=isocircle] \isocircle;
+        %\path [name path=rectcircle] \rectcircle;
+        %\path [name intersections={of=isocircle and rectcircle, by=intersection}];
+        %\fill[red] (intersection) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+\task 
+\begin{itemize}
+	\item $I\cap E=E$, car l'ensemble des triangles \\ équilatéraux est contenu dans l'ensemble de triangles isocèles. 
+	\item $R\cap E=\emptyset$, car il n'existe aucun triangle qui est équilatéral et rectangle (par le théorème de Pythagore, si $a\in \R^*_+$ est la longueur du côté du triangle, alors $a^2+a^2\neq a^2$).
+	\item $I\cap R$ est l'ensemble des triangles dont les deux cathètes mesure $a\in \R^*_+$ et l'hypoténuse mesure $a\sqrt{2}$ (par Pythagore).
+\end{itemize}
+\end{tasks}
+
 \end{core}
 \begin{core}
 	\phantom{}
@@ -83,7 +114,7 @@ La taille des diagrammes n'est pas représentative de la taille de l'ensemble.
 		\task Vrai
 		\task Faux, semi-ouvert à gauche
 		\task Vrai
-		\task Faux, c'est pas l'intervalle
+		\task Faux, ce n'est pas l'intervalle
 		\task Vrai
 		\task Faux, il y appartient
 		\task Faux, $0$ est dans l'intersection
