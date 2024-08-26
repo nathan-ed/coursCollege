@@ -20,7 +20,7 @@
 \RequirePackage{multirow}
 \RequirePackage{tabularx}
 \usepackage{tabularray}
-     \setlength{\extrarowheight}{4pt}
+\setlength{\extrarowheight}{4pt}
 \DefTblrTemplate{contfoot-text}{default}{}
 \DefTblrTemplate{conthead-text}{default}{}
 \DefTblrTemplate{caption}{default}{}
@@ -53,15 +53,17 @@
 \RequirePackage{psfrag}
 \setlength{\parindent}{0pt}
 \RequirePackage{fancyhdr}
+\RequirePackage{bm}
 \RequirePackage{titlesec}
 \RequirePackage{xparse}
 \RequirePackage{pdfpages}
 \RequirePackage{pgf,tikz,pgfplots}
 \RequirePackage{tikz-3dplot}
 \RequirePackage{tikz-cd}
-\usetikzlibrary{arrows,calc, shapes.misc, intersections,decorations.markings, patterns, shapes.geometric, calc,positioning,fit,backgrounds,angles, perspective}
+\usetikzlibrary{arrows,calc, shapes.misc, intersections,decorations.markings, patterns, shapes.geometric, calc,positioning,fit,backgrounds,angles, perspective,tikzmark}
 \RequirePackage{tkz-euclide}
 
+\RequirePackage[top=1.8cm, bottom=1.8cm, left=1cm , right=3cm]{geometry}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \usepackage{version}
 
@@ -93,6 +95,7 @@
 
 \newcommand{\regroupement}{Mathématiques 1$^{\text{re}}$ niveau normal}
 \newcommand{\titreChapitre}{Test}
+\counterwithout{equation}{chapter} % remove the chapter number
 
 %\renewcommand{\chaptermark}[1]{\markleft{#1}{}}
 
