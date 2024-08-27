@@ -91,11 +91,7 @@ Calculons deux inverses.
 
 \begin{minipage}[t]{0.4\textwidth}{
 \vspace{0pt}
-L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car
-\begin{align*}
-	\dfrac{5}{4}\cdot \dfrac{4}{5}&=1
-\end{align*}
-}
+L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car $\dfrac{5}{4}\cdot \dfrac{4}{5}=1$}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.5\textwidth}{
@@ -309,8 +305,187 @@ Par exemple,
 Lorsqu'on vous demande de factoriser, il faudra toujours mettre en évidence le plus de facteurs communs possibles, c'est-à-dire qu'il faut répéter le processus jusqu'à ce que les termes dans la parenthèse n'ait plus aucun facteur commun.
 \end{rem}
 \subsection{Utilisation des identités remarquables}
-Les identités remarquables sont utilisées pour factoriser 
+On utilise également les identités remarquables pour factoriser une expression. 
+\begin{center}
+\begingroup
+\renewcommand*{\arraystretch}{1.5}
+\begin{tabular}{lcl}
+forme développée && forme factorisée\\
+\cline{1-1}\cline{3-3}
+$a^2+2ab+b^2$&&$(a+b)^2$\\
+$a^2-2ab+b^2$&$\longrightarrow$&$(a-b)^2$\\
+$a^2-b^2$&&$(a-b)(a+b) \text{ ou } (a+b)(a-b)$\\
+$c^2x^2+(a+b)cx+ab$&&$(cx+a)(cx+b)$\\
+\end{tabular}
+\endgroup
+\end{center}
+\begin{rem}
+	Nous avons rajouté un coefficient $c$ dans l'identité \enquote{somme-produit} pour ne pas oublier que le coefficient influence également le terme \enquote{$(a+b)cx$}.
+\end{rem}
+Voici la procédure à suivre pour factoriser avec des identités remarquables
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black,
+execute at begin node={\begin{varwidth}{15em}},
+execute at end node={\end{varwidth}}]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{center}
+\begin{tikzpicture}[node distance=2cm]
+	\node (e1) [startstop] {\centerline{Identifier si l'expression} \centerline{peut être}\centerline{une identité remarquable}};
+\node (e21) [startstop, below of=e1,  xshift=-6cm, yshift=-1cm] {\centerline{Différence}\centerline{de deux carrés\,?} \centerline{$a^2-b^2$}};
+\node (e22) [startstop, below of=e1,yshift=-1cm] {\centerline{Somme}\centerline{de deux carrés}\centerline{avec un double produit\,?} \centerline{$a^2\pm2\cdot \ldots +b^2$}};
+\node (e23) [startstop, below of=e1,  xshift=6cm, yshift=-1cm] {\centerline{Présence} \centerline{d'un seul carré~?}};
+\node (e34) [startstop, below of=e23, yshift=-1cm, xshift=0.5cm] {\centerline{Essayer de reconstituer} \centerline{l'identité \enquote{somme-produit}}\centerline{$\bm{(cx+a)(cx+b)}$}\centerline{(c.f. ci-dessous)}};
+\node (e31) [startstop, below of=e21, yshift=-1cm,xshift=-0.5cm] {\centerline{$\bm{(a-b)(a+b)}$}};
+\node (e32) [startstop, below of=e22, xshift=-1.8cm, yshift=-1cm] {\centerline{$a^2+2ab+b^2$\,?}\centerline{$\bm{(a+b)^2}$}};
+\node (e33) [startstop, below of=e22, xshift=1.8cm, yshift=-1cm] {\centerline{$a^2-2ab+b^2$\,?}\centerline{$\bm{(a-b)^2}$}};
+\draw[arrow] (e1)--(e21);
+\draw[arrow] (e1)--(e22);
+\draw[arrow] (e1)--(e23);
+\draw[arrow] (e21)--(e31);
+\draw[arrow] (e22)--(e32);
+\draw[arrow] (e22)--(e33);
+\draw[arrow] (e23)--(e34);
+\end{tikzpicture}
+\end{center}
+Voici quelques exemples.
+
+\begin{tasks}
+	\task[] Dans l'expression \[9x^2+6xy+y^2,\]  on reconnaît deux carrés ($9x^2$ et $y^2$). Le troisième terme pourrait être un double produit $6xy=2\cdot 3xy$. Cela fonctionne, car
+\end{tasks}
+\tikzset{
+    % Set the overall layout of the tree
+    level 1/.style={level distance=3.5cm, sibling distance=3.5cm},
+    level 2/.style={level distance=3.5cm, sibling distance=2cm},
+    % Define styles for bags and leafs
+    bag/.style={text width=4em, text centered},
+    end/.style={circle, minimum width=3pt,fill, inner sep=0pt}
+}
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm,above=0.7cm] {{\bfseries Identités 1 et 2}};
+\node[xshift=3cm, above=0.2cm] {si trois termes};
+\node[xshift=3cm] {dont somme de deux carrés};
+\node[bag] {$a^2$};
+	child{
+\node(1)[bag,below=0.5cm] {\emptybox};
+\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
+child{
+	\node(2a)[below=3cm] {$a$};
+	child{
+		\node(2)[bag,below=3.5cm] {\emptybox};
+		\node[below=3.9cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3.5cm, xshift=6cm] {\emptybox};
+	}
+	\node(2b)[bag,below=3cm,xshift=6cm] {$b$};
+}
+child{
+	\node(3ab)[below=5.5cm,xshift=3cm]{vérifier que le terme restant vaut $2ab$};
+	\node(3)[bag,below=6cm,xshift=3cm]{\emptybox};
+	\node[bag,below=7.5cm,xshift=3cm]{$(a\pm b)^2$};
+}
+}
+\node[bag,xshift=6cm] {$b^2$};
+\draw[->] (1)--(2a);
+\draw[->] (11)--(2b);
+\draw[->] (2)--(3ab);
+\draw[->] (22)--(3ab);
+\end{tikzpicture}
+
+}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm,above=0.5cm] {{\bfseries Identité 3}};
+\node[xshift=3cm] {si différence de deux carrés};
+\node[bag] {$a^2$};
+	child{
+\node(1)[bag,below=0.5cm] {\emptybox};
+\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
+child{
+	\node(2a)[below=3cm] {$a$};
+	child{
+		\node(2)[bag,below=3.5cm] {\emptybox};
+		\node[below=3.9cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3.5cm, xshift=6cm] {\emptybox};
+	}
+	\node(2b)[bag,below=3cm,xshift=6cm] {$b$};
+}
+child{
+	\node[below=4.5cm,xshift=3cm]{$(a-b)(a+b)$};
+}
+}
+\node[bag,xshift=6cm] {$b^2$};
+\draw[->] (1)--(2a);
+\draw[->] (11)--(2b);
+\end{tikzpicture}
+
+}
+\end{minipage}
+
 \subsection{Mise en groupements -- enchaînement des techniques}
-§
-\subsection{En pratique}
+Nous avons appliqué ces techniques à un terme de l'expression.
+Toutefois, il se peut que l'on applique la mise en évidence de facteurs communs ou la factorisation par une identité remarquable à une partie d'une expression. 
+
+On commence par mettre en groupements des termes qui pourraient être factorisés et on applique successivement les méthodes vues ci-dessus.
+Par exemple,
+\begin{tasks}
+	\task \vspace{-2em}\begin{align*}
+	x^3-3x^2+7x-21&=(x^3-3x^2)+(7x-21) &&\rightarrow\text{ groupements}\\
+		      &=x^2(x-3)+7(x-3)&&\rightarrow \text{mise en évidence}\\
+		      &=x^2\uline{(x-3)}+7\uline{(x-3)}&&\rightarrow \text{facteur commun}\\
+		      &=(x-3)(x^2+7)&&\rightarrow \text{mise en évidence}
+\end{align*}
+
+\task	
+\vspace{-2em}\begin{align*}
+	25x^2-20xy+4y^2-9&=(25x^2-20xy+4y^2)+(-9)&&\rightarrow \text{ groupements}\\
+		      &=(5x-2y)^2-9&&\rightarrow \text{identité remarquable}\\
+		      &=(5x-2y)^2-(3)^2&& \rightarrow \text{constitution de l'identité}\\
+		      &=(5x-2y-3)(5x-2y+3)&&\rightarrow \text{3e identité remarquable}\\
+\end{align*}
+		\end{tasks}
+		\vspace{-1cm}
+\begin{rem}
+	Lorsqu'on demande de factoriser un polynôme, on veut que le résultat soit factorisé au maximum. 
+\end{rem}
+Comme avec la décomposition d'entiers en produit de facteurs premiers, on commence par une première décomposition et on applique à nouveau la décomposition à chaque facteur
+	\[
+	48=6\cdot 8=(2\cdot 3)\cdot (4\cdot 2)=2\cdot 3\cdot (2\cdot 2)\cdot 2=2^4\cdot 3	
+\]
+Voici encore deux exemples où on enchaîne la mise en évidence de facteurs communs puis la factorisation à l'aide des identités remarquables.
+\begin{tasks}
+	\task 
+	\vspace{-2em}
+	\begin{align*}
+		2a^4+2a^3-40a^2&=\underset{\text{repérage du facteur commun}}{\underbrace{\bm{2a^2}\cdot a^2+\bm{2a^2}\cdot a+\bm{2a^2}\cdot (-20)}}\\
+			       &=\underset{\text{mise en évidence}}{\underbrace{2a^2(a^2+a-20}}\\										 &=2a^2\underset{\text{repérage de l'identité}}{\underbrace{(a^2+a-20)}}\\
+			       &=2a^2\underset{\text{factorisation}}{\underbrace{(a-4)(a+5)}}
+	\end{align*}
+	\task 
+	\vspace{-2em}
+	\begin{align*}
+	28m^2-7&=\underset{\text{mise en évidence}}{\underbrace{7(4m^2-1)}}\\
+	       &=7\underset{\text{repérage de l'identité}}{\underbrace{((2m)^2-(1)^2)}}\\
+	       &=7\underset{\text{factorisation}}{\underbrace{(2m-1)(2m+1)}}
+	\end{align*}
+\end{tasks}
+
+
+{\bfseries Factoriser une expression n'est pas simple. Afin de reconnaître les identités remarquables et les groupements possibles il faut s'entraîner. De plus certaines expressions ne peuvent pas être factorisées. Entrainez-vous, entraînez-vous, entraînez-vous\,!}
+\begin{rem}
+	Il n'est pas toujours possible de factoriser une expression. Tous les polynômes du second degré de la forme $ax^2+bx+c$ avec $\Delta=b^2-4ac<0$ ne peuvent pas être factorisées sur les nombres réels. En particulier, $x^2+1$ ne peut pas être factorisé et tous les polynômes de la forme
+	\[a^2+b^2\]
+	ne peuvent pas être factorisés. 
+\end{rem}
 \end{document}
