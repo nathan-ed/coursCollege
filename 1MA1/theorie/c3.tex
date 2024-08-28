@@ -222,10 +222,10 @@ Par exemple,
 \end{tasks}
 
 Pour multipier deux (ou plus) polynômes, on applique la distributivité. Par exemple, 
-\begin{align*}
-(3x^2-4yz-z^2)(x-y)&\stackrel{\text{dist.}}{=}3x^2\cdot x+3x^2\cdot (-y)+(-4yz)\cdot x+(-4yz)\cdot (-y)+(-z^2)\cdot x+(-z^2)\cdot (-y)\\
-&\stackrel{\text{réduire}}{=}3x^3-3x^2y-4xyz+4y^2z-xz^2+yz^2
-\end{align*}
+\begin{alignat*}{2}
+	(3x^2-4yz-z^2)(x-y)&\stackrel{\text{dist.}}{=}3x^2\cdot x+3x^2\cdot (-y)+(-4yz)\cdot x+(-4yz)\cdot (-y)&&+(-z^2)\cdot x\\&&&+(-z^2)\cdot (-y)\\
+			   &\stackrel{\text{réduire}}{=}3x^3-3x^2y-4xyz+4y^2z-xz^2+yz^2&&
+\end{alignat*}
 {\bfseries Terminologie} 
 \begin{description}
 	\item[] Une expression est dite \emph{réduite} si on ne peut plus effectuer d'addition, de soustraction ou de multiplication de monômes. Par exemple, $3x^2\cdot 2y+4$ et $3y^2+x-y^2$ ne sont pas réduites.
@@ -372,13 +372,13 @@ Les diagrammes suivant permettent de rendre compte du processus à suivre lorsqu
 \node[bag] {$a^2$};
 	child{
 \node(1)[bag,below=0.5cm] {\emptybox};
-\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node[below=0.9cm,xshift=3cm] { identifier les carrés }; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
 child{
 	\node(2a)[below=2.5cm] {$a$};
 	child{
 		\node(2)[bag,below=3cm] {\emptybox};
-		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node[below=3.4cm,xshift=3cm] { déterminer $a$ et $b$ }; 
 		\node(22)[bag,below=3cm, xshift=6cm] {\emptybox};
 	}
 	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
@@ -400,22 +400,22 @@ child{
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
-\begin{tikzpicture}[scale=0.8,grow=right, sloped,
+\begin{tikzpicture}[scale=0.8,grow=right, sloped
     ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
 ]
-\node[xshift=3cm,above=0.7cm] {{\bfseries Identité 3}};
-\node[xshift=3cm,above=0.2cm] {\bm{$a^2-b^2$}};
-\node[xshift=3cm] {si différence de deux carrés};
+\node[xshift=3cm,above=1.2cm] {{\bfseries Identité 3}};
+\node[xshift=3cm,above=0.7cm] {\bm{$a^2-b^2$}};
+\node[xshift=3cm,above=0.2cm] {si différence de deux carrés};
 \node[bag] {$a^2$};
 	child{
 \node(1)[bag,below=0.5cm] {\emptybox};
-\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node[below=0.9cm,xshift=3cm] { identifier les carrés }; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
 child{
 	\node(2a)[below=2.5cm] {$a$};
 	child{
 		\node(2)[bag,below=3cm] {\emptybox};
-		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node[below=3.4cm,xshift=3cm] { déterminer $a$ et $b$ }; 
 		\node(22)[bag,below=3cm, xshift=6cm] {\emptybox};
 	}
 	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
@@ -443,13 +443,13 @@ Par exemple,
 \node[bag] {$a^2$};
 	child{
 	\node(1)[bag,below=0.5cm] {\boxt{$9x^2$}};
-\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node[below=0.9cm,xshift=3cm] { identifier les carrés }; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\boxt{$y^2$}};
 child{
 	\node(2a)[below=2.5cm] {$a$};
 	child{
 		\node(2)[bag,below=3cm] {\boxt{$3x$}};
-		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node[below=3.4cm,xshift=3cm] { déterminer $a$ et $b$ }; 
 		\node(22)[bag,below=3cm, xshift=6cm] {\boxt{$y$}};
 	}
 	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
@@ -478,13 +478,13 @@ child{
 \node[bag] {$a^2$};
 	child{
 		\node(1)[bag,below=0.5cm] {\boxt{$x^2y^2$}};
-\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node[below=0.9cm,xshift=3cm] {identifier les carrés }; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\boxt{$49z^2$}};
 child{
 	\node(2a)[below=2.5cm] {$a$};
 	child{
 		\node(2)[bag,below=3cm] {\boxt{$xy$}};
-		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node[below=3.4cm,xshift=3cm] {déterminer $a$ et $b$}; 
 		\node(22)[bag,below=3cm, xshift=6cm] {\boxt{$7z$}};
 	}
 	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
@@ -506,7 +506,7 @@ Pour l'identité \enquote{somme-produit}, une difficulté est de reconnaître le
 \vspace{-0.5cm}
 \begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
-\begin{tikzpicture}[scale=0.7,grow=right, sloped,
+\begin{tikzpicture}[scale=0.6,grow=right, sloped,
     ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
 ]
 \node[xshift=3cm,above=0.7cm] {{\bfseries Identité \enquote{somme-produit}}};
@@ -522,29 +522,30 @@ child{
 	child{
 		\node(2)[bag,below=3cm] {\emptybox};
 		\node[below=3.4cm,xshift=3cm] {vérifier si un autre terme}; 
-		\node[below=3.8cm,xshift=3cm] {est divisible par $cx$}; 
-		\node[below=5cm] {\checkmark on continue};
-			\node[below=5cm, xshift=5cm] {\XSolidBrush l'identité \enquote{somme-produit}};
-		\node[below=6.5cm]{le terme divisible est};
+		\node(3)[below=3.8cm,xshift=3cm] {est divisible par $cx$}; 
+		\node(41)[below=5cm] {\checkmark on continue};
+	\node(42)[below=5cm, xshift=4.7cm] {\XSolidBrush l'identité};
+\node[below=5.5cm,xshift=4.7cm] {\enquote{somme-produit}};
+		\node(51)[below=6.5cm]{le terme divisible est};
 		\node[below=6.9cm]{{\bfseries un candidat pour}};
 		\node[below=7.4cm]{le terme \enquote{somme}};
 		\node[below=7.9cm]{\emptybox};
 		\node[below=9.2cm]{le terme divisé};
-		\node[below=9.7cm]{\emptybox};
-		\node[below=6.5cm, xshift=4.5cm]{le terme non divisible est};
+		\node(61)[below=9.7cm]{\emptybox};
+		\node(52)[below=6.5cm, xshift=4.5cm]{le terme non divisible est};
 		\node[below=6.9cm, xshift=4.5cm]{{\bfseries un candidat pour}};
 		\node[below=7.4cm,xshift=4.5cm]{le terme \enquote{produit}};
-		\node[below=7.9cm,xshift=4.5cm]{\emptybox};
-		\node[below=11cm,xshift=2.5cm]{reconstituer les};
-		\node[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
-		\node[below=12.2cm,xshift=4.5cm]{ $b$};
-		\node[below=12.7cm,xshift=4.5cm]{\emptybox};
-		\node[below=12.2cm]{ $a$};
-		\node[below=12.7cm]{\emptybox};
-		\node[below=13.7cm,xshift=2.5cm]{vérifier};
-		\node[below=14.5cm]{$(a+b)cx$};
+		\node(62)[below=7.9cm,xshift=4.5cm]{\emptybox};
+		\node(7)[below=11cm,xshift=2.5cm]{reconstituer les};
+		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
+		\node(92)[below=12.2cm,xshift=4.5cm]{ $b$};
+		\node(101)[below=12.7cm,xshift=4.5cm]{\emptybox};
+		\node(91)[below=12.2cm]{ $a$};
+		\node(102)[below=12.7cm]{\emptybox};
+		\node(11)[below=13.7cm,xshift=2.5cm]{vérifier};
+		\node(121)[below=14.5cm]{$(a+b)cx$};
 		\node[below=15cm]{\emptybox};
-		\node[below=14.5cm,xshift=4.5cm]{$ab$};
+		\node(122)[below=14.5cm,xshift=4.5cm]{$ab$};
 		\node[below=15cm,xshift=4.5cm]{\emptybox};
 	\node[below=16.1cm,xshift=2.3cm]{$\bm{(cx+a)(cx+b)}$};
 	}
@@ -552,8 +553,20 @@ child{
 }
 
 \draw[->] (1)--(2a);
-\draw[<->] (1)--(1t);
+\draw[->] (1)--(1t);
 \draw[->] (2t)--(2a);
+\draw[->] (3)--(41);
+\draw[->] (3)--(42);
+\draw[->] (41)--(51);
+\draw[->] (41)--(52);
+\draw[->] (61)--(7);
+\draw[->] (62)--(7);
+\draw[->] (8)--(91);
+\draw[->] (8)--(92);
+\draw[->] (101)--(11);
+\draw[->] (102)--(11);
+\draw[->] (11)--(121);
+\draw[->] (11)--(122);
 %\draw[->] (2)--(3ab);
 %\draw[->] (22)--(3ab);
 \end{tikzpicture}
@@ -562,7 +575,73 @@ child{
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 {
-	t
+\vspace{0pt}
+\begin{tikzpicture}[scale=0.6,grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm,above=1cm] {};
+\node[xshift=3cm,above=0.7cm] {};
+\node[xshift=3cm,above=0.2cm] {\bm{$9x^2y^2+30xy+24$}};
+\node[bag] {$c^2 x^2$};
+	child{
+		\node(1)[bag,below=0.5cm] {\fbox{$9x^2y^2$}};
+\node(1t)[below=0.9cm,xshift=3cm] {identifier le carré}; 
+\node(2t)[below=1.3cm,xshift=3cm] {et déterminer $cx$}; 
+child{
+	\node(2a)[below=2.5cm] {$cx$};
+	child{
+		\node(2)[bag,below=3cm] {\boxt{$3xy$}};
+		\node[below=3.4cm,xshift=3cm] {vérifier si un autre terme}; 
+		\node(3)[below=3.8cm,xshift=3cm] {est divisible par $cx$}; 
+
+		\node(41)[below=5cm] {\checkmark on continue};
+	\node(42)[below=5cm, xshift=4.7cm] {\XSolidBrush l'identité};
+\node[below=5.5cm,xshift=4.7cm] {\enquote{somme-produit}};
+		\node[below=6.9cm]{{}};
+		\node[below=7.4cm]{};
+		\node(51)[below=7.9cm]{\boxt{$30xy$}};
+		\node[below=9.2cm]{le terme divisé};
+		\node(61)[below=9.7cm]{\boxt{$10$}};
+		\node(52)[below=6.5cm, xshift=4.5cm]{};
+		\node[below=6.9cm, xshift=4.5cm]{};
+		\node[below=7.4cm,xshift=4.5cm]{};
+		\node(62)[below=7.9cm,xshift=4.5cm]{\boxt{$24$}};
+		\node(7)[below=11cm,xshift=2.5cm]{reconstituer les};
+		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
+		\node(92)[below=12.2cm,xshift=4.5cm]{ $b$};
+		\node(101)[below=12.7cm,xshift=4.5cm]{\boxt{$6$}};
+		\node(91)[below=12.2cm]{ $a$};
+		\node(102)[below=12.7cm]{\boxt{$4$}};
+		\node(11)[below=13.7cm,xshift=2.5cm]{vérifier};
+		\node(121)[below=14.5cm]{$(4+6)3xy$};
+		\node[below=15cm]{\boxt{$30xy$}\checkmark};
+		\node(122)[below=14.5cm,xshift=4.5cm]{$4\cdot 6$};
+		\node[below=15cm,xshift=4.5cm]{\boxt{$10$}\checkmark};
+	\node[below=16.1cm,xshift=2.3cm]{$\bm{(3xy+4)(3xy+6)}$};
+	}
+}
+}
+
+\draw[->] (1)--(2a);
+\draw[->] (1)--(1t);
+\draw[->] (2t)--(2a);
+\draw[->] (3)--(41);
+\draw[->] (3)--(42);
+\draw[->] (41)--(51);
+\draw[->] (41)--(62);
+\draw[->] (61)--(7);
+\draw[->] (62)--(7);
+\draw[->] (8)--(91);
+\draw[->] (8)--(92);
+\draw[->] (101)--(11);
+\draw[->] (102)--(11);
+\draw[->] (11)--(121);
+\draw[->] (11)--(122);
+%\draw[->] (2)--(3ab);
+%\draw[->] (22)--(3ab);
+\end{tikzpicture}
+
+
 }
 \end{minipage}
 
@@ -615,10 +694,11 @@ Voici encore deux exemples où on enchaîne la mise en évidence de facteurs com
 \end{tasks}
 
 
-{\bfseries Factoriser une expression n'est pas simple. Afin de reconnaître les identités remarquables et les groupements possibles il faut s'entraîner. De plus certaines expressions ne peuvent pas être factorisées. Entrainez-vous, entraînez-vous, entraînez-vous\,!}
 \begin{rem}
 	Il n'est pas toujours possible de factoriser une expression. Tous les polynômes du second degré de la forme $ax^2+bx+c$ avec $\Delta=b^2-4ac<0$ ne peuvent pas être factorisées sur les nombres réels. En particulier, $x^2+1$ ne peut pas être factorisé et tous les polynômes de la forme
 	\[a^2+b^2\]
 	ne peuvent pas être factorisés. 
 \end{rem}
+
+{\bfseries Factoriser une expression n'est pas simple. Afin de reconnaître les identités remarquables et les groupements possibles il faut s'entraîner. De plus certaines expressions ne peuvent pas être factorisées. Entrainez-vous, entraînez-vous, entraînez-vous\,!}
 \end{document}
