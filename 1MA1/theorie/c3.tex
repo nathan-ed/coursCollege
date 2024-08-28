@@ -332,12 +332,12 @@ execute at end node={\end{varwidth}}]
 \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 \begin{center}
-\begin{tikzpicture}[node distance=2cm]
+\begin{tikzpicture}[scale=0.8,node distance=1.5cm]
 	\node (e1) [startstop] {\centerline{Identifier si l'expression} \centerline{peut être}\centerline{une identité remarquable}};
 \node (e21) [startstop, below of=e1,  xshift=-6cm, yshift=-1cm] {\centerline{Différence}\centerline{de deux carrés\,?} \centerline{$a^2-b^2$}};
 \node (e22) [startstop, below of=e1,yshift=-1cm] {\centerline{Somme}\centerline{de deux carrés}\centerline{avec un double produit\,?} \centerline{$a^2\pm2\cdot \ldots +b^2$}};
 \node (e23) [startstop, below of=e1,  xshift=6cm, yshift=-1cm] {\centerline{Présence} \centerline{d'un seul carré~?}};
-\node (e34) [startstop, below of=e23, yshift=-1cm, xshift=0.5cm] {\centerline{Essayer de reconstituer} \centerline{l'identité \enquote{somme-produit}}\centerline{$\bm{(cx+a)(cx+b)}$}\centerline{(c.f. ci-dessous)}};
+\node (e34) [startstop, below of=e23, yshift=-1cm, xshift=0.5cm] {\centerline{Essayer de reconstituer} \centerline{l'identité \enquote{somme-produit}}\centerline{$\bm{(cx+a)(cx+b)}$}};
 \node (e31) [startstop, below of=e21, yshift=-1cm,xshift=-0.5cm] {\centerline{$\bm{(a-b)(a+b)}$}};
 \node (e32) [startstop, below of=e22, xshift=-1.8cm, yshift=-1cm] {\centerline{$a^2+2ab+b^2$\,?}\centerline{$\bm{(a+b)^2}$}};
 \node (e33) [startstop, below of=e22, xshift=1.8cm, yshift=-1cm] {\centerline{$a^2-2ab+b^2$\,?}\centerline{$\bm{(a-b)^2}$}};
@@ -350,11 +350,8 @@ execute at end node={\end{varwidth}}]
 \draw[arrow] (e23)--(e34);
 \end{tikzpicture}
 \end{center}
-Voici quelques exemples.
+Les diagrammes suivant permettent de rendre compte du processus à suivre lorsqu'il faut factoriser une identité remarquable.
 
-\begin{tasks}
-	\task[] Dans l'expression \[9x^2+6xy+y^2,\]  on reconnaît deux carrés ($9x^2$ et $y^2$). Le troisième terme pourrait être un double produit $6xy=2\cdot 3xy$. Cela fonctionne, car
-\end{tasks}
 \tikzset{
     % Set the overall layout of the tree
     level 1/.style={level distance=3.5cm, sibling distance=3.5cm},
@@ -365,10 +362,11 @@ Voici quelques exemples.
 }
 \begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
-\begin{tikzpicture}[grow=right, sloped,
+\begin{tikzpicture}[scale=0.8,grow=right, sloped,
     ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
 ]
-\node[xshift=3cm,above=0.7cm] {{\bfseries Identités 1 et 2}};
+\node[xshift=3cm,above=1.2cm] {{\bfseries Identités 1 et 2}};
+\node[xshift=3cm,above=0.7cm] {$\bm{a^2\pm2ab+b^2}$};
 \node[xshift=3cm, above=0.2cm] {si trois termes};
 \node[xshift=3cm] {dont somme de deux carrés};
 \node[bag] {$a^2$};
@@ -377,18 +375,18 @@ Voici quelques exemples.
 \node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
 child{
-	\node(2a)[below=3cm] {$a$};
+	\node(2a)[below=2.5cm] {$a$};
 	child{
-		\node(2)[bag,below=3.5cm] {\emptybox};
-		\node[below=3.9cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
-		\node(22)[bag,below=3.5cm, xshift=6cm] {\emptybox};
+		\node(2)[bag,below=3cm] {\emptybox};
+		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3cm, xshift=6cm] {\emptybox};
 	}
-	\node(2b)[bag,below=3cm,xshift=6cm] {$b$};
+	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
 }
 child{
-	\node(3ab)[below=5.5cm,xshift=3cm]{vérifier que le terme restant vaut $2ab$};
-	\node(3)[bag,below=6cm,xshift=3cm]{\emptybox};
-	\node[bag,below=7.5cm,xshift=3cm]{$(a\pm b)^2$};
+	\node(3ab)[below=4.5cm,xshift=3cm]{vérifier que le terme restant vaut $2ab$};
+	\node(3)[bag,below=5cm,xshift=3cm]{\emptybox};
+	\node[bag,below=6.5cm,xshift=3cm]{$(a\pm b)^2$};
 }
 }
 \node[bag,xshift=6cm] {$b^2$};
@@ -402,10 +400,11 @@ child{
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}{
 \vspace{0pt}
-\begin{tikzpicture}[grow=right, sloped,
+\begin{tikzpicture}[scale=0.8,grow=right, sloped,
     ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
 ]
-\node[xshift=3cm,above=0.5cm] {{\bfseries Identité 3}};
+\node[xshift=3cm,above=0.7cm] {{\bfseries Identité 3}};
+\node[xshift=3cm,above=0.2cm] {\bm{$a^2-b^2$}};
 \node[xshift=3cm] {si différence de deux carrés};
 \node[bag] {$a^2$};
 	child{
@@ -413,16 +412,16 @@ child{
 \node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
 \node(11)[bag,below=0.5cm, xshift=6cm] {\emptybox};
 child{
-	\node(2a)[below=3cm] {$a$};
+	\node(2a)[below=2.5cm] {$a$};
 	child{
-		\node(2)[bag,below=3.5cm] {\emptybox};
-		\node[below=3.9cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
-		\node(22)[bag,below=3.5cm, xshift=6cm] {\emptybox};
+		\node(2)[bag,below=3cm] {\emptybox};
+		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3cm, xshift=6cm] {\emptybox};
 	}
-	\node(2b)[bag,below=3cm,xshift=6cm] {$b$};
+	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
 }
 child{
-	\node[below=4.5cm,xshift=3cm]{$(a-b)(a+b)$};
+	\node[below=4cm,xshift=3cm]{$(a-b)(a+b)$};
 }
 }
 \node[bag,xshift=6cm] {$b^2$};
@@ -430,6 +429,140 @@ child{
 \draw[->] (11)--(2b);
 \end{tikzpicture}
 
+}
+\end{minipage}
+
+Par exemple, 
+
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[scale=0.8,grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm] {$\bm{9x^2+6xy+y^2}$};
+\node[bag] {$a^2$};
+	child{
+	\node(1)[bag,below=0.5cm] {\boxt{$9x^2$}};
+\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node(11)[bag,below=0.5cm, xshift=6cm] {\boxt{$y^2$}};
+child{
+	\node(2a)[below=2.5cm] {$a$};
+	child{
+		\node(2)[bag,below=3cm] {\boxt{$3x$}};
+		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3cm, xshift=6cm] {\boxt{$y$}};
+	}
+	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
+}
+child{
+	\node(3ab)[below=4.5cm,xshift=3cm]{vérifier que le terme restant vaut $2ab$};
+	\node(3)[bag,below=5cm,xshift=2.5cm]{\fbox{$2\cdot 3x\cdot y=6xy$\checkmark}};
+	\node[below=6cm,xshift=3cm]{$\bm{(3x+ y)^2}$};
+}
+}
+\node[bag,xshift=6cm] {$b^2$};
+\draw[->] (1)--(2a);
+\draw[->] (11)--(2b);
+\draw[->] (2)--(3ab);
+\draw[->] (22)--(3ab);
+\end{tikzpicture}
+
+}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[scale=0.8,grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm] {$\bm{25x^2y^2-49z^2}$};
+\node[bag] {$a^2$};
+	child{
+		\node(1)[bag,below=0.5cm] {\boxt{$x^2y^2$}};
+\node[below=0.9cm,xshift=3cm] {$\leftrightarrow$ identifier les carrés $\leftrightarrow$}; 
+\node(11)[bag,below=0.5cm, xshift=6cm] {\boxt{$49z^2$}};
+child{
+	\node(2a)[below=2.5cm] {$a$};
+	child{
+		\node(2)[bag,below=3cm] {\boxt{$xy$}};
+		\node[below=3.4cm,xshift=3cm] {$\leftrightarrow$ déterminer $a$ et $b$ $\leftrightarrow$}; 
+		\node(22)[bag,below=3cm, xshift=6cm] {\boxt{$7z$}};
+	}
+	\node(2b)[bag,below=2.5cm,xshift=6cm] {$b$};
+}
+child{
+	\node[below=4cm,xshift=3cm]{$\bm{(xy-7z)(xy+7z)}$};
+}
+}
+\node[bag,xshift=6cm] {$b^2$};
+\draw[->] (1)--(2a);
+\draw[->] (11)--(2b);
+\end{tikzpicture}
+
+}
+\end{minipage}
+
+Pour l'identité \enquote{somme-produit}, une difficulté est de reconnaître le terme \enquote{somme} et le terme \enquote{produit}. Voici comment procéder.
+
+\vspace{-0.5cm}
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[scale=0.7,grow=right, sloped,
+    ebox/.style={below=1mm, minimum width=10mm, minimum height=6mm, draw}
+]
+\node[xshift=3cm,above=0.7cm] {{\bfseries Identité \enquote{somme-produit}}};
+\node[xshift=3cm,above=0.2cm] {\bm{$c^2x^2+(a+b)cx+ab$}};
+\node[xshift=3cm] {si un seul carré};
+\node[bag] {$c^2 x^2$};
+	child{
+\node(1)[bag,below=0.5cm] {\emptybox};
+\node(1t)[below=0.9cm,xshift=3cm] {identifier le carré}; 
+\node(2t)[below=1.3cm,xshift=3cm] {et déterminer $cx$}; 
+child{
+	\node(2a)[below=2.5cm] {$cx$};
+	child{
+		\node(2)[bag,below=3cm] {\emptybox};
+		\node[below=3.4cm,xshift=3cm] {vérifier si un autre terme}; 
+		\node[below=3.8cm,xshift=3cm] {est divisible par $cx$}; 
+		\node[below=5cm] {\checkmark on continue};
+			\node[below=5cm, xshift=5cm] {\XSolidBrush l'identité \enquote{somme-produit}};
+		\node[below=6.5cm]{le terme divisible est};
+		\node[below=6.9cm]{{\bfseries un candidat pour}};
+		\node[below=7.4cm]{le terme \enquote{somme}};
+		\node[below=7.9cm]{\emptybox};
+		\node[below=9.2cm]{le terme divisé};
+		\node[below=9.7cm]{\emptybox};
+		\node[below=6.5cm, xshift=4.5cm]{le terme non divisible est};
+		\node[below=6.9cm, xshift=4.5cm]{{\bfseries un candidat pour}};
+		\node[below=7.4cm,xshift=4.5cm]{le terme \enquote{produit}};
+		\node[below=7.9cm,xshift=4.5cm]{\emptybox};
+		\node[below=11cm,xshift=2.5cm]{reconstituer les};
+		\node[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
+		\node[below=12.2cm,xshift=4.5cm]{ $b$};
+		\node[below=12.7cm,xshift=4.5cm]{\emptybox};
+		\node[below=12.2cm]{ $a$};
+		\node[below=12.7cm]{\emptybox};
+		\node[below=13.7cm,xshift=2.5cm]{vérifier};
+		\node[below=14.5cm]{$(a+b)cx$};
+		\node[below=15cm]{\emptybox};
+		\node[below=14.5cm,xshift=4.5cm]{$ab$};
+		\node[below=15cm,xshift=4.5cm]{\emptybox};
+	\node[below=16.1cm,xshift=2.3cm]{$\bm{(cx+a)(cx+b)}$};
+	}
+}
+}
+
+\draw[->] (1)--(2a);
+\draw[<->] (1)--(1t);
+\draw[->] (2t)--(2a);
+%\draw[->] (2)--(3ab);
+%\draw[->] (22)--(3ab);
+\end{tikzpicture}
+
+}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+{
+	t
 }
 \end{minipage}
 
