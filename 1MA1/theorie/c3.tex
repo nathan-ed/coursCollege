@@ -12,7 +12,7 @@
 \subsection{Rappels sur l'addition et la multiplication}
 Voici quelques rappels qui formalisent certaines de vos connaissances sur l'addition et la multiplication. 
 
-Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ensemble des nombres réels pour l'addition et l'ensemble des nombres réels différents de zéro une structure mathématique plus générale appelée \enquote{un groupe abélien}.
+Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ensemble des nombres réels pour l'addition et l'ensemble des nombres réels différents de zéro pour la mutliplication une structure mathématique plus générale appelée \enquote{un groupe abélien}.
 
 \begin{description}[leftmargin= 2cm]
 	\item[] 
@@ -42,7 +42,7 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 
 		De plus, l'opposé d'un nombre n'est pas toujour négatif. En effet, l'opposé de $-3$ est $3$.
 
-		Sur la calcultrice, la petite touche $(-)$ permet justement de noter \enquote{l'opposé} d'un nombre en opposition à la plus grande touche $-$ utilisée pour dénoter l'opération \enquote{moins}.
+		Sur la calcultrice, la petite touche \enquote{$(-)$} permet justement de noter \enquote{l'opposé} d'un nombre en opposition à la plus grande touche \enquote{$-$} utilisée pour dénoter l'opération \enquote{moins}.
 	\item[]
 		On appelle \emph{l'inverse} de $a\in \R^*$ dans le cas de la multiplication l'élément qui permet \enquote{d'atteindre} $1$. Ce nombre existe et on le note $\dfrac{1}{a}$. On a 
 		\[a\cdot \dfrac{1}{a}=\dfrac{1}{a}\cdot a=1\]
@@ -62,7 +62,7 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 		\vspace{0pt}
 		{\bfseries Multiplication}
 
-	L'associativité de la multiplication nous dit que pour tout $a,b,c\in \R^*$, on a 
+	L'associativité de la multiplication nous dit que pour tout $a,b,c\in \R$, on a 
 	\[(a\cdot b)\cdot c=a\cdot(b\cdot c)\]
 		}
 		\end{minipage}
@@ -81,7 +81,7 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 		\vspace{0pt}
 		{\bfseries Multiplication}
 	
-		La commutativité de la multiplication nous dit que pour tout $a,b\in \R^*$, on a
+		La commutativité de la multiplication nous dit que pour tout $a,b\in \R$, on a
 		\[a\cdot b=b\cdot a\]
 	}
 		\end{minipage}
@@ -89,18 +89,10 @@ Ces deux opérations ont beaucoup de points communs, car elles forment sur l'ens
 \begin{rem}
 Calculons deux inverses.
 
-\begin{minipage}[t]{0.4\textwidth}{
-\vspace{0pt}
-L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car $\dfrac{5}{4}\cdot \dfrac{4}{5}=1$}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.5\textwidth}{
-\vspace{0pt}
-L'inverse de $-\dfrac{\sqrt{5}}{3}$ vaut $-\dfrac{3}{\sqrt{5}}$, car
-\[-\dfrac{\sqrt{5}}{3}\cdot (-\dfrac{3}{\sqrt{5}})=1.\]
+L'inverse de $\dfrac{4}{5}$ vaut $\dfrac{5}{4}$, car $\dfrac{5}{4}\cdot \dfrac{4}{5}=1$
+
+L'inverse de $-\dfrac{\sqrt{5}}{3}$ vaut $-\dfrac{3}{\sqrt{5}}$, car $-\dfrac{\sqrt{5}}{3}\cdot (-\dfrac{3}{\sqrt{5}})=1$.
 Toutefois, on n'accepte pas les racines au dénominateur, donc $-\dfrac{3}{\sqrt{5}}=-\dfrac{3\sqrt{5}}{5}$.
-}
-\end{minipage}
 \end{rem}
 Une dernière propriété à garder en tête est la distributivité de la multiplication par rapport à l'addition. 
 Elle est valable pour les nombres, mais également dans un contexte plus général du calcul littéral.
@@ -142,14 +134,17 @@ On commence à présent le calcul littéral avec des rappels sur les conventions
 	\item[] On note $0$ pour $0x$.
 \end{enumerate}
 	\end{center}
+	\begin{rem}
+		On appliquera {\bfseries toujours} ces conventions lorsque c'est possible.
+	\end{rem}
 \begin{defi}[monôme]
 	Un \emph{monôme} est le produit d'un nombre réel, appelé  \emph{coefficient}, et d'une ou plusieurs variables élevées à certaines puissances entières positives, appelé \emph{partie littérale}. Le \emph{degré} d'un monôme est la somme des exposants de la partie littérale.
 \end{defi}
 Par exemple
 \begin{tasks}
-	\task $4xy^2$ est un monôme, son coefficient est $4$, sa partie littérale $xy^2$ et son degré est $1+2=3$\,; 
+	\task $4xy^2$ est un monôme, son coefficient est $4$, sa partie littérale est $xy^2$ et son degré est $1+2=3$\,; 
 	\task $3$ est un monôme, son coefficient est $3$, il n'a pas de partie littérale et son degré est $0$\,;
-	\task $x$ est un monôme, son coefficient est $1$, sa partie littérale est $x$ et son degré est $1$. 
+	\task $x$ est un monôme, son coefficient est $1$, sa partie littérale est $x$ et son degré est $1$ ($x=x^1$). 
 \end{tasks}
 \begin{defi}[monômes semblables]
 	Deux monômes sont \emph{semblables} s'ils ont la même partie littérale.
@@ -161,7 +156,7 @@ Par exemple
 	\task $2y$ et $3xy$ ne sont pas semblables\,;
 	\task $4x^2yz$ et $\pi x^2yz$ sont semblables.
 \end{tasks}
-\begin{defi}[polynômes]
+\begin{defi}[polynôme]
 	Un \emph{polynôme} est une somme de monômes. 
 \end{defi}
 Remarquez qu'une soustraction peut être transformée en une somme, ainsi une soustraction de monômes est également un polynôme. Par exemple
@@ -195,7 +190,7 @@ Par exemple
 	\task $8x-3x^2+2x-x^3+x^2$, on détermine les monômes semblables et on réduit. On a l'habitude d'utiliser des couleurs ou des codes (souligner une ou plusieurs fois, souligner en vaguelette, etc.) pour différencier les \enquote{différents} monômes semblables (voici un exemple avec {\bfseries tous} les détails)~: 
 \end{tasks}
 \begin{align*}
-	\uwave{8x}-\uline{3x^2}+\uwave{2x}-\uuline{x^3}+\uline{x^2}&\stackrel{\text{regrouper}}{=}8x+2x-3x^2+x^2-x^3=(8+2)x+(-3+1)x^2-x^3\\
+	\uwave{8x}-\uline{3x^2}+\uwave{2x}-\uuline{x^3}+\uline{x^2}&\stackrel{\text{regrouper}}{=}8\uwave{x}+2\uwave{x}-3\uline{x^2}+\uline{x^2}-\uuline{x^3}=(8+2)x+(-3+1)x^2-x^3\\
 &\stackrel{\text{réduire}}{=}10x-2x^2-x^3
 \end{align*}
 Pour additioner deux polynômes, on additionne les monômes semblables qui les constituent, par exemple,
@@ -204,7 +199,7 @@ Pour additioner deux polynômes, on additionne les monômes semblables qui les c
 				   &=2x+6xy+x^3-3xy^2
 \end{align*}
 \begin{rem}
-	On ordonne le résultat selon l'ordre croissant du degré des monômes.
+	On ordonne le résultat selon l'ordre croissant des degrés des monômes.
 \end{rem}
 Afin de soustraire un polynôme à un autre polynôme, on utilise la définition de l'opposé. {\bfseries Soustraire c'est additionner l'opposé}, dès lors
 \[A-B=A+\text{opposé}(B).\]
@@ -230,7 +225,7 @@ Pour multipier deux (ou plus) polynômes, on applique la distributivité. Par ex
 \begin{description}
 	\item[] Une expression est dite \emph{réduite} si on ne peut plus effectuer d'addition, de soustraction ou de multiplication de monômes. Par exemple, $3x^2\cdot 2y+4$ et $3y^2+x-y^2$ ne sont pas réduites.
 	
-	\item[Expression développée] Une expression est dite \emph{développée} si tous les produites de monômes ont été effectués. Par exemple $x\cdot (1+y)$ et $1+3y²\cdot 4x$ ne sont pas des expressions développées.
+	\item[Expression développée] Une expression est dite \emph{développée} si elle ne contient plus de parenthèses. Par exemple $x\cdot (1+y)$ et $(1+3y²)-4x$ ne sont pas des expressions développées.
 \end{description}
 
 \section{Identités remarquables}
@@ -243,10 +238,10 @@ Les voici:
 	(a+b)^2&=a^2+2ab+b^2\\[1em]
 	(a-b)^2&=a^2-2ab+b^2\\[1em]
 	(a-b)(a+b)&=(a+b)(a-b)=a^2-b^2\\[1em]
-	(x+a)(x+b)&=x^2+(a+b)x+ab \text{appelée \emph{l'identité somme-produit}}
+	(x+a)(x+b)&=x^2+(a+b)x+ab \quad \text{appelée \emph{l'identité somme-produit}}
 \end{align}
 \end{center}
-Ces identités ne sont pas \enquote{inventées}.
+Ces identités n'ont pas été \enquote{inventées}.
 On peut les retrouver en développant les expressions,
 \begin{align*}
 	\bm{(a+b)^2}&=(a+b)(a+b)=a^2+ab+ba+b^2=\bm{a^2+2ab+b^2}\\[1em]
@@ -256,7 +251,7 @@ On peut les retrouver en développant les expressions,
 \end{align*}
 L'identité \enquote{somme-produit} est la plus générale puisqu'elle permet de retrouver toutes les autres comme des cas particuliers. 
 
-Historiquement, elle joue un rôle important, car elle constitue une des motivations pour résoudre des équations du second degré comme nous le verrons par la suite. 
+Historiquement, elle joue un rôle important, car elle constitue une des motivations principales pour résoudre des équations du second degré comme nous le verrons par la suite. 
 
 \section{Factorisation}
 \begin{center}
@@ -288,7 +283,7 @@ Lorsque des termes ont des facteurs communs on applique la mise en évidence. Pa
 
 Afin de mettre en évidence un facteur commun, on identifie les facteurs communs dans les coefficients et la partie littérale des termes de l'expression littérale. 
 
-Afin de mettre en évidence \enquote{le plus possible} possible de facteurs communs, on identifie la partie littérale commune à tous les termes et on détermine le pgcd des coefficients.
+Afin de mettre en évidence \enquote{le plus possible} de facteurs communs, on identifie la partie littérale commune à tous les termes et on détermine le pgcd des coefficients.
 
 Par exemple, 
 \[24x^2y-36x^2yz+48x^2yz^2=\tikzmarknode{11}{\uuline{6}}\cdot 4\tikzmarknode{1}{\uline{x^2y}}-\tikzmarknode{22}{\uuline{6}}\cdot 6\tikzmarknode{2}{\uline{x^2y}}\cdot z+\tikzmarknode{33}{\uuline{6}}\cdot 8\tikzmarknode{3}{\uline{x^2y}}\cdot z^2=\tikzmarknode{44}{\uuline{6}}\tikzmarknode{4}{\uline{x^2y}}(4-6z+8z^2).\]	
@@ -302,7 +297,7 @@ Par exemple,
 \end{tikzpicture}
 
 \begin{rem}
-Lorsqu'on vous demande de factoriser, il faudra toujours mettre en évidence le plus de facteurs communs possibles, c'est-à-dire qu'il faut répéter le processus jusqu'à ce que les termes dans la parenthèse n'ait plus aucun facteur commun.
+Lorsqu'on vous demande de factoriser, il faudra toujours mettre en évidence le plus de facteurs communs possibles, c'est-à-dire qu'il faut répéter le processus jusqu'à ce que les termes dans la parenthèse n'ont plus aucun facteur commun.
 \end{rem}
 \subsection{Utilisation des identités remarquables}
 On utilise également les identités remarquables pour factoriser une expression. 
@@ -537,7 +532,7 @@ child{
 		\node[below=7.4cm,xshift=4.5cm]{le terme \enquote{produit}};
 		\node(62)[below=7.9cm,xshift=4.5cm]{\emptybox};
 		\node(7)[below=11cm,xshift=2.5cm]{reconstituer les};
-		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
+		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$ {\bfseries (somme-produit)}};
 		\node(92)[below=12.2cm,xshift=4.5cm]{ $b$};
 		\node(101)[below=12.7cm,xshift=4.5cm]{\emptybox};
 		\node(91)[below=12.2cm]{ $a$};
@@ -607,7 +602,7 @@ child{
 		\node[below=7.4cm,xshift=4.5cm]{};
 		\node(62)[below=7.9cm,xshift=4.5cm]{\boxt{$24$}};
 		\node(7)[below=11cm,xshift=2.5cm]{reconstituer les};
-		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$};
+		\node(8)[below=11.4cm,xshift=2.5cm]{termes $a$ et $b$ {\bfseries (somme-produit)}};
 		\node(92)[below=12.2cm,xshift=4.5cm]{ $b$};
 		\node(101)[below=12.7cm,xshift=4.5cm]{\boxt{$6$}};
 		\node(91)[below=12.2cm]{ $a$};
@@ -644,7 +639,7 @@ child{
 
 }
 \end{minipage}
-
+\vspace{-0.7cm}
 \subsection{Mise en groupements -- enchaînement des techniques}
 Nous avons appliqué ces techniques à un terme de l'expression.
 Toutefois, il se peut que l'on applique la mise en évidence de facteurs communs ou la factorisation par une identité remarquable à une partie d'une expression. 
@@ -652,15 +647,15 @@ Toutefois, il se peut que l'on applique la mise en évidence de facteurs communs
 On commence par mettre en groupements des termes qui pourraient être factorisés et on applique successivement les méthodes vues ci-dessus.
 Par exemple,
 \begin{tasks}
-	\task \vspace{-2em}\begin{align*}
+	\task Double mise en évidence \vspace{-1em}\begin{align*}
 	x^3-3x^2+7x-21&=(x^3-3x^2)+(7x-21) &&\rightarrow\text{ groupements}\\
 		      &=x^2(x-3)+7(x-3)&&\rightarrow \text{mise en évidence}\\
 		      &=x^2\uline{(x-3)}+7\uline{(x-3)}&&\rightarrow \text{facteur commun}\\
 		      &=(x-3)(x^2+7)&&\rightarrow \text{mise en évidence}
 \end{align*}
 
-\task	
-\vspace{-2em}\begin{align*}
+\task Double identités remarquables	
+\vspace{-1em}\begin{align*}
 	25x^2-20xy+4y^2-9&=(25x^2-20xy+4y^2)+(-9)&&\rightarrow \text{ groupements}\\
 		      &=(5x-2y)^2-9&&\rightarrow \text{identité remarquable}\\
 		      &=(5x-2y)^2-(3)^2&& \rightarrow \text{constitution de l'identité}\\
@@ -681,21 +676,21 @@ Voici encore deux exemples où on enchaîne la mise en évidence de facteurs com
 	\vspace{-2em}
 	\begin{align*}
 		2a^4+2a^3-40a^2&=\underset{\text{repérage du facteur commun}}{\underbrace{\bm{2a^2}\cdot a^2+\bm{2a^2}\cdot a+\bm{2a^2}\cdot (-20)}}\\
-			       &=\underset{\text{mise en évidence}}{\underbrace{2a^2(a^2+a-20}}\\										 &=2a^2\underset{\text{repérage de l'identité}}{\underbrace{(a^2+a-20)}}\\
+			       &=\underset{\text{mise en évidence}}{\underbrace{2a^2(a^2+a-20)}}\\										 &=2a^2\underset{\text{repérage de la } 4^\text{e}\text{  identité}}{\underbrace{(a^2+a-20)}}\\
 			       &=2a^2\underset{\text{factorisation}}{\underbrace{(a-4)(a+5)}}
 	\end{align*}
 	\task 
 	\vspace{-2em}
 	\begin{align*}
 	28m^2-7&=\underset{\text{mise en évidence}}{\underbrace{7(4m^2-1)}}\\
-	       &=7\underset{\text{repérage de l'identité}}{\underbrace{((2m)^2-(1)^2)}}\\
+	       &=7\underset{\text{repérage de la }3^\text{e}\text{  identité}}{\underbrace{((2m)^2-(1)^2)}}\\
 	       &=7\underset{\text{factorisation}}{\underbrace{(2m-1)(2m+1)}}
 	\end{align*}
 \end{tasks}
 
 
 \begin{rem}
-	Il n'est pas toujours possible de factoriser une expression. Tous les polynômes du second degré de la forme $ax^2+bx+c$ avec $\Delta=b^2-4ac<0$ ne peuvent pas être factorisées sur les nombres réels. En particulier, $x^2+1$ ne peut pas être factorisé et tous les polynômes de la forme
+	Il n'est pas toujours possible de factoriser une expression. Tous les polynômes du second degré de la forme $ax^2+bx+c$ avec $\Delta=b^2-4ac<0$ ne peuvent pas être factorisés sur les nombres réels. En particulier, $x^2+1$ ne peut pas être factorisé et tous les polynômes de la forme
 	\[a^2+b^2\]
 	ne peuvent pas être factorisés. 
 \end{rem}
