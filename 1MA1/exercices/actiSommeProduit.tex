@@ -1,0 +1,209 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{../courslatex}
+\usepackage{exos}
+\usepackage{enumitem}
+
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=5pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+
+\renewcommand{\titreChapitre}{Ch3 : Calcul littéral} 
+\renewcommand{\numeroSerie}{}
+\renewcommand{\typeDoc}{Activité}
+
+\begin{document}
+\vspace*{-2\baselineskip}
+
+\textLigne{Activité \enquote{somme-produit}}
+\textLigne{Partie 1/4}
+Voici l'énoncé du problème \enquote{somme-produit}:
+\begin{quote}
+\enquote{Déterminer deux nombres entiers $a$ et $b$ connaissant leur somme $s$ et leur produit $p$.} 
+\end{quote}
+Ce problème remonte aux babyloniens qui souhaitaient déterminer la longueur $\ell$ et la largeur $L$ d'un terrain rectangulaire (jardin, champ, etc.) connaissant son périmètre $2(\ell+L)$ et son aire $\ell\cdot L$. 
+
+\begin{exo}
+Déterminer deux nombres $a$ et $b$ dont~:
+	\begin{tasks}(2)
+\task le produit vaut $6$ et la somme $5$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $12$ et la somme $7$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $12$ et la somme $-7$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $-5$ et la somme $4$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $10$ et la somme $-7$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $-9$ et la somme $8$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $-8$ et la somme $-2$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $15$ et la somme $-8$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\end{tasks}
+\end{exo}
+
+\begin{exo}
+	Écrire clairement une procédure pour obtenir une solution.  
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+\end{exo}
+Pour rappel, la quatrième identité remarquable est de la forme
+\[(x+a)(x+b)=x^2+(a+b)x+ab.\]
+On retrouve le terme somme ($a+b$) et le terme produit ($ab$).
+
+\begin{exo}
+	À l'aide du premier exercice, factoriser les expressions suivante en utilisant la quatrième identité remarquable.
+\begin{tasks}(2)
+\task $x^2+5x+6=\ligne{4}$ 
+\task $x^2+7x+12=\ligne{4}$
+\task $x^2-7x+12=\ligne{4}$
+\task $x^2+4x+-5=\ligne{4}$
+\task $x^2-7x+10=\ligne{4}$
+\task $x^2+8x-9=\ligne{4}$
+\task $x^2-2x-8=\ligne{4}$
+\task $x^2-8x+15=\ligne{4}$
+\end{tasks}	
+\end{exo}
+
+\afterpage{\bpage}
+\newpage
+
+\textLigne{Partie 2/4}
+Un exemple de procédure 
+\begin{exo}
+	Utiliser votre méthode ou la méthode ci-dessus pour déterminer deux nombres $a$ et $b$ dont~:
+	\begin{tasks}(2)
+\task le produit vaut $-20$ et la somme $-8$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $-20$ et la somme $1$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $12$ et la somme $8$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $12$ et la somme $13$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $-40$ et la somme $3$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+\task le produit vaut $28$ et la somme $-11$
+
+\vspace{15pt}
+$a=\ligne{2}$ $b=\ligne{2}$
+	
+\end{tasks}
+\end{exo}
+\begin{exo}
+	Factoriser à l'aide de la quatrième identité remarquable.
+	\begin{tasks}(2)
+\task $x^2-8x-20=\ligne{4}$
+\task $x^2+x-20=\ligne{4}$
+\task $x^2-8x+12=\ligne{4}$
+\task $x^2+13x+12=\ligne{4}$
+\task $x^2+3x-40=\ligne{4}$
+\task $x^2-11x+28=\ligne{4}$	
+\end{tasks}
+\end{exo}
+\begin{exo}
+Essayer de déterminer deux nombres $a$ et $b$ dont \[\text{le produit vaut } 233543149332 \text{ et la somme vaut } 1423373.\]
+\end{exo}
+Si vous n'y arrivez pas, quel est l'obstacle rencontré par rapport à votre méthode ou à la méthode proposée~?
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+\afterpage{\bpage}
+\newpage
+
+\textLigne{Partie 3/4}
+
+Les babyloniens ont trouvé une méthode pour résoudre ce problème, la voici.
+
+Si on note $P$ le produit et $S$ la somme.
+\begin{description}
+	\item[Étape 1] On pose $r=\dfrac{S}{2}$.
+	\item[Étape 2] Il existe $m$ tel que \[(r+m)(r-m)=P.\] On va déterminer la valeur de $m$ pour obtenir les nombres recherchés $a=r+m$ et $b=r-m$. 
+	\item[Étape 3] On développe l'égalité ci-dessus
+		\[(r+m)(r-m)=P \iff r^2-m^2=P \iff -m^2=P-r^2\iff m^2=r^2-P \iff m=\sqrt{r^2-P}\]
+	\item[Étape 4] On connaît $r=\dfrac{S}{2}$ et $P$, ainsi
+		\[m=\sqrt{\dfrac{S^2}{4}-P}\]
+	\item[Étape 5] On obtient 
+		\[a=\dfrac{S}{2}-\sqrt{\dfrac{S^2}{4}-P} \text{ et } b=\dfrac{S}{2}+\sqrt{\dfrac{S^2}{4}-P}\]
+\end{description}
+Déterminer $a$ et $b$ sachant que leur produit vaut $233543149332$ et leur somme vaut $1423373$ puis factoriser \[x^2+1423373x+233543149332.\]
+\framebox[\textwidth]{\rule{0pt}{170pt}}
+
+\begin{exo}
+	Factoriser les expressions suivantes
+	\begin{tasks}
+		\task $x^2+1423373x+233543149332$
+
+\framebox[0.9\textwidth]{\rule{0pt}{170pt}}
+		\task $x^2+1423373x+233543149332$
+
+\framebox[0.9\textwidth]{\rule{0pt}{170pt}}
+	\end{tasks}
+\end{exo}
+Cette methode vous fait-elle penser à quelque chose que vous connaissez déjà~? Une autre procédure pour factoriser ce type d'expressions vous vient-elle à l'esprit~? 
+
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+	\newpage
+
+\textLigne{Partie 4/4}
+
+\end{document}
+

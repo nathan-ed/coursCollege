@@ -12,6 +12,11 @@
 \setquotestyle{french}
 \usepackage{thmtools}
 \RequirePackage{afterpage}
+\newcommand{\bpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
 \usepackage{interval}
@@ -172,4 +177,6 @@ ns, 2024--2025
 
 \newcommand{\emptybox}{\fbox{\parbox[c][8mm]{8mm}{\ }}}
 \newcommand{\boxt}[1]{\fbox{\parbox[c][8mm]{8mm}{\centering #1}}}
+\newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}} 
+\newcommand{\points}[1]{\makebox[#1cm]{\dotfill}} 
 
