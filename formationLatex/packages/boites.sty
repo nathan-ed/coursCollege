@@ -1,0 +1,235 @@
+% author : sylcha
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : environnements sous forme de boîtes
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{boites}[2023/08/01 v0.1]%
+\RequirePackage{ProfCollege}%
+\RequirePackage{xparse}
+\RequirePackage{xspace}
+\RequirePackage{packages/couleurs}
+\RequirePackage{qrcode}
+\RequirePackage{packages/competences}
+\tcbsetforeverylayer{breakable}
+% sélectionner une fonte
+\newcommand{\fon}[1]{\fontfamily{#1}\selectfont}  %% Courtesy: @JouleV
+%=============================================
+%
+%              Environnements
+%
+%=============================================
+% environnement pour les exercices
+\tikzset{boxed/.style={%
+  fill=colorPrim,
+  text=white,
+  inner sep=3pt,
+  anchor=base,
+  font={\large\bfseries},
+  minimum height=4ex,
+  minimum width=2em,
+}}
+\newcounter{exo}
+% \newenvironment{exo}[1][]
+% {% begin code
+%   \par\noindent%
+%   \refstepcounter{exo}%
+%   \begin{tcolorbox}[colback=white,colframe=white,arc=0pt,boxrule=0mm,notitle,left=0pt,right=0pt,boxsep=0pt,top=0pt,bottom=0pt]
+%   \if\relax\detokenize{#1}\relax
+%     \tikz[baseline,remember picture,overlay]{\node[boxed] (numero) {\theexo};}\quad
+%   \else
+%     \tikz[baseline,remember picture,overlay]{\node[boxed] (numero) {\theexo};} -- \textcolor{colorPrim}{\large\bfseries #1}
+%   \fi
+%   \tikz[remember picture,overlay] {\node[left=5mm of numero.west,anchor=east] {2pts};}
+% }%
+% {% end code
+%   \end{tcolorbox}
+%   \par%
+%   \noindent\ignorespacesafterend%
+% }
+% ======================================== exo : début =========================================================================
+\NewDocumentEnvironment{exo}{ o o o }
+{%begin code
+\par\noindent%
+\refstepcounter{exo}%
+\begin{tcolorbox}[colback=white,colframe=white,arc=0pt,boxrule=0mm,notitle,left=0pt,right=0pt,boxsep=0pt,top=0pt,bottom=0pt]
+\IfNoValueTF{#3}
+  {\tikz[baseline={([yshift=-0.5ex]current bounding box.south)},remember picture,overlay]{\node[boxed] (numero) {\theexo};}\quad}
+  {\tikz[baseline={([yshift=-0.5ex]current bounding box.south)},remember picture,overlay]{\node[boxed] (numero) {\theexo};} \qquad \textcolor{colorPrim}{\large\bfseries #3}}
+\IfNoValueTF{#1}
+  {}{\tikz[remember picture,overlay] {\node[left=3mm of numero.west,anchor=east,inner sep=0pt,text=black!50] {\small#1};}}
+\IfNoValueTF{#2}
+  {}{\tikz[remember picture,overlay] {\node[below left=3mm of numero.south west,anchor=north east,inner sep=0pt,text=black!50,yshift=-2mm] {\small\marginCompetence{#2}};}}
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend%
+}
+% ======================================== exo : fin =========================================================================
+%
+% ======================================== propriété : début =========================================================================
+\newcounter{propriete}
+\NewDocumentEnvironment{propriete}{ s o O{Propriété} O{colorTer} }
+{% begin code
+  \par\noindent
+  \refstepcounter{propriete}%
+  \IfBooleanTF{#1}{\newcommand*{\counterpropriete}{}}{\newcommand*{\counterpropriete}{\thepropriete}}
+  \IfNoValueTF {#2}
+      {\newcommand*{\boxtitle}{#3 \counterpropriete{}}}
+      {\newcommand*{\boxtitle}{#3 \counterpropriete{} #2}}
+  \begin{tcolorbox}[colback=#4!10,colframe=#4,title=\boxtitle,fonttitle=\bfseries,sharp corners=all,before skip=0pt]
+}
+{% end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+\ExplSyntaxOn
+\cs_new:cpn {propriete*} {\propriete*}
+\cs_new_eq:cN {endpropriete*} \endpropriete
+\ExplSyntaxOff
+% ======================================== propriete : fin =========================================================================
+% 
+% ======================================== definition : début =========================================================================
+\newcounter{definition}
+\NewDocumentEnvironment{definition}{ s o O{Définition} O{colorPrim} }
+{% begin code
+  \par\noindent
+  \refstepcounter{definition}%
+  \IfBooleanTF{#1}{\newcommand*{\counterdefinition}{}}{\newcommand*{\counterdefinition}{\thedefinition}}
+  \IfNoValueTF {#2}
+      {\newcommand*{\boxtitle}{#3 \counterdefinition{}}}
+      {\newcommand*{\boxtitle}{#3 \counterdefinition{} #2}}
+  \begin{tcolorbox}[colback=#4!10!white,colframe=#4,title=\boxtitle,fonttitle=\bfseries,sharp corners=all,before skip=0pt]
+}
+{% end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+\ExplSyntaxOn
+\cs_new:cpn {definition*} {\definition*}
+\cs_new_eq:cN {enddefinition*} \enddefinition
+\ExplSyntaxOff
+% ======================================== definition : fin =========================================================================
+%
+% ======================================== attention : début =========================================================================
+\newcounter{attention}
+\NewDocumentEnvironment{attention}{ s o O{Attention !} }
+{% begin code
+  \par\noindent
+  \refstepcounter{attention}%
+  \IfBooleanTF{#1}{\newcommand*{\counterattention}{}}{\newcommand*{\counterattention}{\theattention}}
+  \IfNoValueTF {#2}
+      {\newcommand*{\boxtitle}{#3 \counterattention{}}}
+      {\newcommand*{\boxtitle}{#3 \counterattention{} #2}}
+  \begin{tcolorbox}[colback=colorSecLight,colframe=colorSec,title=\boxtitle,fonttitle=\bfseries,sharp corners=all]
+}
+{% end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+\ExplSyntaxOn
+\cs_new:cpn {attention*} {\attention*}
+\cs_new_eq:cN {endattention*} \endattention
+\ExplSyntaxOff
+% ======================================== attention : fin =========================================================================
+%
+% ======================================== boiteicon : début =========================================================================
+\NewDocumentEnvironment{boiteicone}{ O{colorSec} o O{\faExclamationTriangle} O{\normalsize} }
+{%begin code
+  \par\noindent
+  \IfNoValueTF {#2}
+      {\newcommand*{\boxtitle}{Attention}}
+      {\newcommand*{\boxtitle}{#2}}
+  \begin{tcolorbox}[colback=#1!10!white,colframe=#1,coltitle=#1,
+    detach title,before upper={\tcbtitle\quad},title=\boxtitle,fonttitle=\bfseries#4,sharp corners=all,
+    height from=12mm to 25cm,valign=center,leftrule=12mm,
+    enhanced,overlay={\node[anchor=center,text=white] at ([xshift=6mm,yshift=-6mm]frame.north west) {\Large  #3};}]
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+% ======================================== boiteicon : fin =========================================================================
+%
+% ======================================== boiteombre : début =========================================================================
+\NewDocumentEnvironment{boiteombre}{ s O{black} }
+{%begin code
+  \par\noindent
+  \IfBooleanTF{#1}{\newcommand*{\FrameColor}{#2!10!white}}{\newcommand*{\FrameColor}{#2}}
+  \begin{tcolorbox}[notitle,colback=#2!10!white,colframe=\FrameColor,sharp corners=all,
+    enhanced,fuzzy shadow={2mm}{-1mm}{0mm}{0.4mm}{black!50!white},
+    height from=12mm to 25cm,valign=center]
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+\ExplSyntaxOn
+\cs_new:cpn {boiteombre*} {\boiteombre*}
+\cs_new_eq:cN {endboiteombre*} \endboiteombre
+\ExplSyntaxOff
+% ======================================== boiteombre : fin =========================================================================
+%
+% ======================================== boitetitre : début =========================================================================
+\NewDocumentEnvironment{boitetitre}{ m O{black} }
+{%begin code
+  \par\noindent
+  \begin{tcolorbox}[title={#1},halign title=center,,colback=#2!10!white,colframe={#2!50},sharp corners=all,
+    enhanced,fuzzy shadow={2mm}{-1mm}{0mm}{0.4mm}{black!50!white},toptitle=2mm,bottomtitle=2mm,top=0pt,before skip=-10pt,after skip=10pt]
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+% ======================================== boitetitre : fin =========================================================================
+%
+% ======================================== progcalcul : début =========================================================================
+\newcounter{progcalcul}
+\NewDocumentEnvironment{progcalcul}{ s o }
+{%begin code
+  \par\noindent
+  \refstepcounter{progcalcul}%
+  \IfBooleanTF{#1}{\newcommand*{\counterprogcalcul}{}}{\newcommand*{\counterprogcalcul}{\no{\theprogcalcul}}}
+  \begin{tcolorbox}[title={Programme \counterprogcalcul},colback=colorPrim!10!white,colframe=colorPrim!10!white,sharp corners=all,
+  fontupper={\ttfamily},fonttitle={\color{black}\bfseries},colbacktitle=colorPrim!20!white,toptitle=2mm,bottomtitle=2mm,top=0pt,before skip=-10pt,after skip=10pt]
+  \begin{itemize}
+}
+{%end code
+  \end{itemize}
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+\ExplSyntaxOn
+\cs_new:cpn {progcalcul*} {\progcalcul*}
+\cs_new_eq:cN {endprogcalcul*} \endprogcalcul
+\ExplSyntaxOff
+% ======================================== progcalcul : fin =========================================================================
+%
+%==============================================================================
+%                                 Commandes
+%==============================================================================
+% commandes pour surligner dans un environnement maths
+\NewDocumentCommand{\Mhl}{ O{yellow} m }{
+  \colorbox{#1}{$#2$}
+}
+% commande pour produire un texte avec un qrcode à côté.
+\NewDocumentCommand{\ConsigneQRCode}{ O{15mm} m m }%
+{
+  \qrset{link,height=#1}
+  \begin{tblr}{width={\linewidth},colspec={Q[l,m]Q[t,1em]Q[l,m]},rowsep=0pt,colsep=0pt}
+    \qrcode{#3} & & {{{#2}}}
+  \end{tblr}
+}
+% caractère cerclé
+\NewDocumentCommand{\Circled}{ O{colorPrim} O{white} m }%
+{\tikz[baseline=(char.base)]{\node[shape=circle,fill={#1},inner sep=2pt,text={#2},font=\bfseries] (char) {#3};}}
+% caractère euro
+\DeclareSIUnit{\SIEuro}{\text{\euro}}
+\NewDocumentCommand{\Eu}{ m }{\qty{#1}{\SIEuro}}

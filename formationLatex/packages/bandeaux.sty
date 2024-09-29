@@ -1,0 +1,156 @@
+% author : sylcha
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : positionnement des éléments de titres dans les marges
+\ProvidesPackage{bandeaux}%
+\RequirePackage{nopageno}%
+\RequirePackage{background}%
+\RequirePackage{ifoddpage}%
+\RequirePackage{tikzpagenodes}%
+% options 
+\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
+\newcommand{\TypeTitle}{SE SOUVENIR}%
+\newcommand{\TypeIcon}{\faBrain}%
+\DeclareVoidOption{exercices}{%
+  \renewcommand{\TypeTitle}{EXERCICES}%
+  \renewcommand{\TypeIcon}{\faPencil*}%
+}%
+\DeclareVoidOption{rappels}{%
+\renewcommand{\TypeTitle}{RAPPELS}%
+\renewcommand{\TypeIcon}{\faCompass}%
+}%
+\DeclareVoidOption{objectif}{%
+  \renewcommand{\TypeTitle}{OBJECTIF}%
+  \renewcommand{\TypeIcon}{\faBullseye}%
+}%
+\DeclareVoidOption{methode}{%
+  \renewcommand{\TypeTitle}{MÉTHODE}%
+  \renewcommand{\TypeIcon}{\faCogs}%
+}%
+\DeclareVoidOption{formative}{%
+  \renewcommand{\TypeTitle}{SE PRÉPARER}%
+  \renewcommand{\TypeIcon}{\faDumbbell}%
+}%
+\DeclareVoidOption{finale}{%
+\renewcommand{\TypeTitle}{SE TESTER}%
+\renewcommand{\TypeIcon}{\faMedal}%
+}%
+\DeclareVoidOption{memoire}{%
+\renewcommand{\TypeTitle}{MÉMORISER}%
+\renewcommand{\TypeIcon}{\faBrain}%
+}%
+\DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown '\CurrentOption'}}%
+\DeclareStringOption[SIXIÈME]{niveau}%
+\DeclareStringOption[colorPrim]{couleur}%
+\DeclareStringOption[Mon Thème]{theme}%
+\DeclareStringOption[1]{opacite}%
+\DeclareBoolOption[false]{top}%
+\DeclareBoolOption[false]{nobackground}%
+\DeclareBoolOption[false]{nopagenumber}%
+\ProcessKeyvalOptions*%
+\ifbandeaux@nobackground%
+  \backgroundsetup{%
+  scale=1,%
+  opacity=1,%
+  angle=0,%
+  contents={%
+  \begin{tikzpicture}[remember picture,overlay]%
+    \node[DarkGray] at (current page footer area) {%
+      \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
+      };%
+  \end{tikzpicture}%
+  }}%
+ 
+\AtBeginDocument{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Add a rounded rectangle frame
+    \draw[line width=1pt, rounded corners=5pt] 
+      ([xshift=5mm,yshift=-5mm]current page.north west) 
+      rectangle 
+      ([xshift=-5mm,yshift=-25mm]current page.north east);
+
+    % Fill the background of the bandeau
+    %\fill[LightGray!30, rounded corners=5pt] 
+    %  ([xshift=5mm,yshift=-5mm]current page.north west) 
+    %  rectangle 
+    %  ([xshift=-5mm,yshift=-25mm]current page.north east);
+
+    % Icon
+    \node[rectangle,minimum height=1cm,minimum width=2cm,fill=\bandeaux@couleur,text=white] 
+      (symbole) at ([xshift=15mm, yshift=-10mm]current page.north west) {\large \TypeIcon};
+
+    % Title
+    \node[below=2mm of symbole, anchor=north] (type) {\titlefont \TypeTitle};
+
+    % Level
+    \node[right=15mm of symbole.south east,anchor=west] (niveau) {\large \bandeaux@niveau};
+
+    % Theme
+    \node[right=20mm of niveau.base east,anchor=base west] (theme) {\large\cursivefont \bandeaux@theme};
+
+    % Black circle
+    \node[minimum width=10pt, minimum height=10pt,draw=black,circle,anchor=south] 
+      (mark) at ($(niveau.base east)!0.5!(theme.base west)$) {};
+
+    % Page number at the bottom
+    \node[DarkGray] at (current page footer area) {%
+      \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
+    };
+  \end{tikzpicture}%
+  \vspace{10mm}\par%
+}
+\else%
+  \backgroundsetup{%
+      scale=1,%
+      opacity=\bandeaux@opacite,%
+      angle=0,%
+      color=black,%
+      contents={%
+      \ifbandeaux@top%
+        % titre en haut de la page
+        \checkoddpage%
+          \ifoddpage%
+            \begin{tikzpicture}[remember picture,overlay]%
+              \node[DarkGray] at (current page footer area) {%
+                \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
+              };%
+              \fill[LightGray!30] (current page.north west) rectangle ([yshift=-30mm]current page.north east);%
+              \node[rectangle,minimum height=2cm,minimum width=2cm,fill=\bandeaux@couleur,text=white] (symbole) at ([xshift=15mm,yshift=-15mm]current page.north west) {\huge \TypeIcon};%
+              \node[right=2mm of symbole, anchor=north,rotate=90] (type) {\titlefont \TypeTitle};%
+              \node[right=15mm of type.south,anchor=west] (niveau) {\huge \bandeaux@niveau};%
+              \node[right=20mm of niveau.base east,anchor=base west] (theme) {\large\cursivefont \bandeaux@theme};%
+              \node[minimum width=10pt, minimum height=10pt,fill=black,circle,anchor=south] (mark) at ($(niveau.base east)!0.5!(theme.base west)$) {};%
+            \end{tikzpicture}%
+          \else%
+            \begin{tikzpicture}[remember picture,overlay]%
+              \node[DarkGray] at (current page footer area) {%
+                \ifbackground@nopagenumber{}\else{\condensedfont \thepage}%
+              };%
+            \end{tikzpicture}%
+          \fi%
+      \else%
+        % titre sur le côté de la page
+        \checkoddpage%
+        \ifoddpage%
+          \begin{tikzpicture}[remember picture,overlay]%
+            \fill[LightGray!30] (current page.north west) rectangle ([xshift=25mm]current page.south west);%
+            \node[white] at ([xshift=12.5mm,yshift=15mm]current page.south west) {%
+              \ifbandeaux@nopagenumber{}\else{\fontsize{32pt}{36pt}\condensedfont \thepage}\fi%
+              };%
+            \node[rectangle,minimum height=2cm,minimum width=2cm,fill=\bandeaux@couleur,text=white] (symbole) at ([xshift=12.5mm,yshift=-15mm]current page.north west) {\huge \TypeIcon};%
+            \node[below=2mm of symbole, anchor=north] (type) {\titlefont \TypeTitle};%
+            \node[below=15mm of type.south,rotate=90,anchor=east] (theme) {\large\cursivefont \bandeaux@theme};%
+            \node[minimum width=10pt, minimum height=10pt,fill=black,below=8mm of theme.west,circle] (mark) {};%
+            \node[below=8mm of mark.south,rotate=90,anchor=east] (niveau) {\huge \bandeaux@niveau };%
+          \end{tikzpicture}%
+        \else%
+          \begin{tikzpicture}[remember picture,overlay]%
+            \node[LightGray,font=\huge] at ([xshift=-15mm,yshift=15mm]current page.south east) {%
+              \ifbandeaux@nopagenumber{}\else{\fontsize{32pt}{36pt}\condensedfont \thepage}\fi%
+            };%
+          \end{tikzpicture}%
+        \fi%
+      \fi%
+      }%
+  }%
+\fi%

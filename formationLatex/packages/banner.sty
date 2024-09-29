@@ -1,0 +1,90 @@
+% author : sylcha
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : générer un bandeau pour une fiche d'exercices par exemple
+\ProvidesPackage{banner}[2024/08/18 v0.1]%
+\RequirePackage{tikzpagenodes}%
+% options 
+\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
+\newcommand{\TypeTitle}{SE SOUVENIR}%
+\newcommand{\TypeIcon}{\faBrain}%
+\DeclareVoidOption{exercices}{%
+  \renewcommand{\TypeTitle}{EXERCICES}%
+  \renewcommand{\TypeIcon}{\faPencil*}%
+}%
+\DeclareVoidOption{objectif}{%
+  \renewcommand{\TypeTitle}{OBJECTIF}%
+  \renewcommand{\TypeIcon}{\faBullseye}%
+}%
+\DeclareVoidOption{methode}{%
+  \renewcommand{\TypeTitle}{MÉTHODE}%
+  \renewcommand{\TypeIcon}{\faCogs}%
+}%
+\DeclareVoidOption{formative}{%
+  \renewcommand{\TypeTitle}{SE PRÉPARER}%
+  \renewcommand{\TypeIcon}{\faDumbbell}%
+}%
+\DeclareVoidOption{finale}{%
+  \renewcommand{\TypeTitle}{SE TESTER}%
+  \renewcommand{\TypeIcon}{\faEdit[regular]}%
+}%
+\DeclareVoidOption{memoire}{%
+  \renewcommand{\TypeTitle}{MÉMORISER}%
+  \renewcommand{\TypeIcon}{\faBrain}%
+}%
+\DeclareVoidOption{lecon}{%
+  \renewcommand{\TypeTitle}{LEÇON}%
+  \renewcommand{\TypeIcon}{\faBook}%
+}%
+\DeclareVoidOption{rappels}{%
+  \renewcommand{\TypeTitle}{RAPPELS}%
+  \renewcommand{\TypeIcon}{\faCompass}%
+}%
+\DeclareVoidOption{activite}{%
+  \renewcommand{\TypeTitle}{ACTIVITÉ}%
+  \renewcommand{\TypeIcon}{\faCubes}%
+}%
+\DeclareVoidOption{numerique}{%
+  \renewcommand{\TypeTitle}{NUMÉRIQUE}%
+  \renewcommand{\TypeIcon}{\faLaptopCode}%
+}
+\DeclareDefaultOption{\PackageWarning{banner}{Unknown '\CurrentOption'}}%
+\DeclareStringOption[1a]{numfeuille}%
+\DeclareStringOption[SIXIÈME]{niveau}%
+\DeclareStringOption[colorPrim]{couleur}%
+\DeclareStringOption[Mon Thème]{theme}%
+\DeclareBoolOption{evaluation}%
+\ProcessKeyvalOptions*%
+\RequirePackage{tikz-page}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
+% \AtBeginDocument{%
+% \begin{tikzpicture}[remember picture,overlay]%
+%   % \node[LightGray] at (current page footer area) {\fontsize{32pt}{36pt}\condensedfont \thepage};%
+%   \fill[LightGray!30] (current page.north west) rectangle ([yshift=-20mm]current page.north east) coordinate (cadreSE);%
+%   \node[rectangle,minimum height=2cm,minimum width=2.3cm,text width=2cm,inner sep=2pt,fill=\banner@couleur,text=white,align=right] (numfeuille) at ([xshift=15mm,yshift=-10mm]current page.north west) {\titlefont\fontsize{36pt}{36pt}\selectfont \banner@numfeuille};%
+%   % \node[right=2mm of numfeuille, anchor=north,rotate=90] (niveau) {\titlefont \banner@niveau};%
+%   \node[text=white,rotate=90] at ([xshift=3mm]numfeuille.west) {\lightfont\banner@niveau};
+%   \coordinate (cadreE) at ($(current page.north east)!0.5!(cadreSE)$);
+%   \coordinate (theme) at ($(numfeuille.east)!0.5!(cadreE)$);
+%   \node at (theme) {\lightfont\Huge \banner@theme};%
+%   % \node[right=15mm of numfeuille.east,anchor=west] (niveau) {\condensedfont\huge \banner@niveau};%
+%   % \node[right=20mm of niveau.base east,anchor=base west] (theme) {\lightfont\Huge \banner@theme};%
+%   % \node[minimum width=7pt, minimum height=7pt,fill=black,circle,anchor=south] (mark) at ($(niveau.base east)!0.5!(theme.base west)$) {};%
+% \end{tikzpicture}%
+% \vspace{10mm}\par%
+% }%
+\newcommand{\tikzpagelayout}{
+  % banner
+  \fill[LightGray!60] ([yshift=5mm]page.left north) rectangle ([yshift=25mm]page.right north) coordinate (cadreSE);%
+  \node[rectangle,minimum height=2cm,minimum width=2cm,text width=2cm,inner sep=2pt,fill=\banner@couleur,text=white,align=center] (icone) at ([xshift=18mm,yshift=15mm]page.left north) {\titlefont\fontsize{36pt}{36pt}\selectfont \TypeIcon};%
+  \node[text=Gray,inner sep=0pt,anchor=west] (numfeuille) at ([xshift=3mm]icone.east) {\titlefont\fontsize{36pt}{36pt}\selectfont \banner@numfeuille};
+  \node[text=black,rotate=90] at ([xshift=-3mm]icone.west) {\lightfont\banner@niveau};
+  \coordinate (cadreE) at ($(page.left north)!0.5!(cadreSE)$);
+  \coordinate (theme) at ($(numfeuille.east)!0.5!([yshift=15mm]page.right north)$);
+  \node at (theme) {\lightfont\Huge \banner@theme};%
+  % page number
+  \node [outer sep=0,inner sep=0,anchor=base] at ([yshift=-5mm]page.footer center) {\color{Silver}\thepage};
+}
+\renewcommand\headrulewidth{0pt}
+\pagestyle{plain}

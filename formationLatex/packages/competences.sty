@@ -1,0 +1,62 @@
+% author : sylcha
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : commandes pour afficher des compétences dans la marge
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{competences}[2023/08/01 v0.1]%
+\RequirePackage{ProfCollege}%
+\RequirePackage{xparse}
+\RequirePackage{xspace}
+\RequirePackage{tikzpagenodes}
+\newcounter{competenceCounter}
+\setcounter{competenceCounter}{0}
+\NewDocumentCommand{\competence}{ m }{%
+  \stepcounter{competenceCounter}
+  \tikz[remember picture,overlay]{%
+    \node (c\the\value{competenceCounter}) {};
+  }
+  \begin{tikzpicture}[remember picture,overlay]
+    \coordinate (competenceAnchor\the\value{competenceCounter}) at ([xshift=-3mm]$(current page text area.north west)!(c\the\value{competenceCounter})!(current page text area.south west)$);
+    % \fill[Crimson] (competenceAnchor\the\value{competenceCounter}) circle (1pt);
+    \node[anchor=south east,%
+      above left=0mm of competenceAnchor\the\value{competenceCounter},%
+      text width=25mm,%
+      align=right,%
+      inner sep=0pt,%
+      font=\tiny\linespread{0.1}\selectfont\ttfamily,%
+      black!40] {#1};
+    \coordinate (g) at ($(competenceAnchor\the\value{competenceCounter})+(0,-0.2)$);
+    \draw[black!40,thin] (g) rectangle ++(-16mm,-4mm);
+    \foreach \x in {4mm,8mm,12mm}
+      \draw[black!40,thin] ($(g)+(-\x,0)$) -- ($(g)+(-\x,-4mm)$);
+  \end{tikzpicture}
+}
+\NewDocumentCommand{\marginCompetence}{ m }{%
+  \stepcounter{competenceCounter}
+  \tikz[remember picture,overlay]{%
+    \node (c\the\value{competenceCounter}) {};
+  }
+  \begin{tikzpicture}[remember picture,overlay]
+    \coordinate (competenceAnchor\the\value{competenceCounter}) at ([xshift=-3mm]$(current page text area.north west)!(c\the\value{competenceCounter})!(current page text area.south west)$);
+    % \fill[Crimson] (competenceAnchor\the\value{competenceCounter}) circle (1pt);
+    \node[anchor=south east,%
+      above left=0mm of competenceAnchor\the\value{competenceCounter},%
+      text width=25mm,%
+      align=right,%
+      inner sep=0pt,%
+      font=\tiny\linespread{0.1}\selectfont\ttfamily,%
+      black!40] {\CompetenceDuReferentiel{#1}};
+    \coordinate (g) at ($(competenceAnchor\the\value{competenceCounter})+(0,-0.2)$);
+    \draw[black!40,thin] (g) rectangle ++(-16mm,-4mm);
+    \foreach \x in {4mm,8mm,12mm}
+      \draw[black!40,thin] ($(g)+(-\x,0)$) -- ($(g)+(-\x,-4mm)$);
+  \end{tikzpicture}
+}
+% ======================================================================================================
+%  AUtomatisation des compétences
+% pour l'accès aux compétences
+% le fichier `referentielsCompetences.lua` doit être dans ~/textmf/scripts/lualatex/
+%\directlua{competences = require("referentielsCompetences")}
+%\NewDocumentCommand{\CompetenceDuReferentiel}{ m }{%
+%  \directlua{competences.print("\luaescapestring{\unexpanded{#1}}")}
+%}

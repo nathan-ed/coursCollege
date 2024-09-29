@@ -1,0 +1,54 @@
+\providecommand\numberofexercises{}
+\providecommand\numberofexocourss{}
+\providecommand\numberofexofiches{}
+\XSIM{solution-body}{exofiche-1=={\input {exo01-sol}}}
+\XSIM{exercise-body}{exofiche-1=={\IfStrEq {\TheSource }{}{}{\SetSource {\TheSource }} \IfStrEq {\TheDifficulty }{}{}{\SetDifficulty {\TheDifficulty }} \input {exo01}}||exofiche-2=={\IfStrEq {\TheSource }{}{}{\SetSource {\TheSource }} \IfStrEq {\TheDifficulty }{}{}{\SetDifficulty {\TheDifficulty }} \input {exo02}}||exofiche-3=={\IfStrEq {\TheSource }{}{}{\SetSource {\TheSource }} \IfStrEq {\TheDifficulty }{}{}{\SetDifficulty {\TheDifficulty }} \input {exo03}}}
+\XSIM{goal}{exercise}{points}{0}
+\XSIM{goal}{exocours}{points}{0}
+\XSIM{goal}{exofiche}{points}{0}
+\XSIM{totalgoal}{points}{0}
+\XSIM{goal}{exercise}{bonus-points}{0}
+\XSIM{goal}{exocours}{bonus-points}{0}
+\XSIM{goal}{exofiche}{bonus-points}{0}
+\XSIM{totalgoal}{bonus-points}{0}
+\XSIM{order}{1||2||3}
+\XSIM{use}{}
+\XSIM{use!}{}
+\XSIM{used}{exofiche-1=={true}||exofiche-2=={true}||exofiche-3=={true}}
+\XSIM{print}{}
+\XSIM{print!}{}
+\XSIM{printed}{exofiche-1=={true}||exofiche-2=={true}||exofiche-3=={true}}
+\XSIM{total-number}{0}
+\XSIM{exercise}{0}
+\XSIM{exocours}{0}
+\XSIM{exofiche}{0}
+\XSIM{types}{exercise||exocours||exofiche}
+\XSIM{idtypes}{1=={exofiche}||2=={exofiche}||3=={exofiche}}
+\XSIM{collections}{exofiche-1=={all exercises}||exofiche-2=={all exercises}||exofiche-3=={all exercises}}
+\XSIM{collection:all exercises}{exofiche-1||exofiche-2||exofiche-3}
+\setcounter{totalexerciseinall exercises}{0}
+\setcounter{totalexocoursinall exercises}{0}
+\setcounter{totalexoficheinall exercises}{0}
+\XSIM{id}{exofiche-1=={1}||exofiche-2=={2}||exofiche-3=={3}}
+\XSIM{ID}{exofiche-1=={1}||exofiche-2=={2}||exofiche-3=={3}}
+\XSIM{counter}{exofiche-1=={1}||exofiche-2=={2}||exofiche-3=={3}}
+\XSIM{counter-value}{exofiche-1=={1}||exofiche-2=={2}||exofiche-3=={3}}
+\XSIM{solution}{}
+\XSIM{chapter-value}{}
+\XSIM{chapter}{}
+\XSIM{section-value}{exofiche-1=={0}||exofiche-2=={0}||exofiche-3=={0}}
+\XSIM{section}{exofiche-1=={0}||exofiche-2=={0}||exofiche-3=={0}}
+\XSIM{sectioning}{exofiche-1=={{0}{0}{0}{0}{0}}||exofiche-2=={{0}{0}{0}{0}{0}}||exofiche-3=={{0}{0}{0}{0}{0}}}
+\XSIM{subtitle}{}
+\XSIM{points}{exofiche-1=={0}||exofiche-2=={0}||exofiche-3=={0}}
+\XSIM{bonus-points}{}
+\XSIM{page-value}{exofiche-1=={1}||exofiche-2=={1}||exofiche-3=={1}}
+\XSIM{page}{exofiche-1=={1}||exofiche-2=={1}||exofiche-3=={1}}
+\XSIM{tags}{}
+\XSIM{topics}{}
+\XSIM{userpoints}{exofiche-1=={\ThePoints }||exofiche-2=={\ThePoints }||exofiche-3=={\ThePoints }}
+\XSIM{bodypoints}{}
+\XSIM{userbonus-points}{}
+\XSIM{bodybonus-points}{}
+\XSIM{difficulty}{}
+\XSIM{source}{}
