@@ -85,16 +85,7 @@
 
 \RequirePackage{tasks}
 
-\settasks{
-  % the next two should be set to the same value so labels are aligned to the
-  % left
-  label-width = 2em ,
-  item-indent = 2em ,
-  before-skip = -\parskip , % undo paragraph skip
-  after-skip = -\parskip , % undo paragraph skip
-  label-offset=-0.5em,
-  after-item-skip = 0.2em % undo paragraph skip
-}
+
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 %\pagestyle{fancy}    
@@ -157,13 +148,11 @@
 \setlist*[inlineumerate]{before=\vspace{6pt}, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
 
 \settasks{
-  % the next two should be set to the same value so labels are aligned to the
-  % left
-  label-width = 2em ,
-  item-indent = 2em ,
+  %label-width = 1em ,
+  %item-indent = 1em ,
   before-skip = 0.5em , % undo paragraph skip
   after-skip = 0.5em , % undo paragraph skip
-  label-offset=0em,
+ % label-offset=-0.5em,
   after-item-skip = 1em % undo paragraph skip
 }
 

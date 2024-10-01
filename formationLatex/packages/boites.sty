@@ -18,120 +18,58 @@
 %              Environnements
 %
 %=============================================
-% environnement pour les exercices
-\tikzset{boxed/.style={%
-  fill=colorPrim,
-  text=white,
-  inner sep=3pt,
-  anchor=base,
-  font={\large\bfseries},
-  minimum height=4ex,
-  minimum width=2em,
-}}
-\newcounter{exo}
-% \newenvironment{exo}[1][]
-% {% begin code
-%   \par\noindent%
-%   \refstepcounter{exo}%
-%   \begin{tcolorbox}[colback=white,colframe=white,arc=0pt,boxrule=0mm,notitle,left=0pt,right=0pt,boxsep=0pt,top=0pt,bottom=0pt]
-%   \if\relax\detokenize{#1}\relax
-%     \tikz[baseline,remember picture,overlay]{\node[boxed] (numero) {\theexo};}\quad
-%   \else
-%     \tikz[baseline,remember picture,overlay]{\node[boxed] (numero) {\theexo};} -- \textcolor{colorPrim}{\large\bfseries #1}
-%   \fi
-%   \tikz[remember picture,overlay] {\node[left=5mm of numero.west,anchor=east] {2pts};}
-% }%
-% {% end code
-%   \end{tcolorbox}
-%   \par%
-%   \noindent\ignorespacesafterend%
-% }
-% ======================================== exo : début =========================================================================
-\NewDocumentEnvironment{exo}{ o o o }
-{%begin code
-\par\noindent%
-\refstepcounter{exo}%
-\begin{tcolorbox}[colback=white,colframe=white,arc=0pt,boxrule=0mm,notitle,left=0pt,right=0pt,boxsep=0pt,top=0pt,bottom=0pt]
-\IfNoValueTF{#3}
-  {\tikz[baseline={([yshift=-0.5ex]current bounding box.south)},remember picture,overlay]{\node[boxed] (numero) {\theexo};}\quad}
-  {\tikz[baseline={([yshift=-0.5ex]current bounding box.south)},remember picture,overlay]{\node[boxed] (numero) {\theexo};} \qquad \textcolor{colorPrim}{\large\bfseries #3}}
-\IfNoValueTF{#1}
-  {}{\tikz[remember picture,overlay] {\node[left=3mm of numero.west,anchor=east,inner sep=0pt,text=black!50] {\small#1};}}
-\IfNoValueTF{#2}
-  {}{\tikz[remember picture,overlay] {\node[below left=3mm of numero.south west,anchor=north east,inner sep=0pt,text=black!50,yshift=-2mm] {\small\marginCompetence{#2}};}}
+
+\tikzset{
+  boxed/.style={
+    draw=black,
+    circle,
+    fill=white,
+    text=black,
+    inner sep=1pt,
+    outer sep=0pt,
+    anchor=center,
+    font={\large\bfseries},
+    minimum size=1.5em,
+  }
 }
-{%end code
+\newcounter{exo}
+
+% ======================================== exo : début =========================================================================
+
+\NewDocumentEnvironment{exo}{O{0}}
+{%
+  \par\vspace{1ex}\noindent%
+  \refstepcounter{exo}%
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=white,
+    arc=0pt,
+    boxrule=0mm,
+    notitle,
+    left=0pt,
+    right=0pt,
+    boxsep=0pt,
+    top=0pt,
+    bottom=0pt,
+    before=\vspace{-\baselineskip},
+  ]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt,inner sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm] (numero) {\theexo}; % Ensure `draw` is included
+  \end{tikzpicture}%
+  \hspace*{0.7cm}%
+  \ifnum#1>0
+    \foreach \i in {1,...,#1}{%
+      \faPepperHot\,
+    }%
+  \fi
+}
+{%
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend%
-}
-% ======================================== exo : fin =========================================================================
+}% ======================================== exo : fin =========================================================================
 %
-% ======================================== propriété : début =========================================================================
 
-\newcounter{propriete}
-
-\NewDocumentEnvironment{propriete}{ s o O{Propriété} O{black} }
-{%
-    \noindent
-    \refstepcounter{propriete}%
-    \IfBooleanTF{#1}{\def\counterpropriete{}}{\def\counterpropriete{\thepropriete}}
-    
-    % Check if the second optional argument is provided
-    \IfNoValueTF{#2}
-        {\def\boxtitle{#3 \counterpropriete}}
-        {\def\boxtitle{#3 \counterpropriete{} \textnormal{(#2)}}} % Fixed formatting of #2
-    
-    \begin{tcolorbox}[
-        enhanced,
-        colback=white,
-        colframe=#4, % Ensure #4 is passed correctly
-        fonttitle=\bfseries,
-        title={\textcolor{black}{\strut\boxtitle}}, % Ensure boxtitle is set properly
-        attach title to upper,
-        sharp corners,
-        top=1ex, % Adjust this value for more space above the text
-        bottom=0.5ex,
-        left=1ex,
-        right=1ex,
-        boxrule=0.4pt,
-        after title={\hspace{5pt}} % Add space after the title
-    ]
-}
-{%
-    \end{tcolorbox}
-    \ignorespacesafterend
-}
-
-% Optional: Define end environment for starred version
-\ExplSyntaxOn
-\cs_new:cpn {propriete*} {\propriete*}
-\cs_new_eq:cN {endpropriete*} \endpropriete
-\ExplSyntaxOff% ======================================== propriete : fin =========================================================================
-% 
-% ======================================== definition : début =========================================================================
-\newcounter{definition}
-\NewDocumentEnvironment{definition}{ s o O{Définition} O{colorPrim} }
-{% begin code
-  \par\noindent
-  \refstepcounter{definition}%
-  \IfBooleanTF{#1}{\newcommand*{\counterdefinition}{}}{\newcommand*{\counterdefinition}{\thedefinition}}
-  \IfNoValueTF {#2}
-      {\newcommand*{\boxtitle}{#3 \counterdefinition{}}}
-      {\newcommand*{\boxtitle}{#3 \counterdefinition{} #2}}
-  \begin{tcolorbox}[colback=#4!10!white,colframe=#4,title=\boxtitle,fonttitle=\bfseries,sharp corners=all,before skip=0pt]
-}
-{% end code
-  \end{tcolorbox}
-  \par%
-  \noindent\ignorespacesafterend
-}
-\ExplSyntaxOn
-\cs_new:cpn {definition*} {\definition*}
-\cs_new_eq:cN {enddefinition*} \enddefinition
-\ExplSyntaxOff
-% ======================================== definition : fin =========================================================================
-%
 % ======================================== attention : début =========================================================================
 \newcounter{attention}
 \NewDocumentEnvironment{attention}{ s o O{Attention !} }
@@ -256,26 +194,7 @@
 
 
 % ======================================== boiteicon : fin =========================================================================
-%
-% ======================================== boiteombre : début =========================================================================
-\NewDocumentEnvironment{boiteombre}{ s O{black} }
-{%begin code
-  \par\noindent
-  \IfBooleanTF{#1}{\newcommand*{\FrameColor}{#2!10!white}}{\newcommand*{\FrameColor}{#2}}
-  \begin{tcolorbox}[notitle,colback=#2!10!white,colframe=\FrameColor,sharp corners=all,
-    enhanced,fuzzy shadow={2mm}{-1mm}{0mm}{0.4mm}{black!50!white},
-    height from=12mm to 25cm,valign=center]
-}
-{%end code
-  \end{tcolorbox}
-  \par%
-  \noindent\ignorespacesafterend
-}
-\ExplSyntaxOn
-\cs_new:cpn {boiteombre*} {\boiteombre*}
-\cs_new_eq:cN {endboiteombre*} \endboiteombre
-\ExplSyntaxOff
-% ======================================== boiteombre : fin =========================================================================
+
 %
 % ======================================== boitetitre : début =========================================================================
 \NewDocumentEnvironment{boitetitre}{ m O{black} }
@@ -290,30 +209,7 @@
   \noindent\ignorespacesafterend
 }
 % ======================================== boitetitre : fin =========================================================================
-%
-% ======================================== progcalcul : début =========================================================================
-\newcounter{progcalcul}
-\NewDocumentEnvironment{progcalcul}{ s o }
-{%begin code
-  \par\noindent
-  \refstepcounter{progcalcul}%
-  \IfBooleanTF{#1}{\newcommand*{\counterprogcalcul}{}}{\newcommand*{\counterprogcalcul}{\no{\theprogcalcul}}}
-  \begin{tcolorbox}[title={Programme \counterprogcalcul},colback=colorPrim!10!white,colframe=colorPrim!10!white,sharp corners=all,
-  fontupper={\ttfamily},fonttitle={\color{black}\bfseries},colbacktitle=colorPrim!20!white,toptitle=2mm,bottomtitle=2mm,top=0pt,before skip=-10pt,after skip=10pt]
-  \begin{itemize}
-}
-{%end code
-  \end{itemize}
-  \end{tcolorbox}
-  \par%
-  \noindent\ignorespacesafterend
-}
-\ExplSyntaxOn
-\cs_new:cpn {progcalcul*} {\progcalcul*}
-\cs_new_eq:cN {endprogcalcul*} \endprogcalcul
-\ExplSyntaxOff
-% ======================================== progcalcul : fin =========================================================================
-%
+
 %==============================================================================
 %                                 Commandes
 %==============================================================================
@@ -335,4 +231,5 @@
 % caractère euro
 \DeclareSIUnit{\SIEuro}{\text{\euro}}
 \NewDocumentCommand{\Eu}{ m }{\qty{#1}{\SIEuro}}
+
 

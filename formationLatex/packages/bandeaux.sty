@@ -23,7 +23,7 @@
   \renewcommand{\TypeTitle}{OBJECTIF}%
   \renewcommand{\TypeIcon}{\faBullseye}%
 }%
-\DeclareVoidOption{methode}{%
+\DeclareVoidOption{fiche}{%
   \renewcommand{\TypeTitle}{FICHE N°}%
   \renewcommand{\TypeIcon}{\faCogs}%
 }%
@@ -58,17 +58,17 @@
   angle=0,%
   contents={%
   \begin{tikzpicture}[remember picture,overlay]%
+    \node[DarkGray, anchor=west] at (current page footer area.west) {%
+    \bandeaux@annee};
+  \node[DarkGray, anchor=east] at (current page footer area.east) {%
+	\hfill \bandeaux@auteur};%
     \node[DarkGray] at (current page footer area) {%
-	    \ifbandeaux@nopagenumber{}\else{\bandeaux@annee \hspace{8cm} \hspace{8cm} \bandeaux@auteur}\fi%
-      };%
-    \node[DarkGray] at (current page footer area) {%
-	   \thepage/\pageref{LastPage}
+	    \ifbandeaux@nopagenumber{}\else{\thepage/\pageref{LastPage}}\fi
     };%
   \end{tikzpicture}%
   }}%
  
 \AtBeginDocument{%
-
 \begin{tikzpicture}[remember picture,overlay]
     % Add a rounded rectangle frame
     \draw[line width=1pt, rounded corners=5pt] 
@@ -87,49 +87,7 @@
     % Theme (centered in the box)
     \node[anchor=center] (theme) at ([yshift=-13mm]current page.north) 
       {\Large \bandeaux@theme};
-
-    % Page number at the bottom
-    %\node[DarkGray] at (current page footer area) {%
-     % \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
-    %};
 \end{tikzpicture}
-%  \begin{tikzpicture}[remember picture,overlay]
-%    % Add a rounded rectangle frame
-%    \draw[line width=1pt, rounded corners=5pt] 
-%      ([xshift=5mm,yshift=-5mm]current page.north west) 
-%      rectangle 
-%      ([xshift=-5mm,yshift=-23mm]current page.north east);
-%
-%    % Fill the background of the bandeau
-%    %\fill[LightGray!30, rounded corners=5pt] 
-%    %  ([xshift=5mm,yshift=-5mm]current page.north west) 
-%    %  rectangle 
-%    %  ([xshift=-5mm,yshift=-25mm]current page.north east);
-%
-%    % Icon
-%    \node[rectangle,  rounded corners=5pt,minimum height=1cm,minimum width=2cm,fill=white,text=black] 
-%    %  (symbole) at ([xshift=15.2mm, yshift=-10.2mm]current page.north west) {\large \TypeIcon};
-%      (symbole) at ([xshift=15.2mm, yshift=-10.2mm]current page.north west) {\large \bandeaux@niveau};
-%
-%    % Title
-%      \node[below=1mm of symbole.south west, anchor=north west, inner sep=2pt, outer sep=0pt] (type) {\titlefont \TypeTitle \bandeaux@nfiche};
-%
-%    % Level
-%    %\node[right=10mm of symbole.south east,anchor=west] (niveau) {\large \bandeaux@niveau};
-%
-%    % Theme
-%    \node[right=20mm of symbole.base east,anchor=base west] (theme) {\large\cursivefont \bandeaux@theme};
-%
-%    % Black circle
-%   % \node[minimum width=10pt, minimum height=10pt,draw=black,circle,anchor=south] 
-%    %  (mark) at ($(niveau.base east)!0.5!(theme.base west)$) {};
-%
-%    % Page number at the bottom
-%    \node[DarkGray] at (current page footer area) {%
-%      \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
-%    };
-%  \end{tikzpicture}%
-  %\vspace{5mm}
   \par%
 }
 \else%
