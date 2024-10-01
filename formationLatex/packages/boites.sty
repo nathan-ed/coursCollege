@@ -68,27 +68,46 @@
 % ======================================== exo : fin =========================================================================
 %
 % ======================================== propriété : début =========================================================================
+
 \newcounter{propriete}
-\NewDocumentEnvironment{propriete}{ s o O{Propriété} O{colorTer} }
-{% begin code
-  \par\noindent
-  \refstepcounter{propriete}%
-  \IfBooleanTF{#1}{\newcommand*{\counterpropriete}{}}{\newcommand*{\counterpropriete}{\thepropriete}}
-  \IfNoValueTF {#2}
-      {\newcommand*{\boxtitle}{#3 \counterpropriete{}}}
-      {\newcommand*{\boxtitle}{#3 \counterpropriete{} #2}}
-  \begin{tcolorbox}[colback=#4!10,colframe=#4,title=\boxtitle,fonttitle=\bfseries,sharp corners=all,before skip=0pt]
+
+\NewDocumentEnvironment{propriete}{ s o O{Propriété} O{black} }
+{%
+    \noindent
+    \refstepcounter{propriete}%
+    \IfBooleanTF{#1}{\def\counterpropriete{}}{\def\counterpropriete{\thepropriete}}
+    
+    % Check if the second optional argument is provided
+    \IfNoValueTF{#2}
+        {\def\boxtitle{#3 \counterpropriete}}
+        {\def\boxtitle{#3 \counterpropriete{} \textnormal{(#2)}}} % Fixed formatting of #2
+    
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=#4, % Ensure #4 is passed correctly
+        fonttitle=\bfseries,
+        title={\textcolor{black}{\strut\boxtitle}}, % Ensure boxtitle is set properly
+        attach title to upper,
+        sharp corners,
+        top=1ex, % Adjust this value for more space above the text
+        bottom=0.5ex,
+        left=1ex,
+        right=1ex,
+        boxrule=0.4pt,
+        after title={\hspace{5pt}} % Add space after the title
+    ]
 }
-{% end code
-  \end{tcolorbox}
-  \par%
-  \noindent\ignorespacesafterend
+{%
+    \end{tcolorbox}
+    \ignorespacesafterend
 }
+
+% Optional: Define end environment for starred version
 \ExplSyntaxOn
 \cs_new:cpn {propriete*} {\propriete*}
 \cs_new_eq:cN {endpropriete*} \endpropriete
-\ExplSyntaxOff
-% ======================================== propriete : fin =========================================================================
+\ExplSyntaxOff% ======================================== propriete : fin =========================================================================
 % 
 % ======================================== definition : début =========================================================================
 \newcounter{definition}
@@ -143,16 +162,99 @@
   \IfNoValueTF {#2}
       {\newcommand*{\boxtitle}{Attention}}
       {\newcommand*{\boxtitle}{#2}}
-  \begin{tcolorbox}[colback=#1!10!white,colframe=#1,coltitle=#1,
-    detach title,before upper={\tcbtitle\quad},title=\boxtitle,fonttitle=\bfseries#4,sharp corners=all,
-    height from=12mm to 25cm,valign=center,leftrule=12mm,
-    enhanced,overlay={\node[anchor=center,text=white] at ([xshift=6mm,yshift=-6mm]frame.north west) {\Large  #3};}]
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=white,
+    coltitle=black, 
+    boxrule=0.4pt,
+    detach title,
+    before upper={\tcbtitle\quad},
+    title=\boxtitle,
+    fonttitle=\bfseries#4,
+    sharp corners=all,
+    height from=12mm to 25cm,
+    valign=center,
+    left=12mm,
+    enhanced,
+    overlay={
+      \fill[white] ([xshift=0.5pt,yshift=-0.5pt]frame.north west) rectangle ([xshift=11.9mm,yshift=-11.9mm]frame.north west);
+      \node[anchor=center,text=black] at ([xshift=6mm,yshift=-6mm]frame.north west) {\Large #3};
+    }
+  ]
 }
 {%end code
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend
 }
+
+
+
+\NewDocumentEnvironment{boiteEx}{}
+{%begin code
+  \par\noindent
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=black,
+    boxrule=0.4pt,
+    arc=5pt,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    height from=12mm to 25cm,
+    valign=center,
+    enhanced,
+    notitle
+  ]
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+
+\NewDocumentEnvironment{boiteExT}{ o }
+{%begin code
+	\vspace{5pt}
+	\par\noindent
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=black,
+    coltitle=black, 
+    boxrule=0.4pt,
+    arc=5pt,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    height from=12mm to 25cm,
+    fonttitle=\bfseries\centering,  % This line makes the title bold and centered
+    valign=center,
+    enhanced,
+    IfValueTF={#1}{
+      title={#1},
+      attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+      boxed title style={
+        size=small,
+        colback=white,
+        colframe=black,
+        boxrule=0.4pt,
+        arc=5pt
+      },
+      top=\tcboxedtitleheight
+    }{
+      notitle
+    }
+  ]
+}
+{%end code
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend
+}
+
+
 % ======================================== boiteicon : fin =========================================================================
 %
 % ======================================== boiteombre : début =========================================================================
@@ -233,3 +335,4 @@
 % caractère euro
 \DeclareSIUnit{\SIEuro}{\text{\euro}}
 \NewDocumentCommand{\Eu}{ m }{\qty{#1}{\SIEuro}}
+

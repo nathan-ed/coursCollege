@@ -15,7 +15,7 @@
 \DeclareStringOption[GFS Neohellenic Math]{math}%
 \DeclareStringOption[League Gothic]{condensed}%
 %\DeclareStringOption[Barlow Condensed Black]{title}%
-%\DeclareStringOption[Nickainley]{cursive}%
+\DeclareStringOption[Nickainley]{cursive}%
  \DeclareStringOption[Source Sans Pro Light]{light}%
 % pour les touches de la calculatrice Nuworks
 % voir pour l'installation ici : https://www.numworks.com/shared/pages/blog/numworks-keys-font/numworks-keys-font-351dbb06.zip
@@ -25,12 +25,11 @@
 \ProcessKeyvalOptions*%
 \setmainfont{\fontes@main}%
 \setmonofont{\fontes@mono}%
-\setmathfont{\fontes@math}[Scale=1.1]%[Scale=MatchLowercase]
+\setmathfont{\fontes@math}[Scale=1]%[Scale=MatchLowercase]
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
 %\newfontface{\titlefont}{\fontes@title}%
 \newfontface{\titlefont}{\fontes@light}%
-\newfontface{\cursivefont}{\fontes@light}[Scale=1.5]%
-%\newfontface{\cursivefont}{\fontes@cursive}[Scale=2]%
+\newfontface{\cursivefont}{\fontes@cursive}[Scale=1.7]%
 \newfontface{\condensedfont}{\fontes@condensed}%
 %\newfontface{\lightfont}{\fontes@light}%
 %\newfontface{\numworksregfont}{\fontes@nwr}%

@@ -42,7 +42,7 @@
 \RequirePackage{lscape}
 \RequirePackage[toc,page]{appendix}
 \RequirePackage{framed}
-%\RequirePackage{fontawesome5}
+%\RequirePackage{fontawesome}
 %\RequirePackage{bbding}
 \RequirePackage{color}
 \RequirePackage{pst-circ,pstricks-add}
@@ -143,7 +143,10 @@
 
 \setlist[enumerate,2]{label=\roman*)}
 
-\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=5pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm,  label=\alph*)}
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm, labelsep=0em, label=\alph*)}
+
+
+\setlist[description]{align=left,leftmargin=10pt, itemindent=0pt,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm,labelsep=0.5em,font=\normalfont\bfseries}
 
 \setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
 
@@ -157,10 +160,10 @@
   % the next two should be set to the same value so labels are aligned to the
   % left
   label-width = 2em ,
-  item-indent = 3em ,
+  item-indent = 2em ,
   before-skip = 0.5em , % undo paragraph skip
   after-skip = 0.5em , % undo paragraph skip
-  %label-offset=1em,
+  label-offset=0em,
   after-item-skip = 1em % undo paragraph skip
 }
 
@@ -180,4 +183,3 @@
 \newcommand{\boxt}[1]{\fbox{\parbox[c][8mm]{8mm}{\centering #1}}}
 \newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}} 
 \newcommand{\points}[1]{\makebox[#1cm]{\dotfill}} 
-
