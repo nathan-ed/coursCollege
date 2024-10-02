@@ -1,10 +1,3 @@
-%\renewcommand{\baselinestretch}{1.5}
-%\RequirePackage[utf8]{inputenc}
-%\RequirePackage[latin1]{inputenc}
-%\RequirePackage[french]{babel}
-
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage{arev}
 \RequirePackage{amsmath}
 \RequirePackage{varwidth}
 \RequirePackage{amsfonts}
@@ -13,14 +6,10 @@
 \setquotestyle{french}
 \RequirePackage{thmtools}
 \RequirePackage{afterpage}
-\newcommand{\bpage}{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
 \RequirePackage{interval}
+% Pour que le séparateur décimal dans les intervalles soit ; à la place de la ,
 \intervalconfig{separator symbol=;}
 \RequirePackage{multicol}
 \RequirePackage{multirow}
@@ -36,31 +25,19 @@
 %\RequirePackage{icomma}
 \RequirePackage{makecell}
 \RequirePackage{rotating}
-%\RequirePackage[skins,most]{tcolorbox}
-%\tcbuselibrary{listings,breakable}
 \RequirePackage{float}
 \RequirePackage{lscape}
 \RequirePackage[toc,page]{appendix}
 \RequirePackage{framed}
-%\RequirePackage{fontawesome}
-%\RequirePackage{bbding}
 \RequirePackage{color}
 \RequirePackage{pst-circ,pstricks-add}
 \RequirePackage{fancybox}
 \RequirePackage{psfrag}
-%\RequirePackage[Glenn]{fncychap}
-%\ChNameVar{\bfseries\Large\sf} 
-%\ChNumVar{\Huge} 
-%\ChTitleVar{\bfseries\Large\rm} 
-%\ChRuleWidth{1pt}
-%\ChNameUpperCase
-%\ChTitleUpperCase
 \RequirePackage{niceframe}
 \RequirePackage{psfrag}
 \setlength{\parindent}{0pt}
 \RequirePackage{fancyhdr}
 \RequirePackage{bm}
-%\RequirePackage{titlesec}
 \RequirePackage{xparse}
 \RequirePackage{pdfpages}
 \RequirePackage{pgf,tikz,pgfplots}
@@ -68,74 +45,27 @@
 \RequirePackage{tikz-cd}
 \usetikzlibrary{arrows,calc, shapes.misc, intersections,decorations.markings, patterns, shapes.geometric, calc,positioning,fit,backgrounds,angles, perspective,tikzmark}
 \RequirePackage{tkz-euclide}
-
 \RequirePackage[top=1.8cm, bottom=1.8cm, left=1cm , right=1cm]{geometry}
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \RequirePackage{version}
-
 \RequirePackage{refcount}
 \RequirePackage{tasks}
 \RequirePackage{systeme}
 \RequirePackage{siunitx}
+%Gestion des unités de mesure 
 \sisetup{locale = FR, per-mode = symbol, range-phrase=--, range-units=single, product-units=single}
 \newcommand{\da}[1]{\SI[mode=text]{#1}{}}
 \newcommand{\tunit}[2]{\SI[mode=text]{#1}{#2}}
 \newcommand{\nunit}[1]{\SI[mode=text]{}{#1}}
 \DeclareSIUnit\fr{fr.}
 
-\RequirePackage{tasks}
 
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-%\pagestyle{fancy}    
-
-%\newcommand{\regroupement}{Mathématiques 1$^{\text{re}}$ niveau normal}
-%\newcommand{\titreChapitre}{Test}
-%\counterwithout{equation}{chapter} % remove the chapter number
-
-%\renewcommand{\chaptermark}[1]{\markleft{#1}{}}
-
-%\lhead{\begin{small}
-%CO des Coudriers 
-%\regroupement
-%\end{small}} 
-%\rhead{}
-%\lfoot{\begin{small}
-%\titreChapitre \end{small}}  
-
-%\cfoot{\begin{small}
-%\thepage/\pageref{LastPage}
-%\end{small}}  
-%\rfoot{\begin{small}
-%ns, 2024--2025
-%\end{small}} 
-%\renewcommand{\headrulewidth}{0.4pt}  
-%\renewcommand{\footrulewidth}{0.4pt}
-
-
-
-
-\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
-\makeatletter
-\def\myrulefill{\leavevmode\leaders\hrule height .7ex width 1ex depth -0.6ex\hfill\kern\z@}
-\makeatother
-
-
-\newcommand{\textLigne}[1]{\myrulefill {\bfseries #1} \myrulefill\par}
-
-\newcommand{\relmiddle}[1]{\mathrel{}\middle#1\mathrel{}}
-
-\newcommand{\R}{\mathbb R}
-\newcommand{\N}{\mathbb N}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\Q}{\mathbb Q}
 \RequirePackage[inline]{enumitem}
 
-\setlist[enumerate,2]{label=\roman*)}
-
 \setlist[enumerate]{align=left,leftmargin=1cm,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm, labelsep=0em, label=\alph*)}
-
+\setlist[enumerate,2]{label=\roman*)}
 
 \setlist[description]{align=left,leftmargin=10pt, itemindent=0pt,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm,labelsep=0.5em,font=\normalfont\bfseries}
 
@@ -147,28 +77,37 @@
 \newlist{inlineumerate}{enumerate*}{1}
 \setlist*[inlineumerate]{before=\vspace{6pt}, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
 
+\RequirePackage{tasks}
 \settasks{
   %label-width = 1em ,
   %item-indent = 1em ,
-  before-skip = 0.5em , % undo paragraph skip
-  after-skip = 0.5em , % undo paragraph skip
+  before-skip = 0.2em , % undo paragraph skip
+  after-skip = 0.2em , % undo paragraph skip
  % label-offset=-0.5em,
-  after-item-skip = 1em % undo paragraph skip
+  after-item-skip = 0.5em % undo paragraph skip
 }
 
 \RequirePackage{ulem}
 \RequirePackage{lastpage}
 
-%\newcommand{\zerodisplayskips}{%
-%  \setlength{\abovedisplayskip}{4pt}%
-%  \setlength{\belowdisplayskip}{4pt}%
-%  \setlength{\abovedisplayshortskip}{4pt}%
-%  \setlength{\belowdisplayshortskip}{4pt}}
-%\appto{\normalsize}{\zerodisplayskips}
-%\appto{\small}{\zerodisplayskips}
-%\appto{\footnotesize}{\zerodisplayskips}
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\makeatletter
+\def\myrulefill{\leavevmode\leaders\hrule height .7ex width 1ex depth -0.6ex\hfill\kern\z@}
+\makeatother
 
+\newcommand{\bpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\emptybox}{\fbox{\parbox[c][8mm]{8mm}{\ }}}
 \newcommand{\boxt}[1]{\fbox{\parbox[c][8mm]{8mm}{\centering #1}}}
 \newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}} 
 \newcommand{\points}[1]{\makebox[#1cm]{\dotfill}} 
+\newcommand{\textLigne}[1]{\myrulefill {\bfseries #1} \myrulefill\par}
+\newcommand{\relmiddle}[1]{\mathrel{}\middle#1\mathrel{}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}

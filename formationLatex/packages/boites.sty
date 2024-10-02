@@ -9,7 +9,6 @@
 \RequirePackage{xspace}
 \RequirePackage{packages/couleurs}
 \RequirePackage{qrcode}
-\RequirePackage{packages/competences}
 \tcbsetforeverylayer{breakable}
 % sélectionner une fonte
 \newcommand{\fon}[1]{\fontfamily{#1}\selectfont}  %% Courtesy: @JouleV
@@ -36,7 +35,7 @@
 
 % ======================================== exo : début =========================================================================
 
-\NewDocumentEnvironment{exo}{O{0}}
+\NewDocumentEnvironment{exo}{O{0}O{\faPepperHot}}
 {%
   \par\vspace{1ex}\noindent%
   \refstepcounter{exo}%
@@ -59,7 +58,7 @@
   \hspace*{0.7cm}%
   \ifnum#1>0
     \foreach \i in {1,...,#1}{%
-      \faPepperHot\,
+      #2\,
     }%
   \fi
 }
@@ -195,20 +194,6 @@
 
 % ======================================== boiteicon : fin =========================================================================
 
-%
-% ======================================== boitetitre : début =========================================================================
-\NewDocumentEnvironment{boitetitre}{ m O{black} }
-{%begin code
-  \par\noindent
-  \begin{tcolorbox}[title={#1},halign title=center,,colback=#2!10!white,colframe={#2!50},sharp corners=all,
-    enhanced,fuzzy shadow={2mm}{-1mm}{0mm}{0.4mm}{black!50!white},toptitle=2mm,bottomtitle=2mm,top=0pt,before skip=-10pt,after skip=10pt]
-}
-{%end code
-  \end{tcolorbox}
-  \par%
-  \noindent\ignorespacesafterend
-}
-% ======================================== boitetitre : fin =========================================================================
 
 %==============================================================================
 %                                 Commandes

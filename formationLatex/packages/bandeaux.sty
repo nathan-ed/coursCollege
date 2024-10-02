@@ -27,8 +27,8 @@
   \renewcommand{\TypeTitle}{FICHE N°}%
   \renewcommand{\TypeIcon}{\faCogs}%
 }%
-\DeclareVoidOption{formative}{%
-  \renewcommand{\TypeTitle}{SE PRÉPARER}%
+\DeclareVoidOption{serie}{%
+  \renewcommand{\TypeTitle}{EXERCICES}%
   \renewcommand{\TypeIcon}{\faDumbbell}%
 }%
 \DeclareVoidOption{finale}{%
@@ -44,14 +44,9 @@
 \DeclareStringOption[101]{nfiche}
 \DeclareStringOption[2024--2025]{annee}
 \DeclareStringOption[ns]{auteur}
-\DeclareStringOption[colorPrim]{couleur}%
 \DeclareStringOption[Mon Thème]{theme}%
-\DeclareStringOption[1]{opacite}%
-\DeclareBoolOption[false]{top}%
-\DeclareBoolOption[false]{nobackground}%
 \DeclareBoolOption[false]{nopagenumber}%
 \ProcessKeyvalOptions*%
-\ifbandeaux@nobackground%
   \backgroundsetup{%
   scale=1,%
   opacity=1,%
@@ -90,58 +85,4 @@
 \end{tikzpicture}
   \par%
 }
-\else%
-  \backgroundsetup{%
-      scale=1,%
-      opacity=\bandeaux@opacite,%
-      angle=0,%
-      color=black,%
-      contents={%
-      \ifbandeaux@top%
-        % titre en haut de la page
-        %\checkoddpage%
-          %\ifoddpage%
-            \begin{tikzpicture}[remember picture,overlay]%
-              \node[DarkGray] at (current page footer area) {%
-                \ifbandeaux@nopagenumber{}\else{\condensedfont \thepage}\fi%
-              };%
-              \fill[LightGray!30] (current page.north west) rectangle ([yshift=-30mm]current page.north east);%
-              \node[rectangle,minimum height=2cm,minimum width=2cm,fill=\bandeaux@couleur,text=white] (symbole) at ([xshift=15mm,yshift=-15mm]current page.north west) {\huge \TypeIcon};%
-              \node[right=2mm of symbole, anchor=north,rotate=90] (type) {\titlefont \TypeTitle \bandeaux@nfiche};%
-              \node[right=15mm of type.south,anchor=west] (niveau) {\huge \bandeaux@niveau};%
-              \node[right=20mm of niveau.base east,anchor=base west] (theme) {\large\cursivefont \bandeaux@theme};%
-              \node[minimum width=10pt, minimum height=10pt,fill=black,circle,anchor=south] (mark) at ($(niveau.base east)!0.5!(theme.base west)$) {};%
-            \end{tikzpicture}%
-          \else%
-            \begin{tikzpicture}[remember picture,overlay]%
-              \node[DarkGray] at (current page footer area) {%
-                \ifbackground@nopagenumber{}\else{\condensedfont \thepage}%
-              };%
-            \end{tikzpicture}%
-          %\fi%
-      \else%
-        % titre sur le côté de la page
-        \checkoddpage%
-        \ifoddpage%
-          \begin{tikzpicture}[remember picture,overlay]%
-            \fill[LightGray!30] (current page.north west) rectangle ([xshift=25mm]current page.south west);%
-            \node[white] at ([xshift=12.5mm,yshift=15mm]current page.south west) {%
-              \ifbandeaux@nopagenumber{}\else{\fontsize{32pt}{36pt}\condensedfont \thepage}\fi%
-              };%
-            \node[rectangle,minimum height=2cm,minimum width=2cm,fill=\bandeaux@couleur,text=white] (symbole) at ([xshift=12.5mm,yshift=-15mm]current page.north west) {\huge \TypeIcon};%
-            \node[below=2mm of symbole, anchor=north] (type) {\titlefont \TypeTitle \bandeaux@nfiche};%
-            \node[below=15mm of type.south,rotate=90,anchor=east] (theme) {\large\cursivefont \bandeaux@theme};%
-            \node[minimum width=10pt, minimum height=10pt,fill=black,below=8mm of theme.west,circle] (mark) {};%
-            \node[below=8mm of mark.south,rotate=90,anchor=east] (niveau) {\huge \bandeaux@niveau };%
-          \end{tikzpicture}%
-        \else%
-          \begin{tikzpicture}[remember picture,overlay]%
-            \node[LightGray,font=\huge] at ([xshift=-15mm,yshift=15mm]current page.south east) {%
-              \ifbandeaux@nopagenumber{}\else{\fontsize{32pt}{36pt}\condensedfont \thepage}\fi%
-            };%
-          \end{tikzpicture}%
-        \fi%
-      \fi%
-      }%
-  }%
-\fi%
+
