@@ -1,0 +1,19 @@
+\declaretheoremstyle[
+spaceabove=6pt,
+spacebelow=6pt
+headfont=\normalfont\bfseries,
+headpunct={} ,
+headformat={\NAME\ifstrequal{\NOTE}{}{\relax}{\NOTE} --},
+bodyfont=\normalfont,
+]{exobreak}
+
+\declaretheorem[style=exobreak, name=Définition,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{defi}
+
+\declaretheorem[style=exobreak, name=Remarque,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{rem}
+

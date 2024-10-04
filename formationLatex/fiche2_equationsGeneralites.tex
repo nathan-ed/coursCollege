@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[fiche,niveau={1MA1},nfiche={2}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Équations -- Généralités et principes d'équivalence}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\usepackage{packages/mathenv}
+
+\begin{document}
+\begin{defi}[équation]
+	Une {\bfseries équation} est une expression mathématique avec un membre de gauche, un signe égalité et un membre de droite. Les membres de gauche et de droite sont des expressions littérales contenant des inconnues.
+	\begin{center}
+\begin{tikzpicture}[
+    box/.style={draw, minimum width=2cm, minimum height=1cm},
+    mylabel/.style={font=\small\itshape}
+]
+    % Left box (LHS)
+    \node[box] (lhs) at (0,0) {$\ldots$};
+    
+    % Equal sign
+    \node[font=\Large] (eq) at (3,0) {$=$};
+    
+    % Right box (RHS)
+    \node[box] (rhs) at (6,0) {$\ldots$};
+    
+    % Arrows and labels
+    \draw[Latex-] (lhs.north) -- ++(0,0.5) node[above, mylabel] {membre de gauche (mdg)};
+    \draw[Latex-] (eq.north) -- ++(0,0.5) node[above, mylabel] {\text{signe égal}};
+    \draw[Latex-] (rhs.north) -- ++(0,0.5) node[above, mylabel] {membre de droite (mdd)};
+\end{tikzpicture}
+\end{center}
+\end{defi}
+\begin{defi}[degré]
+	Le {\bfseries degré} d'une équation est le plus haut degré d'un monôme apparaissant dans l'équation.
+\end{defi}
+\begin{defi}[solution d'une équation]
+	Une {\bfseries solution d'une équation} est un nombre ou un tuple de nombres qui satisfait l'égalité lorsqu'on substitue à la place de l'inconnue ou des inconnues.
+\end{defi}
+\begin{boiteExT}[Solution d'une équation]
+\vspace{6cm}
+
+\end{boiteExT}
+On note avec un ensemble l'ensemble de toutes les solution d'une équation $S=\{\ldots\}$ 
+\begin{defi}[équations équivalentes]
+	Deux équations sont appelées {\bfseries équivalentes} si elles ont le même ensemble de solutions. 
+\end{defi}
+\begin{boiteExT}[Équations équivalentes]
+\vspace{5cm}
+
+\end{boiteExT}
+Résoudre une équation c'est déterminer une équation équivalente dans laquelle la solution peut être lue facilement. Par exemple, l'équation $2x+3=4x-1$ est équivalente à l'équation $x=2$. La deuxième équation permet de déduire la solution. Deux principes permettent de passer d'une équation à une équation équivalente.
+\begin{boiteExT}[Principe d'équivalence 1 [PE1]]
+\vspace{8cm}
+
+\end{boiteExT}
+\begin{boiteExT}[Principe d'équivalence 2 [PE2]]
+\vspace{8cm}
+
+\end{boiteExT}
+\end{document}

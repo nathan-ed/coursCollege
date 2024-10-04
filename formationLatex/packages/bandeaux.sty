@@ -1,4 +1,4 @@
-% author : sylcha
+% author : nathan scheinmann adapté de sylcha
 % licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 %           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 % purpose : positionnement des éléments de titres dans les marges
@@ -9,19 +9,13 @@
 \RequirePackage{tikzpagenodes}%
 % options 
 \RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-\newcommand{\TypeTitle}{SE SOUVENIR}%
-\newcommand{\TypeIcon}{\faBrain}%
-\DeclareVoidOption{exercices}{%
-  \renewcommand{\TypeTitle}{EXERCICES}%
+% valeurs par défaut
+\newcommand{\TypeTitle}{FICHE N°}%
+\newcommand{\TypeIcon}{\faCogs}%
+%Différents types de documents
+\DeclareVoidOption{corriges}{%
+  \renewcommand{\TypeTitle}{CORRIGÉS}%
   \renewcommand{\TypeIcon}{\faPencil*}%
-}%
-\DeclareVoidOption{rappels}{%
-\renewcommand{\TypeTitle}{RAPPELS}%
-\renewcommand{\TypeIcon}{\faCompass}%
-}%
-\DeclareVoidOption{objectif}{%
-  \renewcommand{\TypeTitle}{OBJECTIF}%
-  \renewcommand{\TypeIcon}{\faBullseye}%
 }%
 \DeclareVoidOption{fiche}{%
   \renewcommand{\TypeTitle}{FICHE N°}%
@@ -31,17 +25,13 @@
   \renewcommand{\TypeTitle}{EXERCICES}%
   \renewcommand{\TypeIcon}{\faDumbbell}%
 }%
-\DeclareVoidOption{finale}{%
-\renewcommand{\TypeTitle}{SE TESTER}%
-\renewcommand{\TypeIcon}{\faMedal}%
-}%
-\DeclareVoidOption{memoire}{%
-\renewcommand{\TypeTitle}{MÉMORISER}%
-\renewcommand{\TypeIcon}{\faBrain}%
+\DeclareVoidOption{competences}{%
+  \renewcommand{\TypeTitle}{COMPÉTENCES}%
+  \renewcommand{\TypeIcon}{\faBullseye}%
 }%
 \DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown '\CurrentOption'}}%
-\DeclareStringOption[SIXIÈME]{niveau}%
-\DeclareStringOption[101]{nfiche}
+\DeclareStringOption[1MA1]{niveau}%
+\DeclareStringOption[numero]{nfiche}
 \DeclareStringOption[2024--2025]{annee}
 \DeclareStringOption[ns]{auteur}
 \DeclareStringOption[Mon Thème]{theme}%
@@ -62,7 +52,7 @@
     };%
   \end{tikzpicture}%
   }}%
- 
+
 \AtBeginDocument{%
 \begin{tikzpicture}[remember picture,overlay]
     % Add a rounded rectangle frame
@@ -71,15 +61,18 @@
       rectangle 
       ([xshift=-5mm,yshift=-20mm]current page.north east);
 
-    % Icon
+    % Niveau
     \node[rectangle, rounded corners=5pt, minimum height=1cm, minimum width=2cm, fill=white, text=black] 
       (symbole) at ([xshift=15.2mm, yshift=-10.2mm]current page.north west) {\large \bandeaux@niveau};
 
-    % Title
+    % Type
     \node[below=-2mm of symbole.south west, anchor=north west, inner sep=4pt, outer sep=0pt] 
       (type) {\titlefont \TypeTitle \bandeaux@nfiche};
 
-    % Theme (centered in the box)
+    %Icon
+      \node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
+
+    % Titre
     \node[anchor=center] (theme) at ([yshift=-13mm]current page.north) 
       {\Large \bandeaux@theme};
 \end{tikzpicture}
