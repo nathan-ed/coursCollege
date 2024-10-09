@@ -5,6 +5,9 @@
 \NeedsTeXFormat{LaTeX2e}%
 \ProvidesPackage{boites}[2023/08/01 v0.1]%
 \RequirePackage{ProfCollege}%
+\usetikzlibrary{calc,shapes,arrows,tikzmark,chains,positioning,shapes.symbols,babel,fit,backgrounds}%
+%\RequirePackage{tcolorbox}
+%\tcbuselibrary{listings,breakable}
 \RequirePackage{xparse}
 \RequirePackage{xspace}
 \RequirePackage{packages/couleurs}
@@ -213,8 +216,6 @@
 % caractère cerclé
 \NewDocumentCommand{\Circled}{ O{colorPrim} O{white} m }%
 {\tikz[baseline=(char.base)]{\node[shape=circle,fill={#1},inner sep=2pt,text={#2},font=\bfseries] (char) {#3};}}
-% caractère euro
-\DeclareSIUnit{\SIEuro}{\text{\euro}}
-\NewDocumentCommand{\Eu}{ m }{\qty{#1}{\SIEuro}}
+
 
 

@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[fiche,niveau={1MA1},nfiche={6}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Equations -- Problèmes du premier degré}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+
+\begin{document}
+Les équations sont l'outil principal de résolution de problème en mathématiques. 
+
+Voici les étapes à suivre pour résoudre un problème à l'aide d'une équation.
+
+{\bfseries Partie 1\,: Déterminer l'équation}
+\begin{enumerate}[1)]
+	\item Lire le problème autant de fois que nécessaire pour bien comprendre et interpréter la situation.
+
+		{\bfseries Faire un schéma si besoin};
+	\item déterminer les deux quantités à comparer, elles deviendront les deux membres de l'équation;
+	\item poser une inconnue qui permet d'exprimer les quantités à égaliser;
+	\item écrire les deux membres de l'équation en fonction de l'inconnue. L'inconnue devrait apparaître dans au moins un des deux membres.
+\end{enumerate}
+{\bfseries Partie 2\,: Résoudre l'équation}
+\begin{enumerate}[1),resume]
+	\item Résoudre l'équation avec les principes d'équivalence.
+\end{enumerate}
+{\bfseries Partie 3\,: Interpréter le résultat et conclure}
+\begin{enumerate}[1),resume]
+	\item Vérifier la cohérence du résultat avec le choix de l'inconnue;
+	\item Interpréter la valeur obtenue et répondre à la question posée dans l'énoncé.
+\end{enumerate}
+\begin{boiteExT}[Exemple 1]
+	
+\vspace{6.5cm}
+
+\end{boiteExT}
+\begin{boiteExT}[Exemple 2]
+	
+\vspace{6.5cm}
+
+\end{boiteExT}
+\newpage
+
+Déterminer la mesure du côté du carré afin que les périmètres du carré et du triangle soient égaux.
+\begin{center}
+	\begin{tikzpicture}[scale=0.8]
+    % Define the length of the side of the square and triangle
+    \def\side{4}
+
+    % Define points for the square
+    \tkzDefPoint(0,0){A} % bottom-left of the square
+    \tkzDefPoint(9,0){F}
+    \tkzDefPoint(\side,0){B} % bottom-right of the square
+    \tkzDefSquare(A,B) \tkzGetPoints{C}{D} % Top points of the square
+
+    % Draw the square
+    \tkzDrawPolygon(A,B,C,D)
+
+    % Right angle marks for the square
+    \tkzMarkRightAngle[size=0.3](A,B,C)
+    \tkzMarkRightAngle[size=0.3](B,C,D)
+    \tkzMarkRightAngle[size=0.3](C,D,A)
+    \tkzMarkRightAngle[size=0.3](D,A,B)
+
+    % Define points for the equilateral triangle starting from point B
+    \tkzDefEquilateral(B,F) \tkzGetPoint{E} % E is the third point of the triangle
+    \tkzDrawPolygon(B,F,E) % Draw the equilateral triangle
+
+    % Mark equal sides of the triangle
+    \tkzMarkSegments[mark=|](B,F B,E F,E)
+    \tkzMarkSegments[mark=||](A,B B,C C,D D,A)
+
+    % Draw the dimension line from A to E and label it 20 cm
+    %\tkzDrawSegment[<->,blue](A,E)
+    %\node[below] at ($(A)!0.5!(E)$) {20 cm};
+
+\end{tikzpicture}
+\end{center}
+
+\begin{boiteExT}[Exemple 3]
+	
+\vspace{20cm}
+
+\end{boiteExT}
+\end{document}
+
+
