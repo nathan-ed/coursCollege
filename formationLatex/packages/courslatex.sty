@@ -1,16 +1,25 @@
+% Packages for Mathematical Symbols and Fonts
 \RequirePackage{amsmath}
 \RequirePackage{varwidth}
 \RequirePackage{amsfonts}
 \RequirePackage{amsthm}
+\RequirePackage{amssymb}
+
+% Quotation and French Styling
 \RequirePackage{csquotes}
 \setquotestyle{french}
+
+% Additional Theorem Tools
 \RequirePackage{thmtools}
 \RequirePackage{afterpage}
-\RequirePackage{amssymb}
+
+% Graphics and Drawing Packages
 \RequirePackage{graphicx}
 \RequirePackage{interval}
 % Pour que le séparateur décimal dans les intervalles soit ; à la place de la ,
 \intervalconfig{separator symbol=;}
+
+% Multi-column and Table Management
 \RequirePackage{multicol}
 \RequirePackage{multirow}
 \RequirePackage{tabularx}
@@ -21,6 +30,8 @@
 \DefTblrTemplate{caption}{default}{}
 \DefTblrTemplate{conthead}{default}{}
 \DefTblrTemplate{capcont}{default}{}
+
+% Additional Utility Packages
 \RequirePackage{etoolbox}
 %\RequirePackage{icomma}
 \RequirePackage{makecell}
@@ -40,43 +51,51 @@
 \RequirePackage{bm}
 \RequirePackage{xparse}
 \RequirePackage{pdfpages}
+
+% TikZ and Drawing Libraries
 \RequirePackage{pgf,tikz,pgfplots}
 \RequirePackage{tikz-3dplot}
 \RequirePackage{tikz-cd}
 \usetikzlibrary{arrows,calc, shapes.misc, intersections,decorations.markings, patterns, shapes.geometric, calc,positioning,fit,backgrounds,angles, perspective,tikzmark}
 \RequirePackage{tkz-euclide}
+
+% Page Geometry
 \RequirePackage[top=1.8cm, bottom=1.8cm, left=1cm , right=1cm]{geometry}
+
+% Version Control and Reference Count
 \RequirePackage{version}
 \RequirePackage{refcount}
+
+% Task Management and Systeme
 \RequirePackage{tasks}
 \RequirePackage{systeme}
+
+% SI Units Configuration
 \RequirePackage{siunitx}
-%Gestion des unités de mesure 
+% Gestion des unités de mesure 
 \sisetup{locale = FR, per-mode = symbol, range-phrase=--, range-units=single, product-units=single}
 \newcommand{\da}[1]{\SI[mode=text]{#1}{}}
 \newcommand{\tunit}[2]{\SI[mode=text]{#1}{#2}}
 \newcommand{\nunit}[1]{\SI[mode=text]{}{#1}}
 \DeclareSIUnit\fr{fr.}
 
-
-
+% Custom Column Types
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
+% Enumeration and List Customization
 \RequirePackage[inline, shortlabels]{enumitem}
-
 \setlist[enumerate]{align=left,leftmargin=1cm,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm, labelsep=0em, label=\alph*)}
 \setlist[enumerate,2]{label=\roman*)}
-
 \setlist[description]{align=left,leftmargin=10pt, itemindent=0pt,itemsep=3pt,parsep=0pt,topsep=5pt,rightmargin=0.2cm,labelsep=0.5em,font=\normalfont\bfseries}
-
 \setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
 
+% Inline Enumerations
 \newlist{inumerate}{enumerate*}{1}
 \setlist*[inumerate]{before=\vspace{6pt}\newline, align=right, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
-
 \newlist{inlineumerate}{enumerate*}{1}
 \setlist*[inlineumerate]{before=\vspace{6pt}, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
 
+% Task Settings
 \RequirePackage{tasks}
 \settasks{
   %label-width = 1em ,
@@ -87,14 +106,15 @@
   after-item-skip = 0.5em % undo paragraph skip
 }
 
+% Underline and Last Page Packages
 \RequirePackage{ulem}
 \RequirePackage{lastpage}
 
+% Custom Fillers and Box Commands
 \def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
 \makeatletter
 \def\myrulefill{\leavevmode\leaders\hrule height .7ex width 1ex depth -0.6ex\hfill\kern\z@}
 \makeatother
-
 \newcommand{\bpage}{%
     \null
     \thispagestyle{empty}%
@@ -107,6 +127,8 @@
 \newcommand{\points}[1]{\makebox[#1cm]{\dotfill}} 
 \newcommand{\textLigne}[1]{\myrulefill {\bfseries #1} \myrulefill\par}
 \newcommand{\relmiddle}[1]{\mathrel{}\middle#1\mathrel{}}
+
+% Common Math Symbols
 \newcommand{\R}{\mathbb R}
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}

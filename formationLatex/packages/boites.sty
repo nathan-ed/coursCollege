@@ -1,26 +1,36 @@
-% author : nathan scheinmann adapté de sylcha
-% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-% purpose : environnements sous forme de boîtes
-\NeedsTeXFormat{LaTeX2e}%
-\ProvidesPackage{boites}[2023/08/01 v0.1]%
-\RequirePackage{ProfCollege}%
-\usetikzlibrary{calc,shapes,arrows,tikzmark,chains,positioning,shapes.symbols,babel,fit,backgrounds}%
-%\RequirePackage{tcolorbox}
-%\tcbuselibrary{listings,breakable}
+% Author: Nathan (adapted from Sylcha)
+% License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+% License URL: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% Purpose: Environments in the form of boxes
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{boites}[2023/08/01 v0.1]
+
+% Required Packages
+\RequirePackage{ProfCollege}
 \RequirePackage{xparse}
 \RequirePackage{xspace}
-\RequirePackage{packages/couleurs}
 \RequirePackage{qrcode}
+\RequirePackage{packages/couleurs}
+
+% TikZ Libraries
+\usetikzlibrary{calc,shapes,arrows,tikzmark,chains,positioning,shapes.symbols,babel,fit,backgrounds}
+
+% Optional tcolorbox Package (commented out)
+%\RequirePackage{tcolorbox}
+%\tcbuselibrary{listings,breakable}
+
+% Global tcolorbox Setting
 \tcbsetforeverylayer{breakable}
-% sélectionner une fonte
+
+% Select a Font
 \newcommand{\fon}[1]{\fontfamily{#1}\selectfont}  %% Courtesy: @JouleV
+
 %=============================================
-%
-%              Environnements
-%
+%              Environments
 %=============================================
 
+% Boxed TikZ Style Definition
 \tikzset{
   boxed/.style={
     draw=black,
@@ -34,13 +44,14 @@
     minimum size=1.5em,
   }
 }
+
+% Exercise Counter
 \newcounter{exo}
 
-% ======================================== exo : début =========================================================================
-
+% ======================================== exo : start ========================================
 \NewDocumentEnvironment{exo}{O{0}O{\faPepperHot}}
-{%
-  \par\vspace{1ex}\noindent%
+{% Begin environment
+  \par\vspace{1ex}\noindent
   \refstepcounter{exo}%
   \begin{tcolorbox}[
     colback=white,
@@ -56,26 +67,26 @@
     before=\vspace{-\baselineskip},
   ]
   \begin{tikzpicture}[remember picture,overlay]
-    \node[draw, circle, line width=0.4pt,inner sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm] (numero) {\theexo}; % Ensure `draw` is included
+    \node[draw, circle, line width=0.4pt,inner sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm] (numero) {\theexo}; % Ensure 'draw' is included
   \end{tikzpicture}%
   \hspace*{0.7cm}%
   \ifnum#1>0
     \foreach \i in {1,...,#1}{%
-	    {\small #2}
+      {\small #2}
     }%
   \fi
 }
-{%
+{% End environment
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend%
-}% ======================================== exo : fin =========================================================================
-%
+}
+% ======================================== exo : end ========================================
 
-% ======================================== attention : début =========================================================================
+% ======================================== attention : start ========================================
 \newcounter{attention}
 \NewDocumentEnvironment{attention}{ s o O{Attention !} }
-{% begin code
+{% Begin environment
   \par\noindent
   \refstepcounter{attention}%
   \IfBooleanTF{#1}{\newcommand*{\counterattention}{}}{\newcommand*{\counterattention}{\theattention}}
@@ -84,7 +95,7 @@
       {\newcommand*{\boxtitle}{#3 \counterattention{} #2}}
   \begin{tcolorbox}[colback=colorSecLight,colframe=colorSec,title=\boxtitle,fonttitle=\bfseries,sharp corners=all]
 }
-{% end code
+{% End environment
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend
@@ -93,11 +104,11 @@
 \cs_new:cpn {attention*} {\attention*}
 \cs_new_eq:cN {endattention*} \endattention
 \ExplSyntaxOff
-% ======================================== attention : fin =========================================================================
-%
-% ======================================== boiteicon : début =========================================================================
+% ======================================== attention : end ========================================
+
+% ======================================== boiteicone : start ========================================
 \NewDocumentEnvironment{boiteicone}{ O{colorSec} o O{\faExclamationTriangle} O{\normalsize} }
-{%begin code
+{% Begin environment
   \par\noindent
   \IfNoValueTF {#2}
       {\newcommand*{\boxtitle}{Attention}}
@@ -122,16 +133,16 @@
     }
   ]
 }
-{%end code
+{% End environment
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend
 }
+% ======================================== boiteicone : end ========================================
 
-
-
+% ======================================== boiteEx : start ========================================
 \NewDocumentEnvironment{boiteEx}{}
-{%begin code
+{% Begin environment
   \par\noindent
   \begin{tcolorbox}[
     colback=white,
@@ -148,16 +159,18 @@
     notitle
   ]
 }
-{%end code
+{% End environment
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend
 }
+% ======================================== boiteEx : end ========================================
 
+% ======================================== boiteExT : start ========================================
 \NewDocumentEnvironment{boiteExT}{ o }
-{%begin code
-	\vspace{5pt}
-	\par\noindent
+{% Begin environment
+  \vspace{5pt}
+  \par\noindent
   \begin{tcolorbox}[
     colback=white,
     colframe=black,
@@ -169,7 +182,7 @@
     top=6pt,
     bottom=6pt,
     height from=12mm to 25cm,
-    fonttitle=\bfseries\centering,  % This line makes the title bold and centered
+    fonttitle=\bfseries\centering,
     valign=center,
     enhanced,
     IfValueTF={#1}{
@@ -188,34 +201,31 @@
     }
   ]
 }
-{%end code
+{% End environment
   \end{tcolorbox}
   \par%
   \noindent\ignorespacesafterend
 }
-
-
-% ======================================== boiteicon : fin =========================================================================
-
+% ======================================== boiteExT : end ========================================
 
 %==============================================================================
-%                                 Commandes
+%                                 Commands
 %==============================================================================
-% commandes pour surligner dans un environnement maths
+
+% Command to Highlight in Math Environment
 \NewDocumentCommand{\Mhl}{ O{yellow} m }{
   \colorbox{#1}{$#2$}
 }
-% commande pour produire un texte avec un qrcode à côté.
-\NewDocumentCommand{\ConsigneQRCode}{ O{15mm} m m }%
+
+% Command for Text with QR Code
+\NewDocumentCommand{\ConsigneQRCode}{ O{15mm} m m }
 {
   \qrset{link,height=#1}
   \begin{tblr}{width={\linewidth},colspec={Q[l,m]Q[t,1em]Q[l,m]},rowsep=0pt,colsep=0pt}
     \qrcode{#3} & & {{{#2}}}
   \end{tblr}
 }
-% caractère cerclé
-\NewDocumentCommand{\Circled}{ O{colorPrim} O{white} m }%
+
+% Circled Character Command
+\NewDocumentCommand{\Circled}{ O{colorPrim} O{white} m }
 {\tikz[baseline=(char.base)]{\node[shape=circle,fill={#1},inner sep=2pt,text={#2},font=\bfseries] (char) {#3};}}
-
-
-

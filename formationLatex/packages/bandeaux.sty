@@ -1,60 +1,74 @@
-% author : nathan scheinmann adapté de sylcha
-% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-% purpose : positionnement des éléments de titres dans les marges
-\ProvidesPackage{bandeaux}%
-\RequirePackage{nopageno}%
-\RequirePackage{background}%
-\RequirePackage{ifoddpage}%
-\RequirePackage{tikzpagenodes}%
-% options 
-\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-% valeurs par défaut
-\newcommand{\TypeTitle}{FICHE N°}%
-\newcommand{\TypeIcon}{\faCogs}%
-%Différents types de documents
-\DeclareVoidOption{corriges}{%
-  \renewcommand{\TypeTitle}{CORRIGÉS}%
-  \renewcommand{\TypeIcon}{\faPencil*}%
-}%
-\DeclareVoidOption{fiche}{%
-  \renewcommand{\TypeTitle}{FICHE N°}%
-  \renewcommand{\TypeIcon}{\faCogs}%
-}%
-\DeclareVoidOption{serie}{%
-  \renewcommand{\TypeTitle}{EXERCICES}%
-  \renewcommand{\TypeIcon}{\faDumbbell}%
-}%
-\DeclareVoidOption{competences}{%
-  \renewcommand{\TypeTitle}{COMPÉTENCES}%
-  \renewcommand{\TypeIcon}{\faBullseye}%
-}%
-\DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown '\CurrentOption'}}%
-\DeclareStringOption[1MA1]{niveau}%
+% Author: Nathan (adapted from Sylcha)
+% License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+% License URL: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% Purpose: Positioning title elements in the margins
+
+\ProvidesPackage{bandeaux}
+
+% Required Packages
+\RequirePackage{nopageno}
+\RequirePackage{background}
+\RequirePackage{ifoddpage}
+\RequirePackage{tikzpagenodes}
+
+% Key-Value Options for Customization
+\RequirePackage{kvoptions} % Key-value options for title, theme, etc.
+
+% Default Values
+\newcommand{\TypeTitle}{FICHE N\textsuperscript{o}}
+\newcommand{\TypeIcon}{\faCogs}
+
+% Different Document Types
+\DeclareVoidOption{corriges}{
+  \renewcommand{\TypeTitle}{CORRIG\'{E}S}
+  \renewcommand{\TypeIcon}{\faPencil*}
+}
+\DeclareVoidOption{fiche}{
+  \renewcommand{\TypeTitle}{FICHE N\textsuperscript{o}}
+  \renewcommand{\TypeIcon}{\faCogs}
+}
+\DeclareVoidOption{serie}{
+  \renewcommand{\TypeTitle}{EXERCICES}
+  \renewcommand{\TypeIcon}{\faDumbbell}
+}
+\DeclareVoidOption{competences}{
+  \renewcommand{\TypeTitle}{COMP\'{E}TENCES}
+  \renewcommand{\TypeIcon}{\faBullseye}
+}
+\DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown option '\CurrentOption'}}
+
+% String Options
+\DeclareStringOption[1MA1]{niveau}
 \DeclareStringOption[numero]{nfiche}
 \DeclareStringOption[2024--2025]{annee}
 \DeclareStringOption[ns]{auteur}
-\DeclareStringOption[Mon Thème]{theme}%
-\DeclareBoolOption[false]{nopagenumber}%
-\ProcessKeyvalOptions*%
-  \backgroundsetup{%
-  scale=1,%
-  opacity=1,%
-  angle=0,%
-  contents={%
-  \begin{tikzpicture}[remember picture,overlay]%
-    \node[DarkGray, anchor=west] at (current page footer area.west) {%
-    \bandeaux@annee};
-  \node[DarkGray, anchor=east] at (current page footer area.east) {%
-	\hfill \bandeaux@auteur};%
-    \node[DarkGray] at (current page footer area) {%
-	    \ifbandeaux@nopagenumber{}\else{\thepage/\pageref{LastPage}}\fi
-    };%
-  \end{tikzpicture}%
-  }}%
+\DeclareStringOption[Mon Th\`{e}me]{theme}
 
-\AtBeginDocument{%
-\begin{tikzpicture}[remember picture,overlay]
+% Page Number Option
+\DeclareBoolOption[false]{nopagenumber}
+
+% Process Options
+\ProcessKeyvalOptions*
+
+% Background Setup for Document
+\backgroundsetup{
+  scale=1,
+  opacity=1,
+  angle=0,
+  contents={
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[DarkGray, anchor=west] at (current page footer area.west) {\bandeaux@annee};
+      \node[DarkGray, anchor=east] at (current page footer area.east) {\hfill \bandeaux@auteur};
+      \node[DarkGray] at (current page footer area) {
+        \ifbandeaux@nopagenumber{}\else{\thepage/\pageref{LastPage}}\fi
+      };
+    \end{tikzpicture}
+  }
+}
+
+% Adding Elements at the Beginning of the Document
+\AtBeginDocument{
+  \begin{tikzpicture}[remember picture,overlay]
     % Add a rounded rectangle frame
     \draw[line width=1pt, rounded corners=5pt] 
       ([xshift=5mm,yshift=-5mm]current page.north west) 
@@ -69,13 +83,12 @@
     \node[below=-2mm of symbole.south west, anchor=north west, inner sep=4pt, outer sep=0pt] 
       (type) {\titlefont \TypeTitle \bandeaux@nfiche};
 
-    %Icon
-      \node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
+    % Icon
+    \node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
 
-    % Titre
+    % Title
     \node[anchor=center] (theme) at ([yshift=-13mm]current page.north) 
       {\Large \bandeaux@theme};
-\end{tikzpicture}
+  \end{tikzpicture}
   \par%
 }
-
