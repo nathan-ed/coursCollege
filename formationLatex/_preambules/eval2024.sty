@@ -1,0 +1,112 @@
+% Package Name: eval2024
+\ProvidesPackage{eval2024}[2024/01/01 v0.1 Evaluation Package]
+
+\AtBeginDocument{\def\labelitemi{$\bullet$}}
+
+% Set column separation
+\setlength\columnsep{40pt}
+
+% Task Settings
+\settasks{
+  % The next two should be set to the same value so labels are aligned to the left
+  label=\alph*),
+  label-width=2em,
+  item-indent=3em,
+  %before-skip = -\parskip, % undo paragraph skip (commented out)
+  %after-skip = -\parskip, % undo paragraph skip (commented out)
+  %label-offset=1em, % commented out
+  after-item-skip=1em % undo paragraph skip
+}
+
+% Required Packages
+\RequirePackage{pstricks}
+\RequirePackage{longtable}
+\RequirePackage{tabu}
+\RequirePackage{tabularx}
+\RequirePackage{afterpage}
+
+% Renew Command for Part Settings
+\renewcommand{\partshook}{\setlength{\itemsep}{2cm}}
+
+% Set column separation rule
+\setlength{\columnseprule}{0.4pt}
+
+% Custom Commands
+\newcommand{\bpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+\newcommand{\incfig}[1]{
+  \def\svgwidth{\columnwidth}
+  \import{}{#1}}
+
+\newcommand{\rulee}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}}
+
+\newcommand{\blankpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% Set column separation rule to zero
+\setlength{\columnseprule}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%% LIGNE DE REPONSE %%%%%%%%%%%%%%%%%%
+\newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}}
+
+% Custom Points Display Command
+\makeatletter
+\newcommand\thetotalpoints{%  
+  \if@bonus
+    [\totalbonuspoints\ bonus points]
+  \else
+    [\totalpoints\ points]
+  \fi
+}
+\makeatother
+
+% Formatting for Questions and Bonus
+\qformat{Question \thequestion: \thetotalpoints \hfill}
+\qformat{\textbf{Question \thequestion.} [\thepoints] \hfill}
+\bonusqformat{\textbf{Bonus} [\totalbonuspoints point bonus] \hfill}
+\pointsinmargin
+\marginpointname{ \points}
+
+% Information Commands
+\newcommand{\etablissement}{CO des Coudriers}
+\newcommand{\sujet}{Récitation -- Automatismes 1}
+\newcommand{\cours}{Mathématiques 1171}
+\newcommand{\datepassage}{21 mars 2022}
+\newcommand{\duree}{35 minutes}
+
+% Page Style Settings
+\pagestyle{headandfoot}
+\runningfooter{}{
+  \iflastpage{{\small\bfseries Fin de l'\u00e9valuation}}{{\small\bfseries L'\u00e9valuation continue sur la page suivante\ldots}}
+}{{\small Page \thepage\ sur \numpages}}
+
+% Set Array Stretch
+\renewcommand{\arraystretch}{2}
+
+% TikZ Mark Command
+\newcommand{\tikzmark}[1]{\tikz[baseline,remember picture] \coordinate (#1) {};}
+
+% Command for Matching Spaces
+\newcommand{\midmatch}{\hspace{0.75in}\underline{\hspace{0.5in}     }}
+
+% Unit Command
+\newcommand{\un}[1]{\ensuremath{\, \mathrm{#1}}}
+
+% Answer Space Command
+\newcommand{\answerspace}[1]{\underline{\hspace{#1cm}}}
+
+% New Column Type for Table Alignment
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Graphic Path for Figures
+\graphicspath{{C:/Users/Nathan/Documents/Enseignement/ens_latex/figuresSVG}}
+
+% Set Header Separation
+\setlength{\headsep}{0.2in}

@@ -47,6 +47,7 @@
 
 % Exercise Counter
 \newcounter{exo}
+\newcounter{core}
 
 % ======================================== exo : start ========================================
 \NewDocumentEnvironment{exo}{O{0}O{\faPepperHot}}
@@ -78,10 +79,70 @@
 }
 {% End environment
   \end{tcolorbox}
-  \par%
+  %\par%
   \noindent\ignorespacesafterend%
 }
 % ======================================== exo : end ========================================
+
+\NewDocumentEnvironment{core}{}
+{% Begin environment
+  \par\vspace{1ex}\noindent
+  \refstepcounter{core}%
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=white,
+    arc=0pt,
+    boxrule=0mm,
+    notitle,
+    left=0pt,
+    right=0pt,
+    boxsep=0pt,
+    top=0pt,
+    bottom=0pt,
+    before=\vspace{-\baselineskip},
+  ]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt,inner sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm] (numero) {\thecore}; % Ensure 'draw' is included
+  \end{tikzpicture}%
+  \hspace*{0.7cm}%
+}
+{% End environment
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend%
+}
+
+
+\NewDocumentEnvironment{core-upside}{}
+{% Begin environment
+  \par\vspace{1ex}\noindent
+  \refstepcounter{core}%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=white,
+    arc=0pt,
+    boxrule=0mm,
+    notitle,
+    left=0pt,
+    right=0pt,
+    boxsep=0pt,
+    top=0pt,
+    bottom=0pt,
+    before=\vspace{-\baselineskip},
+    tikz={rotate=180,transform shape},
+  ]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt,inner sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm,scale=0.7] (numero) {\thecore}; % Ensure 'draw' is included
+  \end{tikzpicture}%
+  \hspace*{0.3cm}%
+}
+{% End environment
+  \end{tcolorbox}
+  \par%
+  \noindent\ignorespacesafterend%
+}
+
 
 % ======================================== attention : start ========================================
 \newcounter{attention}
