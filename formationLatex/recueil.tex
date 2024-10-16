@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{luacode}
+\usepackage[serie,niveau={},nfiche={}, annee={2024--2025}, auteur={ns},theme={Recueil des exercices}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+
+% Path to exercise sources
+\newcommand{\path}{./}
+
+\input{./_preambules/general.tex}
+\input{./_preambules/print_exo.tex}
+
+% Define your filters
+\def\desiredYear{2425}
+\def\desiredChapter{1,2}
+\def\desiredLevel{1M}
+\def\desiredSource{}
+\def\desiredType{}
+
+% LaTeX expands the desired filter values into Lua strings
+\edef\luaDesiredYear{\desiredYear}
+\edef\luaDesiredChapter{\desiredChapter}
+\edef\luaDesiredLevel{\desiredLevel}
+
+\begin{document}
+
+% Set visibility options
+\setboolean{solution}{true} % Show solutions
+
+\begin{luacode}
+
+-- Lua helper function to check if a value is in a comma-separated list
+local function value_in_list(value, list)
+    value = value or ""
+    list = list or ""
+    if list == "" then return true end
+    for item in string.gmatch(list, "([^,]+)") do
+        if value == item:match("^%s*(.-)%s*$") then return true end
+    end
+    return false
+end
+
+-- Assign filter values from LaTeX macros
+desired_year = "\luaDesiredYear"
+desired_chapter = "\luaDesiredChapter"
+desired_level = "\luaDesiredLevel"
+
+-- Iterate over all files in the 'src' directory
+local lfs = require("lfs")
+local src_dir = "src/"
+
+for file in lfs.dir(src_dir) do
+    if file:match("%.tex$") then
+        local filename = file:gsub("%.tex$", "")
+        local full_path = src_dir .. file
+        
+        -- Read the content of the file
+        local f = io.open(full_path, "r")
+        if f then
+            local content = f:read("*all")
+            f:close()
+            
+            -- Extract metadata from the content
+            local year = content:match("\\annee%s*{(.-)}")
+            local chapter = content:match("\\theme%s*{(.-)}")
+            local level = content:match("\\organisation%s*{(.-)}")
+            
+            -- Filtering logic
+            local should_include = true
+            if desired_year ~= "" and desired_year ~= year then
+                should_include = false
+            end
+            if not value_in_list(chapter, desired_chapter) then
+                should_include = false
+            end
+            if desired_level ~= "" and desired_level ~= level then
+                should_include = false
+            end
+            
+            -- Include exercise if it passes all filters
+            if should_include then
+            	tex.print("\\insertexo{" .. filename .. "}{true}{exo}{false}")
+            end
+        else
+            tex.print("\\textbf{Error: Unable to open file " .. full_path .. "}")
+        end
+    end
+end
+
+\end{luacode}
+
+\end{document}
+

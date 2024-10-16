@@ -33,6 +33,11 @@
 	\def\Annee{#1} % Set the year for later use
 }
 
+% Define the year of the exercise
+\newcommand{\organisation}[1]{
+	\def\Organisation{#1} % Set the year for later use
+}
+
 % Define the correction (solution) of the exercise
 \newcommand{\correction}[1]{%
 	\def\Solution{#1} % Set the solution for later use
@@ -44,14 +49,12 @@
 % Directly use text as it is
 \newcommand{\texte}[1]{#1} % Simple passthrough command for text
 
-% Define the theme (currently unused)
-\newcommand{\theme}[1]{} % Placeholder for theme
-
+% Define the correction (solution) of the exercise
+\newcommand{\theme}[1]{%
+	\def\Theme{#1} % Set the solution for later use
+}
 % Define the author (currently unused)
 \newcommand{\auteur}[1]{} % Placeholder for author
-
-% Define the organization (currently unused)
-\newcommand{\organisation}[1]{} % Placeholder for organization
 
 % Command for question text
 \newcommand{\question}[1]{#1} % Simple passthrough command for question
