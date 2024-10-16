@@ -12,21 +12,18 @@
 \input{./_preambules/print_exo.tex}
 
 % Define your filters
-\def\desiredYear{2425}
-\def\desiredChapter{1,2}
-\def\desiredLevel{1M}
-\def\desiredSource{}
-\def\desiredType{}
+\def\choixAnnee{2425}
+\def\choixTheme{}
+\def\choixNiveau{1M}
+\def\choixSource{}
+\def\choixType{}
 
-% LaTeX expands the desired filter values into Lua strings
-\edef\luaDesiredYear{\desiredYear}
-\edef\luaDesiredChapter{\desiredChapter}
-\edef\luaDesiredLevel{\desiredLevel}
+% LaTeX expands the choix filter values into Lua strings
+\edef\luaChoixAnnee{\choixAnnee}
+\edef\luaChoixTheme{\choixTheme}
+\edef\luaChoixNiveau{\choixNiveau}
 
 \begin{document}
-
-% Set visibility options
-\setboolean{solution}{true} % Show solutions
 
 \begin{luacode}
 
@@ -42,9 +39,9 @@ local function value_in_list(value, list)
 end
 
 -- Assign filter values from LaTeX macros
-desired_year = "\luaDesiredYear"
-desired_chapter = "\luaDesiredChapter"
-desired_level = "\luaDesiredLevel"
+choix_annee = "\luaChoixAnnee"
+choix_theme = "\luaChoixTheme"
+choix_niveau = "\luaChoixNiveau"
 
 -- Iterate over all files in the 'src' directory
 local lfs = require("lfs")
@@ -62,19 +59,19 @@ for file in lfs.dir(src_dir) do
             f:close()
             
             -- Extract metadata from the content
-            local year = content:match("\\annee%s*{(.-)}")
-            local chapter = content:match("\\theme%s*{(.-)}")
-            local level = content:match("\\organisation%s*{(.-)}")
+            local annee = content:match("\\annee%s*{(.-)}")
+            local theme = content:match("\\theme%s*{(.-)}")
+            local niveau = content:match("\\niveau%s*{(.-)}")
             
             -- Filtering logic
             local should_include = true
-            if desired_year ~= "" and desired_year ~= year then
+            if choix_annee ~= "" and choix_annee ~= annee then
                 should_include = false
             end
-            if not value_in_list(chapter, desired_chapter) then
+            if not value_in_list(theme, choix_theme) and value ~= "" then
                 should_include = false
             end
-            if desired_level ~= "" and desired_level ~= level then
+            if choix_niveau ~= "" and choix_niveau ~= niveau then
                 should_include = false
             end
             
