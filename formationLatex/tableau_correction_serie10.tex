@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[corriges,niveau={1MA1},nfiche={}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Inscription corrigés série 10 \hspace{3cm} CLASSE\,:}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\usepackage{tabularray}
+
+
+\ExplSyntaxOn
+\NewDocumentCommand{\makerows}{mm}
+ {% #1 = number of lines, #2 = template
+  \cs_gset_protected:Nn \__lownds_makerow:n { #2 }
+  \int_step_function:nN { #1 } \__lownds_makerow:n
+ }
+\cs_new_protected:Nn \__lownds_makerow:n {} % initialize
+\ExplSyntaxOff
+
+
+\begin{document}
+  \begin{tblr}{
+    colspec = {Q[0.2,l] X[1,l]},
+    row{1} = {font=\bfseries},
+    hlines,
+    vlines,
+    rows = {abovesep=0.7cm, belowsep=0.7cm},
+  }
+    Exercice & Qui ? \\
+Exercice 1  & \\
+Exercice 2  & \\
+Exercice 3  & \\
+Exercice 4  & \\
+Exercice 5  & \\
+Exercice 6  & \\
+Exercice 7  & \\
+Exercice 8  & \\
+Exercice 9  & \\
+Exercice 10  & \\
+  \end{tblr}
+
+\end{document}
+
