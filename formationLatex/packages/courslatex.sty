@@ -120,6 +120,16 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+
+\newcommand\blankpage{% comando pagina vuota
+    \clearpage
+    \begingroup
+      \null
+      \thispagestyle{empty}%
+      \addtocounter{page}{-1}%
+      \clearpage
+    \endgroup
+}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\emptybox}{\fbox{\parbox[c][8mm]{8mm}{\ }}}
 \newcommand{\boxt}[1]{\fbox{\parbox[c][8mm]{8mm}{\centering #1}}}
