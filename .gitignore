@@ -18,6 +18,7 @@
 *.vrb
 *.pdf
 
+formationLatex/src_eval/
 formationLatex/src_eval/*
 formationLatex/output/*
 formationLatex/pdf/*
