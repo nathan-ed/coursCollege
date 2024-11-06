@@ -1,0 +1,113 @@
+\newboolean{solution} % Boolean to indicate if solutions should be shown
+\newboolean{uuid} % Boolean to indicate if UUID should be shown
+\newboolean{link} % Boolean to indicate if a link should be shown
+\newcounter{num} % Counter to keep track of exercise numbers
+
+% liens vers des ressources extérieures :
+\newcommand{\pathcorrige}{https://raw.githubusercontent.com/smaxx73/Exercices/main/pdf/pdf/} % Path to corrected exercises
+\newcommand{\pathnotebook}{https://github.com/smaxx73/Exercices/blob/main/notebook/} % Path to notebooks
+\newcommand{\pathexercice}{https://raw.githubusercontent.com/smaxx73/Exercices/main/pdf/pdf_sansol/} % Path to exercises without solutions
+
+% Define the title of the exercise
+\newcommand{\titre}[1]{%
+	\def\TitreExo{#1} % Set the title for later use
+}
+
+% Define the content of the exercise
+\newcommand{\contenu}[1]{%
+	\def\Contenu{#1} % Set the content for later use
+}
+
+% Define the number of points for the exercise
+\newcommand{\pts}[1]{%
+	\def\Points{#1} % Set the number of points for later use
+}
+
+% Define the year of the exercise
+\newcommand{\annee}[1]{
+	\def\Annee{#1} % Set the year for later use
+}
+
+% Define the correction (solution) of the exercise
+\newcommand{\correction}[1]{%
+	\def\Solution{#1} % Set the solution for later use
+}
+
+% Directly use code as it is
+\newcommand{\code}[1]{#1} % Simple passthrough command for code
+
+% Directly use text as it is
+\newcommand{\texte}[1]{#1} % Simple passthrough command for text
+
+% Define the theme (currently unused)
+\newcommand{\theme}[1]{} % Placeholder for theme
+
+% Define the author (currently unused)
+\newcommand{\auteur}[1]{} % Placeholder for author
+
+% Define the organization (currently unused)
+\newcommand{\organisation}[1]{} % Placeholder for organization
+
+% Command for question text
+\newcommand{\question}[1]{#1} % Simple passthrough command for question
+
+% Command for providing a response, shown only if the solution boolean is true
+\newcommand{\reponse}[1]{%
+	\ifthenelse{\boolean{solution}} % Check if 'solution' is true
+	{%
+		\begin{solutionbox} % Begin solution box environment
+			\begin{footnotesize} #1 \end{footnotesize} % Display the response in small font size
+		\end{solutionbox}}{} % End solution box if 'solution' is true
+} 
+
+% Move to the next exercise by incrementing the counter
+\newcommand{\nextexo}{%
+	\addtocounter{num}{1} % Increment exercise counter
+	\vspace{1em} % Add vertical space
+}
+
+% Command to insert an exercise, taking several arguments including content and whether to show UUID or link
+\newcommand{\insertexo}[5]{% contenu, solution, uuid, lien solution, numerotation, theme
+	\input{\path/src_eval/#1} % Input the exercise content from the provided path
+	%\setboolean{solution}{#2} % Set the solution boolean (commented out for now)
+	\setboolean{uuid}{#3} % Set the uuid boolean
+	\setboolean{link}{#4} % Set the link boolean
+	
+	\begin{question}[\Points] % Begin question environment with the number of points
+	\ifthenelse{\boolean{uuid}} % Check if uuid is true
+		{#1} % Include uuid if true
+
+		\Contenu % Insert the content of the exercise
+	\end{question}	
+	\begin{solution} % Begin solution environment
+	\Solution % Insert the solution
+	\end{solution}
+}
+
+% Command to list exercises from a given list
+\newcommand{\listexo}[1]{% liste of exercises
+	\foreach \ex in #1 { % Iterate over each exercise in the list
+		\nextexo % Move to the next exercise
+		\insertexo{\ex}{\solution}{\uuid}{\link}{\thenum} % Insert the current exercise with its properties
+	}
+}
+
+% Counter for QR codes
+\newcounter{qrcodenum} % Define a counter to track QR codes
+
+% Command to create a list of QR codes for exercises
+\newcommand{\listeqrcode}[2]{% liste d'exercices, initialisation du compteur
+\setcounter{qrcodenum}{#2} % Set the initial value for the QR code counter
+\noindent
+\foreach \exo in #1{ % Iterate over each exercise in the list
+	% Create a minipage for each exercise with its number, title, and QR code
+	\begin{minipage}{0.24\textwidth}  % Adjust the width to have 4 QR codes per line
+		\centering
+		\href{\pathcorrige\exo.pdf}{\texttt{Ex \theqrcodenum : \exo \vspace{1em}}}  % Display the number and title of the exercise with a hyperlink
+		{\qrcode{\pathcorrige\exo.pdf}}  % Generate the QR code for the exercise
+		\par\vspace{2em}  % Add vertical space between QR codes
+	\end{minipage}
+	% Increment the QR code counter
+	\stepcounter{qrcodenum}
+}
+}

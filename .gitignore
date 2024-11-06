@@ -19,6 +19,7 @@
 *.pdf
 
 formationLatex/src_eval/
+formationLatex/eval/
 formationLatex/src_eval/*
 formationLatex/output/*
 formationLatex/pdf/*
