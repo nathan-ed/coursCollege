@@ -10,9 +10,11 @@
 \RequirePackage[math-style=french]{unicode-math}%
 % options 
 \RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-\DeclareStringOption[Dinish]{main}%
+\DeclareStringOption[dinish]{main}%
+%\DeclareStringOption[cambria]{main}%
 \DeclareStringOption[Iosevka]{mono}%
 \DeclareStringOption[GFS Neohellenic Math]{math}%
+%\DeclareStringOption[cambria-math]{math}%
 \DeclareStringOption[League Gothic]{condensed}%
 %\DeclareStringOption[Barlow Condensed Black]{title}%
 \DeclareStringOption[Nickainley]{cursive}%
@@ -25,7 +27,7 @@
 \ProcessKeyvalOptions*%
 \setmainfont{\fontes@main}%
 \setmonofont{\fontes@mono}%
-\setmathfont{\fontes@math}[Scale=1.05]%[Scale=MatchLowercase]
+\setmathfont{\fontes@math}[Scale=1]%[Scale=MatchLowercase]
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
 %\newfontface{\titlefont}{\fontes@title}%
 \newfontface{\titlefont}{\fontes@light}%

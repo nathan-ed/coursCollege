@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[fiche,niveau={1MA1},nfiche={11}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Équations bicarrées}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+
+\begin{document}
+Jusqu'à présent, nous avons vu 
+\begin{boiteExT}
+\vspace{5cm}
+\end{boiteExT}
+Nous allons étudier comment résoudre une équation de la forme
+
+\[ax^4+bx^2+c=0\]
+
+On commence par remarquer que 
+\[ax^4+bx^2+c=0 \iff a(x^2)^2+bx^2+c=0 \iff ay^2+by+c=0 \text{ avec } y=x^2\]
+
+On applique la formule du deuxième degré à l'équation en $y$. L'équation aura 
+\begin{tasks}(3)
+	\task[] $0$ solution réelle;
+	\task[] $1$ solution réelle;
+	\task[] $2$ solutions réelle.
+\end{tasks}
+On détermine ensuite les solutions de l'équation en déterminant les valeurs de $x=\pm\sqrt{y}$ pour $y\geq 0$.
+\medskip
+
+Seulement les solutions positives pour l'équation en $y$ donneront des solutions pour l'équation en $x$, car la racine carrée n'est pas définie sur les nombres négatifs.
+
+\begin{boiteExT}[$x^4-20x^2+91=0$]
+\vspace{10cm}
+\end{boiteExT}
+\newpage 
+\begin{boiteExT}[$x^4+2x^2-1=0$]
+\vspace{15cm}
+\end{boiteExT}
+
+\begin{exo}
+	Résoudre à l'aide de la méthode présentée les équations suivantes (calculatrice autorisée). 
+\begin{tasks}(2)
+	\task $9 x^4-37 x^2+4=0$
+	\task $4 x^4+91 x^2-225=0$
+	\task $16 x^4+40 x^2+9=0$
+	\task $x^4-2 x^2-6=0$
+\end{tasks}
+\end{exo}
+
+\end{document}
+
+

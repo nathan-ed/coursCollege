@@ -16,6 +16,11 @@
 *.nav
 *.snm
 *.vrb
+*.pdf
+
+formationLatex/src_eval/*
+formationLatex/output/*
+formationLatex/pdf/*
 
 # LaTeX intermediate files
 *.ps
