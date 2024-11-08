@@ -6,16 +6,13 @@
 % Set column separation
 \setlength\columnsep{40pt}
 
-% Task Settings
+% Task settings
 \settasks{
-  % The next two should be set to the same value so labels are aligned to the left
-  label=\alph*),
-  label-width=2em,
-  item-indent=3em,
-  %before-skip = -\parskip, % undo paragraph skip (commented out)
-  %after-skip = -\parskip, % undo paragraph skip (commented out)
-  %label-offset=1em, % commented out
-  after-item-skip=1em % undo paragraph skip
+  label-width = 1em,
+  item-indent = 2em,
+  after-skip = -\parskip,
+  label-offset=1em,
+  after-item-skip = 1em
 }
 
 % Required Packages
@@ -75,17 +72,26 @@
 \marginpointname{ \points}
 
 % Information Commands
-\newcommand{\etablissement}{CO des Coudriers}
-\newcommand{\sujet}{Récitation -- Automatismes 1}
-\newcommand{\cours}{Mathématiques 1171}
-\newcommand{\datepassage}{21 mars 2022}
-\newcommand{\duree}{35 minutes}
+\newcommand{\etablissement}{C.E.C. ÉMILIE-GOURD}
+\newcommand{\sujet}{Épreuve regroupée de mathématiques}
+\newcommand{\cours}{1MA1DF06}
+\newcommand{\datepassage}{lundi 18 décembrer 2023}
+\newcommand{\duree}{95 minutes}
+\newcommand{\enseignant}{N. S.}
+\newcommand{\materiel}{aucun}
+\newcommand{\calculatormodels}{TI}
 
-% Page Style Settings
+% Define a boolean for calculator authorization
+\newif\ifcalculatorallowed
+\calculatorallowedfalse % Default to false
+
+% Page layout settings
+\extraheadheight{-.25in}
+\extrafootheight{-.25in}
 \pagestyle{headandfoot}
-\runningfooter{}{
-  \iflastpage{{\small\bfseries Fin de l'\u00e9valuation}}{{\small\bfseries L'\u00e9valuation continue sur la page suivante\ldots}}
-}{{\small Page \thepage\ sur \numpages}}
+\firstpageheader{}{{\large \bfseries {\small \etablissement}\medskip \\ \sujet}}{}
+\runningheader{{\footnotesize \etablissement}}{}{{\small\cours}}
+\runningfooter{}{\iflastpage{{\small\bfseries Fin de l'évaluation}}{{ \small\bfseries L'évaluation continue sur la page suivante\ldots}}}{{\small Page \thepage\ sur \numpages}}
 
 % Set Array Stretch
 \renewcommand{\arraystretch}{2}
@@ -105,8 +111,12 @@
 % New Column Type for Table Alignment
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-% Graphic Path for Figures
-\graphicspath{{C:/Users/Nathan/Documents/Enseignement/ens_latex/figuresSVG}}
-
 % Set Header Separation
 \setlength{\headsep}{0.2in}
+
+
+% Exam-specific words
+\vqword{Exercice}
+\vpword{Points} 
+\vtword{\textbf{Total}}
+\vsword{Points obtenus}

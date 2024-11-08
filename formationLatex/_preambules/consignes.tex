@@ -1,0 +1,24 @@
+% Consignes command definition
+\newcommand{\consignes}{
+  \setlength\extrarowheight{-3pt}
+  \begin{tabularx}{\textwidth}{lX}
+    {\bfseries Date :} & \datepassage \\
+    {\bfseries Cours :} & \cours \\
+    {\bfseries Enseignant :} &  \enseignant\\
+    {\bfseries Temps à disposition :} & \duree \\
+    {\bfseries Matériel autorisé :} & \materiel\\
+    \ifcalculatorallowed
+      {\bfseries Modèles~:} & \calculatormodels \\
+    \fi
+    {\bfseries Nombre de pages :} & \numpages \\
+    {\bfseries Consignes générales :} & \RaggedRight
+    \parbox[t]{\linewidth}{%
+        Il sera tenu compte de la présentation ainsi que de l'utilisation correcte des notations mathématiques et du français (PNF).
+        \\[0.5em]
+        Tous les calculs et raisonnements doivent figurer sur la feuille, une réponse non justifiée ne sera pas prise en considération.
+        \\[0.5em]
+        Écrire au crayon ou au stylo bleu/noir uniquement.
+    } \\
+    {\bfseries Évaluation :} & \\
+  \end{tabularx}
+}
