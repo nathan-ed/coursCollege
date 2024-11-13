@@ -149,11 +149,8 @@
 \NewDocumentEnvironment{attention}{ s o O{Attention !} }
 {% Begin environment
   \par\noindent
-  \refstepcounter{attention}%
-  \IfBooleanTF{#1}{\newcommand*{\counterattention}{}}{\newcommand*{\counterattention}{\theattention}}
-  \IfNoValueTF {#2}
-      {\newcommand*{\boxtitle}{#3 \counterattention{}}}
-      {\newcommand*{\boxtitle}{#3 \counterattention{} #2}}
+  {\newcommand*{\boxtitle}{#3 }}
+      {\newcommand*{\boxtitle}{#3  #2}}
   \begin{tcolorbox}[colback=colorSecLight,colframe=colorSec,title=\boxtitle,fonttitle=\bfseries,sharp corners=all]
 }
 {% End environment
