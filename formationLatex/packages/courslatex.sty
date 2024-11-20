@@ -143,3 +143,26 @@
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
+
+\sysaddeqsign{?}
+\sysequivsign{?}{\stackrel{?}{=}}
+
+\sysaddeqsign{!}
+\sysequivsign{!}{\neq}
+
+\newenvironment{solve}
+ {%
+\begin{equation*}
+  \renewcommand{\arraystretch}{1.3}%
+  \setlength{\arraycolsep}{0pt}%
+  \begin{array}{
+    >{\displaystyle}r   % right aligned
+    >{\displaystyle{}}l % left aligned
+    @{\hspace{4em}}     % spacing
+    |                   % vertical rule
+    @{\hspace{2em}}     % spacing
+    >{\displaystyle}l  % comments
+  }%
+ }%
+ {\end{array}
+\end{equation*}}

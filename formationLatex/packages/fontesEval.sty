@@ -1,0 +1,39 @@
+% author : sylcha
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : pour une déclaration simplifiée des fontes
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{fontesEval}[2023/08/10 v0.1]%
+% fontes
+\RequirePackage{fontspec}%
+\RequirePackage{kpfonts-otf}
+%\RequirePackage[math-style=french]{unicode-math}%
+% options 
+\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
+\DeclareStringOption[OpenSans]{main}%
+%\DeclareStringOption[cambria]{main}%
+\DeclareStringOption[Iosevka]{mono}%
+\DeclareStringOption[GFS Neohellenic Math]{math}%
+%\DeclareStringOption[cambria-math]{math}%
+\DeclareStringOption[League Gothic]{condensed}%
+%\DeclareStringOption[Barlow Condensed Black]{title}%
+\DeclareStringOption[Nickainley]{cursive}%
+ \DeclareStringOption[Source Sans Pro Light]{light}%
+% pour les touches de la calculatrice Nuworks
+% voir pour l'installation ici : https://www.numworks.com/shared/pages/blog/numworks-keys-font/numworks-keys-font-351dbb06.zip
+\DeclareStringOption[Numworks Keys Regular]{nwr}%
+\DeclareStringOption[Numworks Keys Bold]{nwb}%
+\DeclareDefaultOption{\PackageWarning{margintitle}{Unknown '\CurrentOption'}}%
+\ProcessKeyvalOptions*%
+\setmainfont{\fontesEval@main}[Scale=1.1]%
+\setmonofont{\fontesEval@mono}%
+\setmathfont{\fontesEval@math}[Scale=1.1]%[Scale=MatchLowercase]
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
+%\newfontface{\titlefont}{\fontes@title}%
+\newfontface{\titlefont}{\fontesEval@light}%
+\newfontface{\cursivefont}{\fontesEval@cursive}[Scale=1.7]%
+\newfontface{\condensedfont}{\fontesEval@condensed}%
+\setmathfont[Scale=1.1]{DejaVu Math TeX Gyre}
+%\newfontface{\lightfont}{\fontes@light}%
+%\newfontface{\numworksregfont}{\fontes@nwr}%
+%\newfontface{\numworksboldfont}{\fontes@nwb}%
