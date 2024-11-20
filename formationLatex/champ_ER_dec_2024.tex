@@ -3,19 +3,8 @@
 \usepackage{packages/boites}
 \usepackage{packages/fontes}
 \usepackage{packages/courslatex}
-\usepackage{hyperref}
 \setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=5pt,parsep=5pt,topsep=5pt,rightmargin=0cm}
 
-\RequirePackage{qrcode}
-\newcommand{\qrwithlabel}[2]{%
-    \begin{minipage}{0.23\linewidth} % Adjust width to fit 4 on a line
-        \centering
-        \textbf{#1} \\ % Description on top
-	\smallskip
-	\href{#2}
-	{\qrcode[height=3cm]{#2}} % QR code with fixed height
-    \end{minipage}%
-}
 
 \begin{document}
 Je suis capable de
