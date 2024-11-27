@@ -83,6 +83,59 @@
   \noindent\ignorespacesafterend%
 }
 % ======================================== exo : end ========================================
+% ======================================== EXO : start ========================================
+
+\ExplSyntaxOn
+
+\NewDocumentEnvironment{EXO}{m m O{\faPepperHot}}
+{
+  \par\vspace{1ex}\noindent
+  \refstepcounter{exo}
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=white,
+    arc=0pt,
+    boxrule=0mm,
+    notitle,
+    left=0pt,
+    right=0pt,
+    boxsep=0pt,
+    top=0pt,
+    bottom=0pt,
+    before=\vspace{-\baselineskip},
+  ]
+  \begin{tikzpicture}[remember~picture,overlay]
+    \node[draw, circle, line~width=0.4pt,inner~sep=2pt, anchor=east, xshift=0.55cm, yshift=0.15cm] (numero) {\theexo};
+  \end{tikzpicture}
+  \hspace*{0.7cm}
+  \tl_if_empty:nTF {#1}
+    { \medskip }
+    {
+      \regex_match:nnTF {^\d+$} {#1}
+        {
+          \int_compare:nNnTF {#1} > {0}
+            {
+              \int_step_inline:nn {#1}
+                { \small #3\hspace{0.1cm} }
+            }
+            {  }
+        }
+        {  }
+    }
+}
+{
+  \end{tcolorbox}
+  \noindent\ignorespacesafterend
+}
+
+\ExplSyntaxOff% ======================================== EXO : end ========================================
+\NewDocumentEnvironment{Correction}{}{% Begin Correction
+  \textLigne{Corrigés}
+\medskip
+
+  \setcounter{exo}{0} % Reset the exercise counter
+}{% End Correction
+}
 
 \NewDocumentEnvironment{core}{}
 {% Begin environment

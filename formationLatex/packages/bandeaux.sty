@@ -10,6 +10,8 @@
 \RequirePackage{background}
 \RequirePackage{ifoddpage}
 \RequirePackage{tikzpagenodes}
+\RequirePackage{luacode}
+\RequirePackage{qrcode}
 
 % Key-Value Options for Customization
 \RequirePackage{kvoptions} % Key-value options for title, theme, etc.
@@ -37,12 +39,14 @@
 }
 \DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown option '\CurrentOption'}}
 
+
 % String Options
 \DeclareStringOption[1MA1]{niveau}
 \DeclareStringOption[numero]{nfiche}
 \DeclareStringOption[2024--2025]{annee}
 \DeclareStringOption[ns]{auteur}
 \DeclareStringOption[Mon Th\`{e}me]{theme}
+
 
 % Page Number Option
 \DeclareBoolOption[false]{nopagenumber}
@@ -66,6 +70,8 @@
   }
 }
 
+
+% Generate the QR code with the processed URL
 % Adding Elements at the Beginning of the Document
 \AtBeginDocument{
   \begin{tikzpicture}[remember picture,overlay]
@@ -84,7 +90,7 @@
       (type) {\titlefont \TypeTitle \bandeaux@nfiche};
 
     % Icon
-    \node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
+\node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
 
     % Title
     \node[anchor=center] (theme) at ([yshift=-13mm]current page.north) 

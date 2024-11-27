@@ -10,14 +10,15 @@
 \RequirePackage[math-style=french]{unicode-math}%
 % options 
 \RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-\DeclareStringOption[dinish]{main}%
+\DeclareStringOption[DINish-Regular]{main}%
+\DeclareStringOption[CookieCrisp]{cookie}%
 %\DeclareStringOption[cambria]{main}%
 \DeclareStringOption[Iosevka]{mono}%
 \DeclareStringOption[GFS Neohellenic Math]{math}%
 %\DeclareStringOption[cambria-math]{math}%
 \DeclareStringOption[League Gothic]{condensed}%
 %\DeclareStringOption[Barlow Condensed Black]{title}%
-\DeclareStringOption[Nickainley]{cursive}%
+\DeclareStringOption[Nickainley-Normal]{cursive}%
  \DeclareStringOption[Source Sans Pro Light]{light}%
 % pour les touches de la calculatrice Nuworks
 % voir pour l'installation ici : https://www.numworks.com/shared/pages/blog/numworks-keys-font/numworks-keys-font-351dbb06.zip
@@ -25,13 +26,18 @@
 \DeclareStringOption[Numworks Keys Bold]{nwb}%
 \DeclareDefaultOption{\PackageWarning{margintitle}{Unknown '\CurrentOption'}}%
 \ProcessKeyvalOptions*%
-\setmainfont{\fontes@main}[Scale=1.1]%
+
+\newcommand{\fontspath}{fonts/}
+\setmainfont{\fontes@main}[Path=\fontspath,
+Scale=1.1, 
+BoldFont=DINish-Bold.ttf,
+ItalicFont=DINish-Italic.ttf]%
 \setmonofont{\fontes@mono}%
 \setmathfont{\fontes@math}[Scale=1.1]%[Scale=MatchLowercase]
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
 %\newfontface{\titlefont}{\fontes@title}%
 \newfontface{\titlefont}{\fontes@light}%
-\newfontface{\cursivefont}{\fontes@cursive}[Scale=1.7]%
+\newfontface{\cursivefont}{\fontes@cursive}[Path=\fontspath,Scale=1.7]%
 \newfontface{\condensedfont}{\fontes@condensed}%
 %\newfontface{\lightfont}{\fontes@light}%
 %\newfontface{\numworksregfont}{\fontes@nwr}%
