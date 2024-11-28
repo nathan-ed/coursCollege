@@ -1,0 +1,44 @@
+
+\ExplSyntaxOn
+
+% Define competences property list
+\prop_new:N \g_competences_prop
+\prop_new:N \g_competences_prop_index
+\prop_new:N \g_competences_prop_year_chapter
+
+% Simplify competence addition syntax
+\NewDocumentCommand{\AddCompetence}{mmmm} {
+    \prop_gput:Nnn \g_competences_prop_index { #1 } { #4 }
+ % Define a unique clist variable for temporary storage
+\clist_clear_new:N \l_my_temp_clist
+    % Retrieve the current list of competences for the Year:Chapter key
+    \prop_get:NnNTF \g_competences_prop_year_chapter { #2:#3 } \l_my_temp_clist
+        { \clist_put_right:Nn \l_my_temp_clist { #4 } } % Append to the existing clist
+        { \clist_set:Nn \l_my_temp_clist { #4 } } % Create a new clist
+    % Update the property list with the updated clist
+    \prop_put:NnV \g_competences_prop_year_chapter { #2:#3 } \l_my_temp_clist
+}
+% Retrieve all competences for a specific Year:Chapter and print them
+\NewDocumentCommand{\ListCompetencesYearChapter}{mm} {
+    % Define a unique clist variable for retrieval
+	\begin{itemize}
+\clist_clear_new:N \l_my_temp_clists
+    \prop_get:NnNT \g_competences_prop_year_chapter { #1:#2 } \l_my_temp_clist {
+        \clist_map_inline:Nn \l_my_temp_clist { \item ##1 }
+    }
+\end{itemize}
+}
+
+% Load competences from file only once
+\AtBeginDocument{
+    \file_input:n { competences.tex }
+}
+
+% Define a command to retrieve a specific competence
+\NewExpandableDocumentCommand{\GetCompetence}{ m } {
+    \prop_item:Nn \g_competences_prop_index { #1 }
+}
+
+
+\ExplSyntaxOff
+

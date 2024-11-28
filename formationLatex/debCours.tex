@@ -1,11 +1,16 @@
 \documentclass{beamer}
 
 \input{./_preambules/preambule_mathalea.tex}
+\input{competences_latex.tex}
 \usepackage{fontawesome}
-\title{Début de cours}
-\subtitle{Automatismes et autres compétences}
+\title{Exercices de début de cours (edc)}
+\subtitle{Automatismes et autres compétences -- 1$^{\text{re}}$ année du collège}
 \author{ns}
-
+\date{}
+\setbeamerfont{frametitle}{size=\normalsize}
+% define a new counter
+\newcounter{exercice}
+\setcounter{exercice}{0}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,17 +20,24 @@
 \titlepage
 \end{frame}
 
-\begin{frame}{Résoudre pour factoriser, exercice 1}
- \onslide<1->{Utiliser la méthode de résolution pour factoriser l'expression suivante, dans la forme factorisée, tous les coefficients doivent être entiers.
+\stepcounter{exercice}
+\begin{frame}{\GetCompetence{FactTri}, edc \theexercice}
+	% increment the counter
+ \onslide<1->{ Utiliser la méthode de résolution du deuxième degré pour factoriser l'expression suivante. 
+	 \ListCompetencesYearChapter{1M}{5}
+Dans la forme factorisée, tous les coefficients doivent être entiers.
  \[15x^2+32x-7\]}
- \onslide<2->{La forme factorisée est 
+ \onslide<2->{$\Delta=32^2-4\cdot 15\cdot (-7)=1444$. Les racines du polynôme sont 
+	 \[S=\left\{\dfrac{1}{5};-\dfrac{7}{3}\right\}.\]
+
+	 La forme factorisée est 
  \[(5x-1)(3x+7)\]}
 \end{frame}
 
-\begin{frame}{Système d'équations par combinaison linéaire exercice 1}
+\stepcounter{exercice}
+\begin{frame}{ \GetCompetence{CombLin}, edc \theexercice}
 	\onslide<1->{
 Résoudre les systèmes d'équations suivants par combinaison linéaire :
-\vfill
 \begin{multicols}{2}
 \begin{enumerate}
 	\item  $\begin{cases}\begin{aligned}-x-2y &=1\\-6x-4y &=-26\end{aligned}\end{cases}$
@@ -35,8 +47,8 @@ Résoudre les systèmes d'équations suivants par combinaison linéaire :
 \onslide<2->{Les solutions sont :
 	\begin{multicols}{2}
 \begin{enumerate}
-\item $S=\left\{\left(8;-2\right)\right\}$.
 \item $S=\left\{\left(7;-4\right)\right\}$.
+\item $S=\left\{\left(8;-2\right)\right\}$.
 \end{enumerate}
 \end{multicols}}
 \end{frame}
