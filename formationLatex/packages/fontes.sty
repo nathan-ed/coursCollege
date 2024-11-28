@@ -10,35 +10,46 @@
 \RequirePackage[math-style=french]{unicode-math}%
 % options 
 \RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-\DeclareStringOption[DINish-Regular]{main}%
-\DeclareStringOption[CookieCrisp]{cookie}%
-%\DeclareStringOption[cambria]{main}%
-\DeclareStringOption[Iosevka]{mono}%
-\DeclareStringOption[GFS Neohellenic Math]{math}%
-%\DeclareStringOption[cambria-math]{math}%
-\DeclareStringOption[League Gothic]{condensed}%
-%\DeclareStringOption[Barlow Condensed Black]{title}%
-\DeclareStringOption[Nickainley-Normal]{cursive}%
- \DeclareStringOption[Source Sans Pro Light]{light}%
-% pour les touches de la calculatrice Nuworks
-% voir pour l'installation ici : https://www.numworks.com/shared/pages/blog/numworks-keys-font/numworks-keys-font-351dbb06.zip
-\DeclareStringOption[Numworks Keys Regular]{nwr}%
-\DeclareStringOption[Numworks Keys Bold]{nwb}%
-\DeclareDefaultOption{\PackageWarning{margintitle}{Unknown '\CurrentOption'}}%
-\ProcessKeyvalOptions*%
 
 \newcommand{\fontspath}{fonts/}
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
+
+%Commenter ou enlever le commentaire selon choix de la police principale
+\DeclareStringOption[DINish-Regular]{main}%
 \setmainfont{\fontes@main}[Path=\fontspath,
 Scale=1.1, 
 BoldFont=DINish-Bold.ttf,
 ItalicFont=DINish-Italic.ttf]%
-\setmonofont{\fontes@mono}%
+%Enlever le commentaire pour utiliser OpenSans
+%\DeclareStringOption[OpenSans-Regular]{main}%
+%\setmainfont{\fontes@main}[Path=\fontspath,
+%Scale=1, 
+%BoldFont=OpenSans-Bold.ttf,
+%ItalicFont=OpenSans-Italic.ttf]%
+
+%% Police pour les mathématiques
+%Commenter ou enlever le commentaire selon choix de la police
+\DeclareStringOption[GFS Neohellenic Math]{math}%
 \setmathfont{\fontes@math}[Scale=1.1]%[Scale=MatchLowercase]
-\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
-%\newfontface{\titlefont}{\fontes@title}%
+%% Enlever le commentaire pour utiliser Cambria Math
+%\DeclareStringOption[cambria-math]{math}%
+%\setmathfont{\fontes@math}[Scale=1, Path=\fontspath]
+%% Enlever le commentaire pour utiliser DejaVu Math TeX Gyre
+%\setmathfont[Scale=1]{DejaVu Math TeX Gyre}
+
+%\DeclareStringOption[cambria]{main}%
+\DeclareStringOption[Iosevka]{mono}%
+\DeclareStringOption[League Gothic]{condensed}%
+\DeclareStringOption[Nickainley-Normal]{cursive}%
+ \DeclareStringOption[Source Sans Pro Light]{light}%
+\DeclareStringOption[Numworks Keys Regular]{nwr}%
+\DeclareStringOption[Numworks Keys Bold]{nwb}%
+\DeclareDefaultOption{\PackageWarning{margintitle}{Unknown '\CurrentOption'}}%
+\ProcessKeyvalOptions*%
 \newfontface{\titlefont}{\fontes@light}%
-\newfontface{\cursivefont}{\fontes@cursive}[Path=\fontspath,Scale=1.7]%
 \newfontface{\condensedfont}{\fontes@condensed}%
-%\newfontface{\lightfont}{\fontes@light}%
-%\newfontface{\numworksregfont}{\fontes@nwr}%
-%\newfontface{\numworksboldfont}{\fontes@nwb}%
+\setmonofont{\fontes@mono}%
+\newfontface{\cursivefont}{\fontes@cursive}[Path=\fontspath,Scale=1.7]%
+
+
+

@@ -13,8 +13,8 @@
 \DeclareStringOption[OpenSans]{main}%
 %\DeclareStringOption[cambria]{main}%
 \DeclareStringOption[Iosevka]{mono}%
-\DeclareStringOption[GFS Neohellenic Math]{math}%
-%\DeclareStringOption[cambria-math]{math}%
+%\DeclareStringOption[GFS Neohellenic Math]{math}%
+\DeclareStringOption[cambria-math]{math}%
 \DeclareStringOption[League Gothic]{condensed}%
 %\DeclareStringOption[Barlow Condensed Black]{title}%
 \DeclareStringOption[Nickainley]{cursive}%
@@ -25,15 +25,15 @@
 \DeclareStringOption[Numworks Keys Bold]{nwb}%
 \DeclareDefaultOption{\PackageWarning{margintitle}{Unknown '\CurrentOption'}}%
 \ProcessKeyvalOptions*%
-\setmainfont{\fontesEval@main}[Scale=1.1]%
+\setmainfont{\fontesEval@main}[Scale=1]%
 \setmonofont{\fontesEval@mono}%
-\setmathfont{\fontesEval@math}[Scale=1.1]%[Scale=MatchLowercase]
+\setmathfont{\fontesEval@math}[Scale=1]
 \defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
 %\newfontface{\titlefont}{\fontes@title}%
 \newfontface{\titlefont}{\fontesEval@light}%
 \newfontface{\cursivefont}{\fontesEval@cursive}[Scale=1.7]%
 \newfontface{\condensedfont}{\fontesEval@condensed}%
-\setmathfont[Scale=1.1]{DejaVu Math TeX Gyre}
+%\setmathfont[Scale=1]{DejaVu Math TeX Gyre}
 %\newfontface{\lightfont}{\fontes@light}%
 %\newfontface{\numworksregfont}{\fontes@nwr}%
 %\newfontface{\numworksboldfont}{\fontes@nwb}%
