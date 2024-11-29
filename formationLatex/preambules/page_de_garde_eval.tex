@@ -1,0 +1,55 @@
+% First page geometry
+\newgeometry{left=2cm, right=2cm, top=3cm, bottom=1cm}
+
+% Tcolorbox settings
+\tcbset{
+    width=\textwidth,
+    height=1.5cm,
+    colframe=black,
+    colback=white,
+    arc=10pt,
+    valign=bottom,
+}
+
+% Name box
+\begin{center}
+\vspace{0.5cm}
+\begin{tcolorbox}
+    Nom, prénom : \enspace\dotfill\enspace 
+    \makebox[0.25\linewidth][l]{Groupe : \enspace\dotfill}
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% Consignes
+\consignes
+\end{center}
+
+% Grade table and note box
+\tcbset{
+    before=\hspace{12cm},
+    width=0.9\textwidth,
+    height=2cm,
+    colframe=black,
+    colback=white,
+    arc=10pt,
+    valign=center,
+}
+
+% Grade table and note box layout
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}
+\gradetable[v][questions]\\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}
+\begin{tcolorbox}
+    {\bfseries Note :} 
+\end{tcolorbox}
+\end{minipage}
+\hfill
+
+% Restore geometry for subsequent pages
+\restoregeometry

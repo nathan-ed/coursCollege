@@ -5,6 +5,7 @@
 \prop_new:N \g_competences_prop
 \prop_new:N \g_competences_prop_index
 \prop_new:N \g_competences_prop_year_chapter
+\prop_new:N \g_competences_prop_year_chapter_uuid
 
 % Simplify competence addition syntax
 \NewDocumentCommand{\AddCompetence}{mmmm} {
@@ -17,6 +18,12 @@
         { \clist_set:Nn \l_my_temp_clist { #4 } } % Create a new clist
     % Update the property list with the updated clist
     \prop_put:NnV \g_competences_prop_year_chapter { #2:#3 } \l_my_temp_clist
+
+    \clist_clear_new:N \l_temp_clist_with_uuid
+    \prop_get:NnNTF \g_competences_prop_year_chapter_uuid { #2:#3 } \l_temp_clist_with_uuid
+    { \clist_put_right:Nn \l_temp_clist_with_uuid {[#1] #4 } }
+	{ \clist_set:Nn \l_temp_clist_with_uuid {[#1] #4 } }
+    \prop_put:NnV \g_competences_prop_year_chapter_uuid { #2:#3 } \l_temp_clist_with_uuid
 }
 % Retrieve all competences for a specific Year:Chapter and print them
 \NewDocumentCommand{\ListCompetencesYearChapter}{mm} {
@@ -29,9 +36,22 @@
 \end{itemize}
 }
 
+% Retrieve all competences for a specific Year:Chapter and print them
+\NewDocumentCommand{\ListCompetencesYearChapterUUID}{mm} {
+    % Define a unique clist variable for retrieval
+	\begin{description}[ align=left,
+  labelwidth=3em,
+  leftmargin=!]
+\clist_clear_new:N \l_my_temp_clists
+    \prop_get:NnNT \g_competences_prop_year_chapter_uuid { #1:#2 } \l_temp_clist_with_uuid {
+	    \clist_map_inline:Nn \l_temp_clist_with_uuid { \item##1 }
+    }
+\end{description}
+}
+
 % Load competences from file only once
 \AtBeginDocument{
-    \file_input:n { competences.tex }
+    \file_input:n { competences/competences.tex }
 }
 
 % Define a command to retrieve a specific competence
