@@ -18,24 +18,29 @@
 
 % Default Values
 \newcommand{\TypeTitle}{FICHE N\textsuperscript{o}}
-\newcommand{\TypeIcon}{\faCogs}
+%\newcommand{\TypeIcon}{\faCogs}
+ \newcommand{\TypeIcon}{\includegraphics[width=1cm]{./pics/faCogs}}
 
 % Different Document Types
 \DeclareVoidOption{corriges}{
   \renewcommand{\TypeTitle}{CORRIG\'{E}S}
-  \renewcommand{\TypeIcon}{\faPencil*}
+  %\renewcommand{\TypeIcon}{\faPencil*}
+  \renewcommand{\TypeIcon}{\includegraphics[width=1cm]{./pics/faPencil}}
 }
 \DeclareVoidOption{fiche}{
   \renewcommand{\TypeTitle}{FICHE N\textsuperscript{o}}
-  \renewcommand{\TypeIcon}{\faCogs}
+  %\renewcommand{\TypeIcon}{\faCogs}
+  \renewcommand{\TypeIcon}{\includegraphics[width=1cm]{./pics/faCogs}}
 }
 \DeclareVoidOption{serie}{
   \renewcommand{\TypeTitle}{EXERCICES}
-  \renewcommand{\TypeIcon}{\faDumbbell}
+  %\renewcommand{\TypeIcon}{\faDumbbell}
+  \renewcommand{\TypeIcon}{\includegraphics[width=1cm]{./pics/faDumbbell}}
 }
 \DeclareVoidOption{competences}{
   \renewcommand{\TypeTitle}{COMP\'{E}TENCES}
-  \renewcommand{\TypeIcon}{\faBullseye}
+  %\renewcommand{\TypeIcon}{\faBullseye}
+  \renewcommand{\TypeIcon}{\includegraphics[width=1cm]{./pics/faBullseye}}
 }
 \DeclareDefaultOption{\PackageWarning{bandeaux}{Unknown option '\CurrentOption'}}
 
@@ -54,6 +59,8 @@
 % Process Options
 \ProcessKeyvalOptions*
 
+
+
 % Background Setup for Document
 \backgroundsetup{
   scale=1,
@@ -61,9 +68,9 @@
   angle=0,
   contents={
     \begin{tikzpicture}[remember picture,overlay]
-      \node[DarkGray, anchor=west] at (current page footer area.west) {\bandeaux@annee};
-      \node[DarkGray, anchor=east] at (current page footer area.east) {\hfill \bandeaux@auteur};
-      \node[DarkGray] at (current page footer area) {
+      \node[gray, anchor=west] at (current page footer area.west) {\bandeaux@annee};
+      \node[gray, anchor=east] at (current page footer area.east) {\hfill \bandeaux@auteur};
+      \node[gray] at (current page footer area) {
         \ifbandeaux@nopagenumber{}\else{\thepage/\pageref{LastPage}}\fi
       };
     \end{tikzpicture}
@@ -87,14 +94,14 @@
 
     % Type
     \node[below=-2mm of symbole.south west, anchor=north west, inner sep=4pt, outer sep=0pt] 
-      (type) {\titlefont \TypeTitle \bandeaux@nfiche};
+      (type) {\TypeTitle \bandeaux@nfiche};
 
     % Icon
 \node[anchor=east, inner sep=0pt, outer sep=0pt] at ([yshift=-12.5mm, xshift=-8mm]current page.north east) { \TypeIcon};
 
     % Title
     \node[anchor=center] (theme) at ([yshift=-13mm]current page.north) 
-      {\Large \bandeaux@theme};
+      {\titlefont \Large \bandeaux@theme};
   \end{tikzpicture}
   \par%
 }

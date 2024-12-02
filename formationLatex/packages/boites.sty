@@ -48,7 +48,7 @@
 % Exercise Counter
 \newcounter{exo}
 \newcounter{core}
-
+\newcommand{\faPepperHot}{\includegraphics[width=0.45cm,angle=25]{./pics/faPepperhot}}
 % ======================================== exo : start ========================================
 \NewDocumentEnvironment{exo}{O{0}O{\faPepperHot}}
 {% Begin environment
@@ -76,6 +76,7 @@
       {\small #2}
     }%
   \fi
+  \hspace{-0.2cm}
 }
 {% End environment
   \end{tcolorbox}
