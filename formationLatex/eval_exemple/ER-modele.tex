@@ -1,0 +1,51 @@
+\documentclass[addpoints,a4paper,12pt]{exam}
+
+% Path to exercise sources
+\newcommand{\path}{../}
+
+% Preamble packages and inputs
+\usepackage{\path/packages/eval_general}
+\usepackage{\path/packages/pack2024}
+\usepackage{\path/packages/eval2024}
+\usepackage{\path/packages/fontesEval}
+% Nécessaire si on utilise l'inclusion des exos à partir des fichiers
+\input{\path/preambules/print_exam.tex}
+\input{\path/preambules/macros.tex}
+\input{\path/preambules/consignes_eval.tex}
+
+% Document information
+\renewcommand{\etablissement}{CEC ÉMILIE-GOURD}
+\renewcommand{\sujet}{{\Large Épreuve regroupée de mathématiques}}
+\renewcommand{\datepassage}{11.11.2024}
+\renewcommand{\cours}{1MA1DF06}
+\renewcommand{\enseignant}{N. Scheinmann}
+\renewcommand{\duree}{95 minutes}
+\renewcommand{\materiel}{Calculatrice réinitialisée}
+% Command to set calculator as allowed
+\calculatorallowedtrue
+%\calculatorallowedfalse
+\renewcommand{\calculatormodels}{TI-30XS MultiView, TI-30XB MultiView,\\& TI-30X Plus (pas la Pro)}
+
+% Document start
+\begin{document}
+\input{../preambules/page_de_garde_eval.tex}
+\newpage 
+
+% Questions section
+\begin{questions}
+% Écrire vos questions ici
+% pour utiliser un dossier comme le dossier src, on créera un dossier src_eval dans lequel on mettra les fichiers .tex des questions avec la même structure que ceux dans le dossier src. Attention de ne pas oublier de spécifier le nombre de points pour chaque question. On utilise ensuite la commande 
+% \insertexo{1M-t8ke}{false}{false}{false}{\thenum} pour ajouter un exercice. Pour afficher les corrigés, on rajouter \printanswers dans le préambule.
+    \begin{question}[5]
+        \[1+1=\]
+    \end{question}
+    
+%% Pour rajouter les points PNF, ne pas modifier et ne rien mettre après 
+    \qformat{}
+    \renewcommand{\thequestion}{PNF} % Temporarily remove question number display
+    \question[2]
+\end{questions}
+
+% End of document
+\end{document}
+
