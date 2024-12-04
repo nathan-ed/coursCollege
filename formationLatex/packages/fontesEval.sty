@@ -1,24 +1,3 @@
-% author : sylcha
-% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-% purpose : pour une déclaration simplifiée des fontes
-\NeedsTeXFormat{LaTeX2e}%
-\ProvidesPackage{fontesEval}[2023/08/10 v0.1]%
-% fontes
-\RequirePackage{fontspec}%
-\RequirePackage{kpfonts-otf}
-%\RequirePackage[math-style=french]{unicode-math}%
-% options 
-\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
-\DeclareStringOption[OpenSans]{main}%
-%\DeclareStringOption[cambria]{main}%
-\DeclareStringOption[Iosevka]{mono}%
-%\DeclareStringOption[GFS Neohellenic Math]{math}%
-\DeclareStringOption[cambria-math]{math}%
-\DeclareStringOption[League Gothic]{condensed}%
-%\DeclareStringOption[Barlow Condensed Black]{title}%
-\DeclareStringOption[Nickainley]{cursive}%
- \DeclareStringOption[Source Sans Pro Light]{light}%
 % author : nathan
 % licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 %           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
@@ -44,7 +23,7 @@
 
 %Enlever le commentaire pour utiliser OpenSans 
 \setmainfont{OpenSans}[
-Path=\fontspath,
+Path=../fonts/,
 Scale=1,
 Extension=.ttf,
 UprightFont={*-Regular},
