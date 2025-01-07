@@ -6,7 +6,6 @@
 \title{Exercices de début de cours (edc)}
 \subtitle{Automatismes et autres compétences -- 1$^{\text{re}}$ année du collège}
 \author{ns}
-\date{}
 \setbeamerfont{frametitle}{size=\normalsize}
 % define a new counter
 \newcounter{exercice}
@@ -55,17 +54,48 @@ Résoudre les systèmes d'équations suivants par combinaison linéaire :
 \stepcounter{exercice}
 \begin{frame}{\GetCompetence{3f3}, edc \theexercice}
 	\onslide<1->{Résoudre le système d'équations suivant dans $\mathbb{R}^3$ :
-	\[\begin{cases}\begin{aligned}x+2y-z &=2\\x-y+2z &=5\\2x+2y+2z &=12\end{aligned}\end{cases}\]}
-	\onslide<2->{La solution est $S=\left\{\left(1;2;3\right)\right\}$.}	
+	\[\begin{cases}\begin{aligned}x+y-2z &=3\\3x+2y-z &=12\\8x-3y-6z &=-18\end{aligned}\end{cases}\]}
+	\onslide<2->{La solution est $S=\left\{\left(1;\dfrac{16}{3};\dfrac{5}{3}\right)\right\}$.}	
 \end{frame}
 
 \stepcounter{exercice}
 \begin{frame}{\GetCompetence{3f3}, edc \theexercice}
 	\onslide<1->{Résoudre le système d'équations suivant dans $\mathbb{R}^3$ :
-	\[\begin{cases}\begin{aligned}3x+4y-2z &=10\\5x-2y+7z &=1\\3x+3y+z &=6\end{aligned}\end{cases}\]}
-	\onslide<2->{La solution est $S=\left\{\left(\dfrac{96}{47};\dfrac{17}{47};-\dfrac{57}{47}\right)\right\}$.}	
+	\[\begin{cases}\begin{aligned}x+2y-z &=2\\x-y+2z &=5\\2x+2y+2z &=12\end{aligned}\end{cases}\]}
+	\onslide<2->{La solution est $S=\left\{\left(1;2;3\right)\right\}$.}	
 \end{frame}
 
+\stepcounter{exercice}
+\begin{frame}{\GetCompetence{ProbSys}, edc \theexercice}
+	\onslide<1->{La recette d'une théâtre s'élève à CHF 13450. Les places sont vendues à CHF 30 et CHF 40. Sachant qu'il y a 400 places vendues, déterminer le nombre de chaque type de place.}
+		\begin{itemize}
+		\item<2-> $x=$ nombre de places à CHF 30 et $y=$ nombre de places à CHF 40 
+		\item<3-> \[\begin{cases}\begin{aligned}x+y &=400\\30x+40y &=13450\end{aligned}\end{cases}\]
+		\item<4-> $S=\left\{\left(255\,;\,145\right)\right\}$.
+\end{itemize}
+\end{frame}
+
+\stepcounter{exercice}
+\begin{frame}{\GetCompetence{ProbSys}, edc \theexercice}
+	\onslide<1->{Un entrepreneur doit déplacer 460 tonnes de terre : il dispose de 2 camions, l'un pouvant transporter 5 tonnes et l'autre 3 tonnes ; il désire effectuer 100 transports. Combien de fois doit-il utiliser chaque camion~?}
+		\begin{itemize}
+		\item<2-> $x=$ nombre de transports avec le camion à 5 tonnes
+		\item<2-> $y=$ nombre de transports avec le camion à 3 tonnes
+		\item<3-> \[\begin{cases}\begin{aligned}x+y &=100\\ 5x+3y &=4600\end{aligned}\end{cases}\]
+		\item<4-> $S=\left\{\left(80\,;\,20\right)\right\}$.
+		\item<5-> Il doit utiliser 80 fois le camion à 5 tonnes et 20 fois le camion à 3 tonnes.
+\end{itemize}
+\end{frame}
+
+\stepcounter{exercice}
+\begin{frame}{\GetCompetence{ProbSys}, edc \theexercice}
+	\onslide<1->{On doit répartir des élèves dans des groupes pour une excursion. Si on met 188 élèves par groupe, alors on au besoin de 2 groupes de moins que si on met 141 élèves par groupe. Combien d'élèves y a-t-il~?}
+		\begin{itemize}
+		\item<2-> $x=$ nombre total d'élèves		\item<2-> $y=$ nombre de groupes avec $141$ élèves		\item<3-> \[\begin{cases}\begin{aligned}y\cdot 141&=x\\ +(y-2)\cdot 188  &=x\end{aligned}\end{cases}\]
+		\item<4-> $S=\left\{\left(1128\,;\,6\right)\right\}$.
+		\item<5-> Il y a donc 1128 élèves au total.
+\end{itemize}
+\end{frame}
 
 \stepcounter{exercice}
 \begin{frame}{\GetCompetence{3f3}, edc \theexercice}
@@ -74,7 +104,7 @@ Résoudre les systèmes d'équations suivants par combinaison linéaire :
 	\onslide<2->{La solution est $S=\left\{\left(\dfrac{202}{447};-\dfrac{52}{447};\dfrac{856}{447}\right)\right\}$.}	
 \end{frame}
 \stepcounter{exercice}
-\begin{frame}{\GetCompetence{fact4}, edc \theexercice}
+\begin{frame}{\GetCompetence{Fact4}, edc \theexercice}
 	\onslide<1->{Factoriser au maximum les expressions suivantes
 	\begin{enumerate}
 		\item $(3x+2)^2-(x-5)^2$
