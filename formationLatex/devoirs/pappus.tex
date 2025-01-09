@@ -1,0 +1,105 @@
+
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+\usepackage{tkz-euclide} % Use tikz-euclide for geometry
+\begin{document}
+
+% Exercise Text
+\section*{139 \quad \textcolor{teal}{Théorème de Pappus} \hfill \textcolor{green!50!black}{Histoire des sciences}}
+
+On considère les droites d'équations réduites $y = x$ et $y = -3$. On place sur la première droite les points $A$, $B$ et $C$ d'abscisses respectives $0$, $1$ et $4$. Puis sur la seconde droite on place les points $D$, $E$ et $F$ d'abscisses respectives $1$, $4$ et $7$.
+
+\begin{enumerate}
+    \item Déterminer les équations cartésiennes des droites $(BF)$ et $(CE)$.
+    \item Déterminer les coordonnées du point d'intersection $M$ des droites $(BF)$ et $(CE)$.
+    \item Déterminer les équations cartésiennes des droites $(AF)$ et $(CD)$.
+    \item Déterminer les coordonnées du point d'intersection $N$ des droites $(AF)$ et $(CD)$.
+    \item Déterminer les équations cartésiennes des droites $(AE)$ et $(BD)$.
+    \item Déterminer les coordonnées du point d'intersection $P$ des droites $(AE)$ et $(BD)$.
+    \item \textbf{Démontrer que les points $M$, $N$ et $P$ sont alignés.}
+\end{enumerate}
+
+\textcolor{green!50!black}{\textbf{Remarque}} Cette propriété est vraie quelle que soit la position des points $A$, $B$ et $C$ sur une droite et des points $D$, $E$ et $F$ sur une autre droite.
+
+
+
+
+
+
+\begin{tikzpicture}
+% Define the axis
+\begin{axis}[
+    width=10cm, height=8cm,
+    axis lines=middle,
+    xmin=-1, xmax=8,
+    ymin=-4, ymax=5,
+    grid=major,
+    xtick={0,1,2,3,4,5,6,7},
+    ytick={-3,-2,-1,0,1,2,3,4,5},
+    xlabel={$x$}, ylabel={$y$},
+    axis equal,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize}
+]
+
+% Define points
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,1);
+\coordinate (C) at (4,4);
+\coordinate (D) at (1,-3);
+\coordinate (E) at (4,-3);
+\coordinate (F) at (7,-3);
+
+% Plot the points
+\addplot[only marks, mark=*] coordinates {(0,0) (1,1) (4,4) (1,-3) (4,-3) (7,-3)};
+
+% Add labels
+\node[below left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\node[above right] at (C) {$C$};
+\node[below left] at (D) {$D$};
+\node[below right] at (E) {$E$};
+\node[below right] at (F) {$F$};
+
+% Draw the main lines
+\addplot[blue] coordinates {(0,0) (8,8)}; % Line y = x
+\addplot[red] coordinates {(-1,-3) (8,-3)}; % Line y = -3
+
+% BF and CE lines
+\draw[black, thick] (B) -- (F);
+\draw[green!50!black, thick] (C) -- (E);
+
+% AF and CD lines
+\draw[blue, thick] (A) -- (F);
+\draw[red, thick] (C) -- (D);
+
+% AE and BD lines
+\draw[orange, thick] (A) -- (E);
+\draw[magenta, thick] (B) -- (D);
+
+% Calculate M (intersection of BF and CE)
+\tkzInterLL(B,F)(C,E) \tkzGetPoint{M}
+\node[fill=black, circle, inner sep=1.5pt] at (M) {};
+\node[above right] at (M) {$M$};
+
+% Calculate N (intersection of AF and CD)
+\tkzInterLL(A,F)(C,D) \tkzGetPoint{N}
+\node[fill=black, circle, inner sep=1.5pt] at (N) {};
+\node[below left] at (N) {$N$};
+
+% Calculate P (intersection of AE and BD)
+\tkzInterLL(A,E)(B,D) \tkzGetPoint{P}
+\node[fill=black, circle, inner sep=1.5pt] at (P) {};
+\node[below left] at (P) {$P$};
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

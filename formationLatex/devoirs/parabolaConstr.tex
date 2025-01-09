@@ -1,0 +1,118 @@
+
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+
+% Frame 1: Draw axes
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+  \end{axis}
+\end{tikzpicture}
+
+% Frame 2: Add first point
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+    \addplot[only marks, red] coordinates {(1,0)};
+    \node[above right] at (axis cs:-1,0) {\tiny$R_1(1;0)$};
+  \end{axis}
+\end{tikzpicture}
+
+% Frame 3: Add second point
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+    \addplot[only marks, red] coordinates {(1,0) (2,0)};
+    \node[above right] at (axis cs:-1,0) {\tiny $R_1(1;0)$};
+    \node[above right] at (axis cs:2,0) {\tiny$R_2(2;0)$};
+  \end{axis}
+\end{tikzpicture}
+
+% Frame 4: Add third point
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+    \addplot[only marks, red] coordinates {(1,0) (2,0) (0,-2)};
+    \node[above right] at (axis cs:-1,0) {\tiny $R_1(1;0)$};
+    \node[above right] at (axis cs:2,0) {\tiny $R_2(2;0)$};
+    \node[above left] at (axis cs:0,-2) {\tiny $C(0;-2)$};
+  \end{axis}
+\end{tikzpicture}
+
+% Frame 4: Add third point
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+  \addplot[only marks, red] coordinates {(1,0) (2,0) (0,-2) (3/2,1/4)};
+    \node[above right] at (axis cs:-1,0) {\tiny$R_1(1;0)$};
+    \node[above right] at (axis cs:2,0) {\tiny$R_2(2;0)$};
+    \node[above left] at (axis cs:0,-2) {\tiny$C(0;-2)$};
+    \node[above] at (axis cs:3/2,1) {\tiny$S\left(\dfrac{3}{2};\dfrac{1}{4}\right)$};
+  \end{axis}
+\end{tikzpicture}
+
+% Frames 5 to 14: Draw the parabola incrementally
+\foreach \i in {-20,...,80} {
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xlabel={$x$}, ylabel={$y$},
+    ticks=none,
+    width=6cm, height=6cm,
+    domain=-5:5,
+  ]
+  \addplot[only marks, red] coordinates {(1,0) (2,0) (0,-2) (3/2,1/4)};
+    \node[above right] at (axis cs:-1,0) {\tiny $R_1(1;0)$};
+    \node[above right] at (axis cs:2,0) {\tiny$R_2(2;0)$};
+    \node[above left] at (axis cs:0,-2) {\tiny$C(0;-2)$};
+    \node[above] at (axis cs:3/2,1) {\tiny$S\left(\dfrac{3}{2};\dfrac{1}{4}\right)$};
+
+    \addplot[blue, thick, samples=100, domain=-5:5*\i/100] {-x^2 + 3*x - 2};
+  \end{axis}
+\end{tikzpicture}
+}
+
+\end{document}
+

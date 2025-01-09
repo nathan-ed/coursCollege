@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[fiche,niveau={1MA1},nfiche={16}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Fonctions -- droites}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\usepackage{packages/mathenv}
+
+\begin{document}
+{\bfseries Compétences :}
+\begin{itemize}
+ \item Distinguer les différentes écritures algébriques d'une droite : équation cartésienne, équation réduite
+ \item Déterminer l'expression algébrique d'une droite à partir de sa représentation graphique
+ \item Déterminer l'expression algébrique d'une droite à partir de deux points
+\end{itemize}
+\begin{defi}
+	L'équation réduite d'une droite est donnée par $y=ax+b$ où $a$ est la pente et $b$ l'ordonnée à l'origine, $a,b\in \R$. Une équation cartésienne d'une droite est donnée par $Ax+By+C=0$, $A,B,C \in \Z$. Cette écriture {\bfseries n'est pas unique}, elle rappelle les équations des systèmes d'équations linéaires à deux inconnues. On passe d'une forme à une autre en isolant la variable $y$ ou en comparant l'expression à $0$.
+\end{defi}
+\begin{defi}
+La pente est définie comme le rapport de la variation verticale et de la variation horizontale \[\text{pente}=\dfrac{\Delta \text{ vert.}}{\Delta \text{ hor.}}.\]
+\end{defi}
+
+\begin{rem}
+        La pente entre deux points $A(A_x;A_y)$ et $B(B_x;B_y)$ vaut \[\text{pente }(A;B)=\dfrac{A_y-B_y}{A_x-B_x}.\]
+        Cette formule ne fait du sens que si $A_x\neq B_x$. On remarque également que cette formule est symétrique, $\text{pente }(A;B)=\text{pente }(B;A)$.
+\end{rem}
+\begin{boiteExT}[Droite passant par $(-1;2)$ et $(-3;-5)$]
+\vspace{8cm}
+\end{boiteExT}
+\medskip
+
+\begin{exo}
+  Mettre sous forme cartésienne la droite d'équation : $y=\dfrac{3}{4}x+3$. 
+\end{exo}
+\begin{exo}
+ Mettre sous forme réduite la droite d'équation : $0=-2y+3x-1$.
+\end{exo}
+\begin{exo}
+Peut-on représenter la droite $x=3$ par une fonction affine ? 
+\end{exo}
+$\rightarrow$ 4 QR-codes pour des exercices supplémentaires.
+\newpage
+
+{\bfseries Compétences :}
+\begin{itemize}
+\item Connaître les conditions de parallélisme et de perpendicularité de deux droites
+\item Déterminer l'expression algébrique d'une droite à partir de conditions données sur la pente et un point
+\item Déterminer si trois points sont alignés
+\end{itemize}
+\begin{defi}[parallèle]
+Deux droites sont parallèles si elles ont la même pente.
+\end{defi}
+
+\begin{defi}[perpendiculaire]
+Deux droites sont perpendiculaire si le produit de leur pente vaut $-1$.
+ 
+Soient deux droites $d_1$ d'équation $y=ax+b$ et $d_2$ d'équation $y=cx+d$, alors les droite $d_1$ et $d_2$ sont perpendiculaires si et seulement si $a\cdot c=-1$.
+\end{defi}
+
+\begin{rem}
+Le produit de la pente de droite perpendiculaire vaut $-1$, donc si $a\neq 0$ et $a'\neq 0$ sont les pentes de deux droite perpendiculaire, $a'=-\dfrac{1}{a}$.
+\end{rem}
+
+\begin{boiteExT}[perpendiculaire à $y=2x-1$ passant par le point $(3;4)$]
+\vspace{6cm}
+\end{boiteExT}
+
+\begin{defi}[Points alignés]
+Trois points $A, B, C$ sont alignés si les pentes entre tous les couples de points est identique. 
+\end{defi}
+\begin{rem}
+	Pour vérifier si trois points $A, B, C$ sont alignés, il suffit de vérifier que \[\text{pente}(A;B)=\text{pente}(A;C).\]
+\end{rem}
+\begin{boiteExT}[$A(1; 2)$, $B(2; 4)$ et $C(3; 6)$ sont-ils alignés ?]
+	\vspace{4cm}
+\end{boiteExT}
+\vspace{-0.7cm}
+
+\begin{exo}
+Déterminer l'équation réduite d'une droite parallèle à $y=\dfrac{1}{3}x+1$.
+\end{exo}
+\vspace{-0.7cm}
+
+\begin{exo}
+Déterminer l'équation réduite d'une droite perpendiculare à $y=\dfrac{1}{3}x+1$.
+\end{exo}
+$\rightarrow$ 2 QR-codes pour des exercices supplémentaires.
+
+
+\end{document}
+
+
