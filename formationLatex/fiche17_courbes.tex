@@ -28,7 +28,7 @@
 \end{itemize}
 
 \begin{defi}[parabole]
-La courbe représentative d'une fonction de degré 2 s'appelle une {\bfseries parabole}. Une la représentation d'une fonction de degré 2 de la forme $f(x)=ax^2+bx+c$ où $a\neq 0$ et $a,b,c\in \mathbb{R}$ est une parabole $y=ax^2+bx+c$. Une parabole peut s'écrire sous différentes formes : forme générale, forme canonique, forme factorisée.
+	Soit une fonction $f$ du deuxième degré, $f(x)=ax^2+bx+c$ où $a\neq 0$ et $a,b,c\in \mathbb{R}$, sa courbe représentative s'appelle une {\bfseries parabole}. Une parabole peut s'écrire sous différentes formes : forme générale, forme canonique, forme factorisée.
 \end{defi}
 
 Avant d'introduire ces trois écritures, nous devons définir les notions suivantes. 
@@ -38,7 +38,7 @@ Avant d'introduire ces trois écritures, nous devons définir les notions suivan
 \end{defi}
 
 \begin{defi}[sommet]
-	Le {\bfseries sommet} d'une parabole, noté $S$, est le point de la parabole qui a l'ordonnée minimale (si $a>0$) et maximale (si $a<0$).
+	Le {\bfseries sommet} d'une parabole, noté $S$, est le point de la parabole qui a l'ordonnée minimale (si $a>0$, convexe $\cup$) et maximale (si $a<0$, concave $\cap$). 
 \end{defi}
    
 \begin{rem}
@@ -47,46 +47,46 @@ Pour une parabole $f(x)=ax^2+bx+c, a\neq 0$, le sommet est donné par les coordo
 \end{rem}
 
     \begin{defi}[Axe de symétrie d'une parabole]
-	    L'{\bfseries axe de symétrie} d'une parabole est la droite qui partage la parabole en deux parties symétriques. 
+	    L'{\bfseries axe de symétrie} d'une parabole $f$ est la droite d'équation $x=s$ tel que $f(s+t)=f(s-t), \forall t\in \R$. Elle partage la parabole en deux parties symétriques. 
     \end{defi}
     \begin{rem}
-    Pour une parabole $y=ax^2+bx+x, a\neq 0$, l'axe de symétrie est donné par l'équation $x=-\dfrac{b}{2a}$.
+	    Pour une parabole $f(x)=ax^2+bx+x, a\neq 0$, l'axe de symétrie est donné par l'équation \[x=-\dfrac{b}{2a}.\]
     \end{rem}
     
     \begin{defi}[forme générale d'une parabole]
-	    La {\bfseries forme générale} d'une parabole est donnée par $y=ax^2+bx+c$.
+	    La {\bfseries forme générale} d'une parabole est donnée par \[f(x)=ax^2+bx+c.\]
     \end{defi}
     
     \begin{defi}[forme canonique d'une parabole]
-	    La {\bfseries forme canonique} d'une parabole est donnée par $y=a(x-\alpha)^2+\beta$ où $(\alpha;\beta)$ est le sommet de la parabole.
+	    La {\bfseries forme canonique} d'une parabole est donnée par \[f(x)=a(x-\alpha)^2+\beta\] où $(\alpha;\beta)$ est le sommet de la parabole.
     \end{defi}
 
     \begin{defi}[forme factorisée d'une parabole]
-	    La {\bfseries forme factorisée} d'une parabole est donnée par $y=a(x-x_1)(x-x_2)$ où $x_1$ et $x_2$ sont les zéros de la parabole.
+	    La {\bfseries forme factorisée} d'une parabole est donnée par \[f(x)=a(x-x_1)(x-x_2)\] où $x_1$ et $x_2$ sont les zéros de la parabole.
     \end{defi}
     
     \begin{rem}
     	Pour passer de la forme générale à la forme canonique, on peut utiliser deux méthodes : 
 	\begin{enumerate}
 		\item Calcul du sommet par la formule \[S\left(-\dfrac{b}{2a};f\left(-\dfrac{b}{2a}\right)\right)\] et substition dans la forme canonique : 
-        \[y=\left(x+\dfrac{b}{2a}\right)+f\left(-\dfrac{b}{2a}\right)\]
+        \[f(x)=\left(x-\left(-\dfrac{b}{2a}\right)\right)+f\left(-\dfrac{b}{2a}\right)\]
 \item Complétion du carré :
-
+	\vspace{-0.8cm}
        \begin{align*}
-        &y=ax^2+bx+c\\
-        &y=a\left(x^2+\dfrac{b}{a}x\right)+c\\
-        &y=a\left(x^2+ \dfrac{b}{a}x+\dfrac{b^2 }{4a^2 }-\dfrac{b^2 }{4a^2 }\right)+c\\
-        &y=a\left(x+\dfrac{b}{2a}\right)^2 -\dfrac{b^2 }{4a}+c\\
-	&y=a\left(x+\dfrac{b}{2a}\right)^2 -\dfrac{b^2 -4ac}{4a}\\
+        &f(x)=ax^2+bx+c\\
+        &f(x)=a\left(x^2+\dfrac{b}{a}x\right)+c\\
+        &f(x)=a\left(x^2+ \dfrac{b}{a}x+\dfrac{b^2 }{4a^2 }-\dfrac{b^2 }{4a^2 }\right)+c\\
+        &f(x)=a\left(x+\dfrac{b}{2a}\right)^2 -\dfrac{b^2 }{4a}+c\\
+	&f(x)=a\left(x-\left(-\dfrac{b}{2a}\right)\right)^2 +\left( -\dfrac{b^2 -4ac}{4a}\right)\\
         \end{align*}
 	\end{enumerate}
     \end{rem}
     \begin{rem}
     Pour passer de la forme générale à la forme factorisée, on utilise les zéros de la parabole. Les zéros sont les solutions de l'équation $ax^2+bx+c=0$. 
 
-Si $\Delta\geq 0$. On a $x_1=\dfrac{-b-\sqrt{b^2-4ac}}{2a}$ et $x_2=\dfrac{-b+\sqrt{b^2-4ac}}{2a}$. Ainsi, la forme factorisée est donnée par \[y=a(x-x_1)(x-x_2).\]
+Si $\Delta\geq 0$. On a $x_1=\dfrac{-b-\sqrt{b^2-4ac}}{2a}$ et $x_2=\dfrac{-b+\sqrt{b^2-4ac}}{2a}$. Ainsi, la forme factorisée est donnée par \[f(x)=a(x-x_1)(x-x_2).\]
     \end{rem}
-    \begin{boiteExT}[Étude de la parabole $f(x)=\dfrac{3}{2}x^2-\dfrac{3}{2}x-3$]
+    \begin{boiteExT}[Étude de la parabole $f(x)=3x^2+2x-1$]
 	\vspace{10cm}
 \end{boiteExT}
 \begin{exo}
