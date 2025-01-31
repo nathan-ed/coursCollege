@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[serie,niveau={1MA1},nfiche={}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Devoir à rendre -- Fonctions}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\input{pics/cuboid}
+\RequirePackage{icomma}
+%chemin vers les sources d'exercices
+\renewcommand{\path}{./}
+
+\input{./preambules/print_exo.tex}
+
+% Custom label using TikZ
+\newcommand{\tikzlabel}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt, inner sep=2pt, anchor=east] {#1};
+  \end{tikzpicture}
+}
+\begin{document}
+Résoudre chaque exercice sur une feuille séparée. Écrire les étapes et les raisonnement clairement. Entourer les résultats. 
+
+\textLigne{Droites}
+
+\begin{exo}
+	 Soient les points $A(-3;-1),\,B(3;-3), \;C(-6;-5)$ et $D(6;-3)$. Déterminer, s'il existe, le point d'intersection entre la droite $(AB)$ et la droite $(CD)$.
+\end{exo}
+
+\begin{exo}
+Déterminer l'équation réduite de la droite ci-dessous.
+
+ La droite $d_{1}$ passant par le point $A\left(-\dfrac{2}{9};-\dfrac{9}{4}\right)$ et perpendiculaire à la droite d'équation $y=\dfrac{5}{7}x-\dfrac{9}{10}$.
+
+\end{exo}
+\textLigne{Paraboles}
+\begin{exo}
+On considère la fonction $f(x)=-2x^2+3x+2$.
+
+\begin{enumerate}[itemsep=1em, label=\arabic*)]
+	\item Déterminer la forme canonique de $f$. En déduire, les coordonnées du sommet du graphe de $f$.
+	\item Déterminer les zéros de la fonction.
+
+\medskip
+\textbf {a.}  Le graphe de $f$ intersecte-t-il l'axe des abscisses ? Si oui, déterminer les coordonnées de ce(s) point(s) d'intersection.
+
+\medskip
+\textbf {b.}  En déduire le tableau des signes de la fonction $f$.
+	\item Déterminer les coordonnées du point d'intersection de $f$ avec l'axe des ordonnées.
+	\item Avec les résultats précédents, esquisser le graphe de $f$.
+\end{enumerate}
+\end{exo}
+\textLigne{Géométrie analytique}
+\begin{exo}
+Déterminer la longueur de la hauteur issue de $A$ dans le triangle $ABC$ où $A(2;3)$, $B(-4;1)$ et $C(-1;-10)$. 
+\end{exo}
+
+\end{document}
+
+
