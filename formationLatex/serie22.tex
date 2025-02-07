@@ -1,0 +1,43 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[serie,niveau={1MA1},nfiche={}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Rappel sur les intervalles -- Fonctions}]{packages/bandeaux}
+\usepackage{packages/intervalles}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\input{pics/cuboid}
+\RequirePackage{icomma}
+%chemin vers les sources d'exercices
+\renewcommand{\path}{./}
+
+\input{./preambules/print_exo.tex}
+
+% Custom label using TikZ
+\newcommand{\tikzlabel}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt, inner sep=2pt, anchor=east] {#1};
+  \end{tikzpicture}
+}
+
+
+\begin{document}
+\textLigne{Intervalles -- Rappels}
+% Représenter graphiquement les intervalles suivants:
+\insertexo{1M-v2rv8}{false}{exo}{true}
+
+% Donner l'écriture mathématique des intervalles suivants:
+\insertexo{1M-6ugwm}{false}{exo}{true}
+
+% Traduire en intervalles les phrase suivantes
+\insertexo{1M-61ve6}{false}{exo}{true}
+
+% Décrire par une phrase les intervalles suivants
+\insertexo{1M-nw439}{false}{exo}{true}
+
+% Calculer les intersections, unions et différences des intervalles suivants
+\insertexo{1M-fq51r}{false}{exo}{true}
+\insertexo{1M-u14s6}{false}{exo}{true}
+
+
+\end{document}
+
+

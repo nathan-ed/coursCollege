@@ -1,0 +1,27 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[serie,niveau={1MA1},nfiche={}, annee={Emilie-Gourd, 2024--2025}, auteur={ns},theme={Exercices d'optimisation -- Fonctions}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/fontes}
+\usepackage{packages/courslatex}
+\input{pics/cuboid}
+\RequirePackage{icomma}
+%chemin vers les sources d'exercices
+\renewcommand{\path}{./}
+
+\input{./preambules/print_exo.tex}
+
+% Custom label using TikZ
+\newcommand{\tikzlabel}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[draw, circle, line width=0.4pt, inner sep=2pt, anchor=east] {#1};
+  \end{tikzpicture}
+}
+\begin{document}
+\textLigne{Optimisation -- Introduction}
+\insertexo{1M-evk3n}{false}{exo}{true}
+\insertexo{1M-jq9q2}{false}{exo}{true}
+\insertexo{1M-7v59j}{false}{exo}{true}
+
+\end{document}
+
+

@@ -1,0 +1,149 @@
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{xifthen}
+\usepackage{pgfkeys}
+\usepackage{calc}
+
+% =====================
+% 1) Define the key family
+% =====================
+\pgfkeys{
+  /drawinterval/.is family,
+  /drawinterval/.cd,
+
+  interval1/.is family,
+  interval2/.is family,
+
+  interval1/.cd,
+    left/.store in=\IntervalOneLeftBracket,
+    right/.store in=\IntervalOneRightBracket,
+    leftvalue/.store in=\IntervalOneLeftValue,
+    rightvalue/.store in=\IntervalOneRightValue,
+    left=open,
+    right=open,
+    leftvalue=0,
+    rightvalue=0,
+
+  interval2/.cd,
+    left/.store in=\IntervalTwoLeftBracket,
+    right/.store in=\IntervalTwoRightBracket,
+    leftvalue/.store in=\IntervalTwoLeftValue,
+    rightvalue/.store in=\IntervalTwoRightValue,
+    left=open,
+    right=open,
+    leftvalue=0,
+    rightvalue=0
+}
+
+% =====================
+% 2) Helpers
+% =====================
+\newcommand{\intervalValueToX}[1]{%
+  \ifthenelse{\equal{#1}{-\infty}}{0}{%
+    \ifthenelse{\equal{#1}{\infty}}{10}{#1}%
+  }%
+}
+
+\newcommand{\drawBracket}[3]{%
+  \ifthenelse{\equal{#2}{left}}{%
+    \ifthenelse{\equal{#3}{open}}{%
+      \node at (#1,0) {\(\Big]\)};
+    }{%
+      \node at (#1,0) {\(\Big[\)};
+    }%
+  }{%
+    \ifthenelse{\equal{#3}{open}}{%
+      \node at (#1,0) {\(\Big[\)};
+    }{%
+      \node at (#1,0) {\(\Big]\)};
+    }%
+  }%
+}
+
+\newcommand{\drawSlashes}[2]{%
+  \foreach \xx in {#1, #1+0.4, ..., #2} {
+    \ifthenelse{\lengthtest{\xx cm <= #2 cm}}{%
+      \node at (\xx,0) {/};
+    }{}
+  }
+}
+
+% =====================
+% 3) Main macro
+% =====================
+\newcommand{\drawIntervals}[1]{%
+  \begin{tikzpicture}[scale=0.5, >=latex]
+    \pgfkeys{/drawinterval/.cd, #1}% <-- read the user-supplied intervals
+
+    \def\IoneL{\intervalValueToX{\IntervalOneLeftValue}}%
+    \def\IoneR{\intervalValueToX{\IntervalOneRightValue}}%
+    \def\ItwoL{\intervalValueToX{\IntervalTwoLeftValue}}%
+    \def\ItwoR{\intervalValueToX{\IntervalTwoRightValue}}%
+
+    \draw[->] (0,0) -- (10,0);
+    \node[below=6pt] at (0,0)  {$-\infty$};
+    \node[below=6pt] at (10,0) {$+\infty$};
+
+    % === First Interval
+    \drawBracket{\IoneL}{left}{\IntervalOneLeftBracket}
+    \drawBracket{\IoneR}{right}{\IntervalOneRightBracket}
+    \ifthenelse{\equal{\IntervalOneLeftValue}{-\infty}}{}{%
+      \ifthenelse{\equal{\IntervalOneLeftValue}{\infty}}{}{%
+        \node[below=6pt] at (\IoneL,0) {\(\IntervalOneLeftValue\)};
+      }%
+    }%
+    \ifthenelse{\equal{\IntervalOneRightValue}{-\infty}}{}{%
+      \ifthenelse{\equal{\IntervalOneRightValue}{\infty}}{}{%
+        \node[below=6pt] at (\IoneR,0) {\(\IntervalOneRightValue\)};
+      }%
+    }%
+    \ifthenelse{\lengthtest{\IoneL cm < \IoneR cm}}{%
+      \drawSlashes{\IoneL}{\IoneR}
+    }{%
+      \drawSlashes{\IoneR}{\IoneL}
+    }%
+
+    % === Second Interval
+    \drawBracket{\ItwoL}{left}{\IntervalTwoLeftBracket}
+    \drawBracket{\ItwoR}{right}{\IntervalTwoRightBracket}
+    \ifthenelse{\equal{\IntervalTwoLeftValue}{-\infty}}{}{%
+      \ifthenelse{\equal{\IntervalTwoLeftValue}{\infty}}{}{%
+        \node[below=6pt] at (\ItwoL,0) {\(\IntervalTwoLeftValue\)};
+      }%
+    }%
+    \ifthenelse{\equal{\IntervalTwoRightValue}{-\infty}}{}{%
+      \ifthenelse{\equal{\IntervalTwoRightValue}{\infty}}{}{%
+        \node[below=6pt] at (\ItwoR,0) {\(\IntervalTwoRightValue\)};
+      }%
+    }%
+    \ifthenelse{\lengthtest{\ItwoL cm < \ItwoR cm}}{%
+      \drawSlashes{\ItwoL}{\ItwoR}
+    }{%
+      \drawSlashes{\ItwoR}{\ItwoL}
+    }%
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+% =====================
+% EXAMPLE USAGE
+% =====================
+\drawIntervals{
+  interval1 = {
+    left=open,
+    leftvalue=-\infty,
+    right=closed,
+    rightvalue=2
+  },
+  interval2 = {
+    left=closed,
+    leftvalue=5,
+    right=open,
+    rightvalue=\infty
+  }
+}
+
+\end{document}
+end{document}
