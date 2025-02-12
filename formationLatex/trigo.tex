@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{tcolorbox}
+\usepackage{titlesec}  % For section numbering
+\usepackage{ragged2e}  % For text alignment
+\usepackage{hyperref}  % For clickable references
+\usepackage[top=2cm, bottom=2cm, left=1.5cm , right=1.5cm]{geometry}
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+% Define counters
+\newcounter{exemple}
+\newcounter{formule}
+\newcounter{definition}[section]
+\newcounter{exercice}[section]
+
+\newcommand{\Chapitre}{Trigonométrie}
+\titleformat{\section}[frame]
+{\normalfont}
+{\filright
+\footnotesize
+\enspace \Chapitre ~ PARTIE ~ \thesection\enspace}
+{8pt}
+{\Large\bfseries\filcenter}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\slshape 2024-2025}
+\fancyhead[LO,RE]{\slshape  \Chapitre ~-- Partie ~\thesection,~ \currentname}
+\fancyfoot[C]{\thepage}
+\fancyfoot[LE,RO]{\slshape ns}
+\fancyfoot[LO,RE]{\slshape 1MA1~--~EG} 
+\usepackage{packages/fontes2}
+
+% Global tcolorbox settings
+\tcbset{
+    boxrule=0pt,    
+    left=0pt, right=0pt,
+    sharp corners,
+    width=\linewidth,
+    before skip=0pt, after skip=0pt,
+    sidebyside, sidebyside gap=0mm,
+    sidebyside align=top,
+    righthand width=0.75\linewidth,
+    lefthand width=0.25\linewidth,
+    colback=white,
+    fontupper=\raggedleft,  
+    fontlower=\justifying,  
+    colframe=white % No border
+}
+
+% Define environments using tcbset
+\newtcolorbox[auto counter, number within=section]{exemple}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\theexemple}\\\vspace{0.5em}},
+        #1
+}
+
+\newtcolorbox[auto counter, number within=section]{formule}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
+    #1
+}
+
+\newtcolorbox[auto counter, number within=section]{definition}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{definition}Définition~\thesection.\thedefinition}\\\vspace{0.5em}},
+    #1
+}
+
+\newtcolorbox[auto counter, number within=section]{exercice}[1][]{
+    before upper={\fbox{%
+    \raggedleft\textbf{\stepcounter{exercice}Exercice~\thesection.\theexercice}}\\\vspace{0.5em}},
+    before lower={\vspace{0.3em}},
+    #1
+}
+
+\begin{document}
+\pagestyle{fancy}
+\section{Examples of Environments}
+
+\begin{exemple}
+This is the left side content.
+\tcblower
+This is the right side content, which is justified.
+\end{exemple}
+
+\begin{formule}
+The formula on the left.
+\tcblower
+The formula explanation on the right.
+\end{formule}
+
+\section{Concepts}
+
+\begin{definition}
+A function is a relation between input and output.
+\tcblower
+Example: \(\widehat{ f(x) = x^2} \).
+\end{definition}
+
+\section{Exercises}
+
+\begin{exercice}
+Solve the equation \( x^2 + 3x - 4 = 0 \).
+\tcblower
+Answer below.
+\end{exercice}
+
+\end{document}
+
