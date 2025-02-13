@@ -5,6 +5,7 @@
 \usepackage{hyperref}  % For clickable references
 \usepackage[top=2cm, bottom=2cm, left=1.5cm , right=1.5cm]{geometry}
 \usepackage{nameref}
+\setlength\parindent{0pt}
 \makeatletter
 \newcommand*{\currentname}{\@currentlabelname}
 \makeatother
@@ -31,6 +32,14 @@
 \fancyfoot[LE,RO]{\slshape ns}
 \fancyfoot[LO,RE]{\slshape 1MA1~--~EG} 
 \usepackage{packages/fontes2}
+\usepackage{fontawesome5}
+\usepackage{pgffor}
+
+\RequirePackage{etoolbox}
+\RequirePackage{ifthen}
+\usepackage{tasks}
+\renewcommand{\path}{./}
+\input{print_exo_theorie}
 
 % Global tcolorbox settings
 \tcbset{
@@ -39,7 +48,7 @@
     sharp corners,
     width=\linewidth,
     before skip=0pt, after skip=0pt,
-    sidebyside, sidebyside gap=0mm,
+    sidebyside, sidebyside gap=5mm,
     sidebyside align=top,
     righthand width=0.75\linewidth,
     lefthand width=0.25\linewidth,
@@ -52,26 +61,37 @@
 % Define environments using tcbset
 \newtcolorbox[auto counter, number within=section]{exemple}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\theexemple}\\\vspace{0.5em}},
+    before lower={\noindent},
         #1
 }
 
 \newtcolorbox[auto counter, number within=section]{formule}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
+    before lower={\noindent},
     #1
 }
 
 \newtcolorbox[auto counter, number within=section]{definition}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{definition}Définition~\thesection.\thedefinition}\\\vspace{0.5em}},
+    before lower={\noindent},
     #1
 }
 
-\newtcolorbox[auto counter, number within=section]{exercice}[1][]{
-    before upper={\fbox{%
-    \raggedleft\textbf{\stepcounter{exercice}Exercice~\thesection.\theexercice}}\\\vspace{0.5em}},
-    before lower={\vspace{0.3em}},
-    #1
+% Define the exercice environment
+\newtcolorbox{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
+    before upper={
+        \stepcounter{exercice}%
+        \fbox{\raggedleft\textbf{Exercice~\thesection.\theexercice}}%
+        \\
+        \ifnum#1>0
+            \foreach \i in {1,...,#1}{%
+                {\small \faPepperHot}%
+            }%
+        \fi
+        \\ \vspace{0.5em}
+    },
+    before lower={\vspace{0.3em}\noindent}
 }
-
 \begin{document}
 \pagestyle{fancy}
 \section{Examples of Environments}
@@ -98,11 +118,15 @@ Example: \(\widehat{ f(x) = x^2} \).
 
 \section{Exercises}
 
-\begin{exercice}
+\begin{exercice}[3]
 Solve the equation \( x^2 + 3x - 4 = 0 \).
 \tcblower
 Answer below.
 \end{exercice}
+
+\insertexo{1M-cn6a}{false}{exo}{false}
+
+
 
 \end{document}
 
