@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{canevas_modele}
+\settasks{
+  % the next two should be set to the same value so labels are aligned to the
+  % left
+  label-width = 2em ,
+  item-indent = 3em ,
+  %before-skip = -\parskip , % undo paragraph skip
+  %after-skip = -\parskip , % undo paragraph skip
+  label-offset=1em,
+  after-item-skip = 1em % undo paragraph skip
+}
+\usepackage{enumitem}
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=10pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+\renewcommand{\titreChapitre}{Ch8 : De Thalès à Pythagore} 
+
+\begin{document}
+	\begin{center}
+	{\Large \bfseries  \titreChapitre}
+\end{center}
+
+{\bfseries Tableau récapitulatif} (bilan p. 201)
+\vspace{-0.8cm}
+\begin{center}
+\begin{longtblr}[
+  caption = {},
+]{
+  colspec={|X[1,m,c]|c|c|c|c|},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  cell{2}{1} = {r=1}{}, % multirow
+  cell{2}{2} = {r=1}{}, % multirow
+  cell{2}{3} = {r=1}{}, % multirow
+  cell{2}{4} = {r=1}{}, % multirow
+  cell{2}{5} = {r=1}{}, % multirow
+  cell{6}{1} = {r=1}{},
+  cell{6}{2} = {r=1}{},
+  cell{6}{3} = {r=1}{},
+  cell{6}{4} = {r=1}{},
+  cell{6}{5} = {r=1}{},
+}
+\hline[0.8pt]
+&Activités & Théorie &\makecell{Exercices\\ à faire}&\makecell{Exercices\\facultatifs}\\
+\hline[0.8pt]
+\makecell{Notions fondamentales, angles} 
+&\makecell{1}&1 et 2&\makecell{1 à 8}&\\ 
+\hline
+\makecell{Polygones du plan} 
+&4&3&10 et 11&\\
+\hline
+\makecell{Triangles}
+&\makecell{5}&4 et 5&\makecell{12 à 19\\ 20 à 30}&\makecell{6-12b}\\
+\hline
+\makecell{Thalès}
+&\makecell{6, 7, 8 et 9}&6 à 8&\makecell{31 à 44}&\makecell{6-12b}\\
+\hline
+\makecell{Pythagore}
+&\makecell{14}&9 à 11&\makecell{45 à 55}&\makecell{6-12b}\\
+\hline[1pt]
+\end{longtblr}
+\end{center}
+\end{document}
