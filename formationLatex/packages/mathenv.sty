@@ -17,3 +17,13 @@ bodyfont=\normalfont,
 %prefoothook = \endmyleftbar
 ]{rem}
 
+\declaretheorem[style=exobreak, name=Théorème,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{thm}
+\declaretheorem[style=exobreak, name=Proposition,%
+%postheadhook=\leavevmode\myleftbar{}, %
+%prefoothook = \endmyleftbar
+]{prop}
+\renewenvironment{proof}{{\bfseries  Preuve.}}{\hfill$\square$}
+

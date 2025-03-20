@@ -1,0 +1,30 @@
+\documentclass{beamer}
+
+\usepackage{../packages/intervalles}
+\usepackage{../packages/packages_mathalea}
+\input{../competences/competences_latex.tex}
+
+\usepackage{fontawesome}
+\usepackage{tasks}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{frame}{Domaine de définition 3}
+
+	\begin{tasks}(1)
+		\task Donner l'écriture sous forme d'intervalle des deux intervalles représentés graphiquement, puis de leur union et de leur intersection.
+\medskip
+
+\begin{tikzpicture}[scale=1]
+	\nlAxisX{-2.7}{3.7}
+	\nlinfnum[]{-1}[-1]{o}[0.7]
+\nlnuminf[]{1}[1]{c}
+\end{tikzpicture}
+		\task  
+		Déterminer le domaine de définition de la fonction suivante $f:x\mapsto \dfrac{\sqrt{2x^2+x-2}}{x-1}$.
+	\end{tasks}
+\end{frame}
+
+\end{document}
