@@ -13,49 +13,49 @@
 \vspace{0pt}
 Soit $O$ le centre du cercle $(C)$. 
 
-$ABCDE$ est un pentagone régulier inscrit dans $(C)$. 
-
-Déterminer la valeur de l'angle $\alpha$. 
+Calculer la valeur de l'angle $\alpha$.
 }
 \end{minipage}
 \begin{minipage}[t]{0.4\textwidth}{
 \vspace{0pt}
 \begin{center}
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.6]
 	\tkzSetUpPoint[shape=cross]
 % Define the center and a point on the circle
   \tkzDefPoint(0,0){O}
-  \tkzDefPoint(3,0){A}
+  \tkzDefPoint(3,0){OO}
   
-\tkzLabelCircle[above right](O,A)(30){$(C)$}
   % Draw the circle with center O passing through A
-  \tkzDrawCircle(O,A)
+  \tkzDrawCircle(O,OO)
+\tkzLabelCircle[above](O,OO)(90){$(C)$}
     % Compute the other vertices by successive rotations of 72°
 
+  \tkzDefPointBy[rotation= center O angle 40](OO) \tkzGetPoint{A}
   \tkzDefPointBy[rotation= center O angle 72](A) \tkzGetPoint{B}
   \tkzDefPointBy[rotation= center O angle 72](B) \tkzGetPoint{C}
   \tkzDefPointBy[rotation= center O angle 72](C) \tkzGetPoint{D}
   \tkzDefPointBy[rotation= center O angle 72](D) \tkzGetPoint{E}
+\tkzMarkArc[mark=|](O,A,B)
+\tkzMarkArc[mark=|](O,B,C)
+\tkzMarkArc[mark=|](O,C,D)
+\tkzMarkArc[mark=|](O,D,E)
+\tkzMarkArc[mark=|](O,E,A)
+  \tkzDrawPoints(A,B,C,D,E,O)
   
-  % Draw the inscribed pentagon
-  \tkzDrawPolygon(A,B,C,D,E)
-  
-  \tkzInterLL(A,D)(C,E)\tkzGetPoint{F}
-  % Mark the vertices with crosses
-  \tkzDrawPoints(A,B,C,D,E,O,F)
-  
-  \tkzDrawSegment(A,D)
+  \tkzDrawSegment(A,C)
   \tkzDrawSegment(C,E)
+  \tkzDrawSegment(D,A)
+  \tkzDrawSegment(D,B)
+  \tkzDrawSegment(E,B)
   % Label the vertices
-  \tkzLabelPoints[right](A)
-  \tkzLabelPoints[above](B)
-  \tkzLabelPoints[above right](F, O)
-  \tkzLabelPoints[above left](C)
-  \tkzLabelPoints[left](D)
-  \tkzLabelPoints[below](E)
-  \tkzMarkAngle[size=0.8cm, mark=none](E,F,A)
-  \tkzLabelAngle[pos=1.2](E,F,A){$\alpha$}
-
+  \tkzLabelPoints[above right](A)
+  \tkzLabelPoints[above left](B)
+  \tkzLabelPoints[left](C)
+  \tkzLabelPoints[below](O)
+  \tkzLabelPoints[below left](D)
+  \tkzLabelPoints[right](E)
+  \tkzMarkAngle[size=0.8cm, mark=none](D,B,E)
+  \tkzLabelAngle[pos=1.5](D,B,E){\footnotesize{$\alpha$}}
 \end{tikzpicture}	
 \end{center}
 }
