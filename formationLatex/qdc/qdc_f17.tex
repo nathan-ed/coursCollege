@@ -1,0 +1,40 @@
+\documentclass{beamer}
+
+\usepackage{../packages/intervalles}
+\usepackage{../packages/packages_mathalea}
+\input{../competences/competences_latex.tex}
+
+\usepackage{fontawesome}
+\usepackage{tasks}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{frame}{Relations dans un triangle rectangle}
+ \begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		Déterminer toutes les longueurs manquantes dans ce triangle si $\overline{DB}=9\text{ cm}$ et $\overline{AB}=12 \text{ cm}$.	
+		}
+		\end{minipage}
+		\hfill
+\begin{minipage}[t]{0.5\textwidth}{
+		\vspace{0pt}
+\begin{tikzpicture}[scale=.65]
+\tkzDefPoint(5,3.5){C}
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(7,0){B}
+\tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{D}
+\tkzMarkRightAngle(B,C,A)
+\tkzMarkRightAngle(A,D,C)
+\tkzDrawPoints(A,B,C,D)
+\tkzDrawSegment(C,D)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelPoints[below right](B,A,D)
+\tkzLabelPoints[above](C)
+\end{tikzpicture}
+}
+\end{minipage}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{canevas_modele}
+\settasks{
+  % the next two should be set to the same value so labels are aligned to the
+  % left
+  label-width = 2em ,
+  item-indent = 3em ,
+  %before-skip = -\parskip , % undo paragraph skip
+  %after-skip = -\parskip , % undo paragraph skip
+  label-offset=1em,
+  after-item-skip = 1em % undo paragraph skip
+}
+\usepackage{enumitem}
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=10pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+\renewcommand{\titreChapitre}{Ch 9~: Cercles} 
+
+\begin{document}
+	\begin{center}
+	{\Large \bfseries  \titreChapitre}
+\end{center}
+
+{\bfseries Tableau récapitulatif} (bilan p. 214)
+\vspace{-0.8cm}
+\begin{center}
+\begin{longtblr}[
+  caption = {},
+]{
+  colspec={|X[1,m,c]|c|c|c|c|},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  cell{2}{1} = {r=1}{}, % multirow
+  cell{2}{2} = {r=1}{}, % multirow
+  cell{2}{3} = {r=1}{}, % multirow
+  cell{2}{4} = {r=1}{}, % multirow
+  cell{2}{5} = {r=1}{}, % multirow
+  cell{4}{1} = {r=1}{},
+  cell{4}{2} = {r=1}{},
+  cell{4}{3} = {r=1}{},
+  cell{4}{4} = {r=1}{},
+  cell{4}{5} = {r=1}{},
+}
+\hline[0.8pt]
+&Activités & Théorie &\makecell{Exercices\\ à faire}&\makecell{Exercices\\facultatifs}\\
+\hline[0.8pt]
+\makecell{Cercles} 
+&\makecell{2, 3 et 4}&1&\makecell{1, 7}&\\ 
+\hline
+\makecell{Cercle de Thalès, angles inscrits} 
+&7&2,3&8, 9, 10a, 11, 12&\\
+\hline
+\makecell{Angles inscrits et angles au centre}
+&\makecell{8}&3&\makecell{Série 23\\ 1 à 7 (toute la série)}&\\
+\hline[0.8pt]
+\end{longtblr}
+\end{center}
+{\bfseries Fiche 22~:} Preuves du cercle de Thalès à connaître. 
+\end{document}

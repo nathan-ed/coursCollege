@@ -1,0 +1,117 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[fiche,niveau={1MA1},nfiche={22}, annee={Emilie-Gourd, 2024--2025},
+auteur={ns},theme={Géométrie -- Preuves du cercle de Thalès}]{packages/bandeaux}
+\usepackage{packages/boites}
+\usepackage{packages/courslatex}
+\usepackage{packages/fontes}
+\usepackage{packages/mathenv}
+\allowdisplaybreaks
+\begin{document}
+\begin{thm}[Théorème du cercle de Thalès]
+	Un triangle inscrit dans un cercle et dont un côté est un diamètre est un triangle rectangle. 
+\end{thm}
+\begin{proof}
+	\begin{minipage}[t]{0.5\textwidth}{
+	\vspace{0pt}
+	Le triangle $AOC$ est isocèle en $O$, car $AO$ et $CO$ sont des rayons. Ainsi, $\alpha=\widehat{ACO}=\widehat{CAO}$. 
+
+Le triangle $BOC$ est isocèle en $O$, car $BO$ et $CO$ sont des rayons. Ainsi, $\beta=\widehat{BCO}=\widehat{CBO}$.
+
+De plus, par la somme des angles du triangle $ACB$, on a
+
+\[\alpha+\alpha+\beta+\beta=180^\circ\]
+ 
+d'où 
+\[\alpha+\beta=90^\circ.\]
+Ainsi, $\widehat{ACO}+\widehat{BCO}=90^\circ$ et le triangle $ABC$ est rectangle en $C$. 
+	}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}{
+	\vspace{0pt}
+\begin{center}
+	\begin{tikzpicture}[scale=1.5]
+\tkzSetUpPoint[shape=cross]
+  \tkzInit[xmin=-2,xmax=2,ymin=-2,ymax=2]
+  \tkzClip
+  \tkzDefPoints{-1/0/A, 1/0/B}           % Define points A and B
+  \tkzDefMidPoint(A,B) \tkzGetPoint{O}   % Midpoint O is the center of the circle
+  \tkzDefPointBy[rotation=center O angle 60](B) \tkzGetPoint{C}  % C on the circle, forming a right triangle
+  \tkzDrawCircle(O,A)                    % Draw the circle through A with center O
+  \tkzDrawPolygon(A,C,B)                 % Draw triangle ABC
+  \tkzDrawPoints(A,B,C,O)
+  \tkzDrawSegment[dashed](O,C)
+  \tkzLabelPoints(O)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[right](B)
+  \tkzLabelPoints[left](A)
+\end{tikzpicture}
+\end{center}
+	}
+	\end{minipage}
+
+\end{proof}
+\begin{thm}[Réciproque du théorème du cercle de Thalès]
+Si un triangle $ABC$ inscrit dans un cercle est rectangle en $C$ alors $AB$ est un diamètre du cercle.  
+\end{thm}
+\begin{proof}
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+Soient $O$ le milieu du côté $AC$ et $A'$ le milieu du côté $CB$. On trace la droite $OA'$ passant par $O$ et $A'$. Par la réciproque du théorème de Thalès, $d_{OA'}\| d_{AB}$. Ainsi, $d_{OA'}\perp d_{CB}$ et $d_{OA'}$ est la médiatrice du côté $BC$.
+\medskip
+
+Soit $C'$ le milieu du côté $AB$. On trace la droite $OC'$ passant par $O$ et $C'$. Par la réciproque du théorème de Thalès, $d_{OC'}\| d_{CB}$. Ainsi, $d_{OC'}\perp d_{AB}$ et $d_{OC'}$ est la médiatrice du côté $AB$.
+\medskip
+
+Les deux médiatrices $d_{OA'}$ et $d_{OC'}$ s'intersectent au point $O$ qui est le centre du cercle circonscrit dont le côté $AC$ est le rayon (car c'est l'hypoténuse). 
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[scale=0.75]
+
+\tkzSetUpPoint[shape=cross]
+  % Define the vertices of triangle ABC
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(6,0){B}
+  \tkzDefPoint(6,8){C}
+  
+  % Draw the triangle
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPoints(A,B,C)
+  \tkzLabelPoints[below left](A)
+  \tkzLabelPoints[below right](B)
+  \tkzLabelPoints[above](C)
+  
+  % Compute the midpoints:
+  % O is the midpoint of AC
+  \tkzDefMidPoint(A,C) \tkzGetPoint{O}
+  % A' is the midpoint of BC
+  \tkzDefMidPoint(B,C) \tkzGetPoint{A'}
+  % C' is the midpoint of AB
+  \tkzDefMidPoint(A,B) \tkzGetPoint{C'}
+  
+  \tkzDrawPoints(O,A',C')
+  \tkzLabelPoints[above left](O)
+  \tkzLabelPoints[above right](A')
+  \tkzLabelPoints[below left](C')
+  
+  % Draw the perpendicular bisectors (mediatrices)
+  \tkzDrawLine[dashed, add=0.5 and 0.5](O,A')
+  \tkzDrawLine[dashed, add=0.5 and 0.5](O,C')
+  
+  % Mark the right angles (showing perpendicularity)
+  \tkzMarkRightAngle[scale=0.5](B,A',O)
+  \tkzMarkRightAngle[scale=0.5](A,C',O)
+  \tkzMarkRightAngle(A,B,C)
+  
+  % Draw the circle with diameter AC (circumcircle)
+  \tkzDrawCircle[dashed](O,A)
+\end{tikzpicture}
+
+}
+\end{minipage}
+
+\end{proof}
+
+\end{document}
