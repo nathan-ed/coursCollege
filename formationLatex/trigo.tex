@@ -3,6 +3,8 @@
 \usepackage{titlesec}  % For section numbering
 \usepackage{ragged2e}  % For text alignment
 \usepackage{hyperref}  % For clickable references
+\RequirePackage{tkz-euclide}
+\usepackage{lscape}
 \usepackage[top=2cm, bottom=2cm, left=1.5cm , right=1.5cm]{geometry}
 \usepackage{nameref}
 \setlength\parindent{0pt}
@@ -14,6 +16,7 @@
 \newcounter{formule}
 \newcounter{definition}[section]
 \newcounter{exercice}[section]
+\newcounter{activite}
 
 \newcommand{\Chapitre}{Trigonométrie}
 \titleformat{\section}[frame]
@@ -27,8 +30,14 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\slshape 2024-2025}
-\fancyhead[LO,RE]{\slshape  \Chapitre ~-- Partie ~\thesection,~ \currentname}
-\fancyfoot[C]{\thepage}
+
+\fancyhead[LO,RE]{  \ifnum\value{page}=1
+    \slshape \Chapitre
+  \else
+    \slshape \Chapitre~-- Partie~\thesection,~\currentname
+  \fi
+}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
 \fancyfoot[LE,RO]{\slshape ns}
 \fancyfoot[LO,RE]{\slshape 1MA1~--~EG} 
 \usepackage{packages/fontes2}
@@ -36,6 +45,7 @@
 \usepackage{pgffor}
 
 \RequirePackage{etoolbox}
+\RequirePackage{lastpage}
 \RequirePackage{ifthen}
 \usepackage{tasks}
 \renewcommand{\path}{./}
@@ -76,6 +86,13 @@
     before lower={\noindent},
     #1
 }
+\newtcolorbox[]{activite}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{activite}Activité~\theactivite}\\\vspace{0.5em}},
+    before lower={\noindent},
+    #1
+}
+
+
 
 % Define the exercice environment
 \newtcolorbox{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
@@ -92,8 +109,133 @@
     },
     before lower={\vspace{0.3em}\noindent}
 }
+\DeclareEmphSequence{\bfseries\itshape}
+\makeatletter
+\def\myrulefill{\leavevmode\leaders\hrule height .7ex width 1ex depth -0.6ex\hfill\kern\z@}
+\makeatother
+
+\newcommand{\textLigne}[1]{\myrulefill {{\footnotesize ~#1}} \myrulefill\par}
+
 \begin{document}
 \pagestyle{fancy}
+\section{Introduction à la trigonométrie}
+
+\begin{definition}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[sloped](A,B){adjacent}
+  \tkzLabelSegment[above, sloped](C,A){hypoténuse}
+  \tkzLabelSegment[sloped](B,C){opposé}
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+\end{center}
+\tcblower
+Dans un triangle rectangle : 
+
+\begin{itemize}
+	\item Le côté $[AC]$ est l'\emph{hypoténuse}, c'est le côté opposé à l'angle droit.
+	\item Le côté $[BC]$ est le côté \emph{opposé} à l'angle $\alpha$.
+	\item Le côté $[AB]$ est les côté \emph{adjacent} à l'angle $\alpha$, c'est le côté qui forme l'angle $\alpha$ avec l'hypoténuse.
+\end{itemize}
+\end{definition}
+
+\begin{activite}
+	\tcblower
+Sur la feuille distribuée en annexe sont tracés neuf triangles. Les mesures de leurs côtés sont indiqués en centimètre (ce sont les longueurs mesurées). 
+\begin{tasks}
+\task Calculer pour chaque triangle les rapports suivants par rapport à l'angle indiqué : 
+\begin{gather*}
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}
+\end{gather*}
+\task Que constatez-vous~? Comment peut-on expliquer~?
+\task Soit un triangle $\triangle ABC$ rectangle en $C$. Calculer $\overline{BC}$ lorsque l'hypoténuse mesure $16$ cm et $\alpha=40^\circ$.
+\end{tasks}
+\end{activite}
+\textLigne{Laisser blanc pour la correction}
+
+\newpage
+\begin{activite}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){D}
+  \tkzDefPoint(6,0){E}
+  \tkzDefPoint(6,4.5){F}
+  \tkzDrawSegment(D,F)
+  \tkzDrawSegment(D,E)
+  \tkzDrawSegment(E,F)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](E,D,F)
+  \tkzLabelAngle[pos=1.2](E,D,F){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](F,E,D)
+  \tkzLabelPoints(D,E)
+  \tkzLabelPoints[above](F)
+	\end{tikzpicture}
+\end{center}
+{\bfseries Indice :} utiliser les termes côté adjacent à $\alpha$, côté opposé à $\alpha$ et hypoténuse.
+	\tcblower 
+	\begin{tasks}
+		\task Expliquer pourquoi des triangles rectangles ayant un autre angle isométrique sont semblables. 
+		\task Utiliser le théorème de Thalès pour compléter les rapports suivants~:
+
+		\[\dfrac{\overline{BC}}{\overline{EF}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}\]
+
+		\task Compléter à présent les énoncés suivants~:
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AB}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{AB}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+	\end{tasks}
+\end{activite}
+
+\textLigne{Laisser blanc pour la correction}
+\newpage
+\begin{landscape}
+\pagestyle{empty}
+\input{triangle} 
+\end{landscape}
+\newpage
+\pagestyle{empty}
+\phantom{newpage}
+\addtocounter{page}{-1}
+\newpage
+\pagestyle{fancy}
+\addtocounter{page}{-1}
+
+
 \section{Examples of Environments}
 
 \begin{exemple}

@@ -1,0 +1,96 @@
+\tikzset{
+  myrotate/.style={rotate=#1,nodes={rotate=#1}}
+}
+\begin{tikzpicture}[remember picture, overlay,x=1cm, y=1cm]
+
+%-----------------------------------------------------------------
+% Helper macro to draw a triangle with sides (a,b,c) 
+% placing AB=a horizontally, marking angle at A.
+% Usage: \DrawTriangle{a}{b}{c}
+% The code places A at (0,0) and B at (a,0), then computes C 
+% using the law of cosines so that AC=b and BC=c.
+% Also labels each side with its length and marks \angle A.
+
+\newcommand{\DrawTriangle}[3]{%
+  % #1=a, #2=b, #3=c
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(#1,0){B}
+  % Compute coordinates of C via law of cosines:
+  %  x = (a^2 + b^2 - c^2) / (2a)
+  %  y = sqrt(b^2 - x^2)
+  \pgfmathsetmacro{\xC}{(\the\numexpr#1 * #1 + #2 * #2 - #3 * #3) / (2 * #1)} 
+  \pgfmathsetmacro{\tempA}{(#2 * #2) - (\xC * \xC)} % inside of sqrt
+  % guard against tiny floating remainders:
+  \ifdim \tempA pt < 0.000001pt
+    \pgfmathsetmacro{\tempA}{0}%
+  \fi
+  \pgfmathsetmacro{\yC}{sqrt(\tempA)}
+  \tkzDefPoint(\xC,\yC){C}
+
+  % Draw and label sides
+  \tkzDrawSegments(A,B B,C C,A)
+  \tkzLabelSegment[sloped](A,B){\pgfmathprintnumber{#1} cm}
+  % For the other two sides, you can adjust label placement if needed:
+  \tkzLabelSegment[sloped](A,C){\pgfmathprintnumber{#2} cm}
+  \tkzLabelSegment[sloped](B,C){\pgfmathprintnumber{#3} cm}
+
+  % Mark the angle at A
+  % (You can adjust "size=..." or "mark=..." as you prefer)
+  \tkzMarkAngle[size=0.8](B,A,C)
+}
+
+%-----------------------------------------------------------------
+% Now place each triangle in its own "scope" with some shift 
+% so they don’t overlap. We have 9 triangles total.
+
+% The triangles you gave, in the order you gave them:
+% 1) 7.84, 5.04, 6
+% 2) 8.54, 7.4, 4.27
+% 3) 12.41, 9.5, 7.97
+% 4) 13.29, 9.4, 9.4
+% 5) 6.7, 9.48, 6.7
+% 6) 4.5, 3.9, 2.25
+% 7) 5.66, 4, 4
+% 8) 10.39, 9, 5.2
+% 9) 5, 3.83, 3.21
+
+% Adjust these shifts so everything fits on the page
+% (You can also create multiple pages or bigger page sizes.)
+% Example: 3 columns, 3 rows
+\begin{scope}[shift={(22,-5)}, myrotate=90]
+  \DrawTriangle{4.95}{3.83}{3.21}
+\end{scope}
+
+\begin{scope}[shift={(18,-17.5)}, myrotate=40]
+  \DrawTriangle{7.84}{6}{5.04}
+\end{scope}
+
+\begin{scope}[shift={(17,-18)}, myrotate=110]
+  \DrawTriangle{8.54}{7.4}{4.27}
+\end{scope}
+
+\begin{scope}[shift={(-1.5,-17.5)}, rotate=0]
+  \DrawTriangle{12.41}{9.5}{7.97}
+\end{scope}
+
+\begin{scope}[shift={(14.5,-5.5)}, rotate=180]
+  \DrawTriangle{13.29}{9.4}{9.4}
+\end{scope}
+
+\begin{scope}[shift={(15,-6)}, myrotate=320]
+  \DrawTriangle{6.7}{9.48}{6.7}
+\end{scope}
+
+\begin{scope}[shift={(3,-13)}, myrotate=120]
+  \DrawTriangle{4.5}{3.9}{2.25}
+\end{scope}
+
+\begin{scope}[shift={(15,0)}, myrotate=230]
+  \DrawTriangle{5.66}{4}{4}
+\end{scope}
+
+\begin{scope}[shift={(-1,-4)}]
+  \DrawTriangle{10.39}{9}{5.2}
+\end{scope}
+\end{tikzpicture}
+

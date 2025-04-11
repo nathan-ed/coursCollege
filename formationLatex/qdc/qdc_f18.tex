@@ -1,0 +1,61 @@
+\documentclass{beamer}
+
+\usepackage{../packages/intervalles}
+\usepackage{../packages/packages_mathalea}
+\input{../competences/competences_latex.tex}
+
+\usepackage{fontawesome}
+\usepackage{tasks}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{frame}{Relations dans un triangle rectangle}
+ Déterminer la longueur des segments $AB, BD, EB$ et $AD$, si $AE = 8~\text{cm}$ et $ED = 6~\text{cm}$.
+
+ \begin{center}
+\begin{tikzpicture}[scale=0.4, rotate=130]
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-10.25,-1.3) rectangle (10.25,10.3);
+    	\draw[color={black}] (-9,0)--(9,0)--(0,9)--cycle;
+	\draw[color ={black}] (0,9)--(0,0);
+	\draw[color={black},line width = 0.5] (0,0)--(-0.4,0)--(-0.4,0.4)--(0,0.4)--cycle;
+	\draw[color={black},line width = 0.5] (0,9)--(-0.28,8.72)--(0,8.44)--(0.28,8.72)--cycle;
+	\draw [color={black}] (-9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {A};
+	\draw [color={black}] (0.5,-0.5) node[anchor = center,scale=1, rotate = 0] {B};
+	\draw [color={black}] (9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {D};
+	\draw [color={black}] (9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {D};
+	\draw [color={black}] (-0.5,9.5) node[anchor = center,scale=1, rotate = 0] {E};
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}
+	Par le théorème de Thalès, on a les rapports suivants :  
+\medskip
+
+$\begin{aligned}    
+\dfrac{{\color{red} AE}}{{\color{black} AD}} = \dfrac{{\color{red} AB}}{{\color{black} AE}} = \dfrac{{\color{red} EB}}{{\color{black} ED}}\\
+\dfrac{{\color{red} AE}}{{\color{blue} ED}} = \dfrac{{\color{red} AB}}{{\color{blue} EB}} = \dfrac{{\color{red} EB}}{{\color{blue} BD}}\\
+\dfrac{{\color{black} AD}}{{\color{blue} ED}} = \dfrac{{\color{black} AE}}{{\color{blue} EB}} = \dfrac{{\color{black} ED}}{{\color{blue} BD}}
+\end{aligned}$
+\medskip
+
+On détermine $AD$ à l'aide du théorème de Pythagore. On a $AD = \sqrt{AE^2 + ED^2}$, d'où $AD = \sqrt{8^2 + 6^2} = \sqrt{100} = {\color[HTML]{f15929}\boldsymbol{10~\text{cm}}}$
+          \\ On utilise la relation $\dfrac{AE}{AD}=\dfrac{EB}{ED}$ d'où $EB=\dfrac{AE\times ED}{AD}={\color[HTML]{f15929}\boldsymbol{\dfrac{24}{5}~\text{cm}}}$.
+          \\ On peut à présent utiliser le théorème de Thalès ou le théorème de Pythagore pour déterminer $AB$ ou $BD$. On utilise les relations données par le théorème de Thalès pour déterminer $AB$. 
+          On a $\dfrac{AE}{AD}=\dfrac{AB}{AE}$ d'où $AB=\dfrac{AE^2}{AD}={\color[HTML]{f15929}\boldsymbol{\dfrac{32}{5}}}$.
+          \\ Enfin, on a que $BD = AD-AB=10-\dfrac{32}{5}={\color[HTML]{f15929}\boldsymbol{\dfrac{18}{5}~\text{cm}}}$.
+\end{frame}
+
+\end{document}

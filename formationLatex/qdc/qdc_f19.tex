@@ -1,0 +1,62 @@
+\documentclass{beamer}
+
+\usepackage{../packages/intervalles}
+\usepackage{../packages/packages_mathalea}
+\input{../competences/competences_latex.tex}
+
+\usepackage{fontawesome}
+\usepackage{tasks}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{frame}{Relations dans un triangle rectangle}
+  Déterminer la longueur des segments $ED, BD, EB$ et $AD$, si $AE = 10~\text{cm}$ et $AB = 4~\text{cm}$.
+
+  \begin{center}
+ \begin{tikzpicture}[scale=0.4]
+
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-10.25,-1.3) rectangle (10.25,10.3);
+    	\draw[color={black}] (-9,0)--(9,0)--(0,9)--cycle;
+	\draw[color ={black}] (0,9)--(0,0);
+	\draw[color={black},line width = 0.5] (0,0)--(-0.4,0)--(-0.4,0.4)--(0,0.4)--cycle;
+	\draw[color={black},line width = 0.5] (0,9)--(-0.28,8.72)--(0,8.44)--(0.28,8.72)--cycle;
+	\draw [color={black}] (-9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {A};
+	\draw [color={black}] (0.5,-0.5) node[anchor = center,scale=1, rotate = 0] {B};
+	\draw [color={black}] (9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {D};
+	\draw [color={black}] (9.5,-0.5) node[anchor = center,scale=1, rotate = 0] {D};
+	\draw [color={black}] (-0.5,9.5) node[anchor = center,scale=1, rotate = 0] {E};
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\begin{frame}
+Par le théorème de Thalès, on a les rapports suivants : 
+      
+
+\medskip
+
+$\begin{aligned}    
+\dfrac{{\color{red} AE}}{{\color{black} AD}} = \dfrac{{\color{red} AB}}{{\color{black} AE}} = \dfrac{{\color{red} EB}}{{\color{black} ED}}\\
+\dfrac{{\color{red} AE}}{{\color{blue} ED}} = \dfrac{{\color{red} AB}}{{\color{blue} EB}} = \dfrac{{\color{red} EB}}{{\color{blue} BD}}\\
+\dfrac{{\color{black} AD}}{{\color{blue} ED}} = \dfrac{{\color{black} AE}}{{\color{blue} EB}} = \dfrac{{\color{black} ED}}{{\color{blue} BD}}
+\end{aligned}$\\
+\medskip
+          On commence par déterminer $EB$. Par le théorème de Pythagore, on a $EB = \sqrt{AE^2 - AB^2}$, d'où $EB = \sqrt{10^2 - 4^2} = \sqrt{84} = {\color[HTML]{f15929}\boldsymbol{2\sqrt{21}~\text{cm}}}$.
+          \\En utilisant la relation $\dfrac{AB}{EB}=\dfrac{EB}{BD}$, on a $BD= \dfrac{EB^2}{AB}={\color[HTML]{f15929}\boldsymbol{21~\text{cm}}}$.
+          \\ On détermine $ED$ à l'aide du théorème de Pythagore. On a $ED=\sqrt{EB^2+BD^2}$, d'où $ED=\sqrt{(2\sqrt{21})^2+21^2}={\color[HTML]{f15929}\boldsymbol{5\sqrt{21}~\text{cm}}}$
+          \\ Enfin, on détermine $AD$. On a $AD = AB + BD$, d'où $AD = 4 + 21 = {\color[HTML]{f15929}\boldsymbol{25~\text{cm}}}$.
+\end{frame}
+
+\end{document}
