@@ -1,0 +1,141 @@
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{titlesec}  % For section numbering
+\RequirePackage{ragged2e}  % For text alignment
+\RequirePackage{hyperref}  % For clickable references
+\RequirePackage{tkz-euclide}
+\RequirePackage{lscape}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{tabularray}
+\RequirePackage[top=2cm, bottom=2cm, left=1.5cm , right=1.5cm]{geometry}
+\RequirePackage{nameref}
+\RequirePackage{multicol}
+\setlength\parindent{0pt}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+% Define counters
+\newcounter{exemple}
+\newcounter{formule}
+\newcounter{definition}[section]
+\newcounter{exercice}[section]
+\newcounter{remarque}[section]
+\newcounter{activite}
+
+\titleformat{\section}[frame]
+{\normalfont}
+{\filright
+\footnotesize
+\enspace \Chapitre ~ PARTIE ~ \thesection\enspace}
+{8pt}
+{\Large\bfseries\filcenter}
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\slshape 2024-2025}
+
+\fancyhead[LO,RE]{  \ifnum\value{page}=1
+    \slshape \Chapitre
+  \else
+    \slshape \Chapitre~-- Partie~\thesection,~\currentname
+  \fi
+}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+\fancyfoot[LE,RO]{\slshape ns}
+\fancyfoot[LO,RE]{\slshape 1MA1~--~EG} 
+\RequirePackage{../packages/fontes2}
+\RequirePackage{fontawesome5}
+\RequirePackage{pgffor}
+
+\RequirePackage{etoolbox}
+\RequirePackage{lastpage}
+\RequirePackage{ifthen}
+\RequirePackage{tasks}
+\input{../macros/print_exo_theorie}
+
+% Global tcolorbox settings
+\tcbset{
+    boxrule=0pt,    
+    left=0pt, right=0pt,
+    sharp corners,
+    width=\linewidth,
+    before skip=0pt, after skip=0pt,
+    sidebyside, sidebyside gap=5mm,
+    sidebyside align=top,
+    righthand width=0.75\linewidth,
+    lefthand width=0.25\linewidth,
+    colback=white,
+    fontupper=\raggedleft,  
+    fontlower=\justifying,  
+    colframe=white % No border
+}
+
+\newtcolorbox[auto counter, number within=section]{exemple}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\thesection.\theexemple}\\\vspace{0.5em}},
+    before lower={\noindent},
+    #1
+}
+
+
+\newtcolorbox[auto counter, number within=section]{formule}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
+    before lower={\noindent},
+    #1
+}
+
+\newtcolorbox[auto counter, number within=section]{definition}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{definition}Définition~\thesection.\thedefinition}\\\vspace{0.5em}},
+    before lower={\noindent},
+    #1
+}
+
+\newtcolorbox[auto counter, number within=section]{remarque}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{remarque}Remarque}\\\vspace{0.5em}},
+    before lower={\noindent},
+    #1
+}
+
+
+\newtcolorbox[]{activite}[1][]{
+	breakable,
+    before upper={\raggedright\textbf{\stepcounter{activite}Activité~\theactivite}\\},
+    before lower={\noindent},
+    #1
+}
+
+\newtcolorbox[]{thm}[1][]{
+    before upper={\raggedleft\textbf{Théorème}\\},
+    before lower={\noindent},
+    #1
+}
+
+% Define the exercice environment
+\newtcolorbox{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
+    before upper={
+        \stepcounter{exercice}%
+        \fbox{\raggedleft\textbf{Exercice~\thesection.\theexercice}}%
+        \\
+        \ifnum#1>0
+            \foreach \i in {1,...,#1}{%
+                {\small \faPepperHot}%
+            }%
+        \fi
+        \\ \vspace{0.5em}
+    },
+    before lower={\vspace{0.3em}\noindent}
+}
+\DeclareEmphSequence{\bfseries\itshape}
+\makeatletter
+\def\myrulefill{\leavevmode\leaders\hrule height .7ex width 1ex depth -0.6ex\hfill\kern\z@}
+\makeatother
+
+\newcommand{\textLigne}[1]{\myrulefill {{\footnotesize ~#1}} \myrulefill\par}
+
+
+\newenvironment{explanation}
+{\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.5\textwidth} >{\raggedright\arraybackslash}p{0.45\textwidth}}}
+{\end{longtable}}
+
+
+

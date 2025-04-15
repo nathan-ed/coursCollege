@@ -1,0 +1,717 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../packages/coursCollege}
+\newcommand{\Chapitre}{Trigonométrie du triangle rectangle}
+\renewcommand{\path}{../../}
+\begin{document}
+
+\section{Relations angles et longueurs}
+\begin{definition}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[sloped](A,B){adjacent}
+  \tkzLabelSegment[above, sloped](C,A){hypoténuse}
+  \tkzLabelSegment[sloped](B,C){opposé}
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+\end{center}
+\tcblower
+Dans un triangle rectangle : 
+
+\begin{itemize}
+	\item Le côté $[AC]$ est l'\emph{hypoténuse}, c'est le côté opposé à l'angle droit.
+	\item Le côté $[BC]$ est le côté \emph{opposé} à l'angle $\alpha$.
+	\item Le côté $[AB]$ est les côté \emph{adjacent} à l'angle $\alpha$, c'est le côté qui forme l'angle $\alpha$ avec l'hypoténuse.
+\end{itemize}
+\end{definition}
+
+
+\begin{definition}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[sloped](A,B){adjacent}
+  \tkzLabelSegment[above, sloped](C,A){hypoténuse}
+  \tkzLabelSegment[sloped](B,C){opposé}
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+\end{center}
+	\tcblower
+	Par le théorème de Thalès, on a déduit dans l'activité précédente que les rapports $\dfrac{\text{côté opposé à }\alpha}{\text{hypoténuse}}$, $\dfrac{\text{côté adjacent à }\alpha}{\text{hypoténuse}}$ et $\dfrac{\text{côté opposé à }\alpha}{\text{côté opposé à }\alpha}$  sont constants et ne dépendent que de l'angle $\alpha$. On nomme donc ces rapports respectivement $\sin(\alpha), \cos(\alpha)$ et $\tan(\alpha)$. 
+	\begin{gather*}
+\sin(\alpha)=\dfrac{\text{côté opposé à }\alpha}{\text{hypoténuse}}\\\\
+\cos(\alpha)=\dfrac{\text{côté adjacent à }\alpha}{\text{hypoténuse}}\\\\
+\tan(\alpha)=\dfrac{\text{côté opposé à }\alpha}{\text{côté opposé à }\alpha}
+	\end{gather*}
+\end{definition}
+\begin{remarque}(Moyens mnémotechniques)
+	\tcblower 
+\begin{itemize}
+	\item \emph{sin-opp-hyp / cos-adj-hyp / tan-opp-adj} devient 
+		
+		\emph{sinopip / cosadjip / tanopadj}.
+	\item \emph{sin-opp-hyp / cos-adj-hyp / tan-opp-adj} devient 
+
+		\emph{SOH-CAH-TOA}. 
+\end{itemize}
+\end{remarque}
+\begin{thm}
+	\tcblower
+Si $0^\circ<\alpha<90^\circ$, alors on a~: $0<\sin(\alpha)<1$ et $0<\cos(\alpha)<1$.
+Remarque~: si $0^\circ<\alpha<90^\circ$, alors on a~: $0<\tan(\alpha)<\infty$.
+\end{thm}
+\newpage
+\section{Utiliser les fonctions trigonométriques}
+
+{\bfseries Calculer une longueur}
+
+\begin{exemple}	
+\begin{center}
+	\includegraphics[scale=1]{../medias/1M/trigo/1M-theorie-e1}
+\end{center}
+\tcblower
+On considère un triangle \( \triangle LEO \) rectangle en \( E \) tel que \( \overline{LO} = 5{,}4~\text{cm} \) et \( \widehat{ELO} = 62^\circ \).\\
+Calculer la longueur du côté \( [EL] \) arrondie au millimètre.
+
+\begin{explanation}
+Dans le triangle \( \triangle LEO \) rectangle en \( E \), [LO] est l'hypoténuse, [EL] est le côté adjacent à \( \widehat{ELO} \). 
+
+On doit utiliser le cosinus de \( \widehat{ELO} \).
+& On cite les données qui orientent le choix de la fonction trigonométrique. \\
+
+
+	\( \cos(\widehat{ELO}) = \dfrac{\overline{EL}}{\overline{LO}} \)& On écrit le cosinus de l'angle connu. La longueur cherchée est dans le rapport. \\
+
+	\( \overline{EL} = \overline{LO} \cdot \cos(\widehat{ELO}) \)
+& Produit en croix. \\
+
+\(\overline{EL} = 5{,}4 \cdot \cos(62^\circ) \)
+& On saisit sur la calculatrice : \( 5{,}4 \cdot \cos(62) \). \\
+
+\( \overline{EL} \approx 2{,}5~\text{cm} \)
+& Le résultat est cohérent ($\overline{EL}$ est inférieure à $\overline{LO}$). \\
+\end{explanation}
+\end{exemple}
+\begin{exemple}
+	\begin{center}
+\includegraphics[scale=1]{../medias/1M/trigo/1M-theorie-e2}
+\end{center}
+\tcblower
+On considère un triangle \( \triangle KLM \) rectangle en \( K \) tel que \( \overline{KL} = 7{,}2~\text{cm} \) et \( \widehat{LMK} = 53^\circ \).\\
+Calculer la longueur du côté \( [LM] \) arrondie au millimètre.
+
+
+\begin{explanation}
+	Dans le triangle \( \triangle KLM \) rectangle en \( K \), \( [KL] \) est le côté opposé à \( \widehat{LMK} \), \( [LM]\) est l'hypoténuse.
+
+On doit utiliser le sinus de l’angle \( \widehat{LMK} \).
+& On cite les données de l’énoncé pour guider le choix de la fonction. \\
+
+\( \sin(\widehat{LMK}) = \dfrac{\overline{KL}}{\overline{LM}} \)
+& On écrit le sinus de l'angle connu. (La longueur cherchée doit apparaître dans le rapport.\\
+
+\( \overline{LM} = \dfrac{\overline{KL}}{\sin(\widehat{LMK})} \)
+& Produit en croix. \\
+
+\( \overline{LM} = \dfrac{7{,}2}{\sin(53^\circ)} \)
+& On saisit sur la calculatrice : \( 7{,}2 \div \sin(53) \). \\
+
+\( \overline{LM} \approx 9~\text{cm} \)
+& Le résultat est cohérent ( $\overline{LM}$ supérieure à \( \overline{KL} \)). \\
+\end{explanation}
+\end{exemple}
+
+\newpage
+{\bfseries Calculer la mesure d'un angle}
+\begin{exemple}
+\begin{center}
+	\includegraphics[scale=1]{../medias/1M/trigo/1M-theorie-e3}
+\end{center}
+\tcblower
+\textbf{Exemple~:} soit \( \triangle FUN \) un triangle rectangle en \( U \) tel que \( \overline{UN} = 8{,}2 \, \text{cm} \) et \( \overline{UF} = 5{,}5 \, \text{cm} \).\\
+Calculer la mesure de l'angle \( \widehat{UNF} \) arrondie au degré.
+
+\vspace{1em}
+
+\begin{explanation}
+
+Dans le triangle \( \triangle FUN \) rectangle en \( U \),
+\( \overline{FU} \) est le \textbf{côté opposé} à l’angle \( \widehat{UNF} \) ;
+\( \overline{UN} \) est le \textbf{côté adjacent} à l’angle \( \widehat{UNF} \).
+On doit utiliser la tangente de l’angle \( \widehat{UNF} \).
+&
+On cite les données de l’énoncé qui permettent de choisir la relation trigonométrique à utiliser.\\
+$\tan(\widehat{UNF}) = \dfrac{\textcolor{blue}{\text{côté opposé à } \widehat{UNF}}}{\textcolor{red}{\text{côté adjacent à } \widehat{UNF}}}$
+$\tan(\widehat{UNF}) = \dfrac{\overline{UF}}{\overline{UN}}$
+&On écrit la tangente de l’angle recherché.\\
+$	\tan(\widehat{UNF})= \dfrac{5{,}5}{8{,}2}$\\
+$\Rightarrow \widehat{UNF} = \tan^{-1} \left( \dfrac{5{,}5}{8{,}2} \right)$
+&
+Saisir sur la calculatrice\\
+$
+\widehat{UNF} \approx 34^\circ$
+&\\
+\end{explanation}
+\end{exemple}
+{\bfseries Résoudre un problème}
+\begin{exemple}
+	\includegraphics[scale=0.9]{../medias/1M/trigo/1M-theorie-e4}
+\tcblower
+Juliette se trouve à une distance de 30~m d'un château d'eau et désire en connaître la hauteur. Elle mesure l'angle entre l'horizontale et le haut de la base d’un château d’eau grâce à un appareil placé à 1{,}70~m du sol et trouve $58^\circ$. Calculer la hauteur de la base du château d'eau arrondie au mètre.
+
+On commence par faire un schéma (ci-contre).
+
+La droite $HI$ est perpendiculaire à l’horizontale.
+
+Dans le triangle $ \triangle HIJ $ rectangle en $H$, on a~:
+
+\[
+\tan(\widehat{IHJ}) = \frac{HI}{HJ} \quad \Leftrightarrow \quad \tan(58^\circ) = \frac{HI}{30}
+\]
+d'où~: \quad $HI = 30 \cdot \tan(58^\circ) \approx 48{,}01$~m. 
+
+De plus~: $48{,}01 + 1{,}70 = 49{,}70$~m
+
+Donc, la hauteur du château d’eau est d’environ \textbf{50 mètres}.
+\end{exemple}
+
+\section{Valeurs exactes}
+Voici quelques valeurs à connaître. 
+\begin{center}
+\begin{tblr}{
+  colspec={|c|c|c|c|},
+  row{1} = { font=\bfseries},
+  hlines, vlines,
+  cell{2}{2} = {c},
+  cell{2}{3} = {c},
+  cell{2}{4} = {c},
+  cell{3}{2} = {c},
+  cell{3}{3} = {c},
+  cell{3}{4} = {c},
+  cell{4}{2} = {c},
+  cell{4}{3} = {c},
+  cell{4}{4} = {c},
+}
+
+angle & sinus & cosinus & tangente \\
+$30^\circ$ 
+  & $\dfrac{1}{2}$ 
+  & $\dfrac{\sqrt{3}}{2}$ 
+  & $\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}$ \\
+$45^\circ$ 
+  & $\dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}$ 
+  & $\dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}$ 
+  & $1$ \\
+$60^\circ$ 
+  & $\dfrac{\sqrt{3}}{2}$ 
+  & $\dfrac{1}{2}$ 
+  & $\sqrt{3}$ \\
+\end{tblr}
+\end{center}
+\section{Théorèmes}
+\begin{thm}
+	angles complémentaires
+	\tcblower
+	Si $\alpha$ et $\beta$ sont deux angles complémentaires, alors on a~:
+	\begin{enumerate}
+		\item $\sin(\alpha)=\cos(\beta)$
+		\item $\cos(\alpha)=\sin(\beta)$
+		\item $\tan(\alpha)=\dfrac{1}{\tan(\beta)}$
+	\end{enumerate}
+\end{thm}
+\begin{thm}
+	relation $\tan,\sin,\cos$
+	\tcblower
+	Si $0^\circ < \alpha < 90^\circ$, alors on a~: $\tan(\alpha)=\dfrac{\sin(a)}{\cos(\alpha)}$.
+\end{thm}
+\begin{thm}
+	relation fondamentale
+	\tcblower
+	Si $0^\circ < \alpha < 90^\circ$, alors on a~: $\sin^2(\alpha)+\cos^2(\alpha)=1$.
+\end{thm}
+\begin{exemple}
+	\tcblower
+Exemple~: calculer la valeur exacte de~$\sin(\alpha)$ et~$\tan(\alpha)$ sachant que~$\alpha$ est un angle aigu tel que~$\cos(\alpha)=0{,}8$.
+\begin{itemize}
+	\item $\sin^2(\alpha)+\cos^2(\alpha)=1$ donc 
+		\[\sin^2(\alpha)=1-\cos^2(\alpha)=1-0{,}8^2=1-0{,}64=0{,}36.\]
+		Le sinus d’un angle aigu est un nombre positif donc \[\sin(\alpha)=\sqrt{0{,}36}=0{,}6.\]
+\item $\displaystyle \tan(\alpha) = \frac{\sin(\alpha)}{\cos(\alpha)} = \frac{0{,}6}{0{,}8} = 0{,}75$. 
+\end{itemize}
+\end{exemple}
+
+\section*{Exercices}
+\insertexo{1M-4hnue}{false}{exo}{true}
+\insertexo{1M-51zgu}{false}{exo}{true}
+\insertexo{1M-2r44h}{false}{exo}{true}
+\insertexo{1M-gek17}{false}{exo}{true}
+\insertexo{1M-brprr}{false}{exo}{true}
+\insertexo{1M-92n2p}{false}{exo}{true}
+\insertexo{1M-5cukt}{false}{exo}{true}
+\insertexo{1M-j3232}{false}{exo}{true}
+\insertexo{1M-yyxse}{false}{exo}{true}
+\insertexo{1M-fd8ny}{false}{exo}{true}
+\insertexo{1M-xsa6d}{false}{exo}{true}
+\insertexo{1M-4hhgy}{false}{exo}{true}
+\insertexo{1M-t2456}{false}{exo}{true}
+\insertexo{1M-281zz}{false}{exo}{true}
+\insertexo{1M-zcmts}{false}{exo}{true}
+\insertexo{1M-ekp94}{false}{exo}{true}
+\insertexo{1M-uydzz}{false}{exo}{true}
+\insertexo{1M-yvdsw}{false}{exo}{true}
+
+
+\newpage
+\section*{Activités}
+
+\begin{activite}
+	\tcblower
+Sur la feuille distribuée en annexe sont tracés neuf triangles. Les mesures de leurs côtés sont indiqués en centimètre (ce sont les longueurs mesurées). 
+\begin{tasks}
+\task Calculer pour chaque triangle les rapports suivants par rapport à l'angle indiqué : 
+\begin{gather*}
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}
+\end{gather*}
+\task Que constatez-vous~? Comment peut-on expliquer~?
+\task Soit un triangle $\triangle ABC$ rectangle en $C$. Calculer $\overline{BC}$ lorsque l'hypoténuse mesure $16$ cm et $\alpha=40^\circ$.
+\end{tasks}
+\end{activite}
+\begin{activite}
+\begin{center}
+	\begin{tikzpicture}[scale=0.5]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+	\hspace{2cm}
+	\begin{tikzpicture}[scale=0.5]
+		  % Définition des points
+  \tkzDefPoint(0,0){D}
+  \tkzDefPoint(6,0){E}
+  \tkzDefPoint(6,4.5){F}
+  \tkzDrawSegment(D,F)
+  \tkzDrawSegment(D,E)
+  \tkzDrawSegment(E,F)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](E,D,F)
+  \tkzLabelAngle[pos=1.2](E,D,F){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](F,E,D)
+  \tkzLabelPoints(D,E)
+  \tkzLabelPoints[above](F)
+	\end{tikzpicture}
+\end{center}
+{\bfseries Indice :} utiliser les termes côté adjacent à $\alpha$, côté opposé à $\alpha$ et hypoténuse.
+	\tcblower 
+	\begin{tasks}
+		\task Expliquer pourquoi des triangles rectangles ayant un autre angle isométrique sont semblables. 
+		\task Utiliser le théorème de Thalès pour compléter les rapports suivants~:
+
+		\[\dfrac{\overline{BC}}{\overline{EF}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}\]
+
+		\task Compléter à présent les énoncés suivants~:
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AB}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{AB}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+	\end{tasks}
+\end{activite}
+\newpage
+\begin{landscape}
+\pagestyle{empty}
+\input{1M-trigo-triangles} 
+\end{landscape}
+\newpage
+\pagestyle{fancy}
+\phantom{newpage}
+
+\begin{activite}
+	\tcblower
+Du sommet d'une tour haute de 36 mètres au-dessus du niveau de la mer, un bateau est observé avec un angle de dépression de $16^\circ$. À quelle distance se trouve le bateau de la tour~?
+
+\begin{center}	
+\includegraphics[scale=1]{../medias/1M/trigo/1M-trigo-bateau}
+\end{center}
+
+Expliquer pourquoi les outils de calcul géométrique dont nous disposons actuellement — angles, Pythagore, Thalès — ne suffisent pas à résoudre ce problème.
+\end{activite}
+
+\begin{activite}
+	\tcblower
+	\begin{tasks}
+		\task Calculer $x$ à l'aide de la calculatrice et donner les résultats arrondis au millième~:
+	\begin{multicols}{3}{
+			\begin{enumerate}
+			\item 
+
+				\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.5](B,A,C){$40^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$1~\text{m}$}
+  \tkzLabelSegment[right](B,C){$x$}
+	\end{tikzpicture}
+\end{center}
+\item 
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](A,C,B)
+  \tkzLabelAngle[pos=1.5](A,C,B){$40^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$2~\text{m}$}
+  \tkzLabelSegment[right](B,C){$x$}
+	\end{tikzpicture}
+\end{center}
+
+\item 
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.5](B,A,C){$21^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[sloped](A,B){$5~\text{m}$}
+  \tkzLabelSegment[above, sloped](C,A){$1~\text{m}$}
+  \tkzLabelSegment[right](B,C){$x$}
+	\end{tikzpicture}
+\end{center}
+\item 
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.5](B,A,C){$40^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$5~\text{m}$}
+  \tkzLabelSegment[right](B,C){$x$}
+	\end{tikzpicture}
+\end{center}
+\item
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.5](B,A,C){$56^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[below](A,B){$x$}
+  \tkzLabelSegment[above, sloped](C,A){$1~\text{m}$}
+	\end{tikzpicture}
+\end{center}
+\item 
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](A,C,B)
+  \tkzLabelAngle[pos=1.5](A,C,B){$12^\circ$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$2~\text{m}$}
+  \tkzLabelSegment[right](B,C){$x$}
+	\end{tikzpicture}
+\end{center}
+			\end{enumerate}
+}
+\end{multicols}
+\task Calculer $\alpha$ à l'aide de la calculatrice et donner les résultats arrondis au millième~:
+\begin{multicols}{3}{
+\begin{enumerate}
+	\item 
+
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.5](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$7~\text{cm}$}
+  \tkzLabelSegment[right](B,C){$4~\text{cm}$}
+	\end{tikzpicture}
+
+	\item 
+
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](A,C,B)
+  \tkzLabelAngle[pos=1.5](A,C,B){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[above, sloped](C,A){$2~\text{cm}$}
+  \tkzLabelSegment[right](B,C){$1,2~\text{cm}$}
+	\end{tikzpicture}
+
+\item 
+
+	\begin{tikzpicture}[scale=0.7]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](A,C,B)
+  \tkzLabelAngle[pos=1.5](A,C,B){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelSegment[below](A,B){$2~\text{cm}$}
+  \tkzLabelSegment[right](B,C){$5~\text{cm}$}
+	\end{tikzpicture}
+\end{enumerate}
+}
+\end{multicols}
+\task Calul de la mesure d'un angle
+
+\begin{minipage}[t]{0.6\textwidth}{
+\vspace{0pt}
+\begin{enumerate}
+	\item[i)] Quelle est l'hypoténuse du triangle $\triangle RST$ rectangle en $T$~?
+	\item[ii)] Écrire l'égalité reliant l'angle $\widehat{TRS}$ et les longueurs $\overline{SR}$ et $\overline{TS}$. Avec la calculatrice, calculer $\sin(30^\circ)$. Comparer avec le résultat trouvé à l'aide de $\overline{SR}$ et $\overline{TS}$. Retrouver la mesure de l'angle $\widehat{TRS}$ en utilisant la touche «~$\sin^{-1}$~».
+\end{enumerate}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.35\textwidth}{
+\vspace{0pt}
+\begin{center}
+	\begin{tikzpicture}[scale=0.7,rotate=180]
+		  % Définition des points
+  \tkzDefPoint(0,0){R}
+  \tkzDefPoint(4,0){T}
+  \tkzDefPoint(4,3){S}
+  \tkzDrawSegment(R,S)
+  \tkzDrawSegment(R,T)
+  \tkzDrawSegment(S,T)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](T,R,S)
+  \tkzLabelAngle[pos=1.6](T,R,S){$30^\circ$}
+  \tkzMarkRightAngle[size=0.5](S,T,R)
+  \tkzLabelSegment[below, sloped](S,R){$5~\text{cm}$}
+  \tkzLabelPoints[left](S,T)
+  \tkzLabelPoints[right](R)
+	\end{tikzpicture}
+\end{center}
+}
+\end{minipage}
+
+\end{tasks}
+\end{activite}
+\begin{activite}
+Du sommet d'une tour haute de 36 mètres au-dessus du niveau de la mer, un bateau est observé avec un angle de dépression de $16^\circ$. À quelle distance se trouve le bateau de la tour~?
+
+\begin{center}	
+\includegraphics[scale=1]{../medias/1M/trigo/1M-trigo-bateau}
+\end{center}
+\end{activite}
+
+\begin{activite}
+	\begin{tasks}
+\task La ficelle tendue d'un cerf-volant mesure 200 mètres. Elle fait un angle de 63° avec
+l'horizontale. A quelle hauteur se trouve le cerf-volant ?
+\task Un constructeur désire ériger une rampe de 7,2 m de long qui atteigne une hauteur de 1,5 m
+par rapport au sol. Calculer l'angle que la rampe devrait faire avec l'horizontale.
+\task Un vélideltiste vole à 1200 m au dessus du sol. Il voit un clocher dans une direction qui fait un
+angle de 40° au dessous de son horizontale. La hauteur du clocher est de 30 m. A quelle distance
+de la girouette située au sommet du clocher se trouve-t-il ?
+	\end{tasks}
+\end{activite}
+
+\begin{activite}
+	Pour certains angles, on peut déterminer les valeurs exactes du sinus, du cosinus et de a tangente. 
+
+	\begin{tasks}
+		\task Angles de $30^\circ$ et de $60^\circ$.
+
+		\begin{minipage}[t]{0.6\textwidth}{
+		\vspace{0pt}
+		\begin{enumerate}
+			\item Le triangle $\triangle ABC$ est un triangle équilatéral de côté $1$ et le point $H$ est le milieu du côté $[BC]$. En déduire la longueur de $[BH]$. 
+			\item Calculer la valeur exacte de $\overline{AH}$. 
+			\item Dans le triangle $\triangle ABH$ rectangle en $H$, déterminer les valeurs exactes de $\sin(30^\circ)$, $\cos(30^\circ)$, $\tan(30^\circ)$, $\sin(60^\circ)$, $\cos(60^\circ)$ et $\tan(60^\circ)$.
+		\end{enumerate}
+		}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.25\textwidth}{
+		\vspace{0pt}
+		\begin{center}
+		\begin{tikzpicture}
+			  % Points
+  \tkzDefPoints{0/0/B, 4/0/C, 2/3/A}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{H}
+
+  % Triangle and altitudes
+  \tkzDrawPolygon[fill=orange!40, thick](A,B,C)
+  \tkzDrawSegment[thick](A,H)
+  \tkzMarkRightAngle[fill=blue!70, size=0.3](B,H,A)
+
+  % Mark equal sides
+  \tkzMarkSegments[mark=||, color=blue](A,B A,C)
+
+  % Labels
+  \tkzLabelPoints[below](B,C,H)
+  \tkzLabelPoints[above](A)
+  \tkzLabelSegment[right](A,C){1}
+		\end{tikzpicture}	
+		\end{center}
+		}
+		\end{minipage}
+	
+	Remarque~: comment peut-on être certain que $\widehat{AHC}=90^\circ$~? C'est seulement en $2e$ année que nous pourrons formellement le justifier. 	
+\task Angle de $45^\circ$.
+
+\begin{enumerate}
+	\item On considère un triangle $\triangle DEF$ rectangle en $E$, avec $\widehat{EFD}=45\circ$ et $\overline{EF}=1$. 
+
+		Représenter la situation par un schéma.
+	\item Que peut-on dire de plus de ce triangle~? Justifier.
+	\item Calculer la velaur exacte de $\overline{DF}$. 
+	\item Déterminer les valeurs exactes de $\sin(45^\circ),\cos(45^\circ)$ et $\tan(45^\circ)$. 
+\end{enumerate}
+\task Vérifier que la calculatrice donne bien les mêmes résultats.
+	\end{tasks}
+\end{activite}
+
+\begin{activite}
+	Calculer en valeur exacte les côtés manquants des triangles $\triangle ABC$ rectangles en $C$ dans les cas suivants~:
+	\begin{tasks}(4)
+		\task $\alpha=45^\circ$, $\overline{AB}=7$
+		\task $\beta=60^\circ$, $\overline{AC}=8$
+		\task $\alpha=45^\circ$, $\overline{AC}=7$
+		\task $\alpha=45^\circ$, $\overline{AB}=8$
+		
+	\end{tasks}
+\end{activite}
+\begin{activite}
+	Démontrer les deux théorèmes suivants~:
+	\begin{tasks}(2)
+		\task Si $0^\circ<\alpha<90^\circ$, alors on a~: $\tan(\alpha)=\dfrac{\sin(\alpha)}{\cos(\alpha)}$.
+		\task Si $0^\circ<\alpha<90^\circ$, alors on a~: $\sin^2(\alpha)+\cos^2(\alpha)=1$.
+	\end{tasks}
+\end{activite}
+\begin{activite}
+	\begin{tasks}(1)
+
+\task Simon se trouve sur une falaise, 135 mètres au-dessus du niveau de la mer. Il mesure l'angle compris entre son horizontale et l'horizon visible et trouve \(0{,}375^\circ\). Il prétend pouvoir alors calculer le rayon de la Terre. Comment s'y prendra-t-il ?
+
+\task Calculer l'altitude \( h \) du point \( A \), et la distance à vol d'oiseau entre les points \( A \) et \( B \), où :
+\[
+AC = 180~\text{m}, \quad BD = 70~\text{m}, \quad \overline{CD} = 100~\text{m}, \quad \widehat{CAA'} = 34^\circ, \quad \widehat{C'CD} = 15^\circ, \quad \widehat{D'DB} = 35^\circ
+\]
+Les segments \( [AA'], [CC'], [DD'] \) sont parallèles au sol.
+
+\begin{center}
+	\includegraphics[scale=1]{../medias/1M/trigo/1M-trigo-montagne}
+\end{center}
+
+\task Quelle est la longueur du 36\textsuperscript{ème} parallèle terrestre ? \\
+(On utilisera : rayon de la Terre \( \simeq 6371~\text{km} \))
+
+\task Simon remarque depuis son balcon que la Lune est à son zénith. À cet instant, il reçoit un télégramme de sa cousine Bernadette qui habite à 9904 km de là et qui tient à lui décrire le merveilleux lever de Lune sur l’océan qu’elle est en train d’admirer. Simon se dit immédiatement qu’il va ainsi pouvoir calculer la distance entre la Terre et la Lune ! Comment va-t-il procéder ? \\
+(On utilisera : rayon de la Terre \( \simeq 6371~\text{km} \))
+
+\task Simon, toujours en éveil, remarque alors qu’il voit lui aussi la Lune. Il mesure l’angle sous lequel il la voit et obtient \(0{,}52^\circ\). Il se dit qu’il va en profiter pour calculer aussi le rayon de la Lune. Comment va-t-il procéder, en admettant la distance Terre–Lune (bord à bord) calculée dans l’exercice précédent, soit \(385'652{,}3~\text{km}\) environ ?
+
+\end{tasks}
+\end{activite}
+
+
+{\bfseries Source principale : Sesamath 1re année, 2023--2024}
+
+\end{document}
+
