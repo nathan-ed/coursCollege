@@ -2,6 +2,7 @@
 \RequirePackage{titlesec}  % For section numbering
 \RequirePackage{ragged2e}  % For text alignment
 \RequirePackage{hyperref}  % For clickable references
+\RequirePackage{etoolbox}
 \RequirePackage{tkz-euclide}
 \RequirePackage{lscape}
 \RequirePackage{array}
@@ -18,7 +19,7 @@
 \newcounter{exemple}
 \newcounter{formule}
 \newcounter{definition}[section]
-\newcounter{exercice}[section]
+\newcounter{exercice}
 \newcounter{remarque}[section]
 \newcounter{activite}
 
@@ -31,23 +32,23 @@
 {\Large\bfseries\filcenter}
 
 \RequirePackage{fancyhdr}
+\renewcommand{\sectionmark}[1]{ \markright{#1} }
 \pagestyle{fancy}
-\fancyhead[LE,RO]{\slshape 2024-2025}
+\fancyhead[LE,RO]{
+\ifnum\value{page}>1
+		\slshape{\rightmark}
+\fi
+}
 
-\fancyhead[LO,RE]{  \ifnum\value{page}=1
-    \slshape \Chapitre
-  \else
-    \slshape \Chapitre~-- Partie~\thesection,~\currentname
-  \fi
+\fancyhead[LO,RE]{      \slshape \Chapitre
 }
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[LE,RO]{\slshape ns}
-\fancyfoot[LO,RE]{\slshape 1MA1~--~EG} 
+\fancyfoot[LE,RO]{\slshape CC BY-SA}
+\fancyfoot[LO,RE]{\slshape 1MA1~--~EG~--~ns~--~2024-2025} 
 \RequirePackage{../packages/fontes2}
 \RequirePackage{fontawesome5}
 \RequirePackage{pgffor}
 
-\RequirePackage{etoolbox}
 \RequirePackage{lastpage}
 \RequirePackage{ifthen}
 \RequirePackage{tasks}
@@ -113,7 +114,7 @@
 \newtcolorbox{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
     before upper={
         \stepcounter{exercice}%
-        \fbox{\raggedleft\textbf{Exercice~\thesection.\theexercice}}%
+        \fbox{\raggedleft\textbf{Exercice~\theexercice}}%
         \\
         \ifnum#1>0
             \foreach \i in {1,...,#1}{%
