@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../packages/coursCollege}
+\newcommand{\Chapitre}{Trigonométrie du triangle rectangle}
+\renewcommand{\path}{../../}
+\begin{document}
+
+\section{Activités d'introduction}
+
+\begin{activite}
+	\tcblower
+Sur la feuille distribuée en annexe sont tracés neuf triangles. Les mesures de leurs côtés sont indiqués en centimètre (ce sont les longueurs mesurées). 
+\begin{tasks}
+\task Calculer pour chaque triangle les rapports suivants par rapport à l'angle indiqué : 
+\begin{gather*}
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}\\\\
+	\dfrac{\text{longueur du côté opposé}}{\text{longueur de l'hypoténuse}}
+\end{gather*}
+\task Que constatez-vous~? Comment peut-on expliquer~?
+\task Soit un triangle $\triangle ABC$ rectangle en $C$. Calculer $\overline{BC}$ lorsque l'hypoténuse mesure $16$ cm et $\alpha=40^\circ$.
+\end{tasks}
+\end{activite}
+\begin{activite}
+\begin{center}
+	\begin{tikzpicture}[scale=0.5]
+		  % Définition des points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(4,3){C}
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(B,C)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](B,A,C)
+  \tkzLabelAngle[pos=1.2](B,A,C){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](C,B,A)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+	\end{tikzpicture}
+	\hspace{2cm}
+	\begin{tikzpicture}[scale=0.5]
+		  % Définition des points
+  \tkzDefPoint(0,0){D}
+  \tkzDefPoint(6,0){E}
+  \tkzDefPoint(6,4.5){F}
+  \tkzDrawSegment(D,F)
+  \tkzDrawSegment(D,E)
+  \tkzDrawSegment(E,F)
+  % Marquage d'un des angles opposés par le sommet
+  \tkzMarkAngle[size=0.8cm, mark=none](E,D,F)
+  \tkzLabelAngle[pos=1.2](E,D,F){$\alpha$}
+  \tkzMarkRightAngle[size=0.5](F,E,D)
+  \tkzLabelPoints(D,E)
+  \tkzLabelPoints[above](F)
+	\end{tikzpicture}
+\end{center}
+{\bfseries Indice :} utiliser les termes côté adjacent à $\alpha$, côté opposé à $\alpha$ et hypoténuse.
+	\tcblower 
+	\begin{tasks}
+		\task Expliquer pourquoi des triangles rectangles ayant un autre angle isométrique sont semblables. 
+		\task Utiliser le théorème de Thalès pour compléter les rapports suivants~:
+
+		\[\dfrac{\overline{BC}}{\overline{EF}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}\]
+
+		\task Compléter à présent les énoncés suivants~:
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{BC}}{\overline{AB}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+
+		Grâce à l'égalité $\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}$, on peut écrire \[\dfrac{\overline{AB}}{\overline{AC}}=\dfrac{\phantom{aaaa}}{\phantom{aaaa}}=\dfrac{\phantom{aaaaaaaaaaaaaa}}{\phantom{aaaaaaaaaaaaaaaaaaaaa}}\]
+	\end{tasks}
+\end{activite}
+\newpage
+\begin{landscape}
+\pagestyle{empty}
+\input{1M-trigo-triangles} 
+\end{landscape}
+\end{document}
+

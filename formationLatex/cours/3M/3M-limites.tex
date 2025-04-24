@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../packages/coursCollege}
+\newcommand{\Chapitre}{Limites}
+\renewcommand{\path}{../../}
+
+\renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
+\begin{document}
+
+\section{Activités}
+\section{Définition non formelle -- Notion intuitive}
+\begin{definition}
+	\tcblower
+	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.  
+\end{definition}
+\begin{exemple}
+	\tcblower
+		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
+\end{exemple}
+\begin{remarque}
+	\tcblower
+ Par définition, chacun de ces intervalles réels contient une infinité de nombres plus petit et plus grand que $3$. 
+\end{remarque}
+\begin{definition}
+	\tcblower
+	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en $a$. 
+\end{definition}
+
+\begin{definition}
+$x\rightarrow~a^-$
+	\tcblower
+	Soit $a$ nombre réel.
+	Lorsqu'on écrit \emph{«~$x$ tend vers $a$ par la gauche~»} cela signifie que $x$ s'approche autant qu'on veut de $a$ par des valeurs inférieures à $a$, tout en restant toujours différent de $a$. 
+
+On note $x\rightarrow~a^-$.
+\end{definition}
+
+\begin{definition}
+$x\rightarrow a^+$
+	\tcblower
+	Soit $a$ nombre réel.
+	Lorsqu'on écrit \emph{«~$x$ tend vers $a$ par la droite~»} cela signifie que $x$ s'approche autant qu'on veut de $a$ par des valeurs supérieures à $a$, tout en restant toujours différent de $a$. 
+
+	On note $x\rightarrow a^+$.
+\end{definition}
+\begin{definition}
+ $x\rightarrow a$
+	\tcblower
+	Soit $a$ nombre réel.
+	Lorsqu'on écrit \emph{«~$x$ tend vers $a$~»} cela signifie que $x$ s'approche autant qu'on veut de $a$ par des valeurs inférieures ou supérieures à $a$, tout en restant toujours différent de $a$.
+
+\noindent	On note $x\rightarrow a$.
+\end{definition}
+\begin{definition}
+$\displaystyle{\lim_{x\rightarrow a^-}f(x)=L}$
+
+$\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=L}$
+	\tcblower
+Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $L$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à gauche de $f(x)$ quand $x$ tend vers $a$ vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a^-$.
+
+On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=L}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=L}$. 
+\end{definition}
+\begin{definition}
+$\displaystyle{\lim_{x\rightarrow a^+}f(x)=L}$
+
+$\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=L}$
+	\tcblower
+Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $L$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à droite de $f(x)$ quand $x$ tend vers $a$ vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a^+$.
+
+On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=L}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=L}$. 
+\end{definition}
+\begin{exemple}
+\tcblower Soit la fonction $f$ définie par 	
+\end{exemple}
+
+\begin{definition}
+$\displaystyle{\lim_{x\rightarrow a}f(x)=L}$
+	\tcblower
+	Soient une fonction $f$, un nombre $a$ et $L$ un nombre ou le symbole $-\infty$, $+\infty$. 
+On dit que \emph{«~la limite de $f(x)$ quand $x$ tend vers $a$ existe et vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a$.
+
+On écrit $\displaystyle{\lim_{x\rightarrow a}f(x)=L}$. \end{definition}
+
+\begin{thm}
+	Unicité de la limite
+	\tcblower
+Si $\displaystyle{\lim_{x\rightarrow a}f(x)=L}$ existe, alors elle est unique.	
+\end{thm}
+
+\begin{thm}
+	Existence de la limite
+\tcblower
+Une limite existe si et seulement si les limites à gauche et à droite sont égales, i.e.
+
+\[\displaystyle{\lim_{x\rightarrow a}f(x)=L} \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=L}.\]
+\end{thm}
+
+\section{Limites de fonctions élémentaires}
+\section{Propriétés des limites}
+\section{Limites infinies -- type $\dfrac{1}{0}$}
+\section{Limites en l'infinie}
+\section{Indéterminations -- les autres types}
+\begin{exemple}
+	\tcblower
+	Voici trois exemples qui illustrent des écueils dans les calculs de limites.
+	\begin{tasks}(1)
+		\task[] $\displaystyle{\lim_{x\rightarrow \infty}x\dfrac{1}{x}=\lim_{x\rightarrow \infty} 1=1}$
+		\task[] $\displaystyle{\lim_{x\rightarrow \infty}x^2\dfrac{1}{x}=\lim_{x\rightarrow \infty} x=\infty}$
+	\task[] $\displaystyle{\lim_{x\rightarrow \infty}x\dfrac{1}{x^2}=\lim_{x\rightarrow \infty} \dfrac{1}{x}=0}$
+	\end{tasks}
+\end{exemple}
+\section{Continuité}
+
+\section{Exercices}
+
+Librement adapté de ...
+
+{\bfseries Source principale : Sesamath 3e année, 2023--2024}
+
+\end{document}
+

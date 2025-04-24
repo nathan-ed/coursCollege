@@ -121,3 +121,12 @@
 \vpword{Points} 
 \vtword{\textbf{Total}}
 \vsword{Points obtenus}
+
+
+\makeatletter
+\providecommand\@gobblethree[3]{}
+\patchcmd{\over@under@arc}
+ {\@gobbletwo}
+ {\@gobblethree}
+ {}{}
+\makeatother

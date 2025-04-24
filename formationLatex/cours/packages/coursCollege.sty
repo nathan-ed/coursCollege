@@ -8,7 +8,7 @@
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{tabularray}
-\RequirePackage[top=2cm, bottom=2cm, left=1.5cm , right=1.5cm]{geometry}
+\RequirePackage[top=2cm, bottom=2cm, left=1cm , right=1.5cm]{geometry}
 \RequirePackage{nameref}
 \RequirePackage{multicol}
 \setlength\parindent{0pt}
@@ -22,6 +22,7 @@
 \newcounter{exercice}
 \newcounter{remarque}[section]
 \newcounter{activite}
+\newcounter{theo}
 
 \titleformat{\section}[frame]
 {\normalfont}
@@ -31,6 +32,7 @@
 {8pt}
 {\Large\bfseries\filcenter}
 
+\newcommand{\cours}{1MA1~--~EG~--~ns~--~2024-2025}
 \RequirePackage{fancyhdr}
 \renewcommand{\sectionmark}[1]{ \markright{#1} }
 \pagestyle{fancy}
@@ -44,7 +46,7 @@
 }
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
 \fancyfoot[LE,RO]{\slshape CC BY-SA}
-\fancyfoot[LO,RE]{\slshape 1MA1~--~EG~--~ns~--~2024-2025} 
+\fancyfoot[LO,RE]{\slshape{\cours}} 
 \RequirePackage{../packages/fontes2}
 \RequirePackage{fontawesome5}
 \RequirePackage{pgffor}
@@ -65,6 +67,7 @@
     sidebyside align=top,
     righthand width=0.75\linewidth,
     lefthand width=0.25\linewidth,
+    parbox=false,
     colback=white,
     fontupper=\raggedleft,  
     fontlower=\justifying,  
@@ -73,26 +76,34 @@
 
 \newtcolorbox[auto counter, number within=section]{exemple}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\thesection.\theexemple}\\\vspace{0.5em}},
+before upper={\parindent15pt\noindent},
     before lower={\noindent},
+    #1
+}
+
+\newtcolorbox[auto counter, number within=section]{autre}[1][]{
+    before upper={\\\vspace{0.5em}},
+    before lower={\setlength\parindent{0pt}},
     #1
 }
 
 
 \newtcolorbox[auto counter, number within=section]{formule}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
-    before lower={\noindent},
+    before lower={\setlength\parindent{0pt}},
     #1
 }
 
 \newtcolorbox[auto counter, number within=section]{definition}[1][]{
-    before upper={\raggedleft\textbf{\stepcounter{definition}Définition~\thesection.\thedefinition}\\\vspace{0.5em}},
-    before lower={\noindent},
-    #1
+    before upper={\raggedleft\textbf{Définition}\\\vspace{0.5em}},
+    before lower={\setlength\parindent{0pt}},
+ #1
 }
+
 
 \newtcolorbox[auto counter, number within=section]{remarque}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{remarque}Remarque}\\\vspace{0.5em}},
-    before lower={\noindent},
+   before lower={\setlength\parindent{0pt}},
     #1
 }
 
@@ -100,13 +111,13 @@
 \newtcolorbox[]{activite}[1][]{
 	breakable,
     before upper={\raggedright\textbf{\stepcounter{activite}Activité~\theactivite}\\},
-    before lower={\noindent},
+   before lower={\setlength\parindent{0pt}},
     #1
 }
 
 \newtcolorbox[]{thm}[1][]{
-    before upper={\raggedleft\textbf{Théorème}\\},
-    before lower={\noindent},
+	before upper={\raggedleft\stepcounter{theo}\textbf{Théorème} \thetheo\\},
+   before lower={\setlength\parindent{0pt}},
     #1
 }
 
@@ -123,7 +134,7 @@
         \fi
         \\ \vspace{0.5em}
     },
-    before lower={\vspace{0.3em}\noindent}
+   before lower={\setlength\parindent{0pt}},
 }
 \DeclareEmphSequence{\bfseries\itshape}
 \makeatletter
