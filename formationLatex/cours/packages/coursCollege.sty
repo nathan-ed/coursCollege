@@ -1,4 +1,5 @@
 \RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins}
 \RequirePackage{titlesec}  % For section numbering
 \RequirePackage{ragged2e}  % For text alignment
 \RequirePackage{hyperref}  % For clickable references
@@ -16,7 +17,7 @@
 \newcommand*{\currentname}{\@currentlabelname}
 \makeatother
 % Define counters
-\newcounter{exemple}
+\newcounter{exemple}[section]
 \newcounter{formule}
 \newcounter{definition}[section]
 \newcounter{exercice}
@@ -50,6 +51,7 @@
 \RequirePackage{../packages/fontes2}
 \RequirePackage{fontawesome5}
 \RequirePackage{pgffor}
+\RequirePackage{pgfplots}
 
 \RequirePackage{lastpage}
 \RequirePackage{ifthen}
@@ -71,18 +73,23 @@
     colback=white,
     fontupper=\raggedleft,  
     fontlower=\justifying,  
-    colframe=white % No border
+    colframe=white, % No border
+skin first = enhanced, skin middle = enhanced, skin last = enhanced
 }
 
-\newtcolorbox[auto counter, number within=section]{exemple}[1][]{
-    before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\thesection.\theexemple}\\\vspace{0.5em}},
-before upper={\parindent15pt\noindent},
-    before lower={\noindent},
+\newtcolorbox[auto counter]{exemple}[1][]{
+	enhanced,
+    before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\theexemple}\\\vspace{0.5em}},
+borderline west={0.5pt}{5cm}{black,
+    line cap=round,
+    shorten >=3mm,
+    shorten <=3mm},
+before lower={\setlength\parindent{0pt}},
     #1
 }
 
 \newtcolorbox[auto counter, number within=section]{autre}[1][]{
-    before upper={\\\vspace{0.5em}},
+    before upper={},
     before lower={\setlength\parindent{0pt}},
     #1
 }
@@ -95,14 +102,19 @@ before upper={\parindent15pt\noindent},
 }
 
 \newtcolorbox[auto counter, number within=section]{definition}[1][]{
+	enhanced,
     before upper={\raggedleft\textbf{Définition}\\\vspace{0.5em}},
+borderline west={0.5pt}{5cm}{black,
+    line cap=round,
+    shorten >=3mm,
+    shorten <=3mm},
     before lower={\setlength\parindent{0pt}},
  #1
 }
 
 
 \newtcolorbox[auto counter, number within=section]{remarque}[1][]{
-    before upper={\raggedleft\textbf{\stepcounter{remarque}Remarque}\\\vspace{0.5em}},
+    before upper={},
    before lower={\setlength\parindent{0pt}},
     #1
 }
@@ -115,9 +127,13 @@ before upper={\parindent15pt\noindent},
     #1
 }
 
-\newtcolorbox[]{thm}[1][]{
-	before upper={\raggedleft\stepcounter{theo}\textbf{Théorème} \thetheo\\},
+\newtcolorbox[auto counter]{thm}[1][]{
+	enhanced,
+    boxrule=1pt,    
+    colframe=black, % No border
+	before upper={\raggedleft\stepcounter{theo}\textbf{Théorème \thetheo}\\},
    before lower={\setlength\parindent{0pt}},
+after skip=10pt,
     #1
 }
 

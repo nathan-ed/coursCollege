@@ -7,22 +7,23 @@
 \begin{document}
 
 \section{Activités}
-\section{Définition non formelle -- Notion intuitive}
+\section{Définition non formelle -- notion intuitive}
 \begin{definition}
 	\tcblower
 	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.  
 \end{definition}
 \begin{exemple}
+	Voisinages de $3$
 	\tcblower
 		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
 \end{exemple}
 \begin{remarque}
 	\tcblower
- Par définition, chacun de ces intervalles réels contient une infinité de nombres plus petit et plus grand que $3$. 
+ Par définition, un voisinage d'un nombre réel $a$ contient une infinité de nombres plus petit et plus grand que $a$. 
 \end{remarque}
 \begin{definition}
 	\tcblower
-	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en $a$. 
+	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en~$a$.
 \end{definition}
 
 \begin{definition}
@@ -51,39 +52,77 @@ $x\rightarrow a^+$
 \noindent	On note $x\rightarrow a$.
 \end{definition}
 \begin{definition}
-$\displaystyle{\lim_{x\rightarrow a^-}f(x)=L}$
+$\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$
 
-$\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=L}$
+$\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=\ell}$
 	\tcblower
-Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $L$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à gauche de $f(x)$ quand $x$ tend vers $a$ vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a^-$.
+Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $\ell$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à gauche de $f(x)$ quand $x$ tend vers $a$ vaut $\ell$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $\ell$ lorsque $x\rightarrow a^-$.
 
-On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=L}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=L}$. 
+On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=\ell}$. 
 \end{definition}
 \begin{definition}
-$\displaystyle{\lim_{x\rightarrow a^+}f(x)=L}$
+$\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$
 
-$\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=L}$
+$\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=\ell}$
 	\tcblower
-Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $L$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à droite de $f(x)$ quand $x$ tend vers $a$ vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a^+$.
+Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $\ell$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à droite de $f(x)$ quand $x$ tend vers $a$ vaut $\ell$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $\ell$ lorsque $x\rightarrow a^+$.
 
-On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=L}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=L}$. 
+On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=\ell}$. 
 \end{definition}
-\begin{exemple}
-\tcblower Soit la fonction $f$ définie par 	
+\begin{exemple}[label=ex:fmorceaux]
+Soit la fonction $f$ définie par 
+\[f(x)=\begin{cases}x^2+1 & \text{si } x>1\\
+5-x& \text{si } x\leq 1
+\end{cases}. \]
+Déterminer graphiquement $\displaystyle{\lim_{x\rightarrow 1^{-}}} f(x)$ et $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}$.
+\tcblower  
+On commence par représenter graphiquement $f$. 
+
+\begin{center}
+		\begin{tikzpicture}[scale=1]
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={at=(current axis.right of origin), anchor=west},
+    ylabel style={at=(current axis.above origin), anchor=south},
+    xmin=-2, xmax=2.5, ymin=0, ymax=5,
+    xtick={-2,-1,0,1,2},
+    ytick={0,1,2,3,4,5},
+    samples=200,
+  ]
+    % curved branch: x^2+1 for x<=1
+    \addplot [domain=-2:1, thick] {x*x+1} node[below left,pos=0.5] {$f(x)$};
+    % straight branch: 5-x for x>1
+    \addplot [domain=1:5, thick] {5-x};
+    % filled dot at (1,2)
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,2)};
+    % open dot at (1,4)
+    \addplot[only marks, mark=o, mark size=2pt] coordinates {(1,4)};
+    % dashed guide‐lines
+    \draw[dashed] (axis cs:1,0) -- (axis cs:1,2);
+    \draw[dashed] (axis cs:0,2) -- (axis cs:1,2);
+    \draw[dashed] (axis cs:1,0) -- (axis cs:1,4);
+    \draw[dashed] (axis cs:0,4) -- (axis cs:1,4);
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+On observe que $\displaystyle{\lim_{x\rightarrow 1^{-}}f(x)}=2$ et que $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}=4$.  
+
+Pour rappel, ce type de fonction est une fonction définie par morceaux. 
 \end{exemple}
 
 \begin{definition}
-$\displaystyle{\lim_{x\rightarrow a}f(x)=L}$
+$\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$
 	\tcblower
-	Soient une fonction $f$, un nombre $a$ et $L$ un nombre ou le symbole $-\infty$, $+\infty$. 
-On dit que \emph{«~la limite de $f(x)$ quand $x$ tend vers $a$ existe et vaut $L$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $L$ lorsque $x\rightarrow a$.
+	Soient une fonction $f$, un nombre $a$ et $\ell$ un nombre ou le symbole $-\infty$, $+\infty$. 
+On dit que \emph{«~la limite de $f(x)$ quand $x$ tend vers $a$ existe et vaut $\ell$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $\ell$ lorsque $x\rightarrow a$.
 
-On écrit $\displaystyle{\lim_{x\rightarrow a}f(x)=L}$. \end{definition}
+On écrit $\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$. \end{definition}
 
-\begin{thm}
+\begin{thm}[label=thm:unicite]
 	Unicité de la limite
 	\tcblower
-Si $\displaystyle{\lim_{x\rightarrow a}f(x)=L}$ existe, alors elle est unique.	
+Si $\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$ existe, alors elle est unique.	
 \end{thm}
 
 \begin{thm}
@@ -91,10 +130,121 @@ Si $\displaystyle{\lim_{x\rightarrow a}f(x)=L}$ existe, alors elle est unique.
 \tcblower
 Une limite existe si et seulement si les limites à gauche et à droite sont égales, i.e.
 
-\[\displaystyle{\lim_{x\rightarrow a}f(x)=L} \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=L}.\]
+\[\displaystyle{\lim_{x\rightarrow a}f(x)=\ell} \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}.\]
 \end{thm}
-
+\begin{exemple}
+	\tcblower
+	Dans l'exemple \ref{ex:fmorceaux}, la fonction $f$ n'admet pas de limite en $1$, car par la contraposée du théorème \ref{thm:unicite} la limite à gauche et la limite à droite ne sont pas égales.  
+\end{exemple}
+\begin{exemple}
+	Soit $f$ définie par \[f(x)=\begin{cases}x+1& \text{si } x<3\\ -2x+7 & \text{si } x\geq 3\end{cases}\]	
+	Déterminer $\displaystyle{\lim_{x\rightarrow 3}f(x)}$. 
+	\tcblower
+	On représente graphiquement $f$.
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={at=(current axis.right of origin), anchor=west},
+    ylabel style={at=(current axis.above origin), anchor=south},
+    xmin=-2, xmax=7, ymin=-2, ymax=5,
+    xtick={-2,0,2,4,6},
+    ytick={-2,0,2,4},
+    grid=both,
+    grid style={dashed,gray!30},
+  ]
+    \addplot [domain=-2:3, thick] {x+1}
+      node[above left,pos=0.8] {$f(x)$};
+    \addplot [domain=3:7, thick] {-2*x+7};
+    % open and closed points at x=3
+    \addplot [only marks, mark=o, thick] coordinates {(3,4)};
+    \addplot [only marks, mark=*, thick] coordinates {(3,1)};
+  \end{axis}
+\end{tikzpicture}\end{center}
+ On observe que 
+	\[\lim_{x\rightarrow 3^+}f(x)=4 \quad \text{et} \quad \lim_{x\rightarrow 3^-}f(x)=1\]
+	donc la limite $\displaystyle{\lim_{x\rightarrow 3}f(x)}$ n'existe pas.
+\end{exemple}
+\begin{exemple}
+	Soit la fonction $f$ définie par $f(x)=\dfrac{9-x}{3-\sqrt{x}}$. Étudier graphiquement $\displaystyle{\lim_{x\rightarrow 9}f(x)}$ et $\displaystyle{\lim_{x\rightarrow 4}f(x)}$. 
+	\tcblower
+	On remarque que le domaine de définition de $f$ est 
+$D_f=\mathbb{R}\setminus\{9\}$. On représente la fonction graphiquement. 
+\begin{center}
+	\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={at=(current axis.right of origin), anchor=west},
+    ylabel style={at=(current axis.above origin), anchor=south},
+    xmin=0,   xmax=15,
+    ymin=0,   ymax=9,
+    xtick={0,4,9,15},
+    ytick={0,5,6,8},
+    grid=both,
+    grid style={dashed,gray!30},
+  ]
+    % branche pour 0 ≤ x < 9
+    \addplot[domain=0:8.9, samples=200, thick]
+      {(9 - x)/(3 - sqrt(x))};
+    % branche pour x > 9
+    \addplot[domain=9.1:15, samples=200, thick]
+      {(9 - x)/(3 - sqrt(x))}
+      node[above,pos=0.5] {$f(x)$};
+    % point ouvert en (9,6)
+    \addplot[only marks, mark=o, thick] coordinates {(9,6)};
+    % point fermé en (4,5)
+    \addplot[only marks, mark=*, thick] coordinates {(4,5)};
+    % traits pointillés illustrant les limites/valeurs
+    \draw[dashed] (axis cs:0,6) -- (axis cs:9,6);
+    \draw[dashed] (axis cs:9,0) -- (axis cs:9,6);
+    \draw[dashed] (axis cs:0,5) -- (axis cs:4,5);
+    \draw[dashed] (axis cs:4,0) -- (axis cs:4,5);
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=6}$ même si $f$ n'est pas définie en $9$ (indiqué par le rond vide). De plus $\displaystyle{\lim_{x\rightarrow 4}f(x)=5}$. On a calculé les deux limites et on a montré qu'elles existent.  
+\end{exemple}
+\begin{exemple}
+	Soit $f$ définie par $f(x)=\dfrac{x^3-1}{x^2-1}$. Déterminer $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ et $\displaystyle{\lim_{x\rightarrow -1}f(x)}$.
+	\tcblower
+	On commence par remarquer que $D_f=\mathbb{R}\setminus\{-1\}$. On représente graphiquement $f$. 
+	\begin{center}
+		\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={at=(current axis.right of origin), anchor=west},
+    ylabel style={at=(current axis.above origin), anchor=south},
+    xmin=-3, xmax=5, ymin=-5, ymax=5,
+    xtick={-3,-1,0,1,2,3,4,5},
+    ytick={-4,-2,0,2,4},
+    grid=both,
+    grid style={dashed,gray!30},
+  ]
+    % branche pour x < -1
+    \addplot [domain=-3:-1.1, samples=200, thick]
+      {(x^3-1)/(x^2-1)};
+    \addplot [domain=-0.9:5, samples=200, thick]
+      {(x^3-1)/(x^2-1)} node[above left,pos=0.8] {$f(x)$};
+    % asymptote verticale en x = -1
+    \draw[dashed] (axis cs:-1,-5) -- (axis cs:-1,5);
+  \end{axis}
+\end{tikzpicture}
+	\end{center}
+	On observe que 
+	\[\displaystyle{\lim_{x\rightarrow 1^-}f(x)=\dfrac{3}{2}} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow 1^+}f(x)=\dfrac{3}{2}}\]
+	donc $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ existe et vaut $\dfrac{3}{2}$. Toutefois, 
+	\[\displaystyle{\lim_{x\rightarrow -1^-}f(x)=-\infty} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow -1^+}f(x)=+\infty}\]
+	donc $\displaystyle{\lim_{x\rightarrow -1}f(x)}$ n'existe pas.
+\end{exemple} 
+\begin{autre}
+	\tcblower
+Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
+\end{autre}
 \section{Limites de fonctions élémentaires}
+
 \section{Propriétés des limites}
 \section{Limites infinies -- type $\dfrac{1}{0}$}
 \section{Limites en l'infinie}
