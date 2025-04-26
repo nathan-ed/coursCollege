@@ -10,7 +10,7 @@
 \section{Définition non formelle -- notion intuitive}
 \begin{definition}
 	\tcblower
-	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.  
+	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.
 \end{definition}
 \begin{exemple}
 	Voisinages de $3$
@@ -241,11 +241,77 @@ On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=6}$ même si $f$ n'est pas défini
 \end{exemple} 
 \begin{autre}
 	\tcblower
-Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
+
 \end{autre}
+Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
 \section{Limites de fonctions élémentaires}
+\begin{thm}[label=thm:limel]
+Limites de fonctions élémentaires
+
+(sans démonstration)
+	\tcblower
+	\noindent\begin{description}
+		\item[{\bfseries L1}] Si $k\in\mathbb{R}$, alors $\displaystyle{\lim_{x\rightarrow a}k=k}, \,\forall a\in\mathbb{R}$
+		\item[{\bfseries L2}] Si $x\in \mathbb{R}$, alors $\displaystyle{\lim_{x\rightarrow a}x=a}, \,\forall a\in \mathbb{R}$
+		\item[{\bfseries L3}] Si $x\in \mathbb{R}$, alors $\displaystyle{\lim_{x\rightarrow a}\sin(x)=\sin(a)}$ et $\displaystyle{\lim_{x\rightarrow a}\cos(x)=\cos(a)},\, \forall a\in \mathbb{R}$
+		\item[{\bfseries L4}] Si $f(x)=\sqrt[n]{x}$ et $D_f$ est son domaine de définition, 
+
+			alors $\displaystyle{\lim_{x\rightarrow a}\sqrt[n]{x}=\sqrt[n]{a}}, \, \forall a \in D_f$ 
+		\item[{\bfseries L5}] Si $b\in \mathbb{R}_{>0}\setminus\{1\}$, alors $\displaystyle{\lim_{x\rightarrow a}\log_b(x)=\log_b(a)}, \,\forall a\in \mathbb{R}_{>0}$ et 
+
+			$\displaystyle{\lim_{x\rightarrow a}\exp_b(x)=\exp_b(a)},\,\forall a\in \mathbb{R}$  	
+	\end{description}
+\end{thm}
+\begin{exemple}
+	Calculer $\displaystyle{\lim_{x\rightarrow -3}14}$
+	\tcblower
+	$\displaystyle{\lim_{x\rightarrow -3}14\stackrel{\text{{\bfseries L1}}}{=}14}$, par la première limite du théorème \ref{thm:limel}. 
+\end{exemple}
+
+\begin{exemple}
+	Calculer $\displaystyle{\lim_{x\rightarrow 5}x}$
+	\tcblower
+	$\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{{\bfseries L2}}}{=}5}$ 
+\end{exemple}
+
+\begin{exemple}
+	Calculer $\displaystyle{\lim_{x\rightarrow \frac{\pi}{2}}\sin(x)}$
+	\tcblower
+	$\displaystyle{\lim_{x\rightarrow \frac{\pi}{2}}\sin(x)\stackrel{\text{{\bfseries L3}}}{=}\sin\left(\frac{\pi}{2}\right)}=1$ 
+\end{exemple}
+\begin{exemple}
+	Calculer $\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{x}}$
+	\tcblower
+	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{8}\stackrel{\text{{\bfseries L4}}}{=}\sqrt[3]{8}=2}$ 
+\end{exemple}
+\begin{exemple}
+	Calculer $\displaystyle{\lim_{x\rightarrow 32}\log_2(x)}$
+	\tcblower
+	$\displaystyle{\lim_{x\rightarrow 32}\log_2(x)\stackrel{\text{{\bfseries L5}}}{=}\log_2(32)=\log_2\left(2^5\right)=5}$ 
+\end{exemple}
 
 \section{Propriétés des limites}
+Les propriétés suivantes nous permettent de calculer des limites plus compliquées du type $\displaystyle{\lim_{x\rightarrow 2}\dfrac{x-5}{x}}$.
+\begin{remarque}
+	\tcblower
+	Pour rappel, une limite existe, si \[ \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}\]
+	pour $\ell$ un nombre ou le symbole $-\infty$, $+\infty$.
+\end{remarque}
+\begin{thm}
+	Propriétés des limites
+
+	(sans démonstration)
+	\tcblower
+Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent, alors on a 
+\noindent
+\begin{description}
+	\item[{\bfseries P0}] $\displaystyle{\lim_{x\rightarrow a}k\cdot f(x)=k\cdot \lim_{x\rightarrow a}f(x)},\, \forall k\in \mathbb{R}$ 
+	\item[{\bfseries P1}] $\displaystyle{\lim_{x\rightarrow a}\left(f(x)+g(x)\right)=\lim_{x\rightarrow a}f(x)+\lim_{x\rightarrow a}g(x)}$ 
+	\item[{\bfseries P2}] $\displaystyle{\lim_{x\rightarrow a}\left(f(x)-g(x)\right)=\lim_{x\rightarrow a}f(x)-\lim_{x\rightarrow a}g(x)}$ 
+	\item[{\bfseries P3}] $\displaystyle{\lim_{x\rightarrow a}\left(f(x)\cdot g(x)\right)=\lim_{x\rightarrow a}f(x)\cdot \lim_{x\rightarrow a}g(x)}$ 
+	\item[{\bfseries P4}] $\displaystyle{\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\dfrac{\lim_{x\rightarrow a}f(x)}{\lim_{x\rightarrow a}g(x)}}$ 
+\end{description}
+\end{thm}
 \section{Limites infinies -- type $\dfrac{1}{0}$}
 \section{Limites en l'infinie}
 \section{Indéterminations -- les autres types}

@@ -17,11 +17,11 @@
 \newcommand*{\currentname}{\@currentlabelname}
 \makeatother
 % Define counters
-\newcounter{exemple}[section]
+\newcounter{exemple}
 \newcounter{formule}
-\newcounter{definition}[section]
+\newcounter{definition}
 \newcounter{exercice}
-\newcounter{remarque}[section]
+\newcounter{remarque}
 \newcounter{activite}
 \newcounter{theo}
 
@@ -73,8 +73,7 @@
     colback=white,
     fontupper=\raggedleft,  
     fontlower=\justifying,  
-    colframe=white, % No border
-skin first = enhanced, skin middle = enhanced, skin last = enhanced
+    colframe=white % No border
 }
 
 \newtcolorbox[auto counter]{exemple}[1][]{
@@ -88,20 +87,20 @@ before lower={\setlength\parindent{0pt}},
     #1
 }
 
-\newtcolorbox[auto counter, number within=section]{autre}[1][]{
+\newtcolorbox[auto counter]{autre}[1][]{
     before upper={},
     before lower={\setlength\parindent{0pt}},
     #1
 }
 
 
-\newtcolorbox[auto counter, number within=section]{formule}[1][]{
+\newtcolorbox[auto counter]{formule}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
     before lower={\setlength\parindent{0pt}},
     #1
 }
 
-\newtcolorbox[auto counter, number within=section]{definition}[1][]{
+\newtcolorbox[auto counter]{definition}[1][]{
 	enhanced,
     before upper={\raggedleft\textbf{Définition}\\\vspace{0.5em}},
 borderline west={0.5pt}{5cm}{black,
@@ -112,8 +111,7 @@ borderline west={0.5pt}{5cm}{black,
  #1
 }
 
-
-\newtcolorbox[auto counter, number within=section]{remarque}[1][]{
+\newtcolorbox[auto counter]{remarque}[1][]{
     before upper={},
    before lower={\setlength\parindent{0pt}},
     #1
