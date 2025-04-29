@@ -312,6 +312,150 @@ Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarr
 	\item[{\bfseries P4}] $\displaystyle{\lim_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\dfrac{\lim_{x\rightarrow a}f(x)}{\lim_{x\rightarrow a}g(x)}}$ 
 \end{description}
 \end{thm}
+\begin{thm}[label=thm:compo]
+	Limite d'une composition
+	\tcblower
+	Si $\displaystyle{\lim_{x\rightarrow a}f(x)=b}$ et $\displaystyle{\lim_{t\rightarrow b}g(t)=g(b)}$ existent, alors on a~:
+	\[\lim_{x\rightarrow a}g(f(x))=g(\lim_{x\rightarrow a }f(x))=g(b).\] 
+\end{thm}
+\begin{thm}[label=thm:poly]
+Limites de fonctions polynômiales	
+	\tcblower
+	Si $f$ est une fonction polynomiale, i.e. 
+	\[f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_2 x^2+a_1x_1+a_0,\]
+	alors, pour $b\in\mathbb{R}$, on a~:
+	\[\lim_{x\rightarrow b}f(x)=f(b)=a_n b^n+\ldots+a_1b+a_0.\]
+\begin{proof}
+On a $\displaystyle{\lim_{x\rightarrow b}x}\stackrel{\text{{\bfseries L2}}}{=}b$. De plus, pour tout $m\in \mathbb{N}$, 
+
+\[\displaystyle{\lim_{x\rightarrow b}x^m\stackrel{\text{\bfseries P3}}{=}}\left(\displaystyle{\lim_{x\rightarrow b}x}\right)^m=b^m.\] 
+
+Ainsi,
+
+\begin{align*}
+	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{{\bfseries P2}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
+									     &\stackrel{\text{{\bfseries P0 et L2}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
+									     &\stackrel{\text{{\bfseries P3}}}{=}a_n b^n+\ldots+a_1b+a_0.
+\end{align*}
+
+
+\end{proof}
+\end{thm}
+
+\begin{thm}
+	\tcblower
+	Soient $f$ et $g$ deux fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ telles que  
+	\begin{tasks}
+		\task $f(x)\leq g(x),\, \forall x \in I$
+		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent  
+	\end{tasks} alors 
+
+	\[\displaystyle{\lim_{x\rightarrow a}f(x)}\leq  \displaystyle{\lim_{x\rightarrow a}g(x)}, \forall a\in I\]
+
+	($a$ peut également valoir $-\infty$ et $\infty$ si l'intervalle $I$ n'est pas borné).
+\end{thm}
+\begin{thm}
+	Théorème des gendarmes
+	\tcblower
+	Soient $f, g$ et $h$ des fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ ($a$ peut également valoir $-\infty$ ou $\infty$) telles que
+	\begin{tasks}
+		\task $f(x)\leq g(x)\leq h(x),\, \forall x \in I$
+		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}=\displaystyle{\lim_{x\rightarrow a}h(x)}=\ell$ 
+
+		($\ell$ peut également être égal au symbole $-\infty$ ou $\infty$).  
+	\end{tasks} alors 
+
+	\[\displaystyle{\lim_{x\rightarrow a}g(x)}=\ell.\]
+\end{thm}
+\begin{exemple}
+$\displaystyle{\lim_{x\to2}\left(\frac{x-5}{x}\right)}$
+	\tcblower
+On peut maintenant calculer la limite considérée en introduction en justifiant le calcul :
+	\[\lim_{x\to2}\left(\frac{x-5}{x}\right)
+		\stackrel{\text{{\bfseries P4}}}{=}
+\dfrac{\displaystyle{\lim_{x\to2}(x-5)}}{\displaystyle{\lim_{x\to2}x}}
+\stackrel{\text{{\bfseries {P2}}}}{=}
+\dfrac{\displaystyle{\lim_{x\to2}x-\lim_{x\to2}5}}{\displaystyle{\lim_{x\to2}x}}
+\stackrel{\text{{\bfseries {L2,L1}}}}{=}
+\dfrac{2-5}{2}
+=-\dfrac{3}{2}
+\]
+\end{exemple}
+
+
+\begin{exemple}
+	\begin{tasks}
+		\task \(\displaystyle\lim_{x\to-4}(x+3)\)\\
+\task \(\displaystyle\lim_{x\to1}2x^2\)\\
+\task \(\displaystyle\lim_{x\to2}\frac{x+5}{x}\)\\ 
+\task \(\displaystyle\lim_{x\to0}\cos(x^4)\)\\
+	\end{tasks}
+\tcblower
+Calculer en justifiant 
+\begin{tasks}
+	\task
+\[
+\lim_{x\to-4}(x+3)
+\stackrel{\text{{\bfseries{P1}}}}{=}
+\lim_{x\to-4}x+\lim_{x\to-4}3
+\stackrel{\text{{\bfseries{L2,L1}}}}{=}
+-4+3=-1
+\]
+ou plus directement :
+\[
+\lim_{x\to-4}(x+3)
+\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+-4+3=-1
+\]
+
+
+\end{tasks}
+\[
+\lim_{x\to1}2x^2
+\stackrel{\text{{\bfseries{P0}}}}{=}
+2\cdot\lim_{x\to1}x^2
+\stackrel{\text{{\bfseries{P3}}}}{=}
+2\cdot\lim_{x\to1}x\cdot\lim_{x\to1}x
+\stackrel{\text{{\bfseries{L2,L1}}}}{=}
+2\cdot1\cdot1=2
+\]
+ou plus directement :
+\[
+\lim_{x\to1}2x^2
+\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+2\cdot1\cdot1=2
+\]
+
+\[
+\lim_{x\to2}\frac{x+5}{x}
+\stackrel{\text{{\bfseries{P4}}}}{=}
+\frac{\lim_{x\to2}(x+5)}{\lim_{x\to2}x}
+\stackrel{\text{{\bfseries thm. \ref{thm:poly},L2}}}{=}
+\frac{2+5}{2}
+=\frac{7}{2}
+\]
+
+\[
+\lim_{x\to0}\cos(x^4)
+\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+\cos\bigl(\lim_{x\to0}x^4\bigr)
+\stackrel{\text{{\bfseries thm \ref{thm:compo}}}}{=}
+\cos(0^4)=\cos(0)=1
+\]
+
+\end{exemple}
+
+\begin{remarque}
+	\tcblower
+Ces théorèmes montrent que dans de très nombreux cas, la limite de \(f(x)\) quand \(x\) tend vers \(a\) est égale à \(f(a)\), ce qu’on note
+\[
+\lim_{x\to a}f(x)=f(a);
+\]
+dans tous ces cas « simples », le comportement de \(f\) près de \(a\) est le même que celui de \(f\) en \(a\). Ce n’est donc pas pour ce type de fonctions que l’« outil limite » est pertinent, mais pour ceux de la section suivante…
+
+Plus tard dans le cours,nous reviendrons sur cette remarque qui nous permettra d’appréhender une notion très importante, {\bfseries la continuité}.
+\end{remarque}
+
 \section{Limites infinies -- type $\dfrac{1}{0}$}
 \section{Limites en l'infinie}
 \section{Indéterminations -- les autres types}
