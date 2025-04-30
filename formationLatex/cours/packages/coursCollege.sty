@@ -12,7 +12,7 @@
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{tabularray}
-\RequirePackage[top=2cm, bottom=2cm, left=1cm , right=1.5cm]{geometry}
+\RequirePackage[top=1.5cm, bottom=1.5cm, left=1cm , right=1.5cm]{geometry}
 \RequirePackage{nameref}
 \RequirePackage{multicol}
 \setlength\parindent{0pt}
@@ -98,7 +98,12 @@ before lower={\setlength\parindent{0pt}},
 
 
 \newtcolorbox[auto counter]{formule}[1][]{
-    before upper={\raggedleft\textbf{\stepcounter{formule}Formule~\theformule}\\\vspace{0.5em}},
+    before upper={\raggedleft\textbf{\stepcounter{formule}Formule}\\\vspace{0.5em}},
+    before lower={\setlength\parindent{0pt}},
+    #1
+}
+\newtcolorbox[auto counter]{methode}[1][]{
+    before upper={\raggedleft\textbf{Méthode}\\\vspace{0.5em}},
     before lower={\setlength\parindent{0pt}},
     #1
 }

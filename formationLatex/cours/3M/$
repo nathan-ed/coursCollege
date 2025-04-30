@@ -857,7 +857,6 @@ Calculer \(\displaystyle\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}\)
 \lim_{x\to2}\frac{x^2-3x+2}{x^2-4}
 =«~\frac{0}{0}~»\]
 est du type $«~\dfrac{0}{0}~»$ avec polynômes au numérateur et au dénominateur
-
 $
 \begin{aligned}
 \lim_{x\to2}\frac{x^2-3x+2}{x^2-4}
@@ -866,7 +865,7 @@ $
 		       &\stackrel{x\neq2}{=}
 \lim_{x\to2}\frac{x-1}{x+2}\\
 		  &\stackrel{\mathrm{PrL4}}{=}
-		  \displaystyle{		  \dfrac{\displaystyle{\lim_{x\to2}(x-1)}}{\displaystyle{\lim_{x\to2}(x+2)}}}\\
+\frac{\lim_{x\to2}(x-1)}{\lim_{x\to2}(x+2)}\\
 			 &\stackrel{\mathrm{PrL7}}{=}
 \frac{1}{4}
 \end{aligned}$
