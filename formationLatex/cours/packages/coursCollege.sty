@@ -38,19 +38,24 @@
 {\Large\bfseries\filcenter}
 
 \newcommand{\cours}{1MA1~--~EG~--~ns~--~2024-2025}
+\newcommand{\sourcecours}{{\footnotesize Source principale~: Sesamath 3e -- adaption libre.}}
 \RequirePackage{fancyhdr}
 \renewcommand{\sectionmark}[1]{ \markright{#1} }
 \pagestyle{fancy}
 \fancyhead[LE,RO]{
-\ifnum\value{page}>1
-		\slshape{\rightmark}
-\fi
+\slshape CC BY-SA
 }
 
-\fancyhead[LO,RE]{      \slshape \Chapitre
+\fancyhead[LO,RE]{
+\ifnum\value{page}=1
+\slshape \Chapitre
+\fi
+\ifnum\value{page}>1
+		\slshape \Chapitre~--~\slshape{\rightmark}
+\fi
 }
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[LE,RO]{\slshape CC BY-SA}
+\fancyfoot[LE,RO]{\sourcecours}
 \fancyfoot[LO,RE]{\slshape{\cours}} 
 \RequirePackage{../packages/fontes2}
 \RequirePackage{fontawesome5}
