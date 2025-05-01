@@ -53,6 +53,7 @@ $x\rightarrow a^+$
 \end{definition}
 \begin{definition}
 $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$
+\medskip
 
 $\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=\ell}$
 	\tcblower
@@ -62,6 +63,7 @@ On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$ ou encore $\displays
 \end{definition}
 \begin{definition}
 $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$
+\medskip
 
 $\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=\ell}$
 	\tcblower
@@ -74,7 +76,9 @@ Soit la fonction $f$ définie par
 \[f(x)=\begin{cases}x^2+1 & \text{si } x>1\\
 5-x& \text{si } x\leq 1
 \end{cases}. \]
-Déterminer graphiquement $\displaystyle{\lim_{x\rightarrow 1^{-}}} f(x)$ et $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}$.
+Déterminer graphiquement 
+
+$\displaystyle{\lim_{x\rightarrow 1^{-}}} f(x)$ et $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}$.
 \tcblower  
 On commence par représenter graphiquement $f$. 
 
@@ -207,7 +211,9 @@ $D_f=\mathbb{R}\setminus\{9\}$. On représente la fonction graphiquement.
 On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=6}$ même si $f$ n'est pas définie en $9$ (indiqué par le rond vide). De plus $\displaystyle{\lim_{x\rightarrow 4}f(x)=5}$. On a calculé les deux limites et on a montré qu'elles existent.  
 \end{exemple}
 \begin{exemple}
-	Soit $f$ définie par $f(x)=\dfrac{x^3-1}{x^2-1}$. Déterminer $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ et $\displaystyle{\lim_{x\rightarrow -1}f(x)}$.
+	Soit $f$ définie par $f(x)=\dfrac{x^3-1}{x^2-1}$. Déterminer 
+
+	$\displaystyle{\lim_{x\rightarrow 1}f(x)}$ et $\displaystyle{\lim_{x\rightarrow -1}f(x)}$.
 	\tcblower
 	On commence par remarquer que $D_f=\mathbb{R}\setminus\{-1\}$. On représente graphiquement $f$. 
 	\begin{center}
@@ -265,29 +271,29 @@ Limites de fonctions élémentaires
 \begin{exemple}
 	Calculer $\displaystyle{\lim_{x\rightarrow -3}14}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow -3}14\stackrel{\text{{\bfseries L1}}}{=}14}$, par la première limite du théorème \ref{thm:limel}. 
+	$\displaystyle{\lim_{x\rightarrow -3}14\stackrel{\text{\eqmakebox[b][c]{{\bfseries L1}}}}{=}14}$, par la première limite du théorème \ref{thm:limel}. 
 \end{exemple}
 
 \begin{exemple}
 	Calculer $\displaystyle{\lim_{x\rightarrow 5}x}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{{\bfseries L2}}}{=}5}$ 
+$\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{\eqmakebox[b][c]{{\bfseries L2}}}}{=}5}$ 
 \end{exemple}
 
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow \frac{\pi}{2}}\sin(x)}$
+	Calculer $\displaystyle{\lim_{x\rightarrow \pi/2}\sin(x)}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow \frac{\pi}{2}}\sin(x)\stackrel{\text{{\bfseries L3}}}{=}\sin\left(\frac{\pi}{2}\right)}=1$ 
+	$\displaystyle{\lim_{x\rightarrow \pi/2}\sin(x)\stackrel{\text{\eqmakebox[b][c]{{\bfseries L3}}}}{=}\sin\left(\dfrac{\pi}{2}\right)}=1$ 
 \end{exemple}
 \begin{exemple}
 	Calculer $\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{x}}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{8}\stackrel{\text{{\bfseries L4}}}{=}\sqrt[3]{8}=2}$ 
+	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{8}\stackrel{\text{\eqmakebox[b][c]{{\bfseries L4}}}}{=}\sqrt[3]{8}=2}$ 
 \end{exemple}
 \begin{exemple}
 	Calculer $\displaystyle{\lim_{x\rightarrow 32}\log_2(x)}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow 32}\log_2(x)\stackrel{\text{{\bfseries L5}}}{=}\log_2(32)=\log_2\left(2^5\right)=5}$ 
+	$\displaystyle{\lim_{x\rightarrow 32}\log_2(x)\stackrel{\text{\eqmakebox[b][c]{{\bfseries L5}}}}{=}\log_2(32)=\log_2\left(2^5\right)=5}$ 
 \end{exemple}
 
 \section{Propriétés des limites}
@@ -326,16 +332,16 @@ Limites de fonctions polynômiales
 	alors, pour $b\in\mathbb{R}$, on a~:
 	\[\lim_{x\rightarrow b}f(x)=f(b)=a_n b^n+\ldots+a_1b+a_0.\]
 \begin{proof}
-On a $\displaystyle{\lim_{x\rightarrow b}x}\stackrel{\text{{\bfseries L2}}}{=}b$. De plus, pour tout $m\in \mathbb{N}$, 
+	On a $\displaystyle{\lim_{x\rightarrow b}x}\stackrel{\text{\eqmakebox[b][c]{{\bfseries L2}}}}{=}b$. De plus, pour tout $m\in \mathbb{N}$, 
 
-\[\displaystyle{\lim_{x\rightarrow b}x^m\stackrel{\text{\bfseries P3}}{=}}\left(\displaystyle{\lim_{x\rightarrow b}x}\right)^m=b^m.\] 
+	\[\displaystyle{\lim_{x\rightarrow b}x^m\stackrel{\text{\eqmakebox[b][c]{\bfseries P3}}}{=}}\left(\displaystyle{\lim_{x\rightarrow b}x}\right)^m=b^m.\] 
 
 Ainsi,
 
 \begin{align*}
-	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{{\bfseries P2}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
-									     &\stackrel{\text{{\bfseries P0 et L2}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
-									     &\stackrel{\text{{\bfseries P3}}}{=}a_n b^n+\ldots+a_1b+a_0.
+	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{\eqmakebox[c][c]{{\bfseries P2}}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
+									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P0 et L2}}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
+									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P3}}}}{=}a_n b^n+\ldots+a_1b+a_0.
 \end{align*}
 
 
@@ -352,31 +358,31 @@ Ainsi,
 
 	\[\displaystyle{\lim_{x\rightarrow a}f(x)}\leq  \displaystyle{\lim_{x\rightarrow a}g(x)}, \forall a\in I\]
 
-	($a$ peut également valoir $-\infty$ et $\infty$ si l'intervalle $I$ n'est pas borné).
+	($a$ peut également valoir $-\infty$ et $+\infty$ si l'intervalle $I$ n'est pas borné).
 \end{thm}
 \begin{thm}
 	Théorème des gendarmes
 	\tcblower
-	Soient $f, g$ et $h$ des fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ ($a$ peut également valoir $-\infty$ ou $\infty$) telles que
+	Soient $f, g$ et $h$ des fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ ($a$ peut également valoir $-\infty$ ou $+\infty$) telles que
 	\begin{tasks}
 		\task $f(x)\leq g(x)\leq h(x),\, \forall x \in I$
 		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}=\displaystyle{\lim_{x\rightarrow a}h(x)}=\ell$ 
 
-		($\ell$ peut également être égal au symbole $-\infty$ ou $\infty$).  
+		($\ell$ peut également être égal au symbole $-\infty$ ou $+\infty$).  
 	\end{tasks} alors 
 
 	\[\displaystyle{\lim_{x\rightarrow a}g(x)}=\ell.\]
 \end{thm}
 \begin{exemple}
-$\displaystyle{\lim_{x\to2}\left(\frac{x-5}{x}\right)}$
+$\displaystyle{\lim_{x\to2}\left(\dfrac{x-5}{x}\right)}$
 	\tcblower
 On peut maintenant calculer la limite considérée en introduction en justifiant le calcul :
-	\[\lim_{x\to2}\left(\frac{x-5}{x}\right)
-		\stackrel{\text{{\bfseries P4}}}{=}
+	\[\lim_{x\to2}\left(\dfrac{x-5}{x}\right)
+		\stackrel{\text{\eqmakebox[d][c]{{\bfseries P4}}}}{=}
 \dfrac{\displaystyle{\lim_{x\to2}(x-5)}}{\displaystyle{\lim_{x\to2}x}}
-\stackrel{\text{{\bfseries {P2}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries {P2}}}}}{=}
 \dfrac{\displaystyle{\lim_{x\to2}x-\lim_{x\to2}5}}{\displaystyle{\lim_{x\to2}x}}
-\stackrel{\text{{\bfseries {L2,L1}}}}{=}
+\stackrel{\text{{\eqmakebox[d][c]{\bfseries {L2,L1}}}}}{=}
 \dfrac{2-5}{2}
 =-\dfrac{3}{2}
 \]
@@ -387,7 +393,7 @@ On peut maintenant calculer la limite considérée en introduction en justifiant
 	\begin{tasks}
 		\task \(\displaystyle\lim_{x\to-4}(x+3)\)\\
 \task \(\displaystyle\lim_{x\to1}2x^2\)\\
-\task \(\displaystyle\lim_{x\to2}\frac{x+5}{x}\)\\ 
+\task \(\displaystyle\lim_{x\to2}\dfrac{x+5}{x}\)\\ 
 \task \(\displaystyle\lim_{x\to0}\cos(x^4)\)\\
 	\end{tasks}
 \tcblower
@@ -396,15 +402,15 @@ Calculer en justifiant
 	\task
 \[
 \lim_{x\to-4}(x+3)
-\stackrel{\text{{\bfseries{P1}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P1}}}}}{=}
 \lim_{x\to-4}x+\lim_{x\to-4}3
-\stackrel{\text{{\bfseries{L2,L1}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{L2,L1}}}}}{=}
 -4+3=-1
 \]
 ou plus directement :
 \[
 \lim_{x\to-4}(x+3)
-\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 -4+3=-1
 \]
 
@@ -413,34 +419,34 @@ ou plus directement :
 
 \[
 \lim_{x\to1}2x^2
-\stackrel{\text{{\bfseries{P0}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P0}}}}}{=}
 2\cdot\lim_{x\to1}x^2
-\stackrel{\text{{\bfseries{P3}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P3}}}}}{=}
 2\cdot\lim_{x\to1}x\cdot\lim_{x\to1}x
-\stackrel{\text{{\bfseries{L2,L1}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{L2,L1}}}}}{=}
 2\cdot1\cdot1=2
 \]
 ou plus directement :
 \[
 \lim_{x\to1}2x^2
-\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 2\cdot1\cdot1=2
 \]
 \task 
 \[
-\lim_{x\to2}\frac{x+5}{x}
-\stackrel{\text{{\bfseries{P4}}}}{=}
-\frac{\lim_{x\to2}(x+5)}{\lim_{x\to2}x}
-\stackrel{\text{{\bfseries thm. \ref{thm:poly},L2}}}{=}
-\frac{2+5}{2}
-=\frac{7}{2}
+\lim_{x\to2}\dfrac{x+5}{x}
+\stackrel{\text{\eqmakebox[b][c]{{\bfseries{P4}}}}}{=}
+\dfrac{\lim_{x\to2}(x+5)}{\lim_{x\to2}x}
+\stackrel{\text{\eqmakebox[e][c]{{\bfseries thm. \ref{thm:poly},L2}}}}{=}
+\dfrac{2+5}{2}
+=\dfrac{7}{2}
 \]
 \task
 \[
 \lim_{x\to0}\cos(x^4)
-\stackrel{\text{{\bfseries{thm \ref{thm:poly}}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 \cos\bigl(\lim_{x\to0}x^4\bigr)
-\stackrel{\text{{\bfseries thm \ref{thm:compo}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries thm \ref{thm:compo}}}}}{=}
 \cos(0^4)=\cos(0)=1
 \]
 \end{tasks}
@@ -508,7 +514,7 @@ De la même manière, on peut définir
     % branches of 1/x
     \addplot [domain=-3:-0.1,samples=200, thick] {1/x};
     \addplot [domain=0.1:3, samples=200, thick] {1/x}
-      node[above right,pos=0.8] {$f(x)=\tfrac1x$};
+      node[above right,pos=0.8] {$f(x)=\dfrac1x$};
     % asymptotes
     \draw[dashed] (axis cs:0,-4) -- (axis cs:0,4);
     \draw[dashed] (axis cs:-3,0) -- (axis cs:5,0);
@@ -572,81 +578,81 @@ donc
 \begin{definition}
 	Type $«~\dfrac{1}{0}~»$
 	\tcblower
-	Une limite du type quotient \(\displaystyle \lim_{x\to a}\frac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}g(x)=0\) mais où \(\displaystyle \lim_{x\to a}f(x)\neq0\) est appelée limite de type \(«~\displaystyle \frac{1}{0}~»\). 
+	Une limite du type quotient \(\displaystyle \lim_{x\to a}\dfrac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}g(x)=0\) mais où \(\displaystyle \lim_{x\to a}f(x)\neq0\) est appelée limite de type \(«~\displaystyle \dfrac{1}{0}~»\). 
 \end{definition}
 \begin{remarque}
 	\tcblower
-Pour calculer une limite du type \(«~\displaystyle\frac{1}{0}~»\), on doit toujours calculer distinctement la limite à gauche et la limite à droite. Le plus souvent, une factorisation est très utile car nous pouvons ainsi utiliser la règle des signes pour contrôler le signe du résultat. Si les limites à gauche et à droite sont égales, la limite existe et vaut cette valeur ; sinon, elle n'existe pas.
+Pour calculer une limite du type \(«~\displaystyle\dfrac{1}{0}~»\), on doit toujours calculer distinctement la limite à gauche et la limite à droite. Le plus souvent, une factorisation est très utile car nous pouvons ainsi utiliser la règle des signes pour contrôler le signe du résultat. Si les limites à gauche et à droite sont égales, la limite existe et vaut cette valeur ; sinon, elle n'existe pas.
 \end{remarque}
 
 \begin{exemple}[label=ex:inf1]
-	Calculer  \(\displaystyle\lim_{x\to -2}\frac{-2}{2x+4}\) et interpréter graphiquement.
+	Calculer  \(\displaystyle\lim_{x\to -2}\dfrac{-2}{2x+4}\) et interpréter graphiquement.
 	\tcblower
 \[
-\lim_{x\to -2}\frac{-2}{2x+4}
-=«~\frac{-2}{0}~»
-\,: \text{c'est un type }«~\frac{1}{0}~»;
+\lim_{x\to -2}\dfrac{-2}{2x+4}
+=«~\dfrac{-2}{0}~»
+\,: \text{c'est un type }«~\dfrac{1}{0}~»;
 \]
 \[
-\lim_{x\to -2^+}\frac{-2}{2x+4}
-=\lim_{x\to -2^+}\frac{-2}{2(x+2)}
-=\lim_{x\to -2^+}\frac{-1}{x+2}
-=«~\frac{-1}{0^+}~»
+\lim_{x\to -2^+}\dfrac{-2}{2x+4}
+=\lim_{x\to -2^+}\dfrac{-2}{2(x+2)}
+=\lim_{x\to -2^+}\dfrac{-1}{x+2}
+=«~\dfrac{-1}{0^+}~»
 =-\infty,
 \]
 et
 \[
-\lim_{x\to -2^-}\frac{-2}{2x+4}
-=«~\frac{-1}{0^-}~»
+\lim_{x\to -2^-}\dfrac{-2}{2x+4}
+=«~\dfrac{-1}{0^-}~»
 =+\infty
 \]
-d'où $\displaystyle{\lim_{x\to -2}\frac{-2}{2x+4}}$ n'existe pas. 
+d'où $\displaystyle{\lim_{x\to -2}\dfrac{-2}{2x+4}}$ n'existe pas. 
 \end{exemple}
 \begin{exemple}[label=ex:inf2]
-	Calculer  \(\displaystyle\lim_{x\to -2}\frac{-2}{(x+2)^2}\) et interpréter graphiquement.
+	Calculer  \(\displaystyle\lim_{x\to -2}\dfrac{-2}{(x+2)^2}\) et interpréter graphiquement.
 	\tcblower
 \[
-\lim_{x\to -2}\frac{-2}{(x+2)^2}
-=«~\frac{-2}{0}~»
-\,: \text{c'est un type }«~\frac{1}{0}~»
+\lim_{x\to -2}\dfrac{-2}{(x+2)^2}
+=«~\dfrac{-2}{0}~»
+\,: \text{c'est un type }«~\dfrac{1}{0}~»
 ;
 \]
 \[
-\lim_{x\to -2^-}\frac{-2}{(x+2)^2}
-=«~\frac{-2}{(0^-)^2~»
+\lim_{x\to -2^-}\dfrac{-2}{(x+2)^2}
+=«~\dfrac{-2}{(0^-)^2~»
 }
 =-\infty \text{ et } 
-\lim_{x\to -2^+}\frac{-2}{(x+2)^2}
-=«~\frac{-2}{(0^+)^2~»
+\lim_{x\to -2^+}\dfrac{-2}{(x+2)^2}
+=«~\dfrac{-2}{(0^+)^2~»
 }
 =-\infty,
 \]
 \[
-\text{donc }\lim_{x\to -2}\frac{-2}{(x+2)^2}=-\infty.
+\text{donc }\lim_{x\to -2}\dfrac{-2}{(x+2)^2}=-\infty.
 \]
 \end{exemple}
 \begin{exemple}[label=ex:inf3]
-	Calculer \(\displaystyle\lim_{x\to 1}\frac{x-2}{x^2+3x-4}\) et interpréter graphiquement.
+	Calculer \(\displaystyle\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}\) et interpréter graphiquement.
 	\tcblower
 \[
-\lim_{x\to 1}\frac{x-2}{x^2+3x-4}
-=«~\frac{-1}{0}~»
-\,: \text{c'est un type }«~\frac{1}{0}~»
+\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}
+=«~\dfrac{-1}{0}~»
+\,: \text{c'est un type }«~\dfrac{1}{0}~»
 ;
 \]
 \[
-\lim_{x\to 1^+}\frac{x-2}{x^2+3x-4}
-=\lim_{x\to 1^+}\frac{x-2}{(x-1)(x+4)}
-=«~\frac{-1}{0^+\cdot5}~»
+\lim_{x\to 1^+}\dfrac{x-2}{x^2+3x-4}
+=\lim_{x\to 1^+}\dfrac{x-2}{(x-1)(x+4)}
+=«~\dfrac{-1}{0^+\cdot5}~»
 =-\infty\]
 et
 \[
-\lim_{x\to 1^-}\frac{x-2}{x^2+3x-4}
-=«~\frac{-1}{0^-\cdot5}~»
+\lim_{x\to 1^-}\dfrac{x-2}{x^2+3x-4}
+=«~\dfrac{-1}{0^-\cdot5}~»
 =+\infty,
 \]
 \[
-	\text{donc }\lim_{x\to 1}\frac{x-2}{x^2+3x-4}\text{ n'existe pas }.
+	\text{donc }\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}\text{ n'existe pas }.
 \]
 \end{exemple}
 
@@ -654,7 +660,7 @@ et
 
 Interprétations graphiques :
 \begin{center}
-	\begin{tikzpicture}[scale=0.7]
+	\begin{tikzpicture}[scale=0.8]
     \begin{axis}[
 	    axis lines=middle, xlabel={}, ylabel={},
       xmin=-5, xmax=1, ymin=-7, ymax=7,
@@ -666,7 +672,7 @@ Interprétations graphiques :
       \addplot[dashed] coordinates {(-2,-10) (-2,10)};
     \end{axis}
   \end{tikzpicture}
-  \begin{tikzpicture}[scale=0.7]
+  \begin{tikzpicture}[scale=0.8]
     \begin{axis}[
       axis lines=middle,  xlabel={}, ylabel={},
       xmin=-5, xmax=1, ymin=-7, ymax=7,
@@ -677,7 +683,7 @@ Interprétations graphiques :
       \addplot[dashed] coordinates {(-2,-10) (-2,10)};
     \end{axis}
   \end{tikzpicture}
-  \begin{tikzpicture}[scale=0.7]
+  \begin{tikzpicture}[scale=0.8]
     \begin{axis}[
 	    axis lines=middle, xlabel={}, ylabel={},
       xmin=-2, xmax=3, ymin=-7, ymax=7,
@@ -748,9 +754,9 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers moins l'infini est égale
 	Calculer $\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}$ 
 	\tcblower
 	$\begin{aligned}
-		\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}&\stackrel{\text{{\bfseries thm \ref{thm:poly}}}}{=}\displaystyle{\lim_{x\rightarrow +\infty}5x^2}+\displaystyle{\lim_{x\rightarrow +\infty}x}+\displaystyle{\lim_{x\rightarrow +\infty}2}\\
-								   &\stackrel{\text{{\bfseries thm \ref{thm:limel}}}}{=}5\cdot (+\infty)^2+\infty+2\\
-								   &\stackrel{\text{{\bfseries alg. infini}}}{=}+\infty.
+		\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}&\stackrel{\text{\eqmakebox[f][c]{{\bfseries thm \ref{thm:poly}}}}}{=}\displaystyle{\lim_{x\rightarrow +\infty}5x^2}+\displaystyle{\lim_{x\rightarrow +\infty}x}+\displaystyle{\lim_{x\rightarrow +\infty}2}\\
+								      &\stackrel{\text{\eqmakebox[f][c]{{\bfseries thm \ref{thm:limel}}}}}{=}5\cdot (+\infty)^2+\infty+2\\
+								      &\stackrel{\text{\eqmakebox[f][c]{{\bfseries alg. infini}}}}{=}+\infty.
 	\end{aligned}$
 \end{exemple}
 \begin{exemple}
@@ -758,9 +764,9 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers moins l'infini est égale
 	\tcblower
 $
 \begin{aligned}
-	\displaystyle{\lim_{x\rightarrow +\infty}\dfrac{1}{x-3}}&\stackrel{\text{{\bfseries thms \ref{thm:limprop} et \ref{thm:limel}}}}{=} \dfrac{1}{+\infty-3}\\
-								&\stackrel{\text{{\bfseries alg. infini}}}{=}\dfrac{1}{+\infty}\\
-	&\stackrel{\text{{\bfseries alg. infini}}}{=} 0
+	\displaystyle{\lim_{x\rightarrow +\infty}\dfrac{1}{x-3}}&\stackrel{\text{\eqmakebox[g][c]{{\bfseries thms \ref{thm:limprop} et \ref{thm:limel}}}}}{=} \dfrac{1}{+\infty-3}\\
+								&\stackrel{\text{\eqmakebox[g][c]{{\bfseries alg. infini}}}}{=}\dfrac{1}{+\infty}\\
+								&\stackrel{\text{\eqmakebox[g][c]{{\bfseries alg. infini}}}}{=} 0
 \end{aligned}
 $
 \end{exemple}
@@ -769,8 +775,8 @@ $
 	\tcblower
 	$
 	\begin{aligned}
-		\displaystyle{\lim_{x\rightarrow -\infty}\dfrac{1}{x^2}}&\stackrel{\text{{\bfseries thms \ref{thm:limprop} et \ref{thm:limel}}}}{=}\dfrac{1}{(-\infty)^2}\\
-											 &\stackrel{\text{{\bfseries alg. infini}}}{=}0
+		\displaystyle{\lim_{x\rightarrow -\infty}\dfrac{1}{x^2}}&\stackrel{\text{\eqmakebox[h][c]{{\bfseries thms \ref{thm:limprop} et \ref{thm:limel}}}}}{=}\dfrac{1}{(-\infty)^2}\\
+											 &\stackrel{\text{\eqmakebox[h][c]{{\bfseries alg. infini}}}}{=}0
 	\end{aligned}
 	$
 \end{exemple}
@@ -785,18 +791,18 @@ Ces situations sont appelées « indéterminations », c’est-à-dire qu’on n
 	\tcblower
 Une limite du type
 \[
-\lim_{x\to a}\frac{f(x)}{g(x)}
+\lim_{x\to a}\dfrac{f(x)}{g(x)}
 \]
 pour laquelle on a
 \[
 \lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0
 \]
-est appelée indétermination de « type \(\displaystyle\frac{0}{0}\) ».
+est appelée indétermination de « type \(\displaystyle\dfrac{0}{0}\) ».
 
 Les différents types d’indéterminations sont (liste non exhaustive) :
 \[
- «~\frac{0}{0}~»,\quad
- «~\frac{+\infty}{+\infty}~»,\quad
+ «~\dfrac{0}{0}~»,\quad
+ «~\dfrac{+\infty}{+\infty}~»,\quad
 «~0\cdot\infty~»,\quad
  «~\infty - \infty~»,\quad
  «~\infty^0~»,\quad
@@ -810,9 +816,9 @@ Les différents types d’indéterminations sont (liste non exhaustive) :
 \begin{remarque}
 	\tcblower
 	Une calcul de limite est dit de type indéterminé si on ne peut pas prévoir à l’avance comment va se comporter le résultat. Un calcul de limite du type
-\(«~\displaystyle\frac{1}{0}~»\)
+\(«~\displaystyle\dfrac{1}{0}~»\)
 donne toujours un résultat infini. Par contre, une indétermination de type
-\(«~\displaystyle\frac{0}{0}~»\)
+\(«~\displaystyle\dfrac{0}{0}~»\)
 peut parfois donner un résultat infini, parfois un résultat fini, parfois ne pas exister !
 
 \end{remarque}
@@ -842,53 +848,528 @@ peut parfois donner un résultat infini, parfois un résultat fini, parfois ne p
 \begin{methode}
 	type $«~\dfrac{0}{0}~»$ polynomial
 	\tcblower
-Une limite \(\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}\) de type \(\displaystyle\frac{0}{0}\) où \(f(x)\) et \(g(x)\) sont des polynômes peut se calculer ainsi :
+Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displaystyle\dfrac{0}{0}\) où \(f(x)\) et \(g(x)\) sont des polynômes peut se calculer ainsi :
 \begin{tasks}
 	\task factoriser numérateur et dénominateur ;
 	\task simplifier ; 
-	\task si la nouvelle limite n’est plus du type \(\displaystyle\frac{0}{0}\) , la déterminer avec les outils connus.
+	\task si la nouvelle limite n’est plus du type \(\displaystyle\dfrac{0}{0}\) , la déterminer avec les outils connus.
 \end{tasks}
 \end{methode}
 \begin{exemple}
-Calculer \(\displaystyle\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}\)
+Calculer \(\displaystyle\lim_{x\to2}\dfrac{x^2-3x+2}{x^2-4}\)
 \tcblower
 
 \[
-\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}
-=«~\frac{0}{0}~»\]
-est du type $«~\dfrac{0}{0}~»$ avec polynômes au numérateur et au dénominateur
+\lim_{x\to2}\dfrac{x^2-3x+2}{x^2-4}
+=«~\dfrac{0}{0}~»\]
+est du type $«~\dfrac{0}{0}~»$ avec polynômes au numérateur et au dénominateur. On procède de la sorte~:
 
 $
 \begin{aligned}
-\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}
-&\stackrel{\text{fact}}{=}
-\lim_{x\to2}\frac{(x-2)(x-1)}{(x-2)(x+2)}\\
-		       &\stackrel{x\neq2}{=}
-\lim_{x\to2}\frac{x-1}{x+2}\\
-		  &\stackrel{\mathrm{PrL4}}{=}
+\lim_{x\to2}\dfrac{x^2-3x+2}{x^2-4}
+&\stackrel{\text{\eqmakebox[a][c]{{\bfseries factoriser}}}}{=}
+\lim_{x\to2}\dfrac{(x-2)(x-1)}{(x-2)(x+2)}\\
+&\stackrel{\eqmakebox[a][c]{x\neq2}}{=}
+\lim_{x\to2}\dfrac{x-1}{x+2}\\
+&\stackrel{\text{\eqmakebox[a][c]{{\bfseries P4}}}}{=}
 		  \displaystyle{		  \dfrac{\displaystyle{\lim_{x\to2}(x-1)}}{\displaystyle{\lim_{x\to2}(x+2)}}}\\
-			 &\stackrel{\mathrm{PrL7}}{=}
-\frac{1}{4}
+&\stackrel{\text{\eqmakebox[a][c]{{\bfseries thm \ref{thm:poly}}}}}{=}
+\dfrac{1}{4}
 \end{aligned}$
 \end{exemple}
 
 \begin{methode}
 	type $«~\dfrac{0}{0}~»$ racine carrée
 	\tcblower
+Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displaystyle\dfrac{0}{0}\) où \(f(x)\) et/ou \(g(x)\) contient une racine carrée peut se calculer ainsi :
+\begin{tasks}
+\task multiplier par le conjugué ;
+\task développer l'expression \((a - b)(a + b)\) en \(a^2 - b^2\) avec la 3\textsuperscript{e} identité remarquable ;
+\task simplifier ;
+\task  si la nouvelle limite n’est plus du type \(\displaystyle\dfrac{0}{0}\), la déterminer avec les outils connus.
+\end{tasks}
 \end{methode}
 
+\begin{exemple}
+Calculer \(\displaystyle\lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}\)
+\tcblower
+\[
+\lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}
+=«~\dfrac{0}{0}~»\]
+est du type $«~\dfrac{0}{0}~»$ avec une racine carrée.
+
+$
+\begin{aligned}
+	\displaystyle{\lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}}
+&\stackrel{\text{\eqmakebox[a][c]{\bfseries mult. conj.}}}{=}
+\displaystyle{\lim_{x\to9}\dfrac{(\sqrt{x}-3)(\sqrt{x}+3)}{(x-9)(\sqrt{x}+3)}}\\
+&\stackrel{\eqmakebox[a][c]{{x\neq9}}}{=}
+\displaystyle{\lim_{x\to9}\dfrac{x-9}{(x-9)(\sqrt{x}+3)}}\\
+&\stackrel{\text{\eqmakebox[a][c]{{\bfseries P4 et thm \ref{thm:compo}}}}}{=}
+\displaystyle{\lim_{x\to9}\dfrac{1}{\sqrt{x}+3}}\\
+&\stackrel{\eqmakebox[a][c]{}}{=}
+\dfrac{1}{\sqrt{9}+3}\\
+&\stackrel{\eqmakebox[a][c]{}}{=}\dfrac{1}{6}
+\end{aligned}
+$
+\end{exemple}
 
 \begin{methode}
 	type $«~\dfrac{\pm\infty}{\pm\infty}~»$
-	\vspace{1cm}
+	\vspace{0.3cm}
+
 	type $«~0\cdot(\pm\infty)~»$
-	\vspace{1cm}
+	
+	\vspace{0.3cm}
 	type $«~\infty-\infty~»$
 	\tcblower
+Une limite \(\displaystyle\lim_{x\to\pm\infty}\dfrac{f(x)}{g(x)}\) ou \(\displaystyle\lim_{x\to\pm\infty}f(x)\) de type \(\pm\infty/\pm\infty\), \(0\cdot(\pm\infty)\), \(\infty-\infty\) où \(f(x)\) et/ou \(g(x)\) sont des polynômes peut se calculer ainsi :
+	\begin{tasks}	
+\task effectuer une/des mise(s) en évidence « forcée(s) » (m.ev.f.) ;
+\task si la nouvelle limite n’est plus indéterminée, utiliser l’algèbre de l’infini.
+	\end{tasks}
 \end{methode}
 
-\section{Continuité}
+\begin{exemple}
+calculer \(\displaystyle\lim_{x\to+\infty}(5x^2 - x + 2)\)
+\tcblower
 
+\[
+\lim_{x\to+\infty}(5x^2 - x + 2)
+=+\infty - \infty + 2
+=«~+\infty - \infty~»
+\]
+ est une indétermination de type $«~\infty-\infty~»$. On procède de la manière suivante~:
+
+$
+ \begin{aligned}
+	 \displaystyle{\lim_{x\to+\infty}(5x^2 - x + 2)}
+ &\stackrel{\text{\eqmakebox[i][c]{{\bfseries {m.ev.f.}}}}}{=}
+ \displaystyle{\lim_{x\to+\infty}\Bigl(x^2\bigl(5 - \dfrac{1}{x} + \dfrac{2}{x^2}\bigr)\Bigr)}\\
+ &\stackrel{\text{\eqmakebox[i][c]{{\bfseries P3}}}}{=}
+\displaystyle{\lim_{x\to+\infty}x^2\cdot\lim_{x\to+\infty}\bigl(5 - \dfrac{1}{x} + \dfrac{2}{x^2}\bigr)}\\
+&\stackrel{\text{\eqmakebox[i][c]{\bfseries {alg.inf.}}}}{=}
+\displaystyle{(+\infty)^2\cdot\bigl(5 + \dfrac{1}{+\infty} + \dfrac{2}{(+\infty)^2}\bigr)}\\
+&\stackrel{\text{\eqmakebox[i][c]{\bfseries {alg.inf.}}}}{=}
++\infty
+\end{aligned}
+$
+
+\end{exemple}
+
+\begin{exemple}
+calculer \(\displaystyle\lim_{x\to+\infty}\dfrac{3x^3 + x + 2}{2x^3 - 1}\)
+\tcblower
+\[\lim_{x\to+\infty}\dfrac{3x^3 + x + 2}{2x^3 - 1}
+=«~\dfrac{+\infty}{+\infty}~»\] 
+est une indétermination de type $«~\pm\infty/\pm\infty~»$. On la traite de la manière suivante~:
+
+$
+\begin{aligned}
+	\displaystyle{\lim_{x\to+\infty}\dfrac{3x^3 + x + 2}{2x^3 - 1}}
+&\stackrel{\text{\eqmakebox[j][c]{{\bfseries m.ev.f.}}}}{=}
+\displaystyle{\lim_{x\to+\infty}\dfrac{x^3\bigl(3 + \dfrac{1}{x^2} + \dfrac{2}{x^3}\bigr)}{x^3\bigl(2 - \dfrac{1}{x^3}\bigr)}}\\
+&\stackrel{\text{\eqmakebox[j][c]{{\bfseries simpl.}}}}{=}
+\displaystyle{\lim_{x\to+\infty}\dfrac{3 + \dfrac{1}{x^2} + \dfrac{2}{x^3}}{2 - \dfrac{1}{x^3}}}\\
+&\stackrel{\text{\eqmakebox[j][c]{{\bfseries alg.inf.}}}}{=}
+\displaystyle{\dfrac{3 + \dfrac{1}{(+\infty)^2} + \dfrac{2}{(+\infty)^3}}{2 - \dfrac{1}{(+\infty)^3}}}\\
+&\stackrel{\text{\eqmakebox[j][c]{{\bfseries alg.inf.}}}}{=}
+\dfrac{3}{2}
+\end{aligned}
+$
+\end{exemple}
+
+\begin{remarque}
+	autre types
+	\tcblower
+	Les calculs de limites qui débouchent sur les types suivants sont aussi des indétermination qu'on pourra aussi lever ou non selon les cas: 
+
+	$«~\infty^0~»,«~0^\infty~»,«~0^0~»,«~1^\infty~».$
+\end{remarque}
+\begin{exemple}
+	étudier $f(x)=\dfrac{x^3-1}{x^2-1}$
+\tcblower
+Soit la fonction réelle $f$ déterminée par $f(x)=\dfrac{x^3-1}{x^2-1}$. Il s'agit d'essayer de comprendre le mieux possible son comportement pour des valeurs de $x$ pour lesquelles il est intéressant d'utiliser « l'outil limite » ; ici, pour $x\to -1$, $x\to 1$ et $x\to \pm\infty$.
+
+Pour $x\to -1$ : $\displaystyle\lim_{x\to -1}\dfrac{x^3-1}{x^2-1}=«~-\dfrac{2}{0}~»$ est du type $«\displaystyle\dfrac{1}{0}~»$.
+\medskip
+
+$\begin{aligned}
+\displaystyle\lim_{x\to -1^-}\dfrac{x^3-1}{x^2-1}
+&=\displaystyle\lim_{x\to -1^-}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
+&=\displaystyle\lim_{x\to -1^-}\dfrac{x^2+x+1}{x+1}\\
+&=\dfrac{(-1)^2+(-1)+1}{0^-}\\
+&=\dfrac{+1}{0^-}\\
+&=-\infty,\\
+\\
+\displaystyle\lim_{x\to -1^+}\dfrac{x^3-1}{x^2-1}
+&=\displaystyle\lim_{x\to -1^+}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
+&=\displaystyle\lim_{x\to -1^+}\dfrac{x^2+x+1}{x+1}\\
+&=\dfrac{(-1)^2+(-1)+1}{0^+}\\
+&=\dfrac{+1}{0^+}\\
+&=+\infty.
+\end{aligned}$
+\end{exemple}
+\begin{exemplesuite}
+	étudier $f(x)=\dfrac{x^3-1}{x^2-1}$
+	\tcblower
+\medskip
+Pour $x\to 1$ : $\displaystyle\lim_{x\to 1}\dfrac{x^3-1}{x^2-1}$ est du type $«~\displaystyle\dfrac{0}{0}~»$ avec polynômes.
+\medskip
+
+$\begin{aligned}
+\displaystyle\lim_{x\to 1}\dfrac{x^3-1}{x^2-1}
+&=\displaystyle\lim_{x\to 1}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
+&=\displaystyle\lim_{x\to 1}\dfrac{x^2+x+1}{x+1}\\
+&=\dfrac{1^2+1+1}{1+1}\\
+&=\dfrac{3}{2}
+\end{aligned}$
+
+\medskip
+Pour $x\to \pm\infty$ :
+\medskip
+$
+\displaystyle\lim_{x\to +\infty}\dfrac{x^3-1}{x^2-1}
+=\dfrac{(+\infty)^3-1}{(+\infty)^2-1}
+=«~\dfrac{+\infty}{+\infty}~»$ est du type $«~\dfrac{\pm\infty}{\pm\infty}~»$ avec polynômes. On obtient :
+
+$\begin{aligned}
+\displaystyle\lim_{x\to +\infty}\dfrac{x^3-1}{x^2-1}
+&=\displaystyle\lim_{x\to +\infty}\dfrac{x^3\bigl(1-\dfrac{1}{x^3}\bigr)}{x^2\bigl(1-\dfrac{1}{x^2}\bigr)}\\
+&=\displaystyle\lim_{x\to +\infty}\dfrac{x\bigl(1-\dfrac{1}{x^3}\bigr)}{1-\dfrac{1}{x^2}}\\
+&=+\infty\cdot\dfrac{1-\dfrac{1}{(+\infty)^3}}{1-\dfrac{1}{(+\infty)^2}}\\
+&=+\infty\cdot\dfrac{1-0}{1-0}\\
+&=+\infty.
+\end{aligned}$
+\medskip
+
+Le même calcul pour $x\to -\infty$ donne~:
+
+\[
+\displaystyle\lim_{x\to-\infty}\dfrac{x^3-1}{x^2-1}
+=\displaystyle\lim_{x\to-\infty}\dfrac{x^3\bigl(1-\dfrac{1}{x^3}\bigr)}{x^2\bigl(1-\dfrac{1}{x^2}\bigr)}
+=\dots
+=-\infty\cdot\dfrac{1-\dfrac{1}{+\infty}}{1-\dfrac{1}{+\infty}}
+=-\infty\cdot\dfrac{1-0}{1-0}
+=-\infty
+\]
+On interprète graphiquement les résultats obtenus~:
+	\begin{center}		
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={at=(current axis.right of origin), anchor=west},
+    ylabel style={at=(current axis.above origin), anchor=south},
+    xmin=-4, xmax=6,
+    ymin=-5, ymax=5,
+    xtick={-4,-2,0,1,2,4,6},
+    ytick={-5,-4,-2,0,2,4,5},
+    grid=both,
+    grid style={dashed,gray!30},
+  ]
+    % f(x) = (x^3 - 1)/(x^2 - 1), split at x = -1 and x = 1
+    \addplot[domain=-4:-1.1, samples=200, thick] {(x^3-1)/(x^2-1)};
+    \addplot[domain=-0.9:0.9,  samples=200, thick] {(x^3-1)/(x^2-1)};
+    \addplot[domain=1.1:6,   samples=200, thick]
+      {(x^3-1)/(x^2-1)} node[below right,pos=0.15] {$f(x)=\dfrac{x^3-1}{x^2-1}$};
+    % vertical asymptote at x = -1
+    \draw[dashed] (axis cs:-1,-5) -- (axis cs:-1,5);
+    % oblique asymptote y = x
+    \addplot[dashed,domain=-4:6] {x};
+    % removable singular (open circle) at x = 1
+    \addplot[only marks, mark=o, thick] coordinates {(1,1.5)};
+  \end{axis}
+\end{tikzpicture}
+	\end{center}
+\end{exemplesuite}
+\section{Continuité}
+\begin{definition}
+définition intuitive de la continuité en un point
+\tcblower
+Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
+$f$ est continue en $a$ si et seulement si il existe un voisinage de $a$ tel que « une représentation graphique de $f$ dans ce voisinage peut être dessinée sans lever le crayon ».  
+Si $f$ n'est pas continue en $a$, on dit que $f$ est discontinue en $a$.
+\end{definition}
+
+\begin{definition}
+	continuité sur un intervalle
+	\tcblower
+	\
+	$f$ est continue sur $I$ un intervalle $I\subset \mathbb{R}\Leftrightarrow$ $f$ est continue en tout point de~$I$.
+\end{definition}
+
+
+\begin{definition}
+	définition mathématique de la continuité en un point
+	\tcblower
+Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
+\medskip
+
+\begin{minipage}[c][0.8cm]{0.5\textwidth}{
+		\begin{center}
+$f$ est continue en $a$ $\Longleftrightarrow$  
+\end{center}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tasks}
+\task $\displaystyle\lim_{x\to a}f(x)$ existe dans $\mathbb{R}$;
+\task $f(a)$  existe dans $\mathbb{R}$;
+\task $\displaystyle\lim_{x\to a}f(x)=f(a)$.
+\end{tasks}
+}
+\end{minipage}
+\medskip
+
+Si on veut être plus concis, on écrira plus simplement :  
+\[f \text{ est continue en }a \Longleftrightarrow \displaystyle\lim_{x\to a}f(x)=f(a).\]
+\end{definition}
+\begin{remarque}
+	\tcblower
+	On peut également écrire
+	\[f \text{ est continue en }x \Longleftrightarrow \displaystyle\lim_{h\to 0}f(x+h)=f(x).\]
+\end{remarque}
+
+\begin{exemple}
+	\tcblower
+	\begin{tasks}(2)
+	\task 
+
+	\begin{tikzpicture}[>=stealth]
+% ------------------------------------------------------------------
+% 1 ── no value at a (open circle)
+\begin{axis}[
+    name=G1,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick] coordinates
+      {(-1,-1) (0,-0.2) (1,0.5) (2,1.2) (3,1.4) (4,1.2)};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
+  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % ∘
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.2) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car $f$ n'est pas définie en $a$.
+\task 
+
+
+
+
+\begin{tikzpicture}[>=stealth]
+
+	% ------------------------------------------------------------------
+% 2 ── continuous, piecewise-linear peak
+\begin{axis}[
+    at={(G1.east)}, xshift=1.5cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=5, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[thick] coordinates {(-1,-0.3) (2,1.4) (5,-0.6)};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.4);
+  \draw[dashed] (axis cs:-0.1,1.4) -- (axis cs:2,1.4);
+  \draw[fill=black] (axis cs:2,1.4) circle (2pt);
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.4) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ est continue en $a$, car 
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}$ 
+
+\task 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
+  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
+  % points & guides
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
+  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
+  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,0.8) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)}$ n'existe pas. 
+
+\task 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1.south)}, yshift=-1.5cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:4,samples=100]
+      {-0.25*(x-2)^2+1.2};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,0.5) -- (axis cs:2,0.5);
+  \draw[dashed] (axis cs:0,0.0) -- (axis cs:2,0.0);
+  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % open
+  \draw[fill=black]       (axis cs:2,0.5) circle (2pt); % value
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.2) {$b$};
+  \node[left]  at (axis cs:0,0.5) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=b\neq f(a)=c}$. 
+
+\end{tasks}
+\end{exemple}
+\begin{exemplesuite}
+	\tcblower
+	\begin{tasks}(2)
+
+		\task[e)] 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east |- G1.south)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:4,samples=100] {0.1*(x-2)^3 -0.5*(x-2) +0.3};
+  \draw[dashed] (axis cs:2,0.3) -- (axis cs:0,0.3);
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.3);
+  \draw[fill=black] (axis cs:2,0.3) circle (2pt);
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[above left]  at (axis cs:0,0.3) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ est continue en $a$, car 
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}.$ 
+
+\task[f)] 
+
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-4,xmax=4, ymin=-0.2,ymax=2.5,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  % 1/x² left branch
+  \addplot[domain=-4:-0.7,samples=200,thick] {1/(x^2)};
+  % 1/x² right branch
+  \addplot[domain=0.7:4,samples=200,thick] {1/(x^2)};
+  % vertical asymptote x = 0
+  \draw[dashed] (axis cs:0,-0.2) -- (axis cs:0,2.5);
+  \node[below] at (axis cs:0,-0.2) {$0$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $0$, car
+
+$\displaystyle{\lim_{x\rightarrow 0}f(x)=+\infty}$. 
+
+	\end{tasks}
+\end{exemplesuite}
+
+\begin{definition}
+	continuité à gauche, 
+	à droite
+	\tcblower
+	Soit $f: I\rightarrow \mathbb{R}$ une fonction réelle et $a\in I$.
+
+	\[f \text{ est continue à gauche en } a \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)}\]
+	\[f \text{ est continue à droite en } a \iff \displaystyle{\lim_{x\rightarrow a^+}f(x)=f(a)}\]
+\end{definition}
+\begin{exemple}
+	\tcblower
+	\begin{minipage}[t]{0.55\textwidth}{
+	\vspace{0pt}
+$f$ est continue à gauche, car $\displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)=b}$
+
+\medskip
+$f$ n'est pas continue à droite, car $\displaystyle{\lim_{x\rightarrow a^+}f(x)\neq f(a)=b}$.  	
+	}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}{
+	\vspace{0pt}
+	\begin{center}
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
+  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
+  % points & guides
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
+  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
+  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,0.8) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+	\end{center}
+	}
+	\end{minipage}
+\end{exemple}
+
+\begin{thm}
+	fonctions continues
+	\tcblower
+	\noindent\begin{description}
+		\item[{\bfseries C1}] Les fonctions constantes sont continues sur $\mathbb{R}$.  
+		\item[{\bfseries C2}] La fonction $f$ définie par $f(x)=x$ est continue sur $\mathbb{R}$.  
+		\item[{\bfseries C3}] Les fonctions $\sin$ et $\cos$ sont continues sur $\mathbb{R}$. 
+		\item[{\bfseries C4}] Les fonctions racines-n-ièmes sont continues sur leur domaine de définition.
+		\item[{\bfseries C5}] Les fonctions exponentielles et logarithmes sont continues sur leur domaine de définition. 
+	\end{description}
+\end{thm}
+\begin{thm}
+opérations avec des
+
+fonctions continues
+	\tcblower
+	\noindent\begin{description}
+		\item[{\bfseries PC1}] Si $f$ est $g$ sont continues en $a$, alors $f+g$ est continue en $a$.  
+		\item[{\bfseries PC2}] Si $f$ est $g$ sont continues en $a$, alors $f-g$ est continue en $a$.  
+		\item[{\bfseries PC3}] Si $f$ est $g$ sont continues en $a$, alors $f\cdot g$ est continue en $a$.  
+		\item[{\bfseries PC4}] Si $f$ est $g$ sont continues en $a$ et $g(a)\neq 0$, alors $\dfrac{f}{g}$ est continue en $a$.  
+		\item[{\bfseries PC5}] Si $f$ est continue en $a$ et $g$ est continue en $f(a)$, alors $g\circ f$ est continue en $a$. 
+	\end{description}
+\end{thm}
 \section{Exercices}
 
 Librement adapté de ...

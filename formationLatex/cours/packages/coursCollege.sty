@@ -9,6 +9,7 @@
 \RequirePackage{amsthm}
 \RequirePackage{tkz-euclide}
 \RequirePackage{lscape}
+\RequirePackage{bm}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{tabularray}
@@ -82,6 +83,16 @@
 \newtcolorbox[auto counter]{exemple}[1][]{
 	enhanced,
     before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\theexemple}\\\vspace{0.5em}},
+borderline west={0.5pt}{5cm}{black,
+    line cap=round,
+    shorten >=3mm,
+    shorten <=3mm},
+before lower={\setlength\parindent{0pt}},
+    #1
+}
+\newtcolorbox[auto counter]{exemplesuite}[1][]{
+	enhanced,
+    before upper={\raggedleft\textbf{Exemple~\theexemple\\(suite)}\\\vspace{0.5em}},
 borderline west={0.5pt}{5cm}{black,
     line cap=round,
     shorten >=3mm,
@@ -174,3 +185,6 @@ after skip=10pt,
 
 
 \renewenvironment{proof}{{\bfseries  Preuve.}}{\hfill$\square$}
+
+
+\RequirePackage{eqparbox}
