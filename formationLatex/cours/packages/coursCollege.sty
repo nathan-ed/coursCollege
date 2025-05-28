@@ -123,6 +123,11 @@ before lower={\setlength\parindent{0pt}},
     before lower={\setlength\parindent{0pt}},
     #1
 }
+\newtcolorbox[auto counter]{notation}[1][]{
+    before upper={\raggedleft\textbf{Notation}\\\vspace{0.5em}},
+    before lower={\setlength\parindent{0pt}},
+    #1
+}
 
 \newtcolorbox[auto counter]{definition}[1][]{
 	enhanced,
@@ -202,3 +207,4 @@ after skip=10pt,
 \makeatother
 
 \RequirePackage{icomma}
+\RequirePackage{polynom}
