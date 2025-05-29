@@ -1233,6 +1233,62 @@ On interprète graphiquement les résultats obtenus~:
 \end{tikzpicture}
 	\end{center}
 \end{exemplesuite}
+\section{Limites trigonométriques}
+Théorème [Limite sinus x sur x]
+\begin{thm}
+$\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
+	\tcblower
+On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
+\end{thm}
+
+\begin{methode}
+Indéterminations trigonométriques de type 0/0
+\tcblower
+Le principe consiste en principe à se ramener à l'utilisation de $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$
+\end{methode}
+
+\begin{exemple}
+$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
+	\tcblower
+Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
+
+$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » on substitue $x$ par 0 et on constate un « type $\dfrac{0}{0}$ »
+
+$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ on observe que l'expression qui « pilote » le calcul est -20x
+
+$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$ on fait apparaître cette expression apparaisse au dénominateur et comme (...)$\to$0
+
+$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$ on utilise une propriété des limites
+
+$= -20 \cdot 1$ on utilise $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$
+
+$= -20$
+
+On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
+\end{exemple}
+\begin{exemple}
+$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
+	\tcblower
+Calculer $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
+
+$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$ on substitue $x$ par 0 et on constate un « type $\dfrac{0}{0}$ »
+
+$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$ on multiplie par le conjugué
+
+$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$ on effectue la multiplication des fractions
+
+$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$ on utilise la 3e identité remarquable
+
+$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$ on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$
+
+$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$ on sépare en produit de fractions
+
+$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$ on utilise les propriétés des limites [ok si les nouvelles limites existent]
+
+$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$ on utilise $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$ et on calcule la 3e limite facilement
+
+$= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
+\end{exemple}
 \section{Continuité}
 \begin{definition}
 définition intuitive de la continuité en un point

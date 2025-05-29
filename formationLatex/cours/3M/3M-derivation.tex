@@ -6,649 +6,649 @@
 \renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
 \begin{document}
 
-%\section{Activités}
-%\begin{activite}
-%Introduction géométrique à la notion de limite	
-%	\tcblower
-%
-%Vous disposez d’un stock de plaques rectangulaires au contour rigide, mesurant 1,2 mètres de large et 2 mètres de long. Pour votre prochain déménagement, vous désirez construire des cartons, ouverts vers le haut (en forme de parallélépipèdes rectangles) selon le procédé suivant : on découpe dans les quatre coins de la plaque le même carré, puis on plie les côtés et on les scotche pour former la boîte.
-%
-%\hfill
-%\begin{minipage}[t]{0.4\textwidth}{
-%\vspace{0pt}
-%\begin{tikzpicture}[>=latex]
-%  % dimensions
-%  \def\W{4}   % correspond à 2 m
-%  \def\H{2.4} % correspond à 1,2 m
-%  \def\x{0.6} % côté du carré découpé
-%
-%  % plaque avec coins découpés
-%  \draw (0,0) rectangle (\W,\H);
-%  \draw[dashed] (0,0) -- (\x,0) -- (\x,\x) -- (0,\x) -- cycle;
-%  \draw[dashed] (\W,0) -- (\W-\x,0) -- (\W-\x,\x) -- (\W,\x) -- cycle;
-%  \draw[dashed] (0,\H) -- (\x,\H) -- (\x,\H-\x) -- (0,\H-\x) -- cycle;
-%  \draw[dashed] (\W,\H) -- (\W-\x,\H) -- (\W-\x,\H-\x) -- (\W,\H-\x) -- cycle;
-%
-%  % cotes
-%  \draw[<->] (0,-0.5) -- (\W,-0.5) node[midway,below]{$2\mathrm{\,m}$};
-%  \draw[<->] (\W+0.5,0) -- (\W+0.5,\H) node[midway,right]{$1{,}2\mathrm{\,m}$};
-%\end{tikzpicture}
-%
-%}
-%\end{minipage}
-%\begin{minipage}[t]{0.4\textwidth}{
-%\vspace{0pt}
-%\begin{tikzpicture}[>=latex]
-%  % plan du carton (réseau)
-%  \def\W{3.4}
-%  \def\H{1.8}
-%  \def\x{0.6}
-%
-%  % face centrale
-%  \draw (0,0) rectangle (\W,\H);
-%  % rabats
-%  \draw (0,\H) rectangle (\W,\H+\x);      % dessus
-%  \draw (0,-\x) rectangle (\W,0);         % dessous
-%  \draw (-\x,0) rectangle (0,\H);         % gauche
-%  \draw (\W,0) rectangle (\W+\x,\H);      % droite
-%
-%  % lignes de pliage
-%  \draw[dashed] (0,0) -- (\W,0);
-%  \draw[dashed] (0,\H) -- (\W,\H);
-%  \draw[dashed] (0,0) -- (0,\H);
-%  \draw[dashed] (\W,0) -- (\W,\H);
-%\end{tikzpicture}
-%}
-%\end{minipage}
-%\hfill
-%
-%Comment obtenir des cartons de volume maximal ?
-%\end{activite}
-%\begin{activite}
-%	\tcblower
-%
-%Une population de 25\,000 individus (au temps $t=0$) croît selon la formule
-%\[
-%  N(t)
-%  = 25000 + 45\,t^2,
-%\]
-%où $t$ est mesuré en jours.
-%
-%\begin{tasks}
-%  \task Calculer la vitesse moyenne à laquelle croît la population entre les instants donnés :
-%  \begin{multicols}{3}	
-%    \begin{enumerate}
-%      \item $t_1 = 0$ et $t_2 = 2$
-%      \item $t_1 = 2$ et $t_2 = 3$
-%      \item $t_1 = 1$ et $t_2 = 4$
-%      \item $t_1 = 2$ et $t_2 = 5$
-%    \end{enumerate}
-%\end{multicols}
-%  \task Calculer la vitesse instantanée de la croissance à l’instant $\displaystyle t = 2$.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}
-%\tcblower
-%On considère la fonction $f$ définie par
-%\[
-%  f(x) = 2x^2 - 1.
-%\]
-%
-%\begin{tasks}(1)
-%  \task Quel est le taux (moyen) de variation entre :
-%  \begin{multicols}{2}	
-%    \begin{enumerate}
-%      \item $(0; f(0))$ et $(2; f(2))$ ?
-%      \item $(0; f(0))$ et $(1; f(1))$ ?
-%    \end{enumerate}
-%  \end{multicols}
-%  \task Quel est le taux instantané de variation en :
-%  \begin{multicols}{3}	
-%    \begin{enumerate}
-%      \item $(0; f(0))$ ?
-%      \item $(1; f(1))$ ?
-%      \item $(2; f(2))$ ?
-%    \end{enumerate}
-%  \end{multicols}
-%  \task Que peut-on dire de la pente de la droite tangente à la courbe représentative de $f$ en :
-%  \begin{multicols}{3}	
-%    \begin{enumerate}
-%      \item $(0; f(0))$ ?
-%      \item $(1; f(1))$ ?
-%      \item $(2; f(2))$ ?
-%    \end{enumerate}
-%\end{multicols}
-%\end{tasks}
-%
-%Interpréter graphiquement l’exercice.
-%\end{activite}
-%
-%\begin{activite}{Nombre dérivé}
-%\tcblower
-%On considère la fonction \(f\) définie par
-%\[
-%  f(x)=\dfrac{1}{2x}.
-%\]
-%\begin{tasks}(1)
-%  \task Calculer le taux de variation de la fonction \(f\) entre deux points d’abscisses 1 et \(x\).
-%  \task Calculer le nombre dérivé de la fonction \(f\) en 1 et interpréter graphiquement.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Toujours possible ?}
-%\tcblower
-%On considère la fonction \(f\) définie par
-%\[
-%  f(x)=\lvert x-1\rvert.
-%\]
-%\begin{tasks}(1)
-%  \task Représenter graphiquement cette fonction.
-%  \task Estimer graphiquement \(f'(2)\) et \(f'(0)\).
-%  \task Calculer \(f'(2)\) et \(f'(0)\).
-%  \task Estimer graphiquement \(f'(1)\).
-%  \task Calculer \(f'(1)\).
-%  \task Comment s’exprime graphiquement une situation de non dérivabilité ?
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Fonction dérivée}
-%\tcblower
-%On considère la fonction \(f\) définie par
-%\[
-%  f(x)=\dfrac{1}{2x}.
-%\]
-%\begin{tasks}(1)
-%  \task Calculer le taux de variation de la fonction \(f\) entre deux points d’abscisses \(a\) et \(x\).
-%  \task Calculer le nombre dérivé de la fonction \(f\) entre deux points d’abscisses \(a\) et \(x\). On obtient une nouvelle fonction : la dérivée de \(f\).
-%  \task Existe-t-il un point du graphe de \(f\) en lequel la tangente à la courbe représentative de \(f\) (ou par raccourci « à \(f\) ») soit horizontale ? Justifier et interpréter graphiquement.
-%  \task En quel(s) point(s) du graphe de \(f\) la pente de la tangente à \(f\) est-elle égale à \(-\dfrac{1}{12}\) ?
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Notations}
-%\tcblower
-%On considère la fonction \(f\) définie par
-%\[
-%  f(x)=x^2-1.
-%\]
-%\begin{tasks}(1)
-%  \task Déterminer la dérivée de \(f\) en \(a\).
-%  \task Interpréter graphiquement.
-%  \task Considérer \(x\) et \(x+h\) au lieu de \(a\) et \(x\) et déterminer la dérivée de \(f\) en \(x\).
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Équation de la tangente}
-%\tcblower
-%On considère une fonction dérivable en \((a;f(a))\) et on s’intéresse à la tangente à (la courbe représentative de) \(f\) en \((a;f(a))\). Écrire une conjecture quant à son équation, l’illustrer et la démontrer.
-%\end{activite}
-%
-%\begin{activite}{Tangentes extérieures}
-%\tcblower
-%On considère la fonction \(f\) définie par
-%\[
-%  f(x)=\dfrac{x^4}{x+5}.
-%\]
-%\begin{tasks}(1)
-%  \task Déterminer les coordonnées d’un point \(P\) tel que la tangente à la courbe représentative de \(f\) au point \(P\) passe par l’origine \((0;0)\) du repère (s’il y a plusieurs solutions, les trouver toutes).
-%  \task Vérifier graphiquement en représentant la courbe et les tangentes trouvées.
-%\end{tasks}
-%\end{activite}
-%
-%
-%\begin{activite}{Graphiquement}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Parmi les fonctions représentées ci-dessous, certaines sont dérivées d’une autre. Il s’agit de les retrouver :
-%\end{tasks}
-%\begin{center}
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_1$},
-%    xmin=-5, xmax=5, ymin=-4, ymax=4,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] {(32*x^3 - 24*x)*exp(-2*x^2)};
-%  \end{axis}
-%\end{tikzpicture}\quad
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_2$},
-%    xmin=-5, xmax=5, ymin=-4, ymax=4,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] {(x^3 - 9*x)/(6*sqrt(3))};
-%  \end{axis}
-%\end{tikzpicture}\quad
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_3$},
-%    xmin=-5, xmax=5, ymin=-3, ymax=4,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] coordinates {
-%      (-4,0) (-3,-2) (-1.5,0.5) (0,0) (1.5,0.5) (3,-2) (4,0)
-%    };
-%  \end{axis}
-%\end{tikzpicture}
-%
-%\vspace{1em}
-%
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_4$},
-%    xmin=-5, xmax=5, ymin=-4, ymax=4,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] {4*(0.5 - 2*x^2)*exp(-2*x^2)};
-%  \end{axis}
-%\end{tikzpicture}\quad
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_5$},
-%    xmin=-5, xmax=5, ymin=-4, ymax=4,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] {((x+3.5)*(x-1.5)*(x-2))/10.5};
-%  \end{axis}
-%\end{tikzpicture}\quad
-%\begin{tikzpicture}[scale=0.5]
-%  \begin{axis}[
-%    title={$f_6$},
-%    xmin=-5, xmax=5, ymin=-3, ymax=1,
-%    axis lines=middle, grid=both, minor tick num=1,
-%    width=5cm, height=4cm
-%  ]
-%    \addplot[smooth,thick] {0.58642*(x^2 - 3.24)};
-%  \end{axis}
-%\end{tikzpicture}
-%\end{center}
-%\end{activite}
-%
-%
-%\begin{activite}{Vrai ou faux ?}
-%\tcblower
-%Vrai ou faux ? Justifier.
-%\begin{tasks}(1)
-%  \task Si \(f\) est une fonction définie sur un intervalle ouvert \(I\) et si \(a\in I\), alors \(f\) est dérivable en \(a\).
-%  \task Soit \(f\) la fonction définie par \(f(x)=x^2\). Si \(a\) et \(b\) sont deux nombres réels quelconques, alors le taux de variation moyen de \(f\) entre \(a\) et \(b\) est égal à \(f'\left(\dfrac{a+b}{2}\right)\).
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Formules de dérivation}
-%\tcblower
-%\begin{enumerate}
-%  \item Rappels de fonctions élémentaires dont on a calculé la dérivée à l’aide de la définition :
-%	  \begin{multicols}{3}	  	
-%    \begin{itemize}
-%      \item [D1] \(\mathrm{cte}'=0\)
-%      \item [D2] \((x)'=1\)
-%      \item [D3] \((ax+b)'=a\)
-%      \item [D4] \((x^2)'=2x\)
-%      \item [D5] \((ax^2+bx+c)'=2a\,x+b\)
-%      \item [D6] \((x^3)'=3x^2\)
-%      \item [D7] \(\left(\sqrt{x}\right)'=\dfrac{1}{2\sqrt{x}}\)
-%      \item [D8] \(\left(\tfrac{1}{x}\right)'=-\dfrac{1}{x^2}\)
-%    \end{itemize}
-%\end{multicols}
-%  \item Il est possible d’accélérer le calcul de \(f'(x)\), sans avoir besoin de passer par de fastidieux calculs de limites… Dans la table numérique, on trouve un formulaire de ce genre :
-%	  \begin{multicols}{2}	  	
-%    \begin{itemize}
-%      \item [PrD1] \([\mathrm{cte}\cdot f]'=\mathrm{cte}\cdot f'\)
-%      \item [PrD2] \([f+g]'=f'+g'\)
-%      \item [PrD3] \([f-g]'=f'-g'\)
-%      \item [PrD4] \([f\cdot g]'=f'\cdot g+f\cdot g'\)
-%      \item [PrD5] \(\left[\dfrac{1}{f}\right]'=-\dfrac{f'}{f^2}\)
-%      \item [PrD6] \(\left[\dfrac{f}{g}\right]'=\dfrac{f'\,g - f\,g'}{g^2}\)
-%      \item [PrD7] \(\left[\dfrac{\mathrm{cte}}{f}\right]'=-\mathrm{cte}\,\dfrac{f'}{f^2}\)
-%      \item [PrD8] \(\left[(f(x))^n\right]'=n\,[f(x)]^{n-1}\,f'(x),\;\forall n\in\mathbb{R}\)
-%      \item [PrD9] \(\left[g(f(x))\right]'=g'(f(x))\cdot f'(x)\)
-%    \end{itemize}
-%	  \end{multicols}
-%  Les utiliser pour calculer les dérivées des fonctions suivantes, en donnant les réponses sans racine au dénominateur et sans exposant numérique négatif ou fractionnaire :
-%    \begin{tasks}(2)
-%      \task \(f(x)=3x\)
-%      \task \(f(x)=ax+b\), avec \(a\in\mathbb{R}^*\) et \(b\in\mathbb{R}\)
-%      \task \(f(x)=ax^2+bx+c\), avec \(a\in\mathbb{R}^*\) et \(b,c\in\mathbb{R}\)
-%      \task \(f(x)=\dfrac{1}{x}\)
-%      \task \(f(x)=\sqrt{x^2+1}\)
-%      \task \(f(x)=\dfrac{1}{x^2+1}\)
-%      \task \(f(x)=\dfrac{\sqrt{x}}{x}\)
-%      \task \(f(x)=-\dfrac{2}{x^3}\)
-%    \end{tasks}
-%  \item Reprendre l’activité 1 et la résoudre en utilisant les formules de dérivation.
-%  \item On considère la fonction $f$ définie par \(f(x)=\dfrac{x^3}{3}-2x^2+3x\)
-%\begin{tasks}(1)
-%  \task Calculer la dérivée de \(f\).
-%  \task Déterminer l’équation de la tangente au graphe de \(f\) au point \((0;0)\).
-%  \task Trouver un autre point du graphe de \(f\) en lequel la tangente est parallèle à la précédente.
-%  \task Déterminer les (deux !) coordonnées des points de la courbe représentative de \(f\) en lesquels la tangente est horizontale.
-%  \task Utiliser vos résultats pour tracer la courbe représentative de la fonction \(f\) et les tangentes trouvées aux questions b. et c.
-%\end{tasks}
-%\end{enumerate}
-%\end{activite}
-%
-%
-%\begin{activite}{Une dérivée importante}
-%\tcblower
-%On considère la fonction \(f\) définie par \(f(x)=x^n\), avec \(n\in\mathbb{R}\).
-%\begin{tasks}(1)
-%  \task Calculer \(f'(x)\) pour \(n=1\), \(n=2\), \(n=0\), \(n=0,5\).
-%  \task Énoncer une conjecture.
-%  \task* La démontrer dans les cas suivants :
-%  \begin{multicols}{2}
-%    \begin{enumerate}
-%      \item \(n\in\mathbb{N}^*\)
-%      \item \(n\in\mathbb{Z}_-\)
-%      \item \(n\) de la forme \(\dfrac{1}{m}\) avec \(m\in\mathbb{N}^*\)
-%      \item \(n\in\mathbb{Q}\)
-%    \end{enumerate}
-%  \end{multicols}
-%\end{tasks}
-%\end{activite}
-%
-%
-%\begin{activite}{Extrema de \(f\) en \(a\) et dérivée \(f'(a)\)}
-%\tcblower
-%Nous avons vu que l’intention qui a justifié la construction de l’outil dérivée était la recherche d’extrema locaux d’une fonction donnée. Il s’agit maintenant d’aller au bout de cette démarche et d’expliciter le lien qui existe entre dérivée de \(f\) et extrema locaux de \(f'\).
-%
-%\begin{tasks}(1)
-%  \task Donner une définition précise de la notion d’extremum global et local. Illustrer avec des exemples.
-%  \task Utiliser GeoGebra pour représenter des fonctions polynomiales et leur dérivée en explorant le lien supposé entre dérivée de \(f\) et extrema locaux de \(f'\).
-%  \task Que penser en particulier des conjectures suivantes :
-%    \begin{enumerate}
-%      \item Conjecture 1 : Si \(f : \mathbb{R}\to\mathbb{R}\) et \(a\in\mathbb{R}\) tel que \(f'(a)=0\), alors \(f\) admet un extremum local en \(a\).
-%      \item Conjecture 2 : Si \(f : \mathbb{R}\to\mathbb{R}\) et \(a\in\mathbb{R}\) tel que \(f\) admet un extremum local en \(a\), alors \(f'(a)=0\).
-%    \end{enumerate}
-%  \task Un point critique est un zéro de la dérivée. Les conjectures suivantes sont-elles vraies ou fausses ?
-%    \begin{enumerate}
-%      \item Conjecture 1 : Si \(f\) admet un point critique en \(a\), alors \(f'(a)=0\).
-%      \item Conjecture 2 : Un calcul de dérivée est toujours une indétermination de type \(\dfrac{0}{0}\).
-%    \end{enumerate}
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{(Dé)croissance de \(f\) en \(a\) et signe de \(f'(a)\)}
-%\tcblower
-%Nous avons vu que l’intention qui a justifié la construction de l’outil dérivée était la recherche d’extrema locaux d’une fonction donnée. Il s’agit maintenant d’aller au bout de cette démarche et d’expliciter le lien qui existe entre dérivée de \(f\) et extrema locaux de \(f'\). Il nous faut passer à une étude plus globale du comportement de \(f\)\ldots
-%
-%\begin{tasks}(1)
-%  \task Donner une définition précise de la notion de (dé)croissance et de (dé)croissance stricte d’une fonction. Illustrer avec des exemples.
-%  \task On considère le théorème suivant :
-%
-%  Soit \(f\) définie sur un intervalle \(I\). Alors on a :
-%  \begin{itemize}
-%	  \item si $f'(x)>0,\ \forall\,x\in I$, alors $f$ est croissante sur $I$,
-%\item si $f'(x)<0,\ \forall\,x\in I$, alors $f$ est décroissante sur $I$,
-%\item si $f'(x)=0,\ \forall\,x\in I,$ alors $f$ est constante sur $I$.
-%\end{itemize}
-%  Illustrer ce théorème avec des exemples.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Deuxième dérivée ?}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Donner la définition de la notion de deuxième dérivée de \(f\) en illustrant avec des exemples.
-%  \task Que peut-on dire de la deuxième dérivée en \(a=0\) des fonctions \(f\) et \(g\) définies par
-%  \[
-%    f(x)=x^3
-%    \quad\text{et}\quad
-%    g(x)=\sqrt[3]{x}.
-%  \]
-%  \task Illustrer l’intérêt de cette notion en considérant la fonction \(f\) définie par
-%  \[
-%    f(x)=x^4+x^3+\dfrac{1}{8}.
-%  \]
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Optimisation}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Reprendre le problème initial de déménagement et le résoudre enfin complètement.
-%  \task Une personne désire clôturer un terrain rectangulaire de $400~\text{m}^2$ dont un côté s’appuie sur le bord rectiligne d’une rivière, ce côté ne nécessitant pas de clôture. Déterminer les dimensions \(x\) et \(y\) du terrain pour que la longueur de la clôture soit minimale.
-%  \task Énoncer une méthode pour résoudre les problèmes d’optimisation.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Optimisation +}
-%\tcblower
-%On considère la représentation graphique de la fonction \(f\) définie par
-%\[
-%  f(x)=\sqrt{x}-2
-%\]
-%et un point \(A(a;f(a))\) de cette courbe avec \(a<4\).
-%
-%\begin{center}
-%	GRAPHIC
-%% (Graphique de la fonction et du triangle ABC ici)
-%\end{center}
-%
-%La tangente \(t\) à \(f\) en \(A\) coupe l’axe \(O_x\) en \(B\). On s’intéresse à l’aire du triangle \(ABC\), où \(C(a;0)\) est le point de l’axe \(O_x\) d’abscisse \(a\).
-%
-%\begin{tasks}(1)
-%  \task Montrer que l’aire du triangle \(ABC\) vaut
-%  \[
-%    a\sqrt{a} \;-\; 4a \;+\; 4\sqrt{a}.
-%  \]
-%  \task Déterminer la valeur de \(a\) pour que cette aire soit maximale.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Asymptotes}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Définir et illustrer les notions d’asymptote verticale et horizontale.
-%  \task Vrai ou faux ? Justifier.
-%    \begin{enumerate}
-%      \item Une fonction peut avoir plusieurs asymptotes horizontales ?
-%      \item La courbe représentative d’une fonction ne coupe jamais son asymptote horizontale.
-%      \item La courbe représentative d’une fonction ne coupe jamais son asymptote verticale.
-%    \end{enumerate}
-%  \task Déterminer toutes les asymptotes de la fonction \(f\) déterminée par
-%  \[
-%    f(x)=\dfrac{x^2 - x}{2x^2 + 2x - 4}
-%  \]
-%  et interpréter graphiquement.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Asymptotes obliques}
-%\tcblower
-%Lorsqu'on étudie une fonction, on n'a parfois besoin pour produire une représentation graphique de qualité de récolter plus d'informations que ce qu'on sait déjà faire.
-%\begin{tasks}(1)
-%  \task Définir et illustrer la notion d'asymptote oblique.
-%  \task Considérons les deux fonctions définies ainsi : 
-%  \[
-%    f(x)=\dfrac{1}{x^2-1}+2x-1
-%    \quad\text{et}\quad
-%    g(x)=\dfrac{2x^2-1}{x-1}.
-%  \]
-%  \begin{enumerate}
-%    \item Déterminer leurs asymptotes obliques.
-%    \item Interpréter graphiquement.
-%  \end{enumerate}
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Tout en un}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
-%  \[
-%    f(x)=\dfrac{2x^4+4x^3-2x^2}{-x^3+x^2+x-1}
-%  \]
-%  et interpréter graphiquement.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Double asymptote}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
-%  \[
-%    f(x)=x-\sqrt{x^2-1}
-%  \]
-%  et interpréter graphiquement.
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Étude de fonction}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Étudier les fonctions définies par :
-%  \begin{enumerate}
-%    \item \(f(x)=x^3-4x\).
-%    \item \(f(x)=x^4+\dfrac{3}{x}+\dfrac{1}{8}\).
-%    \item \(f(x)=\dfrac{2x^2+2x-12}{3x-2-x^2}\).
-%  \end{enumerate}
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Étude de fonction}
-%\tcblower
-%\begin{tasks}(1)
-%  \task Étudier les fonctions définies par :
-%  \begin{enumerate}
-%    \item \(f(x)=\dfrac{x^2}{x+2}\).
-%    \item \(f(x)=\dfrac{(x-1)^3}{4(x^2+1)^2}\).
-%  \end{enumerate}
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Approche physique de la notion de dérivée}
-%\tcblower
-%On appelle mouvement rectiligne un mouvement au cours duquel un objet se déplace suivant une ligne droite.
-%
-%La vitesse moyenne \(v\) d’un objet qui parcourt une distance \(d\) en un temps \(t\) est
-%\[
-%  v = \dfrac{d}{t}.
-%\]
-%
-%La vitesse de \(P\) à l’instant \(t\) (aussi appelée vitesse instantanée de \(P\) en \(t\)) est définie par
-%\[
-%  v(t) = \displaystyle\lim_{h\to 0}\dfrac{d(t+h) - d(t)}{h}.
-%\]
-%
-%Similairement, l’accélération de \(P\) en \(t\) est définie par
-%\[
-%  a(t) = \displaystyle\lim_{h\to 0}\dfrac{v(t+h) - v(t)}{h}.
-%\]
-%
-%\(v\) est la fonction vitesse de \(P\) et \(a\) la fonction accélération de \(P\).
-%
-%On tire un projectile à la verticale avec une vitesse initiale de 120 m/s. Après \(t\) secondes, selon les lois de la physique, sa distance au sol est donnée par
-%\[
-%  r(t) = 120\,t - 5\,t^2.
-%\]
-%
-%\begin{tasks}(1)
-%  \task Calculer le moment et la vitesse auxquels le projectile s’écrase au sol.
-%  \task Calculer l’altitude la plus élevée que le projectile atteigne.
-%  \task À quelle accélération le projectile est-il constamment soumis ?
-%\end{tasks}
-%\end{activite}
-%
-%\begin{activite}{Dérivées et économie}
-%\tcblower
-%L’analyse est aussi un puissant outil pour résoudre les problèmes qui se présentent dans le domaine de l’économie. Quand une fonction \(f\) décrit une grandeur économique, on emploie l’adjectif « marginal » pour caractériser sa dérivée \(f'\).
-%
-%À propos de la quantité \(x\) d’un bien, les économistes parlent des fonctions \(C\), \(c\), \(R\) et \(P\) pour désigner :
-%\begin{itemize}
-%  \item le coût de production \(C(x)\) de \(x\) unités ;
-%  \item le coût moyen de production d’une unité, défini par 
-%  \[
-%    c(x)=\dfrac{C(x)}{x};
-%  \]
-%  \item la recette \(R(x)\) de la vente de \(x\) unités ;
-%  \item le profit de la vente de \(x\) unités \(P\) défini par 
-%  \[
-%    P(x)=R(x)-C(x).
-%  \]
-%\end{itemize}
-%
-%La variable \(x\) est traitée comme un nombre réel même si, dans ce contexte, elle ne prend le plus souvent que des valeurs entières. De plus, on a \(x\ge0\), puisque la production d’un nombre négatif d’unités n’a pas de sens !
-%
-%Un fabricant de cassettes magnétiques dont les coûts mensuels fixes de production s’élèvent à CHF $8400$ et le coût de production par cassette à CHF $10$, les vend à CHF $17$ pièce :
-%
-%\begin{tasks}(1)
-%  \task Trouver les expressions de \(C(x)\), \(c(x)\), \(R(x)\) et \(P(x)\).
-%  \task Quelles sont les valeurs de ces fonctions lorsque \(x=1000\) ?
-%  \task Combien de cassettes doit-il fabriquer pour être en équilibre financier ?
-%\end{tasks}
-%
-%Les dérivées \(C'\), \(c'\), \(R'\) et \(P'\) des fonctions \(C,c,R\) et \(P\) portent le nom de coût marginal, coût moyen marginal, recette marginale et profit marginal, respectivement.
-%
-%La valeur \(C'(x)\) représente le coût marginal associé à la production de \(x\) unités du bien. Or la dérivée est un taux de variation, donc \(C'(x)\) traduit le taux de variation du coût en fonction du nombre d’unités produites.
-%
-%La même interprétation peut être donnée à propos de \(c'(x)\), \(R'(x)\) et \(P'(x)\).
-%
-%Pour la fonction de coût \(C\) et \(n\) un entier positif on a, par la définition de la dérivée :
-%\[
-%  C'(n)=\displaystyle\lim_{h\to0}\dfrac{C(n+h)-C(n)}{h}.
-%\]
-%Donc, si \(h\) est petit : \(C'(n)\approx\dfrac{C(n+1)-C(n)}{h}\).
-%
-%Lorsque le nombre d’unités produites est grand, les économistes considèrent que ce dernier quotient avec \(h=1\) est une bonne approximation du coût marginal, soit : \(C'(n)\approx C(n+1)-C(n)\).
-%
-%Dans ces conditions, le coût marginal associé à la production de \(n\) unités d’un bien est (approximativement) le coût de la production d’une unité supplémentaire. Certaines entreprises décrivent leurs coûts de production par une fonction du type : 
-%\[
-%  C(x)=a + bx + dx^2 + kx^3.
-%\]
-%La constante \(a\) représente les frais généraux comme le loyer, le chauffage, l’éclairage qui sont indépendants du nombre d’unités produites.
-%
-%Si \(b\) est le coût de production d’une unité et qu’aucun autre facteur n’intervient dans la production, alors \(bx\) représente le coût de la production de \(x\) unités du bien. Les termes \(dx^2\) et \(kx^3\) n’affecteront significativement le coût de production que pour de grandes valeurs de \(x\).
-%
-%Une firme fabrique le mécanisme électronique d’un jouet. Elle estime que le coût (en CHF) de fabrication de \(x\) mécanismes est donné par
-%\[
-%  C(x)=200 + 0,05\,x + 0,0001\,x^2.
-%\]
-%
-%\begin{tasks}(1)
-%	\task[d)] Quel est le coût total, le coût moyen et le coût marginal de la production de 500 unités, 1000 unités et 5000 unités ?
-%	\task[e)]  Comparer le coût marginal de la production de 1000 unités avec le coût de production de la mille et unième unité.
-%\end{tasks}
-%
-%Une ébénisterie fabrique des copies de bureau de style XVIII$^\text{e}$ siècle. Elle estime le coût hebdomadaire de fabrication de \(x\) bureaux (en CHF) à 
-%\[
-%  C(x)=x^3 -3x^2 -80x +500
-%\]
-%et les vend CHF $2440$ pièce.
-%
-%\begin{tasks}(1)
-%	\task[f)] Combien de bureaux doit-elle produire et vendre chaque semaine pour maximiser son profit ?
-%	\task[g)] À combien se monte ce profit hebdomadaire ?
-%\end{tasks}
-%
-%Pour déterminer le prix de vente d’un bien qu’elle fabrique, une entreprise doit tenir compte de plusieurs facteurs. Outre le coût de production et le profit souhaité, l’entreprise doit connaître l’impact d’un changement de prix sur la demande du consommateur. Certains biens, dits de nécessité, connaissent une demande quasi constante, indépendante d’une modification du prix. Mais d’autres biens dont le prix augmente risquent fort d’être moins demandés. Généralement, une entreprise peut estimer sur la base de l’expérience passée combien d’unités seront vendues en fonction du prix unitaire pratiqué où \(p(x)\) est \(p\) une certaine fonction. À une demande de \(x\) unités correspond le prix unitaire \(p(x)\). Voilà pourquoi la fonction \(p\) est appelée fonction de demande d’un bien. La recette totale est alors le produit du nombre d’unités vendues par le prix unitaire, soit 
-%\[
-%  R(x)=x\,p(x).
-%\]
-%
-%La demande marginale est la dérivée de \(p\).
-%
-%Désignons par \(S=p(x)\) le prix de vente unitaire associé à une demande de \(x\) unités. La fonction de demande est le plus souvent décroissante, donc \(p'(x)<0\) quel que soit \(x\). Les fonctions de demande se présentent parfois implicitement par une équation qui fait intervenir \(S\) et \(x\).
-%
-%La demande de \(x\) unités d’un produit est reliée à son prix de \(S\) CHF pièce par l’équation
-%\[
-%  2x + S^2 - 12000 = 0.
-%\]
-%
-%\begin{tasks}(1)
-%	\task[h)] Donner l’expression de la demande, de la demande marginale, de la recette et de la recette marginale.
-%	\task[i)] Quelles sont les valeurs de \(x\) et de \(p(x)\) qui conduisent à une recette maximale ?
-%	\task[j)]  Quel est le montant de cette recette maximale ?
-%\end{tasks}
-%\end{activite}
-%Rajouter de l'historique
-%\newpage
+\section{Activités}
+\begin{activite}
+Introduction géométrique à la notion de limite	
+	\tcblower
+
+Vous disposez d’un stock de plaques rectangulaires au contour rigide, mesurant 1,2 mètres de large et 2 mètres de long. Pour votre prochain déménagement, vous désirez construire des cartons, ouverts vers le haut (en forme de parallélépipèdes rectangles) selon le procédé suivant : on découpe dans les quatre coins de la plaque le même carré, puis on plie les côtés et on les scotche pour former la boîte.
+
+\hfill
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[>=latex]
+  % dimensions
+  \def\W{4}   % correspond à 2 m
+  \def\H{2.4} % correspond à 1,2 m
+  \def\x{0.6} % côté du carré découpé
+
+  % plaque avec coins découpés
+  \draw (0,0) rectangle (\W,\H);
+  \draw[dashed] (0,0) -- (\x,0) -- (\x,\x) -- (0,\x) -- cycle;
+  \draw[dashed] (\W,0) -- (\W-\x,0) -- (\W-\x,\x) -- (\W,\x) -- cycle;
+  \draw[dashed] (0,\H) -- (\x,\H) -- (\x,\H-\x) -- (0,\H-\x) -- cycle;
+  \draw[dashed] (\W,\H) -- (\W-\x,\H) -- (\W-\x,\H-\x) -- (\W,\H-\x) -- cycle;
+
+  % cotes
+  \draw[<->] (0,-0.5) -- (\W,-0.5) node[midway,below]{$2\mathrm{\,m}$};
+  \draw[<->] (\W+0.5,0) -- (\W+0.5,\H) node[midway,right]{$1{,}2\mathrm{\,m}$};
+\end{tikzpicture}
+
+}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[>=latex]
+  % plan du carton (réseau)
+  \def\W{3.4}
+  \def\H{1.8}
+  \def\x{0.6}
+
+  % face centrale
+  \draw (0,0) rectangle (\W,\H);
+  % rabats
+  \draw (0,\H) rectangle (\W,\H+\x);      % dessus
+  \draw (0,-\x) rectangle (\W,0);         % dessous
+  \draw (-\x,0) rectangle (0,\H);         % gauche
+  \draw (\W,0) rectangle (\W+\x,\H);      % droite
+
+  % lignes de pliage
+  \draw[dashed] (0,0) -- (\W,0);
+  \draw[dashed] (0,\H) -- (\W,\H);
+  \draw[dashed] (0,0) -- (0,\H);
+  \draw[dashed] (\W,0) -- (\W,\H);
+\end{tikzpicture}
+}
+\end{minipage}
+\hfill
+
+Comment obtenir des cartons de volume maximal ?
+\end{activite}
+\begin{activite}
+	\tcblower
+
+Une population de 25\,000 individus (au temps $t=0$) croît selon la formule
+\[
+  N(t)
+  = 25000 + 45\,t^2,
+\]
+où $t$ est mesuré en jours.
+
+\begin{tasks}
+  \task Calculer la vitesse moyenne à laquelle croît la population entre les instants donnés :
+  \begin{multicols}{3}	
+    \begin{enumerate}
+      \item $t_1 = 0$ et $t_2 = 2$
+      \item $t_1 = 2$ et $t_2 = 3$
+      \item $t_1 = 1$ et $t_2 = 4$
+      \item $t_1 = 2$ et $t_2 = 5$
+    \end{enumerate}
+\end{multicols}
+  \task Calculer la vitesse instantanée de la croissance à l’instant $\displaystyle t = 2$.
+\end{tasks}
+\end{activite}
+
+\begin{activite}
+\tcblower
+On considère la fonction $f$ définie par
+\[
+  f(x) = 2x^2 - 1.
+\]
+
+\begin{tasks}(1)
+  \task Quel est le taux (moyen) de variation entre :
+  \begin{multicols}{2}	
+    \begin{enumerate}
+      \item $(0; f(0))$ et $(2; f(2))$ ?
+      \item $(0; f(0))$ et $(1; f(1))$ ?
+    \end{enumerate}
+  \end{multicols}
+  \task Quel est le taux instantané de variation en :
+  \begin{multicols}{3}	
+    \begin{enumerate}
+      \item $(0; f(0))$ ?
+      \item $(1; f(1))$ ?
+      \item $(2; f(2))$ ?
+    \end{enumerate}
+  \end{multicols}
+  \task Que peut-on dire de la pente de la droite tangente à la courbe représentative de $f$ en :
+  \begin{multicols}{3}	
+    \begin{enumerate}
+      \item $(0; f(0))$ ?
+      \item $(1; f(1))$ ?
+      \item $(2; f(2))$ ?
+    \end{enumerate}
+\end{multicols}
+\end{tasks}
+
+Interpréter graphiquement l’exercice.
+\end{activite}
+
+\begin{activite}{Nombre dérivé}
+\tcblower
+On considère la fonction \(f\) définie par
+\[
+  f(x)=\dfrac{1}{2x}.
+\]
+\begin{tasks}(1)
+  \task Calculer le taux de variation de la fonction \(f\) entre deux points d’abscisses 1 et \(x\).
+  \task Calculer le nombre dérivé de la fonction \(f\) en 1 et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Toujours possible ?}
+\tcblower
+On considère la fonction \(f\) définie par
+\[
+  f(x)=\lvert x-1\rvert.
+\]
+\begin{tasks}(1)
+  \task Représenter graphiquement cette fonction.
+  \task Estimer graphiquement \(f'(2)\) et \(f'(0)\).
+  \task Calculer \(f'(2)\) et \(f'(0)\).
+  \task Estimer graphiquement \(f'(1)\).
+  \task Calculer \(f'(1)\).
+  \task Comment s’exprime graphiquement une situation de non dérivabilité ?
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Fonction dérivée}
+\tcblower
+On considère la fonction \(f\) définie par
+\[
+  f(x)=\dfrac{1}{2x}.
+\]
+\begin{tasks}(1)
+  \task Calculer le taux de variation de la fonction \(f\) entre deux points d’abscisses \(a\) et \(x\).
+  \task Calculer le nombre dérivé de la fonction \(f\) entre deux points d’abscisses \(a\) et \(x\). On obtient une nouvelle fonction : la dérivée de \(f\).
+  \task Existe-t-il un point du graphe de \(f\) en lequel la tangente à la courbe représentative de \(f\) (ou par raccourci « à \(f\) ») soit horizontale ? Justifier et interpréter graphiquement.
+  \task En quel(s) point(s) du graphe de \(f\) la pente de la tangente à \(f\) est-elle égale à \(-\dfrac{1}{12}\) ?
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Notations}
+\tcblower
+On considère la fonction \(f\) définie par
+\[
+  f(x)=x^2-1.
+\]
+\begin{tasks}(1)
+  \task Déterminer la dérivée de \(f\) en \(a\).
+  \task Interpréter graphiquement.
+  \task Considérer \(x\) et \(x+h\) au lieu de \(a\) et \(x\) et déterminer la dérivée de \(f\) en \(x\).
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Équation de la tangente}
+\tcblower
+On considère une fonction dérivable en \((a;f(a))\) et on s’intéresse à la tangente à (la courbe représentative de) \(f\) en \((a;f(a))\). Écrire une conjecture quant à son équation, l’illustrer et la démontrer.
+\end{activite}
+
+\begin{activite}{Tangentes extérieures}
+\tcblower
+On considère la fonction \(f\) définie par
+\[
+  f(x)=\dfrac{x^4}{x+5}.
+\]
+\begin{tasks}(1)
+  \task Déterminer les coordonnées d’un point \(P\) tel que la tangente à la courbe représentative de \(f\) au point \(P\) passe par l’origine \((0;0)\) du repère (s’il y a plusieurs solutions, les trouver toutes).
+  \task Vérifier graphiquement en représentant la courbe et les tangentes trouvées.
+\end{tasks}
+\end{activite}
+
+
+\begin{activite}{Graphiquement}
+\tcblower
+\begin{tasks}(1)
+  \task Parmi les fonctions représentées ci-dessous, certaines sont dérivées d’une autre. Il s’agit de les retrouver :
+\end{tasks}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_1$},
+    xmin=-5, xmax=5, ymin=-4, ymax=4,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] {(32*x^3 - 24*x)*exp(-2*x^2)};
+  \end{axis}
+\end{tikzpicture}\quad
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_2$},
+    xmin=-5, xmax=5, ymin=-4, ymax=4,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] {(x^3 - 9*x)/(6*sqrt(3))};
+  \end{axis}
+\end{tikzpicture}\quad
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_3$},
+    xmin=-5, xmax=5, ymin=-3, ymax=4,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] coordinates {
+      (-4,0) (-3,-2) (-1.5,0.5) (0,0) (1.5,0.5) (3,-2) (4,0)
+    };
+  \end{axis}
+\end{tikzpicture}
+
+\vspace{1em}
+
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_4$},
+    xmin=-5, xmax=5, ymin=-4, ymax=4,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] {4*(0.5 - 2*x^2)*exp(-2*x^2)};
+  \end{axis}
+\end{tikzpicture}\quad
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_5$},
+    xmin=-5, xmax=5, ymin=-4, ymax=4,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] {((x+3.5)*(x-1.5)*(x-2))/10.5};
+  \end{axis}
+\end{tikzpicture}\quad
+\begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    title={$f_6$},
+    xmin=-5, xmax=5, ymin=-3, ymax=1,
+    axis lines=middle, grid=both, minor tick num=1,
+    width=5cm, height=4cm
+  ]
+    \addplot[smooth,thick] {0.58642*(x^2 - 3.24)};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{activite}
+
+
+\begin{activite}{Vrai ou faux ?}
+\tcblower
+Vrai ou faux ? Justifier.
+\begin{tasks}(1)
+  \task Si \(f\) est une fonction définie sur un intervalle ouvert \(I\) et si \(a\in I\), alors \(f\) est dérivable en \(a\).
+  \task Soit \(f\) la fonction définie par \(f(x)=x^2\). Si \(a\) et \(b\) sont deux nombres réels quelconques, alors le taux de variation moyen de \(f\) entre \(a\) et \(b\) est égal à \(f'\left(\dfrac{a+b}{2}\right)\).
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Formules de dérivation}
+\tcblower
+\begin{enumerate}
+  \item Rappels de fonctions élémentaires dont on a calculé la dérivée à l’aide de la définition :
+	  \begin{multicols}{3}	  	
+    \begin{itemize}
+      \item [D1] \(\mathrm{cte}'=0\)
+      \item [D2] \((x)'=1\)
+      \item [D3] \((ax+b)'=a\)
+      \item [D4] \((x^2)'=2x\)
+      \item [D5] \((ax^2+bx+c)'=2a\,x+b\)
+      \item [D6] \((x^3)'=3x^2\)
+      \item [D7] \(\left(\sqrt{x}\right)'=\dfrac{1}{2\sqrt{x}}\)
+      \item [D8] \(\left(\tfrac{1}{x}\right)'=-\dfrac{1}{x^2}\)
+    \end{itemize}
+\end{multicols}
+  \item Il est possible d’accélérer le calcul de \(f'(x)\), sans avoir besoin de passer par de fastidieux calculs de limites… Dans la table numérique, on trouve un formulaire de ce genre :
+	  \begin{multicols}{2}	  	
+    \begin{itemize}
+      \item [PrD1] \([\mathrm{cte}\cdot f]'=\mathrm{cte}\cdot f'\)
+      \item [PrD2] \([f+g]'=f'+g'\)
+      \item [PrD3] \([f-g]'=f'-g'\)
+      \item [PrD4] \([f\cdot g]'=f'\cdot g+f\cdot g'\)
+      \item [PrD5] \(\left[\dfrac{1}{f}\right]'=-\dfrac{f'}{f^2}\)
+      \item [PrD6] \(\left[\dfrac{f}{g}\right]'=\dfrac{f'\,g - f\,g'}{g^2}\)
+      \item [PrD7] \(\left[\dfrac{\mathrm{cte}}{f}\right]'=-\mathrm{cte}\,\dfrac{f'}{f^2}\)
+      \item [PrD8] \(\left[(f(x))^n\right]'=n\,[f(x)]^{n-1}\,f'(x),\;\forall n\in\mathbb{R}\)
+      \item [PrD9] \(\left[g(f(x))\right]'=g'(f(x))\cdot f'(x)\)
+    \end{itemize}
+	  \end{multicols}
+  Les utiliser pour calculer les dérivées des fonctions suivantes, en donnant les réponses sans racine au dénominateur et sans exposant numérique négatif ou fractionnaire :
+    \begin{tasks}(2)
+      \task \(f(x)=3x\)
+      \task \(f(x)=ax+b\), avec \(a\in\mathbb{R}^*\) et \(b\in\mathbb{R}\)
+      \task \(f(x)=ax^2+bx+c\), avec \(a\in\mathbb{R}^*\) et \(b,c\in\mathbb{R}\)
+      \task \(f(x)=\dfrac{1}{x}\)
+      \task \(f(x)=\sqrt{x^2+1}\)
+      \task \(f(x)=\dfrac{1}{x^2+1}\)
+      \task \(f(x)=\dfrac{\sqrt{x}}{x}\)
+      \task \(f(x)=-\dfrac{2}{x^3}\)
+    \end{tasks}
+  \item Reprendre l’activité 1 et la résoudre en utilisant les formules de dérivation.
+  \item On considère la fonction $f$ définie par \(f(x)=\dfrac{x^3}{3}-2x^2+3x\)
+\begin{tasks}(1)
+  \task Calculer la dérivée de \(f\).
+  \task Déterminer l’équation de la tangente au graphe de \(f\) au point \((0;0)\).
+  \task Trouver un autre point du graphe de \(f\) en lequel la tangente est parallèle à la précédente.
+  \task Déterminer les (deux !) coordonnées des points de la courbe représentative de \(f\) en lesquels la tangente est horizontale.
+  \task Utiliser vos résultats pour tracer la courbe représentative de la fonction \(f\) et les tangentes trouvées aux questions b. et c.
+\end{tasks}
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}{Une dérivée importante}
+\tcblower
+On considère la fonction \(f\) définie par \(f(x)=x^n\), avec \(n\in\mathbb{R}\).
+\begin{tasks}(1)
+  \task Calculer \(f'(x)\) pour \(n=1\), \(n=2\), \(n=0\), \(n=0,5\).
+  \task Énoncer une conjecture.
+  \task* La démontrer dans les cas suivants :
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item \(n\in\mathbb{N}^*\)
+      \item \(n\in\mathbb{Z}_-\)
+      \item \(n\) de la forme \(\dfrac{1}{m}\) avec \(m\in\mathbb{N}^*\)
+      \item \(n\in\mathbb{Q}\)
+    \end{enumerate}
+  \end{multicols}
+\end{tasks}
+\end{activite}
+
+
+\begin{activite}{Extrema de \(f\) en \(a\) et dérivée \(f'(a)\)}
+\tcblower
+Nous avons vu que l’intention qui a justifié la construction de l’outil dérivée était la recherche d’extrema locaux d’une fonction donnée. Il s’agit maintenant d’aller au bout de cette démarche et d’expliciter le lien qui existe entre dérivée de \(f\) et extrema locaux de \(f'\).
+
+\begin{tasks}(1)
+  \task Donner une définition précise de la notion d’extremum global et local. Illustrer avec des exemples.
+  \task Utiliser GeoGebra pour représenter des fonctions polynomiales et leur dérivée en explorant le lien supposé entre dérivée de \(f\) et extrema locaux de \(f'\).
+  \task Que penser en particulier des conjectures suivantes :
+    \begin{enumerate}
+      \item Conjecture 1 : Si \(f : \mathbb{R}\to\mathbb{R}\) et \(a\in\mathbb{R}\) tel que \(f'(a)=0\), alors \(f\) admet un extremum local en \(a\).
+      \item Conjecture 2 : Si \(f : \mathbb{R}\to\mathbb{R}\) et \(a\in\mathbb{R}\) tel que \(f\) admet un extremum local en \(a\), alors \(f'(a)=0\).
+    \end{enumerate}
+  \task Un point critique est un zéro de la dérivée. Les conjectures suivantes sont-elles vraies ou fausses ?
+    \begin{enumerate}
+      \item Conjecture 1 : Si \(f\) admet un point critique en \(a\), alors \(f'(a)=0\).
+      \item Conjecture 2 : Un calcul de dérivée est toujours une indétermination de type \(\dfrac{0}{0}\).
+    \end{enumerate}
+\end{tasks}
+\end{activite}
+
+\begin{activite}{(Dé)croissance de \(f\) en \(a\) et signe de \(f'(a)\)}
+\tcblower
+Nous avons vu que l’intention qui a justifié la construction de l’outil dérivée était la recherche d’extrema locaux d’une fonction donnée. Il s’agit maintenant d’aller au bout de cette démarche et d’expliciter le lien qui existe entre dérivée de \(f\) et extrema locaux de \(f'\). Il nous faut passer à une étude plus globale du comportement de \(f\)\ldots
+
+\begin{tasks}(1)
+  \task Donner une définition précise de la notion de (dé)croissance et de (dé)croissance stricte d’une fonction. Illustrer avec des exemples.
+  \task On considère le théorème suivant :
+
+  Soit \(f\) définie sur un intervalle \(I\). Alors on a :
+  \begin{itemize}
+	  \item si $f'(x)>0,\ \forall\,x\in I$, alors $f$ est croissante sur $I$,
+\item si $f'(x)<0,\ \forall\,x\in I$, alors $f$ est décroissante sur $I$,
+\item si $f'(x)=0,\ \forall\,x\in I,$ alors $f$ est constante sur $I$.
+\end{itemize}
+  Illustrer ce théorème avec des exemples.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Deuxième dérivée ?}
+\tcblower
+\begin{tasks}(1)
+  \task Donner la définition de la notion de deuxième dérivée de \(f\) en illustrant avec des exemples.
+  \task Que peut-on dire de la deuxième dérivée en \(a=0\) des fonctions \(f\) et \(g\) définies par
+  \[
+    f(x)=x^3
+    \quad\text{et}\quad
+    g(x)=\sqrt[3]{x}.
+  \]
+  \task Illustrer l’intérêt de cette notion en considérant la fonction \(f\) définie par
+  \[
+    f(x)=x^4+x^3+\dfrac{1}{8}.
+  \]
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Optimisation}
+\tcblower
+\begin{tasks}(1)
+  \task Reprendre le problème initial de déménagement et le résoudre enfin complètement.
+  \task Une personne désire clôturer un terrain rectangulaire de $400~\text{m}^2$ dont un côté s’appuie sur le bord rectiligne d’une rivière, ce côté ne nécessitant pas de clôture. Déterminer les dimensions \(x\) et \(y\) du terrain pour que la longueur de la clôture soit minimale.
+  \task Énoncer une méthode pour résoudre les problèmes d’optimisation.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Optimisation +}
+\tcblower
+On considère la représentation graphique de la fonction \(f\) définie par
+\[
+  f(x)=\sqrt{x}-2
+\]
+et un point \(A(a;f(a))\) de cette courbe avec \(a<4\).
+
+\begin{center}
+	GRAPHIC
+% (Graphique de la fonction et du triangle ABC ici)
+\end{center}
+
+La tangente \(t\) à \(f\) en \(A\) coupe l’axe \(O_x\) en \(B\). On s’intéresse à l’aire du triangle \(ABC\), où \(C(a;0)\) est le point de l’axe \(O_x\) d’abscisse \(a\).
+
+\begin{tasks}(1)
+  \task Montrer que l’aire du triangle \(ABC\) vaut
+  \[
+    a\sqrt{a} \;-\; 4a \;+\; 4\sqrt{a}.
+  \]
+  \task Déterminer la valeur de \(a\) pour que cette aire soit maximale.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Asymptotes}
+\tcblower
+\begin{tasks}(1)
+  \task Définir et illustrer les notions d’asymptote verticale et horizontale.
+  \task Vrai ou faux ? Justifier.
+    \begin{enumerate}
+      \item Une fonction peut avoir plusieurs asymptotes horizontales ?
+      \item La courbe représentative d’une fonction ne coupe jamais son asymptote horizontale.
+      \item La courbe représentative d’une fonction ne coupe jamais son asymptote verticale.
+    \end{enumerate}
+  \task Déterminer toutes les asymptotes de la fonction \(f\) déterminée par
+  \[
+    f(x)=\dfrac{x^2 - x}{2x^2 + 2x - 4}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Asymptotes obliques}
+\tcblower
+Lorsqu'on étudie une fonction, on n'a parfois besoin pour produire une représentation graphique de qualité de récolter plus d'informations que ce qu'on sait déjà faire.
+\begin{tasks}(1)
+  \task Définir et illustrer la notion d'asymptote oblique.
+  \task Considérons les deux fonctions définies ainsi : 
+  \[
+    f(x)=\dfrac{1}{x^2-1}+2x-1
+    \quad\text{et}\quad
+    g(x)=\dfrac{2x^2-1}{x-1}.
+  \]
+  \begin{enumerate}
+    \item Déterminer leurs asymptotes obliques.
+    \item Interpréter graphiquement.
+  \end{enumerate}
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Tout en un}
+\tcblower
+\begin{tasks}(1)
+  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
+  \[
+    f(x)=\dfrac{2x^4+4x^3-2x^2}{-x^3+x^2+x-1}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Double asymptote}
+\tcblower
+\begin{tasks}(1)
+  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
+  \[
+    f(x)=x-\sqrt{x^2-1}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Étude de fonction}
+\tcblower
+\begin{tasks}(1)
+  \task Étudier les fonctions définies par :
+  \begin{enumerate}
+    \item \(f(x)=x^3-4x\).
+    \item \(f(x)=x^4+\dfrac{3}{x}+\dfrac{1}{8}\).
+    \item \(f(x)=\dfrac{2x^2+2x-12}{3x-2-x^2}\).
+  \end{enumerate}
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Étude de fonction}
+\tcblower
+\begin{tasks}(1)
+  \task Étudier les fonctions définies par :
+  \begin{enumerate}
+    \item \(f(x)=\dfrac{x^2}{x+2}\).
+    \item \(f(x)=\dfrac{(x-1)^3}{4(x^2+1)^2}\).
+  \end{enumerate}
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Approche physique de la notion de dérivée}
+\tcblower
+On appelle mouvement rectiligne un mouvement au cours duquel un objet se déplace suivant une ligne droite.
+
+La vitesse moyenne \(v\) d’un objet qui parcourt une distance \(d\) en un temps \(t\) est
+\[
+  v = \dfrac{d}{t}.
+\]
+
+La vitesse de \(P\) à l’instant \(t\) (aussi appelée vitesse instantanée de \(P\) en \(t\)) est définie par
+\[
+  v(t) = \displaystyle\lim_{h\to 0}\dfrac{d(t+h) - d(t)}{h}.
+\]
+
+Similairement, l’accélération de \(P\) en \(t\) est définie par
+\[
+  a(t) = \displaystyle\lim_{h\to 0}\dfrac{v(t+h) - v(t)}{h}.
+\]
+
+\(v\) est la fonction vitesse de \(P\) et \(a\) la fonction accélération de \(P\).
+
+On tire un projectile à la verticale avec une vitesse initiale de 120 m/s. Après \(t\) secondes, selon les lois de la physique, sa distance au sol est donnée par
+\[
+  r(t) = 120\,t - 5\,t^2.
+\]
+
+\begin{tasks}(1)
+  \task Calculer le moment et la vitesse auxquels le projectile s’écrase au sol.
+  \task Calculer l’altitude la plus élevée que le projectile atteigne.
+  \task À quelle accélération le projectile est-il constamment soumis ?
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Dérivées et économie}
+\tcblower
+L’analyse est aussi un puissant outil pour résoudre les problèmes qui se présentent dans le domaine de l’économie. Quand une fonction \(f\) décrit une grandeur économique, on emploie l’adjectif « marginal » pour caractériser sa dérivée \(f'\).
+
+À propos de la quantité \(x\) d’un bien, les économistes parlent des fonctions \(C\), \(c\), \(R\) et \(P\) pour désigner :
+\begin{itemize}
+  \item le coût de production \(C(x)\) de \(x\) unités ;
+  \item le coût moyen de production d’une unité, défini par 
+  \[
+    c(x)=\dfrac{C(x)}{x};
+  \]
+  \item la recette \(R(x)\) de la vente de \(x\) unités ;
+  \item le profit de la vente de \(x\) unités \(P\) défini par 
+  \[
+    P(x)=R(x)-C(x).
+  \]
+\end{itemize}
+
+La variable \(x\) est traitée comme un nombre réel même si, dans ce contexte, elle ne prend le plus souvent que des valeurs entières. De plus, on a \(x\ge0\), puisque la production d’un nombre négatif d’unités n’a pas de sens !
+
+Un fabricant de cassettes magnétiques dont les coûts mensuels fixes de production s’élèvent à CHF $8400$ et le coût de production par cassette à CHF $10$, les vend à CHF $17$ pièce :
+
+\begin{tasks}(1)
+  \task Trouver les expressions de \(C(x)\), \(c(x)\), \(R(x)\) et \(P(x)\).
+  \task Quelles sont les valeurs de ces fonctions lorsque \(x=1000\) ?
+  \task Combien de cassettes doit-il fabriquer pour être en équilibre financier ?
+\end{tasks}
+
+Les dérivées \(C'\), \(c'\), \(R'\) et \(P'\) des fonctions \(C,c,R\) et \(P\) portent le nom de coût marginal, coût moyen marginal, recette marginale et profit marginal, respectivement.
+
+La valeur \(C'(x)\) représente le coût marginal associé à la production de \(x\) unités du bien. Or la dérivée est un taux de variation, donc \(C'(x)\) traduit le taux de variation du coût en fonction du nombre d’unités produites.
+
+La même interprétation peut être donnée à propos de \(c'(x)\), \(R'(x)\) et \(P'(x)\).
+
+Pour la fonction de coût \(C\) et \(n\) un entier positif on a, par la définition de la dérivée :
+\[
+  C'(n)=\displaystyle\lim_{h\to0}\dfrac{C(n+h)-C(n)}{h}.
+\]
+Donc, si \(h\) est petit : \(C'(n)\approx\dfrac{C(n+1)-C(n)}{h}\).
+
+Lorsque le nombre d’unités produites est grand, les économistes considèrent que ce dernier quotient avec \(h=1\) est une bonne approximation du coût marginal, soit : \(C'(n)\approx C(n+1)-C(n)\).
+
+Dans ces conditions, le coût marginal associé à la production de \(n\) unités d’un bien est (approximativement) le coût de la production d’une unité supplémentaire. Certaines entreprises décrivent leurs coûts de production par une fonction du type : 
+\[
+  C(x)=a + bx + dx^2 + kx^3.
+\]
+La constante \(a\) représente les frais généraux comme le loyer, le chauffage, l’éclairage qui sont indépendants du nombre d’unités produites.
+
+Si \(b\) est le coût de production d’une unité et qu’aucun autre facteur n’intervient dans la production, alors \(bx\) représente le coût de la production de \(x\) unités du bien. Les termes \(dx^2\) et \(kx^3\) n’affecteront significativement le coût de production que pour de grandes valeurs de \(x\).
+
+Une firme fabrique le mécanisme électronique d’un jouet. Elle estime que le coût (en CHF) de fabrication de \(x\) mécanismes est donné par
+\[
+  C(x)=200 + 0,05\,x + 0,0001\,x^2.
+\]
+
+\begin{tasks}(1)
+	\task[d)] Quel est le coût total, le coût moyen et le coût marginal de la production de 500 unités, 1000 unités et 5000 unités ?
+	\task[e)]  Comparer le coût marginal de la production de 1000 unités avec le coût de production de la mille et unième unité.
+\end{tasks}
+
+Une ébénisterie fabrique des copies de bureau de style XVIII$^\text{e}$ siècle. Elle estime le coût hebdomadaire de fabrication de \(x\) bureaux (en CHF) à 
+\[
+  C(x)=x^3 -3x^2 -80x +500
+\]
+et les vend CHF $2440$ pièce.
+
+\begin{tasks}(1)
+	\task[f)] Combien de bureaux doit-elle produire et vendre chaque semaine pour maximiser son profit ?
+	\task[g)] À combien se monte ce profit hebdomadaire ?
+\end{tasks}
+
+Pour déterminer le prix de vente d’un bien qu’elle fabrique, une entreprise doit tenir compte de plusieurs facteurs. Outre le coût de production et le profit souhaité, l’entreprise doit connaître l’impact d’un changement de prix sur la demande du consommateur. Certains biens, dits de nécessité, connaissent une demande quasi constante, indépendante d’une modification du prix. Mais d’autres biens dont le prix augmente risquent fort d’être moins demandés. Généralement, une entreprise peut estimer sur la base de l’expérience passée combien d’unités seront vendues en fonction du prix unitaire pratiqué où \(p(x)\) est \(p\) une certaine fonction. À une demande de \(x\) unités correspond le prix unitaire \(p(x)\). Voilà pourquoi la fonction \(p\) est appelée fonction de demande d’un bien. La recette totale est alors le produit du nombre d’unités vendues par le prix unitaire, soit 
+\[
+  R(x)=x\,p(x).
+\]
+
+La demande marginale est la dérivée de \(p\).
+
+Désignons par \(S=p(x)\) le prix de vente unitaire associé à une demande de \(x\) unités. La fonction de demande est le plus souvent décroissante, donc \(p'(x)<0\) quel que soit \(x\). Les fonctions de demande se présentent parfois implicitement par une équation qui fait intervenir \(S\) et \(x\).
+
+La demande de \(x\) unités d’un produit est reliée à son prix de \(S\) CHF pièce par l’équation
+\[
+  2x + S^2 - 12000 = 0.
+\]
+
+\begin{tasks}(1)
+	\task[h)] Donner l’expression de la demande, de la demande marginale, de la recette et de la recette marginale.
+	\task[i)] Quelles sont les valeurs de \(x\) et de \(p(x)\) qui conduisent à une recette maximale ?
+	\task[j)]  Quel est le montant de cette recette maximale ?
+\end{tasks}
+\end{activite}
+Rajouter de l'historique
+\newpage
 \section{Taux de variation}
 \begin{definition}
 	taux de variation
@@ -743,6 +743,15 @@ f'(-1) &= \displaystyle\lim_{h \to 0} \dfrac{f(-1 + h) - f(-1)}{h}\\
 \end{aligned}
 $
 \end{exemple}
+\begin{thm}
+	continuité et dérivabilité
+	\tcblower
+	Soit $f$ une fonction dérivable en $x$, alors $f$ est continue en $x$.
+\end{thm}
+\begin{remarque}
+	\tcblower
+	Attention, la réciproque n'est pas valable comme nous le verrons avec un contre-exemple dans la section suivante. 
+\end{remarque}
 \section{Non dérivabilité}
 \begin{autre}
 	\tcblower
@@ -778,7 +787,7 @@ Remarquons également que la tangente et la courbe de la représentative de la f
 \end{exemplesuite}
 \begin{remarque}
 \tcblower	
-Plus généralement, tout « pic » dans la courbe représentative d'une fonction indique un point de non dérivabilité.
+Plus généralement, tout point anguleux dans la courbe représentative d'une fonction indique un point de non dérivabilité.
 \end{remarque}
 \begin{exemple}
 	$f(x)=\begin{cases} 2&  x \leq 1 \\ -x+1 & x>1 \end{cases}$
@@ -1006,9 +1015,47 @@ zéros de la dérivée
 \tcblower
 Il existe des fonctions $f$ pour lesquelles $f'(a) = 0$ et $f$ n'admet pas d'extremum en $a$, ou $f'(a) = 0$ et $f$ admet un extremum en $a$. La « simple » connaissance des zéros de la dérivée $f'$ ne suffit donc pas à pouvoir affirmer avec certitude que ceux-ci sont des extrema locaux de $f$ ! Pour une fonction dérivable, l'ensemble des points critiques de $f$ contient mais n'est pas forcément égal à celui des zéros de $f'$.
 
-Lorsque la fonction est dérivable, il faut toujours faire le tableau de signes complet de la dérivée pour pouvoir bien comprendre la situation.
+Lorsque la fonction est dérivable, il faut toujours faire le tableau de signes complet de la dérivée pour pouvoir bien comprendre la situation. Autrement, la section suivante nous permet de tirer des conclusion si la fonction est {\bfseries continue}.
 \end{remarque}
+\section{Théorème de Rolle et des accroissements finis}
+\begin{thm}
+Image d'un fermé par une fonction continue
+\tcblower
+Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m,M]$
+
+\end{thm}
+
+\begin{remarque}
+	\tcblower
+Si l'hypothèse de continuité n'est pas vérifiée, le théorème n'est plus vrai !
+\end{remarque}
+\begin{thm}
+Thm de Rolle
+\tcblower
+Si $f : I \to \mathbb{R}$ est telle que :
+\begin{itemize}
+\item $f$ est continue sur $[a,b]$
+\item $f$ est dérivable sur $]a,b[$
+\item $f(a) = f(b)$
+\end{itemize}
+alors il existe au moins un nombre $c \in ]a,b[$ tel que $f'(c) = 0$.
+\end{thm}
+\begin{thm}
+Thm des accroissement finis
+\tcblower
+Si $f : I \to \mathbb{R}$ est telle que :
+\begin{itemize}
+\item $f$ est continue sur $[a,b]$
+\item $f$ est dérivable sur $]a,b[$
+\end{itemize}
+alors il existe au moins un nombre $c \in ]a,b[$ tel que $f'(c) = \dfrac{f(b) - f(a)}{b - a}$
+\end{thm}
+
 \section{Signe de $f'$ et monotonie de $f$}
+\begin{autre}
+	\tcblower
+	Dans cette section, nous déduisons des corrollaires au théorème des accroissements finis.
+\end{autre}
 \begin{definition}
 	croissance\\
 	décroissance
@@ -1032,7 +1079,8 @@ On dit que $f$ est \textbf{strictement décroissante} sur $I$ si
 $\forall x,y\in I$ tels que $x>y$, on a $f(x) < f(y)$.
 \end{definition}
 \begin{thm}
-	monotonie et dérivée
+	monotonie et dérivée\\
+	corollaire des accroissements finis
 	\tcblower
 Soit $f$ dérivable sur un intervalle $I$. Alors on a :
 \begin{itemize}
@@ -1041,7 +1089,21 @@ Soit $f$ dérivable sur un intervalle $I$. Alors on a :
 \item si $f'(x) = 0, \forall x \in I$, alors $f$ est constante sur $I$
 \end{itemize}
 \end{thm}
-
+\begin{remarque}
+	\tcblower
+	Ce théorème nous permet de résoudre des problèmes d'optimisation et d'étudier complètement des fonctions. Nous en ferons bon usage dans les parties \ref{sec:opti} et \ref{sec:etude}.
+\end{remarque}
+\begin{thm}
+réciproque du corollaire des accroissement finis
+\tcblower
+Soit $f$ définie sur un intervalle $I$.
+Alors on a :
+\begin{itemize}
+\item si $f$ est strictement croissante sur $I$, alors $f'(x) > 0, \forall x \in I$
+\item si $f$ est strictement décroissante sur $I$, alors $f'(x) < 0, \forall x \in I$
+\item si $f$ est constante sur $I$, alors $f'(x) = 0, \forall x \in I$
+\end{itemize}
+\end{thm}
 \begin{exemple}
 	monotonie de $f(x)=x^3-6x^2+9x-4$
 	\tcblower
@@ -1116,6 +1178,8 @@ $3x^2 - 16x + 24$ n'est pas factorisable, car $\Delta = -32$, donc $Z_f = \{0\}$
 
 
 \end{exemple}
+
+
 \section{Deuxième dérivée}
 \begin{definition}
 	convexité et concavité\\
@@ -1197,7 +1261,7 @@ On calcule sa deuxième dérivée
 TODO
 \end{exemple}
 \section{Optimisation}
-
+\label{sec:opti}
 Dans notre contexte, \textbf{optimiser} signifie déterminer les extrema d'une situation donnée.
 
 \begin{methode}
@@ -1466,6 +1530,7 @@ donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
 \end{exemple}
 \section{Étude de fonction}
 
+\label{sec:etude}
 \begin{methode}
 	étude de fonction
 	\tcblower
@@ -1565,84 +1630,85 @@ $
 \end{center}
 \end{tasks}
 \end{exemple}
-%\section{Exercices}
-%\insertexo{1M-j2esz}{false}{exo}{true}
-%\insertexo{1M-rqd6n}{false}{exo}{true}
-%\insertexo{1M-mmztw}{false}{exo}{true}
-%\insertexo{1M-uhfwb}{false}{exo}{true}
-%\insertexo{1M-sjs2h}{false}{exo}{true}
-%\insertexo{1M-hb4kv}{false}{exo}{true}
-%\insertexo{1M-g75hx}{false}{exo}{true}
-%\insertexo{1M-ayg94}{false}{exo}{true}
-%\insertexo{1M-pbjwq}{false}{exo}{true}
-%\insertexo{1M-5tfx9}{false}{exo}{true}
-%\insertexo{1M-ddnv1}{false}{exo}{true}
-%\insertexo{1M-nj1k9}{false}{exo}{true}
-%\insertexo{1M-p9k57}{false}{exo}{true}
-%\insertexo{1M-22t18}{false}{exo}{true}
-%\insertexo{1M-h2mu9}{false}{exo}{true}
-%\insertexo{1M-y1c7r}{false}{exo}{true}
-%\insertexo{1M-c6eaz}{false}{exo}{true}
-%\insertexo{1M-ezscr}{false}{exo}{true}
-%\insertexo{1M-4pfpm}{false}{exo}{true}
-%\insertexo{1M-bgaa8}{false}{exo}{true}
-%
-%\insertexo{1M-1h2rj}{false}{exo}{true}
-%\insertexo{1M-bv651}{false}{exo}{true}
-%\insertexo{1M-1h1tt}{false}{exo}{true}
-%\insertexo{1M-t3pgp}{false}{exo}{true}
-%\insertexo{1M-r98sf}{false}{exo}{true}
-%\insertexo{1M-51tvf}{false}{exo}{true}
-%\insertexo{1M-ju5sg}{false}{exo}{true}
-%\insertexo{1M-ttwes}{false}{exo}{true}
-%\insertexo{1M-yazhe}{false}{exo}{true}
-%\insertexo{1M-rv1yv}{false}{exo}{true}
-%\insertexo{1M-vnbfx}{false}{exo}{true}
-%\insertexo{1M-ryapx}{false}{exo}{true}
-%\insertexo{1M-zeeed}{false}{exo}{true}
-%\insertexo{1M-gv9rr}{false}{exo}{true}
-%\insertexo{1M-fcxr6}{false}{exo}{true}
-%\insertexo{1M-8wcq9}{false}{exo}{true}
-%\insertexo{1M-vrkth}{false}{exo}{true}
-%\insertexo{1M-gmcwt}{false}{exo}{true}
-%\insertexo{1M-shcv8}{false}{exo}{true}
-%\insertexo{1M-9q8gz}{false}{exo}{true}
-%\insertexo{1M-xkwd5}{false}{exo}{true}
-%\insertexo{1M-bs74m}{false}{exo}{true}
-%\insertexo{1M-nv48n}{false}{exo}{true}
-%\insertexo{1M-pmwx1}{false}{exo}{true}
-%\insertexo{1M-fnj4z}{false}{exo}{true}
-%\insertexo{1M-bhu5u}{false}{exo}{true}
-%\insertexo{1M-sms7s}{false}{exo}{true}
-%\insertexo{1M-y4385}{false}{exo}{true}
-%\insertexo{1M-2at6d}{false}{exo}{true}
-%\insertexo{1M-mj5qq}{false}{exo}{true}
-%\insertexo{1M-hgcu8}{false}{exo}{true}
-%\insertexo{1M-y4dv7}{false}{exo}{true}
-%\insertexo{1M-ek51g}{false}{exo}{true}
-%\insertexo{1M-5en1r}{false}{exo}{true}
-%\insertexo{1M-1gayt}{false}{exo}{true}
-%\insertexo{1M-955md}{false}{exo}{true}
-%\insertexo{1M-g4sjk}{false}{exo}{true}
-%\insertexo{1M-b3p6g}{false}{exo}{true}
-%\insertexo{1M-515q8}{false}{exo}{true}
-%\insertexo{1M-yn5fe}{false}{exo}{true}
-%\insertexo{1M-3exms}{false}{exo}{true}
-%\insertexo{1M-w3pgx}{false}{exo}{true}
-%\insertexo{1M-fg15r}{false}{exo}{true}
-%\insertexo{1M-2mqwc}{false}{exo}{true}
-%\insertexo{1M-m4mzh}{false}{exo}{true}
-%\insertexo{1M-wu8y4}{false}{exo}{true}
-%\insertexo{1M-u7dja}{false}{exo}{true}
-%\insertexo{1M-e1wtj}{false}{exo}{true}
-%\insertexo{1M-hvq58}{false}{exo}{true}
-%\insertexo{1M-uvgs1}{false}{exo}{true}
-%\insertexo{1M-7zb7h}{false}{exo}{true}
-%\insertexo{1M-hzaw5}{false}{exo}{true}
-%\insertexo{1M-uyvgj}{false}{exo}{true}
-%\insertexo{1M-qsgvn}{false}{exo}{true}
-%\insertexo{1M-kksbd}{false}{exo}{true}
-%\insertexo{1M-c3ghj}{false}{exo}{true}
-%\insertexo{1M-meks3}{false}{exo}{true}
+
+\section{Exercices}
+\insertexo{1M-j2esz}{false}{exo}{true}
+\insertexo{1M-rqd6n}{false}{exo}{true}
+\insertexo{1M-mmztw}{false}{exo}{true}
+\insertexo{1M-uhfwb}{false}{exo}{true}
+\insertexo{1M-sjs2h}{false}{exo}{true}
+\insertexo{1M-hb4kv}{false}{exo}{true}
+\insertexo{1M-g75hx}{false}{exo}{true}
+\insertexo{1M-ayg94}{false}{exo}{true}
+\insertexo{1M-pbjwq}{false}{exo}{true}
+\insertexo{1M-5tfx9}{false}{exo}{true}
+\insertexo{1M-ddnv1}{false}{exo}{true}
+\insertexo{1M-nj1k9}{false}{exo}{true}
+\insertexo{1M-p9k57}{false}{exo}{true}
+\insertexo{1M-22t18}{false}{exo}{true}
+\insertexo{1M-h2mu9}{false}{exo}{true}
+\insertexo{1M-y1c7r}{false}{exo}{true}
+\insertexo{1M-c6eaz}{false}{exo}{true}
+\insertexo{1M-ezscr}{false}{exo}{true}
+\insertexo{1M-4pfpm}{false}{exo}{true}
+\insertexo{1M-bgaa8}{false}{exo}{true}
+
+\insertexo{1M-1h2rj}{false}{exo}{true}
+\insertexo{1M-bv651}{false}{exo}{true}
+\insertexo{1M-1h1tt}{false}{exo}{true}
+\insertexo{1M-t3pgp}{false}{exo}{true}
+\insertexo{1M-r98sf}{false}{exo}{true}
+\insertexo{1M-51tvf}{false}{exo}{true}
+\insertexo{1M-ju5sg}{false}{exo}{true}
+\insertexo{1M-ttwes}{false}{exo}{true}
+\insertexo{1M-yazhe}{false}{exo}{true}
+\insertexo{1M-rv1yv}{false}{exo}{true}
+\insertexo{1M-vnbfx}{false}{exo}{true}
+\insertexo{1M-ryapx}{false}{exo}{true}
+\insertexo{1M-zeeed}{false}{exo}{true}
+\insertexo{1M-gv9rr}{false}{exo}{true}
+\insertexo{1M-fcxr6}{false}{exo}{true}
+\insertexo{1M-8wcq9}{false}{exo}{true}
+\insertexo{1M-vrkth}{false}{exo}{true}
+\insertexo{1M-gmcwt}{false}{exo}{true}
+\insertexo{1M-shcv8}{false}{exo}{true}
+\insertexo{1M-9q8gz}{false}{exo}{true}
+\insertexo{1M-xkwd5}{false}{exo}{true}
+\insertexo{1M-bs74m}{false}{exo}{true}
+\insertexo{1M-nv48n}{false}{exo}{true}
+\insertexo{1M-pmwx1}{false}{exo}{true}
+\insertexo{1M-fnj4z}{false}{exo}{true}
+\insertexo{1M-bhu5u}{false}{exo}{true}
+\insertexo{1M-sms7s}{false}{exo}{true}
+\insertexo{1M-y4385}{false}{exo}{true}
+\insertexo{1M-2at6d}{false}{exo}{true}
+\insertexo{1M-mj5qq}{false}{exo}{true}
+\insertexo{1M-hgcu8}{false}{exo}{true}
+\insertexo{1M-y4dv7}{false}{exo}{true}
+\insertexo{1M-ek51g}{false}{exo}{true}
+\insertexo{1M-5en1r}{false}{exo}{true}
+\insertexo{1M-1gayt}{false}{exo}{true}
+\insertexo{1M-955md}{false}{exo}{true}
+\insertexo{1M-g4sjk}{false}{exo}{true}
+\insertexo{1M-b3p6g}{false}{exo}{true}
+\insertexo{1M-515q8}{false}{exo}{true}
+\insertexo{1M-yn5fe}{false}{exo}{true}
+\insertexo{1M-3exms}{false}{exo}{true}
+\insertexo{1M-w3pgx}{false}{exo}{true}
+\insertexo{1M-fg15r}{false}{exo}{true}
+\insertexo{1M-2mqwc}{false}{exo}{true}
+\insertexo{1M-m4mzh}{false}{exo}{true}
+\insertexo{1M-wu8y4}{false}{exo}{true}
+\insertexo{1M-u7dja}{false}{exo}{true}
+\insertexo{1M-e1wtj}{false}{exo}{true}
+\insertexo{1M-hvq58}{false}{exo}{true}
+\insertexo{1M-uvgs1}{false}{exo}{true}
+\insertexo{1M-7zb7h}{false}{exo}{true}
+\insertexo{1M-hzaw5}{false}{exo}{true}
+\insertexo{1M-uyvgj}{false}{exo}{true}
+\insertexo{1M-qsgvn}{false}{exo}{true}
+\insertexo{1M-kksbd}{false}{exo}{true}
+\insertexo{1M-c3ghj}{false}{exo}{true}
+\insertexo{1M-meks3}{false}{exo}{true}
 
 \end{document}
