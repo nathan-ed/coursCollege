@@ -719,6 +719,9 @@ tangente
 \tcblower	
 Soient $A$ et $B$ deux points d'une courbe $C$ et $s$ la sécante passant par $A$ et $B$. Géométriquement, la \textbf{tangente à la courbe} en $A$ est la position limite de la sécante $s$ lorsque $B$ tend vers $A$.
 \end{definition}
+Ajouter un graphique illustrant cela.
+
+\includegraphics{../medias/3M/derivation/tangente}
 
 \begin{remarque}
 Interprétation géométrique
@@ -1019,9 +1022,15 @@ Lorsque la fonction est dérivable, il faut toujours faire le tableau de signes 
 \end{remarque}
 \section{Théorème de Rolle et des accroissements finis}
 \begin{thm}
-Image d'un fermé par une fonction continue
+Théorème de la valeur intermédiaire
 \tcblower
-Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m,M]$
+Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors la fonction $f$
+\begin{itemize}
+	\item est bornée sur $[a,b]$
+	\item possède un minimum $m$ et un maximum $M$ sur $[a,b]$
+	\item prend au moins une fois toutes les valeurs comprises entre $m$ et $M$.
+\end{itemize}
+En d'autres termes, $f([a,b]) = [m,M]$
 
 \end{thm}
 

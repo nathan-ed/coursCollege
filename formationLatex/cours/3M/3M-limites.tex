@@ -6,10 +6,36 @@
 \renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
 \begin{document}
 
+\begin{center}
+\begin{tikzpicture}[scale=8]
+  % unit circle, solid
+  \draw[thick] (0,0) circle (1);
+
+  % inscribed n-gons, dashed
+  \foreach \n in {4,5,6,7,8,9,10,20,30,40} {
+    \draw[dashed]
+      (0:1)
+      \foreach \i in {1,...,\numexpr\n-1\relax}
+        { -- ({\i*360/\n}:1) }
+      -- cycle;
+  }
+\end{tikzpicture}
+\end{center}
+\newpage
+
 \section{Activités}
 \begin{activite}
 Introduction géométrique à la notion de limite	
+
 	\tcblower
+	Soit le carré $ABCD$ ci-contre de côté $10~\text{cm}$. On note $P$ et $Q$ les milieux des côtés $BC$ et $CD$. Soient $M$ un point de $AD$ et $N$ un point de $AB$ tels que $\overline{AN}=\overline{AM}=x$.
+	\begin{tasks}(1)
+		\task Quelle est la nature du quadrilatère $MNPQ$~?
+		\task Tracer $MNPQ$ pour $x=6~\text{cm}$, $x=4~\text{cm}$, $x=1~\text{cm}$, $x=0,5~\text{cm}$.
+		\task Que remarquez-vous lorsque $x$ se rapproche de $0$~?
+		\task On note $A(x)$ l'aire du quadrilatère $MNPQ$. Donner une formule pour le calcul de cette aire en fonction de $x$ (vous devrez utiliser trois fois le théorème de Pythagore). 
+		\task Que peut-on dire de $A(x)$ quand $x$ se rapproche de $0$~? Est-ce que votre conjecture est cohérente avec la formule déterminée au point précédent~?
+	\end{tasks}
 \end{activite}
 
 \begin{activite}[label=acti:limgraph]
@@ -158,13 +184,182 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 \end{multicols}
 	\end{tasks}
 \end{activite}
+
 \section{Définition non formelle -- notion intuitive}
+\begin{exemple}
+	exemple introductif
+	\tcblower
+	Considérons la fonction définie par
+
+	\begin{align*}
+		f : \mathbb{R}_+ \setminus \{1; 4\} &\to \mathbb{R}\\
+		x &\mapsto \dfrac{3(1-x)}{(\sqrt{x}-1)(x-4)}
+	\end{align*}
+
+Nous allons étudier le comportement de cette fonction au bord de son ensemble de définition, c'est-à-dire en
+\begin{itemize}
+\item $x = 0$ (bord gauche), en $x = 1$ puis $x = 4$ (valeurs interdites)
+\item et finalement en $x \to +\infty$
+\end{itemize}
+
+\begin{tasks}(1)
+\task Si on évalue la fonction $f$ pour ces 3 valeurs particulières, on risque d'obtenir des réponses peu concluantes :
+
+$f(0) = \quad\quad\quad f(1) = \quad\quad\quad f(4) = $
+
+\task Utilisons alors des petits tableaux de valeurs :
+\begin{itemize}
+\item S'approcher de la valeur 0 depuis la droite $(x \to 0^+)$
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & 0 & 0,01 & 0,1 \\
+\hline
+$f(x)$ & 0,75 & 0,827 & 1,013 \\
+\hline
+\end{tabular}
+\end{center}
+
+Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 0 depuis la droite vaut $\ldots$
+
+\item S'approcher de la valeur 1 en venant depuis la gauche $(x \to 1^-)$ et depuis la droite $(x \to 1^+)$
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& \multicolumn{2}{c|}{gauche $\to$} & & \multicolumn{2}{c|}{$\leftarrow$ droite} \\
+\hline
+$x$ & 0,9 & 0,99 & 1 & 1,01 & 1,1 \\
+\hline
+$f(x)$ & 1,886 & 1,989 & ??? & 2,012 & 2,12 \\
+\hline
+\end{tabular}
+\end{center}
+
+Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 1 vaut $\ldots$
+
+\item S'approcher de la valeur 4 en venant depuis la gauche $(x \to 4^-)$ et depuis la droite $(x \to 4^+)$
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& \multicolumn{2}{c|}{gauche $\to$} & & \multicolumn{2}{c|}{$\leftarrow$ droite} \\
+\hline
+$x$ & 3,9 & 3,99 & 4 & 4,01 & 4,1 \\
+\hline
+$f(x)$ & 89,25 & 899,3 & ??? & -900,7 & -90,75 \\
+\hline
+\end{tabular}
+\end{center}
+
+Ainsi, il semblerait que la limite de $f(x)$ quand :
+\begin{itemize}
+\item $x$ tend vers 4 depuis la gauche vaut $\ldots$
+\item $x$ tend vers 4 depuis la droite vaut $\ldots$
+\end{itemize}
+\end{itemize}
+\end{tasks}
+\end{exemple}
+\begin{exemplesuite}
+	\tcblower
+	\begin{tasks}
+		\begin{itemize}
+			\item Prendre des valeurs de plus en plus grandes $(x \to +\infty)$
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+& \multicolumn{3}{c|}{$\to +\infty$} \\
+\hline
+$x$ & 1000 & 10000 & 100000 \\
+\hline
+$f(x)$ & -0,098 & -0,030 & -0,0095 \\
+\hline
+\end{tabular}
+\end{center}
+
+Ainsi, il semblerait que la fonction plafonne à la hauteur $\ldots$ lorsque $x$ tend vers $+\infty$
+		\end{itemize}
+		\task[c)] Observons ceci sur la représentation graphique de $f$
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=8cm,
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    xmin=-1, xmax=9,
+    ymin=-12, ymax=12,
+    xtick={0,1,2,3,4,5,6,7,8},
+    ytick={-12,-8,-4,0,4,8,12},
+    grid=major,
+    grid style={gray!30},
+    samples=200,
+    smooth,
+    restrict y to domain=-15:15,
+]
+
+% Function curve - first part (0.01 to 0.99)
+\addplot[blue, thick, domain=0.01:0.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+
+% Function curve - second part (1.01 to 3.99)  
+\addplot[blue, thick, domain=1.01:3.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+
+% Function curve - third part (4.01 to 8.5)
+\addplot[blue, thick, domain=4.01:8.5] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+
+% Vertical asymptotes
+\addplot[red, dashed, thick] coordinates {(1,0) (1,2)};
+\addplot[red, dashed, thick] coordinates {(0,2) (1,2)};
+\addplot[red, dashed, thick] coordinates {(4,-12) (4,12)};
+
+% Horizontal asymptote
+\addplot[gray, dashed] coordinates {(0,0) (9,0)};
+
+% Point at x=0 (point limite)
+\addplot[blue, mark=o, mark options={fill=white, scale=1.5}] coordinates {(0,0.75)};
+
+% Hole at x=1 (trou)
+\addplot[blue, mark=o, mark options={fill=white, scale=1.5}] coordinates {(1,2)};
+
+% Labels
+\node at (axis cs:7,-8) [blue] {$f$};
+\node at (axis cs:0.3,1.2) [left=3mm,, font=\footnotesize] {$(0; \dfrac{3}{4})$};
+\node at (axis cs:1.3,2.3) [below right, font=\footnotesize] {trou en $(1; 2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\task[d)] Pour décrire le comportement de la fonction $f$, nous utiliserons les terminologies et notations suivantes :
+
+\begin{center}
+\begin{tblr}{
+  colspec = {c|c|c|c},
+  hlines,
+  vlines,
+}
+% Row 1: x = 0
+$0$ & {$\dfrac{3}{4}$\\\vspace{0.2cm} défini} & {$\displaystyle\lim_{x \to 0^-} f(x) = 0,75$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 0^+} f(x) = 0,75$} & {un \textbf{point limite} en \\ \vspace{0.2cm}$\left(0; \dfrac{3}{4}\right)$} \\
+% Row 2: x = 1
+$1$ & {$\dfrac{0}{0}$\\ \vspace{0.2cm} indéterminé} & {$\displaystyle\lim_{x \to 1^-} f(x) = 2$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 1^+} f(x) = 2$} & un \textbf{trou} en $(1; 2)$ \\
+% Row 3: x = 4 
+$4$ & {$\dfrac{-9}{0}$\\ \vspace{0.2cm} non défini} & {$\displaystyle\lim_{x \to 4^-} f(x) = +\infty$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 4^+} f(x) = -\infty$} & {une \textbf{asymptote verticale}\\ en $x=4$} \\
+% Row 4: x -> +infinity
+$\to +\infty$ & & $\displaystyle\lim_{x \to +\infty} f(x) = 0$ & {une \textbf{asymptote}\\ \textbf{horizontale}\\ à droite en $y=0$} \\
+\end{tblr}
+\end{center}
+\end{tasks}
+
+\end{exemplesuite}
+	
 \begin{definition}
 	\tcblower
 	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.
 \end{definition}
 \begin{exemple}
-	Voisinages de $3$
+	voisinages de $3$
 	\tcblower
 		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
 \end{exemple}
@@ -448,17 +643,13 @@ $\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{\eqmakebox[b][c]{{\bfseries
 
 \section{Propriétés des limites}
 Les propriétés suivantes nous permettent de calculer des limites plus compliquées du type $\displaystyle{\lim_{x\rightarrow 2}\dfrac{x-5}{x}}$.
-\begin{remarque}
-	\tcblower
-	Pour rappel, une limite existe, si \[ \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}\]
-	pour $\ell$ un nombre ou le symbole $-\infty$, $+\infty$.
-\end{remarque}
+
 \begin{thm}[label=thm:limprop]
 	Propriétés des limites
 
 	(sans démonstration)
 	\tcblower
-Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent, alors on a 
+Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent et sont finies (valent un nombre), alors on a 
 \noindent
 \begin{description}
 	\item[{\bfseries P0}] $\displaystyle{\lim_{x\rightarrow a}k\cdot f(x)=k\cdot \lim_{x\rightarrow a}f(x)},\, \forall k\in \mathbb{R}$ 
@@ -604,7 +795,7 @@ ou plus directement :
 
 \begin{remarque}
 	\tcblower
-Ces théorèmes montrent que dans de très nombreux cas, la limite de \(f(x)\) quand \(x\) tend vers \(a\) est égale à \(f(a)\), ce qu’on note
+Ces théorèmes montrent que dans la plupart des fonctions que l'on considère, la limite de \(f(x)\) quand \(x\) tend vers \(a\) est égale à \(f(a)\), ce qu’on note
 \[
 \lim_{x\to a}f(x)=f(a);
 \]
@@ -855,13 +1046,13 @@ On est souvent amené à étudier le comportement de \(f(x)\) – pour autant qu
 \begin{definition}
 Limite en l'infini	
 \tcblower
-Soit \(f\) une fonction définie sur \(R\).
+Soit \(f\) une fonction définie sur \(\mathbb{R}\).
 
-On dit que la limite de \(f(x)\) quand \(x\) tend vers plus l'infini est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe positif). Dans ce cas, on écrit
+On dit que la limite de \(f(x)\) quand \(x\) tend vers $+\infty$ est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe positif). Dans ce cas, on écrit
 \[
 \lim_{x\to+\infty}f(x)=L.
 \]
-On dit que la limite de \(f(x)\) quand \(x\) tend vers moins l'infini est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe négatif). Dans ce cas, on écrit
+On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe négatif). Dans ce cas, on écrit
 \[
 \lim_{x\to-\infty}f(x)=L.
 \]
@@ -879,7 +1070,7 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers moins l'infini est égale
 
 \begin{remarque}
 	\tcblower
-	On utilise une notation qui n'est pas rigoureuse en écrivant $«~\dfrac{1}{0}~»$. On va dès maintenant également une notation pour travailler avec l'infini. Cette algèbre de l'infini peut être formlisée rigoureusement, mais cela dépasse le cadre de ce cours et nous admettrons les propriétés suivantes. 
+	On utilise une notation qui n'est pas rigoureuse en écrivant $«~\dfrac{1}{0}~»$. On va dès maintenant également introduire une notation pour travailler avec l'infini. Cette «~algèbre de l'infini~» peut être formalisée rigoureusement, mais cela dépasse le cadre de ce cours et nous admettrons les propriétés suivantes. 
 \end{remarque}
 \begin{formule}[label=form:inf]
 	Algèbre de l'infini
@@ -898,7 +1089,7 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers moins l'infini est égale
 
 \begin{remarque}
 	\tcblower
-	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini, du théorème \ref{thm:limel} et du théorème \ref{thm:limprop} qui restent valables dans ces situations. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
+	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini du théorème \ref{thm:limprop} qui reste valable dans cette situations. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
 \end{remarque}
 \begin{exemple}
 	Calculer $\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}$ 
@@ -1577,46 +1768,46 @@ fonctions continues
 	\end{description}
 \end{thm}
 \section{Exercices}
-\insertexo{1M-vyj67}{false}{exo}{true}
-\insertexo{1M-4dptb}{false}{exo}{true}
-\insertexo{1M-g4gbb}{false}{exo}{true}
-%\insertexo{1M-extez}{false}{exo}{true}
-%\insertexo{1M-znghn}{false}{exo}{true}
-\insertexo{1M-tecfn}{false}{exo}{true}
-%\insertexo{1M-fazjq}{false}{exo}{true}
-\insertexo{1M-f7dft}{false}{exo}{true}
-\insertexo{1M-ac9v2}{false}{exo}{true}
-\insertexo{1M-nxc2s}{false}{exo}{true}
-\insertexo{1M-n9qmn}{false}{exo}{true}
-\insertexo{1M-bqknk}{false}{exo}{true}
-\insertexo{1M-gg7hk}{false}{exo}{true}
-\insertexo{1M-n41yn}{false}{exo}{true}
-\insertexo{1M-8j18h}{false}{exo}{true}
-\insertexo{1M-1w3pd}{false}{exo}{true}
-\insertexo{1M-x5h3r}{false}{exo}{true}
-\insertexo{1M-1bqh9}{false}{exo}{true}
-\insertexo{1M-du7be}{false}{exo}{true}
-\insertexo{1M-k3bry}{false}{exo}{true}
-\insertexo{1M-gm9uk}{false}{exo}{true}
-\insertexo{1M-taje8}{false}{exo}{true}
-\insertexo{1M-3vr28}{false}{exo}{true}
-\insertexo{1M-gb3ag}{false}{exo}{true}
-\insertexo{1M-c3uc9}{false}{exo}{true}
-\insertexo{1M-myjcq}{false}{exo}{true}
-\insertexo{1M-dpjwk}{false}{exo}{true}
-\insertexo{1M-97ryj}{false}{exo}{true}
-\insertexo{1M-n1axs}{false}{exo}{true}
-\insertexo{1M-wnd21}{false}{exo}{true}
-\insertexo{1M-98752}{false}{exo}{true}
-\insertexo{1M-t4gwt}{false}{exo}{true}
-\insertexo{1M-1w6s3}{false}{exo}{true}
-\insertexo{1M-yhzh8}{false}{exo}{true}
-\insertexo{1M-9yqnb}{false}{exo}{true}
-\insertexo{1M-1n93r}{false}{exo}{true}
-\insertexo{1M-qp2mw}{false}{exo}{true}
-\insertexo{1M-jgbhr}{false}{exo}{true}
-\insertexo{1M-6qym1}{false}{exo}{true}
-\insertexo{1M-aatq8}{false}{exo}{true}
+%\insertexo{1M-vyj67}{false}{exo}{true}
+%\insertexo{1M-4dptb}{false}{exo}{true}
+%\insertexo{1M-g4gbb}{false}{exo}{true}
+%%\insertexo{1M-extez}{false}{exo}{true}
+%%\insertexo{1M-znghn}{false}{exo}{true}
+%\insertexo{1M-tecfn}{false}{exo}{true}
+%%\insertexo{1M-fazjq}{false}{exo}{true}
+%\insertexo{1M-f7dft}{false}{exo}{true}
+%\insertexo{1M-ac9v2}{false}{exo}{true}
+%\insertexo{1M-nxc2s}{false}{exo}{true}
+%\insertexo{1M-n9qmn}{false}{exo}{true}
+%\insertexo{1M-bqknk}{false}{exo}{true}
+%\insertexo{1M-gg7hk}{false}{exo}{true}
+%\insertexo{1M-n41yn}{false}{exo}{true}
+%\insertexo{1M-8j18h}{false}{exo}{true}
+%\insertexo{1M-1w3pd}{false}{exo}{true}
+%\insertexo{1M-x5h3r}{false}{exo}{true}
+%\insertexo{1M-1bqh9}{false}{exo}{true}
+%\insertexo{1M-du7be}{false}{exo}{true}
+%\insertexo{1M-k3bry}{false}{exo}{true}
+%\insertexo{1M-gm9uk}{false}{exo}{true}
+%\insertexo{1M-taje8}{false}{exo}{true}
+%\insertexo{1M-3vr28}{false}{exo}{true}
+%\insertexo{1M-gb3ag}{false}{exo}{true}
+%\insertexo{1M-c3uc9}{false}{exo}{true}
+%\insertexo{1M-myjcq}{false}{exo}{true}
+%\insertexo{1M-dpjwk}{false}{exo}{true}
+%\insertexo{1M-97ryj}{false}{exo}{true}
+%\insertexo{1M-n1axs}{false}{exo}{true}
+%\insertexo{1M-wnd21}{false}{exo}{true}
+%\insertexo{1M-98752}{false}{exo}{true}
+%\insertexo{1M-t4gwt}{false}{exo}{true}
+%\insertexo{1M-1w6s3}{false}{exo}{true}
+%\insertexo{1M-yhzh8}{false}{exo}{true}
+%\insertexo{1M-9yqnb}{false}{exo}{true}
+%\insertexo{1M-1n93r}{false}{exo}{true}
+%\insertexo{1M-qp2mw}{false}{exo}{true}
+%\insertexo{1M-jgbhr}{false}{exo}{true}
+%\insertexo{1M-6qym1}{false}{exo}{true}
+%\insertexo{1M-aatq8}{false}{exo}{true}
 
 
 Librement adapté de ...
