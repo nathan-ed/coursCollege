@@ -187,12 +187,18 @@ after skip=10pt,
 \newcommand{\textLigne}[1]{\myrulefill {{\footnotesize ~#1}} \myrulefill\par}
 
 
-\newenvironment{explanation}
-{\renewcommand{\arraystretch}{1.5}
-\begin{longtable}{>{\raggedright\arraybackslash}p{0.5\textwidth} >{\raggedright\arraybackslash}p{0.45\textwidth}}}
-{\end{longtable}}
-
-
+\newenvironment{explanation}[1][0.5]
+  {%
+    % #1 ist der Anteil x für die erste Spalte (z.B. 0.5)
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{longtable}{%
+      >{\raggedright\arraybackslash}p{\dimexpr#1\textwidth\relax}%
+      >{\raggedright\arraybackslash}p{\dimexpr\textwidth - #1\textwidth - 0.05\textwidth\relax}%
+    }%
+  }
+  {%
+    \end{longtable}%
+  }
 
 \renewenvironment{proof}{{\bfseries  Preuve.}}{\hfill$\square$}
 

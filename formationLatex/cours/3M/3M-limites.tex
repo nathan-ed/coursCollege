@@ -138,7 +138,7 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 
 \begin{tasks}(1)
 \task Déterminer le domaine de définition de $f$.
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de 3. Pour cela, calculer les images de $2{,}9$ ; $2,99$ ; $2,999$ ; $2,9999$ puis de $3,1$ ; $3,01$ ; $3,001$ et $3,0001$.
+\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $3$. Pour cela, calculer les images de $2{,}9$ ; $2,99$ ; $2,999$ ; $2,9999$ puis de $3,1$ ; $3,01$ ; $3,001$ et $3,0001$.
 \begin{multicols}{2}
 \begin{enumerate}
 \item Que constate-t-on ?
@@ -185,6 +185,130 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 	\end{tasks}
 \end{activite}
 
+\begin{activite}
+Indéterminations
+\tcblower
+On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
+
+\begin{tasks}(1)
+\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
+\task Que constate-t-on ?
+\task Que peut-on dire de l'image de $-3$ ?
+\task Quelle notation utiliser ?
+\task Interpréter graphiquement.
+\end{tasks}
+
+Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
+
+Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
+
+Calculer si possible les limites suivantes et interpréter graphiquement :
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
+\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
+\end{tasks}
+
+Pourquoi parle-t-on d'indéterminations ? Illustrer avec des exemples dans les cas suivants (liste non exhaustive) : $\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty$.
+\end{activite}
+
+\begin{activite}
+Indéterminations avec l'infini
+\tcblower
+On considère la fonction $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
+
+Calculer $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et $\displaystyle\lim_{x \to -\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
+
+Calculer si possible les limites suivantes et interpréter graphiquement :
+
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - 9x}{3x^2 - 5x - 4}$
+\task $\displaystyle\lim_{x \to +\infty} \dfrac{3x^2 - x + 1}{x + 3}$
+\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - x}{5x + 2}$
+\task $\displaystyle\lim_{x \to +\infty} (x^2 + x)$
+\task $\displaystyle\lim_{x \to +\infty} (2x - x^2)$
+\end{tasks}
+\end{activite}
+
+\begin{activite}
+Indéterminations avec des racines
+\tcblower
+\begin{tasks}(1)
+\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
+\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}
+Graphiquement
+\tcblower
+Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie simultanément toutes les conditions suivantes :
+
+\begin{tasks}(2)
+\task L'ensemble $D_f$ des zéros de $f$ est $\{-2;4\}$
+\task L'image de $0$ est $-2$
+\task $\displaystyle\lim_{x \to 1} f(x) = -\infty$
+\task $\displaystyle\lim_{x \to +\infty} f(x) = +\infty$
+\task $\displaystyle\lim_{x \to +\infty} f(x) = 4$
+\task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
+\end{tasks}
+\end{activite}
+\begin{activite}
+Continuité
+\tcblower
+\begin{tasks}(1)
+\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
+\task Peut-on en donner une définition mathématique ?
+\task Donner des exemples de fonctions connues continues et discontinues.
+\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
+
+Justifier la réponse et esquisser une représentation graphique de $f$.
+
+\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
+\task Définir et illustrer la notion de continuité à gauche ou de continuité à droite.
+\end{tasks}
+\end{activite}
+
+\begin{activite}{Une limite trigonométrique importante}
+\tcblower
+\begin{tasks}(1)
+\task On considère la fonction $f$ déterminée par $f(x) = \dfrac{\sin(x)}{x}$
+\begin{enumerate}
+\item Déterminer $D_f$ et $Z_f$.
+\item D'après votre intuition, et/ou à l'aide de la calculatrice:
+\item Que pensez-vous de $\displaystyle\lim_{x \to 0} f(x)$ et de ? $\displaystyle\lim_{x \to 0} f(x)$
+\item Existe-t-il une asymptote horizontale pour cette fonction?
+\item Pouvez-vous justifier ces réponses?
+\end{enumerate}
+
+\task On s'intéresse maintenant à $\displaystyle\lim_{x \to 0} f(x)$
+\begin{enumerate}
+\item Conjecturer une valeur pour cette limite, à partir d'essais numériques avec la calculatrice.
+\item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
+\end{enumerate}
+
+\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
+
+\task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
+\end{tasks}
+\end{activite}
+\begin{activite}{Indéterminations trigonométriques de type 0/0}
+\tcblower
+\begin{tasks}(1)
+\task Calculer :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(12x)}{6x}$
+\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x^2}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{\sin(x-2)}{3x-6}$
+\item $\displaystyle\lim_{x \to 0} \dfrac{\tan(12x)}{6x}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{6-3x}{\sin(x-2)}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{\cos(x-2)}{3x-6}$
+\end{enumerate}
+\end{multicols}
+\end{tasks}
+\end{activite}
+
+
 \section{Définition non formelle -- notion intuitive}
 \begin{exemple}
 	exemple introductif
@@ -221,7 +345,7 @@ $f(x)$ & 0,75 & 0,827 & 1,013 \\
 \end{tabular}
 \end{center}
 
-Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 0 depuis la droite vaut $\ldots$
+Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 0 depuis la droite vaut 
 
 \item S'approcher de la valeur 1 en venant depuis la gauche $(x \to 1^-)$ et depuis la droite $(x \to 1^+)$
 
@@ -237,7 +361,7 @@ $f(x)$ & 1,886 & 1,989 & ??? & 2,012 & 2,12 \\
 \end{tabular}
 \end{center}
 
-Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 1 vaut $\ldots$
+Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 1 vaut
 
 \item S'approcher de la valeur 4 en venant depuis la gauche $(x \to 4^-)$ et depuis la droite $(x \to 4^+)$
 
@@ -255,8 +379,8 @@ $f(x)$ & 89,25 & 899,3 & ??? & -900,7 & -90,75 \\
 
 Ainsi, il semblerait que la limite de $f(x)$ quand :
 \begin{itemize}
-\item $x$ tend vers 4 depuis la gauche vaut $\ldots$
-\item $x$ tend vers 4 depuis la droite vaut $\ldots$
+\item $x$ tend vers 4 depuis la gauche vaut 
+\item $x$ tend vers 4 depuis la droite vaut 
 \end{itemize}
 \end{itemize}
 \end{tasks}
@@ -1073,7 +1197,7 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \
 	On utilise une notation qui n'est pas rigoureuse en écrivant $«~\dfrac{1}{0}~»$. On va dès maintenant également introduire une notation pour travailler avec l'infini. Cette «~algèbre de l'infini~» peut être formalisée rigoureusement, mais cela dépasse le cadre de ce cours et nous admettrons les propriétés suivantes. 
 \end{remarque}
 \begin{formule}[label=form:inf]
-	Algèbre de l'infini
+	algèbre de l'infini
 	\tcblower
 	\begin{tasks}
 		\task $(+\infty)+(+\infty)=+\infty$ et $(-\infty)+(-\infty)=-\infty$
@@ -1425,8 +1549,10 @@ On interprète graphiquement les résultats obtenus~:
 	\end{center}
 \end{exemplesuite}
 \section{Limites trigonométriques}
-Théorème [Limite sinus x sur x]
-\begin{thm}
+Le théorème suivant est important et sa démonstration sera faite en activité. Vous devez apprendre la preuve et savoir utiliser ce résultat pour calculer des limites trigonométriques comme nous le verrons dans les exemples et les exercices. 
+
+\begin{thm}[label=thm:sinxx]
+	\smallskip
 $\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
 	\tcblower
 On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
@@ -1435,50 +1561,42 @@ On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
 \begin{methode}
 Indéterminations trigonométriques de type 0/0
 \tcblower
-Le principe consiste en principe à se ramener à l'utilisation de $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$
+On se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
 \end{methode}
 
 \begin{exemple}
-$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
 	\tcblower
 Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
-
-$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » on substitue $x$ par 0 et on constate un « type $\dfrac{0}{0}$ »
-
-$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ on observe que l'expression qui « pilote » le calcul est -20x
-
-$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$ on fait apparaître cette expression apparaisse au dénominateur et comme (...)$\to$0
-
-$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$ on utilise une propriété des limites
-
-$= -20 \cdot 1$ on utilise $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$
-
-$= -20$
-
-On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
+\smallskip
+\begin{explanation}
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » & on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ & on observe que l'expression qui « pilote » le calcul est $-20x$\\
+	$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$& on fait apparaître cette expression au dénominateur et comme le terme de la limite\\
+	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise une propriété des limites\\
+	$= -20 \cdot 1$&on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$\\
+$= -20$\\
+\end{explanation}
 \end{exemple}
+\begin{remarque}
+	\tcblower
+On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
+\end{remarque}
 \begin{exemple}
 $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
 	\tcblower
 Calculer $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
-
-$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$ on substitue $x$ par 0 et on constate un « type $\dfrac{0}{0}$ »
-
-$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$ on multiplie par le conjugué
-
-$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$ on effectue la multiplication des fractions
-
-$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$ on utilise la 3e identité remarquable
-
-$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$ on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$
-
-$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$ on sépare en produit de fractions
-
-$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$ on utilise les propriétés des limites [ok si les nouvelles limites existent]
-
-$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$ on utilise $\displaystyle\lim_{* \to 0} \dfrac{\sin(*)}{*} = 1$ et on calcule la 3e limite facilement
-
+\begin{explanation}[0.6]
+	$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$& on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$& on multiplie par le conjugué\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$& on effectue la multiplication des fractions\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$& on utilise la 3e identité remarquable\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$& on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$& on sépare en produit de fractions\\
+	$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$& on utilise les propriétés des limites, ce qu'on peut faire si les deux limites existent\\
+	$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$& on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ et on calcule la 3e limite facilement\\
 $= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
+\end{explanation}
 \end{exemple}
 \section{Continuité}
 \begin{definition}
@@ -1768,46 +1886,49 @@ fonctions continues
 	\end{description}
 \end{thm}
 \section{Exercices}
-%\insertexo{1M-vyj67}{false}{exo}{true}
-%\insertexo{1M-4dptb}{false}{exo}{true}
-%\insertexo{1M-g4gbb}{false}{exo}{true}
-%%\insertexo{1M-extez}{false}{exo}{true}
-%%\insertexo{1M-znghn}{false}{exo}{true}
-%\insertexo{1M-tecfn}{false}{exo}{true}
-%%\insertexo{1M-fazjq}{false}{exo}{true}
-%\insertexo{1M-f7dft}{false}{exo}{true}
-%\insertexo{1M-ac9v2}{false}{exo}{true}
-%\insertexo{1M-nxc2s}{false}{exo}{true}
-%\insertexo{1M-n9qmn}{false}{exo}{true}
-%\insertexo{1M-bqknk}{false}{exo}{true}
-%\insertexo{1M-gg7hk}{false}{exo}{true}
-%\insertexo{1M-n41yn}{false}{exo}{true}
-%\insertexo{1M-8j18h}{false}{exo}{true}
-%\insertexo{1M-1w3pd}{false}{exo}{true}
-%\insertexo{1M-x5h3r}{false}{exo}{true}
-%\insertexo{1M-1bqh9}{false}{exo}{true}
-%\insertexo{1M-du7be}{false}{exo}{true}
-%\insertexo{1M-k3bry}{false}{exo}{true}
-%\insertexo{1M-gm9uk}{false}{exo}{true}
-%\insertexo{1M-taje8}{false}{exo}{true}
-%\insertexo{1M-3vr28}{false}{exo}{true}
-%\insertexo{1M-gb3ag}{false}{exo}{true}
-%\insertexo{1M-c3uc9}{false}{exo}{true}
-%\insertexo{1M-myjcq}{false}{exo}{true}
-%\insertexo{1M-dpjwk}{false}{exo}{true}
-%\insertexo{1M-97ryj}{false}{exo}{true}
-%\insertexo{1M-n1axs}{false}{exo}{true}
-%\insertexo{1M-wnd21}{false}{exo}{true}
-%\insertexo{1M-98752}{false}{exo}{true}
-%\insertexo{1M-t4gwt}{false}{exo}{true}
-%\insertexo{1M-1w6s3}{false}{exo}{true}
-%\insertexo{1M-yhzh8}{false}{exo}{true}
-%\insertexo{1M-9yqnb}{false}{exo}{true}
-%\insertexo{1M-1n93r}{false}{exo}{true}
-%\insertexo{1M-qp2mw}{false}{exo}{true}
-%\insertexo{1M-jgbhr}{false}{exo}{true}
-%\insertexo{1M-6qym1}{false}{exo}{true}
-%\insertexo{1M-aatq8}{false}{exo}{true}
+\insertexo{1M-vyj67}{false}{exo}{true}
+\insertexo{1M-4dptb}{false}{exo}{true}
+\insertexo{1M-g4gbb}{false}{exo}{true}
+%\insertexo{1M-extez}{false}{exo}{true}
+%\insertexo{1M-znghn}{false}{exo}{true}
+\insertexo{1M-tecfn}{false}{exo}{true}
+%\insertexo{1M-fazjq}{false}{exo}{true}
+\insertexo{1M-f7dft}{false}{exo}{true}
+\insertexo{1M-ac9v2}{false}{exo}{true}
+\insertexo{1M-nxc2s}{false}{exo}{true}
+\insertexo{1M-n9qmn}{false}{exo}{true}
+\insertexo{1M-bqknk}{false}{exo}{true}
+\insertexo{1M-gg7hk}{false}{exo}{true}
+\insertexo{1M-n41yn}{false}{exo}{true}
+\insertexo{1M-8j18h}{false}{exo}{true}
+\insertexo{1M-1w3pd}{false}{exo}{true}
+\insertexo{1M-x5h3r}{false}{exo}{true}
+\insertexo{1M-1bqh9}{false}{exo}{true}
+\insertexo{1M-du7be}{false}{exo}{true}
+\insertexo{1M-k3bry}{false}{exo}{true}
+\insertexo{1M-gm9uk}{false}{exo}{true}
+\insertexo{1M-taje8}{false}{exo}{true}
+\insertexo{1M-3vr28}{false}{exo}{true}
+\insertexo{1M-gb3ag}{false}{exo}{true}
+\insertexo{1M-c3uc9}{false}{exo}{true}
+\insertexo{1M-myjcq}{false}{exo}{true}
+\insertexo{1M-dpjwk}{false}{exo}{true}
+\insertexo{1M-97ryj}{false}{exo}{true}
+\insertexo{1M-n1axs}{false}{exo}{true}
+\insertexo{1M-wnd21}{false}{exo}{true}
+\insertexo{1M-98752}{false}{exo}{true}
+\insertexo{1M-t4gwt}{false}{exo}{true}
+\insertexo{1M-1w6s3}{false}{exo}{true}
+\insertexo{1M-yhzh8}{false}{exo}{true}
+\insertexo{1M-9yqnb}{false}{exo}{true}
+\insertexo{1M-byf5j}{false}{exo}{true}
+\insertexo{1M-h9w1s}{false}{exo}{true}
+\insertexo{1M-jqhm4}{false}{exo}{true}
+\insertexo{1M-1n93r}{false}{exo}{true}
+\insertexo{1M-qp2mw}{false}{exo}{true}
+\insertexo{1M-jgbhr}{false}{exo}{true}
+\insertexo{1M-6qym1}{false}{exo}{true}
+\insertexo{1M-aatq8}{false}{exo}{true}
 
 
 Librement adapté de ...
