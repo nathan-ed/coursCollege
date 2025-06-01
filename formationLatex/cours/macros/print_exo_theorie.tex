@@ -88,38 +88,39 @@
 }
 
 
-\newcommand{\insertexo}[4]{% contenu, uuid, type (exo/cor/both), upside-down solution
-    \input{\path src/#1} % Input the exercise content from the provided path
-    \setboolean{uuid}{#2} % Set the uuid boolean
+\newcommand{\insertexo}[5][]{% #1 = label (optional), #2 = contenu, #3 = uuid, #4 = type, #5 = upside-down
+    \input{\path src/#2} % Input the exercise content from the provided path
+    \setboolean{uuid}{#3} % Set the uuid boolean
     
     % Start grouping to tightly control scope
     \begingroup
-    % Print the exercise if #3 equals "exo" or "both"
-    \ifthenelse{\equal{#3}{exo} \OR \equal{#3}{both}}{%
+    % Print the exercise if #4 equals "exo" or "both"
+    \ifthenelse{\equal{#4}{exo} \OR \equal{#4}{both}}{%
         \noindent % Ensure no extra indentation
-        \begin{exercice}[\Piments] % Begin question environment with the number of points
-            \ifthenelse{\boolean{uuid}}{#1}{} % Include uuid if true
+	\begin{exercice}[\Piments]% Begin question environment with the number of points
+            \ifx\relax#1\relax\else\label{#1}\fi % Add label if provided
+            \ifthenelse{\boolean{uuid}}{#2}{} % Include uuid if true
             \Contenu % Insert the content of the exercise
+             % Add label if provided
         \end{exercice}
     }{} % Otherwise, do nothing
     
-    % Print the correction if #3 equals "cor" or "both"
-    \ifthenelse{\equal{#3}{cor} \OR \equal{#3}{both}}{%
+    % Print the correction if #4 equals "cor" or "both"
+    \ifthenelse{\equal{#4}{cor} \OR \equal{#4}{both}}{%
         \noindent % Ensure no extra indentation
-        \ifthenelse{\equal{#4}{true}}{%
+        \ifthenelse{\equal{#5}{true}}{%
             \begin{core-upside} % Use core-upside for upside-down solution
                 {\footnotesize \Solution} % Insert the solution
             \end{core-upside}
         }{%
             \begin{core} % Use normal core for regular solution
-		    {\footnotesize \Solution } % Insert the solution
+                {\footnotesize \Solution } % Insert the solution
             \end{core}
         }%
     }{} % Otherwise, do nothing
     
     \endgroup % End the group
 }
-
 % Command to list exercises from a given list
 \newcommand{\listexo}[1]{% liste of exercises
 	\foreach \ex in #1 { % Iterate over each exercise in the list

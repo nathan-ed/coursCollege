@@ -165,9 +165,10 @@ after skip=10pt,
 }
 
 % Define the exercice environment
-\newtcolorbox{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
+\newtcolorbox[auto counter]{exercice}[1][]{ % #1 = difficulty (default 0), #2 = extra options
+	enhanced,
     before upper={
-        \stepcounter{exercice}%
+        \refstepcounter{exercice}%
         \fbox{\raggedleft\textbf{Exercice~\theexercice}}%
         \\
         \ifnum#1>0
@@ -214,3 +215,9 @@ after skip=10pt,
 
 \RequirePackage{icomma}
 \RequirePackage{polynom}
+\RequirePackage{tocloft}
+\renewcommand{\contentsname}{Table des matières}
+% Optional: reduce font size of the TOC
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftsubsecfont}{\footnotesize}
+\renewcommand{\cfttoctitlefont}{\normalsize\bfseries}
