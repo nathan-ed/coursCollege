@@ -36,10 +36,11 @@
 \tableofcontents
 \newpage
 
-\section{Définition non formelle -- notion intuitive}
+\section{Définition et exemples graphiques}
 \begin{exemple}
-	exemple introductif
 	\tcblower
+
+	{\bfseries Exemple introductif} -- 
 	Considérons la fonction définie par
 
 	\begin{align*}
@@ -49,30 +50,17 @@
 
 Nous allons étudier le comportement de cette fonction au bord de son ensemble de définition, c'est-à-dire en
 \begin{itemize}
-\item $x = 0$ (bord gauche), en $x = 1$ puis $x = 4$ (valeurs interdites)
+\item en $x = 1$ puis $x = 4$ (valeurs interdites)
 \item et finalement en $x \to +\infty$
 \end{itemize}
 
 \begin{tasks}(1)
 \task Si on évalue la fonction $f$ pour ces 3 valeurs particulières, on risque d'obtenir des réponses peu concluantes :
 
-$f(0) = \quad\quad\quad f(1) = \quad\quad\quad f(4) = $
+\[f(1) =\ligne{1} f(4) = \ligne{1}\]
 
-\task Utilisons alors des petits tableaux de valeurs :
+\task Utilisons alors des tableaux de valeurs :
 \begin{itemize}
-\item S'approcher de la valeur 0 depuis la droite $(x \to 0^+)$
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$x$ & 0 & 0,01 & 0,1 \\
-\hline
-$f(x)$ & 0,75 & 0,827 & 1,013 \\
-\hline
-\end{tabular}
-\end{center}
-
-Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 0 depuis la droite vaut 
 
 \item S'approcher de la valeur 1 en venant depuis la gauche $(x \to 1^-)$ et depuis la droite $(x \to 1^+)$
 
@@ -81,33 +69,33 @@ Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 0 depuis la dro
 \hline
 & \multicolumn{2}{c|}{gauche $\to$} & & \multicolumn{2}{c|}{$\leftarrow$ droite} \\
 \hline
-$x$ & 0,9 & 0,99 & 1 & 1,01 & 1,1 \\
+$x$ & $0,9$ & $0,99$ & $1$ & $1,01$ & $1,1$ \\
 \hline
-$f(x)$ & 1,886 & 1,989 & ??? & 2,012 & 2,12 \\
+$f(x)$ & $1,886$ & $1,989$ & ??? & $2,012$ & $2,12$ \\
 \hline
 \end{tabular}
 \end{center}
 
-Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers 1 vaut
+Ainsi, il semblerait que la limite de $f(x)$ quand $x$ tend vers $1$ vaut~\ligne{1}
 
-\item S'approcher de la valeur 4 en venant depuis la gauche $(x \to 4^-)$ et depuis la droite $(x \to 4^+)$
+\item S'approcher de la valeur $4$ en venant depuis la gauche $(x \to 4^-)$ et depuis la droite $(x \to 4^+)$
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 & \multicolumn{2}{c|}{gauche $\to$} & & \multicolumn{2}{c|}{$\leftarrow$ droite} \\
 \hline
-$x$ & 3,9 & 3,99 & 4 & 4,01 & 4,1 \\
+$x$ & $3,9$ & $3,99$ & $4$ & $4,01$ & $4,1$ \\
 \hline
-$f(x)$ & 89,25 & 899,3 & ??? & -900,7 & -90,75 \\
+$f(x)$ & $89,25$ & $899,3$ & ??? & $-900,7$ & $-90,75$ \\
 \hline
 \end{tabular}
 \end{center}
 
 Ainsi, il semblerait que la limite de $f(x)$ quand :
 \begin{itemize}
-\item $x$ tend vers 4 depuis la gauche vaut 
-\item $x$ tend vers 4 depuis la droite vaut 
+	\item $x$ tend vers $4$ depuis la gauche vaut~\ligne{1} 
+	\item $x$ tend vers $4$ depuis la droite vaut~\ligne{1}
 \end{itemize}
 \end{itemize}
 \end{tasks}
@@ -123,14 +111,14 @@ Ainsi, il semblerait que la limite de $f(x)$ quand :
 \hline
 & \multicolumn{3}{c|}{$\to +\infty$} \\
 \hline
-$x$ & 1000 & 10000 & 100000 \\
+$x$ & $1000$ & $10000$ & $100000$\\
 \hline
-$f(x)$ & -0,098 & -0,030 & -0,0095 \\
+$f(x)$ & $-0,098$ & $-0,030$ & $-0,0095$ \\
 \hline
 \end{tabular}
 \end{center}
 
-Ainsi, il semblerait que la fonction plafonne à la hauteur $\ldots$ lorsque $x$ tend vers $+\infty$
+Ainsi, il semblerait que la fonction plafonne à \ligne{1} lorsque $x$ tend vers $+\infty$
 		\end{itemize}
 		\task[c)] Observons ceci sur la représentation graphique de $f$
 \begin{center}
@@ -170,7 +158,7 @@ Ainsi, il semblerait que la fonction plafonne à la hauteur $\ldots$ lorsque $x$
 \addplot[gray, dashed] coordinates {(0,0) (9,0)};
 
 % Point at x=0 (point limite)
-\addplot[blue, mark=o, mark options={fill=white, scale=1.5}] coordinates {(0,0.75)};
+\addplot[blue, mark=*, mark options={fill=black, scale=1.5}] coordinates {(0,0.75)};
 
 % Hole at x=1 (trou)
 \addplot[blue, mark=o, mark options={fill=white, scale=1.5}] coordinates {(1,2)};
@@ -192,25 +180,26 @@ Ainsi, il semblerait que la fonction plafonne à la hauteur $\ldots$ lorsque $x$
   vlines,
 }
 % Row 1: x = 0
-$0$ & {$\dfrac{3}{4}$\\\vspace{0.2cm} défini} & {$\displaystyle\lim_{x \to 0^-} f(x) = 0,75$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 0^+} f(x) = 0,75$} & {un \textbf{point limite} en \\ \vspace{0.2cm}$\left(0; \dfrac{3}{4}\right)$} \\
+$0$ & {$\dfrac{3}{4}$\\\vspace{0.2cm} défini} &  $\displaystyle\lim_{x \to 0^+} f(x) = 0,75$ & {un \textbf{point limite} en \\ \vspace{0.2cm}$\left(0; \dfrac{3}{4}\right)$} \\
 % Row 2: x = 1
-$1$ & {$\dfrac{0}{0}$\\ \vspace{0.2cm} indéterminé} & {$\displaystyle\lim_{x \to 1^-} f(x) = 2$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 1^+} f(x) = 2$} & un \textbf{trou} en $(1; 2)$ \\
+$1$ & {« $\dfrac{0}{0}$ »\\ \vspace{0.2cm} indéterminé} & {$\displaystyle\lim_{x \to 1^-} f(x) = 2$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 1^+} f(x) = 2$} & un \textbf{trou} en $(1; 2)$ \\
 % Row 3: x = 4 
-$4$ & {$\dfrac{-9}{0}$\\ \vspace{0.2cm} non défini} & {$\displaystyle\lim_{x \to 4^-} f(x) = +\infty$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 4^+} f(x) = -\infty$} & {une \textbf{asymptote verticale}\\ en $x=4$} \\
+$4$ & {« $\dfrac{-9}{0}$ »\\ \vspace{0.2cm} non défini} & {$\displaystyle\lim_{x \to 4^-} f(x) = +\infty$\\\vspace{0.2cm} $\displaystyle\lim_{x \to 4^+} f(x) = -\infty$} & {une \textbf{asymptote verticale}\\ en $x=4$} \\
 % Row 4: x -> +infinity
-$\to +\infty$ & & $\displaystyle\lim_{x \to +\infty} f(x) = 0$ & {une \textbf{asymptote}\\ \textbf{horizontale}\\ à droite en $y=0$} \\
+$\to +\infty$ &« $\dfrac{+\infty}{+\infty}$ »& $\displaystyle\lim_{x \to +\infty} f(x) = 0$ & {une \textbf{asymptote}\\ \textbf{horizontale}\\ à droite en $y=0$} \\
 \end{tblr}
 \end{center}
 \end{tasks}
 
 \end{exemplesuite}
 	
+Le but de ce chapitre sera de présenter les méthodes pour réussir à mener ce type d'étude sur diverses fonctions. 
+
 \begin{definition}
 	\tcblower
 	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.
 \end{definition}
 \begin{exemple}
-	voisinages de $3$
 	\tcblower
 		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
 \end{exemple}
@@ -250,25 +239,20 @@ $x\rightarrow a^+$
 \end{definition}
 \begin{definition}
 $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$
-\medskip
-
-$\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=\ell}$
 	\tcblower
 Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $\ell$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à gauche de $f(x)$ quand $x$ tend vers $a$ vaut $\ell$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $\ell$ lorsque $x\rightarrow a^-$.
 
-On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x<a}}f(x)=\ell}$. 
+On écrit $\displaystyle{\lim_{x\rightarrow a^-}f(x)=\ell}$. 
 \end{definition}
 \begin{definition}
 $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$
-\medskip
-
-$\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=\ell}$
 	\tcblower
 Soit $f$ une fonction définie au voisinage d'un nombre $a$ et soit $\ell$ un nombre réel ou le symbole $-\infty$, $+\infty$. On dit que \emph{«~la limite à droite de $f(x)$ quand $x$ tend vers $a$ vaut $\ell$~»} si $f(x)$ s'approche «~aussi près qu'on veut~» de $\ell$ lorsque $x\rightarrow a^+$.
 
-On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$ ou encore $\displaystyle{\lim_{\substack{x\to a \\ x>a}}f(x)=\ell}$. 
+On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$. 
 \end{definition}
 \begin{exemple}[label=ex:fmorceaux]
+\tcblower  
 Soit la fonction $f$ définie par 
 \[f(x)=\begin{cases}x^2+1 & \text{si } x>1\\
 5-x& \text{si } x\leq 1
@@ -276,22 +260,20 @@ Soit la fonction $f$ définie par
 Déterminer graphiquement 
 
 $\displaystyle{\lim_{x\rightarrow 1^{-}}} f(x)$ et $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}$.
-\tcblower  
-On commence par représenter graphiquement $f$. 
 
 \begin{center}
-		\begin{tikzpicture}[scale=1]
-  \begin{axis}[
+		\begin{tikzpicture}[scale=0.8]
+   \begin{axis}[
     axis lines=middle,
     xlabel={$x$}, ylabel={$y$},
-    xlabel style={at=(current axis.right of origin), anchor=west},
-    ylabel style={at=(current axis.above origin), anchor=south},
-    xmin=-2, xmax=2.5, ymin=0, ymax=5,
+    label style={font=\normalsize},
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
+    xmin=-2, xmax=2.5, ymin=0, ymax=5.5,
     xtick={-2,-1,0,1,2},
     ytick={0,1,2,3,4,5},
     samples=200,
-  ]
-    % curved branch: x^2+1 for x<=1
+  ]    % curved branch: x^2+1 for x<=1
     \addplot [domain=-2:1, thick] {x*x+1} node[below left,pos=0.5] {$f(x)$};
     % straight branch: 5-x for x>1
     \addplot [domain=1:5, thick] {5-x};
@@ -307,9 +289,9 @@ On commence par représenter graphiquement $f$.
   \end{axis}
 \end{tikzpicture}
 \end{center}
-On observe que $\displaystyle{\lim_{x\rightarrow 1^{-}}f(x)}=2$ et que $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}=4$.  
+On observe que $\displaystyle{\lim_{x\rightarrow 1^{-}}f(x)}=\ligne{1}$ et que $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}=\ligne{1}$.  
 
-Pour rappel, ce type de fonction est une fonction définie par morceaux. 
+Pour rappel, ce type de fonction est une fonction \itshape{définie par morceaux}. 
 \end{exemple}
 
 \begin{definition}
@@ -326,7 +308,7 @@ On écrit $\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$. \end{definition}
 Si $\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$ existe, alors elle est unique.	
 \end{thm}
 
-\begin{thm}
+\begin{thm}[label=thm:existence]
 	Existence de la limite
 \tcblower
 Une limite existe si et seulement si les limites à gauche et à droite sont égales, i.e.
@@ -335,21 +317,21 @@ Une limite existe si et seulement si les limites à gauche et à droite sont ég
 \end{thm}
 \begin{exemple}
 	\tcblower
-	Dans l'exemple \ref{ex:fmorceaux}, la fonction $f$ n'admet pas de limite en $1$, car par la contraposée du théorème \ref{thm:unicite} la limite à gauche et la limite à droite ne sont pas égales.  
+	Dans l'exemple \ref{ex:fmorceaux}, la fonction $f$ n'admet pas de limite en $1$, car par la contraposée du théorème \ref{thm:existence} la limite à gauche et la limite à droite ne sont pas égales.  
 \end{exemple}
 \begin{exemple}
-	Soit $f$ définie par \[f(x)=\begin{cases}x+1& \text{si } x<3\\ -2x+7 & \text{si } x\geq 3\end{cases}\]	
+		\tcblower
+Soit $f$ définie par \[f(x)=\begin{cases}x+1& \text{si } x<3\\ -2x+7 & \text{si } x\geq 3\end{cases}\]	
 	Déterminer $\displaystyle{\lim_{x\rightarrow 3}f(x)}$. 
-	\tcblower
-	On représente graphiquement $f$.
+
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
     axis lines=middle,
     xlabel={$x$}, ylabel={$y$},
-    xlabel style={at=(current axis.right of origin), anchor=west},
-    ylabel style={at=(current axis.above origin), anchor=south},
-    xmin=-2, xmax=7, ymin=-2, ymax=5,
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
+    xmin=-2, xmax=7, ymin=-2, ymax=4.5,
     xtick={-2,0,2,4,6},
     ytick={-2,0,2,4},
     grid=both,
@@ -364,21 +346,22 @@ Une limite existe si et seulement si les limites à gauche et à droite sont ég
   \end{axis}
 \end{tikzpicture}\end{center}
  On observe que 
-	\[\lim_{x\rightarrow 3^+}f(x)=4 \quad \text{et} \quad \lim_{x\rightarrow 3^-}f(x)=1\]
-	donc la limite $\displaystyle{\lim_{x\rightarrow 3}f(x)}$ n'existe pas.
+ \[\lim_{x\rightarrow 3^+}f(x)=\ligne{1} \quad \text{et} \quad \lim_{x\rightarrow 3^-}f(x)=\ligne{1}\]
+ donc la limite $\displaystyle{\lim_{x\rightarrow 3}f(x)}$ \ligne{3}.
 \end{exemple}
 \begin{exemple}
-	Soit la fonction $f$ définie par $f(x)=\dfrac{9-x}{3-\sqrt{x}}$. Étudier graphiquement $\displaystyle{\lim_{x\rightarrow 9}f(x)}$ et $\displaystyle{\lim_{x\rightarrow 4}f(x)}$. 
 	\tcblower
-	On remarque que le domaine de définition de $f$ est 
-$D_f=\mathbb{R}\setminus\{9\}$. On représente la fonction graphiquement. 
+	Soit la fonction $f$ définie par $f(x)=\dfrac{9-x}{3-\sqrt{x}}$. Étudier graphiquement $\displaystyle{\lim_{x\rightarrow 9}f(x)}$ et $\displaystyle{\lim_{x\rightarrow 4}f(x)}$.
+
+	Le domaine de définition de $f$ est 
+	$D_f=\mathbb{R}_{+}\setminus\{9\}$. 
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.8]
   \begin{axis}[
     axis lines=middle,
     xlabel={$x$}, ylabel={$y$},
-    xlabel style={at=(current axis.right of origin), anchor=west},
-    ylabel style={at=(current axis.above origin), anchor=south},
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
     xmin=0,   xmax=15,
     ymin=0,   ymax=9,
     xtick={0,4,9,15},
@@ -405,22 +388,21 @@ $D_f=\mathbb{R}\setminus\{9\}$. On représente la fonction graphiquement.
   \end{axis}
 \end{tikzpicture}
 \end{center}
-On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=6}$ même si $f$ n'est pas définie en $9$ (indiqué par le rond vide). De plus $\displaystyle{\lim_{x\rightarrow 4}f(x)=5}$. On a calculé les deux limites et on a montré qu'elles existent.  
+On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=}\ligne{1}$ même si $f$ n'est pas définie en $9$ (indiqué par le rond vide). De plus $\displaystyle{\lim_{x\rightarrow 4}f(x)=}\ligne{1}$. On a calculé les deux limites et on a montré qu'elles \ligne{2}.  
 \end{exemple}
 \begin{exemple}
-	Soit $f$ définie par $f(x)=\dfrac{x^3-1}{x^2-1}$. Déterminer 
-
-	$\displaystyle{\lim_{x\rightarrow 1}f(x)}$ et $\displaystyle{\lim_{x\rightarrow -1}f(x)}$.
 	\tcblower
-	On commence par remarquer que $D_f=\mathbb{R}\setminus\{-1\}$. On représente graphiquement $f$. 
+	Soit $f$ définie par $f(x)=\dfrac{x^3-1}{x^2-1}$. Déterminer $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ et $\displaystyle{\lim_{x\rightarrow -1}f(x)}$.
+
+	On a $D_f=\mathbb{R}\setminus\{-1\}$. 
 	\begin{center}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.8]
   \begin{axis}[
     axis lines=middle,
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
     xlabel={$x$}, ylabel={$y$},
-    xlabel style={at=(current axis.right of origin), anchor=west},
-    ylabel style={at=(current axis.above origin), anchor=south},
-    xmin=-3, xmax=5, ymin=-5, ymax=5,
+    xmin=-3, xmax=5, ymin=-5, ymax=6,
     xtick={-3,-1,0,1,2,3,4,5},
     ytick={-4,-2,0,2,4},
     grid=both,
@@ -439,14 +421,13 @@ On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=6}$ même si $f$ n'est pas défini
 	On observe que 
 	\[\displaystyle{\lim_{x\rightarrow 1^-}f(x)=\dfrac{3}{2}} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow 1^+}f(x)=\dfrac{3}{2}}\]
 	donc $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ existe et vaut $\dfrac{3}{2}$. Toutefois, 
-	\[\displaystyle{\lim_{x\rightarrow -1^-}f(x)=-\infty} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow -1^+}f(x)=+\infty}\]
-	donc $\displaystyle{\lim_{x\rightarrow -1}f(x)}$ n'existe pas.
+	\[\displaystyle{\lim_{x\rightarrow -1^-}f(x)=}\ligne{1} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow -1^+}f(x)=}\ligne{1}\]
+	donc $\displaystyle{\lim_{x\rightarrow -1}f(x)}$ \ligne{3}. 	
 \end{exemple} 
-\begin{autre}
-	\tcblower
+
 Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
-\end{autre}
 \section{Limites de fonctions élémentaires}
+\label{sec:limel}
 \begin{thm}[label=thm:limel]
 Limites de fonctions élémentaires
 
@@ -465,36 +446,28 @@ Limites de fonctions élémentaires
 	\end{description}
 \end{thm}
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow -3}14}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow -3}14\stackrel{\text{\eqmakebox[b][c]{{\bfseries L1}}}}{=}14}$, par la première limite du théorème \ref{thm:limel}. 
+	$\displaystyle{\lim_{x\rightarrow -3}14\stackrel{\text{\eqmakebox[b][c]{{\bfseries L1}}}}{=}14}$, par la première assertion du théorème \ref{thm:limel}. 
 \end{exemple}
 
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow 5}x}$
 	\tcblower
 $\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{\eqmakebox[b][c]{{\bfseries L2}}}}{=}5}$ 
 \end{exemple}
 
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow \pi/2}\sin(x)}$
 	\tcblower
 	$\displaystyle{\lim_{x\rightarrow \pi/2}\sin(x)\stackrel{\text{\eqmakebox[b][c]{{\bfseries L3}}}}{=}\sin\left(\dfrac{\pi}{2}\right)}=1$ 
 \end{exemple}
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{x}}$
 	\tcblower
-	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{8}\stackrel{\text{\eqmakebox[b][c]{{\bfseries L4}}}}{=}\sqrt[3]{8}=2}$ 
-\end{exemple}
-\begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow 32}\log_2(x)}$
-	\tcblower
-	$\displaystyle{\lim_{x\rightarrow 32}\log_2(x)\stackrel{\text{\eqmakebox[b][c]{{\bfseries L5}}}}{=}\log_2(32)=\log_2\left(2^5\right)=5}$ 
+	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{x}\stackrel{\text{\eqmakebox[b][c]{{\bfseries L4}}}}{=}\sqrt[3]{8}=2}$ 
 \end{exemple}
 
 \section{Propriétés des limites}
+\label{sec:proplim}
 Les propriétés suivantes nous permettent de calculer des limites plus compliquées du type $\displaystyle{\lim_{x\rightarrow 2}\dfrac{x-5}{x}}$.
-
+\smallskip
 \begin{thm}[label=thm:limprop]
 	Propriétés des limites
 
@@ -512,12 +485,16 @@ Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarr
 \end{thm}
 \begin{thm}[label=thm:compo]
 	Limite d'une composition
+
+	(sans démonstration)
 	\tcblower
-	Si $\displaystyle{\lim_{x\rightarrow a}f(x)=b}$ et $\displaystyle{\lim_{t\rightarrow b}g(t)=g(b)}$ existent, alors on a~:
+	Si $\displaystyle{\lim_{x\rightarrow a}f(x)=b}$ et $\displaystyle{\lim_{t\rightarrow b}g(t)=g(b)}$ existent et sont finies, alors on a~:
 	\[\lim_{x\rightarrow a}g(f(x))=g(\lim_{x\rightarrow a }f(x))=g(b).\] 
 \end{thm}
 \begin{thm}[label=thm:poly]
 Limites de fonctions polynômiales	
+
+(avec démonstration)
 	\tcblower
 	Si $f$ est une fonction polynomiale, i.e. 
 	\[f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_2 x^2+a_1x_1+a_0,\]
@@ -531,9 +508,9 @@ Limites de fonctions polynômiales
 Ainsi,
 
 \begin{align*}
-	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{\eqmakebox[c][c]{{\bfseries P2}}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
-									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P0 et L2}}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
-									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P3}}}}{=}a_n b^n+\ldots+a_1b+a_0.
+	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{\eqmakebox[c][c]{{\bfseries P1}}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
+									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P0}}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
+									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P3 et L2}}}}{=}a_n b^n+\ldots+a_1b+a_0.
 \end{align*}
 
 
@@ -566,15 +543,14 @@ Ainsi,
 	\[\displaystyle{\lim_{x\rightarrow a}g(x)}=\ell.\]
 \end{thm}
 \begin{exemple}
-$\displaystyle{\lim_{x\to2}\left(\dfrac{x-5}{x}\right)}$
 	\tcblower
 On peut maintenant calculer la limite considérée en introduction en justifiant le calcul :
 	\[\lim_{x\to2}\left(\dfrac{x-5}{x}\right)
-		\stackrel{\text{\eqmakebox[d][c]{{\bfseries P4}}}}{=}
+		\stackrel{\text{\eqmakebox[k][c]{{\bfseries P4}}}}{=}
 \dfrac{\displaystyle{\lim_{x\to2}(x-5)}}{\displaystyle{\lim_{x\to2}x}}
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries {P2}}}}}{=}
+\stackrel{\text{\eqmakebox[k][c]{{\bfseries {P2}}}}}{=}
 \dfrac{\displaystyle{\lim_{x\to2}x-\lim_{x\to2}5}}{\displaystyle{\lim_{x\to2}x}}
-\stackrel{\text{{\eqmakebox[d][c]{\bfseries {L2,L1}}}}}{=}
+\stackrel{\text{{\eqmakebox[k][c]{\bfseries {L2,L1}}}}}{=}
 \dfrac{2-5}{2}
 =-\dfrac{3}{2}
 \]
@@ -582,27 +558,21 @@ On peut maintenant calculer la limite considérée en introduction en justifiant
 
 
 \begin{exemple}
-	\begin{tasks}
-		\task \(\displaystyle\lim_{x\to-4}(x+3)\)\\
-\task \(\displaystyle\lim_{x\to1}2x^2\)\\
-\task \(\displaystyle\lim_{x\to2}\dfrac{x+5}{x}\)\\ 
-\task \(\displaystyle\lim_{x\to0}\cos(x^4)\)\\
-	\end{tasks}
-\tcblower
+	\tcblower
 Calculer en justifiant 
 \begin{tasks}
 	\task
 \[
 \lim_{x\to-4}(x+3)
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P1}}}}}{=}
+\stackrel{\text{\eqmakebox[l][c]{{\bfseries{P1}}}}}{=}
 \lim_{x\to-4}x+\lim_{x\to-4}3
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{L2,L1}}}}}{=}
+\stackrel{\text{\eqmakebox[l][c]{{\bfseries{L2,L1}}}}}{=}
 -4+3=-1
 \]
 ou plus directement :
 \[
 \lim_{x\to-4}(x+3)
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
+\stackrel{\text{\eqmakebox[l][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 -4+3=-1
 \]
 
@@ -611,17 +581,17 @@ ou plus directement :
 
 \[
 \lim_{x\to1}2x^2
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P0}}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries{P0}}}}}{=}
 2\cdot\lim_{x\to1}x^2
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{P3}}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries{P3}}}}}{=}
 2\cdot\lim_{x\to1}x\cdot\lim_{x\to1}x
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{L2,L1}}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries{L2,L1}}}}}{=}
 2\cdot1\cdot1=2
 \]
 ou plus directement :
 \[
 \lim_{x\to1}2x^2
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 2\cdot1\cdot1=2
 \]
 \task 
@@ -629,16 +599,16 @@ ou plus directement :
 \lim_{x\to2}\dfrac{x+5}{x}
 \stackrel{\text{\eqmakebox[b][c]{{\bfseries{P4}}}}}{=}
 \dfrac{\lim_{x\to2}(x+5)}{\lim_{x\to2}x}
-\stackrel{\text{\eqmakebox[e][c]{{\bfseries thm. \ref{thm:poly},L2}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries thm. \ref{thm:poly}}}}}{=}
 \dfrac{2+5}{2}
 =\dfrac{7}{2}
 \]
 \task
 \[
 \lim_{x\to0}\cos(x^4)
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
+\stackrel{\text{\eqmakebox[d][c]{{\bfseries{L3 et thm \ref{thm:compo}}}}}}{=}
 \cos\bigl(\lim_{x\to0}x^4\bigr)
-\stackrel{\text{\eqmakebox[d][c]{{\bfseries thm \ref{thm:compo}}}}}{=}
+\stackrel{\text{\eqmakebox[m][c]{{\bfseries thm \ref{thm:poly}}}}}{=}
 \cos(0^4)=\cos(0)=1
 \]
 \end{tasks}
@@ -648,47 +618,31 @@ ou plus directement :
 	\tcblower
 Ces théorèmes montrent que dans la plupart des fonctions que l'on considère, la limite de \(f(x)\) quand \(x\) tend vers \(a\) est égale à \(f(a)\), ce qu’on note
 \[
-\lim_{x\to a}f(x)=f(a);
+\lim_{x\to a}f(x)=f(a).
 \]
-dans tous ces cas « simples », le comportement de \(f\) près de \(a\) est le même que celui de \(f\) en \(a\). Ce n’est donc pas pour ce type de fonctions que l’« outil limite » est pertinent, mais pour ceux de la section suivante…
+Dans tous ces cas « simples », le comportement de \(f\) près de \(a\) est le même que celui de \(f\) en \(a\). Ce n’est donc pas pour ces fonctions que l’«~outil limite~» est pertinent, mais pour celles de la section suivante…
 
-Plus tard dans le cours,nous reviendrons sur cette remarque qui nous permettra d’appréhender une notion très importante, {\bfseries la continuité}.
+Dans la partie \ref{sec:continuite}, nous reviendrons sur cette remarque qui nous permettra d’appréhender une notion très importante, {\bfseries la continuité}.
 \end{remarque}
 
-\section{Limites infinies -- type $\dfrac{1}{0}$}
+\section{Limites infinies -- type « $\dfrac{1}{0}$ »}
 \begin{definition}
-	Limite infinie
+	Type $«~\dfrac{1}{0}~»$
 	\tcblower
-Soit $f$ une fonction définie au voisinage d’un nombre $a$.
-
-On dit que la limite de $f(x)$ en $a$ est égale à (plus) l’infini si $f(x)$ devient infiniment grand lorsque $x$ se rapproche suffisamment près de $a$ mais sans être égal à $a$.
-
-On écrit :
-\[
-\lim_{x\to a}f(x)=+\infty
-\quad(\text{ou }=\infty)
-\]
-
-On dit que la limite de $f(x)$ en $a$ est égale à moins l’infini si $f(x)$ devient infiniment petit lorsque $x$ se rapproche suffisamment près de $a$ mais sans être égal à $a$.
-
-On écrit :
-\[
-\lim_{x\to a}f(x)=-\infty
-\]
+	Une limite du type quotient \(\displaystyle \lim_{x\to a}\dfrac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}g(x)=0\) mais où \(\displaystyle \lim_{x\to a}f(x)\neq0\) est appelée limite de type \(«~\displaystyle \dfrac{1}{0}~»\). 
 \end{definition}
 \begin{remarque}
 	\tcblower
-
-De la même manière, on peut définir
-\[
-\lim_{x\to a^+}f(x)=+\infty,\quad
-\lim_{x\to a^+}f(x)=-\infty,\quad
-\lim_{x\to a^-}f(x)=+\infty,\quad
-\lim_{x\to a^-}f(x)=-\infty.
-\]
+	Il y a deux cas pour les limites «~$\dfrac{1}{0}$~»~:
+	\begin{description}
+		\item[Cas 1] La limite existe et vaut $-\infty$ ou $+\infty$.
+		\item[Cas 2] La limite n'existe pas, (par exemple, limite à gauche vaut $-\infty$ et limite à droite vaut $+\infty$.).
+	\end{description}
+	{\bfseries Conclusion~:} Il faut calculer la limite à gauche et à droite en s'aidant, si besoin, de la factorisation.
 \end{remarque}
+
+
 \begin{exemple}
-Étudier \(\displaystyle\lim_{x\to0}\dfrac1x\) via une approche graphique.
 \begin{tikzpicture}[scale=0.6]
   \begin{axis}[
     axis lines=middle,
@@ -718,17 +672,16 @@ De la même manière, on peut définir
 Soit \(f\) définie par \(f(x)=\dfrac1x\) :
 \[
 \lim_{x\to0^-}\dfrac1x
-=\dfrac{1}{0^-}=-\infty,\quad
+=«\dfrac{1}{0^-}»=\ligne{1},\quad
 \lim_{x\to0^+}\dfrac1x
-=\dfrac{1}{0^+}=+\infty,\]
+=«\dfrac{1}{0^+}»=\ligne{1},\]
 donc
 \[
 \lim_{x\to0}\dfrac1x
-\text{ n'existe pas.}
+\,\ligne{3}
 \]
 \end{exemple}
 \begin{exemple}
-Étudier\(\displaystyle\lim_{x\to0}\dfrac1{x^2}\) via une approche graphique.
 % f(x) = 1/x^2
 \begin{tikzpicture}[scale=0.6]
   \begin{axis}[
@@ -757,29 +710,20 @@ donc
 Soit \(f\) définie par \(f(x)=\dfrac1{x^2}\) :
 \[
 \lim_{x\to0^-}\dfrac1{x^2}
-=\dfrac{1}{(0^-)^2}=+\infty,\quad
+=« \dfrac{1}{(0^-)^2} »=\ligne{1},\quad
 \lim_{x\to0^+}\dfrac1{x^2}
-=\dfrac{1}{(0^+)^2}=+\infty,
+=«\dfrac{1}{(0^+)^2}»=\ligne{1},
 \]
 donc
 \[
-\lim_{x\to0}\dfrac1{x^2}=+\infty.
+	\lim_{x\to0}\dfrac1{x^2}=\ligne{1}.
 \]
 \end{exemple}
 
-\begin{definition}
-	Type $«~\dfrac{1}{0}~»$
-	\tcblower
-	Une limite du type quotient \(\displaystyle \lim_{x\to a}\dfrac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}g(x)=0\) mais où \(\displaystyle \lim_{x\to a}f(x)\neq0\) est appelée limite de type \(«~\displaystyle \dfrac{1}{0}~»\). 
-\end{definition}
-\begin{remarque}
-	\tcblower
-Pour calculer une limite du type \(«~\displaystyle\dfrac{1}{0}~»\), on doit toujours calculer distinctement la limite à gauche et la limite à droite. Le plus souvent, une factorisation est très utile car nous pouvons ainsi utiliser la règle des signes pour contrôler le signe du résultat. Si les limites à gauche et à droite sont égales, la limite existe et vaut cette valeur ; sinon, elle n'existe pas.
-\end{remarque}
 
 \begin{exemple}[label=ex:inf1]
-	Calculer  \(\displaystyle\lim_{x\to -2}\dfrac{-2}{2x+4}\) et interpréter graphiquement.
 	\tcblower
+Calculer  \(\displaystyle\lim_{x\to -2}\dfrac{-2}{2x+4}\) et interpréter graphiquement.
 \[
 \lim_{x\to -2}\dfrac{-2}{2x+4}
 =«~\dfrac{-2}{0}~»
@@ -790,15 +734,13 @@ Pour calculer une limite du type \(«~\displaystyle\dfrac{1}{0}~»\), on doit to
 =\lim_{x\to -2^+}\dfrac{-2}{2(x+2)}
 =\lim_{x\to -2^+}\dfrac{-1}{x+2}
 =«~\dfrac{-1}{0^+}~»
-=-\infty,
+=\ligne{1},
 \]
 et
 \[
 \lim_{x\to -2^-}\dfrac{-2}{2x+4}
 =«~\dfrac{-1}{0^-}~»
-=+\infty
-\]
-d'où $\displaystyle{\lim_{x\to -2}\dfrac{-2}{2x+4}}$ n'existe pas. 
+=\ligne{1} \text{ d'où } \displaystyle{\lim_{x\to -2}\dfrac{-2}{2x+4}}\, \ligne{3}.\] 
 \end{exemple}
 \begin{exemple}[label=ex:inf2]
 	Calculer  \(\displaystyle\lim_{x\to -2}\dfrac{-2}{(x+2)^2}\) et interpréter graphiquement.
@@ -813,14 +755,14 @@ d'où $\displaystyle{\lim_{x\to -2}\dfrac{-2}{2x+4}}$ n'existe pas.
 \lim_{x\to -2^-}\dfrac{-2}{(x+2)^2}
 =«~\dfrac{-2}{(0^-)^2~»
 }
-=-\infty \text{ et } 
+=\ligne{1} \text{ et } 
 \lim_{x\to -2^+}\dfrac{-2}{(x+2)^2}
 =«~\dfrac{-2}{(0^+)^2~»
 }
-=-\infty,
+=\ligne{1},
 \]
 \[
-\text{donc }\lim_{x\to -2}\dfrac{-2}{(x+2)^2}=-\infty.
+	\text{donc }\lim_{x\to -2}\dfrac{-2}{(x+2)^2}\ligne{2}.
 \]
 \end{exemple}
 \begin{exemple}[label=ex:inf3]
@@ -836,15 +778,16 @@ d'où $\displaystyle{\lim_{x\to -2}\dfrac{-2}{2x+4}}$ n'existe pas.
 \lim_{x\to 1^+}\dfrac{x-2}{x^2+3x-4}
 =\lim_{x\to 1^+}\dfrac{x-2}{(x-1)(x+4)}
 =«~\dfrac{-1}{0^+\cdot5}~»
-=-\infty\]
+=\ligne{1}\]
 et
 \[
 \lim_{x\to 1^-}\dfrac{x-2}{x^2+3x-4}
+=\lim_{x\to 1^-}\dfrac{x-2}{(x-1)(x+4)}
 =«~\dfrac{-1}{0^-\cdot5}~»
-=+\infty,
+=\ligne{1},
 \]
 \[
-	\text{donc }\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}\text{ n'existe pas }.
+	\text{donc }\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}\,\ligne{3}.
 \]
 \end{exemple}
 
@@ -881,69 +824,51 @@ Interprétations graphiques :
       xmin=-2, xmax=3, ymin=-7, ymax=7,
       samples=200
     ]    \node[anchor=north west] at (rel axis cs:0,1) {\bfseries Exemple \ref{ex:inf3}};
-      \addplot[domain=-2:0.95]  {(x-2)/(x^2+3*x-4)};
-      \addplot[domain=1.05:5]   {(x-2)/(x^2+3*x-4)};
+      \addplot[domain=-2:0.97]  {(x-2)/(x^2+3*x-4)};
+      \addplot[domain=1.03:5]   {(x-2)/(x^2+3*x-4)};
       \addplot[dashed] coordinates {(1,-10) (1,10)};
     \end{axis}
   \end{tikzpicture}
 \end{center}
 \section{Limites en l'infini}
 
-\begin{remarque}
-\tcblower
-On est souvent amené à étudier le comportement de \(f(x)\) – pour autant que \(f\) soit bien définie – lorsque \(x\) tend vers \(+\infty\) ou lorsque \(x\) tend vers \(-\infty\).
-\end{remarque}
 
 \begin{definition}
 Limite en l'infini	
 \tcblower
 Soit \(f\) une fonction définie sur \(\mathbb{R}\).
 
-On dit que la limite de \(f(x)\) quand \(x\) tend vers $+\infty$ est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe positif). Dans ce cas, on écrit
-\[
-\lim_{x\to+\infty}f(x)=L.
-\]
-On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \(L\) si et seulement si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe négatif). Dans ce cas, on écrit
-\[
-\lim_{x\to-\infty}f(x)=L.
-\]
+On dit que la limite de \(f(x)\) quand \(x\) tend vers $+\infty$ est égale à \(L\) si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe positif). On note $\lim_{x\to+\infty}f(x)=L$.
+
+On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \(L\) si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe négatif). On note $\lim_{x\to-\infty}f(x)=L$.
 
 
 \end{definition}
 
 \begin{remarque}
 	\tcblower
-	\begin{tasks}
-		\task Quand on écrit \(\displaystyle{\lim_{x\to\infty}f(x)}\), il s'agit de \(\displaystyle{\lim_{x\to+\infty}f(x)}\).
-\task \(\displaystyle{\lim_{x\to\pm\infty}f(x)}\) signifie qu'on considère simultanément les deux cas \(\displaystyle{\lim_{x\to+\infty}f(x)}\) et \(\displaystyle{\lim_{x\to-\infty}f(x)}\).
-	\end{tasks}
+ \(\displaystyle{\lim_{x\to\pm\infty}f(x)}\) signifie qu'on considère simultanément les deux cas \(\displaystyle{\lim_{x\to+\infty}f(x)}\) et \(\displaystyle{\lim_{x\to-\infty}f(x)}\).
 \end{remarque}
 
-\begin{remarque}
-	\tcblower
-	On utilise une notation qui n'est pas rigoureuse en écrivant $«~\dfrac{1}{0}~»$. On va dès maintenant également introduire une notation pour travailler avec l'infini. Cette «~algèbre de l'infini~» peut être formalisée rigoureusement, mais cela dépasse le cadre de ce cours et nous admettrons les propriétés suivantes. 
-\end{remarque}
+\section{Algèbre de l'infini}
 \begin{formule}[label=form:inf]
-	algèbre de l'infini
+	Algèbre de l'infini
 	\tcblower
 	\begin{tasks}
-		\task $(+\infty)+(+\infty)=+\infty$ et $(-\infty)+(-\infty)=-\infty$
-		\task $(\pm \infty)\cdot (\pm\infty)=\pm \infty$, où le signe du produit est donné par la règle des signes
-		\task Pour $a\in \mathbb{R}$, $(+\infty)\pm a=+\infty$ et $(-\infty)\pm a=-\infty$
-		\task Pour $a\in \mathbb{R}\setminus\{0\}$, $(\pm a)\cdot (\pm \infty)=\pm\infty$, où le signe du produit est donné par la règle des signes
-		\task Pour $a\in \mathbb{R}\setminus\{0\}, \dfrac{\pm a}{\pm\infty}=0$
-		\task Si $a>0$, alors $«~\dfrac{a}{0^+}~»=+\infty$ et $«~\dfrac{a}{0^-}~»=-\infty$
-		\task Si $a<0$, alors $«~\dfrac{a}{0^+}~»=-\infty$ et $«~\dfrac{a}{0^+}~»=+\infty$
+		\task[] $(+\infty)+(+\infty)=\ligne{1}$ et $(-\infty)+(-\infty)=\ligne{1}$
+		\task[] $(\pm \infty)\cdot (\pm\infty)=\ligne{1}$, signe selon la règle des signes
+		\task[] $(+\infty)\pm a=\ligne{1}$ et $(-\infty)\pm a=\ligne{1}$ pour $a\in \mathbb{R}$
+		\task[] $(\pm a)\cdot (\pm \infty)=\ligne{1}$, signe selon la règle des signes pour $a\in \mathbb{R}\setminus\{0\}$
+		\task[]   $\dfrac{\pm a}{\pm\infty}=\ligne{1}$ pour $a\in \mathbb{R}\setminus\{0\}$
 	\end{tasks}
 \end{formule}
 
 
 \begin{remarque}
 	\tcblower
-	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini du théorème \ref{thm:limprop} qui reste valable dans cette situations. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
+	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini des théorèmes des parties \ref{sec:limel} et \ref{sec:proplim} qui restent valable dans cette situation. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
 \end{remarque}
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}$ 
 	\tcblower
 	$\begin{aligned}
 		\displaystyle{\lim_{x\rightarrow +\infty}(5x^2+x+2)}&\stackrel{\text{\eqmakebox[f][c]{{\bfseries thm \ref{thm:poly}}}}}{=}\displaystyle{\lim_{x\rightarrow +\infty}5x^2}+\displaystyle{\lim_{x\rightarrow +\infty}x}+\displaystyle{\lim_{x\rightarrow +\infty}2}\\
@@ -952,7 +877,6 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \
 	\end{aligned}$
 \end{exemple}
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow +\infty}\dfrac{1}{x-3}}$ 
 	\tcblower
 $
 \begin{aligned}
@@ -963,7 +887,6 @@ $
 $
 \end{exemple}
 \begin{exemple}
-	Calculer $\displaystyle{\lim_{x\rightarrow -\infty}\dfrac{1}{x^2}}$
 	\tcblower
 	$
 	\begin{aligned}
@@ -972,14 +895,13 @@ $
 	\end{aligned}
 	$
 \end{exemple}
-\section{Indéterminations -- les autres types}
+\section{Lever les indéterminations}
 
-Il arrive que toutes les méthodes vues jusque-là pour calculer des limites ne soient pas utilisables – en fait, c’est dans ces cas que l’outil « limite » est vraiment utile !
+Il arrive que toutes les méthodes vues jusque-là pour calculer des limites ne soient pas utilisables. 
 
 Ces situations sont appelées « indéterminations », c’est-à-dire qu’on ne peut pas prévoir à l’avance comment va se comporter la limite avant de l’avoir étudiée : il faut alors recourir à des manipulations algébriques pour se ramener à des cas déterminés que nous savons traiter.
 
 \begin{definition}
-	Indétermination
 	\tcblower
 Une limite du type
 \[
@@ -989,9 +911,9 @@ pour laquelle on a
 \[
 \lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0
 \]
-est appelée indétermination de « type \(\displaystyle\dfrac{0}{0}\) ».
+est appelée {\bfseries indétermination} de « type \(\displaystyle\dfrac{0}{0}\) ».
 
-Les différents types d’indéterminations sont (liste non exhaustive) :
+Les différents types d’{\bfseries indéterminations} sont (liste non exhaustive) :
 \[
  «~\dfrac{0}{0}~»,\quad
  «~\dfrac{+\infty}{+\infty}~»,\quad
@@ -1007,19 +929,18 @@ Les différents types d’indéterminations sont (liste non exhaustive) :
 
 \begin{remarque}
 	\tcblower
-	Une calcul de limite est dit de type indéterminé si on ne peut pas prévoir à l’avance comment va se comporter le résultat. Un calcul de limite du type
+	Une calcul de limite est dit de type indéterminé si on ne peut pas prévoir à l’avance comment va se comporter le résultat. On a vu que 
 \(«~\displaystyle\dfrac{1}{0}~»\)
-donne toujours un résultat infini. Par contre, une indétermination de type
-\(«~\displaystyle\dfrac{0}{0}~»\)
-peut parfois donner un résultat infini, parfois un résultat fini, parfois ne pas exister !
+donne toujours un résultat infini ou n'existe pas. Par contre, une indétermination peut parfois donner un résultat infini, parfois un résultat fini, parfois ne pas exister !
 
+Utiliser l'algèbre : {\bfseries mise en évidence, factorisation, division polynomiale, etc.} pour lever les indéterminations.
 \end{remarque}
 \begin{exemple}
-	type $«~\dfrac{\infty}{\infty}~»$
+	Type $«~\dfrac{\infty}{\infty}~»$
 
 	\vspace{1cm}
 
-	type $«~\infty \cdot 0~»$
+	Type $«~\infty \cdot 0~»$
 	\tcblower
 	Voici trois exemples qui illustrent des écueils dans les calculs de limites.
 	\begin{tasks}(1)
@@ -1030,7 +951,7 @@ peut parfois donner un résultat infini, parfois un résultat fini, parfois ne p
 	Chaque cas, fait apparaître l'indétermination du type $«~\dfrac{\infty}{\infty}~»$ ou du type $«~\infty~\cdot~0~»$ dépendant dans la manière dont on transforme la limite. 
 \end{exemple}
 \begin{exemple}
-	type $«~\infty-\infty~»$
+	Type $«~\infty-\infty~»$
 	\tcblower
 	\begin{tasks}
 		\task $\displaystyle{\lim_{x\rightarrow +\infty}x-x=\lim_{x\to+\infty}0=0}$
@@ -1038,7 +959,7 @@ peut parfois donner un résultat infini, parfois un résultat fini, parfois ne p
 	\end{tasks}
 \end{exemple}
 \begin{methode}
-	type $«~\dfrac{0}{0}~»$ polynomial
+	Type $«~\dfrac{0}{0}~»$ polynomial
 	\tcblower
 Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displaystyle\dfrac{0}{0}\) où \(f(x)\) et \(g(x)\) sont des polynômes peut se calculer ainsi :
 \begin{tasks}
@@ -1048,7 +969,6 @@ Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displayst
 \end{tasks}
 \end{methode}
 \begin{exemple}
-Calculer \(\displaystyle\lim_{x\to2}\dfrac{x^2-3x+2}{x^2-4}\)
 \tcblower
 
 \[
@@ -1061,7 +981,7 @@ $
 \lim_{x\to2}\dfrac{x^2-3x+2}{x^2-4}
 &\stackrel{\text{\eqmakebox[a][c]{{\bfseries factoriser}}}}{=}
 \lim_{x\to2}\dfrac{(x-2)(x-1)}{(x-2)(x+2)}\\
-&\stackrel{\eqmakebox[a][c]{x\neq2}}{=}
+&\stackrel{\eqmakebox[a][c]{$x\neq2$}}{=}
 \lim_{x\to2}\dfrac{x-1}{x+2}\\
 &\stackrel{\text{\eqmakebox[a][c]{{\bfseries P4}}}}{=}
 		  \displaystyle{		  \dfrac{\displaystyle{\lim_{x\to2}(x-1)}}{\displaystyle{\lim_{x\to2}(x+2)}}}\\
@@ -1071,7 +991,7 @@ $
 \end{exemple}
 
 \begin{methode}
-	type $«~\dfrac{0}{0}~»$ racine carrée
+	Type $«~\dfrac{0}{0}~»$ racine carrée
 	\tcblower
 Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displaystyle\dfrac{0}{0}\) où \(f(x)\) et/ou \(g(x)\) contient une racine carrée peut se calculer ainsi :
 \begin{tasks}
@@ -1083,7 +1003,6 @@ Une limite \(\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}\) de type \(\displayst
 \end{methode}
 
 \begin{exemple}
-Calculer \(\displaystyle\lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}\)
 \tcblower
 \[
 \lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}
@@ -1095,7 +1014,7 @@ $
 	\displaystyle{\lim_{x\to9}\dfrac{\sqrt{x}-3}{x-9}}
 &\stackrel{\text{\eqmakebox[a][c]{\bfseries mult. conj.}}}{=}
 \displaystyle{\lim_{x\to9}\dfrac{(\sqrt{x}-3)(\sqrt{x}+3)}{(x-9)(\sqrt{x}+3)}}\\
-&\stackrel{\eqmakebox[a][c]{{x\neq9}}}{=}
+&\stackrel{\eqmakebox[a][c]{{$x\neq9$}}}{=}
 \displaystyle{\lim_{x\to9}\dfrac{x-9}{(x-9)(\sqrt{x}+3)}}\\
 &\stackrel{\text{\eqmakebox[a][c]{{\bfseries P4 et thm \ref{thm:compo}}}}}{=}
 \displaystyle{\lim_{x\to9}\dfrac{1}{\sqrt{x}+3}}\\
@@ -1107,13 +1026,13 @@ $
 \end{exemple}
 
 \begin{methode}
-	type $«~\dfrac{\pm\infty}{\pm\infty}~»$
+	Type $«~\dfrac{\pm\infty}{\pm\infty}~»$
 	\vspace{0.3cm}
 
-	type $«~0\cdot(\pm\infty)~»$
+	Type $«~0\cdot(\pm\infty)~»$
 	
 	\vspace{0.3cm}
-	type $«~\infty-\infty~»$
+	Type $«~\infty-\infty~»$
 	\tcblower
 Une limite \(\displaystyle\lim_{x\to\pm\infty}\dfrac{f(x)}{g(x)}\) ou \(\displaystyle\lim_{x\to\pm\infty}f(x)\) de type \(\pm\infty/\pm\infty\), \(0\cdot(\pm\infty)\), \(\infty-\infty\) où \(f(x)\) et/ou \(g(x)\) sont des polynômes peut se calculer ainsi :
 	\begin{tasks}	
@@ -1123,7 +1042,6 @@ Une limite \(\displaystyle\lim_{x\to\pm\infty}\dfrac{f(x)}{g(x)}\) ou \(\display
 \end{methode}
 
 \begin{exemple}
-calculer \(\displaystyle\lim_{x\to+\infty}(5x^2 - x + 2)\)
 \tcblower
 
 \[
@@ -1138,7 +1056,6 @@ $
 	 \displaystyle{\lim_{x\to+\infty}(5x^2 - x + 2)}
  &\stackrel{\text{\eqmakebox[i][c]{{\bfseries {m.ev.f.}}}}}{=}
  \displaystyle{\lim_{x\to+\infty}\Bigl(x^2\bigl(5 - \dfrac{1}{x} + \dfrac{2}{x^2}\bigr)\Bigr)}\\
- &\stackrel{\text{\eqmakebox[i][c]{{\bfseries P3}}}}{=}
 \displaystyle{\lim_{x\to+\infty}x^2\cdot\lim_{x\to+\infty}\bigl(5 - \dfrac{1}{x} + \dfrac{2}{x^2}\bigr)}\\
 &\stackrel{\text{\eqmakebox[i][c]{\bfseries {alg.inf.}}}}{=}
 \displaystyle{(+\infty)^2\cdot\bigl(5 + \dfrac{1}{+\infty} + \dfrac{2}{(+\infty)^2}\bigr)}\\
@@ -1150,7 +1067,6 @@ $
 \end{exemple}
 
 \begin{exemple}
-calculer \(\displaystyle\lim_{x\to+\infty}\dfrac{3x^3 + x + 2}{2x^3 - 1}\)
 \tcblower
 \[\lim_{x\to+\infty}\dfrac{3x^3 + x + 2}{2x^3 - 1}
 =«~\dfrac{+\infty}{+\infty}~»\] 
@@ -1164,22 +1080,19 @@ $
 &\stackrel{\text{\eqmakebox[j][c]{{\bfseries simpl.}}}}{=}
 \displaystyle{\lim_{x\to+\infty}\dfrac{3 + \dfrac{1}{x^2} + \dfrac{2}{x^3}}{2 - \dfrac{1}{x^3}}}\\
 &\stackrel{\text{\eqmakebox[j][c]{{\bfseries alg.inf.}}}}{=}
-\displaystyle{\dfrac{3 + \dfrac{1}{(+\infty)^2} + \dfrac{2}{(+\infty)^3}}{2 - \dfrac{1}{(+\infty)^3}}}\\
-&\stackrel{\text{\eqmakebox[j][c]{{\bfseries alg.inf.}}}}{=}
-\dfrac{3}{2}
+\displaystyle{\dfrac{3 + \dfrac{1}{(+\infty)^2} + \dfrac{2}{(+\infty)^3}}{2 - \dfrac{1}{(+\infty)^3}}}=\stackrel{\text{\eqmakebox[j][c]{{\bfseries alg.inf.}}}}{=}\dfrac{3}{2}
 \end{aligned}
 $
 \end{exemple}
 
 \begin{remarque}
-	autre types
+	Autres types
 	\tcblower
 	Les calculs de limites qui débouchent sur les types suivants sont aussi des indétermination qu'on pourra aussi lever ou non selon les cas: 
 
 	$«~\infty^0~»,«~0^\infty~»,«~0^0~»,«~1^\infty~».$
 \end{remarque}
 \begin{exemple}
-	étudier $f(x)=\dfrac{x^3-1}{x^2-1}$
 \tcblower
 Soit la fonction réelle $f$ déterminée par $f(x)=\dfrac{x^3-1}{x^2-1}$. Il s'agit d'essayer de comprendre le mieux possible son comportement pour des valeurs de $x$ pour lesquelles il est intéressant d'utiliser « l'outil limite » ; ici, pour $x\to -1$, $x\to 1$ et $x\to \pm\infty$.
 
@@ -1190,22 +1103,25 @@ $\begin{aligned}
 \displaystyle\lim_{x\to -1^-}\dfrac{x^3-1}{x^2-1}
 &=\displaystyle\lim_{x\to -1^-}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
 &=\displaystyle\lim_{x\to -1^-}\dfrac{x^2+x+1}{x+1}\\
-&=\dfrac{(-1)^2+(-1)+1}{0^-}\\
-&=\dfrac{+1}{0^-}\\
+&=«\dfrac{(-1)^2+(-1)+1}{0^-}»\\
+&=«\dfrac{+1}{0^-}»\\
 &=-\infty,\\
-\\
-\displaystyle\lim_{x\to -1^+}\dfrac{x^3-1}{x^2-1}
-&=\displaystyle\lim_{x\to -1^+}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
-&=\displaystyle\lim_{x\to -1^+}\dfrac{x^2+x+1}{x+1}\\
-&=\dfrac{(-1)^2+(-1)+1}{0^+}\\
-&=\dfrac{+1}{0^+}\\
-&=+\infty.
 \end{aligned}$
 \end{exemple}
 \begin{exemplesuite}
-	étudier $f(x)=\dfrac{x^3-1}{x^2-1}$
 	\tcblower
+	$\begin{aligned}
+\displaystyle\lim_{x\to -1^+}\dfrac{x^3-1}{x^2-1}
+&=\displaystyle\lim_{x\to -1^+}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
+&=\displaystyle\lim_{x\to -1^+}\dfrac{x^2+x+1}{x+1}\\
+&=« \dfrac{(-1)^2+(-1)+1}{0^+} »\\
+&=« \dfrac{+1}{0^+} »=+\infty.
+\end{aligned}$
+
+Donc \ligne{13}\\
+\ligne{14}
 \medskip
+
 Pour $x\to 1$ : $\displaystyle\lim_{x\to 1}\dfrac{x^3-1}{x^2-1}$ est du type $«~\displaystyle\dfrac{0}{0}~»$ avec polynômes.
 \medskip
 
@@ -1213,8 +1129,7 @@ $\begin{aligned}
 \displaystyle\lim_{x\to 1}\dfrac{x^3-1}{x^2-1}
 &=\displaystyle\lim_{x\to 1}\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}\\
 &=\displaystyle\lim_{x\to 1}\dfrac{x^2+x+1}{x+1}\\
-&=\dfrac{1^2+1+1}{1+1}\\
-&=\dfrac{3}{2}
+&=\dfrac{1^2+1+1}{1+1}=\dfrac{3}{2}
 \end{aligned}$
 
 \medskip
@@ -1230,8 +1145,7 @@ $\begin{aligned}
 &=\displaystyle\lim_{x\to +\infty}\dfrac{x^3\bigl(1-\dfrac{1}{x^3}\bigr)}{x^2\bigl(1-\dfrac{1}{x^2}\bigr)}\\
 &=\displaystyle\lim_{x\to +\infty}\dfrac{x\bigl(1-\dfrac{1}{x^3}\bigr)}{1-\dfrac{1}{x^2}}\\
 &=+\infty\cdot\dfrac{1-\dfrac{1}{(+\infty)^3}}{1-\dfrac{1}{(+\infty)^2}}\\
-&=+\infty\cdot\dfrac{1-0}{1-0}\\
-&=+\infty.
+&=+\infty\cdot\dfrac{1-0}{1-0}=+\infty.
 \end{aligned}$
 \medskip
 
@@ -1245,6 +1159,12 @@ Le même calcul pour $x\to -\infty$ donne~:
 =-\infty\cdot\dfrac{1-0}{1-0}
 =-\infty
 \]
+
+Donc \ligne{13}\\
+\ligne{14}
+\end{exemplesuite}
+\begin{exemplesuite}	
+	\tcblower
 On interprète graphiquement les résultats obtenus~:
 	\begin{center}		
 \begin{tikzpicture}
@@ -1275,9 +1195,233 @@ On interprète graphiquement les résultats obtenus~:
 \end{tikzpicture}
 	\end{center}
 \end{exemplesuite}
-\section{Limites trigonométriques}
-Le théorème suivant est important et sa démonstration sera faite en activité. Vous devez apprendre la preuve et savoir utiliser ce résultat pour calculer des limites trigonométriques comme nous le verrons dans les exemples et les exercices. 
+\section{Asymptotes verticales et horizontales}
 
+\begin{definition}
+	asymptote
+	verticale
+	\tcblower
+On dit qu'une droite verticale d'équation $x = a$ est une \textbf{asymptote verticale} de la fonction $f$ si l'une au moins des conditions suivantes est satisfaite~:
+
+$\displaystyle\lim_{x \to a^+} f(x) = +\infty$,  $\displaystyle\lim_{x \to a^+} f(x) = -\infty$,  $\displaystyle\lim_{x \to a^-} f(x) = +\infty$ ou  $\displaystyle\lim_{x \to a^-} f(x) = -\infty$.
+\end{definition}
+\begin{definition}
+	asymptote horizontale
+	\tcblower
+On dit qu'une doite horizontale d'équation $y = b$ est une \textbf{asymptote horizontale} de la fonction $f$ à si au moins des conditions suivantes est satisfaite :
+
+$\displaystyle\lim_{x \to +\infty} f(x) = b$ ou $\displaystyle\lim_{x \to -\infty} f(x) = b$.
+\end{definition}
+
+\begin{exemple}
+	lecture graphique d'asymptotes
+\tcblower	
+$x = -1$ et $x = 1$ sont deux asymptotes verticales de la fonction ;
+
+$y = 2$ est une asymptote horizontale de la fonction.
+\end{exemple}
+
+\begin{remarque}
+	$\dfrac{\sin(x)}{x}$
+\tcblower
+Il est possible d'intersecter une asymptote. Par exemple, $y = 0$ est une asymptote horizontale de la fonction la fonction $f$ définie par $f(x) = \dfrac{\sin(x)}{x}$
+\end{remarque}
+
+\begin{methode}
+	déterminer des asymptotes verticales
+	\tcblower
+Pour déterminer les asymptotes verticales dans le cas des fonctions rationnelles on suit la méthode suivante~:
+
+On analyse les limites $\displaystyle\lim_{x \to a} f(x)$ pour les $a$ qui ont été exclus du $D_f$ :
+\begin{itemize}
+\item si la limite est du type $\dfrac{1}{0}$, il y a une asymptote verticale ; on calcule les limites à gauche $\displaystyle\lim_{x \to a^-} f(x)$ et à droite $\displaystyle\lim_{x \to a^+} f(x)$ ;
+\item si la limite est du type $\dfrac{0}{0}$, on ne peut encore rien dire ; on calcule la limite $\displaystyle\lim_{x \to a} f(x)$ qui peut conduire autant à une situation sans asymptote verticale qu'avec.
+\end{itemize}
+\end{methode}
+
+\begin{exemple}[label=ex:asver]
+asymptotes verticales de \\
+\medskip
+$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}$
+\tcblower
+Déterminer les asymptotes verticales de la fonction $f$ définie par 
+
+\[f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}.\]
+
+On étudie le domaine de définition de la fonction 
+
+$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4} = \dfrac{x(x - 1)}{(x + 4)(x - 1)}$, d'où $D_f = \mathbb{R} \setminus \{-4; 1\}$
+
+On remarque que $f(x) \stackrel{\text{si }x\neq 1}{=}\dfrac{x}{x + 4}$
+\begin{itemize}
+	\item Pour $x\rightarrow -4$ on a 
+
+		$\displaystyle\lim_{x \to -4} f(x) = \dfrac{-4}{0}$ de type $\dfrac{1}{0}$
+
+$\displaystyle\lim_{x \to -4^-} f(x) = \lim_{x \to -4^-} \dfrac{x}{x + 4} = \dfrac{-4}{0^-} = +\infty$ et
+
+$\displaystyle\lim_{x \to -4^+} f(x) = \lim_{x \to -4^+} \dfrac{x}{x + 4} = \dfrac{-4}{0^+} = -\infty$
+
+$x = -4$ est une asymptote verticale de $f$
+\item Pour $x \to 1$ :
+
+$\displaystyle\lim_{x \to 1} f(x) = \dfrac{1}{1 + 5} = \dfrac{1}{5}$
+
+$f$ n'a pas d'asymptote verticale en $x = 1$
+\end{itemize}
+\end{exemple}
+
+\begin{methode}
+déterminer des asymptotes horizontales	
+\tcblower
+Pour déterminer les asymptotes horizontales dans le cas des fonctions rationnelles on suit la méthode suivante.
+
+Soit $f$ une fonction rationnelle définie par
+
+\[f(x) = \dfrac{a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} + ... + a_1 x^2 + a_1 x + a_0}{b_m x^m + b_{m-1} x^{m-1} + b_{m-2} x^{m-2} + ... + b_2 x^2 + b_1 x + b_0}\]
+
+\begin{itemize}
+\item si $n = m$, alors $y = \dfrac{a_n}{b_n}$ est une asymptote horizontale de $f$ à $\pm\infty$ ;
+
+\item si $n < m$, alors $y = 0$ est une asymptote horizontale de $f$ à $\pm\infty$ ;
+
+\item si $n > m$, alors $f$ n'a pas d'asymptote horizontale à $\pm\infty$ .
+\end{itemize}
+\end{methode}
+
+\begin{exemple}
+	\tcblower
+	Déterminer les asymptotes horizontales de la fonction $f$ définie par (et déjà étudiée à l'exemple \ref{ex:asver})~:
+\[f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}\]
+
+Comme $n = m = 1$, on sait déjà que $y = 1$ est une asymptote horizontale de $f$ à $\pm\infty$ ; confirmons par un calcul :
+
+$
+\begin{aligned}
+	\displaystyle\lim_{x \to +\infty} f(x) &= \lim_{x \to +\infty} \dfrac{x^2 - x}{x^2 + 3x - 4}\\
+					&= \lim_{x \to +\infty} \dfrac{x^2\left(1 - \dfrac{1}{x}\right)}{x^2\left(1 + \dfrac{3}{x} - \dfrac{4}{x^2}\right)}= \lim_{x \to +\infty} \dfrac{1 - \dfrac{1}{x}}{1 + \dfrac{3}{x} - \dfrac{4}{x^2}}\\
+					       &= \dfrac{1 - 0}{1 + 0 - 0}= \dfrac{1}{1} = 1
+\end{aligned}$
+
+ce qui confirme que $y = 1$ est une asymptote horizontale de $f$ à $\pm\infty$.
+
+Comme on peut aussi aussi écrire $f(x) = \dfrac{x}{x + 4}$ (voir l'exemple \ref{ex:asver}), on aurait pu faire le calcul (plus simple) suivant :
+
+$
+\begin{aligned}
+	\displaystyle\lim_{x \to +\infty} f(x) &= \lim_{x \to +\infty} \dfrac{x}{x + 4} = \lim_{x \to +\infty} \dfrac{x}{x\left(1 + \dfrac{4}{x}\right)}\\
+&= \lim_{x \to +\infty} \dfrac{1}{1 + \dfrac{4}{x}} = \dfrac{1 - 0}{1 + 0}\\
+&= \dfrac{1}{1} = 1
+\end{aligned}$
+
+\end{exemple}
+
+\section{Asymptotes obliques}
+
+\begin{definition}
+	asymptote oblique
+	\tcblower
+Une droite $d$ d'équation $d(x) = ax + b$ avec $a \neq 0$ est appelée \textbf{asymptote oblique} de la fonction $f$ si l'une au moins des conditions suivantes est satisfaite :
+\[
+\displaystyle\lim_{x \to +\infty} f(x) - d(x) = 0 \quad \text{et/ou} \quad \displaystyle\lim_{x \to -\infty} f(x) - d(x) = 0
+\]
+\end{definition}
+\begin{exemple}
+asymptote oblique
+\tcblower	
+La fonction ci-contre admet $y = -x + 2$ comme asymptote oblique à $+\infty$, alors que la fonction ci-dessous admet $y = x + 2$ comme asymptote oblique à $+\infty$ et $y = -2$ comme asymptote oblique à $-\infty$.
+\end{exemple}
+
+\begin{methode}
+asymptote oblique
+\tcblower
+Soit $f$ une fonction rationnelle définie par
+\[
+f(x) = \dfrac{a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} + \ldots + a_1 x + a_0}{b_m x^m + b_{m-1} x^{m-1} + b_{m-2} x^{m-2} + \ldots + b_1 x + b_0}
+\]
+telle que $n = m + 1$, alors $f$ admet une asymptote oblique à $\pm\infty$.
+
+La \textbf{division polynomiale} du numérateur par le dénominateur de $f$ permet de faire apparaître cette asymptote.
+\end{methode}
+
+\begin{exemple}
+	asymptote oblique de\\
+	\medskip
+	$f(x)=\dfrac{x^2}{x+2}$
+	\tcblower
+Déterminer l'asymptote oblique de la fonction $f$ définie par $f(x) = \dfrac{x^2}{x + 2}$
+\smallskip
+
+On commence par la division polynomiale comme indiqué dans la méthode~:
+\begin{center}
+\polylongdiv[style=D]{x^2}{x+2}
+\end{center}
+d'où on obtient~: $x^2 = (x + 2)(x - 2) + 4$.
+Ainsi, 
+\begin{align*}
+f(x) &= \dfrac{x^2}{x + 2} = \dfrac{(x + 2)(x - 2) + 4}{x + 2} = \dfrac{(x + 2)(x - 2)}{x + 2} + \dfrac{4}{x + 2} \\
+&= x - 2 + \dfrac{4}{x + 2}
+\end{align*}
+
+On en déduit :
+
+$
+\begin{aligned}
+	\displaystyle\lim_{x \to \pm\infty} f(x) &= \displaystyle\lim_{x \to \pm\infty} \left( x - 2 + \dfrac{4}{x + 2} \right)\\
+&= \displaystyle\lim_{x \to \pm\infty} (x - 2) + \displaystyle\lim_{x \to \pm\infty} \dfrac{4}{x + 2}\\
+&= \displaystyle\lim_{x \to \pm\infty} (x - 2) + 0
+\end{aligned}
+$
+\medskip
+
+puis $\displaystyle\lim_{x \to \pm\infty} f(x) - \displaystyle\lim_{x \to \pm\infty} (x-2) = 0 \Leftrightarrow \displaystyle\lim_{x \to \pm\infty} f(x) - (x-2) = 0$, c'est-à-dire que $y = x-2$ est une asymptote oblique de $f$ à $\pm\infty$
+\end{exemple}
+
+\begin{thm}[label=thm:obli]
+	caractérisation des asymptotes obliques
+	\tcblower
+Si $\displaystyle\lim_{x \to \pm\infty} \dfrac{f(x)}{x} = a$ et $\displaystyle\lim_{x \to \pm\infty} (f(x) - ax) = b$ avec $a \in \mathbb{R}^*$ et $b \in \mathbb{R}$, alors la droite $d$ définie par $d(x) = ax + b$ est une asymptote oblique de la fonction $f$ à $\pm\infty$.
+\end{thm}
+\begin{remarque}
+	\tcblower
+	La contraposée du théorème \ref{thm:obli} est aussi vraie.
+\end{remarque}
+
+\begin{exemple}
+	asymptote oblique de\\
+	\medskip
+	$f(x)=\dfrac{x^2}{x+2}$
+	\tcblower
+Déterminer l'asymptote oblique de la fonction $f$ définie par $f(x) = \dfrac{x^2}{x+2}$ en utilisant le théorème \ref{thm:obli}
+
+On commence par déterminer le coefficient $a$ du théorème~:
+
+\begin{align*}
+\displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x+2} \cdot \dfrac{1}{x} &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x} \cdot \dfrac{1}{x+2}\\	
+&= \displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x^2(1+\dfrac{2}{x})}\\
+&= \displaystyle\lim_{x \to +\infty} \dfrac{1}{1+\dfrac{2}{x}}\\
+&= \dfrac{1}{1+0} \\
+&= 1
+\end{align*}
+puis le coefficient $b$
+\begin{align*}
+\displaystyle\lim_{x \to +\infty} (f(x) - ax) &= \displaystyle\lim_{x \to +\infty} \left(\dfrac{x^2}{x+2} - 1 \cdot x\right)\\
+					      &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2 - x(x+2)}{x+2}\\
+					      &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2 - x^2 - 2x}{x+2}\\ 
+					      &= \displaystyle\lim_{x \to +\infty} \dfrac{-2x}{x+2} \\
+&= \displaystyle\lim_{x \to +\infty} \dfrac{x(-2)}{x(1+\dfrac{2}{x})}\\
+&= \displaystyle\lim_{x \to +\infty} \dfrac{-2}{1+\dfrac{2}{x}} \\
+&= \dfrac{-2}{1+0} \\
+&= -2
+\end{align*}
+
+donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
+
+\end{exemple}
+
+\section{Limites trigonométriques}
+Le théorème suivant est important et sa démonstration sera faite en activité. 
+\medskip
 \begin{thm}[label=thm:sinxx]
 	\smallskip
 $\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
@@ -1286,9 +1430,8 @@ On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
 \end{thm}
 
 \begin{methode}
-Indéterminations trigonométriques de type 0/0
 \tcblower
-On se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
+Pour lever une indétermination trigonométrique, on se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
 \end{methode}
 
 \begin{exemple}
@@ -1300,7 +1443,7 @@ Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
 	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » & on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
 	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ & on observe que l'expression qui « pilote » le calcul est $-20x$\\
 	$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$& on fait apparaître cette expression au dénominateur et comme le terme de la limite\\
-	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise une propriété des limites\\
+	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise le théorème \ref{thm:sinxx}\\
 	$= -20 \cdot 1$&on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$\\
 $= -20$\\
 \end{explanation}
@@ -1326,8 +1469,8 @@ $= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
 \end{explanation}
 \end{exemple}
 \section{Continuité}
+\label{sec:continuite}
 \begin{definition}
-définition intuitive de la continuité en un point
 \tcblower
 Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
 $f$ est continue en $a$ si et seulement si il existe un voisinage de $a$ tel que « une représentation graphique de $f$ dans ce voisinage peut être dessinée sans lever le crayon ».  
@@ -1335,7 +1478,6 @@ Si $f$ n'est pas continue en $a$, on dit que $f$ est discontinue en $a$.
 \end{definition}
 
 \begin{definition}
-	continuité sur un intervalle
 	\tcblower
 	\
 	$f$ est continue sur $I$ un intervalle $I\subset \mathbb{R}\Leftrightarrow$ $f$ est continue en tout point de~$I$.
@@ -1343,7 +1485,7 @@ Si $f$ n'est pas continue en $a$, on dit que $f$ est discontinue en $a$.
 
 
 \begin{definition}
-	définition mathématique de la continuité en un point
+Continuité
 	\tcblower
 Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
 \medskip
@@ -1541,8 +1683,8 @@ $\displaystyle{\lim_{x\rightarrow 0}f(x)=+\infty}$.
 \end{exemplesuite}
 
 \begin{definition}
-	continuité à gauche, 
-	à droite
+	continuité à gauche\\
+	continuité à droite
 	\tcblower
 	Soit $f: I\rightarrow \mathbb{R}$ une fonction réelle et $a\in I$.
 
@@ -1612,337 +1754,341 @@ fonctions continues
 		\item[{\bfseries PC5}] Si $f$ est continue en $a$ et $g$ est continue en $f(a)$, alors $g\circ f$ est continue en $a$. 
 	\end{description}
 \end{thm}
+\begin{remarque}
+	\tcblower
+	Ces résultats sont des corollaires des théorèmes \ref{thm:limel} et \ref{thm:limprop}. 
+\end{remarque}
 \newpage
-\section{Activités}
-\begin{activite}
-Introduction géométrique à la notion de limite	
-
-	\tcblower
-	Soit le carré $ABCD$ ci-contre de côté $10~\text{cm}$. On note $P$ et $Q$ les milieux des côtés $BC$ et $CD$. Soient $M$ un point de $AD$ et $N$ un point de $AB$ tels que $\overline{AN}=\overline{AM}=x$.
-	\begin{tasks}(1)
-		\task Quelle est la nature du quadrilatère $MNPQ$~?
-		\task Tracer $MNPQ$ pour $x=6~\text{cm}$, $x=4~\text{cm}$, $x=1~\text{cm}$, $x=0,5~\text{cm}$.
-		\task Que remarquez-vous lorsque $x$ se rapproche de $0$~?
-		\task On note $A(x)$ l'aire du quadrilatère $MNPQ$. Donner une formule pour le calcul de cette aire en fonction de $x$ (vous devrez utiliser trois fois le théorème de Pythagore). 
-		\task Que peut-on dire de $A(x)$ quand $x$ se rapproche de $0$~? Est-ce que votre conjecture est cohérente avec la formule déterminée au point précédent~?
-	\end{tasks}
-\end{activite}
-
-\begin{activite}[label=acti:limgraph]
-Approche graphique de la notion de limite 
-\tcblower
-\begin{center}
-	
-\begin{tikzpicture}
-  \begin{axis}[
-    width=12cm, height=8cm, scale only axis,
-    axis x line=middle, axis y line=middle,
-    xlabel={$x$},
-    %xlabel style={at={(axis description cs:1,0)},anchor=west},
-    ylabel={$y$},
-    %ylabel style={at={(axis description cs:0,1)},anchor=south},
-    xmin=-10, xmax=15, ymin=-6, ymax=8,
-    xtick={-10,-8,...,14}, ytick={-6,-4,...,8},
-    tick label style={font=\footnotesize},
-    grid=both, grid style={dashed,gray!30},
-    clip=false,
-  ]
-    % 1) curved branch f1(x) = (x+6)^2 - 4
-    \addplot[thick,domain=-10:-6,samples=100] {-3*x -21};
-    % 2) f2(x) = 7/8 x + 9/4
-    \addplot[thick,domain=-6:1.9]
-      {(7/8)*x + 9/4};
-    % open peak at (2,4)
-    \addplot[only marks,mark=o,thick] coordinates {(2,4)};
-    % 3) f3(x) = -3/2 x + 7
-    \addplot[thick,domain=2.1:4]
-      {-1.5*x + 7};
-    % closed end at (4,1)
-    \addplot[only marks,mark=*,thick] coordinates {(4,1)};
-    \addplot[only marks,mark=*,thick] coordinates {(2,6)};
-
-    % vertical asymptote
-    \draw[dashed] (axis cs:8,-6) -- (axis cs:8,8);
-    % hyperbola f4(x)=2+6/(x-8) left of x=8
-    \addplot[thick,domain=4.1:7.25,samples=200] {2 + 6/(x-8)};
-    \addplot[only marks,mark=o,thick] coordinates {(4,0.5)};
-    % hyperbola f4(x)=2+6/(x-8) right of x=8
-    \addplot[thick,domain=8.95:15,samples=200] {2 + 6/(x-8)};
-  \end{axis}
-\end{tikzpicture}
-\end{center}
-\begin{tasks}
-	\task
-	Déterminer graphiquement
-	\begin{multicols}{3}
-		\begin{enumerate}	
-		\item $\displaystyle{\lim_{x\rightarrow 2}f(x)}$ 
-		\item $f(1)$
-		\item $\displaystyle{\lim_{x\rightarrow -1}f(x)}$
-		\item $\displaystyle{\lim_{x\rightarrow -\tfrac{13}{2}}f(x)}$
-		\item $f(4)$
-		\item $f(8)$
-		\end{enumerate}
-	\end{multicols}
-	\task Représenter graphiquement une fonction $f$ satisfaisant toutes les conditions suivantes~:
-	\begin{multicols}{3}	
-	\begin{enumerate}
-		\item $\displaystyle{\lim_{x\rightarrow -\infty}f(x)=3}$
-		\item $\displaystyle{\lim_{x\rightarrow -2}f(x)=-\infty}$
-		\item $\displaystyle{\lim_{x\rightarrow 0}f(x)=-2}$
-		\item $f(-3)=2$
-		\item $f(0)=4$
-		\item $\displaystyle{\lim_{c\rightarrow +\infty}f(x)=2}$ 
-		
-	\end{enumerate}
-	\end{multicols}
-\end{tasks}
-\end{activite}
-\begin{activite}
-	Limite à gauche et limite à droite
-	\tcblower
-	On considère à nouveau la représentation graphique de l'activité \ref{acti:limgraph}. Déterminer~:
-	\begin{tasks}(4)
-		\task $\displaystyle{\lim_{x\rightarrow 4^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 4^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 8^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 8^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 2^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 2^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 0^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 0^-}f(x)}$ 
-		
-	\end{tasks}
-\end{activite}
-\begin{activite}
-	Deux fonctions de Musy
-	\tcblower
-\end{activite}
-\begin{activite}
-	Limites infinies
-	\tcblower
-Soit $f$ la fonction réelle définie par
-\[
-f(x)=\frac{x^2+x-6}{x^2-9}.
-\]
-
-\begin{tasks}(1)
-\task Déterminer le domaine de définition de $f$.
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $3$. Pour cela, calculer les images de $2{,}9$ ; $2,99$ ; $2,999$ ; $2,9999$ puis de $3,1$ ; $3,01$ ; $3,001$ et $3,0001$.
-\begin{multicols}{2}
-\begin{enumerate}
-\item Que constate-t-on ?
-\item Que peut-on dire de l’image de 3 ?
-\item Quelle notation utiliser ?
-\item Interpréter graphiquement.
-\end{enumerate}
-\end{multicols}
-\task Esquisser une représentation graphique de $f$ (à l’aide de geogebra par exemple).
-\task Calculer « directement », sans passer par des étapes intermédiaires, $\displaystyle\lim_{x\to 3}\frac{x^2+x-6}{x^2-9}$.
-\task Calculer, si elles existent, les limites à gauche et à droite des fonctions suivantes lorsque $x$ tend vers $a$ et interpréter graphiquement les résultats :
-\begin{multicols}{2}
-\begin{enumerate}
-\item $f(x)=\dfrac{3x-7}{x-2}$ et $a=2$
-\item $f(x)=\dfrac{-3x+2}{x+2}$ et $a=-2$
-\item $f(x)=\dfrac{3}{(x-1)^2}$ et $a=1$
-\item $f(x)=\dfrac{5x}{(x+3)^3}$ et $a=-3$
-\end{enumerate}
-\end{multicols}
-\end{tasks}
-\end{activite}
-\begin{activite}
-	Limites à l'infini
-	\tcblower
-	\begin{tasks}
-	\task On considère la fonction $f$ définie par $f(x)=x^2+x-6$.
-\begin{multicols}{3}
-		\begin{enumerate}
-\item Quel sens donner à $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
-\item Comment calculer $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
-\item Et $\displaystyle\lim_{x\to -\infty}f(x)\,$ ?
-		\end{enumerate}
-	\end{multicols}
-	\task Énoncer et discuter ce qu'on entend par «~limites à l'infini~».
-	\task Calculer (si possible) les limites à l'infini suivantes en utilisant l'aglèbre de l'infini. 
-
-\begin{multicols}{3}
-\begin{enumerate}
-\item $\displaystyle\lim_{x\to +\infty}\bigl(x^3+5x+3\bigr)$
-\item $\displaystyle\lim_{x\to -\infty}\bigl(x^3+5x+10^{100}\bigr)$
-\item $\displaystyle\lim_{x\to +\infty}\frac{2}{3x^2-4}$
-\end{enumerate}
-\end{multicols}
-	\end{tasks}
-\end{activite}
-
-\begin{activite}
-Indéterminations
-\tcblower
-On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
-
-\begin{tasks}(1)
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
-\task Que constate-t-on ?
-\task Que peut-on dire de l'image de $-3$ ?
-\task Quelle notation utiliser ?
-\task Interpréter graphiquement.
-\end{tasks}
-
-Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
-
-Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
-
-Calculer si possible les limites suivantes et interpréter graphiquement :
-\begin{tasks}(2)
-\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
-\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
-\end{tasks}
-
-Pourquoi parle-t-on d'indéterminations ? Illustrer avec des exemples dans les cas suivants (liste non exhaustive) : $\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty$.
-\end{activite}
-
-\begin{activite}
-Indéterminations avec l'infini
-\tcblower
-On considère la fonction $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
-
-Calculer $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et $\displaystyle\lim_{x \to -\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
-
-Calculer si possible les limites suivantes et interpréter graphiquement :
-
-\begin{tasks}(2)
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - 9x}{3x^2 - 5x - 4}$
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{3x^2 - x + 1}{x + 3}$
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - x}{5x + 2}$
-\task $\displaystyle\lim_{x \to +\infty} (x^2 + x)$
-\task $\displaystyle\lim_{x \to +\infty} (2x - x^2)$
-\end{tasks}
-\end{activite}
-
-\begin{activite}
-Indéterminations avec des racines
-\tcblower
-\begin{tasks}(1)
-\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
-\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
-\end{tasks}
-\end{activite}
-
-\begin{activite}
-Graphiquement
-\tcblower
-Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie simultanément toutes les conditions suivantes :
-
-\begin{tasks}(2)
-\task L'ensemble $D_f$ des zéros de $f$ est $\{-2;4\}$
-\task L'image de $0$ est $-2$
-\task $\displaystyle\lim_{x \to 1} f(x) = -\infty$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = +\infty$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = 4$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
-\end{tasks}
-\end{activite}
-\begin{activite}
-Continuité
-\tcblower
-\begin{tasks}(1)
-\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
-\task Peut-on en donner une définition mathématique ?
-\task Donner des exemples de fonctions connues continues et discontinues.
-\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
-
-Justifier la réponse et esquisser une représentation graphique de $f$.
-
-\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
-\task Définir et illustrer la notion de continuité à gauche ou de continuité à droite.
-\end{tasks}
-\end{activite}
-
-\begin{activite}{Une limite trigonométrique importante}
-\tcblower
-\begin{tasks}(1)
-\task On considère la fonction $f$ déterminée par $f(x) = \dfrac{\sin(x)}{x}$
-\begin{enumerate}
-\item Déterminer $D_f$ et $Z_f$.
-\item D'après votre intuition, et/ou à l'aide de la calculatrice:
-\item Que pensez-vous de $\displaystyle\lim_{x \to 0} f(x)$ et de ? $\displaystyle\lim_{x \to 0} f(x)$
-\item Existe-t-il une asymptote horizontale pour cette fonction?
-\item Pouvez-vous justifier ces réponses?
-\end{enumerate}
-
-\task On s'intéresse maintenant à $\displaystyle\lim_{x \to 0} f(x)$
-\begin{enumerate}
-\item Conjecturer une valeur pour cette limite, à partir d'essais numériques avec la calculatrice.
-\item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
-\end{enumerate}
-
-\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
-
-\task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
-\end{tasks}
-\end{activite}
-\begin{activite}{Indéterminations trigonométriques de type 0/0}
-\tcblower
-\begin{tasks}(1)
-\task Calculer :
-\begin{multicols}{3}
-\begin{enumerate}
-\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(12x)}{6x}$
-\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x^2}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{\sin(x-2)}{3x-6}$
-\item $\displaystyle\lim_{x \to 0} \dfrac{\tan(12x)}{6x}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{6-3x}{\sin(x-2)}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{\cos(x-2)}{3x-6}$
-\end{enumerate}
-\end{multicols}
-\end{tasks}
-\end{activite}
+%\section{Activités}
+%\begin{activite}
+%Introduction géométrique à la notion de limite	
+%
+%	\tcblower
+%	Soit le carré $ABCD$ ci-contre de côté $10~\text{cm}$. On note $P$ et $Q$ les milieux des côtés $BC$ et $CD$. Soient $M$ un point de $AD$ et $N$ un point de $AB$ tels que $\overline{AN}=\overline{AM}=x$.
+%	\begin{tasks}(1)
+%		\task Quelle est la nature du quadrilatère $MNPQ$~?
+%		\task Tracer $MNPQ$ pour $x=6~\text{cm}$, $x=4~\text{cm}$, $x=1~\text{cm}$, $x=0,5~\text{cm}$.
+%		\task Que remarquez-vous lorsque $x$ se rapproche de $0$~?
+%		\task On note $A(x)$ l'aire du quadrilatère $MNPQ$. Donner une formule pour le calcul de cette aire en fonction de $x$ (vous devrez utiliser trois fois le théorème de Pythagore). 
+%		\task Que peut-on dire de $A(x)$ quand $x$ se rapproche de $0$~? Est-ce que votre conjecture est cohérente avec la formule déterminée au point précédent~?
+%	\end{tasks}
+%\end{activite}
+%
+%\begin{activite}[label=acti:limgraph]
+%Approche graphique de la notion de limite 
+%\tcblower
+%\begin{center}
+%	
+%\begin{tikzpicture}
+%  \begin{axis}[
+%    width=12cm, height=8cm, scale only axis,
+%    axis x line=middle, axis y line=middle,
+%    xlabel={$x$},
+%    %xlabel style={at={(axis description cs:1,0)},anchor=west},
+%    ylabel={$y$},
+%    %ylabel style={at={(axis description cs:0,1)},anchor=south},
+%    xmin=-10, xmax=15, ymin=-6, ymax=8,
+%    xtick={-10,-8,...,14}, ytick={-6,-4,...,8},
+%    tick label style={font=\footnotesize},
+%    grid=both, grid style={dashed,gray!30},
+%    clip=false,
+%  ]
+%    % 1) curved branch f1(x) = (x+6)^2 - 4
+%    \addplot[thick,domain=-10:-6,samples=100] {-3*x -21};
+%    % 2) f2(x) = 7/8 x + 9/4
+%    \addplot[thick,domain=-6:1.9]
+%      {(7/8)*x + 9/4};
+%    % open peak at (2,4)
+%    \addplot[only marks,mark=o,thick] coordinates {(2,4)};
+%    % 3) f3(x) = -3/2 x + 7
+%    \addplot[thick,domain=2.1:4]
+%      {-1.5*x + 7};
+%    % closed end at (4,1)
+%    \addplot[only marks,mark=*,thick] coordinates {(4,1)};
+%    \addplot[only marks,mark=*,thick] coordinates {(2,6)};
+%
+%    % vertical asymptote
+%    \draw[dashed] (axis cs:8,-6) -- (axis cs:8,8);
+%    % hyperbola f4(x)=2+6/(x-8) left of x=8
+%    \addplot[thick,domain=4.1:7.25,samples=200] {2 + 6/(x-8)};
+%    \addplot[only marks,mark=o,thick] coordinates {(4,0.5)};
+%    % hyperbola f4(x)=2+6/(x-8) right of x=8
+%    \addplot[thick,domain=8.95:15,samples=200] {2 + 6/(x-8)};
+%  \end{axis}
+%\end{tikzpicture}
+%\end{center}
+%\begin{tasks}
+%	\task
+%	Déterminer graphiquement
+%	\begin{multicols}{3}
+%		\begin{enumerate}	
+%		\item $\displaystyle{\lim_{x\rightarrow 2}f(x)}$ 
+%		\item $f(1)$
+%		\item $\displaystyle{\lim_{x\rightarrow -1}f(x)}$
+%		\item $\displaystyle{\lim_{x\rightarrow -\tfrac{13}{2}}f(x)}$
+%		\item $f(4)$
+%		\item $f(8)$
+%		\end{enumerate}
+%	\end{multicols}
+%	\task Représenter graphiquement une fonction $f$ satisfaisant toutes les conditions suivantes~:
+%	\begin{multicols}{3}	
+%	\begin{enumerate}
+%		\item $\displaystyle{\lim_{x\rightarrow -\infty}f(x)=3}$
+%		\item $\displaystyle{\lim_{x\rightarrow -2}f(x)=-\infty}$
+%		\item $\displaystyle{\lim_{x\rightarrow 0}f(x)=-2}$
+%		\item $f(-3)=2$
+%		\item $f(0)=4$
+%		\item $\displaystyle{\lim_{c\rightarrow +\infty}f(x)=2}$ 
+%		
+%	\end{enumerate}
+%	\end{multicols}
+%\end{tasks}
+%\end{activite}
+%\begin{activite}
+%	Limite à gauche et limite à droite
+%	\tcblower
+%	On considère à nouveau la représentation graphique de l'activité \ref{acti:limgraph}. Déterminer~:
+%	\begin{tasks}(4)
+%		\task $\displaystyle{\lim_{x\rightarrow 4^+}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 4^-}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 8^+}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 8^-}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 2^+}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 2^-}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 0^+}f(x)}$ 
+%		\task $\displaystyle{\lim_{x\rightarrow 0^-}f(x)}$ 
+%		
+%	\end{tasks}
+%\end{activite}
+%\begin{activite}
+%	Deux fonctions de Musy
+%	\tcblower
+%\end{activite}
+%\begin{activite}
+%	Limites infinies
+%	\tcblower
+%Soit $f$ la fonction réelle définie par
+%\[
+%f(x)=\frac{x^2+x-6}{x^2-9}.
+%\]
+%
+%\begin{tasks}(1)
+%\task Déterminer le domaine de définition de $f$.
+%\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $3$. Pour cela, calculer les images de $2{,}9$ ; $2,99$ ; $2,999$ ; $2,9999$ puis de $3,1$ ; $3,01$ ; $3,001$ et $3,0001$.
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\item Que constate-t-on ?
+%\item Que peut-on dire de l’image de 3 ?
+%\item Quelle notation utiliser ?
+%\item Interpréter graphiquement.
+%\end{enumerate}
+%\end{multicols}
+%\task Esquisser une représentation graphique de $f$ (à l’aide de geogebra par exemple).
+%\task Calculer « directement », sans passer par des étapes intermédiaires, $\displaystyle\lim_{x\to 3}\frac{x^2+x-6}{x^2-9}$.
+%\task Calculer, si elles existent, les limites à gauche et à droite des fonctions suivantes lorsque $x$ tend vers $a$ et interpréter graphiquement les résultats :
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\item $f(x)=\dfrac{3x-7}{x-2}$ et $a=2$
+%\item $f(x)=\dfrac{-3x+2}{x+2}$ et $a=-2$
+%\item $f(x)=\dfrac{3}{(x-1)^2}$ et $a=1$
+%\item $f(x)=\dfrac{5x}{(x+3)^3}$ et $a=-3$
+%\end{enumerate}
+%\end{multicols}
+%\end{tasks}
+%\end{activite}
+%\begin{activite}
+%	Limites à l'infini
+%	\tcblower
+%	\begin{tasks}
+%	\task On considère la fonction $f$ définie par $f(x)=x^2+x-6$.
+%\begin{multicols}{3}
+%		\begin{enumerate}
+%\item Quel sens donner à $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
+%\item Comment calculer $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
+%\item Et $\displaystyle\lim_{x\to -\infty}f(x)\,$ ?
+%		\end{enumerate}
+%	\end{multicols}
+%	\task Énoncer et discuter ce qu'on entend par «~limites à l'infini~».
+%	\task Calculer (si possible) les limites à l'infini suivantes en utilisant l'aglèbre de l'infini. 
+%
+%\begin{multicols}{3}
+%\begin{enumerate}
+%\item $\displaystyle\lim_{x\to +\infty}\bigl(x^3+5x+3\bigr)$
+%\item $\displaystyle\lim_{x\to -\infty}\bigl(x^3+5x+10^{100}\bigr)$
+%\item $\displaystyle\lim_{x\to +\infty}\frac{2}{3x^2-4}$
+%\end{enumerate}
+%\end{multicols}
+%	\end{tasks}
+%\end{activite}
+%
+%\begin{activite}
+%Indéterminations
+%\tcblower
+%On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
+%
+%\begin{tasks}(1)
+%\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
+%\task Que constate-t-on ?
+%\task Que peut-on dire de l'image de $-3$ ?
+%\task Quelle notation utiliser ?
+%\task Interpréter graphiquement.
+%\end{tasks}
+%
+%Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
+%
+%Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
+%
+%Calculer si possible les limites suivantes et interpréter graphiquement :
+%\begin{tasks}(2)
+%\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
+%\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
+%\end{tasks}
+%
+%Pourquoi parle-t-on d'indéterminations ? Illustrer avec des exemples dans les cas suivants (liste non exhaustive) : $\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty$.
+%\end{activite}
+%
+%\begin{activite}
+%Indéterminations avec l'infini
+%\tcblower
+%On considère la fonction $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
+%
+%Calculer $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et $\displaystyle\lim_{x \to -\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
+%
+%Calculer si possible les limites suivantes et interpréter graphiquement :
+%
+%\begin{tasks}(2)
+%\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - 9x}{3x^2 - 5x - 4}$
+%\task $\displaystyle\lim_{x \to +\infty} \dfrac{3x^2 - x + 1}{x + 3}$
+%\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - x}{5x + 2}$
+%\task $\displaystyle\lim_{x \to +\infty} (x^2 + x)$
+%\task $\displaystyle\lim_{x \to +\infty} (2x - x^2)$
+%\end{tasks}
+%\end{activite}
+%
+%\begin{activite}
+%Indéterminations avec des racines
+%\tcblower
+%\begin{tasks}(1)
+%\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
+%\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
+%\end{tasks}
+%\end{activite}
+%
+%\begin{activite}
+%Graphiquement
+%\tcblower
+%Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie simultanément toutes les conditions suivantes :
+%
+%\begin{tasks}(2)
+%\task L'ensemble $D_f$ des zéros de $f$ est $\{-2;4\}$
+%\task L'image de $0$ est $-2$
+%\task $\displaystyle\lim_{x \to 1} f(x) = -\infty$
+%\task $\displaystyle\lim_{x \to +\infty} f(x) = +\infty$
+%\task $\displaystyle\lim_{x \to +\infty} f(x) = 4$
+%\task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
+%\end{tasks}
+%\end{activite}
+%\begin{activite}
+%Continuité
+%\tcblower
+%\begin{tasks}(1)
+%\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
+%\task Peut-on en donner une définition mathématique ?
+%\task Donner des exemples de fonctions connues continues et discontinues.
+%\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
+											      %
+											      %Justifier la réponse et esquisser une représentation graphique de $f$.
+											      %
+											      %\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
+											      %\task Définir et illustrer la notion de continuité à gauche ou de continuité à droite.
+											      %\end{tasks}
+%\end{activite}
+%
+%\begin{activite}{Une limite trigonométrique importante}
+%\tcblower
+%\begin{tasks}(1)
+%\task On considère la fonction $f$ déterminée par $f(x) = \dfrac{\sin(x)}{x}$
+%\begin{enumerate}
+%\item Déterminer $D_f$ et $Z_f$.
+%\item D'après votre intuition, et/ou à l'aide de la calculatrice:
+%\item Que pensez-vous de $\displaystyle\lim_{x \to 0} f(x)$ et de ? $\displaystyle\lim_{x \to 0} f(x)$
+%\item Existe-t-il une asymptote horizontale pour cette fonction?
+%\item Pouvez-vous justifier ces réponses?
+%\end{enumerate}
+%
+%\task On s'intéresse maintenant à $\displaystyle\lim_{x \to 0} f(x)$
+%\begin{enumerate}
+%\item Conjecturer une valeur pour cette limite, à partir d'essais numériques avec la calculatrice.
+%\item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
+%\end{enumerate}
+%
+%\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
+%
+%\task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
+%\end{tasks}
+%\end{activite}
+%\begin{activite}{Indéterminations trigonométriques de type 0/0}
+%\tcblower
+%\begin{tasks}(1)
+%\task Calculer :
+%\begin{multicols}{3}
+%\begin{enumerate}
+%\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(12x)}{6x}$
+%\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x^2}$
+%\item $\displaystyle\lim_{x \to 2} \dfrac{\sin(x-2)}{3x-6}$
+%\item $\displaystyle\lim_{x \to 0} \dfrac{\tan(12x)}{6x}$
+%\item $\displaystyle\lim_{x \to 2} \dfrac{6-3x}{\sin(x-2)}$
+%\item $\displaystyle\lim_{x \to 2} \dfrac{\cos(x-2)}{3x-6}$
+%\end{enumerate}
+%\end{multicols}
+%\end{tasks}
+%\end{activite}
 
 \newpage
 \section{Exercices}
-\insertexo[exo:p1d]{1M-vyj67}{false}{exo}{true}
-\insertexo{1M-4dptb}{false}{exo}{true}
-\insertexo[exo:p1f]{1M-g4gbb}{false}{exo}{true}
-%\insertexo{1M-extez}{false}{exo}{true}
-%\insertexo{1M-znghn}{false}{exo}{true}
-\insertexo[exo:p2d]{1M-tecfn}{false}{exo}{true}
-%\insertexo{1M-fazjq}{false}{exo}{true}
-\insertexo{1M-f7dft}{false}{exo}{true}
-\insertexo{1M-ac9v2}{false}{exo}{true}
-\insertexo{1M-nxc2s}{false}{exo}{true}
-\insertexo{1M-n9qmn}{false}{exo}{true}
-\insertexo{1M-bqknk}{false}{exo}{true}
-\insertexo{1M-gg7hk}{false}{exo}{true}
-\insertexo{1M-n41yn}{false}{exo}{true}
-\insertexo{1M-8j18h}{false}{exo}{true}
-\insertexo{1M-1w3pd}{false}{exo}{true}
-\insertexo{1M-x5h3r}{false}{exo}{true}
-\insertexo{1M-1bqh9}{false}{exo}{true}
-\insertexo{1M-du7be}{false}{exo}{true}
-\insertexo{1M-k3bry}{false}{exo}{true}
-\insertexo{1M-gm9uk}{false}{exo}{true}
-\insertexo{1M-taje8}{false}{exo}{true}
-\insertexo{1M-3vr28}{false}{exo}{true}
-\insertexo{1M-gb3ag}{false}{exo}{true}
-\insertexo{1M-c3uc9}{false}{exo}{true}
-\insertexo{1M-myjcq}{false}{exo}{true}
-\insertexo{1M-dpjwk}{false}{exo}{true}
-\insertexo{1M-97ryj}{false}{exo}{true}
-\insertexo{1M-n1axs}{false}{exo}{true}
-\insertexo{1M-wnd21}{false}{exo}{true}
-\insertexo{1M-98752}{false}{exo}{true}
-\insertexo{1M-t4gwt}{false}{exo}{true}
-\insertexo{1M-1w6s3}{false}{exo}{true}
-\insertexo{1M-yhzh8}{false}{exo}{true}
-\insertexo{1M-9yqnb}{false}{exo}{true}
-\insertexo{1M-byf5j}{false}{exo}{true}
-\insertexo{1M-h9w1s}{false}{exo}{true}
-\insertexo{1M-jqhm4}{false}{exo}{true}
-\insertexo{1M-1n93r}{false}{exo}{true}
-\insertexo{1M-qp2mw}{false}{exo}{true}
-\insertexo{1M-jgbhr}{false}{exo}{true}
-\insertexo{1M-6qym1}{false}{exo}{true}
-\insertexo{1M-aatq8}{false}{exo}{true}
+%\insertexo[exo:p1d]{1M-vyj67}{false}{exo}{true}
+%\insertexo{1M-4dptb}{false}{exo}{true}
+%\insertexo[exo:p1f]{1M-g4gbb}{false}{exo}{true}
+%%\insertexo{1M-extez}{false}{exo}{true}
+%%\insertexo{1M-znghn}{false}{exo}{true}
+%\insertexo[exo:p2d]{1M-tecfn}{false}{exo}{true}
+%%\insertexo{1M-fazjq}{false}{exo}{true}
+%\insertexo{1M-f7dft}{false}{exo}{true}
+%\insertexo{1M-ac9v2}{false}{exo}{true}
+%\insertexo{1M-nxc2s}{false}{exo}{true}
+%\insertexo{1M-n9qmn}{false}{exo}{true}
+%\insertexo{1M-bqknk}{false}{exo}{true}
+%\insertexo{1M-gg7hk}{false}{exo}{true}
+%\insertexo{1M-n41yn}{false}{exo}{true}
+%\insertexo{1M-8j18h}{false}{exo}{true}
+%\insertexo{1M-1w3pd}{false}{exo}{true}
+%\insertexo{1M-x5h3r}{false}{exo}{true}
+%\insertexo{1M-1bqh9}{false}{exo}{true}
+%\insertexo{1M-du7be}{false}{exo}{true}
+%\insertexo{1M-k3bry}{false}{exo}{true}
+%\insertexo{1M-gm9uk}{false}{exo}{true}
+%\insertexo{1M-taje8}{false}{exo}{true}
+%\insertexo{1M-3vr28}{false}{exo}{true}
+%\insertexo{1M-gb3ag}{false}{exo}{true}
+%\insertexo{1M-c3uc9}{false}{exo}{true}
+%\insertexo{1M-myjcq}{false}{exo}{true}
+%\insertexo{1M-dpjwk}{false}{exo}{true}
+%\insertexo{1M-97ryj}{false}{exo}{true}
+%\insertexo{1M-n1axs}{false}{exo}{true}
+%\insertexo{1M-wnd21}{false}{exo}{true}
+%\insertexo{1M-98752}{false}{exo}{true}
+%\insertexo{1M-t4gwt}{false}{exo}{true}
+%\insertexo{1M-1w6s3}{false}{exo}{true}
+%\insertexo{1M-yhzh8}{false}{exo}{true}
+%\insertexo{1M-9yqnb}{false}{exo}{true}
+%\insertexo{1M-byf5j}{false}{exo}{true}
+%\insertexo{1M-h9w1s}{false}{exo}{true}
+%\insertexo{1M-jqhm4}{false}{exo}{true}
+%\insertexo{1M-1n93r}{false}{exo}{true}
+%\insertexo{1M-qp2mw}{false}{exo}{true}
+%\insertexo{1M-jgbhr}{false}{exo}{true}
+%\insertexo{1M-6qym1}{false}{exo}{true}
+%\insertexo{1M-aatq8}{false}{exo}{true}
 
 
 Librement adapté de ...

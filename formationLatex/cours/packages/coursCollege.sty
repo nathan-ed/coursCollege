@@ -13,7 +13,7 @@
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{tabularray}
-\RequirePackage[top=1.5cm, bottom=1.5cm, left=1cm , right=1.5cm]{geometry}
+\RequirePackage[top=1.8cm, bottom=1.7cm, left=1cm , right=1.5cm]{geometry}
 \RequirePackage{nameref}
 \RequirePackage{multicol}
 \setlength\parindent{0pt}
@@ -221,3 +221,19 @@ after skip=10pt,
 \renewcommand{\cftsecfont}{\small}
 \renewcommand{\cftsubsecfont}{\footnotesize}
 \renewcommand{\cfttoctitlefont}{\normalsize\bfseries}
+
+\newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}\hspace{1em}} 
+\renewcommand{\ligne}[1]{\parbox[b][2em]{#1cm}{\makebox[#1cm]{\hrulefill}}\hspace{0.5em}}
+\newcommand{\emptybox}{\fbox{\parbox[c][8mm]{8mm}{\ }}}
+\newcommand{\boxt}[1]{\fbox{\parbox[c][8mm]{8mm}{\centering #1}}}
+\pgfplotsset{
+  /pgfplots/xlabel near ticks/.style={
+     /pgfplots/every axis x label/.style={
+        at={(ticklabel cs:0.9,0.05)},anchor=near ticklabel
+     }
+  },
+  /pgfplots/ylabel near ticks/.style={
+     /pgfplots/every axis y label/.style={
+        at={(ticklabel cs:0.6,0.8)},anchor=near ticklabel}
+     }
+  }
