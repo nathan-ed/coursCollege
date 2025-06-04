@@ -28,17 +28,18 @@
 \newcounter{remarque}
 \newcounter{activite}
 \newcounter{theo}
+\newcounter{coro}
 
 \titleformat{\section}[frame]
 {\normalfont}
 {\filright
 \footnotesize
-\enspace \Chapitre ~ PARTIE ~ \thesection\enspace}
+\enspace \Chapitre ~ SECTION ~ \thesection\enspace}
 {8pt}
 {\Large\bfseries\filcenter}
 
 \newcommand{\cours}{1MA1~--~EG~--~ns~--~2024-2025}
-\newcommand{\sourcecours}{{\footnotesize Source principale~: Sesamath 3e -- adaption libre.}}
+\newcommand{\sourcecours}{}%{\footnotesize Source principale~: Sesamath 3e -- adaption libre.}}
 \RequirePackage{fancyhdr}
 \renewcommand{\sectionmark}[1]{ \markright{#1} }
 \pagestyle{fancy}
@@ -159,6 +160,15 @@ borderline west={0.5pt}{5cm}{black,
     boxrule=1pt,    
     colframe=black, % No border
 	before upper={\raggedleft\stepcounter{theo}\textbf{Théorème \thetheo}\\},
+   before lower={\setlength\parindent{0pt}},
+after skip=10pt,
+    #1
+}
+\newtcolorbox[auto counter]{coro}[1][]{
+	enhanced,
+    boxrule=1pt,    
+    colframe=black, % No border
+	before upper={\raggedleft\stepcounter{coro}\textbf{Corollaire \thecoro}\\},
    before lower={\setlength\parindent{0pt}},
 after skip=10pt,
     #1

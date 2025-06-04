@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{../packages/coursCollege}
-\newcommand{\Chapitre}{Limites}
+\newcommand{\Chapitre}{Limites et continuité}
 \renewcommand{\path}{../../}
 
 \renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
@@ -13,11 +13,11 @@
 \setlength{\cftsecindent}{1em}
 
 \begin{center}
-	{\bfseries \Huge Chapitre 1~: Limites}
+	{\bfseries \Huge Chapitre 1~: \\Fonctions continues et calcul de limites}
+	
 
-\bigskip
-
-\begin{tikzpicture}[scale=8]
+	\vspace{1cm}
+\begin{tikzpicture}[scale=5.5]
   % unit circle, solid
 
   \node[inner sep=0] at (0,0) {\includegraphics[width=9cm]{../medias/3M/limites/intro}};
@@ -33,10 +33,231 @@
   }
 \end{tikzpicture}
 \end{center}
+\vspace{-1cm}
 \tableofcontents
 \newpage
+\section{Continuité}
+\subsection{Définition intuitive et exemples}
+\label{sec:continuite}
+\begin{definition}
+	\tcblower
+	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.
+\end{definition}
+\begin{exemple}
+	\tcblower
+		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
+\end{exemple}
+\begin{remarque}
+	\tcblower
+ Par définition, un voisinage d'un nombre réel $a$ contient une infinité de nombres plus petit et plus grand que $a$. 
+\end{remarque}
+\begin{definition}
+	\tcblower
+	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en~$a$.
+\end{definition}
 
-\section{Définition et exemples graphiques}
+\begin{definition}
+\tcblower
+Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
+$f$ est continue en $a$ ssi il existe un voisinage de $a$ tel que « une représentation graphique de $f$ dans ce voisinage peut être dessinée sans lever le crayon ».  
+Si $f$ n'est pas continue en $a$, on dit que $f$ est discontinue en $a$.
+\end{definition}
+
+\begin{definition}
+	\tcblower
+	\
+	$f$ est continue sur $I$ un intervalle $I\subset \mathbb{R}\Leftrightarrow$ $f$ est continue en tout point de~$I$.
+\end{definition}
+
+
+
+\begin{exemple}
+	\tcblower
+	\begin{tasks}(2)
+	\task 
+
+	\begin{tikzpicture}[>=stealth]
+% ------------------------------------------------------------------
+% 1 ── no value at a (open circle)
+\begin{axis}[
+    name=G1,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick] coordinates
+      {(-1,-1) (0,-0.2) (1,0.5) (2,1.2) (3,1.4) (4,1.2)};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
+  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % ∘
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.2) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car $f$ n'est pas définie en $a$.
+\task 
+
+
+
+
+\begin{tikzpicture}[>=stealth]
+
+	% ------------------------------------------------------------------
+% 2 ── continuous, piecewise-linear peak
+\begin{axis}[
+    at={(G1.east)}, xshift=1.5cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=5, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[thick] coordinates {(-1,-0.3) (2,1.4) (5,-0.6)};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.4);
+  \draw[dashed] (axis cs:-0.1,1.4) -- (axis cs:2,1.4);
+  \draw[fill=black] (axis cs:2,1.4) circle (2pt);
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.4) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ est continue en $a$, car 
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}$ 
+
+\task 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
+  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
+  % points & guides
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
+  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
+  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,0.8) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)}$ n'existe pas. 
+
+\task 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1.south)}, yshift=-1.5cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:4,samples=100]
+      {-0.25*(x-2)^2+1.2};
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
+  \draw[dashed] (axis cs:0,0.5) -- (axis cs:2,0.5);
+  \draw[dashed] (axis cs:0,0.0) -- (axis cs:2,0.0);
+  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % open
+  \draw[fill=black]       (axis cs:2,0.5) circle (2pt); % value
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,1.2) {$b$};
+  \node[left]  at (axis cs:0,0.5) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $a$, car
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=b\neq f(a)=c}$. 
+
+\end{tasks}
+\end{exemple}
+\begin{exemplesuite}
+	\tcblower
+	\begin{tasks}(2)
+
+		\task[e)] 
+
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east |- G1.south)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:4,samples=100] {0.1*(x-2)^3 -0.5*(x-2) +0.3};
+  \draw[dashed] (axis cs:2,0.3) -- (axis cs:0,0.3);
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.3);
+  \draw[fill=black] (axis cs:2,0.3) circle (2pt);
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[above left]  at (axis cs:0,0.3) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ est continue en $a$, car 
+
+$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}.$ 
+
+\task[f)] 
+
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-4,xmax=4, ymin=-0.2,ymax=2.5,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  % 1/x² left branch
+  \addplot[domain=-4:-0.65,samples=200,thick] {1/(x^2)};
+  % 1/x² right branch
+  \addplot[domain=0.65:4,samples=200,thick] {1/(x^2)};
+  % vertical asymptote x = 0
+  \draw[dashed] (axis cs:0,-0.2) -- (axis cs:0,2.5);
+  \node[below] at (axis cs:0,-0.2) {$0$};
+\end{axis}
+\end{tikzpicture}
+
+$f$ n'est pas continue en $0$, car
+
+$\displaystyle{\lim_{x\rightarrow 0}f(x)=+\infty}$. 
+
+	\end{tasks}
+\end{exemplesuite}
+
+
+\subsection{Théorème de la valeur intermédiaire}
+\begin{thm}
+Théorème de la valeur intermédiaire
+\tcblower
+Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors la fonction $f$
+\begin{itemize}
+	\item est bornée sur $[a,b]$
+	\item possède un minimum $m$ et un maximum $M$ sur $[a,b]$
+	\item prend au moins une fois toutes les valeurs comprises entre $m$ et $M$.
+\end{itemize}
+En d'autres termes, $f([a,b]) = [m,M]$
+
+\end{thm}
+
+\begin{remarque}
+	\tcblower
+Si l'hypothèse de continuité n'est pas vérifiée, le théorème n'est plus vrai !
+\end{remarque}
+\subsection{Exercices}
+\section{Limites en un nombre}
+\subsection{Un exemple introductif}
 \begin{exemple}
 	\tcblower
 
@@ -48,7 +269,7 @@
 		x &\mapsto \dfrac{3(1-x)}{(\sqrt{x}-1)(x-4)}
 	\end{align*}
 
-Nous allons étudier le comportement de cette fonction au bord de son ensemble de définition, c'est-à-dire en
+Nous allons étudier le comportement de cette fonction au bord de son ensemble de définition, c'est-à-dire en 
 \begin{itemize}
 \item en $x = 1$ puis $x = 4$ (valeurs interdites)
 \item et finalement en $x \to +\infty$
@@ -195,22 +416,7 @@ $\to +\infty$ &« $\dfrac{+\infty}{+\infty}$ »& $\displaystyle\lim_{x \to +\inf
 	
 Le but de ce chapitre sera de présenter les méthodes pour réussir à mener ce type d'étude sur diverses fonctions. 
 
-\begin{definition}
-	\tcblower
-	Un \emph{voisinage} d'un nombre réel $a$ est un intervalle ouvert qui contient $a$.
-\end{definition}
-\begin{exemple}
-	\tcblower
-		Les intervalles ouverts $]1\,{;}\,4[$ et $]2{,}9999\,{;}\,3{,}000000001[$ sont des voisinages de $3$.
-\end{exemple}
-\begin{remarque}
-	\tcblower
- Par définition, un voisinage d'un nombre réel $a$ contient une infinité de nombres plus petit et plus grand que $a$. 
-\end{remarque}
-\begin{definition}
-	\tcblower
-	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en~$a$.
-\end{definition}
+\subsection{Définitions et exemples}
 
 \begin{definition}
 $x\rightarrow~a^-$
@@ -311,7 +517,7 @@ Si $\displaystyle{\lim_{x\rightarrow a}f(x)=\ell}$ existe, alors elle est unique
 \begin{thm}[label=thm:existence]
 	Existence de la limite
 \tcblower
-Une limite existe si et seulement si les limites à gauche et à droite sont égales, i.e.
+Une limite existe ssi les limites à gauche et à droite sont égales, i.e.
 
 \[\displaystyle{\lim_{x\rightarrow a}f(x)=\ell} \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)}= \displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}.\]
 \end{thm}
@@ -426,7 +632,93 @@ On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=}\ligne{1}$ même si $f$ n'est pas
 \end{exemple} 
 
 Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
-\section{Limites de fonctions élémentaires}
+
+\subsection{Lien avec la continuité}
+On peut à présent donner une définition plus formelle de la continuité. 
+
+\begin{definition}
+Continuité
+	\tcblower
+Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
+\medskip
+
+\begin{minipage}[c][0.8cm]{0.5\textwidth}{
+		\begin{center}
+$f$ est continue en $a$ $\Longleftrightarrow$  
+\end{center}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.5\textwidth}{
+\vspace{0pt}
+\begin{tasks}
+\task $\displaystyle\lim_{x\to a}f(x)$ existe dans $\mathbb{R}$;
+\task $f(a)$  existe dans $\mathbb{R}$;
+\task $\displaystyle\lim_{x\to a}f(x)=f(a)$.
+\end{tasks}
+}
+\end{minipage}
+\medskip
+
+Si on veut être plus concis, on écrira plus simplement :  
+\[f \text{ est continue en }a \Longleftrightarrow \displaystyle\lim_{x\to a}f(x)=f(a).\]
+\end{definition}
+\begin{remarque}
+	\tcblower
+	On peut également écrire
+	\[f \text{ est continue en }x \Longleftrightarrow \displaystyle\lim_{h\to 0}f(x+h)=f(x).\]
+\end{remarque}
+\begin{definition}
+	continuité à gauche\\
+	continuité à droite
+	\tcblower
+	Soit $f: I\rightarrow \mathbb{R}$ une fonction réelle et $a\in I$.
+
+	\[f \text{ est continue à gauche en } a \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)}\]
+	\[f \text{ est continue à droite en } a \iff \displaystyle{\lim_{x\rightarrow a^+}f(x)=f(a)}\]
+\end{definition}
+\begin{exemple}
+	\tcblower
+	\begin{minipage}[t]{0.55\textwidth}{
+	\vspace{0pt}
+$f$ est continue à gauche, car $\displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)=b}$
+
+\medskip
+$f$ n'est pas continue à droite, car $\displaystyle{\lim_{x\rightarrow a^+}f(x)\neq f(a)=b}$.  	
+	}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}{
+	\vspace{0pt}
+	\begin{center}
+\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+    at={(G1 -| G1.east)}, xshift=3cm,
+    width=5.5cm,height=5.5cm,
+    axis lines=middle, axis line style={->},
+    xmin=-1,xmax=4, ymin=-1,ymax=2,
+    xtick=\empty, ytick=\empty,
+    clip=false]
+  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
+  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
+  % points & guides
+  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
+  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
+  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
+  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
+  \node[below] at (axis cs:2,0) {$a$};
+  \node[left]  at (axis cs:0,0.8) {$b$};
+\end{axis}
+\end{tikzpicture}
+
+	\end{center}
+	}
+	\end{minipage}
+\end{exemple}
+
+
+
+\subsection{Limites de fonctions élémentaires}
 \label{sec:limel}
 \begin{thm}[label=thm:limel]
 Limites de fonctions élémentaires
@@ -464,7 +756,21 @@ $\displaystyle{\lim_{x\rightarrow 5}x\stackrel{\text{\eqmakebox[b][c]{{\bfseries
 	$\displaystyle{\lim_{x\rightarrow 8}\sqrt[3]{x}\stackrel{\text{\eqmakebox[b][c]{{\bfseries L4}}}}{=}\sqrt[3]{8}=2}$ 
 \end{exemple}
 
-\section{Propriétés des limites}
+
+\begin{coro}
+	fonctions continues
+	\tcblower
+	\noindent\begin{description}
+		\item[{\bfseries C1}] Les fonctions constantes sont continues sur $\mathbb{R}$.  
+		\item[{\bfseries C2}] La fonction $f$ définie par $f(x)=x$ est continue sur $\mathbb{R}$.  
+		\item[{\bfseries C3}] Les fonctions $\sin$ et $\cos$ sont continues sur $\mathbb{R}$. 
+		\item[{\bfseries C4}] Les fonctions racines-n-ièmes sont continues sur leur domaine de définition.
+		\item[{\bfseries C5}] Les fonctions exponentielles et logarithmes sont continues sur leur domaine de définition. 
+	\end{description}
+\end{coro}
+
+
+\subsection{Propriétés des limites}
 \label{sec:proplim}
 Les propriétés suivantes nous permettent de calculer des limites plus compliquées du type $\displaystyle{\lim_{x\rightarrow 2}\dfrac{x-5}{x}}$.
 \smallskip
@@ -491,7 +797,21 @@ Si $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarr
 	Si $\displaystyle{\lim_{x\rightarrow a}f(x)=b}$ et $\displaystyle{\lim_{t\rightarrow b}g(t)=g(b)}$ existent et sont finies, alors on a~:
 	\[\lim_{x\rightarrow a}g(f(x))=g(\lim_{x\rightarrow a }f(x))=g(b).\] 
 \end{thm}
-\begin{thm}[label=thm:poly]
+\begin{coro}
+opérations avec des
+
+fonctions continues
+	\tcblower
+	\noindent\begin{description}
+		\item[{\bfseries PC1}] Si $f$ est $g$ sont continues en $a$, alors $f+g$ est continue en $a$.  
+		\item[{\bfseries PC2}] Si $f$ est $g$ sont continues en $a$, alors $f-g$ est continue en $a$.  
+		\item[{\bfseries PC3}] Si $f$ est $g$ sont continues en $a$, alors $f\cdot g$ est continue en $a$.  
+		\item[{\bfseries PC4}] Si $f$ est $g$ sont continues en $a$ et $g(a)\neq 0$, alors $\dfrac{f}{g}$ est continue en $a$.  
+		\item[{\bfseries PC5}] Si $f$ est continue en $a$ et $g$ est continue en $f(a)$, alors $g\circ f$ est continue en $a$. 
+	\end{description}
+\end{coro}
+
+\begin{coro}[label=thm:poly]
 Limites de fonctions polynômiales	
 
 (avec démonstration)
@@ -515,7 +835,8 @@ Ainsi,
 
 
 \end{proof}
-\end{thm}
+\end{coro}
+
 
 \begin{thm}
 	\tcblower
@@ -622,10 +943,11 @@ Ces théorèmes montrent que dans la plupart des fonctions que l'on considère, 
 \]
 Dans tous ces cas « simples », le comportement de \(f\) près de \(a\) est le même que celui de \(f\) en \(a\). Ce n’est donc pas pour ces fonctions que l’«~outil limite~» est pertinent, mais pour celles de la section suivante…
 
-Dans la partie \ref{sec:continuite}, nous reviendrons sur cette remarque qui nous permettra d’appréhender une notion très importante, {\bfseries la continuité}.
+Dans la section \ref{sec:continuite}, nous reviendrons sur cette remarque qui nous permettra d’appréhender une notion très importante, {\bfseries la continuité}.
 \end{remarque}
 
-\section{Limites infinies -- type « $\dfrac{1}{0}$ »}
+
+\subsection{Indéterminations -- types « $\dfrac{1}{0}$ » et « $\dfrac{0}{0}$ »}
 \begin{definition}
 	Type $«~\dfrac{1}{0}~»$
 	\tcblower
@@ -830,9 +1152,77 @@ Interprétations graphiques :
     \end{axis}
   \end{tikzpicture}
 \end{center}
+
+\subsection{Asymptotes verticales}
+\begin{definition}
+	asymptote
+	verticale
+	\tcblower
+On dit qu'une droite verticale d'équation $x = a$ est une \textbf{asymptote verticale} de la fonction $f$ si l'une au moins des conditions suivantes est satisfaite~:
+
+$\displaystyle\lim_{x \to a^+} f(x) = +\infty$,  $\displaystyle\lim_{x \to a^+} f(x) = -\infty$,  $\displaystyle\lim_{x \to a^-} f(x) = +\infty$ ou  $\displaystyle\lim_{x \to a^-} f(x) = -\infty$.
+\end{definition}
+
+\begin{exemple}
+	lecture graphique d'asymptotes
+\tcblower	
+$x = -1$ et $x = 1$ sont deux asymptotes verticales de la fonction ;
+
+$y = 2$ est une asymptote horizontale de la fonction.
+\end{exemple}
+
+\begin{remarque}
+	$\dfrac{\sin(x)}{x}$
+\tcblower
+Il est possible d'intersecter une asymptote. Par exemple, $y = 0$ est une asymptote horizontale de la fonction la fonction $f$ définie par $f(x) = \dfrac{\sin(x)}{x}$
+\end{remarque}
+
+\begin{methode}
+	déterminer des asymptotes verticales
+	\tcblower
+Pour déterminer les asymptotes verticales dans le cas des fonctions rationnelles on suit la méthode suivante~:
+
+On analyse les limites $\displaystyle\lim_{x \to a} f(x)$ pour les $a$ qui ont été exclus du $D_f$ :
+\begin{itemize}
+\item si la limite est du type $\dfrac{1}{0}$, il y a une asymptote verticale ; on calcule les limites à gauche $\displaystyle\lim_{x \to a^-} f(x)$ et à droite $\displaystyle\lim_{x \to a^+} f(x)$ ;
+\item si la limite est du type $\dfrac{0}{0}$, on ne peut encore rien dire ; on calcule la limite $\displaystyle\lim_{x \to a} f(x)$ qui peut conduire autant à une situation sans asymptote verticale qu'avec.
+\end{itemize}
+\end{methode}
+
+\begin{exemple}[label=ex:asver]
+asymptotes verticales de \\
+\medskip
+$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}$
+\tcblower
+Déterminer les asymptotes verticales de la fonction $f$ définie par 
+
+\[f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}.\]
+
+On étudie le domaine de définition de la fonction 
+
+$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4} = \dfrac{x(x - 1)}{(x + 4)(x - 1)}$, d'où $D_f = \mathbb{R} \setminus \{-4; 1\}$
+
+On remarque que $f(x) \stackrel{\text{si }x\neq 1}{=}\dfrac{x}{x + 4}$
+\begin{itemize}
+	\item Pour $x\rightarrow -4$ on a 
+
+		$\displaystyle\lim_{x \to -4} f(x) = \dfrac{-4}{0}$ de type $\dfrac{1}{0}$
+
+$\displaystyle\lim_{x \to -4^-} f(x) = \lim_{x \to -4^-} \dfrac{x}{x + 4} = \dfrac{-4}{0^-} = +\infty$ et
+
+$\displaystyle\lim_{x \to -4^+} f(x) = \lim_{x \to -4^+} \dfrac{x}{x + 4} = \dfrac{-4}{0^+} = -\infty$
+
+$x = -4$ est une asymptote verticale de $f$
+\item Pour $x \to 1$ :
+
+$\displaystyle\lim_{x \to 1} f(x) = \dfrac{1}{1 + 5} = \dfrac{1}{5}$
+
+$f$ n'a pas d'asymptote verticale en $x = 1$
+\end{itemize}
+\end{exemple}
+\subsection{Exercices}
 \section{Limites en l'infini}
-
-
+\subsection{Définition et exemples}
 \begin{definition}
 Limite en l'infini	
 \tcblower
@@ -841,8 +1231,6 @@ Soit \(f\) une fonction définie sur \(\mathbb{R}\).
 On dit que la limite de \(f(x)\) quand \(x\) tend vers $+\infty$ est égale à \(L\) si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe positif). On note $\lim_{x\to+\infty}f(x)=L$.
 
 On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \(L\) si \(f(x)\) s'approche « aussi près qu'on veut » de \(L\) lorsque \(x\) devient infiniment grand (avec signe négatif). On note $\lim_{x\to-\infty}f(x)=L$.
-
-
 \end{definition}
 
 \begin{remarque}
@@ -850,7 +1238,7 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \
  \(\displaystyle{\lim_{x\to\pm\infty}f(x)}\) signifie qu'on considère simultanément les deux cas \(\displaystyle{\lim_{x\to+\infty}f(x)}\) et \(\displaystyle{\lim_{x\to-\infty}f(x)}\).
 \end{remarque}
 
-\section{Algèbre de l'infini}
+\subsection{Algèbre de l'infini}
 \begin{formule}[label=form:inf]
 	Algèbre de l'infini
 	\tcblower
@@ -866,7 +1254,7 @@ On dit que la limite de \(f(x)\) quand \(x\) tend vers $-\infty$ est égale à \
 
 \begin{remarque}
 	\tcblower
-	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini des théorèmes des parties \ref{sec:limel} et \ref{sec:proplim} qui restent valable dans cette situation. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
+	Une limite \(\displaystyle{\lim_{x\to\pm\infty}f(x)=\ell}\) s'approche dans un premier temps à l’aide des formules de l'algèbre de l'infini des théorèmes des sections \ref{sec:limel} et \ref{sec:proplim} qui restent valable dans cette situation. Si le calcul ne peut pas être traité avec ces outils, on verra plus loin que d’autres techniques peuvent être appliquées.
 \end{remarque}
 \begin{exemple}
 	\tcblower
@@ -895,10 +1283,9 @@ $
 	\end{aligned}
 	$
 \end{exemple}
-\section{Lever les indéterminations}
+\subsection{Indéterminations avec de l'infini}
 
-Il arrive que toutes les méthodes vues jusque-là pour calculer des limites ne soient pas utilisables. 
-
+Nous avons déjà traité les indéterminations du type $« \dfrac{\star}{0}»$. Dans cette section, nous traitons les indéterminations qui font intervenir l'infini. 
 Ces situations sont appelées « indéterminations », c’est-à-dire qu’on ne peut pas prévoir à l’avance comment va se comporter la limite avant de l’avoir étudiée : il faut alors recourir à des manipulations algébriques pour se ramener à des cas déterminés que nous savons traiter.
 
 \begin{definition}
@@ -915,13 +1302,11 @@ est appelée {\bfseries indétermination} de « type \(\displaystyle\dfrac{0}{0}
 
 Les différents types d’{\bfseries indéterminations} sont (liste non exhaustive) :
 \[
- «~\dfrac{0}{0}~»,\quad
  «~\dfrac{+\infty}{+\infty}~»,\quad
 «~0\cdot\infty~»,\quad
  «~\infty - \infty~»,\quad
  «~\infty^0~»,\quad
  «~0^\infty~»,\quad
- «~0^0~»,\quad
  «~1^\infty~».
 \]
 
@@ -1195,16 +1580,8 @@ On interprète graphiquement les résultats obtenus~:
 \end{tikzpicture}
 	\end{center}
 \end{exemplesuite}
-\section{Asymptotes verticales et horizontales}
 
-\begin{definition}
-	asymptote
-	verticale
-	\tcblower
-On dit qu'une droite verticale d'équation $x = a$ est une \textbf{asymptote verticale} de la fonction $f$ si l'une au moins des conditions suivantes est satisfaite~:
-
-$\displaystyle\lim_{x \to a^+} f(x) = +\infty$,  $\displaystyle\lim_{x \to a^+} f(x) = -\infty$,  $\displaystyle\lim_{x \to a^-} f(x) = +\infty$ ou  $\displaystyle\lim_{x \to a^-} f(x) = -\infty$.
-\end{definition}
+\subsection{Asymptotes horizontales}
 \begin{definition}
 	asymptote horizontale
 	\tcblower
@@ -1212,64 +1589,6 @@ On dit qu'une doite horizontale d'équation $y = b$ est une \textbf{asymptote ho
 
 $\displaystyle\lim_{x \to +\infty} f(x) = b$ ou $\displaystyle\lim_{x \to -\infty} f(x) = b$.
 \end{definition}
-
-\begin{exemple}
-	lecture graphique d'asymptotes
-\tcblower	
-$x = -1$ et $x = 1$ sont deux asymptotes verticales de la fonction ;
-
-$y = 2$ est une asymptote horizontale de la fonction.
-\end{exemple}
-
-\begin{remarque}
-	$\dfrac{\sin(x)}{x}$
-\tcblower
-Il est possible d'intersecter une asymptote. Par exemple, $y = 0$ est une asymptote horizontale de la fonction la fonction $f$ définie par $f(x) = \dfrac{\sin(x)}{x}$
-\end{remarque}
-
-\begin{methode}
-	déterminer des asymptotes verticales
-	\tcblower
-Pour déterminer les asymptotes verticales dans le cas des fonctions rationnelles on suit la méthode suivante~:
-
-On analyse les limites $\displaystyle\lim_{x \to a} f(x)$ pour les $a$ qui ont été exclus du $D_f$ :
-\begin{itemize}
-\item si la limite est du type $\dfrac{1}{0}$, il y a une asymptote verticale ; on calcule les limites à gauche $\displaystyle\lim_{x \to a^-} f(x)$ et à droite $\displaystyle\lim_{x \to a^+} f(x)$ ;
-\item si la limite est du type $\dfrac{0}{0}$, on ne peut encore rien dire ; on calcule la limite $\displaystyle\lim_{x \to a} f(x)$ qui peut conduire autant à une situation sans asymptote verticale qu'avec.
-\end{itemize}
-\end{methode}
-
-\begin{exemple}[label=ex:asver]
-asymptotes verticales de \\
-\medskip
-$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}$
-\tcblower
-Déterminer les asymptotes verticales de la fonction $f$ définie par 
-
-\[f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4}.\]
-
-On étudie le domaine de définition de la fonction 
-
-$f(x) = \dfrac{x^2 - x}{x^2 + 3x - 4} = \dfrac{x(x - 1)}{(x + 4)(x - 1)}$, d'où $D_f = \mathbb{R} \setminus \{-4; 1\}$
-
-On remarque que $f(x) \stackrel{\text{si }x\neq 1}{=}\dfrac{x}{x + 4}$
-\begin{itemize}
-	\item Pour $x\rightarrow -4$ on a 
-
-		$\displaystyle\lim_{x \to -4} f(x) = \dfrac{-4}{0}$ de type $\dfrac{1}{0}$
-
-$\displaystyle\lim_{x \to -4^-} f(x) = \lim_{x \to -4^-} \dfrac{x}{x + 4} = \dfrac{-4}{0^-} = +\infty$ et
-
-$\displaystyle\lim_{x \to -4^+} f(x) = \lim_{x \to -4^+} \dfrac{x}{x + 4} = \dfrac{-4}{0^+} = -\infty$
-
-$x = -4$ est une asymptote verticale de $f$
-\item Pour $x \to 1$ :
-
-$\displaystyle\lim_{x \to 1} f(x) = \dfrac{1}{1 + 5} = \dfrac{1}{5}$
-
-$f$ n'a pas d'asymptote verticale en $x = 1$
-\end{itemize}
-\end{exemple}
 
 \begin{methode}
 déterminer des asymptotes horizontales	
@@ -1316,8 +1635,8 @@ $
 
 \end{exemple}
 
-\section{Asymptotes obliques}
 
+\subsection{Asymptotes obliques}
 \begin{definition}
 	asymptote oblique
 	\tcblower
@@ -1419,345 +1738,9 @@ donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
 
 \end{exemple}
 
-\section{Limites trigonométriques}
-Le théorème suivant est important et sa démonstration sera faite en activité. 
-\medskip
-\begin{thm}[label=thm:sinxx]
-	\smallskip
-$\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
-	\tcblower
-On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
-\end{thm}
+\subsection{Exercices}
+\section{Activités}
 
-\begin{methode}
-\tcblower
-Pour lever une indétermination trigonométrique, on se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
-\end{methode}
-
-\begin{exemple}
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
-	\tcblower
-Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
-\smallskip
-\begin{explanation}
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » & on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ & on observe que l'expression qui « pilote » le calcul est $-20x$\\
-	$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$& on fait apparaître cette expression au dénominateur et comme le terme de la limite\\
-	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise le théorème \ref{thm:sinxx}\\
-	$= -20 \cdot 1$&on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$\\
-$= -20$\\
-\end{explanation}
-\end{exemple}
-\begin{remarque}
-	\tcblower
-On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
-\end{remarque}
-\begin{exemple}
-$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
-	\tcblower
-Calculer $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
-\begin{explanation}[0.6]
-	$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$& on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$& on multiplie par le conjugué\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$& on effectue la multiplication des fractions\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$& on utilise la 3e identité remarquable\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$& on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$& on sépare en produit de fractions\\
-	$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$& on utilise les propriétés des limites, ce qu'on peut faire si les deux limites existent\\
-	$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$& on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ et on calcule la 3e limite facilement\\
-$= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
-\end{explanation}
-\end{exemple}
-\section{Continuité}
-\label{sec:continuite}
-\begin{definition}
-\tcblower
-Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
-$f$ est continue en $a$ si et seulement si il existe un voisinage de $a$ tel que « une représentation graphique de $f$ dans ce voisinage peut être dessinée sans lever le crayon ».  
-Si $f$ n'est pas continue en $a$, on dit que $f$ est discontinue en $a$.
-\end{definition}
-
-\begin{definition}
-	\tcblower
-	\
-	$f$ est continue sur $I$ un intervalle $I\subset \mathbb{R}\Leftrightarrow$ $f$ est continue en tout point de~$I$.
-\end{definition}
-
-
-\begin{definition}
-Continuité
-	\tcblower
-Soit $f : I \to \mathbb{R}$ une fonction réelle (donc $I \subset \mathbb{R}$) et $a \in I$.  
-\medskip
-
-\begin{minipage}[c][0.8cm]{0.5\textwidth}{
-		\begin{center}
-$f$ est continue en $a$ $\Longleftrightarrow$  
-\end{center}
-}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.5\textwidth}{
-\vspace{0pt}
-\begin{tasks}
-\task $\displaystyle\lim_{x\to a}f(x)$ existe dans $\mathbb{R}$;
-\task $f(a)$  existe dans $\mathbb{R}$;
-\task $\displaystyle\lim_{x\to a}f(x)=f(a)$.
-\end{tasks}
-}
-\end{minipage}
-\medskip
-
-Si on veut être plus concis, on écrira plus simplement :  
-\[f \text{ est continue en }a \Longleftrightarrow \displaystyle\lim_{x\to a}f(x)=f(a).\]
-\end{definition}
-\begin{remarque}
-	\tcblower
-	On peut également écrire
-	\[f \text{ est continue en }x \Longleftrightarrow \displaystyle\lim_{h\to 0}f(x+h)=f(x).\]
-\end{remarque}
-
-\begin{exemple}
-	\tcblower
-	\begin{tasks}(2)
-	\task 
-
-	\begin{tikzpicture}[>=stealth]
-% ------------------------------------------------------------------
-% 1 ── no value at a (open circle)
-\begin{axis}[
-    name=G1,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=4, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[smooth,thick] coordinates
-      {(-1,-1) (0,-0.2) (1,0.5) (2,1.2) (3,1.4) (4,1.2)};
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
-  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
-  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % ∘
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[left]  at (axis cs:0,1.2) {$b$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ n'est pas continue en $a$, car $f$ n'est pas définie en $a$.
-\task 
-
-
-
-
-\begin{tikzpicture}[>=stealth]
-
-	% ------------------------------------------------------------------
-% 2 ── continuous, piecewise-linear peak
-\begin{axis}[
-    at={(G1.east)}, xshift=1.5cm,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=5, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[thick] coordinates {(-1,-0.3) (2,1.4) (5,-0.6)};
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.4);
-  \draw[dashed] (axis cs:-0.1,1.4) -- (axis cs:2,1.4);
-  \draw[fill=black] (axis cs:2,1.4) circle (2pt);
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[left]  at (axis cs:0,1.4) {$b$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ est continue en $a$, car 
-
-$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}$ 
-
-\task 
-
-\begin{tikzpicture}[>=stealth]
-	\begin{axis}[
-    at={(G1 -| G1.east)}, xshift=3cm,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=4, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
-  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
-  % points & guides
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
-  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
-  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
-  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
-  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[left]  at (axis cs:0,0.8) {$b$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ n'est pas continue en $a$, car
-
-$\displaystyle{\lim_{x\rightarrow a}f(x)}$ n'existe pas. 
-
-\task 
-
-\begin{tikzpicture}[>=stealth]
-	\begin{axis}[
-    at={(G1.south)}, yshift=-1.5cm,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=4, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[smooth,thick,domain=-1:4,samples=100]
-      {-0.25*(x-2)^2+1.2};
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,1.2);
-  \draw[dashed] (axis cs:0,1.2) -- (axis cs:2,1.2);
-  \draw[dashed] (axis cs:0,0.5) -- (axis cs:2,0.5);
-  \draw[dashed] (axis cs:0,0.0) -- (axis cs:2,0.0);
-  \draw[fill=white,thick] (axis cs:2,1.2) circle (2pt); % open
-  \draw[fill=black]       (axis cs:2,0.5) circle (2pt); % value
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[left]  at (axis cs:0,1.2) {$b$};
-  \node[left]  at (axis cs:0,0.5) {$c$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ n'est pas continue en $a$, car
-
-$\displaystyle{\lim_{x\rightarrow a}f(x)=b\neq f(a)=c}$. 
-
-\end{tasks}
-\end{exemple}
-\begin{exemplesuite}
-	\tcblower
-	\begin{tasks}(2)
-
-		\task[e)] 
-
-\begin{tikzpicture}[>=stealth]
-	\begin{axis}[
-    at={(G1 -| G1.east |- G1.south)}, xshift=3cm,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=4, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[smooth,thick,domain=-1:4,samples=100] {0.1*(x-2)^3 -0.5*(x-2) +0.3};
-  \draw[dashed] (axis cs:2,0.3) -- (axis cs:0,0.3);
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.3);
-  \draw[fill=black] (axis cs:2,0.3) circle (2pt);
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[above left]  at (axis cs:0,0.3) {$b$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ est continue en $a$, car 
-
-$\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}.$ 
-
-\task[f)] 
-
-\begin{tikzpicture}[>=stealth]
-\begin{axis}[
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-4,xmax=4, ymin=-0.2,ymax=2.5,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  % 1/x² left branch
-  \addplot[domain=-4:-0.7,samples=200,thick] {1/(x^2)};
-  % 1/x² right branch
-  \addplot[domain=0.7:4,samples=200,thick] {1/(x^2)};
-  % vertical asymptote x = 0
-  \draw[dashed] (axis cs:0,-0.2) -- (axis cs:0,2.5);
-  \node[below] at (axis cs:0,-0.2) {$0$};
-\end{axis}
-\end{tikzpicture}
-
-$f$ n'est pas continue en $0$, car
-
-$\displaystyle{\lim_{x\rightarrow 0}f(x)=+\infty}$. 
-
-	\end{tasks}
-\end{exemplesuite}
-
-\begin{definition}
-	continuité à gauche\\
-	continuité à droite
-	\tcblower
-	Soit $f: I\rightarrow \mathbb{R}$ une fonction réelle et $a\in I$.
-
-	\[f \text{ est continue à gauche en } a \iff \displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)}\]
-	\[f \text{ est continue à droite en } a \iff \displaystyle{\lim_{x\rightarrow a^+}f(x)=f(a)}\]
-\end{definition}
-\begin{exemple}
-	\tcblower
-	\begin{minipage}[t]{0.55\textwidth}{
-	\vspace{0pt}
-$f$ est continue à gauche, car $\displaystyle{\lim_{x\rightarrow a^-}f(x)=f(a)=b}$
-
-\medskip
-$f$ n'est pas continue à droite, car $\displaystyle{\lim_{x\rightarrow a^+}f(x)\neq f(a)=b}$.  	
-	}
-	\end{minipage}
-	\begin{minipage}[t]{0.4\textwidth}{
-	\vspace{0pt}
-	\begin{center}
-\begin{tikzpicture}[>=stealth]
-	\begin{axis}[
-    at={(G1 -| G1.east)}, xshift=3cm,
-    width=5.5cm,height=5.5cm,
-    axis lines=middle, axis line style={->},
-    xmin=-1,xmax=4, ymin=-1,ymax=2,
-    xtick=\empty, ytick=\empty,
-    clip=false]
-  \addplot[smooth,thick,domain=-1:2,samples=80] {0.6+0.5*x-0.2*x^2};
-  \addplot[smooth,thick,domain=2:4,samples=80] {0.06*(x-2)^2+0.15*(x-2)+0};
-  % points & guides
-  \draw[dashed] (axis cs:2,0) -- (axis cs:2,0.8);
-  \draw[dashed] (axis cs:0,0.8) -- (axis cs:2,0.8);
-  \draw[dashed] (axis cs:0,0) -- (axis cs:2,0);
-  \draw[fill=white,thick] (axis cs:2,0) circle (2pt);   % open
-  \draw[fill=black]       (axis cs:2,0.8) circle (2pt); % closed
-  \node[below] at (axis cs:2,0) {$a$};
-  \node[left]  at (axis cs:0,0.8) {$b$};
-\end{axis}
-\end{tikzpicture}
-
-	\end{center}
-	}
-	\end{minipage}
-\end{exemple}
-
-\begin{thm}
-	fonctions continues
-	\tcblower
-	\noindent\begin{description}
-		\item[{\bfseries C1}] Les fonctions constantes sont continues sur $\mathbb{R}$.  
-		\item[{\bfseries C2}] La fonction $f$ définie par $f(x)=x$ est continue sur $\mathbb{R}$.  
-		\item[{\bfseries C3}] Les fonctions $\sin$ et $\cos$ sont continues sur $\mathbb{R}$. 
-		\item[{\bfseries C4}] Les fonctions racines-n-ièmes sont continues sur leur domaine de définition.
-		\item[{\bfseries C5}] Les fonctions exponentielles et logarithmes sont continues sur leur domaine de définition. 
-	\end{description}
-\end{thm}
-\begin{thm}
-opérations avec des
-
-fonctions continues
-	\tcblower
-	\noindent\begin{description}
-		\item[{\bfseries PC1}] Si $f$ est $g$ sont continues en $a$, alors $f+g$ est continue en $a$.  
-		\item[{\bfseries PC2}] Si $f$ est $g$ sont continues en $a$, alors $f-g$ est continue en $a$.  
-		\item[{\bfseries PC3}] Si $f$ est $g$ sont continues en $a$, alors $f\cdot g$ est continue en $a$.  
-		\item[{\bfseries PC4}] Si $f$ est $g$ sont continues en $a$ et $g(a)\neq 0$, alors $\dfrac{f}{g}$ est continue en $a$.  
-		\item[{\bfseries PC5}] Si $f$ est continue en $a$ et $g$ est continue en $f(a)$, alors $g\circ f$ est continue en $a$. 
-	\end{description}
-\end{thm}
-\begin{remarque}
-	\tcblower
-	Ces résultats sont des corollaires des théorèmes \ref{thm:limel} et \ref{thm:limprop}. 
-\end{remarque}
 \newpage
 %\section{Activités}
 %\begin{activite}
@@ -2045,7 +2028,6 @@ fonctions continues
 %\end{activite}
 
 \newpage
-\section{Exercices}
 %\insertexo[exo:p1d]{1M-vyj67}{false}{exo}{true}
 %\insertexo{1M-4dptb}{false}{exo}{true}
 %\insertexo[exo:p1f]{1M-g4gbb}{false}{exo}{true}
@@ -2090,10 +2072,20 @@ fonctions continues
 %\insertexo{1M-6qym1}{false}{exo}{true}
 %\insertexo{1M-aatq8}{false}{exo}{true}
 
-
+\section{Sources principales}
 Librement adapté de ...
-
-{\bfseries Source principale : Sesamath 3e année, 2023--2024}
+Théorie~:
+\begin{itemize}
+	\item Sesamath 3e année, 2023--2024
+\end{itemize}
+Exercices~:
+\begin{itemize}
+	\item Sesamath 3e année, 2023--2024
+\end{itemize}
+Activités~:
+\begin{itemize}
+	\item Sesamath 3e année, 2023--2024
+\end{itemize}
 
 \end{document}
 
