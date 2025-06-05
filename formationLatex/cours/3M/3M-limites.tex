@@ -1905,11 +1905,40 @@ donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
 \end{exemple}
 
 \subsection{Exercices}
-\section{Activités}
-
 \newpage
 \section{Activités}
-\begin{activite}
+
+\begin{activite}[label=act:conti]
+Continuité
+\tcblower
+\begin{tasks}(1)
+\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
+\task Peut-on en donner une définition mathématique ?
+\task Donner des exemples de fonctions connues continues et discontinues.
+\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
+Justifier la réponse et esquisser une représentation graphique de $f$.
+\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:valint]{Théorème de la valeur intermédiaire}
+\tcblower
+On considère le théorème suivant : « Si $f: I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m;M]$ »
+
+\begin{tasks}(1)
+\task Faire un schéma pour interpréter graphiquement ce résultat.
+\task Expliquer pourquoi on l'appelle le théorème « de la valeur intermédiaire».
+\task Illustrer (représentation graphique, qui sont $a$, $b$, $m$ et $M$ ?) ce théorème dans les cas suivants :
+\begin{enumerate}
+\item $f:[-1;1] \to \mathbb{R}$ déterminée par $f(x) = x^2$
+\item $f:[1;100] \to \mathbb{R}$ déterminée par $f(x) = 2$
+\item $f:[0;2] \to \mathbb{R}$ déterminée par $f(x) = x(x-2)^2$
+\end{enumerate}
+\task Que penser de la conjecture suivante : « Si $f: I \to \mathbb{R}$ est une fonction sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m;M]$ ». Qu'en déduire ?
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:introLimGeom]
 Introduction géométrique à la notion de limite	
 
 	\tcblower
@@ -1993,7 +2022,7 @@ Approche graphique de la notion de limite
 	\end{multicols}
 \end{tasks}
 \end{activite}
-\begin{activite}
+\begin{activite}[label=acti:limdg]
 	Limite à gauche et limite à droite
 	\tcblower
 	On considère à nouveau la représentation graphique de l'activité \ref{acti:limgraph}. Déterminer~:
@@ -2009,23 +2038,9 @@ Approche graphique de la notion de limite
 		
 	\end{tasks}
 \end{activite}
-\begin{activite}[label=act:conti]
-Continuité
-\tcblower
-\begin{tasks}(1)
-\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
-\task Peut-on en donner une définition mathématique ?
-\task Donner des exemples de fonctions connues continues et discontinues.
-\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
-Justifier la réponse et esquisser une représentation graphique de $f$.
-\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
-\end{tasks}
-\end{activite}
-\begin{activite}
-	Deux fonctions de Musy
-	\tcblower
-\end{activite}
-\begin{activite}
+
+
+\begin{activite}[label=acti:type10]
 	Limites infinies
 	\tcblower
 Soit $f$ la fonction réelle définie par
@@ -2057,7 +2072,60 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 \end{multicols}
 \end{tasks}
 \end{activite}
-\begin{activite}
+
+\begin{activite}[label=acti:type00]
+Indéterminations
+\tcblower
+On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
+
+\begin{tasks}(1)
+\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
+\task Que constate-t-on ?
+\task Que peut-on dire de l'image de $-3$ ?
+\task Quelle notation utiliser ?
+\task Interpréter graphiquement.
+\end{tasks}
+
+Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
+
+Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
+
+Calculer si possible les limites suivantes et interpréter graphiquement :
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
+\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
+\end{tasks}
+
+Pourquoi parle-t-on d'indéterminations ?
+\end{activite}
+
+\begin{activite}[label=acti:limrac]
+Indéterminations avec des racines
+\tcblower
+\begin{tasks}(1)
+\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
+\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:asyVert]{Asymptotes verticales}
+\tcblower
+\begin{tasks}(1)
+  \task Définir et illustrer les notions d’asymptote verticale. 
+  \task Vrai ou faux ? Justifier.
+    \begin{enumerate}
+      \item Une fonction peut avoir plusieurs asymptotes verticales ?
+      \item La courbe représentative d’une fonction ne coupe jamais son asymptote verticale.
+    \end{enumerate}
+  \task Déterminer toutes les asymptotes verticales de la fonction \(f\) déterminée par
+  \[
+    f(x)=\dfrac{x^2 - x}{2x^2 + 2x - 4}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:liminf]
 	Limites à l'infini
 	\tcblower
 	\begin{tasks}
@@ -2082,33 +2150,7 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 	\end{tasks}
 \end{activite}
 
-\begin{activite}
-Indéterminations
-\tcblower
-On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
-
-\begin{tasks}(1)
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
-\task Que constate-t-on ?
-\task Que peut-on dire de l'image de $-3$ ?
-\task Quelle notation utiliser ?
-\task Interpréter graphiquement.
-\end{tasks}
-
-Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
-
-Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
-
-Calculer si possible les limites suivantes et interpréter graphiquement :
-\begin{tasks}(2)
-\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
-\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
-\end{tasks}
-
-Pourquoi parle-t-on d'indéterminations ? Illustrer avec des exemples dans les cas suivants (liste non exhaustive) : $\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty$.
-\end{activite}
-
-\begin{activite}
+\begin{activite}[label=acti:indInf]
 Indéterminations avec l'infini
 \tcblower
 On considère la fonction $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
@@ -2126,16 +2168,64 @@ Calculer si possible les limites suivantes et interpréter graphiquement :
 \end{tasks}
 \end{activite}
 
-\begin{activite}
-Indéterminations avec des racines
+\begin{activite}[label=acti:asyhor]{Asymptotes horizontales}
 \tcblower
 \begin{tasks}(1)
-\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
-\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
+  \task Définir et illustrer les notions d’asymptote horizontale.
+  \task Vrai ou faux ? Justifier.
+    \begin{enumerate}
+      \item Une fonction peut avoir plusieurs asymptotes horizontales ?
+      \item La courbe représentative d’une fonction ne coupe jamais son asymptote horizontale.
+    \end{enumerate}
+  \task Déterminer les asymptotes horizontales de la fonction \(f\) déterminée par
+  \[
+    f(x)=\dfrac{x^2 - x}{2x^2 + 2x - 4}
+  \]
+  et interpréter graphiquement.
 \end{tasks}
 \end{activite}
 
-\begin{activite}
+\begin{activite}[label=acti:asyobl]{Asymptotes obliques}
+\tcblower
+Lorsqu'on étudie une fonction, on n'a parfois besoin pour produire une représentation graphique de qualité de récolter plus d'informations que ce qu'on sait déjà faire.
+\begin{tasks}(1)
+  \task Définir et illustrer la notion d'asymptote oblique.
+  \task Considérons les deux fonctions définies ainsi : 
+  \[
+    f(x)=\dfrac{1}{x^2-1}+2x-1
+    \quad\text{et}\quad
+    g(x)=\dfrac{2x^2-1}{x-1}.
+  \]
+  \begin{enumerate}
+    \item Déterminer leurs asymptotes obliques.
+    \item Interpréter graphiquement.
+  \end{enumerate}
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:asyconcl]{Tout en un}
+\tcblower
+\begin{tasks}(1)
+  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
+  \[
+    f(x)=\dfrac{2x^4+4x^3-2x^2}{-x^3+x^2+x-1}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:asydouble]{Double asymptote}
+\tcblower
+\begin{tasks}(1)
+  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
+  \[
+    f(x)=x-\sqrt{x^2-1}
+  \]
+  et interpréter graphiquement.
+\end{tasks}
+\end{activite}
+
+\begin{activite}[label=acti:constrgraph]
 Graphiquement
 \tcblower
 Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie simultanément toutes les conditions suivantes :
@@ -2149,7 +2239,7 @@ Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie
 \task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
 \end{tasks}
 \end{activite}
-
+\newpage
 
 
 

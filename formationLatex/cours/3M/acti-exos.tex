@@ -7,245 +7,19 @@
 \begin{document}
 \section{Activités}
 \begin{activite}
-Introduction géométrique à la notion de limite	
-
-	\tcblower
-	Soit le carré $ABCD$ ci-contre de côté $10~\text{cm}$. On note $P$ et $Q$ les milieux des côtés $BC$ et $CD$. Soient $M$ un point de $AD$ et $N$ un point de $AB$ tels que $\overline{AN}=\overline{AM}=x$.
-	\begin{tasks}(1)
-		\task Quelle est la nature du quadrilatère $MNPQ$~?
-		\task Tracer $MNPQ$ pour $x=6~\text{cm}$, $x=4~\text{cm}$, $x=1~\text{cm}$, $x=0,5~\text{cm}$.
-		\task Que remarquez-vous lorsque $x$ se rapproche de $0$~?
-		\task On note $A(x)$ l'aire du quadrilatère $MNPQ$. Donner une formule pour le calcul de cette aire en fonction de $x$ (vous devrez utiliser trois fois le théorème de Pythagore). 
-		\task Que peut-on dire de $A(x)$ quand $x$ se rapproche de $0$~? Est-ce que votre conjecture est cohérente avec la formule déterminée au point précédent~?
-	\end{tasks}
-\end{activite}
-
-\begin{activite}[label=acti:limgraph]
-Approche graphique de la notion de limite 
-\tcblower
-\begin{center}
-	
-\begin{tikzpicture}
-  \begin{axis}[
-    width=12cm, height=8cm, scale only axis,
-    axis x line=middle, axis y line=middle,
-    xlabel={$x$},
-    %xlabel style={at={(axis description cs:1,0)},anchor=west},
-    ylabel={$y$},
-    %ylabel style={at={(axis description cs:0,1)},anchor=south},
-    xmin=-10, xmax=15, ymin=-6, ymax=8,
-    xtick={-10,-8,...,14}, ytick={-6,-4,...,8},
-    tick label style={font=\footnotesize},
-    grid=both, grid style={dashed,gray!30},
-    clip=false,
-  ]
-    % 1) curved branch f1(x) = (x+6)^2 - 4
-    \addplot[thick,domain=-10:-6,samples=100] {-3*x -21};
-    % 2) f2(x) = 7/8 x + 9/4
-    \addplot[thick,domain=-6:1.9]
-      {(7/8)*x + 9/4};
-    % open peak at (2,4)
-    \addplot[only marks,mark=o,thick] coordinates {(2,4)};
-    % 3) f3(x) = -3/2 x + 7
-    \addplot[thick,domain=2.1:4]
-      {-1.5*x + 7};
-    % closed end at (4,1)
-    \addplot[only marks,mark=*,thick] coordinates {(4,1)};
-    \addplot[only marks,mark=*,thick] coordinates {(2,6)};
-
-    % vertical asymptote
-    \draw[dashed] (axis cs:8,-6) -- (axis cs:8,8);
-    % hyperbola f4(x)=2+6/(x-8) left of x=8
-    \addplot[thick,domain=4.1:7.25,samples=200] {2 + 6/(x-8)};
-    \addplot[only marks,mark=o,thick] coordinates {(4,0.5)};
-    % hyperbola f4(x)=2+6/(x-8) right of x=8
-    \addplot[thick,domain=8.95:15,samples=200] {2 + 6/(x-8)};
-  \end{axis}
-\end{tikzpicture}
-\end{center}
-\begin{tasks}
-	\task
-	Déterminer graphiquement
-	\begin{multicols}{3}
-		\begin{enumerate}	
-		\item $\displaystyle{\lim_{x\rightarrow 2}f(x)}$ 
-		\item $f(1)$
-		\item $\displaystyle{\lim_{x\rightarrow -1}f(x)}$
-		\item $\displaystyle{\lim_{x\rightarrow -\tfrac{13}{2}}f(x)}$
-		\item $f(4)$
-		\item $f(8)$
-		\end{enumerate}
-	\end{multicols}
-	\task Représenter graphiquement une fonction $f$ satisfaisant toutes les conditions suivantes~:
-	\begin{multicols}{3}	
-	\begin{enumerate}
-		\item $\displaystyle{\lim_{x\rightarrow -\infty}f(x)=3}$
-		\item $\displaystyle{\lim_{x\rightarrow -2}f(x)=-\infty}$
-		\item $\displaystyle{\lim_{x\rightarrow 0}f(x)=-2}$
-		\item $f(-3)=2$
-		\item $f(0)=4$
-		\item $\displaystyle{\lim_{c\rightarrow +\infty}f(x)=2}$ 
-		
-	\end{enumerate}
-	\end{multicols}
-\end{tasks}
-\end{activite}
-\begin{activite}
-	Limite à gauche et limite à droite
-	\tcblower
-	On considère à nouveau la représentation graphique de l'activité \ref{acti:limgraph}. Déterminer~:
-	\begin{tasks}(4)
-		\task $\displaystyle{\lim_{x\rightarrow 4^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 4^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 8^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 8^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 2^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 2^-}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 0^+}f(x)}$ 
-		\task $\displaystyle{\lim_{x\rightarrow 0^-}f(x)}$ 
-		
-	\end{tasks}
-\end{activite}
-\begin{activite}[label=act:conti]
-Continuité
-\tcblower
-\begin{tasks}(1)
-\task Illustrer la notion de continuité en un point, continuité sur un intervalle.
-\task Peut-on en donner une définition mathématique ?
-\task Donner des exemples de fonctions connues continues et discontinues.
-\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
-Justifier la réponse et esquisser une représentation graphique de $f$.
-\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
-\end{tasks}
-\end{activite}
-\begin{activite}
 	Deux fonctions de Musy
 	\tcblower
 \end{activite}
-\begin{activite}
-	Limites infinies
-	\tcblower
-Soit $f$ la fonction réelle définie par
-\[
-f(x)=\frac{x^2+x-6}{x^2-9}.
-\]
 
-\begin{tasks}(1)
-\task Déterminer le domaine de définition de $f$.
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $3$. Pour cela, calculer les images de $2{,}9$ ; $2,99$ ; $2,999$ ; $2,9999$ puis de $3,1$ ; $3,01$ ; $3,001$ et $3,0001$.
-\begin{multicols}{2}
-\begin{enumerate}
-\item Que constate-t-on ?
-\item Que peut-on dire de l’image de 3 ?
-\item Quelle notation utiliser ?
-\item Interpréter graphiquement.
-\end{enumerate}
-\end{multicols}
-\task Esquisser une représentation graphique de $f$ (à l’aide de geogebra par exemple).
-\task Calculer « directement », sans passer par des étapes intermédiaires, $\displaystyle\lim_{x\to 3}\frac{x^2+x-6}{x^2-9}$.
-\task Calculer, si elles existent, les limites à gauche et à droite des fonctions suivantes lorsque $x$ tend vers $a$ et interpréter graphiquement les résultats :
-\begin{multicols}{2}
-\begin{enumerate}
-\item $f(x)=\dfrac{3x-7}{x-2}$ et $a=2$
-\item $f(x)=\dfrac{-3x+2}{x+2}$ et $a=-2$
-\item $f(x)=\dfrac{3}{(x-1)^2}$ et $a=1$
-\item $f(x)=\dfrac{5x}{(x+3)^3}$ et $a=-3$
-\end{enumerate}
-\end{multicols}
-\end{tasks}
-\end{activite}
-\begin{activite}
-	Limites à l'infini
-	\tcblower
-	\begin{tasks}
-	\task On considère la fonction $f$ définie par $f(x)=x^2+x-6$.
-\begin{multicols}{3}
-		\begin{enumerate}
-\item Quel sens donner à $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
-\item Comment calculer $\displaystyle\lim_{x\to +\infty}f(x)\,$ ?
-\item Et $\displaystyle\lim_{x\to -\infty}f(x)\,$ ?
-		\end{enumerate}
-	\end{multicols}
-	\task Énoncer et discuter ce qu'on entend par «~limites à l'infini~».
-	\task Calculer (si possible) les limites à l'infini suivantes en utilisant l'aglèbre de l'infini. 
 
-\begin{multicols}{3}
-\begin{enumerate}
-\item $\displaystyle\lim_{x\to +\infty}\bigl(x^3+5x+3\bigr)$
-\item $\displaystyle\lim_{x\to -\infty}\bigl(x^3+5x+10^{100}\bigr)$
-\item $\displaystyle\lim_{x\to +\infty}\frac{2}{3x^2-4}$
-\end{enumerate}
-\end{multicols}
-	\end{tasks}
-\end{activite}
 
-\begin{activite}
-Indéterminations
-\tcblower
-On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
 
-\begin{tasks}(1)
-\task Étudier ce qui se passe numériquement pour des valeurs de $x$ proches de $-3$. Pour cela, calculer les images de $-3,1 ; -3,01 ; -3,001 ; -3,0001$ puis de $-2,9 ; -2,99 ; -2,999 ; -2,9999$.
-\task Que constate-t-on ?
-\task Que peut-on dire de l'image de $-3$ ?
-\task Quelle notation utiliser ?
-\task Interpréter graphiquement.
-\end{tasks}
 
-Reprendre la représentation graphique de $f$ obtenue à l'aide de GeoGebra. Cette représentation graphique précédente n'est pas totalement correcte... Pourquoi ?
 
-Calculer « directement », sans passer par des étapes intermédiaires $\displaystyle\lim_{x \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
 
-Calculer si possible les limites suivantes et interpréter graphiquement :
-\begin{tasks}(2)
-\task $\displaystyle\lim_{x \to 0} \dfrac{5x^2 - 7x}{x}$
-\task $\displaystyle\lim_{x \to -1} \dfrac{x^2 + x}{x + 1}$
-\end{tasks}
 
-Pourquoi parle-t-on d'indéterminations ? Illustrer avec des exemples dans les cas suivants (liste non exhaustive) : $\dfrac{0}{0}, \dfrac{\infty}{\infty}, 0 \cdot \infty, \infty - \infty$.
-\end{activite}
 
-\begin{activite}
-Indéterminations avec l'infini
-\tcblower
-On considère la fonction $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
 
-Calculer $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et $\displaystyle\lim_{x \to -\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et interpréter graphiquement.
-
-Calculer si possible les limites suivantes et interpréter graphiquement :
-
-\begin{tasks}(2)
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - 9x}{3x^2 - 5x - 4}$
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{3x^2 - x + 1}{x + 3}$
-\task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - x}{5x + 2}$
-\task $\displaystyle\lim_{x \to +\infty} (x^2 + x)$
-\task $\displaystyle\lim_{x \to +\infty} (2x - x^2)$
-\end{tasks}
-\end{activite}
-
-\begin{activite}
-Indéterminations avec des racines
-\tcblower
-\begin{tasks}(1)
-\task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
-\task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
-\end{tasks}
-\end{activite}
-
-\begin{activite}
-Graphiquement
-\tcblower
-Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie simultanément toutes les conditions suivantes :
-
-\begin{tasks}(2)
-\task L'ensemble $D_f$ des zéros de $f$ est $\{-2;4\}$
-\task L'image de $0$ est $-2$
-\task $\displaystyle\lim_{x \to 1} f(x) = -\infty$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = +\infty$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = 4$
-\task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
-\end{tasks}
-\end{activite}
 
 \begin{activite}
 Introduction géométrique à la notion de limite	
@@ -649,22 +423,6 @@ Indication : utiliser la formule trigonométrique $\sin(a) - \sin(b) = 2\sin\lef
 \end{activite}
 
 
-\begin{activite}{Image d'un fermé}
-\tcblower
-On considère le théorème suivant : « Si $f: I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m;M]$ »
-
-\begin{tasks}(1)
-\task Faire un schéma pour interpréter graphiquement ce résultat.
-\task Expliquer pourquoi on l'appelle le théorème « Image d'un fermé par une fonction continue ».
-\task Illustrer (représentation graphique, qui sont $a$, $b$, $m$ et $M$ ?) ce théorème dans les cas suivants :
-\begin{enumerate}
-\item $f:[-1;1] \to \mathbb{R}$ déterminée par $f(x) = x^2$
-\item $f:[1;100] \to \mathbb{R}$ déterminée par $f(x) = 2$
-\item $f:[0;2] \to \mathbb{R}$ déterminée par $f(x) = x(x-2)^2$
-\end{enumerate}
-\task Que penser de la conjecture suivante : « Si $f: I \to \mathbb{R}$ est une fonction sur $[a,b]$, alors il existe $m$ et $M$ deux nombres réels tels que $f([a,b]) = [m;M]$ ». Qu'en déduire ?
-\end{tasks}
-\end{activite}
 \begin{activite}{Théorème de Rolle}
 \tcblower
 On considère le théorème suivant : « Si $f: I \to \mathbb{R}$ est telle que $f$ est continue sur $[a,b]$, $f$ est dérivable sur $]a,b[$ et $f(a) = f(b)$, alors il existe au moins un nombre $c \in ]a,b[$ tel que $f'(c) = 0$ »
@@ -805,64 +563,6 @@ La tangente \(t\) à \(f\) en \(A\) coupe l’axe \(O_x\) en \(B\). On s’inté
     a\sqrt{a} \;-\; 4a \;+\; 4\sqrt{a}.
   \]
   \task Déterminer la valeur de \(a\) pour que cette aire soit maximale.
-\end{tasks}
-\end{activite}
-
-\begin{activite}{Asymptotes}
-\tcblower
-\begin{tasks}(1)
-  \task Définir et illustrer les notions d’asymptote verticale et horizontale.
-  \task Vrai ou faux ? Justifier.
-    \begin{enumerate}
-      \item Une fonction peut avoir plusieurs asymptotes horizontales ?
-      \item La courbe représentative d’une fonction ne coupe jamais son asymptote horizontale.
-      \item La courbe représentative d’une fonction ne coupe jamais son asymptote verticale.
-    \end{enumerate}
-  \task Déterminer toutes les asymptotes de la fonction \(f\) déterminée par
-  \[
-    f(x)=\dfrac{x^2 - x}{2x^2 + 2x - 4}
-  \]
-  et interpréter graphiquement.
-\end{tasks}
-\end{activite}
-
-\begin{activite}{Asymptotes obliques}
-\tcblower
-Lorsqu'on étudie une fonction, on n'a parfois besoin pour produire une représentation graphique de qualité de récolter plus d'informations que ce qu'on sait déjà faire.
-\begin{tasks}(1)
-  \task Définir et illustrer la notion d'asymptote oblique.
-  \task Considérons les deux fonctions définies ainsi : 
-  \[
-    f(x)=\dfrac{1}{x^2-1}+2x-1
-    \quad\text{et}\quad
-    g(x)=\dfrac{2x^2-1}{x-1}.
-  \]
-  \begin{enumerate}
-    \item Déterminer leurs asymptotes obliques.
-    \item Interpréter graphiquement.
-  \end{enumerate}
-\end{tasks}
-\end{activite}
-
-\begin{activite}{Tout en un}
-\tcblower
-\begin{tasks}(1)
-  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
-  \[
-    f(x)=\dfrac{2x^4+4x^3-2x^2}{-x^3+x^2+x-1}
-  \]
-  et interpréter graphiquement.
-\end{tasks}
-\end{activite}
-
-\begin{activite}{Double asymptote}
-\tcblower
-\begin{tasks}(1)
-  \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
-  \[
-    f(x)=x-\sqrt{x^2-1}
-  \]
-  et interpréter graphiquement.
 \end{tasks}
 \end{activite}
 
