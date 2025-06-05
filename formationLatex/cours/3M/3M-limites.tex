@@ -36,6 +36,62 @@
 \vspace{-1cm}
 \tableofcontents
 \newpage
+\section*{Prérequis}
+Avant de commencer ce chapitre, je m'assure d'être capable de 
+\bigskip
+
+
+\begin{tblr}{
+  colspec = {|l|X[2]|c|c|},     % Adjusted column widths
+  row{1} = {bg=gray!20, font=\bfseries}, % Header styling
+  rows = {valign=m, ht=2cm},    % Minimum row height for QR codes
+  vlines,
+  hlines,
+  width = \textwidth,           % Table spans full text width
+}
+%------------ Header -------------------------------------------------
+Catégorie & 
+Compétence & 
+QR Code & 
+Validation \\
+%------------ Calcul numérique ---------------------------------------
+\SetCell[r=2]{l, bg=blue!10} {\textbf{Calcul\\numérique}} &
+Calculer avec des fractions &
+\qrcode[height=2.5cm]{https://example.com/fractions} &
+\checkBox \\
+&
+Calculer avec des racines et les conjugués &
+\qrcode[height=2.5cm]{https://example.com/racines} &
+\checkBox \\
+%------------ Algèbre ------------------------------------------------
+\SetCell[r=2]{l, bg=green!10} {\textbf{Algèbre}} &
+Factoriser un polynôme en déterminant ses racines &
+\qrcode[height=2.5cm]{https://example.com/factoriser} &
+\checkBox \\
+&
+Effectuer la division polynomiale &
+\qrcode[height=2.5cm]{https://example.com/division} &
+\checkBox \\
+%------------ Fonctions ----------------------------------------------
+\SetCell[r=3]{l, bg=orange!10} {\textbf{Fonctions}} &
+Déterminer le domaine de définition d'une fonction &
+\qrcode[height=2.5cm]{https://example.com/domaine} &
+\checkBox \\
+&
+Déterminer les zéros d'une fonction &
+\qrcode[height=2.5cm]{https://example.com/zeros} &
+\checkBox \\
+&
+Représenter graphiquement une fonction du second degré &
+\qrcode[height=2.5cm]{https://example.com/graphique} &
+\checkBox \\
+\end{tblr}
+
+\vspace{1em}
+
+\textit{Note: Scannez les codes QR pour accéder aux ressources d'apprentissage correspondantes.}
+
+\newpage
 \section{Continuité}
 \subsection{Définition intuitive et exemples}
 \label{sec:continuite}
@@ -241,15 +297,23 @@ Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors la foncti
 	\item prend au moins une fois toutes les valeurs comprises entre $m$ et $M$.
 \end{itemize}
 En d'autres termes, $f([a,b]) = [m,M]$
-
 \end{thm}
-
+\begin{coro}
+	\tcblower
+	Soit $f$ une fonction continue sur un intervalle $[a;b]$ si 
+	\[f(a)\geq 0 \text{ et } f(b) \leq 0 \text{ {\bfseries ou} } f(a)\leq 0 \text{ et } f(b)\geq 0,\]
+	alors $f$ s'annule sur $[a;b]$, c'est-à-dire qu'il existe $c\in [a;b]$ tel que $f(c)=0$. 
+\end{coro}
 \begin{remarque}
 	\tcblower
-Si l'hypothèse de continuité n'est pas vérifiée, le théorème n'est plus vrai !
+Si l'hypothèse de continuité n'est pas vérifiée, ces deux résultats ne sont plus vrais~!
 \end{remarque}
 \subsection{Exercices}
-\section{Limites en un nombre}
+\insertexo{1M-1n93r}{true}{exo}{true}
+\insertexo{1M-59swy}{false}{exo}{true}
+\insertexo{1M-qp2mw}{true}{exo}{true}
+
+\section{Limite en un nombre}
 \subsection{Un exemple introductif}
 \begin{exemple}
 	\tcblower
@@ -305,20 +369,22 @@ $f(x)$ & $89,25$ & $899,3$ & ??? & $-900,7$ & $-90,75$ \\
 \hline
 \end{tabular}
 \end{center}
+\end{itemize}
+\end{tasks}
+\end{exemple}
 
+\begin{exemplesuite}
+	\tcblower
+	\begin{tasks}
+		\task[]
+		\begin{itemize}
+			\item[]
 Ainsi, il semblerait que la limite de $f(x)$ quand :
 \begin{itemize}
 	\item $x$ tend vers $4$ depuis la gauche vaut~\ligne{1} 
 	\item $x$ tend vers $4$ depuis la droite vaut~\ligne{1}
 \end{itemize}
-\end{itemize}
-\end{tasks}
-\end{exemple}
-\begin{exemplesuite}
-	\tcblower
-	\begin{tasks}
-		\begin{itemize}
-			\item Prendre des valeurs de plus en plus grandes $(x \to +\infty)$
+\item Prendre des valeurs de plus en plus grandes $(x \to +\infty)$
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -336,7 +402,7 @@ Ainsi, il semblerait que la fonction plafonne à \ligne{1} lorsque $x$ tend vers
 		\end{itemize}
 		\task[c)] Observons ceci sur la représentation graphique de $f$
 \begin{center}
-\begin{tikzpicture}
+	\begin{tikzpicture}[scale=1]
 \begin{axis}[
     width=12cm,
     height=8cm,
@@ -355,27 +421,27 @@ Ainsi, il semblerait que la fonction plafonne à \ligne{1} lorsque $x$ tend vers
 ]
 
 % Function curve - first part (0.01 to 0.99)
-\addplot[blue, thick, domain=0.01:0.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+\addplot[black, thick, domain=0.01:0.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
 
 % Function curve - second part (1.01 to 3.99)  
-\addplot[blue, thick, domain=1.01:3.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+\addplot[black, thick, domain=1.01:3.99] {3*(1-x)/(sqrt(x)-1)/(x-4)};
 
 % Function curve - third part (4.01 to 8.5)
-\addplot[blue, thick, domain=4.01:8.5] {3*(1-x)/(sqrt(x)-1)/(x-4)};
+\addplot[black, thick, domain=4.01:8.5] {3*(1-x)/(sqrt(x)-1)/(x-4)};
 
 % Vertical asymptotes
-\addplot[red, dashed, thick] coordinates {(1,0) (1,2)};
-\addplot[red, dashed, thick] coordinates {(0,2) (1,2)};
-\addplot[red, dashed, thick] coordinates {(4,-12) (4,12)};
+\addplot[black, dashed, thick] coordinates {(1,0) (1,2)};
+\addplot[black, dashed, thick] coordinates {(0,2) (1,2)};
+\addplot[black, dashed, thick] coordinates {(4,-12) (4,12)};
 
 % Horizontal asymptote
 \addplot[gray, dashed] coordinates {(0,0) (9,0)};
 
 % Point at x=0 (point limite)
-\addplot[blue, mark=*, mark options={fill=black, scale=1.5}] coordinates {(0,0.75)};
+\addplot[black, mark=*, mark options={fill=black, scale=1.5}] coordinates {(0,0.75)};
 
 % Hole at x=1 (trou)
-\addplot[blue, mark=o, mark options={fill=white, scale=1.5}] coordinates {(1,2)};
+\addplot[black, mark=o, mark options={fill=white, scale=1.5}] coordinates {(1,2)};
 
 % Labels
 \node at (axis cs:7,-8) [blue] {$f$};
@@ -452,12 +518,10 @@ On écrit $\displaystyle{\lim_{x\rightarrow a^+}f(x)=\ell}$.
 \end{definition}
 \begin{exemple}[label=ex:fmorceaux]
 \tcblower  
-Soit la fonction $f$ définie par 
-\[f(x)=\begin{cases}x^2+1 & \text{si } x>1\\
+Soit la fonction $f$ définie par $f(x)=\begin{cases}x^2+1 & \text{si } x>1\\
 5-x& \text{si } x\leq 1
-\end{cases}. \]
+\end{cases}$.
 Déterminer graphiquement 
-
 $\displaystyle{\lim_{x\rightarrow 1^{-}}} f(x)$ et $\displaystyle{\lim_{x\rightarrow 1^{+}}f(x)}$.
 
 \begin{center}
@@ -619,9 +683,10 @@ On a $\displaystyle{\lim_{x\rightarrow 9}f(x)=}\ligne{1}$ même si $f$ n'est pas
 	\end{center}
 	On observe que 
 	\[\displaystyle{\lim_{x\rightarrow 1^-}f(x)=\dfrac{3}{2}} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow 1^+}f(x)=\dfrac{3}{2}}\]
-	donc $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ existe et vaut $\dfrac{3}{2}$. Toutefois, 
-	\[\displaystyle{\lim_{x\rightarrow -1^-}f(x)=}\ligne{1} \quad \text{et} \quad \displaystyle{\lim_{x\rightarrow -1^+}f(x)=}\ligne{1}\]
-	donc $\displaystyle{\lim_{x\rightarrow -1}f(x)}$ \ligne{3}. 	
+	donc $\displaystyle{\lim_{x\rightarrow 1}f(x)}$ existe et vaut $\dfrac{3}{2}$. Toutefois, $\displaystyle{\lim_{x\rightarrow -1^-}f(x)=}\ligne{1}$ et 
+
+$\displaystyle{\lim_{x\rightarrow -1^+}f(x)=}\ligne{1}$
+donc $\displaystyle{\lim_{x\rightarrow -1}f(x)} \ligne{3}$.
 \end{exemple} 
 
 Il existe une définition plus formelle des limites, mais elle sort du cadre de ce cours. Nous verrons à présent des outils pour calculer plus formellement des limites. Certains des résultats seront démontrés et d'autres seront acceptés sans démonstration.
@@ -672,7 +737,7 @@ Reprenons l'exemple \ref{ex:continuiteintro} avec ce résultat.
 % 1 ── no value at a (open circle)
 \begin{axis}[
     name=G1,
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-1,xmax=4, ymin=-1,ymax=2,
     xtick=\empty, ytick=\empty,
@@ -699,7 +764,7 @@ $f$ n'est pas continue en $a$, car $f$ n'est pas définie en $a$.
 % 2 ── continuous, piecewise-linear peak
 \begin{axis}[
     at={(G1.east)}, xshift=1.5cm,
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-1,xmax=5, ymin=-1,ymax=2,
     xtick=\empty, ytick=\empty,
@@ -722,7 +787,7 @@ $\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}$
 \begin{tikzpicture}[>=stealth]
 	\begin{axis}[
     at={(G1 -| G1.east)}, xshift=3cm,
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-1,xmax=4, ymin=-1,ymax=2,
     xtick=\empty, ytick=\empty,
@@ -749,7 +814,7 @@ $\displaystyle{\lim_{x\rightarrow a}f(x)}$ n'existe pas.
 \begin{tikzpicture}[>=stealth]
 	\begin{axis}[
     at={(G1.south)}, yshift=-1.5cm,
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-1,xmax=4, ymin=-1,ymax=2,
     xtick=\empty, ytick=\empty,
@@ -772,18 +837,12 @@ $f$ n'est pas continue en $a$, car
 
 $\displaystyle{\lim_{x\rightarrow a}f(x)=b\neq f(a)=c}$. 
 
-\end{tasks}
-\end{exemple}
-\begin{exemplesuite}
-	\tcblower
-	\begin{tasks}(2)
-
 		\task[e)] 
 
 \begin{tikzpicture}[>=stealth]
 	\begin{axis}[
     at={(G1 -| G1.east |- G1.south)}, xshift=3cm,
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-1,xmax=4, ymin=-1,ymax=2,
     xtick=\empty, ytick=\empty,
@@ -805,7 +864,7 @@ $\displaystyle{\lim_{x\rightarrow a}f(x)=f(a)=b}.$
 
 \begin{tikzpicture}[>=stealth]
 \begin{axis}[
-    width=5.5cm,height=5.5cm,
+    width=4.5cm,height=4.5cm,
     axis lines=middle, axis line style={->},
     xmin=-4,xmax=4, ymin=-0.2,ymax=2.5,
     xtick=\empty, ytick=\empty,
@@ -825,7 +884,7 @@ $f$ n'est pas continue en $0$, car
 $\displaystyle{\lim_{x\rightarrow 0}f(x)=+\infty}$. 
 
 	\end{tasks}
-\end{exemplesuite}
+\end{exemple}
 
 \begin{definition}
 	continuité à gauche\\
@@ -877,7 +936,7 @@ $f$ n'est pas continue à droite, car $\displaystyle{\lim_{x\rightarrow a^+}f(x)
 
 
 
-\subsection{Limites de fonctions élémentaires}
+\subsection{Limite de fonctions élémentaires}
 \label{sec:limel}
 \begin{thm}[label=thm:limel]
 Limites de fonctions élémentaires
@@ -985,7 +1044,6 @@ Limites de fonctions polynômiales
 	\[\displaystyle{\lim_{x\rightarrow b}x^m\stackrel{\text{\eqmakebox[b][c]{\bfseries P3}}}{=}}\left(\displaystyle{\lim_{x\rightarrow b}x}\right)^m=b^m.\] 
 
 Ainsi,
-
 \begin{align*}
 	\lim_{x\rightarrow b} \left(a_nx^n+\ldots +a_1x_1+a_0\right)&\stackrel{\text{\eqmakebox[c][c]{{\bfseries P1}}}}{=}\lim_{x\rightarrow b} a_nx^n+\ldots+\lim_{x\rightarrow b} a_1x+\lim_{x\rightarrow b}a_0\\
 									     &\stackrel{\text{\eqmakebox[c][c]{{\bfseries P0}}}}{=}a_n\lim_{x\rightarrow b} x^n+\ldots+a_1\cdot\lim_{x\rightarrow b} x+a_0\\							     
@@ -1453,6 +1511,49 @@ $f$ n'a pas d'asymptote verticale en $x = 1$
 \end{itemize}
 \end{exemple}
 \subsection{Exercices}
+\subsubsection{Définition de la limite}
+\insertexo{1M-4dptb}{true}{exo}{true}
+\insertexo[exo:p1f]{1M-g4gbb}{true}{exo}{true}
+\subsubsection{Limites de fonctions élémentaire et propriétés des limites}
+\insertexo[exo:p2d]{1M-tecfn}{true}{exo}{true}
+\insertexo{1M-f7dft}{true}{exo}{true}
+\insertexo{1M-b3p6g}{true}{exo}{true}
+\subsubsection{Retour sur la continuité}
+Vous avez à présent les outils nécessaires pour résoudre ces exercices.
+\insertexo{1M-pp62m}{false}{exo}{true}
+\insertexo{1M-hsytn}{false}{exo}{true}
+\insertexo{1M-n9sxp}{false}{exo}{true}
+\insertexo{1M-u44h9}{false}{exo}{true}
+\insertexo{1M-3vr28}{true}{exo}{true}
+\insertexo{1M-gb3ag}{true}{exo}{true}
+\insertexo{1M-c3uc9}{true}{exo}{true}
+\insertexo{1M-myjcq}{true}{exo}{true}
+\insertexo{1M-dpjwk}{true}{exo}{true}
+\insertexo{1M-97ryj}{true}{exo}{true}
+\insertexo{1M-n1axs}{true}{exo}{true}
+\insertexo{1M-d4c88}{true}{exo}{true}
+\insertexo{1M-n67du}{true}{exo}{true}
+
+\subsubsection{Indétermination du type « $\dfrac{0}{0}$ » et « $\dfrac{1}{0}$ » }
+
+\insertexo[exo:p1d]{1M-vyj67}{true}{exo}{true}
+\insertexo{1M-ac9v2}{true}{exo}{true}
+\insertexo{1M-nxc2s}{true}{exo}{true}
+\insertexo{1M-1w6s3}{true}{exo}{true}
+\insertexo{1M-yhzh8}{true}{exo}{true}
+\insertexo{1M-9yqnb}{true}{exo}{true}
+\insertexo{1M-gg7hk}{true}{exo}{true}
+\insertexo{1M-n41yn}{true}{exo}{true}
+\insertexo{1M-8j18h}{true}{exo}{true}
+\insertexo{1M-k3bry}{true}{exo}{true}
+\insertexo{1M-wnd21}{true}{exo}{true}
+\insertexo{1M-98752}{true}{exo}{true}
+\insertexo{1M-1bqh9}{true}{exo}{true}
+\insertexo{1M-du7be}{true}{exo}{true}
+\subsubsection{Asymptotes verticales}
+\insertexo{1M-89av7}{true}{exo}{true}
+
+
 \section{Limites en l'infini}
 \subsection{Définition et exemples}
 \begin{definition}
@@ -1905,6 +2006,30 @@ donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
 \end{exemple}
 
 \subsection{Exercices}
+
+\insertexo{1M-1w3pd}{true}{exo}{true}
+\insertexo{1M-x5h3r}{true}{exo}{true}
+\insertexo{1M-n9qmn}{true}{exo}{true}
+\insertexo{1M-bqknk}{true}{exo}{true}
+
+\insertexo{1M-6qym1}{true}{exo}{true}
+\insertexo{1M-t4gwt}{true}{exo}{true}
+\insertexo{1M-aatq8}{true}{exo}{true}
+
+\insertexo{1M-gm9uk}{true}{exo}{true}
+\insertexo{1M-taje8}{true}{exo}{true}
+\insertexo{1M-y4dv7}{true}{exo}{true}
+\insertexo{1M-g4sjk}{true}{exo}{true}
+
+\insertexo{1M-y4385}{true}{exo}{true}
+\insertexo{1M-2at6d}{true}{exo}{true}
+\insertexo{1M-mj5qq}{true}{exo}{true}
+\insertexo{1M-hgcu8}{true}{exo}{true}
+\insertexo{1M-ek51g}{true}{exo}{true}
+\insertexo{1M-5en1r}{true}{exo}{true}
+\insertexo{1M-1gayt}{true}{exo}{true}
+\insertexo{1M-955md}{true}{exo}{true}
+
 \newpage
 \section{Activités}
 
@@ -1957,7 +2082,7 @@ Approche graphique de la notion de limite
 \tcblower
 \begin{center}
 	
-\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.8]
   \begin{axis}[
     width=12cm, height=8cm, scale only axis,
     axis x line=middle, axis y line=middle,
@@ -2102,7 +2227,7 @@ Pourquoi parle-t-on d'indéterminations ?
 \begin{activite}[label=acti:limrac]
 Indéterminations avec des racines
 \tcblower
-\begin{tasks}(1)
+\begin{tasks}(2)
 \task On considère la fonction $f$ définie par $f(x) = \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$. Calculer $\displaystyle\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x} - \sqrt{3}}$ et interpréter graphiquement.
 \task Calculer $\displaystyle\lim_{x \to 4} \dfrac{\sqrt{x} - 2}{x - 4}$ et interpréter graphiquement.
 \end{tasks}
@@ -2159,7 +2284,7 @@ Calculer $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + x - 6}{x^2 - 9}$ et $\d
 
 Calculer si possible les limites suivantes et interpréter graphiquement :
 
-\begin{tasks}(2)
+\begin{tasks}(3)
 \task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - 9x}{3x^2 - 5x - 4}$
 \task $\displaystyle\lim_{x \to +\infty} \dfrac{3x^2 - x + 1}{x + 3}$
 \task $\displaystyle\lim_{x \to +\infty} \dfrac{2x^2 - x}{5x + 2}$
