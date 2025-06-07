@@ -15,7 +15,7 @@
 
 \section{La Dérivée}
 
-\subsection{Introduction : La tangente à une courbe}
+\subsection{Introduction : La tangente à une courbe en un point}
 
 Nous commençons avec une fonction $f$, et sur le graphique nous choisissons un point $(x, f(x))$ (c.f. Figure~\ref{fig:der1}). Quelle droite, s'il y en a une, devrait être appelée tangente au graphique en ce point~? Et comment déterminer son équation~?
 
@@ -365,10 +365,10 @@ Lorsque $h$ tend vers zéro (une limite!), la droite sécante tend (si la limite
 
 Puisque les droites sécantes ont une pente de la forme
 \begin{equation}
-\frac{f(x + h) - f(x)}{h}, \quad \text{(vérifiez ceci)}
+\frac{f(x + h) - f(x)}{h},
 \end{equation}
 
-nous affirmons que la position limite de ces sécantes ont une pente
+nous admettons que la position limite de ces sécantes ont une pente
 \begin{equation}
 \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}.
 \end{equation}
@@ -380,129 +380,308 @@ Dans l'introduction nous avons parlé de manière informelle des droites tangent
 \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}.
 \end{equation}
 
-Ici nous commençons l'étude systématique de telles limites, ce que les mathématiciens appellent la théorie de la \emph{différentiation}.
+Ici nous commençons l'étude systématique de telles limites, ce que les mathématiciens appellent le calcul différentiel.
 
 \begin{center}
-\rule{\textwidth}{0.4pt}
+\qrwithlabel{Voyage au pays de maths -- Flâneries infinitésimales}{https://www.arte.tv/fr/videos/097454-003-A/voyages-au-pays-des-maths/}
 \end{center}
+\subsection{Définitions et exemples}
+\begin{definition}
+	\tcblower
+	Une fonction est dite dérivable en $x$ ssi la limite
+	\begin{equation}
+		\lim_{h\to0}\dfrac{ f(x+h)-f(x)}{h} \text{ existe et est finie.}
+		\label{def:der}
+		\tag{$\star$}
+	\end{equation}
+	Si cette limite existe, on l'appelle la dérivée de $f$ en $x$ et on la note $f'(x)$.  
+\end{definition}
+\begin{definition}
+	\tcblower
+On interprète $f'(x)$ comme la pente de la courbe $f$ au point $(x;f(x))$. La droite qui passe par ce point et qui a cette pente s'appelle la tangente à $f$ au point $(x;f(x))$. 
+\end{definition}
+\begin{remarque}
+	\tcblower
+	Certaines fonctions sont dérivable sur $\mathbb{R}$, d'autres seulement sur un intervalle donné ou en certains points.
+\end{remarque}
+\begin{autre}
+\tcblower	
+Une classe de fonctions que vous connaissez déjà est dérivable~:
+\end{autre}
+\begin{thm}
+		\tcblower
+Si $f$ est continue en $x$ alors $f$ est dérivable en $x$.
+\end{thm}
+\begin{remarque}
+	\tcblower
+	La réciproque de ce théorème n'est pas valable comme nous le verrons à l'exemple \ref{ex:valabs}.
+\end{remarque}
+\begin{autre}
+	\tcblower
+	Commençons par calculer quelques dérivées à l'aide de la définition.
+\end{autre}
 
-\textbf{Définition 3.1.1}
+\section*{Figure 3.1.3}
 
-Une fonction $f$ est dite \emph{dérivable} (ou \emph{différentiable}) en $x$ si et seulement si
-\begin{equation}
-\lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \quad \text{existe}.
-\end{equation}
+\textbf{Exemple.} Nous commençons avec la fonction de mise au carré
+$$f(x) = x^2.$$
+Pour trouver $f'(x)$ nous formons le quotient différentiel
+$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{(x+h)^2 - x^2}{h}.$$
+Puisque
+$$\dfrac{(x+h)^2 - x^2}{h} = \dfrac{x^2 + 2xh + h^2 - x^2}{h} = \dfrac{2xh + h^2}{h} = 2x + h,$$
+nous avons
+$$\dfrac{f(x+h) - f(x)}{h} = 2x + h.$$
+Évidemment alors
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = 2x.$$
 
-Si cette limite existe, elle est appelée la \emph{dérivée} de $f$ en $x$ et est notée $f'(x)$.
+\textbf{Exemple.} Dans le cas d'une fonction linéaire
+$$f(x) = mx + b.$$
+nous avons
+$$f'(x) = m.$$
+En d'autres termes, la pente est constamment $m$. Pour vérifier cela, notons que
+$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{[m(x+h) + b] - [mx + b]}{h} = \dfrac{mh}{h} = m.$$
+Il s'ensuit que
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = m.$$
 
-\begin{center}
-\rule{\textwidth}{0.4pt}
-\end{center}
+\clearpage
 
-Nous interprétons
-\begin{equation}
-f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
-\end{equation}
-comme la \emph{pente du graphique au point} $(x, f(x))$ ou, ce qui revient au même, comme la pente de la droite tangente au graphique au point $(x, f(x))$.
+\section*{La dérivée}
 
-\newpage
+La dérivée
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$$
+est une limite bilatérale. Par conséquent, elle ne peut pas être prise en un point d'extrémité du domaine. Dans notre prochain exemple, nous traiterons de la fonction racine carrée. Bien que cette fonction soit définie pour tout $x \ge 0$, nous ne pouvons avoir une dérivée que pour $x > 0$.
 
-% Figure supplémentaire illustrant le triangle de pente
+\textbf{Exemple.} La fonction racine carrée
+$$f(x) = \sqrt{x}, \quad x \ge 0$$
+a pour dérivée
+$$f'(x) = \dfrac{1}{2\sqrt{x}}, \quad \text{pour } x > 0.$$
+Pour vérifier cela, nous commençons avec $x > 0$ et formons le quotient différentiel
+$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{\sqrt{x+h} - \sqrt{x}}{h}.$$
+Pour supprimer les radicaux du numérateur, nous multiplions le numérateur et le dénominateur par $\sqrt{x+h} + \sqrt{x}$. Cela donne
+$$\dfrac{\sqrt{x+h} - \sqrt{x}}{h} = \dfrac{(\sqrt{x+h} - \sqrt{x})(\sqrt{x+h} + \sqrt{x})}{h(\sqrt{x+h} + \sqrt{x})} = \dfrac{1}{\sqrt{x+h} + \sqrt{x}}.$$
+et ainsi
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = \dfrac{1}{2\sqrt{x}}.$$
+
 \begin{figure}[h]
-\centering
+    \centering
 \begin{tikzpicture}
-\begin{axis}[
-    width=12cm,
-    height=8cm,
-    axis lines=middle,
-    xlabel={$x$},
-    ylabel={$y$},
-    xlabel style={at={(axis description cs:1.02,0)}, anchor=west},
-    ylabel style={at={(axis description cs:0,1.02)}, anchor=south},
-    xmin=-0.5, xmax=4,
-    ymin=-0.5, ymax=3,
-    xtick=\empty,
-    ytick=\empty,
-    samples=100,
-    grid=major,
-    grid style={gray!20},
-]
-
-% Fonction f(x) = 0.15*x^2 + 0.4
-\addplot[
-    domain=0:3.8,
-    thick,
-    color=functioncolor,
-] {0.15*x^2 + 0.4};
-
-% Points
+    \newcommand*\funktion[1]{sqrt(#1)}% dargestellte Funktion
+  \newcommand*\ableitung[1]{1/(2*sqrt(#1))}% Ableitung der Funktion
+  \newcommand*\tangente[2]{\ableitung{#2}*(#1-#2)+\funktion{#2}}
+          \begin{axis}[
+width=5.5cm,height=5.5cm,
+            axis lines=middle,
+            xmin=-1.5, xmax=1.5,
+            ymin=-1.5, ymax=1.5,
+            xlabel=\footnotesize$x$,
+            ylabel=\footnotesize$y$,
+            xtick={-1,1},
+            ytick={1},
+            xticklabels={-1,1},
+            yticklabels={1},
+            clip=false
+        ]
+\addplot[domain=0:5,samples=200]{\funktion{\x}};
+  \addplot[domain=-2:2]{\tangente{\x}{0.5}};
+  \coordinate (P) at (axis cs:0.5,{\funktion{0.5}}) ;
+  \coordinate (Q) at (axis cs:3,{\funktion{3}}) ;
+  \coordinate (R) at (axis cs:-1,{\tangente{-1}{0.5}}) ;
+% Point (x, f(x))
 \addplot[
     mark=*,
-    mark size=3pt,
+    mark size=2pt,
     color=pointcolor,
     only marks,
-] coordinates {(1.5, 0.7375) (2.8, 1.576)};
-
-% Droite sécante
+    ] coordinates {(0.5, \funktion{0.5})};
 \addplot[
-    domain=0.8:3.5,
-    thick,
-    color=secantcolor,
-    dashed,
-] {0.645*x + 0.0705};
-
-% Droite tangente approximative au point (1.5, 0.7375)
-\addplot[
-    domain=0.5:2.5,
-    thick,
-    color=tangentcolor,
-] {0.45*x + 0.0625};
-
-% Triangle de pente
-% Ligne horizontale (Delta x)
-\draw[thick, color=violet, densely dotted] (axis cs:1.5,0.7375) -- (axis cs:2.8,0.7375);
-% Ligne verticale (Delta y)  
-\draw[thick, color=violet, densely dotted] (axis cs:2.8,0.7375) -- (axis cs:2.8,1.576);
-
-% Angle droit
-\draw[color=violet] (axis cs:2.65,0.7375) -- (axis cs:2.65,0.8875) -- (axis cs:2.8,0.8875);
-
-% Labels des points
-\node at (axis cs:1.5, 0.45) {$(x, f(x))$};
-\node at (axis cs:2.8, 1.85) {$(x + h, f(x + h))$};
-
-% Labels du triangle
-\node at (axis cs:2.15, 0.55) {\textcolor{violet}{$\Delta x = h$}};
-\node[rotate=90] at (axis cs:3.05, 1.15) {\textcolor{violet}{$\Delta y = f(x+h) - f(x)$}};
-
-% Label de la pente
-\node at (axis cs:2.4, 1.4) {\textcolor{secantcolor}{\footnotesize pente $= \frac{\Delta y}{\Delta x}$}};
-
-% Label de la fonction
-\node at (axis cs:0.4, 0.6) {$f$};
-
-% Labels des droites
-\node at (axis cs:3.2, 2.1) {\textcolor{secantcolor}{Droite sécante}};
-\node at (axis cs:1.0, 1.2) {\textcolor{tangentcolor}{Droite tangente}};
-
-\end{axis}
-\end{tikzpicture}
-\caption{Triangle de pente illustrant la définition géométrique de la dérivée}
+    mark=*,
+    mark size=2pt,
+    color=pointcolor,
+    fill=white,
+    only marks,
+    ] coordinates {(0, 0)};
+  \draw[font=\footnotesize,black] (Q) node[above left] {$f$} ;
+  \draw[font=\footnotesize,black] (P) node[above left] {$(x;\sqrt{1-x^2})$} ;
+  \draw[font=\footnotesize,black] (R) node[above left] {tangente avec pente $-\dfrac{x}{\sqrt{1-x^2}}$} ;
+        \end{axis}
+    \end{tikzpicture}
+    \caption{fonction racine carrée}
 \end{figure}
 
-\textbf{Interprétation géométrique :}
-\begin{itemize}
-\item Le rapport $\frac{\Delta y}{\Delta x} = \frac{f(x+h) - f(x)}{h}$ représente la pente de la droite sécante.
-\item Lorsque $h \to 0$, ce rapport tend vers $f'(x)$, la pente de la droite tangente.
-\item Le triangle rectangle formé par $\Delta x$ et $\Delta y$ illustre visuellement cette notion de pente.
-\end{itemize}
+Pour différencier une fonction est de trouver sa dérivée.
 
-\textbf{Notations alternatives :}
-\begin{align}
-f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
-&= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \\
-&= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} \\
-&= \frac{dy}{dx} \bigg|_{x} \quad \text{(notation de Leibniz)}
-\end{align}
+\textbf{Exemple.} Ici nous différencions la fonction
+$$f(x) = \sqrt{1 - x^2}.$$
 
+\clearpage
+
+Son graphe est la moitié supérieure du cercle unité. Le domaine de $f$ est l'intervalle fermé $[-1, 1]$, mais nous pouvons nous attendre à une différentiabilité au plus sur l'intervalle ouvert $(-1, 1)$. Pour $x$ dans $(-1, 1)$, nous formons le quotient différentiel
+$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{\sqrt{1 - (x+h)^2} - \sqrt{1 - x^2}}{h}.$$
+Encore une fois, nous supprimons les radicaux du numérateur en multipliant le numérateur et le dénominateur par $\sqrt{1 - (x+h)^2} + \sqrt{1 - x^2}$. Après simplification, ces calculs donnent
+$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{-2x - h}{\sqrt{1 - (x+h)^2} + \sqrt{1 - x^2}}.$$
+et ainsi
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = \dfrac{-x}{\sqrt{1 - x^2}}.$$
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \newcommand*\funktion[1]{sqrt(1-#1*#1)}% dargestellte Funktion
+  \newcommand*\ableitung[1]{-#1/sqrt(1-#1*#1))}% Ableitung der Funktion
+  \newcommand*\tangente[2]{\ableitung{#2}*(#1-#2)+\funktion{#2}}
+          \begin{axis}[
+width=5.5cm,height=5.5cm,
+            axis lines=middle,
+            xmin=-1.5, xmax=1.5,
+            ymin=-1.5, ymax=1.5,
+            xlabel=\footnotesize$x$,
+            ylabel=\footnotesize$y$,
+            xtick={-1,1},
+            ytick={1},
+            xticklabels={-1,1},
+            yticklabels={1},
+            clip=false
+        ]
+\addplot[domain=-1:1,samples=200]{\funktion{\x}};
+  \addplot[domain=-2:2]{\tangente{\x}{0.5}};
+  \coordinate (P) at (axis cs:0.5,{\funktion{0.5}}) ;
+  \coordinate (Q) at (axis cs:-0.9,{\funktion{-0.9}}) ;
+  \coordinate (R) at (axis cs:-1,{\tangente{-1}{0.5}}) ;
+% Point (x, f(x))
+\addplot[
+    mark=*,
+    mark size=2pt,
+    color=pointcolor,
+    only marks,
+    ] coordinates {(0.5, \funktion{0.5})};
+  \draw[font=\footnotesize,black] (Q) node[left] {$f$} ;
+  \draw[font=\footnotesize,black] (P) node[above right] {$(x;\sqrt{1-x^2})$} ;
+  \draw[font=\footnotesize,black] (R) node[above right] {tangente avec pente $-\dfrac{x}{\sqrt{1-x^2}}$} ;
+        \end{axis}
+    \end{tikzpicture}
+    \caption{moitié supérieure du cercle unité}
+\end{figure}
+
+\section*{Évaluation des Dérivées}
+
+\textbf{Problème.} Trouver $f'(-2)$ si
+$$f(x) = 1 - x^2.$$
+
+\textbf{SOLUTION.} Nous pouvons d'abord trouver $f'(x)$ en général:
+$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$$
+$$= \displaystyle\lim_{h \to 0} \dfrac{[1 - (x+h)^2] - [1 - x^2]}{h} = \displaystyle\lim_{h \to 0} \dfrac{-2xh - h^2}{h} = \displaystyle\lim_{h \to 0} -2x - h = -2x.$$
+et ensuite substituer $-2$ pour $x$:
+$$f'(-2) = -2(-2) = 4.$$
+
+\clearpage
+
+Nous pouvons aussi évaluer $f'(-2)$ plus directement:
+$$f'(-2) = \displaystyle\lim_{h \to 0} \dfrac{f(-2+h) - f(-2)}{h}$$
+$$= \displaystyle\lim_{h \to 0} \dfrac{[1 - (-2+h)^2] - [1 - (-2)^2]}{h} = \displaystyle\lim_{h \to 0} \dfrac{4h - h^2}{h} = \displaystyle\lim_{h \to 0} 4 - h = 4.$$
+
+\textbf{Problème.} Trouver $f'(0)$ si
+$$f(x) = \begin{cases}
+    3x^2 + 1, & x \le 0 \\
+    x^3 + 1, & 0 < x \end{cases}.$$
+
+\textbf{SOLUTION.} Nous évaluerons
+$$f'(0) = \displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h}$$
+en prenant les limites unilatérales correspondantes:
+$$\displaystyle\lim_{h \to 0^-} \dfrac{f(0+h) - f(0)}{h} = \displaystyle\lim_{h \to 0^-} \dfrac{(3h^2 + 1) - 1}{h} = \displaystyle\lim_{h \to 0^-} 3h = 0;$$
+$$\displaystyle\lim_{h \to 0^+} \dfrac{f(0+h) - f(0)}{h} = \displaystyle\lim_{h \to 0^+} \dfrac{(h^3 + 1) - 1}{h} = \displaystyle\lim_{h \to 0^+} h^2 = 0.$$
+Il s'ensuit que
+$$f'(0) = \displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h} = 0.$$
+
+\section*{Différentiabilité et Continuité}
+
+Une fonction peut être continue en un certain nombre $x$ sans y être différentiable. Par exemple, la fonction valeur absolue
+$$f(x) = |x|$$
+est continue en 0 (elle est partout continue), mais elle n'est pas différentiable en 0:
+$$\dfrac{f(0+h) - f(0)}{h} = \dfrac{|0+h| - |0|}{h} = \dfrac{|h|}{h} = \begin{cases}
+    -1, & h < 0 \\
+    1, & h > 0 \end{cases}.$$
+de sorte que
+$$\displaystyle\lim_{h \to 0^-} \dfrac{f(0+h) - f(0)}{h} = -1, \quad \displaystyle\lim_{h \to 0^+} \dfrac{f(0+h) - f(0)}{h} = 1.$$
+et
+$$\displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h} \quad \text{n'existe pas}.$$
+L'échec de la fonction valeur absolue à être différentiable en 0 est reflété par son graphe, affiché dans la Figure 3.1.6. À $(0, 0)$, le graphe change brusquement de direction et il n'y a pas de tangente en ce point.
+
+\clearpage
+
+\subsection*{Section 3.1}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xmin=-2, xmax=2,
+            ymin=-0.5, ymax=2.5,
+            xlabel=$x$,
+            ylabel=$y$,
+            xtick={0},
+            ytick={0},
+            xticklabels={0},
+            yticklabels={0},
+            clip=false
+        ]
+            \addplot[domain=-2:0, thick, red!70!black] {-x};
+            \addplot[domain=0:2, thick, red!70!black] {x};
+            \node[below] at (axis cs:0,0) {pas de dérivée en 0};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{FIGURE 3.1.6}
+\end{figure}
+
+Vous pouvez voir un changement de direction soudain similaire dans le graphe de
+$$f(x) = \begin{cases}
+    x^2, & x \le 1 \\
+    x, & x > 1 \end{cases}.$$
+au point $(1, 1)$. Encore une fois, $f$ est partout continue (vous pouvez le vérifier), mais elle n'est pas différentiable en 1:
+$$\displaystyle\lim_{h \to 0^-} \dfrac{f(1+h) - f(1)}{h} = \displaystyle\lim_{h \to 0^-} \dfrac{(1+h)^2 - 1}{h} = \displaystyle\lim_{h \to 0^-} \dfrac{h^2 + 2h}{h} = \displaystyle\lim_{h \to 0^-} h + 2 = 2;$$
+$$\displaystyle\lim_{h \to 0^+} \dfrac{f(1+h) - f(1)}{h} = \displaystyle\lim_{h \to 0^+} \dfrac{(1+h) - 1}{h} = \displaystyle\lim_{h \to 0^+} 1 = 1.$$
+Puisque ces limites unilatérales sont différentes, la limite bilatérale
+$$f'(1) = \displaystyle\lim_{h \to 0} \dfrac{f(1+h) - f(1)}{h} \quad \text{n'existe pas}.$$
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xmin=-0.5, xmax=2,
+            ymin=-0.5, ymax=2,
+            xlabel=$x$,
+            ylabel=$y$,
+            xtick={1},
+            ytick={1},
+            xticklabels={1},
+            yticklabels={1},
+            clip=false
+        ]
+            \addplot[domain=-0.5:1, thick, red!70!black] {x^2};
+            \addplot[domain=1:2, thick, red!70!black] {x};
+            \node[below] at (axis cs:1,0) {pas de dérivée en 1};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{FIGURE 3.1.7}
+\end{figure}
+
+\begin{exemple}
+	\tcblower
+
+	
+\end{exemple}
+\begin{exemple}[label=ex:valabs]
+	
+\end{exemple}
+\subsection{Relation à la continuité}
+\subsection{Règles de différentiation}
+\subsection{Taux de variation}
+\subsection{L'équation de la tangente}
+\section{Le théorème de la valeur intermédiaire et ses applications}
+\subsection{Le théorème de la valeur intermédiaire}
+\subsection{Fonctions croissantes et décroissantes}
+\subsection{Maximum et minimum}
+\subsection{Optimisation}
+\subsection{Concavité et points d'inflexion}
+\subsection{Application à l'étude de fonctions}
 \end{document}

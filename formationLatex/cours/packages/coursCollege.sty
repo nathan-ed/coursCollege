@@ -9,6 +9,7 @@
 \RequirePackage{qrcode}
 \RequirePackage{amsthm}
 \RequirePackage{tkz-euclide}
+\RequirePackage{pifont}
 \RequirePackage{lscape}
 \RequirePackage{bm}
 \RequirePackage{array}
@@ -253,3 +254,12 @@ after skip=10pt,
 \renewcommand\labelitemii{\bullet}
 
 \newcommand{\checkBox}{\fbox{\rule{0pt}{1em}\hspace{1em}}} % simple square
+\newcommand{\qrwithlabel}[2]{%
+    \begin{minipage}{0.23\linewidth} % Adjust width to fit 4 on a line
+        \centering
+        \textbf{#1} \\ % Description on top
+	\smallskip
+	\href{#2}
+	{\qrcode[height=3cm]{#2}} % QR code with fixed height
+    \end{minipage}%
+}
