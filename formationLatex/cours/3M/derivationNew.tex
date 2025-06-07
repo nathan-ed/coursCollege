@@ -13,7 +13,7 @@
 
 \begin{document}
 
-\section{La Dérivée}
+\section{La dérivée}
 
 \subsection{Introduction : La tangente à une courbe en un point}
 
@@ -404,13 +404,20 @@ On interprète $f'(x)$ comme la pente de la courbe $f$ au point $(x;f(x))$. La d
 	\tcblower
 	Certaines fonctions sont dérivable sur $\mathbb{R}$, d'autres seulement sur un intervalle donné ou en certains points.
 \end{remarque}
-\begin{autre}
-\tcblower	
-Une classe de fonctions que vous connaissez déjà est dérivable~:
-\end{autre}
 \begin{thm}
 		\tcblower
-Si $f$ est continue en $x$ alors $f$ est dérivable en $x$.
+Si $f$ est dérivable en $x$ alors $f$ est continue en $x$.
+
+\begin{proof}
+	On a
+
+	\begin{explanation}[0.75]
+	$\displaystyle{\lim_{h\to0}\left( f(x)+h)-f(x)\right)}=\displaystyle{\lim_{h\to 0}\left(\dfrac{f(x+h)-f(x)}{h}\cdot h\right)}$&\\
+	$=\displaystyle{\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\cdot\lim_{h\to 0}h} $ & limites $\exists$ et finies\\
+			$=f'(x)\cdot 0=0$ &car $\displaystyle{\lim_{h\to 0}h=0}$
+\end{explanation}
+donc $f$ est bien continue en $x$.
+\end{proof}
 \end{thm}
 \begin{remarque}
 	\tcblower
@@ -421,36 +428,54 @@ Si $f$ est continue en $x$ alors $f$ est dérivable en $x$.
 	Commençons par calculer quelques dérivées à l'aide de la définition.
 \end{autre}
 
-\section*{Figure 3.1.3}
+\begin{exemple}
+	\tcblower
+	Calcul de la dérivée de $f(x)=x^2$. 
 
-\textbf{Exemple.} Nous commençons avec la fonction de mise au carré
-$$f(x) = x^2.$$
-Pour trouver $f'(x)$ nous formons le quotient différentiel
-$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{(x+h)^2 - x^2}{h}.$$
-Puisque
-$$\dfrac{(x+h)^2 - x^2}{h} = \dfrac{x^2 + 2xh + h^2 - x^2}{h} = \dfrac{2xh + h^2}{h} = 2x + h,$$
-nous avons
-$$\dfrac{f(x+h) - f(x)}{h} = 2x + h.$$
-Évidemment alors
-$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = 2x.$$
+	On part de la définition de la dérivée, on a 
 
-\textbf{Exemple.} Dans le cas d'une fonction linéaire
-$$f(x) = mx + b.$$
-nous avons
-$$f'(x) = m.$$
-En d'autres termes, la pente est constamment $m$. Pour vérifier cela, notons que
-$$\dfrac{f(x+h) - f(x)}{h} = \dfrac{[m(x+h) + b] - [mx + b]}{h} = \dfrac{mh}{h} = m.$$
-Il s'ensuit que
-$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = m.$$
+\medskip
 
-\clearpage
+$\begin{aligned}
+	\dfrac{f(x+h) - f(x)}{h} &= \dfrac{(x+h)^2 - x^2}{h}\\
+				 &=\dfrac{(x+h)^2 - x^2}{h}\\
+				 &=\dfrac{x^2 + 2xh + h^2 - x^2}{h}\\
+				 &= \dfrac{2xh + h^2}{h}\\ 
+				 &= 2x + h
+\end{aligned}$
+\medskip
 
-\section*{La dérivée}
+On prend la limite quand $h\to 0$ et on a 
+\[f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h} = \lim_{h\to 0} (2x+h)=2x.\]
+\end{exemple}
+\begin{exemple}
+	\tcblower
+	Calcul de la dérivée de $f(x)=ax+b$.
+	On part de la définition 
+\bigskip
 
-La dérivée
+$\begin{aligned}
+	\dfrac{f(x+h) - f(x)}{h} &= \dfrac{\phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaa}}{h}\\
+				 &=\ligne{7}\\
+				 &\\
+				 &=\ligne{7}\\
+				 &\\
+\end{aligned}
+$
+\medskip
+
+On prend la limite évidente et on obtient 
+\vspace{2cm}
+\end{exemple}
+
 $$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$$
 est une limite bilatérale. Par conséquent, elle ne peut pas être prise en un point d'extrémité du domaine. Dans notre prochain exemple, nous traiterons de la fonction racine carrée. Bien que cette fonction soit définie pour tout $x \ge 0$, nous ne pouvons avoir une dérivée que pour $x > 0$.
 
+\begin{exemple}
+	\tcblower
+	Calcul de la dérivée de $f(x)=\sqrt{x}$. 	
+	
+\end{exemple}
 \textbf{Exemple.} La fonction racine carrée
 $$f(x) = \sqrt{x}, \quad x \ge 0$$
 a pour dérivée
