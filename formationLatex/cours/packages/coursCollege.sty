@@ -31,6 +31,7 @@
 \newcounter{remarque}
 \newcounter{activite}
 \newcounter{theo}
+\newcounter{propo}
 \newcounter{coro}
 
 \titleformat{\section}[frame]
@@ -122,6 +123,11 @@ before lower={\setlength\parindent{0pt}},
     before lower={\setlength\parindent{0pt}},
     #1
 }
+\newtcolorbox[auto counter]{formules}[1][]{
+    before upper={\raggedleft\textbf{\stepcounter{formule}Formules}\\\vspace{0.5em}},
+    before lower={\setlength\parindent{0pt}},
+    #1
+}
 \newtcolorbox[auto counter]{methode}[1][]{
     before upper={\raggedleft\textbf{Méthode}\\\vspace{0.5em}},
     before lower={\setlength\parindent{0pt}},
@@ -163,6 +169,15 @@ borderline west={0.5pt}{5cm}{black,
     boxrule=1pt,    
     colframe=black, % No border
 	before upper={\raggedleft\stepcounter{theo}\textbf{Théorème \thetheo}\\},
+   before lower={\setlength\parindent{0pt}},
+after skip=10pt,
+    #1
+}
+\newtcolorbox[auto counter]{prop}[1][]{
+	enhanced,
+    boxrule=1pt,    
+    colframe=black, % No border
+	before upper={\raggedleft\stepcounter{propo}\textbf{Proposition \thepropo}\\},
    before lower={\setlength\parindent{0pt}},
 after skip=10pt,
     #1
@@ -263,3 +278,4 @@ after skip=10pt,
 	{\qrcode[height=3cm]{#2}} % QR code with fixed height
     \end{minipage}%
 }
+\RequirePackage{comment}
