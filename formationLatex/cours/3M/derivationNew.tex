@@ -465,24 +465,14 @@ On prend la limite évidente et on obtient
 \vspace{2cm}
 \end{exemple}
 
-$$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$$
+\begin{remarque}
+	\tcblower
+Remarquons que $$f'(x) = \displaystyle\lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}$$
 est une limite à droite et à gauche. Par conséquent, elle ne peut pas être prise en un point d'extrémité du domaine (on doit être sur un ouvert). Dans notre prochain exemple, nous traitons le cas de la fonction racine carrée. Bien que cette fonction soit définie pour tout $x \ge 0$, nous ne pouvons avoir une dérivée que pour $x > 0$.
-
-\begin{exemple}
-	\tcblower
-	Calcul de la dérivée de $f(x)=\sqrt{x}$ pour $x>0$. 
-	\vspace{10cm}	
-
-\end{exemple}
-
-
+\end{remarque}
 
 
 \begin{exemple}
-	\tcblower
-	Calcul de la dérivée de $f(x)=\sqrt{1-x^2}, x\in ]-1;1[$.
-	\vspace{10cm}
-\end{exemple}
 \begin{tikzpicture}
     \newcommand*\funktion[1]{sqrt(#1)}% dargestellte Funktion
   \newcommand*\ableitung[1]{1/(2*sqrt(#1))}% Ableitung der Funktion
@@ -490,7 +480,7 @@ est une limite à droite et à gauche. Par conséquent, elle ne peut pas être p
           \begin{axis}[
 width=5.5cm,height=5.5cm,
             axis lines=middle,
-            xmin=-1.5, xmax=1.5,
+            xmin=-1, xmax=1.5,
             ymin=-1.5, ymax=1.5,
             xlabel=\footnotesize$x$,
             ylabel=\footnotesize$y$,
@@ -501,10 +491,10 @@ width=5.5cm,height=5.5cm,
             clip=false
         ]
 \addplot[domain=0:1.5,samples=200]{\funktion{\x}};
-  \addplot[domain=-1.5:1.5]{\tangente{\x}{0.5}};
+  \addplot[domain=-1:1.5]{\tangente{\x}{0.5}};
   \coordinate (P) at (axis cs:0.5,{\funktion{0.5}}) ;
-  \coordinate (Q) at (axis cs:3,{\funktion{3}}) ;
-  \coordinate (R) at (axis cs:-1,{\tangente{-1}{0.5}}) ;
+  \coordinate (Q) at (axis cs:1.3,{\funktion{1.3}}) ;
+  \coordinate (R) at (axis cs:0,{\tangente{-0.5}{0.5}+1}) ;
 % Point (x, f(x))
 \addplot[
     mark=*,
@@ -520,24 +510,30 @@ width=5.5cm,height=5.5cm,
     only marks,
     ] coordinates {(0, 0)};
   \draw[font=\footnotesize,black] (Q) node[above left] {$f$} ;
-  \draw[font=\footnotesize,black] (P) node[below right] {$(x;\sqrt{1-x^2})$} ;
-  \draw[font=\footnotesize,black] (R) node[above left] {tangente avec pente $-\dfrac{x}{\sqrt{1-x^2}}$} ;
+  \draw[font=\footnotesize,black] (P) node[below right=1mm] {$(x;\sqrt{1-x^2})$} ;
+\draw[font=\footnotesize,black] (R) node[above left] {pente} ;
+\draw[font=\footnotesize,black] (R) node[below left] {$-\dfrac{x}{\sqrt{1-x^2}}$} ;
         \end{axis}
     \end{tikzpicture}
-\clearpage
+	\tcblower
+	Calcul de la dérivée de $f(x)=\sqrt{x}$ pour $x>0$. 
+	\vspace{10cm}	
+
+\end{exemple}
 
 
-\begin{figure}[h]
-    \centering
+
+
+\begin{exemple}
     \begin{tikzpicture}
     \newcommand*\funktion[1]{sqrt(1-#1*#1)}% dargestellte Funktion
   \newcommand*\ableitung[1]{-#1/sqrt(1-#1*#1))}% Ableitung der Funktion
   \newcommand*\tangente[2]{\ableitung{#2}*(#1-#2)+\funktion{#2}}
           \begin{axis}[
-width=5.5cm,height=5.5cm,
+width=5.5cm,height=4cm,
             axis lines=middle,
-            xmin=-1.5, xmax=1.5,
-            ymin=-1.5, ymax=1.5,
+            xmin=-1, xmax=1.5,
+            ymin=-0.2, ymax=1.5,
             xlabel=\footnotesize$x$,
             ylabel=\footnotesize$y$,
             xtick={-1,1},
@@ -547,7 +543,7 @@ width=5.5cm,height=5.5cm,
             clip=false
         ]
 \addplot[domain=-1:1,samples=200]{\funktion{\x}};
-  \addplot[domain=-2:2]{\tangente{\x}{0.5}};
+  \addplot[domain=-1:1.5]{\tangente{\x}{0.5}};
   \coordinate (P) at (axis cs:0.5,{\funktion{0.5}}) ;
   \coordinate (Q) at (axis cs:-0.9,{\funktion{-0.9}}) ;
   \coordinate (R) at (axis cs:-1,{\tangente{-1}{0.5}}) ;
@@ -560,11 +556,14 @@ width=5.5cm,height=5.5cm,
     ] coordinates {(0.5, \funktion{0.5})};
   \draw[font=\footnotesize,black] (Q) node[left] {$f$} ;
   \draw[font=\footnotesize,black] (P) node[above right] {$(x;\sqrt{1-x^2})$} ;
-  \draw[font=\footnotesize,black] (R) node[above right] {tangente avec pente $-\dfrac{x}{\sqrt{1-x^2}}$} ;
+  \draw[font=\footnotesize,black] (R) node[above right] {pente $-\dfrac{x}{\sqrt{1-x^2}}$} ;
         \end{axis}
     \end{tikzpicture}
-    \caption{moitié supérieure du cercle unité}
-\end{figure}
+	\tcblower
+	Calcul de la dérivée de $f(x)=\sqrt{1-x^2}, x\in ]-1;1[$.
+	\vspace{10cm}
+\end{exemple}
+
 
 \subsection{Le nombre dérivé}
 
@@ -689,7 +688,7 @@ au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), ma
 	\end{itemize}
 \end{definition}
 \end{comment}
-On a toutefois le théorème suivant~:
+
 \begin{thm}
 		\tcblower
 Si $f$ est dérivable en $x$ alors $f$ est continue en $x$.
@@ -942,26 +941,16 @@ Nous avons un quotient $F(x) = f(x)/g(x)$. La règle du quotient donne
 \end{exemple}
 \begin{exemple}
 	\tcblower
-	Calculer $f'(0)$, $f'(1)$, et $f'(2)$ pour la fonction
-	$$f(x) = \frac{5x}{1+x}$$
+	Calculer $f'(0)$, $f'(1)$, et $f'(2)$ pour $f(x) = \dfrac{5x}{1+x}$.
 	
-Nous trouvons d'abord l'expression générale pour $f'(x)$, puis nous l'évaluons en $0$, $1$, et $2$. En utilisant la règle du quotient, nous obtenons
-	$$f'(x) = \frac{(1+x) \cdot 5 - 5x \cdot 1}{(1+x)^2} = \frac{5}{(1+x)^2}.$$
-	
-	Ceci donne
-	$$f'(0) = \frac{5}{(1+0)^2} = 5, \quad f'(1) = \frac{5}{(1+1)^2} = \frac{5}{4}, \quad f'(2) = \frac{5}{(1+2)^2} = \frac{5}{9}.$$
-\end{exemple}
+	\vspace{5cm}
 
+\end{exemple}
 \begin{exemple}
 	\tcblower
-	Calculer $f'(-1)$ pour
-	$$f(x) = \frac{x^2}{ax^2 + b}$$
+	Calculer $f'(-1)$ pour $f(x) = \dfrac{x^2}{ax^2 + b}$.
 	
-Nous calculons $f'(x)$ en général par la règle du quotient:
-	$$f'(x) = \frac{(ax^2 + b) \cdot 2x - x^2 \cdot 2ax}{(ax^2 + b)^2} = \frac{2bx}{(ax^2 + b)^2}.$$
-	
-Nous évaluons $f'$ en $-1$:
-	$$f'(-1) = \frac{2b(-1)}{(a + b)^2} = -\frac{2b}{(a + b)^2}.$$
+	\vspace{5.5cm}
 \end{exemple}
 
 
@@ -975,29 +964,234 @@ Nous évaluons $f'$ en $-1$:
 \begin{coro}
 	\tcblower
 	Si $f(x)=x^r$ pour $r\in \mathbb{Q}$, alors $f'(x)=r\cdot x^{r-1}$.
+	\medskip
+	
+	\begin{proof}
+		On sait déjà que pour $k\in \mathbb{Z}$, $(x^k)'=kx^{k-1}$. Soit $r=\frac{m}{n}\in \mathbb{Q}$. 
+		On pose $f(x)=x^m$ et $g(x)=x^\frac{1}{n}=x^{-n}$. On a alors que $(f\circ g)(x)=x^\frac{m}{n}$. 
+		On applique le théorème \ref{thm:derCompo} à $f\circ g$. On a 
+
+$	\begin{aligned}
+	\left(x^{\frac{m}{n}}\right)'&=\left(\left(x^{\frac{1}{n}}\right)^m\right)'\\
+					      &=m\cdot \left(x^\frac{1}{n}\right)^{m-1}\cdot \frac{1}{n}\cdot x^{\left(\frac{1}{n}-1\right)}\\
+					      &=\frac{m}{n}x^\frac{m-1}{n}\cdot x^{\frac{1-n}{n}}\\
+					      &=\frac{m}{n}x^{\left(\frac{m-1}{n}+\frac{1-n}{n}\right)}\\
+					      &=\frac{m}{n}x^{\frac{m-n}{n}}\\
+					      &=\frac{m}{n}x^{\left(\frac{m}{n}-1\right)}
+	\end{aligned}$
+
+	\end{proof}
 \end{coro}
 \subsection{L'équation de la tangente}
+\begin{formule}
+	\tcblower
+Soient $f$ une fonction dérivable et $(x_0;y_0)$ un point du graphe de $f$. La tangente à $f$ en ce point a pour pente $f'(x_0)$. Pour obtenir l'équation de la tangente, on utilise la formule de la pente 
+\[
+	f'(x_0)=\dfrac{y-y_0}{x-x_0} \iff y=f'(x_0)\cdot x-f'(x_0)\cdot x_0 +y_0 
+\]
+ou encore
+\[y=f'(x_0)\cdot (x-x_0)+y_0\]
+\end{formule}
+\begin{exemple}
+	\tcblower
+	Déterminer l'équation de la tangente de 
+	\[f(x)=\dfrac{2x+1}{3-x}\]
+	au point $(2;5)$. 
+	\vspace{4cm}
+\end{exemple}
+
+\begin{exemple}
+	\tcblower
+	Déterminer l'équation de la tangente de 
+	\[x^2+y^2=25\]
+	au point $(3;4)$. 
+	\vspace{6cm}
+\end{exemple}
+
 \subsection{Exercices}
 \subsubsection{Introduction~: La tangente à une courbe en un point}
 \subsubsection{Définitions et exemples}
+\insertexo{1M-j2esz}{true}{exo}{true}
+\insertexo{1M-mmztw}{true}{exo}{true}
+\insertexo{1M-h2mu9}{true}{exo}{true}
 \insertexo{1M-wdzr4}{false}{exo}{true}
 \insertexo{1M-9ghy8}{false}{exo}{true}
+\insertexo{1M-uhfwb}{true}{exo}{true}
+\insertexo{1M-sjs2h}{true}{exo}{true}
+\insertexo{1M-hb4kv}{true}{exo}{true}
+\insertexo{1M-g75hx}{true}{exo}{true}
 
 \subsubsection{Le nombre dérivé}
+\insertexo{1M-rqd6n}{true}{exo}{true}
 \subsubsection{Relation avec la continuité}
 \subsubsection{Règles de dérivation}
+
+\insertexo{1M-raguk}{true}{exo}{true}
 \insertexo{1M-uc9rv}{false}{exo}{true}
 \insertexo{1M-5fsdv}{false}{exo}{true}
 \insertexo{1M-3mgs5}{false}{exo}{true}
 \insertexo[exo:derQuot]{1M-972y4}{false}{exo}{true}
-
+\insertexo{1M-4pfpm}{true}{exo}{true}
+\insertexo{1M-bgaa8}{true}{exo}{true}
 
 \subsubsection{L'équation de la tangente}
-\section{Le théorème de la valeur intermédiaire et ses applications}
-\subsection{Le théorème de la valeur intermédiaire}
+\insertexo{1M-ayg94}{true}{exo}{true}
+\insertexo{1M-pbjwq}{true}{exo}{true}
+\insertexo{1M-5tfx9}{true}{exo}{true}
+\insertexo{1M-ddnv1}{true}{exo}{true}
+\insertexo{1M-nj1k9}{true}{exo}{true}
+\insertexo{1M-p9k57}{true}{exo}{true}
+\insertexo{1M-22t18}{true}{exo}{true}
+\newpage
+\section{Le théorème des accroissement finis et ses applications}
+
+\subsection{Le théorème des accroissement finis}
+Nous allons étudier dans ce chapitre un théorème qui peut paraître évident, mais qui est très utile~: le théorème des accroissements finis. 
+\medskip
+
+\begin{prop}
+	\tcblower
+Soit $f$ une fonction dérivable en $x_0$. 
+
+Si $f'(x_0)>0$, alors
+\[f(x_0-h)<f(x_0)<f(x_0+h)\]
+pour tout nombre positif $h$ assez petit. 
+
+Si $f'(x_0)<0$, alors
+\[f(x_0+h)<f(x_0)<f(x_0-h)\]
+pour tout nombre positif $h$ assez petit. 
+\end{prop}
+
+\begin{thm}
+	Thm de Rolle
+	\tcblower
+	Soit $f$ une fonction dérivable sur $] a;b[$ et continue sur $[a;b]$. Si $f(a)=f(b)=0$, alors il existe (au moins un) $c\in] a;b[$ tel que 
+	\[f'(c)=0.\]
+\end{thm}
+\begin{thm}
+	Thm des accroissements finis
+	\tcblower
+	Soit $f$ une fonction dérivable sur $] a;b[$ et continue sur $[a;b]$, alors il existe (au moins un) $c\in ]a;b[$ tel que 
+	\[f'(c)=\dfrac{f(b)-f(a)}{b-a}.\]
+\end{thm}
 \subsection{Fonctions croissantes et décroissantes}
+Maintenant que l'on a une bonne idée de ce que représente la dérivée, on comprend intuitivement que 
+\begin{tasks}
+\task une fonction est « croissante » sur un intervalle sur lequel sa dérivée est positive;
+\task une fonction est « décroissante » sur un intervalle sur lequel sa dérivée est négative ;
+\task une fonction est constante sur un intervalle sur lequel sa dérivée est nulle.
+\end{tasks}
+On va démontrer ces théorèmes en activités. 
+\begin{definition}
+	\tcblower
+	On dit qu'une fonction est
+	\begin{itemize}
+		\item {\bfseries croissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
+			\[x_1<x_2\implies f(x_1)<f(x_2)\]
+
+		\item {\bfseries décroissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
+			\[x_1<x_2\implies f(x_1)>f(x_2)\]
+	\end{itemize}
+\end{definition}
+\begin{exemple}
+	\tcblower
+La fonction $f(x)=x^2$ est décroissante sur l'intervalle $]-\infty;0]$ et croissante sur l'intervalle $[0;+\infty[$. 
+\end{exemple}
+\begin{exemple}
+	\tcblower
+	La fonction \[f(x)=\begin{cases}
+		1,&x<0\\
+		x,&x\geq 0,
+	\end{cases}\]
+	est constante sur l'intervalle $]-\infty;0]$ et croissante sur l'intervalle $[0;+\infty[$. 
+\end{exemple}
+\begin{exemple}
+	\tcblower
+	La fonction $f(x)=x^3$ est croissante sur $\mathbb{R}$.	
+\end{exemple}
+\begin{thm}
+	\tcblower
+	Soit $f$ une fonction dérivable sur un intervalle $]a;b[$ et continue sur $[a;b]$, alors  
+	\begin{itemize}
+		\item Si $f'(x)>0$ pour tout $x\in I$, alors $f$ est croissante sur $I$;
+		\item Si $f'(x)<0$ pour tout $x\in I$, alors $f$ est décroissante sur $I$;
+		\item Si $f'(x)=0$ pour tout $x\in I$, alors $f$ est constante sur $I$.
+	\end{itemize}
+\end{thm}
+\begin{exemple}
+	\tcblower
+	La fonction $f(x)=\sqrt{1-x^2}$
+	
+\end{exemple}
+
+\begin{exemple}
+	\tcblower
+	La fonction $f(x)=\dfrac{1}{x}$
+	
+\end{exemple}
 \subsection{Maximum et minimum}
 \subsection{Optimisation}
+
+
 \subsection{Concavité et points d'inflexion}
 \subsection{Application à l'étude de fonctions}
+
+\subsection{Applications}
+
+
+\section{Exercices}
+
+\subsubsection{Le théorème des accroissement finis}
+\insertexo{1M-d4c88}{true}{exo}{true}
+\insertexo{1M-aef2y}{true}{exo}{true}
+\insertexo{1M-n67du}{true}{exo}{true}
+\insertexo{1M-5hev4}{true}{exo}{true}
+\insertexo{1M-hju27}{true}{exo}{true}
+\insertexo{1M-zar8b}{true}{exo}{true}
+\insertexo{1M-x5ny2}{true}{exo}{true}
+\insertexo{1M-r9x4h}{true}{exo}{true}
+\insertexo{1M-147ae}{false}{exo}{true}
+\insertexo{1M-kafhh}{false}{exo}{true}
+\insertexo{1M-4qat4}{false}{exo}{true}
+\insertexo{1M-qr5rf}{false}{exo}{true}
+\insertexo{1M-7nemv}{false}{exo}{true}
+\insertexo{1M-bw6xm}{false}{exo}{true}
+\insertexo{1M-3m62m}{false}{exo}{true}
+\insertexo{1M-8bwde}{false}{exo}{true}
+\insertexo{1M-pjez7}{false}{exo}{true}
+\insertexo{1M-c61qc}{false}{exo}{true}
+
+\subsubsection{Fonctions croissantes et décroissantes}
+\subsubsection{Maximum et minimum}
+\subsubsection{Optimisation}
+\insertexo{1M-gmcwt}{true}{exo}{true}
+\insertexo{1M-shcv8}{true}{exo}{true}
+\insertexo{1M-9q8gz}{true}{exo}{true}
+\insertexo{1M-xkwd5}{true}{exo}{true}
+\insertexo{1M-bs74m}{true}{exo}{true}
+\insertexo{1M-nv48n}{true}{exo}{true}
+\insertexo{1M-pmwx1}{true}{exo}{true}
+\insertexo{1M-fnj4z}{true}{exo}{true}
+\insertexo{1M-bhu5u}{true}{exo}{true}
+\insertexo{1M-sms7s}{true}{exo}{true}
+
+\subsubsection{Concavité et points d'inflexion}
+\subsubsection{Application à l'étude de fonctions}
+\insertexo{1M-515q8}{true}{exo}{true}
+\insertexo{1M-yn5fe}{true}{exo}{true}
+\insertexo{1M-3exms}{true}{exo}{true}
+\insertexo{1M-w3pgx}{true}{exo}{true}
+\subsubsection{Applications}
+\insertexo{1M-fg15r}{true}{exo}{true}
+\insertexo{1M-2mqwc}{true}{exo}{true}
+\insertexo{1M-m4mzh}{true}{exo}{true}
+\insertexo{1M-wu8y4}{true}{exo}{true}
+\insertexo{1M-u7dja}{true}{exo}{true}
+\insertexo{1M-e1wtj}{true}{exo}{true}
+\insertexo{1M-hvq58}{true}{exo}{true}
+\insertexo{1M-uvgs1}{true}{exo}{true}
+\insertexo{1M-7zb7h}{true}{exo}{true}
+
+\section{Activités}
+\insertexo{1M-ezscr}{true}{exo}{true}
 \end{document}
