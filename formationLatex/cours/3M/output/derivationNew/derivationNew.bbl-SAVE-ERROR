@@ -1,0 +1,120 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{salas_calculus_1999}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=796c3da90f2c6bc058ed8a802f61a1b0}{%
+           family={Salas},
+           familyi={S\bibinitperiod},
+           given={Saturnino\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=a4c58a7f9d7c7a9b2e7125a3530896e3}{%
+           family={Hille},
+           familyi={H\bibinitperiod},
+           given={Einar},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{fullhash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{fullhashraw}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{bibnamehash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{authorbibnamehash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{authornamehash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{authorfullhash}{958a911200d3c53b5dd24fade55f4f3d}
+      \strng{authorfullhashraw}{958a911200d3c53b5dd24fade55f4f3d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{isbn}{9780471316596}
+      \field{title}{Calculus: One and Several Variables}
+      \field{year}{1984}
+      \true{nocite}
+    \endentry
+    \entry{fundamentum_analyse}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=6aa042eb97b64b42b73a82b23af620ff}{%
+           family={mathématiques},
+           familyi={m\bibinitperiod},
+           given={Commission},
+           giveni={C\bibinitperiod},
+           prefix={romande\bibnamedelima de},
+           prefixi={r\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRM Éditions}%
+      }
+      \strng{namehash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{fullhash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{fullhashraw}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{bibnamehash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{authorbibnamehash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{authornamehash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{authorfullhash}{6aa042eb97b64b42b73a82b23af620ff}
+      \strng{authorfullhashraw}{6aa042eb97b64b42b73a82b23af620ff}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9782940621026}
+      \field{title}{Fundamentum de mathématique Analyse}
+      \field{year}{2018}
+      \true{nocite}
+    \endentry
+    \entry{sesamath_3e_2022}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1e37b903c1955ddc31f808b69cb476b7}{%
+           family={{Association Sesamath Suisse Romande}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association Sesamath Suisse Romande}%
+      }
+      \strng{namehash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{fullhash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{fullhashraw}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{bibnamehash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{authorbibnamehash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{authornamehash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{authorfullhash}{1e37b903c1955ddc31f808b69cb476b7}
+      \strng{authorfullhashraw}{1e37b903c1955ddc31f808b69cb476b7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sésamath -- Troisième année de maturité gymnasiale}
+      \field{year}{2022}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://sesamath.ch/
+      \endverb
+      \verb{url}
+      \verb https://sesamath.ch/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -156,6 +156,14 @@ borderline west={0.5pt}{5cm}{black,
     #1
 }
 
+\newtcolorbox[auto counter]{discussion}[1][]{
+    before upper={\raggedleft\textbf{Discussion}\\\vspace{0.5em}},
+   before lower={\setlength\parindent{0pt}},
+    #1
+}
+
+
+
 
 \newtcolorbox[auto counter]{activite}[1][]{
 	breakable,
@@ -182,6 +190,7 @@ after skip=10pt,
 after skip=10pt,
     #1
 }
+
 \newtcolorbox[auto counter]{coro}[1][]{
 	enhanced,
     boxrule=1pt,    
