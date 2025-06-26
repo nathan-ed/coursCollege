@@ -4,7 +4,8 @@
 \RequirePackage{ragged2e}  % For text alignment
 \RequirePackage{hyperref}  % For clickable references
 \RequirePackage{etoolbox}
-\RequirePackage{csquotes}
+\RequirePackage[french=quotes]{csquotes}
+\setquotestyle{french}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{qrcode}
@@ -41,6 +42,7 @@
 \newcounter{theo}
 \newcounter{propo}
 \newcounter{coro}
+\newcounter{corri}
 
 \titleformat{\section}[frame]
 {\normalfont}
@@ -207,6 +209,21 @@ after skip=10pt,
    before lower={\setlength\parindent{0pt}},
 after skip=10pt,
     #1
+}
+% Define the exercice environment
+\newtcolorbox[auto counter]{core}[1][]{ % #1 = difficulty (default 0), #2 = extra options
+	enhanced,
+    righthand width=0.9\linewidth,
+    lefthand width=0.1\linewidth,
+  fontupper=\footnotesize, % Set content font size
+  fontlower=\footnotesize, % Set content font size
+    before upper={
+        \refstepcounter{corri}%
+        \fbox{\raggedleft\textbf{Corrigé~\thecorri}}%
+        \\ \vspace{0.5em}
+    },
+   before lower={\setlength\parindent{0pt}},
+   #1
 }
 
 % Define the exercice environment

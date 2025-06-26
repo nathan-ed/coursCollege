@@ -1,0 +1,114 @@
+\titre{}
+\theme{calcLit}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{nathan}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+	Exprimer la variable demandée en fonction des autres variables présentes dans la formule.
+\begin{tasks}
+	\task $V=\dfrac{h}{6}\left(B_1+B_2+4M\right) \hfill h=? \hfill M=? \hfill$
+	\task $D_r=\dfrac{D}{1+A_rB_r} \hfill D=? \hfill A_r=? \hfill$
+	\task $P=Q\dfrac{R-r}{2R} \hfill r=? \hfill \phantom{1} \hfill$
+	\task $G=\dfrac{kR_a}{R_i+R_a} \hfill R_i=? \hfill \phantom{1} \hfill$
+	\task $A=\dfrac{F+S_\alpha}{S_\alpha} \hfill F=? \hfill \phantom{1} \hfill$
+	\task $\dfrac{1}{R}=\dfrac{1}{R_1}+\dfrac{1}{R_2} \hfill R=? \hfill R_1=? \hfill$
+\end{tasks}	
+}
+\correction{
+\tcblower
+\begin{enumerate}
+	\item $V=\dfrac{h}{6}\left(B_1+B_2+4M\right) \hfill h=? \hfill M=? \hfill$
+		
+		Isolons $h$:
+
+		\begin{solve}
+			V&=\dfrac{h}{6}(B_1+B_2+4M)&\div (B_1+B_2+4M)\\
+			\dfrac{V}{B_1+B_2+4M)}&=\dfrac{h}{6}&\cdot 6\\
+			\dfrac{6V}{B_1+B_2+4M)}&=h&h\text{ est isolé}
+		\end{solve}
+		Isolons $M$:
+		\begin{solve}
+			V&=\dfrac{h}{6}(B_1+B_2+4M)&\cdot \dfrac{6}{h}\\
+			\dfrac{6V}{h}&=B_1+B_2+4M&-B_1-B_2\\
+			\dfrac{6V}{h}-B_1-B_2&=4M&\div 4\\
+			\dfrac{\dfrac{6V}{h}-B_1-B_2}{4}&=M&M \text{ est isolé}
+		\end{solve}
+
+	\item $D_r=\dfrac{D}{1+A_rB_r} \hfill D=? \hfill A_r=? \hfill$
+
+		Isolons $D$:
+		\begin{solve}
+			D_r&=\dfrac{D}{1+A_r+B_r}&\cdot (1+A_r+B_r)\\
+			D_r\cdot (1+A_r+B_r)&=D&D \text{ est isolé}
+		\end{solve}
+	
+		Isolons $A_r$ (on reprend la dernière formule du point précédent):
+		\begin{solve}
+			D_r\cdot (1+A_r+B_r)&=D&\div D_r\\
+			1+A_r+B_r&=\dfrac{D}{D_r}&-1-B_r\\
+			A_r&=\dfrac{D}{D_r}-1-B_r&A_r\text{ est isolé}
+		\end{solve}
+	\item $P=Q\dfrac{R-r}{2R} \hfill r=? \hfill \phantom{1} \hfill$
+	
+		Isolons $r$:
+		\begin{solve}
+			P&=Q\dfrac{R-r}{2R}&\div Q\\
+			\dfrac{P}{Q}&=\dfrac{R-r}{2R}&\cdot 2R\\
+			\dfrac{P\cdot 2R}{Q}&=R-r&-R\\
+			\dfrac{2PR}{Q}&=-r&\cdot (-1)\\
+			-\dfrac{2PR}{Q}&=r&r \text{ est isolé}
+		\end{solve}
+
+	\item $G=\dfrac{kR_a}{R_i+R_a} \hfill R_i=? \hfill \phantom{1} \hfill$
+		
+		Isolons $R_i$:
+		\begin{solve}
+			G&=\dfrac{kR_a}{R_i+R_a}&\cdot (R_i+R_a)\\
+			G(R_i+R_a)&=kR_a&\div G\\
+			R_i+R_a&=\dfrac{kR_a}{G}&-R_a\\
+			R_i&=\dfrac{kR_a}{G}-R_a&R_a\text{ est isolé}
+		\end{solve}
+
+	\item $A=\dfrac{F+S_\alpha}{S_\alpha} \hfill F=? \hfill \phantom{1} \hfill$
+
+		Isolons $F$:
+		\begin{solve}
+			A&=\dfrac{F+S_\alpha}{S_{\alpha}}&\cdot S_\alpha\\
+			\dfrac{A}{S_\alpha}&=F+S_\alpha&-S_\alpha\\
+			\dfrac{A}{S_\alpha}-S_\alpha&=F&F \text{ est isolé}
+		\end{solve}
+	\item $\dfrac{1}{R}=\dfrac{1}{R_1}+\dfrac{1}{R_2} \hfill R=? \hfill R_1=? \hfill$
+		
+		On commence par écrire le membre de droite sous une autre forme:
+		\begin{align*}
+			\dfrac{1}{R_1}+\dfrac{1}{R_2}&=\dfrac{R_2}{R_1R_2}+\dfrac{R_1}{R_1R_2}
+						     &=\dfrac{R_2+R_1}{R_1R_2}
+		\end{align*}
+
+		Isolons $R$:
+		\begin{solve}
+		\dfrac{1}{R}&=\dfrac{1}{R_1}+\dfrac{1}{R_2}&\text{Autre forme}\\
+			\dfrac{1}{R}&=\dfrac{R_2+R_1}{R_1R_2}&\cdot R\\
+			1&=\dfrac{R_2+R_1}{R_1R_2}\cdot R&\cdot \dfrac{R_1R_2}{R_1+R_2}\\
+			\dfrac{R_1R_2}{R_1+R_2}&=R& R \text{ est isolé}
+		\end{solve}
+
+		Isolons $R_1$:
+		\begin{solve}
+			\dfrac{1}{R}&=\dfrac{1}{R_1}+\dfrac{1}{R_2}&-\dfrac{1}{R_2}\\
+			\dfrac{1}{R}-\dfrac{1}{R_2}&=\dfrac{1}{R_1}&\\
+			\dfrac{R_2-R}{RR_2}&=\dfrac{1}{R_1}&\cdot R_1\\
+			\dfrac{R_2-R}{RR_2}\cdot R_1&=1&\cdot \dfrac{RR_2}{R_2-R}\\
+			R_1&=\dfrac{RR_2}{R_2-R}&R_1\text{ est isolé}
+
+		\end{solve}
+\end{enumerate}	
+
+}
+
