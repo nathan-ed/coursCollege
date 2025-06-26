@@ -3,6 +3,12 @@
 \newcommand{\Chapitre}{Limites et continuité}
 \renewcommand{\path}{../../}
 
+\usepackage[    %backend=biber, 
+    natbib=true,
+    style=numeric,
+    sorting=none]{biblatex}  % Load biblatex for bibliography handling
+\addbibresource{biblio-der.bib}  
+\renewcommand\refname{Sources}
 \renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
 \begin{document}
 \tocloftpagestyle{fancy}
@@ -2415,20 +2421,10 @@ Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie
 %\insertexo{1M-6qym1}{false}{exo}{true}
 %\insertexo{1M-aatq8}{false}{exo}{true}
 
-\section{Sources principales}
-Librement adapté de ...
-Théorie~:
-\begin{itemize}
-	\item Sesamath 3e année, 2023--2024
-\end{itemize}
-Exercices~:
-\begin{itemize}
-	\item Sesamath 3e année, 2023--2024
-\end{itemize}
-Activités~:
-\begin{itemize}
-	\item Sesamath 3e année, 2023--2024
-\end{itemize}
 
+ \nocite{*}
+ \vspace{-10pt}
+\defbibnote{myprenote}{Les sources suivantes ont majoritairement été utilisées pour construire ce cours. Les exercices et activités proviennent également principalement de ces ouvrages. D'autres exercices ont été adaptés ou sont inspirés de ressources partagées par des collègues ou trouvées sur internet. Leur contribution mineure les exclut de cette liste.}
+ \printbibliography[prenote=myprenote,title={Sources du cours}] 
 \end{document}
 
