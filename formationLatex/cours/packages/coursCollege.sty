@@ -24,6 +24,7 @@
 \RequirePackage{longtable}
 \RequirePackage{../packages/intervalles}
 \RequirePackage{tabularray}
+\RequirePackage{tabularx}
 \UseTblrLibrary{booktabs}     % nice rules
 \RequirePackage[top=1.8cm, bottom=1.7cm, left=1cm , right=1.5cm]{geometry}
 \RequirePackage{nameref}
@@ -304,7 +305,7 @@ after skip=10pt,
 
 \newcommand{\checkBox}{\fbox{\rule{0pt}{1em}\hspace{1em}}} % simple square
 \newcommand{\qrwithlabel}[2]{%
-    \begin{minipage}{0.23\linewidth} % Adjust width to fit 4 on a line
+    \begin{minipage}{0.15\linewidth} % Adjust width to fit 4 on a line
         \centering
         \textbf{#1} \\ % Description on top
 	\smallskip
@@ -312,6 +313,7 @@ after skip=10pt,
 	{\qrcode[height=3cm]{#2}} % QR code with fixed height
     \end{minipage}%
 }
+
 \RequirePackage{comment}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -344,9 +346,23 @@ after skip=10pt,
 \RequirePackage[inline, shortlabels]{enumitem}
 % Inline Enumerations
 \newlist{inumerate}{enumerate*}{1}
-\setlist*[inumerate]{before=\vspace{6pt}\newline, align=right, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
+\setlist*[inumerate]{before=\vspace{6pt}\newline, align=right, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\roman*)}
 \newlist{inlineumerate}{enumerate*}{1}
-\setlist*[inlineumerate]{before=\vspace{6pt}, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\alph*)}
+\setlist*[inlineumerate]{before=\vspace{6pt}, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\roman*)}
+\setlist[enumerate]{label=\roman*)}
+
+\newlist{myinlineenum}{enumerate*}{1}
+\setlist*[myinlineenum]{before=\vspace{6pt}, align=right, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\roman*)}
+
+% Create a wrapper that sets spacing dynamically
+\usepackage{xparse}
+\NewDocumentEnvironment{MyInlineEnum}{m} % m = spacing argument
+  {
+    \begin{myinlineenum}[itemjoin=\hspace{#1}]
+  }
+  {
+    \end{myinlineenum}
+  }
 
 \tikzset{
   annotated cuboid/.pic={
