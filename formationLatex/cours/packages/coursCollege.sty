@@ -394,3 +394,8 @@ after skip=10pt,
   units=cm,
   scale=.1,
 }
+\RequirePackage{siunitx}
+\sisetup{locale = FR, per-mode = symbol, range-phrase=--, range-units=single, product-units=single}
+\newcommand{\da}[1]{\SI[mode=text]{#1}{}}
+\newcommand{\tunit}[2]{\SI[mode=text]{#1}{#2}}
+\newcommand{\nunit}[1]{\SI[mode=text]{}{#1}}
