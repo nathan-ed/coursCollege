@@ -15,6 +15,15 @@
 \definecolor{tangentcolor}{RGB}{220,50,47}
 \definecolor{secantcolor}{RGB}{38,139,210}
 \definecolor{pointcolor}{RGB}{220,50,47}
+\usetikzlibrary{shapes.geometric, arrows.meta, tikzmark}
+
+% Define styles for TikZ nodes to ensure consistency.
+\tikzset{
+    box/.style={draw, rectangle, minimum height=9mm, minimum width=2.5cm, align=center},
+    op/.style={draw, ellipse, fill=pink!50, inner sep=2pt}
+}
+
+
 
 \begin{document}
 \tocloftpagestyle{fancy}
@@ -343,8 +352,331 @@ Question : Quelles cartes faut-il retourner au minimum pour pouvoir vérifier si
 		\end{enumerate}
 	\end{tasks}
 \end{activite}
+
 \begin{activite}
 	\tcblower
+\end{activite}
+
+
+\begin{activite}
+	\tcblower
+\end{activite}
+
+\begin{activite}
+	\tcblower
+\begin{tasks}(1)
+\task Qu'est-ce qu'une équation à une inconnue ?
+
+\task Le nombre 3 est-il solution de l'équation $2x^2 + x = 1 - \dfrac{2}{5}x$ ?
+
+\task Déterminer une équation de degré 1 dont l'ensemble de solution soit $S = \{2\}$
+
+\task Déterminer une autre équation de degré 1 dont l'ensemble des solutions soit $S = \{2\}$
+
+\task Ces deux équations sont-elles égales ?
+
+\task Peut-on déterminer une équation de degré 1 dont l'ensemble des solutions soit $S = \emptyset$ ?
+\end{tasks}
+\end{activite}
+
+\begin{activite}
+	\tcblower
+	\begin{tasks}
+% --- Exercise 1 ---
+\task Transformer chaque égalité en une égalité équivalente :
+
+\vspace{0.5cm}
+\begin{center}
+\begin{tabular}{ccc}
+% First row of diagrams
+	\begin{tikzpicture}[scale=0.7]
+    \node[box] (top) at (0,0) {$x=6$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+\node[op] at (-1.6,-1.25) {\scriptsize$+8$};
+    \node[op] at (1.6,-1.25) {\scriptsize$+8$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.7]
+
+    \node[box] (top) at (0,0) {$x=-4$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.7,-1.25) {\scriptsize$+2,5$};
+    \node[op] at (1.7,-1.25) {\scriptsize$+2,5$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.7]
+
+    \node[box] (top) at (0,0) {$x=1,2$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.7,-1.25) {\scriptsize$-2,3$};
+    \node[op] at (1.7,-1.25) {\scriptsize$-2,3$};
+\end{tikzpicture}
+\\ \\ \\
+% Second row of diagrams
+\begin{tikzpicture}[scale=0.7]
+
+    \node[box] (top) at (0,0) {$x=7$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.9,-1.25) {\scriptsize$\cdot(-9)$};
+    \node[op] at (1.9,-1.25) {\scriptsize$\cdot(-9)$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.7]
+
+    \node[box] (top) at (0,0) {$x=2,5$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.6,-1.25) {\scriptsize$: 5$};
+    \node[op] at (1.6,-1.25) {\scriptsize$: 5$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.7]
+
+    \node[box] (top) at (0,0) {$x=-3$};
+    \node[box] (bottom) at (0,-2.5) {};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.6,-1.25) {\scriptsize$: 7$};
+    \node[op] at (1.6,-1.25) {\scriptsize$: 7$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+% --- Exercise 2 ---
+\task Le but est de déterminer $x$ dans chacune des équations suivantes. Recopier puis déterminer $x$.
+
+\vspace{1cm}
+
+% First equation solving example
+\noindent
+\begin{minipage}[c]{0.20\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.7]
+    \node[box] (top) at (0,0) {$x+5=-2$};
+    \node[box] (bottom) at (0,-2.5) {$x = \dots$};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.7,-1.25) {\scriptsize$\dots$};
+    \node[op] at (1.7,-1.25) {\scriptsize$\dots$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c]{0.25\linewidth}
+Rédaction :
+\vspace{3cm}
+\end{minipage}
+% Second equation solving example
+\begin{minipage}[c]{0.20\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.7]
+    \node[box] (top) at (0,0) {$3x=7$};
+    \node[box] (bottom) at (0,-2.5) {$x = \dots$};
+    \draw[-{Stealth[length=2mm]}] (top.200) to[out=-110,in=110] (bottom.160);
+    \draw[-{Stealth[length=2mm]}] (top.-20) to[out=-70,in=70] (bottom.20);
+    \node[op] at (-1.7,-1.25) {\scriptsize$\dots$};
+    \node[op] at (1.7,-1.25) {\scriptsize$\dots$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c]{0.25\linewidth}
+Rédaction :
+\vspace{3cm}
+
+\end{minipage}
+
+
+\task Résoudre les équations suivantes en rédigeant comme ci-dessus. Vérifier ensuite que la solution est juste :
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item $x - 5,2 = 2,6$
+\item $-6,5x = -14,2$
+\item $-x = 7,2$
+\end{enumerate}
+\end{multicols}
+
+\task De la même façon mais en deux étapes, résoudre les équations suivantes :
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $2x + 3 = 4x + 7$
+
+\item $7x - 6 = -1 + \dfrac{14x - 8}{2}$
+
+\item $2,6 - 5x = -1,4$
+
+\item $3(x+1) = x+2+2x+1$
+
+\item $\dfrac{2}{3}x - \dfrac{1}{9} = \dfrac{3}{9}x + \dfrac{4}{2}$
+\end{enumerate}
+\end{multicols}
+\end{tasks}
+\end{activite}
+
+\begin{activite}
+	\tcblower
+Voici l'énoncé du problème \enquote{somme-produit}:
+\begin{quote}
+\enquote{Déterminer deux nombres entiers $a$ et $b$ connaissant leur somme $S$ et leur produit $P$.} 
+\end{quote}
+Ce problème remonte aux babyloniens qui souhaitaient déterminer la longueur $\ell$ et la largeur $L$ d'un terrain rectangulaire (jardin, champ, etc.) connaissant son périmètre $2(\ell+L)$ et son aire $\ell\cdot L$. 
+
+\begin{tasks}
+\task Déterminer deux nombres $u$ et $v$ dont~:
+\begin{multicols}{2}
+	\begin{enumerate}
+\item le produit vaut $6$ et la somme $5$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $12$ et la somme $7$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $12$ et la somme $-7$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $-5$ et la somme $4$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $10$ et la somme $-7$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $-9$ et la somme $8$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $-8$ et la somme $-2$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $15$ et la somme $-8$
+
+$u=\ligne{2}$ $v=\ligne{2}$
+\end{enumerate}
+\end{multicols}
+
+\task Écrire clairement une procédure pour obtenir une solution.  
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+
+	\vspace{15pt}
+\end{tasks}
+Pour rappel, la quatrième identité remarquable est de la forme
+\[(x+u)(x+v)=x^2+(u+v)x+uv.\]
+On retrouve le terme somme ($u+v$) et le terme produit $uv$.
+\begin{tasks}
+	\task[c)] À l'aide du premier point, factoriser les expressions suivantes en utilisant la quatrième identité remarquable.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $x^2+5x+6=\ligne{4}$ 
+\item $x^2+7x+12=\ligne{4}$
+\item $x^2-7x+12=\ligne{4}$
+\item $x^2+4x+-5=\ligne{4}$
+\item $x^2-7x+10=\ligne{4}$
+\item $x^2+8x-9=\ligne{4}$
+\item $x^2-2x-8=\ligne{4}$
+\item $x^2-8x+15=\ligne{4}$
+\end{enumerate}
+\end{multicols}
+
+Un exemple de procédure. On note $P$ le produit et $S$ la somme. 
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black,
+execute at begin node={\begin{varwidth}{15em}},
+execute at end node={\end{varwidth}}]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{center}
+\begin{tikzpicture}[scale=0.8,node distance=1.5cm]
+	\node (e1) [startstop] {\centerline{Déterminer les diviseurs de $P$}};
+	\node (e21) [startstop, below of=e1,  xshift=-6cm, yshift=-1cm] {\centerline{$P$ est positif~?}};
+\node (e23) [startstop, below of=e1,  xshift=6cm, yshift=-1cm] {\centerline{$P$ négatif~?}};
+\node (e34) [startstop, below of=e23, yshift=-1cm, xshift=0.5cm] {\centerline{$S$ positif}\centerline{$|u|\geq |v|$}\centerline{$u\geq0$ et $v\leq0$}};
+\node (e31) [startstop, below of=e21, yshift=-1cm,xshift=-0.5cm] {\centerline{$S$ négatif}\centerline{$u\leq0$ et $v\leq0$}};
+\node (e32) [startstop, below of=e21, xshift=3.5cm, yshift=-1cm] {\centerline{$S$ positif}\centerline{$u\geq0$ et $v\geq0$}};
+\node (e33) [startstop, below of=e23, xshift=-3.5cm, yshift=-1cm] {\centerline{$S$ négatif}\centerline{$|u|\geq |v|$}\centerline{$u\leq0$ et $v\geq0$}};
+\draw[arrow] (e1)--(e21);
+\draw[arrow] (e1)--(e23);
+\draw[arrow] (e21)--(e31);
+\draw[arrow] (e21)--(e32);
+\draw[arrow] (e23)--(e34);
+\draw[arrow] (e23)--(e33);
+\end{tikzpicture}
+\end{center}
+
+	Utiliser votre méthode ou la méthode ci-dessus pour déterminer deux nombres $u$ et $v$ dont~:
+	\begin{multicols}{2}
+	\begin{enumerate}
+\item le produit vaut $-20$ et la somme $-8$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $-20$ et la somme $1$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $12$ et la somme $8$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $12$ et la somme $13$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $-40$ et la somme $3$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+\item le produit vaut $28$ et la somme $-11$
+
+\vspace{15pt}
+$u=\ligne{2}$ $v=\ligne{2}$
+	
+\end{enumerate}
+\end{multicols}
+\task[d)] Factoriser à l'aide de la quatrième identité remarquable.
+	\begin{multicols}{2}
+	\begin{enumerate}
+\item $x^2-8x-20=\ligne{4}$
+\item $x^2+x-20=\ligne{4}$
+\item $x^2-8x+12=\ligne{4}$
+\item $x^2+13x+12=\ligne{4}$
+\item $x^2+3x-40=\ligne{4}$
+\item $x^2-11x+28=\ligne{4}$	
+\end{enumerate}
+\end{multicols}
+\task[e)] Essayer de déterminer deux nombres $a$ et $b$ dont \[\text{le produit vaut } 233543149332 \text{ et la somme vaut } 1423373.\]
+Si vous n'y arrivez pas, quel est l'obstacle rencontré par rapport à votre méthode ou à la méthode proposée~?
+
+	\vspace{15pt}
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+	\myrulefill
+	\vspace{15pt}
+
+
+	\myrulefill
+	\vspace{15pt}
+
+
+\end{tasks}
 \end{activite}
 \begin{activite}
 	\tcblower

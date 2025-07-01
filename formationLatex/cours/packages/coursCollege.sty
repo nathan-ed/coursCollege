@@ -10,6 +10,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{qrcode}
 \RequirePackage{amsthm}
+\RequirePackage{varwidth}
 \RequirePackage{systeme}
 \RequirePackage{tikz}
 \usetikzlibrary{patterns}
@@ -233,12 +234,12 @@ after skip=10pt,
     before upper={
         \refstepcounter{exercice}%
         \fbox{\raggedleft\textbf{Exercice~\theexercice}}%
-        \\
-        \ifnum#1>0
-            \foreach \i in {1,...,#1}{%
-                {\small \faPepperHot}%
-            }%
-        \fi
+        %\\
+        %\ifnum#1>0
+        %    \foreach \i in {1,...,#1}{%
+        %        {\small \faPepperHot}%
+        %    }%
+        %\fi
         \\ \vspace{0.5em}
     },
    before lower={\setlength\parindent{0pt}},

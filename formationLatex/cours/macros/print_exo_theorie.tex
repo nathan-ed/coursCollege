@@ -97,7 +97,7 @@
     % Print the exercise if #4 equals "exo" or "both"
     \ifthenelse{\equal{#4}{exo} \OR \equal{#4}{both}}{%
         \noindent % Ensure no extra indentation
-	\begin{exercice}[\Piments]% Begin question environment with the number of points
+	\begin{exercice}% Begin question environment with the number of points
             \ifx\relax#1\relax\else\label{#1}\fi % Add label if provided
             \ifthenelse{\boolean{uuid}}{#2}{} % Include uuid if true
             \Contenu % Insert the content of the exercise
