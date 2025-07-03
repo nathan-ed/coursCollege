@@ -115,7 +115,7 @@ Représenter graphiquement une fonction du second degré &
 \end{remarque}
 \begin{definition}
 	\tcblower
-	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$, s'il existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en~$a$.
+	On dit qu'une fonction est \emph{définie au voisinage} d'un nombre réel $a$ ssi existe un voisinage de $a$ sur lequel la fonction est définie, sauf peut-être en~$a$.
 \end{definition}
 
 \begin{definition}
@@ -125,8 +125,8 @@ $f$ est continue en $a$ ssi il existe un voisinage de $a$ tel que « une représ
 \end{definition}
 \begin{remarque}
 	\tcblower
-	Cette définition peut être formalisée, mais cela dépasse le cadre de ce cours.
-\end{remarque}
+	Cette définition n'est pas formelle. Un des objectifs de ce chapitre est d'étudier l'outil « limite » qui permet de caractériser la continuité.
+	\end{remarque}
 
 \begin{definition}
 	\tcblower
@@ -304,6 +304,11 @@ Si $f : I \to \mathbb{R}$ est une fonction continue sur $[a,b]$, alors la foncti
 \end{itemize}
 En d'autres termes, $f([a,b]) = [m,M]$
 \end{thm}
+\begin{exemple}
+	\tcblower
+	Soit $f:\interval{0}{1}\rightarrow\interval{0}{1}$ une fonction continue. Montrer qu'il existe $a\in\interval{0}{1}$ tel que $f(a)=a$.
+	\vspace{6cm}
+\end{exemple}
 \begin{coro}
 	\tcblower
 	Soit $f$ une fonction continue sur un intervalle $[a;b]$ si 
@@ -314,10 +319,8 @@ En d'autres termes, $f([a,b]) = [m,M]$
 	\tcblower
 Si l'hypothèse de continuité n'est pas vérifiée, ces deux résultats ne sont plus vrais~!
 \end{remarque}
-\subsection{Exercices}
-\insertexo{1M-1n93r}{true}{exo}{true}
-\insertexo{1M-59swy}{false}{exo}{true}
-\insertexo{1M-qp2mw}{true}{exo}{true}
+
+
 
 \section{Limite en un nombre}
 \subsection{Un exemple introductif}
@@ -724,7 +727,7 @@ $f$ est continue en $a$ ssi
 \end{minipage}
 \medskip
 
-Si on veut être plus concis, on écrira plus simplement :  
+Pour être plus concis, on écrira simplement :  
 \[f \text{ est continue en }a \Longleftrightarrow \displaystyle\lim_{x\to a}f(x)=f(a).\]
 \end{thm}
 \begin{remarque}
@@ -1368,11 +1371,11 @@ Interprétations graphiques :
 \begin{definition}
 	Type $«~\dfrac{0}{0}~»$
 	\tcblower
-	Une limite du type quotient \(\displaystyle \lim_{x\to a}\dfrac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}f(x)=0\) et \(\displaystyle \lim_{x\to a}g(x)\neq0\) est appelée limite de type \(«~\displaystyle \dfrac{0}{0}~»\). 
+	Une limite du type quotient \(\displaystyle \lim_{x\to a}\dfrac{f(x)}{g(x)}\) pour laquelle on a \(\displaystyle \lim_{x\to a}f(x)=0\) et \(\displaystyle \lim_{x\to a}g(x)=0\) est appelée limite de type \(«~\displaystyle \dfrac{0}{0}~»\). 
 \end{definition}
 \begin{remarque}
 	\tcblower
-Il y a trois cas pour les limites « $\dfrac{1}{0}$ »~:
+Il y a trois cas pour les limites « $\dfrac{0}{0}$ »~:
 \begin{description}
 	\item[Cas 1] La limite existe et est finie.
 	\item[Cas 2] La limite existe est est infinie.
@@ -1516,48 +1519,6 @@ $\displaystyle\lim_{x \to 1} f(x) = \dfrac{1}{1 + 5} = \dfrac{1}{5}$
 $f$ n'a pas d'asymptote verticale en $x = 1$
 \end{itemize}
 \end{exemple}
-\subsection{Exercices}
-\subsubsection{Définition de la limite}
-\insertexo{1M-4dptb}{true}{exo}{true}
-\insertexo[exo:p1f]{1M-g4gbb}{true}{exo}{true}
-\subsubsection{Limites de fonctions élémentaire et propriétés des limites}
-\insertexo[exo:p2d]{1M-tecfn}{true}{exo}{true}
-\insertexo{1M-f7dft}{true}{exo}{true}
-\insertexo{1M-b3p6g}{true}{exo}{true}
-\subsubsection{Retour sur la continuité}
-Vous avez à présent les outils nécessaires pour résoudre ces exercices.
-\insertexo{1M-pp62m}{false}{exo}{true}
-\insertexo{1M-hsytn}{false}{exo}{true}
-\insertexo{1M-n9sxp}{false}{exo}{true}
-\insertexo{1M-u44h9}{false}{exo}{true}
-\insertexo{1M-3vr28}{true}{exo}{true}
-\insertexo{1M-gb3ag}{true}{exo}{true}
-\insertexo{1M-c3uc9}{true}{exo}{true}
-\insertexo{1M-myjcq}{true}{exo}{true}
-\insertexo{1M-dpjwk}{true}{exo}{true}
-\insertexo{1M-97ryj}{true}{exo}{true}
-\insertexo{1M-n1axs}{true}{exo}{true}
-\insertexo{1M-d4c88}{true}{exo}{true}
-\insertexo{1M-n67du}{true}{exo}{true}
-
-\subsubsection{Indétermination du type « $\dfrac{0}{0}$ » et « $\dfrac{1}{0}$ » }
-
-\insertexo[exo:p1d]{1M-vyj67}{true}{exo}{true}
-\insertexo{1M-ac9v2}{true}{exo}{true}
-\insertexo{1M-nxc2s}{true}{exo}{true}
-\insertexo{1M-1w6s3}{true}{exo}{true}
-\insertexo{1M-yhzh8}{true}{exo}{true}
-\insertexo{1M-9yqnb}{true}{exo}{true}
-\insertexo{1M-gg7hk}{true}{exo}{true}
-\insertexo{1M-n41yn}{true}{exo}{true}
-\insertexo{1M-8j18h}{true}{exo}{true}
-\insertexo{1M-k3bry}{true}{exo}{true}
-\insertexo{1M-wnd21}{true}{exo}{true}
-\insertexo{1M-98752}{true}{exo}{true}
-\insertexo{1M-1bqh9}{true}{exo}{true}
-\insertexo{1M-du7be}{true}{exo}{true}
-\subsubsection{Asymptotes verticales}
-\insertexo{1M-89av7}{true}{exo}{true}
 
 
 \section{Limites en l'infini}
@@ -2010,33 +1971,58 @@ puis le coefficient $b$
 donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
 
 \end{exemple}
+\section{Limites trigonométriques}
+Le théorème suivant est important et sa démonstration est faite en activité. 
+\medskip
+\begin{thm}[label=thm:sinxx]
+	\smallskip
+$\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
+	\tcblower
+On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
+\end{thm}
 
-\subsection{Exercices}
+\begin{methode}
+\tcblower
+Pour lever une indétermination trigonométrique, on se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
+\end{methode}
 
-\insertexo{1M-1w3pd}{true}{exo}{true}
-\insertexo{1M-x5h3r}{true}{exo}{true}
-\insertexo{1M-n9qmn}{true}{exo}{true}
-\insertexo{1M-bqknk}{true}{exo}{true}
+\begin{exemple}
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
+	\tcblower
+Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
+\smallskip
+\begin{explanation}
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » & on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
+	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ & on observe que l'expression qui « pilote » le calcul est $-20x$\\
+	$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$& on fait apparaître cette expression au dénominateur et comme le terme de la limite\\
+	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise le théorème \ref{thm:sinxx}\\
+	$= -20 \cdot 1$&on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$\\
+$= -20$\\
+\end{explanation}
+\end{exemple}
+\begin{remarque}
+	\tcblower
+On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
+\end{remarque}
+\begin{exemple}
+$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
+	\tcblower
+Calculer $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
+\begin{explanation}[0.6]
+	$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$& on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$& on multiplie par le conjugué\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$& on effectue la multiplication des fractions\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$& on utilise la 3e identité remarquable\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$& on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$\\
+	$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$& on sépare en produit de fractions\\
+	$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$& on utilise les propriétés des limites, ce qu'on peut faire si les deux limites existent\\
+	$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$& on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ et on calcule la 3e limite facilement\\
+$= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
+\end{explanation}
+\end{exemple}
 
-\insertexo{1M-6qym1}{true}{exo}{true}
-\insertexo{1M-t4gwt}{true}{exo}{true}
-\insertexo{1M-aatq8}{true}{exo}{true}
 
-\insertexo{1M-gm9uk}{true}{exo}{true}
-\insertexo{1M-taje8}{true}{exo}{true}
-\insertexo{1M-y4dv7}{true}{exo}{true}
-\insertexo{1M-g4sjk}{true}{exo}{true}
 
-\insertexo{1M-y4385}{true}{exo}{true}
-\insertexo{1M-2at6d}{true}{exo}{true}
-\insertexo{1M-mj5qq}{true}{exo}{true}
-\insertexo{1M-hgcu8}{true}{exo}{true}
-\insertexo{1M-ek51g}{true}{exo}{true}
-\insertexo{1M-us8px}{false}{exo}{true}
-
-\insertexo{1M-5en1r}{true}{exo}{true}
-\insertexo{1M-1gayt}{true}{exo}{true}
-\insertexo{1M-955md}{true}{exo}{true}
 
 \newpage
 \section{Activités}
@@ -2048,9 +2034,11 @@ Continuité
 \task Illustrer la notion de continuité en un point, continuité sur un intervalle.
 \task Peut-on en donner une définition mathématique ?
 \task Donner des exemples de fonctions connues continues et discontinues.
-\task Déterminer si la fonction $f$ définie par $f(x) = \begin{cases} \dfrac{1}{2}x & \text{si } x < 2 \\ 0 & \text{si } x = 2 \\ -x + 3 & \text{si } x > 2 \end{cases}$ est continue en $a = 2$.
+\task Déterminer si la fonction $f$ définie par 
+\[f(x) = \begin{cases} \frac{1}{2}x-1, & \text{si } x < 2 \\ 0, & \text{si } x = 2 \\ -x + 2, & \text{si } x > 2 \end{cases}\]
+est continue en $a = 2$.
 Justifier la réponse et esquisser une représentation graphique de $f$.
-\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$ et $\displaystyle\lim_{x \to 2} f(x) = 3$.
+\task Déterminer l'expression algébrique d'une fonction $g$ définie sur $\mathbb{R}$, telle que $g$ soit continue partout sauf pour $x = 2$.
 \end{tasks}
 \end{activite}
 
@@ -2060,7 +2048,7 @@ On considère le théorème suivant : « Si $f: I \to \mathbb{R}$ est une foncti
 
 \begin{tasks}(1)
 \task Faire un schéma pour interpréter graphiquement ce résultat.
-\task Expliquer pourquoi on l'appelle le théorème « de la valeur intermédiaire».
+\task Expliquer pourquoi on l'appelle le théorème «~de la valeur intermédiaire~».
 \task Illustrer (représentation graphique, qui sont $a$, $b$, $m$ et $M$ ?) ce théorème dans les cas suivants :
 \begin{enumerate}
 \item $f:[-1;1] \to \mathbb{R}$ déterminée par $f(x) = x^2$
@@ -2174,7 +2162,7 @@ Approche graphique de la notion de limite
 
 
 \begin{activite}[label=acti:type10]
-	Limites infinies
+	Indétermination $«\,\dfrac{1}{0}\,»$
 	\tcblower
 Soit $f$ la fonction réelle définie par
 \[
@@ -2207,7 +2195,7 @@ f(x)=\frac{x^2+x-6}{x^2-9}.
 \end{activite}
 
 \begin{activite}[label=acti:type00]
-Indéterminations
+	Indétermination $«\,\dfrac{0}{0}\,»$
 \tcblower
 On considère à nouveau la fonction réelle $f$ définie par $f(x) = \dfrac{x^2 + x - 6}{x^2 - 9}$.
 
@@ -2372,11 +2360,125 @@ Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie
 \task $\displaystyle\lim_{x \to +\infty} f(x) = 2$ et $f(-4) = -2$
 \end{tasks}
 \end{activite}
+
+\begin{activite}{Une limite trigonométrique importante}
+\tcblower
+\begin{tasks}(1)
+\task On considère la fonction $f$ déterminée par $f(x) = \dfrac{\sin(x)}{x}$
+\begin{enumerate}
+\item Déterminer $D_f$ et $Z_f$.
+\item D'après votre intuition, et/ou à l'aide de la calculatrice:
+\item Que pensez-vous de $\displaystyle\lim_{x \to 0} f(x)$ et de ? $\displaystyle\lim_{x \to 0} f(x)$
+\item Existe-t-il une asymptote horizontale pour cette fonction?
+\item Pouvez-vous justifier ces réponses?
+\end{enumerate}
+
+\task On s'intéresse maintenant à $\displaystyle\lim_{x \to 0} f(x)$
+\begin{enumerate}
+\item Conjecturer une valeur pour cette limite, à partir d'essais numériques avec la calculatrice.
+\item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
+\end{enumerate}
+
+\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
+
+\task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
+\end{tasks}
+\end{activite}
+\begin{activite}{Indéterminations trigonométriques de type 0/0}
+\tcblower
+\begin{tasks}(1)
+\task Calculer :
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(12x)}{6x}$
+\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x^2}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{\sin(x-2)}{3x-6}$
+\item $\displaystyle\lim_{x \to 0} \dfrac{\tan(12x)}{6x}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{6-3x}{\sin(x-2)}$
+\item $\displaystyle\lim_{x \to 2} \dfrac{\cos(x-2)}{3x-6}$
+\end{enumerate}
+\end{multicols}
+\end{tasks}
+\end{activite}
+
 \newpage
 
+%\subsection{Exercices}
+%\insertexo{1M-1n93r}{true}{exo}{true}
+%\insertexo{1M-59swy}{false}{exo}{true}
+%\insertexo{1M-qp2mw}{true}{exo}{true}
+%\insertexo{1M-6csvs}{false}{exo}{true}
+%\subsection{Exercices}
+%\subsubsection{Définition de la limite}
+%\insertexo{1M-4dptb}{true}{exo}{true}
+%\insertexo[exo:p1f]{1M-g4gbb}{true}{exo}{true}
+%\subsubsection{Limites de fonctions élémentaire et propriétés des limites}
+%\insertexo[exo:p2d]{1M-tecfn}{true}{exo}{true}
+%\insertexo{1M-f7dft}{true}{exo}{true}
+%\insertexo{1M-b3p6g}{true}{exo}{true}
+%\subsubsection{Retour sur la continuité}
+%Vous avez à présent les outils nécessaires pour résoudre ces exercices.
+%\insertexo{1M-pp62m}{false}{exo}{true}
+%\insertexo{1M-hsytn}{false}{exo}{true}
+%\insertexo{1M-n9sxp}{false}{exo}{true}
+%\insertexo{1M-u44h9}{false}{exo}{true}
+%\insertexo{1M-3vr28}{true}{exo}{true}
+%\insertexo{1M-gb3ag}{true}{exo}{true}
+%\insertexo{1M-c3uc9}{true}{exo}{true}
+%\insertexo{1M-myjcq}{true}{exo}{true}
+%\insertexo{1M-dpjwk}{true}{exo}{true}
+%\insertexo{1M-97ryj}{true}{exo}{true}
+%\insertexo{1M-n1axs}{true}{exo}{true}
+%\insertexo{1M-d4c88}{true}{exo}{true}
+%\insertexo{1M-n67du}{true}{exo}{true}
+%
+%\subsubsection{Indétermination du type « $\dfrac{0}{0}$ » et « $\dfrac{1}{0}$ » }
+%
+%\insertexo[exo:p1d]{1M-vyj67}{true}{exo}{true}
+%\insertexo{1M-ac9v2}{true}{exo}{true}
+%\insertexo{1M-nxc2s}{true}{exo}{true}
+%\insertexo{1M-1w6s3}{true}{exo}{true}
+%\insertexo{1M-yhzh8}{true}{exo}{true}
+%\insertexo{1M-9yqnb}{true}{exo}{true}
+%\insertexo{1M-gg7hk}{true}{exo}{true}
+%\insertexo{1M-n41yn}{true}{exo}{true}
+%\insertexo{1M-8j18h}{true}{exo}{true}
+%\insertexo{1M-k3bry}{true}{exo}{true}
+%\insertexo{1M-wnd21}{true}{exo}{true}
+%\insertexo{1M-98752}{true}{exo}{true}
+%\insertexo{1M-1bqh9}{true}{exo}{true}
+%\insertexo{1M-du7be}{true}{exo}{true}
+%\subsubsection{Asymptotes verticales}
+%\insertexo{1M-89av7}{true}{exo}{true}
+%
+%\subsection{Exercices}
+%
+%\insertexo{1M-1w3pd}{true}{exo}{true}
+%\insertexo{1M-x5h3r}{true}{exo}{true}
+%\insertexo{1M-n9qmn}{true}{exo}{true}
+%\insertexo{1M-bqknk}{true}{exo}{true}
+%
+%\insertexo{1M-6qym1}{true}{exo}{true}
+%\insertexo{1M-t4gwt}{true}{exo}{true}
+%\insertexo{1M-aatq8}{true}{exo}{true}
+%
+%\insertexo{1M-gm9uk}{true}{exo}{true}
+%\insertexo{1M-taje8}{true}{exo}{true}
+%\insertexo{1M-y4dv7}{true}{exo}{true}
+%\insertexo{1M-g4sjk}{true}{exo}{true}
+%
+%\insertexo{1M-y4385}{true}{exo}{true}
+%\insertexo{1M-2at6d}{true}{exo}{true}
+%\insertexo{1M-mj5qq}{true}{exo}{true}
+%\insertexo{1M-hgcu8}{true}{exo}{true}
+%\insertexo{1M-ek51g}{true}{exo}{true}
+%\insertexo{1M-us8px}{false}{exo}{true}
+%
+%\insertexo{1M-5en1r}{true}{exo}{true}
+%\insertexo{1M-1gayt}{true}{exo}{true}
+%\insertexo{1M-955md}{true}{exo}{true}
 
-
-%\newpage
+%Pas inclus 
 %\insertexo[exo:p1d]{1M-vyj67}{false}{exo}{true}
 %\insertexo{1M-4dptb}{false}{exo}{true}
 %\insertexo[exo:p1f]{1M-g4gbb}{false}{exo}{true}

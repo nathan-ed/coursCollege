@@ -20,56 +20,6 @@
 
 \tableofcontents
 \newpage
-\section{Limites trigonométriques}
-Le théorème suivant est important et sa démonstration sera faite en activité. 
-\medskip
-\begin{thm}[label=thm:sinxx]
-	\smallskip
-$\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x}$
-	\tcblower
-On a  \[\displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} = 1\]
-\end{thm}
-
-\begin{methode}
-\tcblower
-Pour lever une indétermination trigonométrique, on se ramène au cas du théorème \ref{thm:sinxx} afin d'utiliser la formule $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ où $\star$ peut être une expression quelconque.
-\end{methode}
-
-\begin{exemple}
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
-	\tcblower
-Calculer $\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$
-\smallskip
-\begin{explanation}
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x} = $ « $\dfrac{0}{0}$ » & on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
-	$\displaystyle\lim_{x \to 0} \dfrac{\sin(-20x)}{x}$ & on observe que l'expression qui « pilote » le calcul est $-20x$\\
-	$= \displaystyle\lim_{-20x \to 0} \dfrac{-20\sin(-20x)}{-20x}$& on fait apparaître cette expression au dénominateur et comme le terme de la limite\\
-	$= -20 \displaystyle\lim_{-20x \to 0} \dfrac{\sin(-20x)}{-20x}$& on utilise le théorème \ref{thm:sinxx}\\
-	$= -20 \cdot 1$&on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$\\
-$= -20$\\
-\end{explanation}
-\end{exemple}
-\begin{remarque}
-	\tcblower
-On est parfois amené à devoir utiliser des propriétés trigonométriques ou des idées plus subtiles ...
-\end{remarque}
-\begin{exemple}
-$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
-	\tcblower
-Calculer $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$
-\begin{explanation}[0.6]
-	$\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x}$& on substitue $x$ par $0$ et on constate un « type $\dfrac{0}{0}$ »\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{3x^2} \cdot \dfrac{1+\cos(x)}{1+\cos(x)}$& on multiplie par le conjugué\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{(1-\cos(x))(1+\cos(x))}{3x^2(1+\cos(x))}$& on effectue la multiplication des fractions\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1-\cos^2(x)}{3x^2(1+\cos(x))}$& on utilise la 3e identité remarquable\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{\sin^2(x)}{3x^2(1+\cos(x))}$& on utilise la propriété trigonométrique $\sin^2(x)+\cos^2(x)=1$\\
-	$= \displaystyle\lim_{x \to 0} \dfrac{1}{3} \cdot \dfrac{\sin^2(x)}{x^2} \cdot \dfrac{1}{1+\cos(x)}$& on sépare en produit de fractions\\
-	$= \dfrac{1}{3} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{\sin(x)}{x} \displaystyle\lim_{x \to 0} \dfrac{1}{1+\cos(x)}$& on utilise les propriétés des limites, ce qu'on peut faire si les deux limites existent\\
-	$= \dfrac{1}{3} \cdot 1 \cdot 1 \cdot \dfrac{1}{1+\cos(0)}$& on utilise $\displaystyle\lim_{\star \to 0} \dfrac{\sin(\star)}{\star} = 1$ et on calcule la 3e limite facilement\\
-$= \dfrac{1}{3} \cdot \dfrac{1}{2} = \dfrac{1}{6}$
-\end{explanation}
-\end{exemple}
-
 \section{Dérivées des fonctions trigonométriques}
 Théorème [Dérivée du sinus]
 \begin{thm}
@@ -139,45 +89,7 @@ d'où enfin : $[[\sin(x^2 - 1)]^3]' = 3[\sin(x^2 - 1)]^2 \cos(x^2 - 1) \cdot 2x 
 
 \insertexo{1M-aef2y}{true}{exo}{true}
 \section{Activité}
-\begin{activite}{Une limite trigonométrique importante}
-\tcblower
-\begin{tasks}(1)
-\task On considère la fonction $f$ déterminée par $f(x) = \dfrac{\sin(x)}{x}$
-\begin{enumerate}
-\item Déterminer $D_f$ et $Z_f$.
-\item D'après votre intuition, et/ou à l'aide de la calculatrice:
-\item Que pensez-vous de $\displaystyle\lim_{x \to 0} f(x)$ et de ? $\displaystyle\lim_{x \to 0} f(x)$
-\item Existe-t-il une asymptote horizontale pour cette fonction?
-\item Pouvez-vous justifier ces réponses?
-\end{enumerate}
 
-\task On s'intéresse maintenant à $\displaystyle\lim_{x \to 0} f(x)$
-\begin{enumerate}
-\item Conjecturer une valeur pour cette limite, à partir d'essais numériques avec la calculatrice.
-\item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
-\end{enumerate}
-
-\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
-
-\task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
-\end{tasks}
-\end{activite}
-\begin{activite}{Indéterminations trigonométriques de type 0/0}
-\tcblower
-\begin{tasks}(1)
-\task Calculer :
-\begin{multicols}{3}
-\begin{enumerate}
-\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(12x)}{6x}$
-\item $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x^2}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{\sin(x-2)}{3x-6}$
-\item $\displaystyle\lim_{x \to 0} \dfrac{\tan(12x)}{6x}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{6-3x}{\sin(x-2)}$
-\item $\displaystyle\lim_{x \to 2} \dfrac{\cos(x-2)}{3x-6}$
-\end{enumerate}
-\end{multicols}
-\end{tasks}
-\end{activite}
 
 
 
