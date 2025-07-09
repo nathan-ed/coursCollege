@@ -27,10 +27,11 @@ Calculer les limites suivantes et justifier  les résultats obtenus.
 
 \(
 \begin{aligned}
-\lim_{x \to 3} \dfrac{\sqrt{x^2 - 4x + 3}}{x - 3}
+&\lim_{x \to 3} \dfrac{\sqrt{x^2 - 4x + 3}}{x - 3}\\
 &= \lim_{x \to 3} \dfrac{\sqrt{(x - 1)(x - 3)}}{x - 3} \\
 &= \lim_{x \to 3} \dfrac{\sqrt{x - 1} \cdot \sqrt{x - 3}}{x - 3} \\
-&\stackrel{x \ne 3}{=} \lim_{x \to 3} \dfrac{\sqrt{x - 1}}{\sqrt{x - 3}} \cdot \sqrt{x - 3} = \sqrt{2}
+&\stackrel{x \ne 3}{=} \lim_{x \to 3} \dfrac{\sqrt{x - 1}}{\sqrt{x - 3}} \cdot \sqrt{x - 3} \\
+&= \sqrt{2}
 \end{aligned}
 \)
 
@@ -38,21 +39,23 @@ Calculer les limites suivantes et justifier  les résultats obtenus.
 
 \(
 \begin{aligned}
-\lim_{x \to 1} \dfrac{\sqrt{x^2 + x} - \sqrt{2}}{x - 1}
+&\lim_{x \to 1} \dfrac{\sqrt{x^2 + x} - \sqrt{2}}{x - 1}\\
 &= \lim_{x \to 1} \dfrac{x^2 + x - 2}{(x - 1)(\sqrt{x^2 + x} + \sqrt{2})} \\
 &= \lim_{x \to 1} \dfrac{(x - 1)(x + 2)}{(x - 1)(\sqrt{x^2 + x} + \sqrt{2})} \\
-&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{x + 2}{\sqrt{x^2 + x} + \sqrt{2}} = \dfrac{3}{2\sqrt{2}}
+&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{x + 2}{\sqrt{x^2 + x} + \sqrt{2}} \\
+&= \dfrac{3}{2\sqrt{2}}
 \end{aligned}
 \)
 
-\task* Type «$ \dfrac{0}{0} $» :  
+\task Type «$ \dfrac{0}{0} $» :  
 
 \(
 \begin{aligned}
-\lim_{x \to 1} \dfrac{\sqrt{x + 3} - \sqrt{3x + 1}}{x - 1}
+&\lim_{x \to 1} \dfrac{\sqrt{x + 3} - \sqrt{3x + 1}}{x - 1}\\
 &= \lim_{x \to 1} \dfrac{(x + 3) - (3x + 1)}{(x - 1)(\sqrt{x + 3} + \sqrt{3x + 1})} \\
 &= \lim_{x \to 1} \dfrac{-2(x - 1)}{(x - 1)(\sqrt{x + 3} + \sqrt{3x + 1})} \\
-&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{-2}{\sqrt{x + 3} + \sqrt{3x + 1}} = \dfrac{-2}{4} = -\dfrac{1}{2}
+&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{-2}{\sqrt{x + 3} + \sqrt{3x + 1}}\\
+&= \dfrac{-2}{4} = -\dfrac{1}{2}
 \end{aligned}
 \)
 
@@ -60,22 +63,24 @@ Calculer les limites suivantes et justifier  les résultats obtenus.
 
 \(
 \begin{aligned}
-\lim_{x \to 0^+} \dfrac{x}{\sqrt{1 + x^2} - 1}
+&\lim_{x \to 0^+} \dfrac{x}{\sqrt{1 + x^2} - 1}\\
 &= \lim_{x \to 0^+} \dfrac{x(\sqrt{1 + x^2} + 1)}{1 + x^2 - 1} \\
 &= \lim_{x \to 0^+} \dfrac{x(\sqrt{1 + x^2} + 1)}{x^2} \\
-&= \lim_{x \to 0^+} \dfrac{\sqrt{1 + x^2} + 1}{x} \to +\infty
+&= \lim_{x \to 0^+} \dfrac{\sqrt{1 + x^2} + 1}{x}\\
+&=+\infty
 \end{aligned}
 \)
 \task Type «$ \dfrac{0}{0} $» :  
 
 \(
 \begin{aligned}
-\lim_{x \to -2} \dfrac{x + \sqrt{2 - x}}{x + 2}
+&\lim_{x \to -2} \dfrac{x + \sqrt{2 - x}}{x + 2}\\
 &= \lim \dfrac{x + \sqrt{2 - x}}{x + 2} \cdot \dfrac{x - \sqrt{2 - x}}{x - \sqrt{2 - x}} \\
 &= \lim_{x\to-2} \dfrac{x^2 - (2 - x)}{(x + 2)(x - \sqrt{2 - x})} \\
 &= \lim_{x\to-2}\dfrac{x^2 + x - 2}{(x + 2)(x - \sqrt{2 - x})} \\
 &= \lim_{x\to-2}\dfrac{(x + 2)(x - 1)}{(x + 2)(x - \sqrt{2 - x})} \\
-&\stackrel{x \ne -2}{=} \lim_{x\to-2} \dfrac{x - 1}{x - \sqrt{2 - x}} = \dfrac{-3}{-2 - 2} = \dfrac{3}{4}
+&\stackrel{x \ne -2}{=} \lim_{x\to-2} \dfrac{x - 1}{x - \sqrt{2 - x}} \\
+&= \dfrac{-3}{-2 - 2} = \dfrac{3}{4}
 \end{aligned}
 \)
 \end{tasks}
