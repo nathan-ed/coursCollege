@@ -42,7 +42,6 @@
 \vspace{-1cm}
 \tableofcontents
 \newpage
-\begin{comment}
 \section*{Prérequis}
 Avant de commencer ce chapitre, je m'assure d'être capable de 
 \bigskip
@@ -1061,34 +1060,7 @@ Ainsi,
 \end{coro}
 
 
-\begin{thm}
-	(sans démonstration)
-	\tcblower
-	Soient $f$ et $g$ deux fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ telles que  
-	\begin{tasks}
-		\task $f(x)\leq g(x),\, \forall x \in I$
-		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent  
-	\end{tasks} alors 
 
-	\[\displaystyle{\lim_{x\rightarrow a}f(x)}\leq  \displaystyle{\lim_{x\rightarrow a}g(x)}, \forall a\in I\]
-
-	%($a$ peut également valoir $-\infty$ et $+\infty$ si l'intervalle $I$ n'est pas borné).
-\end{thm}
-\begin{thm}
-	Théorème des gendarmes
-	(sans démonstration)
-	\tcblower
-	Soient $f, g$ et $h$ des fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ %($a$ peut également valoir $-\infty$ ou $+\infty$) 
-	telles que
-	\begin{tasks}
-		\task $f(x)\leq g(x)\leq h(x),\, \forall x \in I$
-		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}=\displaystyle{\lim_{x\rightarrow a}h(x)}=\ell\in \mathbb{R}$ 
-
-		%($\ell$ peut également être égal au symbole $-\infty$ ou $+\infty$).  
-	\end{tasks} alors 
-
-	\[\displaystyle{\lim_{x\rightarrow a}g(x)}=\ell.\]
-\end{thm}
 \begin{exemple}
 	\tcblower
 On peut maintenant calculer la limite considérée en introduction en justifiant le calcul :
@@ -1161,7 +1133,43 @@ ou plus directement :
 \end{tasks}
 \end{exemple}
 
+\begin{thm}
+	(sans démonstration)
+	\tcblower
+	Soient $f$ et $g$ deux fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ telles que  
+	\begin{tasks}
+		\task $f(x)\leq g(x),\, \forall x \in I$
+		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}$ et $\displaystyle{\lim_{x\rightarrow a}g(x)}$ existent  
+	\end{tasks} alors 
 
+	\[\displaystyle{\lim_{x\rightarrow a}f(x)}\leq  \displaystyle{\lim_{x\rightarrow a}g(x)}, \forall a\in I\]
+
+	%($a$ peut également valoir $-\infty$ et $+\infty$ si l'intervalle $I$ n'est pas borné).
+\end{thm}
+\begin{thm}
+	Théorème des gendarmes
+	(sans démonstration)
+	\tcblower
+	Soient $f, g$ et $h$ des fonctions définies sur un voisinage $I$ de $a\in \mathbb{R}$ %($a$ peut également valoir $-\infty$ ou $+\infty$) 
+	telles que
+	\begin{tasks}
+		\task $f(x)\leq g(x)\leq h(x),\, \forall x \in I\setminus\{a\}$
+		\task $\displaystyle{\lim_{x\rightarrow a}f(x)}=\displaystyle{\lim_{x\rightarrow a}h(x)}=\ell\in \mathbb{R}$ 
+
+		%($\ell$ peut également être égal au symbole $-\infty$ ou $+\infty$).  
+	\end{tasks} alors 
+
+	\[\displaystyle{\lim_{x\rightarrow a}g(x)}=\ell.\]
+\end{thm}
+\begin{coro}
+(avec démonstration)
+	\tcblower 
+	La fonction $x\sin\left(\dfrac{1}{x}\right)$ est continue en $x=0$
+	\begin{proof}
+Voir les exercices. 
+	\end{proof}
+	
+\end{coro}
 \subsection{Indéterminations -- types « $\dfrac{1}{0}$ » et « $\dfrac{0}{0}$ »}
 \begin{definition}
 	Type $«~\dfrac{1}{0}~»$
@@ -1312,8 +1320,6 @@ et
 \]
 donc $\displaystyle\lim_{x\to 1}\dfrac{x-2}{x^2+3x-4}\,\ligne{3}$.
 \end{exemple}
-
-\newpage
 
 Interprétations graphiques :
 \begin{center}
@@ -2360,12 +2366,12 @@ Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie
 \item Proposer une représentation graphique de $f$ sur la base des informations recueillies jusqu'à présent.
 \end{enumerate}
 
-\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y)}{y}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{z}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
+\task Que penser de $\displaystyle\lim_{y \to 0} \dfrac{\sin(y^2)}{y^2}$, de $\displaystyle\lim_{z \to 0} \dfrac{\sin(z)}{-z}$, de $\displaystyle\lim_{x-a \to 0} \dfrac{\sin(x-a)}{x-a}$, de $\displaystyle\lim_{x \to a} \dfrac{\sin(x-a)}{x-a}$ ?
 
 \task Calculer $\displaystyle\lim_{x \to 0} \dfrac{\cos(x)}{x}$ et $\displaystyle\lim_{x \to 0} \dfrac{\tan(x)}{x}$
 \end{tasks}
 \end{activite}
-\begin{activite}{Indéterminations trigonométriques de type 0/0}
+\begin{activite}{Indéterminations trigonométriques de type « $\dfrac{0}{0}$ »}
 \tcblower
 \begin{tasks}(1)
 \task Calculer :
@@ -2408,6 +2414,7 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 \insertexo[exo:p2d]{1M-tecfn}{true}{both}{false}
 \insertexo{1M-wnd21}{true}{both}{false}
 \insertexo{1M-gb3ag}{true}{both}{false}
+\insertexo{1M-5911p}{false}{exo}{true}
 
 \subsubsection{Indétermination du type « $\dfrac{0}{0}$ » et « $\dfrac{1}{0}$ » }
 
@@ -2423,7 +2430,7 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 \insertexo{1M-1bqh9}{true}{both}{false}
 \insertexo{1M-yhzh8}{true}{both}{false}
 \insertexo{1M-9yqnb}{true}{both}{false}
-\end{comment}
+%--> corrigés vérifiés après ici.
 \insertexo{1M-k3bry}{true}{both}{false}
 \insertexo{1M-1w6s3}{true}{both}{false}
 \insertexo{1M-nxc2s}{true}{both}{false}
@@ -2432,11 +2439,11 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 \insertexo{1M-1w3pd}{true}{both}{false}
 \subsection{Limites en l'infini}
 \insertexo{1M-x5h3r}{true}{both}{false}
+\insertexo{1M-t4gwt}{true}{both}{false}
 \insertexo{1M-n9qmn}{true}{both}{false}
 \insertexo{1M-bqknk}{true}{both}{false}
 \insertexo{1M-du7be}{true}{both}{false}
 \insertexo{1M-6qym1}{true}{both}{false}
-\insertexo{1M-t4gwt}{true}{both}{false}
 \insertexo{1M-aatq8}{true}{both}{false}
 \insertexo{1M-gm9uk}{true}{both}{false}
 \insertexo{1M-taje8}{true}{both}{false}
@@ -2457,7 +2464,6 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 \subsection{Limites de fonctions trigonométriques}
 \insertexo{1M-byf5j}{true}{both}{false}
 \insertexo{1M-h9w1s}{true}{both}{false}
-\insertexo{1M-jgbhr}{true}{both}{false}
 \insertexo{1M-jqhm4}{true}{both}{false}
 
 
@@ -2502,7 +2508,6 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 %\insertexo{1M-jqhm4}{false}{both}{false}
 %\insertexo{1M-1n93r}{false}{both}{false}
 %\insertexo{1M-qp2mw}{false}{both}{false}
-%\insertexo{1M-jgbhr}{false}{both}{false}
 %\insertexo{1M-6qym1}{false}{both}{false}
 %\insertexo{1M-aatq8}{false}{both}{false}
 \newpage

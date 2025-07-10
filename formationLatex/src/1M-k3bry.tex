@@ -10,10 +10,10 @@
 
 \contenu{
 \tcblower
-\noindent Calculer les limites suivantes et interpréter graphiquement le résultat :  
+\noindent Calculer les limites suivantes :  
 \begin{tasks}(3)
 \task \(\displaystyle\lim_{x\to 5}\frac{x-5}{\sqrt{2x-1}-3}\)
-\task \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x^2+3}-\sqrt{x^2+1}}{x^2-1}\)
+\task*(2) \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x^2+3}-\sqrt{x^2+1}}{x^2-1}\)
 \task \(\displaystyle\lim_{x\to 2}\frac{-9x}{(4-x^2)^3}\)
 \task \(\displaystyle\lim_{x\to 1}\frac{x^2-3x+2}{(x^2-1)^2}\)
 \task \(\displaystyle\lim_{x\to 0}\frac{x-a}{x-a}\)
@@ -47,21 +47,19 @@
 \( \begin{aligned}
 &\lim_{x \to 0} \dfrac{\sqrt{x^2 + 3} - \sqrt{x^2 + 1}}{x^2 - 1} \\
 &=\dfrac{\sqrt{3}}{-1}\\
-&=-\sqrt{3} 
+&=1-\sqrt{3} 
 \end{aligned} \)
 
-\task Type « $\dfrac{-18}{0}$ » :
+\task Type « $\dfrac{1}{0}$ » :
 
-\( \begin{aligned}
-&\lim_{x \to -2} \dfrac{-9x}{(4 - x^2)^3} = \lim_{x \to -2} \dfrac{-9x}{(2 - x)^3(2 + x)^3} \\
-&= \dfrac{-9 \cdot (-2)}{(4)^3} = \dfrac{18}{64} = \dfrac{9}{32}
-\end{aligned} \)
+$+\infty$
 
 \task Type « $\dfrac{0}{0}$ » :
 
 \( \begin{aligned}
 &\lim_{x \to 1} \dfrac{x^2 - 3x + 2}{(x - 1)^2} = \lim_{x \to 1} \dfrac{(x - 1)(x - 2)}{(x - 1)^2} \\
-&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{x - 2}{x - 1} = \dfrac{-1}{0^-} = -\infty
+&\stackrel{x \ne 1}{=}\lim_{x\to 1}\dfrac{x-2}{x-1}\\
+&=\pm \infty \implies \not \exists. 
 \end{aligned} \)
 
 \task Type « forme déterminée » :
@@ -95,13 +93,14 @@
 &\lim_{x \to a} \dfrac{1 - \dfrac{1}{x}}{x - a} = \lim_{x \to a} \dfrac{x - 1}{x(x - a)} \\
 \end{aligned} \)
 
-Si $a=0$, alors $+\infty$, si $a=1$, alors $1$, autrement, non définie. 
+Si $a=0$, alors $-\infty$, si $a=1$, alors $1$, autrement, non définie. 
 
 \task Type « $\dfrac{0}{0}$ » :
 
 \( \begin{aligned}
 &\lim_{x \to 2} \dfrac{x^2 - 3x + 2}{x^2 - 4x + 4} = \lim_{x \to 2} \dfrac{(x - 1)(x - 2)}{(x - 2)^2} \\
-&\stackrel{x \ne 2}{=} \lim_{x \to 2} \dfrac{x - 1}{x - 2} = \dfrac{1}{0^-} = -\infty
+&\stackrel{x \ne 2}{=} \lim_{x \to 2} \dfrac{x - 1}{x - 2}\\
+&= \pm \infty \implies \not \exists
 \end{aligned} \)
 
 \task Type « $\dfrac{0}{0}$ » :
@@ -128,18 +127,16 @@ Si $a=0$, alors $+\infty$, si $a=1$, alors $1$, autrement, non définie.
 
 \( \begin{aligned}
 &\lim_{x \to -3} \dfrac{x + 1}{(x + 3)^2}\\
-&= \dfrac{-2}{0^+} = -\infty
+& = -\infty
 \end{aligned} \)
 
 \task Type « $\dfrac{1}{0}$ » :
 
 \( \begin{aligned}
 &\lim_{x \to 1} \dfrac{\sqrt{x^2 + x - \sqrt{2}}}{x - 1}\\
-&=\lim_{x\to 1}\dfrac{x^2+x-\sqrt{2}}{(x-1)\cdot \sqrt{x^2+x-\sqrt{2}}}
+&=\lim_{x\to 1}\dfrac{x^2+x-\sqrt{2}}{(x-1)\cdot \sqrt{x^2+x-\sqrt{2}}}\\
+&=\pm\implies \not \exists
 \end{aligned} \)
-
-Non définie, considérer la limite à droite et à gauche. 
-
 \end{tasks}
 }
 
